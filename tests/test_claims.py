@@ -236,3 +236,78 @@ FAITHFUL2 = [
 def test_round2_faithful_forms_pass(q, a):
     grounded, found = kinds(q, a)
     assert grounded is True, found
+
+
+# Codex round 3: each of these passed the third version
+ROUND3 = [
+    ("Which drugs act on ALK?", "LORLATINIB and PLB1003 act on ALK and they are approved."),
+    ("Which drugs act on ALK?", "PLB1003 and LORLATINIB act on ALK and they are approved."),
+    ("What is AstraZeneca running in NSCLC?",
+     "AstraZeneca sponsors osimertinib in 10 trials evaluating carboplatin."),
+    ("What is AstraZeneca running in NSCLC?",
+     "AstraZeneca sponsors 10 trials evaluating carboplatin and osimertinib."),
+    ("What is AstraZeneca running in NSCLC?",
+     "AstraZeneca sponsors osimertinib and carboplatin in 10 trials."),
+    ("What does osimertinib target?",
+     "these drugs are sponsors of trials:\n- OSIMERTINIB acts on EGFR (inhibitor)"),
+    ("What does osimertinib target?",
+     "these drugs are activators:\n- OSIMERTINIB acts on EGFR (inhibitor)"),
+    ("What does osimertinib target?",
+     "these drugs inhibit EGFR with ALK:\n- OSIMERTINIB acts on EGFR (inhibitor)"),
+    ("What does osimertinib target?", "these drugs with ALK:\n- OSIMERTINIB acts on EGFR (inhibitor)"),
+    ("What does osimertinib target?", "Osimertinib is in clinical trials."),
+    ("What does osimertinib target?", "Osimertinib is in NSCLC trials."),
+    ("What does osimertinib target?", "Osimertinib is an NSCLC drug."),
+    ("What does osimertinib target?", "EGFR is a drug."),
+    ("What is the capital of France?", "There are clinical trials."),
+    ("Which drugs act on ALK?", "PLB1003 is LORLATINIB."),
+    ("What trials evaluate Tagrisso?", "NCT03909334 is NCT07680790."),
+    ("Which drugs act on ALK?", "PLB1003 has NSCLC trials: 1."),
+    ("Which drugs act on ALK?", "PLB1003 has NSCLC trials."),
+    ("Which drugs act on ALK?", "LORLATINIB is approved in NSCLC."),
+    ("Which drugs act on ALK?", "Lorlatinib is approved in lung cancer."),
+    ("What does osimertinib target?", "Osimertinib [ORG:is-safe] acts on EGFR."),
+    ("What does osimertinib target?", "Osimertinib [ORG:does-not-inhibit] acts on EGFR."),
+]
+
+
+@pytest.mark.parametrize("q,a", ROUND3)
+def test_round3_attacks_are_caught(q, a):
+    grounded, found = kinds(q, a)
+    assert grounded is False, a
+
+
+FAITHFUL3 = [
+    ("What does osimertinib target?", "Osimertinib targets EGFR and inhibits it."),
+    ("What trials evaluate Tagrisso?", "NCT03909334 evaluates osimertinib in phase 2."),
+    ("What trials evaluate Tagrisso?", "NCT03909334 is a phase II trial evaluating osimertinib."),
+    ("What trials evaluate Tagrisso?", "NCT03535363 is a completed phase 1 trial of osimertinib."),
+    ("What trials evaluate Tagrisso?",
+     "Phase 3 trials evaluating osimertinib include NCT07680790 and NCT02411448."),
+    ("What trials evaluate Tagrisso?",
+     "The trials include NCT03909334 (phase 2, active not recruiting) and "
+     "NCT07680790 (phase 3, recruiting)."),
+    ("What is AstraZeneca running in NSCLC?",
+     "AstraZeneca sponsors 14 NSCLC trials evaluating osimertinib and 10 NSCLC trials "
+     "evaluating carboplatin."),
+    ("What is AstraZeneca running in NSCLC?",
+     "AstraZeneca is the sponsor of 14 NSCLC trials of osimertinib and 10 NSCLC trials of "
+     "carboplatin and 8 NSCLC trials of gefitinib."),
+    ("What does osimertinib target?", "AZD9291 (AZD-9291) acts on EGFR."),
+    ("What does osimertinib target?", "Osimertinib (Tagrisso, AZD 9291, AZD9291) acts on EGFR."),
+    ("What does osimertinib target?", "The mechanism recorded for osimertinib is inhibition of EGFR."),
+    ("Which drugs act on ALK?",
+     "PLB1003 inhibits ALK; its maximum stage is phase 1, with 0 NSCLC trials in this graph."),
+    ("Which drugs act on ALK?", "ALK inhibitors include:\n- lorlatinib\n- crizotinib\n- alectinib"),
+    ("Which companies are developing osimertinib?",
+     "The graph records trial sponsorship. AstraZeneca is a lead sponsor for osimertinib trials."),
+    ("What is the capital of France?",
+     "The graph does not contain the information needed to answer this question."),
+    ("What is the capital of France?", "No relevant evidence was retrieved."),
+]
+
+
+@pytest.mark.parametrize("q,a", FAITHFUL3)
+def test_round3_faithful_forms_pass(q, a):
+    grounded, found = kinds(q, a)
+    assert grounded is True, found

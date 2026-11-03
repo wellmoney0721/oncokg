@@ -1,0 +1,25 @@
+--- audit_evidence_claims\independent_main.py
++++ audit_evidence_claims\r3\replay3_main.py
+@@ -1,13 +1,13 @@
+ """Read-only reproduction for the independent audit of 0c441e0.
+ 
+-Run: python -B audit_evidence_claims/independent_main.py
++Run: python -B audit_evidence_claims/r3/replay3_main.py
+ Only writes the adjacent JSON evidence file.
+ """
+ import json
+ import sys
+ from pathlib import Path
+ 
+-ROOT = Path(__file__).resolve().parents[1]
++ROOT = Path(__file__).resolve().parents[2]
+ sys.path.insert(0, str(ROOT / "src"))
+ from app import Engine
+ from claims import check_claims, _units
+@@ -84,5 +84,5 @@
+                       "findings": [(u["kind"], u["value"]) for u in result["checks"]["unsupported_claims"]]},
+                      ensure_ascii=True))
+ 
+-out = Path(__file__).with_name("independent_main_results.json")
++out = Path(__file__).with_name("replay3_main_results.json")
+ out.write_text(json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8")

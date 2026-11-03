@@ -509,19 +509,24 @@ fixed now, and its number has been reused.
     clause by clause into subject, relation and object (`src/claims.py`, rules in
     its docstring) and compared with the retrieved evidence for those entities. It
     is a set of patterns, so it is only as good as the sentence shapes it was
-    written for: two adversarial rounds found 33 and then about 40 shapes that got
-    through (reversed nouns, clefts, a second object after "and on", pronouns read
-    too early, a count borrowed from a phase, `agonist` matching inside
-    `antagonist`, headings, bracketed text, refused product names). Each is now a
-    regression test, but a shape nobody has tried yet can still be misread. Known
-    to get through: a clause whose words, entities and figures all come from one
-    evidence statement about those entities but are arranged into a different
-    claim; a drug name outside the vocabulary that does not look like an INN.
-    Known to be over-strict: a true fact the graph does not hold, a paraphrase it
-    has no word for ("supports trials"), and a refusal worded with a pronoun
-    ("so it cannot answer"). Two narrow exceptions are deliberate: a line copied
-    verbatim from an evidence statement passes, and a clause with no entity that
-    only talks about the graph ("this graph cannot answer that") passes.
+    written for. Three adversarial rounds found 33, about 40 and then about 25
+    shapes that got through (reversed nouns, clefts, a second object after "and
+    on", pronouns read too early, plural pronouns, a count borrowed from a phase or
+    shared by two drugs, `agonist` inside `antagonist`, headings, bracketed text,
+    refused product names, words like "clinical trials" or "drug" treated as
+    grammar, "approved in NSCLC"). Each is now a regression test, but a shape
+    nobody has tried yet can still be misread. Known to get through: a clause whose
+    words, entities and figures all come from one evidence statement about those
+    entities but are arranged into a different claim; a drug name outside the
+    vocabulary that does not look like an INN; odd but evidence-consistent wording
+    ("osimertinib is the inhibition of EGFR"). Known to be over-strict: a true fact
+    the graph does not hold, a paraphrase it has no word for ("supports trials"), a
+    sentence about the evidence itself that uses a negation or "develops", and a
+    refusal naming something outside the graph ("the capital of France"). Three
+    narrow exceptions are deliberate: a line copied from an evidence statement
+    passes (its heading is still checked), a clause with no entity that only talks
+    about the graph passes, and a bracket is dropped as a citation only when every
+    id in it is a record of the retrieved evidence.
 14. **Provenance does not record the code version.** Snapshots carry their
     fetch time, but the graph does not store which revision of the rules built
     it, so a change that arrives with a new snapshot and a code change together
@@ -547,7 +552,7 @@ pip install -r requirements.txt
 python src/run_all.py              # fetch, resolve, check, build, score, render
 python src/run_all.py --offline    # rebuild from the snapshots in data/raw
 
-python -m pytest tests -q                    # 175 tests
+python -m pytest tests -q                    # 213 tests
 python src/app.py                            # try-it page: http://localhost:8765
 python src/curation_effect.py                # resolve twice, with and without curation
 python src/apply_label_corrections.py --check

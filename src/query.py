@@ -400,11 +400,13 @@ class OncoKG:
     @staticmethod
     def _template_answer(question, intent, entities, evidence) -> tuple[str, str]:
         head = {
-            "companies_for_drug": "Organisations sponsoring trials of this drug",
-            "trials_for_entity": "Trials evaluating this drug",
+            # headings name the list without stating a relation of their own, so
+            # the claim check can read each line under them as it stands
+            "companies_for_drug": "Lead sponsorship of trials of this drug",
+            "trials_for_entity": "Trials of this drug",
             "targets_of_drug": "Reported mechanism",
-            "drugs_for_target": "Agents acting on this target",
-            "company_portfolio": "What this organisation runs in NSCLC",
+            "drugs_for_target": "Agents for this target",
+            "company_portfolio": "This organisation's NSCLC trials",
             "drug_profile": "Profile",
         }.get(intent, "Findings")
         lines = [f"{head}:"]
@@ -506,12 +508,16 @@ class OncoKG:
         # digits inside a linked name ("AZD 9291") are part of the name, not a figure
         number_text = text
         if linker is not None:
-            for e in linker(text):
-                mt = e.get("matched_text") or ""
-                if mt and e.get("type") != "Refused" and re.search(r"\d", mt):
-                    number_text = re.sub(r"[\W_]+".join(map(re.escape, mt.split())),
-                                         " ", number_text, flags=re.I)
-        for num in set(RE_NUMBER.findall(number_text)):
+            for _ in range(8):           # the linker reports each entity once
+                before = number_text
+                for e in linker(number_text):
+                    mt = e.get("matched_text") or ""
+                    if mt and e.get("type") != "Refused" and re.search(r"\d", mt):
+                        number_text = re.sub(r"[\W_]+".join(map(re.escape, mt.split())),
+                                             " ", number_text, flags=re.I)
+                if number_text == before:
+                    break
+        for num in {n.rstrip(",") for n in RE_NUMBER.findall(number_text)}:
             if num in phase_nums and (linker is not None or f"phase{num}" in haystack_flat):
                 continue      # with a linker, claims.py checks the phase per entity
             if num.replace(",", "") not in haystack_numbers:

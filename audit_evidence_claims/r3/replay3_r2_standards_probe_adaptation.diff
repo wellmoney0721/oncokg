@@ -1,0 +1,28 @@
+--- audit_evidence_claims\r2\standards_probe.py
++++ audit_evidence_claims\r3\replay3_r2_standards_probe.py
+@@ -1,6 +1,6 @@
+ """Read-only graph probes: refused spans, alias acceptance, punctuation, docs.
+ 
+-Run from repository root: python -B audit_evidence_claims/r2/standards_probe.py
++Run from repository root: python -B audit_evidence_claims/r3/replay3_r2_standards_probe.py
+ All writes are next to this file; no network or model calls.
+ """
+ import sys
+@@ -36,7 +36,7 @@
+ results = []
+ for name, question, answer in cases:
+     result = engine.check(question, answer)
+-    toks, ents = _tokenise(answer, engine.kg.link_entities, {}, None)
++    toks, ents = _tokenise(answer, engine.kg.link_entities)
+     results.append({"case": name, "question": question, "answer": answer,
+                     "linked": engine.kg.link_entities(answer),
+                     "tokens": toks, "token_entities": ents, **result})
+@@ -65,7 +65,7 @@
+     if not intended:
+         continue
+     total_linked += 1
+-    _, entities = _tokenise(alias, engine.kg.link_entities, {}, None)
++    _, entities = _tokenise(alias, engine.kg.link_entities)
+     after = {e.get("id") for e in entities if e["type"] == "Drug"}
+     if not intended & after:
+         losses.append({"alias": alias, "linked": linked, "token_entities": entities})

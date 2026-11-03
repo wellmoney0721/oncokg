@@ -1,0 +1,69 @@
+[
+  {
+    "round": "R1",
+    "source": "audit_evidence_claims\\independent_main.py",
+    "source_sha256": "9b06c5ba7a8346d27232f9f0640afd92a77f350ff8d2e3e77dafcd8ce5e90fe4",
+    "copy": "audit_evidence_claims\\r3\\replay3_main.py",
+    "returncode": 0
+  },
+  {
+    "round": "R1",
+    "source": "audit_evidence_claims\\independent_adversarial_probe.py",
+    "source_sha256": "1547ae2b8a3d760db888ae90ad4262a8a05133e23579a4eb8488dd029f712bc9",
+    "copy": "audit_evidence_claims\\r3\\replay3_adversarial_probe.py",
+    "returncode": 0
+  },
+  {
+    "round": "R1",
+    "source": "audit_evidence_claims\\independent_adversarial_pairs.py",
+    "source_sha256": "2627cd5fbf061423adb7f5b278bae808163e3bb4a15ca2eee4c5eb780ba67946",
+    "copy": "audit_evidence_claims\\r3\\replay3_adversarial_pairs.py",
+    "returncode": 0
+  },
+  {
+    "round": "R1",
+    "source": "audit_evidence_claims\\independent_faithful_probe.py",
+    "source_sha256": "399905d73966149d2416b2b91a5d920a2695c0ee04c3b3029ab86e7f1510d6e7",
+    "copy": "audit_evidence_claims\\r3\\replay3_faithful_probe.py",
+    "returncode": 0
+  },
+  {
+    "round": "R1",
+    "source": "audit_evidence_claims\\independent_code_dictionary.py",
+    "source_sha256": "013bb031eecf0f05e2532cd95e0d533e9242223f2ece207b8f07207967d11ce0",
+    "copy": "audit_evidence_claims\\r3\\replay3_code_dictionary.py",
+    "returncode": 0
+  },
+  {
+    "round": "R1",
+    "source": "audit_evidence_claims\\independent_code_probes.py",
+    "source_sha256": "2338449d3dc1a657aca974773ba6bb3cdb88659b79e83288efb1451cf017eed4",
+    "copy": "audit_evidence_claims\\r3\\replay3_code_probes.py",
+    "returncode": 0
+  },
+  {
+    "round": "R2",
+    "source": "audit_evidence_claims\\r2\\root_design_probe.py",
+    "source_sha256": "4dde15074e4c3e33c1bbb094f9c559c57ff50fb5acdce5c110fc9751a8b08054",
+    "copy": "audit_evidence_claims\\r3\\replay3_r2_root_design_probe.py",
+    "returncode": 0
+  },
+  {
+    "round": "R2",
+    "source": "audit_evidence_claims\\r2\\spec_probe.py",
+    "source_sha256": "40141d0c40c239374d6a8e83e3c1b86b364461137f29c5d7177e10d38b2a54ca",
+    "copy": "audit_evidence_claims\\r3\\replay3_r2_spec_probe.py",
+    "returncode": 0
+  },
+  {
+    "round": "R2",
+    "source": "audit_evidence_claims\\r2\\standards_probe.py",
+    "source_sha256": "abab566ef1c642b9b3e6724f9a153c24fa6e14f9b9d6b2309e838d54d96c5064",
+    "copy": "audit_evidence_claims\\r3\\replay3_r2_standards_probe.py",
+    "returncode": 0
+  },
+  {
+    "command": "python -m pytest tests -q -p no:cacheprovider",
+    "returncode": 0
+  }
+]
