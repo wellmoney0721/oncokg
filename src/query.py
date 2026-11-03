@@ -125,7 +125,15 @@ _MEDICAL_MASS = {"h": {3}, "c": {11, 14}, "n": {13}, "o": {15}, "f": {18},
                  "p": {32}, "s": {35}, "cu": {61, 62, 64, 67}, "ga": {67, 68}, "br": {76, 77},
                  "rb": {82}, "sr": {89, 90}, "y": {86, 90}, "zr": {89}, "tc": {99}, "in": {111},
                  "i": {123, 124, 125, 131}, "sm": {153}, "lu": {177}, "re": {186, 188},
-                 "pb": {203, 212}, "at": {211}, "ra": {223}, "ac": {225}}
+                 "pb": {203, 212}, "at": {211}, "ra": {223}, "ac": {225},
+                 # therapy and imaging nuclides whose symbols do not start common words
+                 "tb": {149, 152, 155, 161}, "th": {227}, "bi": {212, 213}, "sc": {43, 44, 47},
+                 "ho": {166}, "tl": {201}, "xe": {133}, "au": {198}, "pd": {103},
+                 "ir": {192}, "ag": {111}, "sn": {117}, "dy": {165}, "pt": {195}}
+# Further nuclides, recognised only beside their written-out element name: their symbols
+# begin ordinary words ("75 several", "51 criteria"), so a bare symbol would over-refuse.
+_NAME_MASS = {**_MEDICAL_MASS, "er": {169}, "se": {75}, "cr": {51}, "co": {57, 58, 60},
+              "ce": {134}, "la": {132, 135}, "fe": {59}, "cs": {131, 137}, "mn": {52}}
 
 
 def _medical_isotope(label: str) -> bool:
@@ -159,7 +167,19 @@ _ELEMENT_NAMES = {"hydrogen": "h", "tritium": "h", "carbon": "c", "nitrogen": "n
                   "strontium": "sr", "yttrium": "y", "zirconium": "zr", "technetium": "tc",
                   "indium": "in", "iodine": "i", "samarium": "sm", "lutetium": "lu",
                   "lutecium": "lu", "rhenium": "re", "lead": "pb", "astatine": "at",
-                  "radium": "ra", "actinium": "ac"}
+                  "radium": "ra", "actinium": "ac", "terbium": "tb", "thorium": "th",
+                  "bismuth": "bi", "scandium": "sc", "holmium": "ho", "thallium": "tl",
+                  "xenon": "xe", "gold": "au", "palladium": "pd", "iridium": "ir",
+                  "silver": "ag", "tin": "sn", "dysprosium": "dy", "platinum": "pt",
+                  "erbium": "er", "selenium": "se", "chromium": "cr", "cobalt": "co",
+                  "cerium": "ce", "lanthanum": "la", "iron": "fe", "caesium": "cs",
+                  "cesium": "cs", "manganese": "mn"}
+# Stems that say the substance carries a radioactive label, read on a word or on two or
+# three neighbouring words glued ("radio-labelled", "radio-immuno-conjugate").
+_LABEL_STEMS = ("radiolabel", "radioiod", "radioactiv", "radioconjug", "radioimmuno",
+                "radiotracer", "radioligand", "radionuclid", "radiopharm", "tritiat")
+# A word just before the label that says the opposite ("non-radio-labelled")
+_NOT_WORDS = {"non", "not", "no", "un", "without"}
 # Words that say the substance carries a radioactive label.
 _LABEL_WORDS = {"tritiated", "tritium", "radiotracer", "radiotracers", "radioligand", "radionuclide",
                 "radioconjugate", "radioimmunoconjugate", "radiopharmaceutical", "radioactive",
@@ -175,17 +195,30 @@ def _item_has_isotope(words: tuple) -> bool:
     if _medical_isotope_in(T.canonical_key(" ".join(words)), one_letter=False):
         return True
     flat = [x.lower() for x in _alnum_words(" ".join(words))]
-    # each word, and each neighbouring pair glued ("radio-labelled", "tri tiated")
-    joined = flat + [a + b for a, b in zip(flat, flat[1:])]
-    if any(x in _LABEL_WORDS or x.startswith(("radiolabel", "radioiod")) for x in joined):
-        return True                          # "radiolabelled", "tritiated", "radiotracer"
-    # element names written out, in either order ("iodine-124", "99m-technetium")
+    # each word, and two or three neighbouring words glued ("radio-labelled",
+    # "radio-immuno-conjugate"), unless a negation stands just before ("non-radio-labelled")
+    for i in range(len(flat)):
+        if i and flat[i - 1] in _NOT_WORDS:
+            continue
+        for j in range(i + 1, min(len(flat), i + 3) + 1):
+            x = "".join(flat[i:j])
+            if x in _LABEL_WORDS or x.startswith(_LABEL_STEMS):
+                return True                  # "radiolabelled", "tritiated", "radiotracer"
+
+    def named(name: str, num: str) -> bool:
+        el = _ELEMENT_NAMES.get(name)
+        m = re.fullmatch(r"(\d{1,3})m?", num)
+        return bool(el and m and int(m.group(1)) in _NAME_MASS.get(el, set()))
+
+    # element names written out, in either order, apart or glued ("iodine-124",
+    # "99m-technetium", "iodine124", "technetium99m", "99mtechnetium")
     for a, b in zip(flat, flat[1:]):
-        for name, num in ((a, b), (b, a)):
-            el = _ELEMENT_NAMES.get(name)
-            m = re.fullmatch(r"(\d{1,3})m?", num)
-            if el and m and int(m.group(1)) in _MEDICAL_MASS.get(el, set()):
-                return True
+        if named(a, b) or named(b, a):
+            return True
+    for x in flat:
+        m = re.fullmatch(r"(\d{1,3}m?)([a-z]+)|([a-z]+)(\d{1,3}m?)", x)
+        if m and (named(m.group(2), m.group(1)) if m.group(1) else named(m.group(3), m.group(4))):
+            return True
     for w in words:
         # the word as written, and its punctuation-separated pieces with each neighbouring
         # pair glued, so a boundary the punctuation marks is kept ("labelled-I-124")

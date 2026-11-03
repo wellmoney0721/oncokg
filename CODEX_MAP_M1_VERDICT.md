@@ -211,3 +211,13 @@ A drug whose own name carries the label is still allowed ("fluorine-18 fluorodeo
 | M19-B2 | "trastuzumab labelled with 99m-technetium" | a mass beside a written-out element may carry the metastable "m", in either order |
 
 "radiotherapy plus cisplatin" and "cisplatin and radiation" still draw cisplatin. Stored-alias sweep: no change. Tests 347.
+
+## Round 20 (audit_evidence_claims/m20) — CHANGES REQUIRED (one blocker)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M20-B1 | "trastuzumab labelled with terbium-161", "[161Tb] trastuzumab" (also 227Th, 213Bi): therapy nuclides missing from the isotope tables | Tb, Th, Bi, Sc, Ho, Tl, Xe, Au, Pd, Ir, Ag, Sn, Dy, Pt added (symbols, masses, element names); Er, Se, Cr, Co, Ce, La, Fe, Cs, Mn only beside the written-out element name, because their symbols begin ordinary words ("75 several", "51 criteria") |
+| inherited | "radioactively labelled", "radioconjugated", "iodine124", "99mtechnetium", "technetium99m", "radio-immuno-conjugate" | label stems read on one to three glued neighbouring words; element name and mass also read glued in one word |
+| M20-S1 | "non-radio-labelled trastuzumab" over-refused | a label run right after "non"/"not"/"no"/"un"/"without" does not count |
+
+Stored-alias sweep: no change. Tests 348.

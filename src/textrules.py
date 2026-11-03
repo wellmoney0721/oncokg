@@ -290,6 +290,7 @@ RE_ISOTOPE = re.compile(r"^\[?(\d{1,3}m?)[\s\-]?([A-Za-z]{1,2})\]?$")
 ISOTOPE_ELEMENTS = {
     "f", "c", "n", "o", "ga", "cu", "zr", "i", "lu", "tc", "in", "y", "at",
     "ac", "pb", "re", "sm", "sr", "ra", "rb", "br", "h", "p", "s",
+    "tb", "th", "bi", "sc", "ho", "tl", "xe", "au", "pd", "ir", "ag", "sn", "dy", "pt",
 }
 
 

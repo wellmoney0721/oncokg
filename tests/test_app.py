@@ -448,3 +448,18 @@ def test_split_labelling_words_and_metastable_mass_first_refuse():
         assert e.explore(t).get("refused"), t
     for t in ("radiotherapy plus cisplatin", "cisplatin and radiation"):
         assert e.explore(t)["center"]["label"] == "CISPLATIN", t
+
+
+# Codex review m20
+def test_therapy_nuclides_and_label_spellings_refuse():
+    import app
+    e = app.Engine()
+    for t in ("trastuzumab labelled with terbium-161", "[161Tb] trastuzumab", "Tb-161 trastuzumab",
+              "161Tb Herceptin", "227Th trastuzumab", "trastuzumab labelled with bismuth-213",
+              "trastuzumab radioactively labelled", "radioconjugated trastuzumab",
+              "trastuzumab labelled with iodine124", "99mtechnetium trastuzumab",
+              "radio-immuno-conjugate trastuzumab"):
+        assert e.explore(t).get("refused"), t
+    for t in ("non-radio-labelled trastuzumab", "unlabelled trastuzumab", "trastuzumab 600 mg sc"):
+        assert e.explore(t)["center"]["label"] == "TRASTUZUMAB", t
+    assert e.explore("osimertinib 51 criteria")["center"]["label"] == "OSIMERTINIB"
