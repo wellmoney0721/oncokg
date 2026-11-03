@@ -23,3 +23,6 @@
 
 그대로 둔 것: `supports trials`(단어 없는 바꿔 말하기 — 엄격 의도), 대명사로 된 거절 문장(실제 질의 경로는 검사 전에 거절함).
 시험 175개(1차 공격 33 + 2차 공격 39 전부 grounded=False, 충실한 문장 24개 전부 통과).
+
+기록 주의: 수리 확인 때 2차 탐침(`root_design_probe.py`, `spec_probe.py`)을 다시 돌려 그 옆 JSON(`root_design_probe.json`, `spec_probe_results.json`)이
+수리 후 결과로 덮였다. 2차 당시 결과는 `r2_report.md`의 표가 원본이다.
