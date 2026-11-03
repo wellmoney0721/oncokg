@@ -518,7 +518,7 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
     }).join("");
     return `<div class="demo"><p class="q">${esc(d.question)}</p>`+
       `<div class="meta"><span class="chip k">${esc(INTENT[d.intent]||d.intent)}</span>`+
-      `<span class="chip k ${refused?"":(g?"ok":"medium")}">${refused?"답하지 않음":(g?"근거와 일치":"근거에 없는 내용 있음")}</span>`+
+      `<span class="chip k ${refused?"":(g===null?"":(g?"ok":"medium"))}">${refused?"답하지 않음":(g===null?"근거를 그대로 옮김 (검사 해당 없음)":(g?"근거와 일치":"근거에 없는 내용 있음"))}</span>`+
       `<span class="chip k">${refused?"근거 없음 → 거절":"언어 모델 없이 정해진 틀로 작성"}</span></div>`+
       `<pre class="ans">${esc(d.answer)}</pre>`+
       (ev?`<details><summary>근거와 출처 보기 (${d.evidence.length}개)</summary>`+

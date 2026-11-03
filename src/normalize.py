@@ -618,6 +618,21 @@ def _raw_parts_by_cleaned(raw: str, parts: list[str]) -> dict[str, str]:
     return out
 
 
+def target_guard_keys(target_rows: list[dict], dic: dict) -> set[str]:
+    """Names of targets, so a gene symbol in an intervention is refused, not matched."""
+    keys = set()
+    for r in target_rows:
+        t = r["target"]
+        for label in [t.get("approvedSymbol"), t.get("approvedName")]:
+            if label:
+                keys.add(T.canonical_key(label))
+        for grp in ("synonyms", "symbolSynonyms", "nameSynonyms", "obsoleteSymbols"):
+            for a in (t.get(grp) or []):
+                if a.get("label"):
+                    keys.add(T.canonical_key(a["label"]))
+    return keys - set(dic["index"].keys())   # a term that is also a drug stays a drug
+
+
 def resolve_drug_string(raw: str, dic: dict, index_keys: list[str],
                         target_keys: set | None = None) -> dict:
     """Resolve one intervention string into one or more component resolutions."""
@@ -1232,17 +1247,7 @@ def main() -> None:
     ddic = build_disease_dictionary(disease)
     print(f"  disease dictionary: {len(ddic['index'])} surface forms")
 
-    target_keys = set()
-    for r in target_rows:
-        t = r["target"]
-        for label in [t.get("approvedSymbol"), t.get("approvedName")]:
-            if label:
-                target_keys.add(T.canonical_key(label))
-        for grp in ("synonyms", "symbolSynonyms", "nameSynonyms", "obsoleteSymbols"):
-            for a in (t.get(grp) or []):
-                if a.get("label"):
-                    target_keys.add(T.canonical_key(a["label"]))
-    target_keys -= set(dic["index"].keys())   # a term that is also a drug stays a drug
+    target_keys = target_guard_keys(target_rows, dic)
     print(f"  target guard vocabulary: {len(target_keys)} symbols")
 
     print("resolving trial records ...")

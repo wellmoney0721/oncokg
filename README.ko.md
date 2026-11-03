@@ -368,7 +368,8 @@ pip install -r requirements.txt
 python src/run_all.py              # 수집 → 해석 → 검증 → 그래프 → 채점 → 렌더
 python src/run_all.py --offline    # data/raw 스냅샷으로 재현
 
-python -m pytest tests -q          # 56개 테스트
+python -m pytest tests -q          # 59개 테스트
+python src/app.py                  # 직접 써 보기 화면: http://localhost:8765
 python src/apply_label_corrections.py --check
 python src/curation_effect.py      # 큐레이션 전후 두 번 해석
 python src/query.py "Which companies are developing osimertinib?"
