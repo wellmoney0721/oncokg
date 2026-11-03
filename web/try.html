@@ -143,9 +143,10 @@ function groupHead(g){
   const who = g.type==="Investigator" ? "연구자" : "기관";
   const k = g.rel+"|"+g.dir;
   if(g.rel==="SPONSORS"){
-    const lead = g.role==="lead_sponsor";
-    if(g.dir==="in") return [lead?`이 임상의 책임 주관 ${who} (lead sponsor)`:`이 임상의 협력 ${who} (collaborator)`, "이름 순"];
-    return [lead?"이곳이 책임 주관한 임상 (lead sponsor)":"이곳이 협력한 임상 (collaborator)", "시작일 최근 순"];
+    // a role the graph does not record is shown as plain sponsorship, never guessed
+    const r = g.role==="lead_sponsor" ? "lead" : g.role==="collaborator" ? "collab" : "";
+    if(g.dir==="in") return [r==="lead"?`이 임상의 책임 주관 ${who} (lead sponsor)`:r==="collab"?`이 임상의 협력 ${who} (collaborator)`:`이 임상의 후원 ${who} (역할 기록 없음)`, "이름 순"];
+    return [r==="lead"?"이곳이 책임 주관한 임상 (lead sponsor)":r==="collab"?"이곳이 협력한 임상 (collaborator)":"이곳이 후원한 임상 (역할 기록 없음)", "시작일 최근 순"];
   }
   const H = {"EVALUATES|in":["이 약을 시험하는 임상","시작일 최근 순"], "EVALUATES|out":["이 임상이 시험하는 약","그래프 안 임상 많은 순"],
     "SPONSORS_TRIAL_OF|in":["이 약의 임상을 책임 주관한 곳 (주관 ≠ 개발)","주관한 임상 많은 순"],

@@ -154,7 +154,8 @@ class Engine:
             groups.setdefault(key, []).append(item)
         out = []
         for (rel, direction, ntype, role), items in groups.items():
-            items.sort(key=lambda x: (x["weight"], x["label"] or ""), reverse=True)
+            items.sort(key=lambda x: x["label"] or "")              # names A to Z
+            items.sort(key=lambda x: x["weight"], reverse=True)     # then by the stated weight
             out.append({"rel": rel, "dir": direction, "type": ntype, "role": role,
                         "total": len(items), "items": items[:per_group]})
         out.sort(key=lambda g: -g["total"])

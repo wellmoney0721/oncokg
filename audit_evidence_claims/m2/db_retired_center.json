@@ -1,0 +1,363 @@
+{
+  "setup": "In-memory backup only",
+  "mutation_sql": "UPDATE node SET retired_at='AUDIT_FIXTURE' WHERE id='CHEMBL3353410'",
+  "requests": [
+    {
+      "input": "osimertinib",
+      "status": 200,
+      "response": {
+        "not_found": "osimertinib"
+      }
+    },
+    {
+      "input": "CHEMBL3353410",
+      "status": 200,
+      "response": {
+        "not_found": "CHEMBL3353410"
+      }
+    },
+    {
+      "input": "EGFR",
+      "status": 200,
+      "response": {
+        "center": {
+          "id": "ENSG00000146648",
+          "type": "Target",
+          "label": "EGFR",
+          "matched_text": "EGFR",
+          "trials": null,
+          "props": {}
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "ACTS_ON",
+            "dir": "in",
+            "type": "Drug",
+            "role": null,
+            "total": 57,
+            "items": [
+              {
+                "id": "CHEMBL553",
+                "type": "Drug",
+                "label": "ERLOTINIB",
+                "edge_id": "CHEMBL553|ACTS_ON|ENSG00000146648|CHEMBL553",
+                "trials": 118,
+                "max_phase": "APPROVAL",
+                "weight": 118,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL939",
+                "type": "Drug",
+                "label": "GEFITINIB",
+                "edge_id": "CHEMBL939|ACTS_ON|ENSG00000146648|CHEMBL939",
+                "trials": 62,
+                "max_phase": "APPROVAL",
+                "weight": 62,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL1201577",
+                "type": "Drug",
+                "label": "CETUXIMAB",
+                "edge_id": "CHEMBL1201577|ACTS_ON|ENSG00000146648|CHEMBL1201577",
+                "trials": 41,
+                "max_phase": "APPROVAL",
+                "weight": 41,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL1079742",
+                "type": "Drug",
+                "label": "ERLOTINIB HYDROCHLORIDE",
+                "edge_id": "CHEMBL1079742|ACTS_ON|ENSG00000146648|CHEMBL1079742",
+                "trials": 31,
+                "max_phase": "APPROVAL",
+                "weight": 31,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL4297258",
+                "type": "Drug",
+                "label": "FIRMONERTINIB",
+                "edge_id": "CHEMBL4297258|ACTS_ON|ENSG00000146648|CHEMBL4297258",
+                "trials": 22,
+                "max_phase": "APPROVAL",
+                "weight": 22,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL2087361",
+                "type": "Drug",
+                "label": "ICOTINIB",
+                "edge_id": "CHEMBL2087361|ACTS_ON|ENSG00000146648|CHEMBL2087361",
+                "trials": 19,
+                "max_phase": "APPROVAL",
+                "weight": 19,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL1173655",
+                "type": "Drug",
+                "label": "AFATINIB",
+                "edge_id": "CHEMBL1173655|ACTS_ON|ENSG00000146648|CHEMBL1173655",
+                "trials": 18,
+                "max_phase": "APPROVAL",
+                "weight": 18,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL4761468",
+                "type": "Drug",
+                "label": "AUMOLERTINIB",
+                "edge_id": "CHEMBL4761468|ACTS_ON|ENSG00000146648|CHEMBL4761468",
+                "trials": 16,
+                "max_phase": "APPROVAL",
+                "weight": 16,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL4558324",
+                "type": "Drug",
+                "label": "LAZERTINIB",
+                "edge_id": "CHEMBL4558324|ACTS_ON|ENSG00000146648|CHEMBL4558324",
+                "trials": 15,
+                "max_phase": "APPROVAL",
+                "weight": 15,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL24828",
+                "type": "Drug",
+                "label": "VANDETANIB",
+                "edge_id": "CHEMBL24828|ACTS_ON|ENSG00000146648|CHEMBL24828",
+                "trials": 12,
+                "max_phase": "APPROVAL",
+                "weight": 12,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL4297774",
+                "type": "Drug",
+                "label": "AMIVANTAMAB",
+                "edge_id": "CHEMBL4297774|ACTS_ON|ENSG00000146648|CHEMBL4297774",
+                "trials": 11,
+                "max_phase": "APPROVAL",
+                "weight": 11,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL1743047",
+                "type": "Drug",
+                "label": "NECITUMUMAB",
+                "edge_id": "CHEMBL1743047|ACTS_ON|ENSG00000146648|CHEMBL1743047",
+                "trials": 9,
+                "max_phase": "APPROVAL",
+                "weight": 9,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3545311",
+                "type": "Drug",
+                "label": "BRIGATINIB",
+                "edge_id": "CHEMBL3545311|ACTS_ON|ENSG00000146648|CHEMBL3545311",
+                "trials": 9,
+                "max_phase": "APPROVAL",
+                "weight": 9,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL1201827",
+                "type": "Drug",
+                "label": "PANITUMUMAB",
+                "edge_id": "CHEMBL1201827|ACTS_ON|ENSG00000146648|CHEMBL1201827",
+                "trials": 8,
+                "max_phase": "APPROVAL",
+                "weight": 8,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3545063",
+                "type": "Drug",
+                "label": "OSIMERTINIB MESYLATE",
+                "edge_id": "CHEMBL3545063|ACTS_ON|ENSG00000146648|CHEMBL3545063",
+                "trials": 7,
+                "max_phase": "APPROVAL",
+                "weight": 7,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL2105719",
+                "type": "Drug",
+                "label": "DACOMITINIB",
+                "edge_id": "CHEMBL2105719|ACTS_ON|ENSG00000146648|CHEMBL2105719",
+                "trials": 7,
+                "max_phase": "APPROVAL",
+                "weight": 7,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3647420",
+                "type": "Drug",
+                "label": "PYROTINIB",
+                "edge_id": "CHEMBL3647420|ACTS_ON|ENSG00000146648|CHEMBL3647420",
+                "trials": 6,
+                "max_phase": "APPROVAL",
+                "weight": 6,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL554",
+                "type": "Drug",
+                "label": "LAPATINIB",
+                "edge_id": "CHEMBL554|ACTS_ON|ENSG00000146648|CHEMBL554",
+                "trials": 5,
+                "max_phase": "APPROVAL",
+                "weight": 5,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3545154",
+                "type": "Drug",
+                "label": "POZIOTINIB",
+                "edge_id": "CHEMBL3545154|ACTS_ON|ENSG00000146648|CHEMBL3545154",
+                "trials": 4,
+                "max_phase": "PHASE_3",
+                "weight": 4,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL2110732",
+                "type": "Drug",
+                "label": "DACOMITINIB ANHYDROUS",
+                "edge_id": "CHEMBL2110732|ACTS_ON|ENSG00000146648|CHEMBL2110732",
+                "trials": 4,
+                "max_phase": "APPROVAL",
+                "weight": 4,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3545308",
+                "type": "Drug",
+                "label": "ROCILETINIB",
+                "edge_id": "CHEMBL3545308|ACTS_ON|ENSG00000146648|CHEMBL3545308",
+                "trials": 3,
+                "max_phase": "APPROVAL",
+                "weight": 3,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL2108359",
+                "type": "Drug",
+                "label": "NIMOTUZUMAB",
+                "edge_id": "CHEMBL2108359|ACTS_ON|ENSG00000146648|CHEMBL2108359",
+                "trials": 3,
+                "max_phase": "APPROVAL",
+                "weight": 3,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL4650281",
+                "type": "Drug",
+                "label": "CLN-081",
+                "edge_id": "CHEMBL4650281|ACTS_ON|ENSG00000146648|CHEMBL4650281",
+                "trials": 3,
+                "max_phase": "PHASE_3",
+                "weight": 3,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL4594549",
+                "type": "Drug",
+                "label": "PIMURUTAMAB",
+                "edge_id": "CHEMBL4594549|ACTS_ON|ENSG00000146648|CHEMBL4594549",
+                "trials": 2,
+                "max_phase": "PHASE_2_3",
+                "weight": 2,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL180022",
+                "type": "Drug",
+                "label": "NERATINIB",
+                "edge_id": "CHEMBL180022|ACTS_ON|ENSG00000146648|CHEMBL180022",
+                "trials": 2,
+                "max_phase": "APPROVAL",
+                "weight": 2,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3787344",
+                "type": "Drug",
+                "label": "NAZARTINIB",
+                "edge_id": "CHEMBL3787344|ACTS_ON|ENSG00000146648|CHEMBL3787344",
+                "trials": 2,
+                "max_phase": "PHASE_3",
+                "weight": 2,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3663929",
+                "type": "Drug",
+                "label": "NAQUOTINIB",
+                "edge_id": "CHEMBL3663929|ACTS_ON|ENSG00000146648|CHEMBL3663929",
+                "trials": 2,
+                "max_phase": "PHASE_3",
+                "weight": 2,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL4650319",
+                "type": "Drug",
+                "label": "MOBOCERTINIB",
+                "edge_id": "CHEMBL4650319|ACTS_ON|ENSG00000146648|CHEMBL4650319",
+                "trials": 2,
+                "max_phase": "APPROVAL",
+                "weight": 2,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL31965",
+                "type": "Drug",
+                "label": "CANERTINIB",
+                "edge_id": "CHEMBL31965|ACTS_ON|ENSG00000146648|CHEMBL31965",
+                "trials": 2,
+                "max_phase": "PHASE_2",
+                "weight": 2,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3623290",
+                "type": "Drug",
+                "label": "AZD-3759",
+                "edge_id": "CHEMBL3623290|ACTS_ON|ENSG00000146648|CHEMBL3623290",
+                "trials": 2,
+                "max_phase": "PHASE_2_3",
+                "weight": 2,
+                "action": "INHIBITOR"
+              }
+            ]
+          },
+          {
+            "rel": "ASSOCIATED_WITH",
+            "dir": "out",
+            "type": "Disease",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "MONDO_0005233",
+                "type": "Disease",
+                "label": "non-small cell lung carcinoma",
+                "edge_id": "ENSG00000146648|ASSOCIATED_WITH|MONDO_0005233|MONDO_0005233",
+                "score": 0.8883707400322897,
+                "weight": 0.8883707400322897
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -12,3 +12,8 @@ Report: `audit_evidence_claims/m1/REPORT.md`. Verdict: CHANGES REQUIRED. Every f
 | should-fix | ordering wording, ring cut silently, stale trail after errors, out-of-order replies, ambiguous names silent, action/class labels, omitted details, malformed props, `javascript:` URLs, "All three" | each group states its actual sort; ring says drawn/total; trail cleared on refusal/not-found/error; replies older than the latest request are dropped; the reading and other matches (company, target, refused span) are shown; stored action codes shown with a Korean gloss; sponsor class code shown; centre start date, drug count and phase always shown; props that are not objects read as empty; only clinicaltrials.gov links are clickable; docstring fixed |
 
 Tests 321.
+
+Round 2 (audit_evidence_claims/m2) stopped at Codex's usage limit before a report (log.txt ends with the limit error).
+Its partial fixtures showed a SPONSORS edge without a role would be labelled collaborator; the page now says
+"역할 기록 없음" for any role other than lead_sponsor/collaborator. Groups shown as "이름 순" were sorted Z to A; now A to Z
+within equal weight. Round 2 to be re-run when the limit resets (2026-11-04 15:37).
