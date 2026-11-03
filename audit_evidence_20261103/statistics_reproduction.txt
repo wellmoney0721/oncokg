@@ -1,0 +1,52 @@
+# Independent statistics reproduction (read-only; Python with NumPy)
+import csv, json, math
+from pathlib import Path
+from collections import defaultdict
+import numpy as np
+ACCEPT = {'EXACT','ALIAS','CLEANED','SALT_STRIPPED','PARENTHETICAL','CONTAINED_ALIAS','FUZZY_AUTO'}
+resolved = json.loads(Path('data/processed/resolved.json').read_text(encoding='utf8'))
+population = defaultdict(set)
+for trial in resolved['trials']:
+    for intervention in trial['interventions']:
+        for component in intervention['components']:
+            population[component['tier']].add((intervention['raw'], component['component'], component.get('drug_id')))
+weights = {tier: len(population[tier]) for tier in ACCEPT}
+W = sum(weights.values())
+rows = list(csv.DictReader(open('reports/gold_test.csv', encoding='utf8')))
+accepted = [row for row in rows if row['tier'] in ACCEPT]
+n, k = len(accepted), sum(row['verdict'] == 'correct' for row in accepted)
+p, z = k/n, 1.959963984540054
+center = (p + z*z/(2*n)) / (1 + z*z/n)
+half = z * math.sqrt(p*(1-p)/n + z*z/(4*n*n)) / (1 + z*z/n)
+print('Raw and Wilson', k, n, p, center-half, center+half)
+sampled = defaultdict(list)
+for row in rows:
+    sampled[row['tier']].append(row['verdict'] == 'correct')
+dev = defaultdict(list)
+for row in csv.DictReader(open('reports/gold_dev.csv', encoding='utf8')):
+    dev[row['tier']].append(row['verdict'] == 'correct')
+carried = set(dev) - set(sampled)
+for tier in carried:
+    sampled[tier] = dev[tier]
+rates = {tier: sum(sampled[tier])/len(sampled[tier]) for tier in ACCEPT}
+print('Weighted point', sum(weights[t]*rates[t] for t in ACCEPT)/W)
+print('Carried accepted share', sum(weights[t] for t in ACCEPT & carried)/W)
+print('Exclude carried', sum(weights[t]*rates[t] for t in ACCEPT-carried) / sum(weights[t] for t in ACCEPT-carried))
+rng = np.random.default_rng(20261103)
+bootstrap = sum(weights[t] * rng.binomial(len(sampled[t]), rates[t], 200000) / len(sampled[t]) for t in sorted(ACCEPT)) / W
+print('Bootstrap percentiles', np.quantile(bootstrap,[.025,.975]))
+# Bootstrap is conditional on the observed empirical distributions; all-success tiers cannot produce errors.
+# Hypothetical independent-binomial coverage experiment of the published interval rule.
+tiers = sorted(ACCEPT)
+ww = np.array([weights[t] for t in tiers],float)/W
+nn = np.array([len(sampled[t]) for t in tiers])
+rng = np.random.default_rng(42)
+for true_p in [.5,.9,.95,.97,.99,.995,.999]:
+    kk = rng.binomial(nn, np.repeat(true_p,len(nn)), size=(200000,len(nn)))
+    phat = kk/nn
+    z = 1.96
+    center = (phat + z*z/(2*nn)) / (1 + z*z/nn)
+    half = z*np.sqrt(phat*(1-phat)/nn + z*z/(4*nn*nn)) / (1 + z*z/nn)
+    lo = (np.round(center-half,4)*ww).sum(axis=1)
+    hi = (np.round(center+half,4)*ww).sum(axis=1)
+    print('True p and interval coverage', true_p, ((lo<=true_p)&(hi>=true_p)).mean())

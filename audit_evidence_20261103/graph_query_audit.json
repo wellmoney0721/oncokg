@@ -1,0 +1,847 @@
+{
+  "api_key_present": false,
+  "queries": [
+    {
+      "question": "Which companies are developing osimertinib?",
+      "intent": "companies_for_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    },
+    {
+      "question": "Is pembrolizumab safe in patients with autoimmune disease?",
+      "intent": "drug_profile",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3137343",
+          "label": "PEMBROLIZUMAB",
+          "matched_text": "pembrolizumab",
+          "matched_alias": "PEMBROLIZUMAB"
+        }
+      ],
+      "answer": "Profile:\n  - PEMBROLIZUMAB is a Antibody, max clinical stage APPROVAL, appearing in 216 NSCLC trial(s) in this graph [CHEMBL3137343]\n  - PEMBROLIZUMAB acts on PDCD1 (inhibitor) [CHEMBL3137343]\n\nScope: 2 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 2,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "PEMBROLIZUMAB is a Antibody, max clinical stage APPROVAL, appearing in 216 NSCLC trial(s) in this graph",
+          "relation": "PROFILE",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3137343",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "aliases_known": 35,
+          "mechanisms": [
+            "Programmed cell death protein 1 inhibitor"
+          ]
+        },
+        {
+          "statement": "PEMBROLIZUMAB acts on PDCD1 (inhibitor)",
+          "relation": "ACTS_ON",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3137343",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    {
+      "question": "What is the capital of France?",
+      "intent": "unsupported",
+      "entities": [],
+      "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    },
+    {
+      "question": "What is AstraZeneca running in NSCLC?",
+      "intent": "company_portfolio",
+      "entities": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "AstraZeneca",
+          "also_matching_ids": []
+        },
+        {
+          "type": "Disease",
+          "id": "MONDO_0005233",
+          "label": "non-small cell lung carcinoma",
+          "matched_text": "NSCLC"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    },
+    {
+      "question": "What trials evaluate Tagrisso?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Tagrisso",
+          "matched_alias": "Tagrisso"
+        }
+      ],
+      "answer": "Trials evaluating this drug:\n  - NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT03909334]\n  - NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB [NCT07680790]\n  - NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT02411448]\n  - NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04285671]\n  - NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04141644]\n  - NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT03535363]\n  - NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04487080]\n  - NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB [NCT07738172]\n  - NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT04541407]\n  - NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB [NCT04772235]\n  - NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB [NCT05011487]\n  - NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT04479306]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03909334",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03909334",
+          "stated_intervention": "Osimertinib",
+          "title": "Study of Osimertinib With and Without Ramucirumab in Locally Advanced or Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT07680790",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT07680790",
+          "stated_intervention": "Osimertinib",
+          "title": "Study of Izalontamab Brengitecan (BMS-986507) in Combination With Osimertinib Versus Osimertinib Monotherapy or Osimertinib in Combination With Platinum-based Chemotherapy for EGFRmt Non-small Cell Lung Cancer (IZABRIGHT-Lung02)",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT02411448",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT02411448",
+          "stated_intervention": "Osimertinib",
+          "title": "A Study of Ramucirumab (LY3009806) in Combination With Erlotinib in Previously Untreated Participants With EGFR Mutation-Positive Metastatic NSCLC (RELAY)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04285671",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04285671",
+          "stated_intervention": "Osimertinib",
+          "title": "Necitumumab and Trastuzumab in Combination With Osimertinib for the Treatment of Refractory Epidermal Growth Factor Receptor (EGFR)-Mutated Stage IV Non-small Cell Lung Cancer",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04141644",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04141644",
+          "stated_intervention": "Osimertinib",
+          "title": "Safety and Efficacy of Combination Osimertinib and Ipilimumab in Patients w EGFR Mutated NSCLC",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03535363",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03535363",
+          "stated_intervention": "Osimertinib",
+          "title": "Osimertinib With Stereotactic Radiosurgery (SRS) in Brain Metastases From EGFR Positive NSCLC",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04487080",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04487080",
+          "stated_intervention": "Osimertinib",
+          "title": "A Study of Amivantamab and Lazertinib Combination Therapy Versus Osimertinib in Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT07738172",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT07738172",
+          "stated_intervention": "Osimertinib",
+          "title": "Osimertinib With or Without Primary Lung Tumor Resection for EGFR-Mutant Oligometastatic Non-Small Cell Lung Cancer",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04541407",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04541407",
+          "stated_intervention": "Temozolomide plus Osimertinib",
+          "title": "Temodar Plus Tyrosine Kinase Inhibitors for Progressive CNS Disease",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04772235",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04772235",
+          "stated_intervention": "Osimertinib",
+          "title": "Phase I Study of Repotrectinib and Osimertinib in NSCLC Patients",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT05011487",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT05011487",
+          "stated_intervention": "Osimertinib",
+          "title": "Neoadjuvant Osimertinib + Chemotherapy for EGFR-mutant Stage III NSCLC",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04479306",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04479306",
+          "stated_intervention": "Osimertinib",
+          "title": "Osimertinib in Combination With Alisertib or Sapanisertib for the Treatment of Osimertinib-Resistant EGFR Mutant Stage IIIB or IV Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      ]
+    }
+  ],
+  "sql": [
+    {
+      "query": "SELECT rel,count(*),sum(source_record IS NULL),sum(source_fetched_at IS NULL),sum(tier IS NULL) FROM edge WHERE retired_at IS NULL GROUP BY rel",
+      "rows": [
+        [
+          "ACTS_ON",
+          2186,
+          0,
+          0,
+          2186
+        ],
+        [
+          "ASSOCIATED_WITH",
+          300,
+          0,
+          0,
+          300
+        ],
+        [
+          "EVALUATES",
+          4449,
+          0,
+          0,
+          0
+        ],
+        [
+          "PARENT_OF",
+          43,
+          0,
+          0,
+          43
+        ],
+        [
+          "SPONSORS",
+          4652,
+          0,
+          0,
+          4652
+        ],
+        [
+          "SPONSORS_TRIAL_OF",
+          3187,
+          3187,
+          0,
+          3187
+        ],
+        [
+          "STUDIES",
+          2774,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "query": "SELECT n.label,count(*) FROM edge e JOIN node n ON n.id=e.dst WHERE e.rel='SPONSORS_TRIAL_OF' AND n.label='OSIMERTINIB' GROUP BY n.label",
+      "rows": [
+        [
+          "OSIMERTINIB",
+          54
+        ]
+      ]
+    },
+    {
+      "query": "SELECT id,type,label,props FROM node WHERE lower(label) LIKE '%xiuning%'",
+      "rows": [
+        [
+          "ORG:xiuningle",
+          "Company",
+          "Xiuning Le",
+          "{\"class\": \"OTHER\", \"parent\": null, \"raw_names\": [\"Xiuning Le\"]}"
+        ]
+      ]
+    },
+    {
+      "query": "SELECT e.id,n.label,m.label,e.props FROM edge e JOIN node n ON n.id=e.src JOIN node m ON m.id=e.dst WHERE e.rel='PARENT_OF' AND (lower(n.label) LIKE '%merck%' OR lower(m.label) LIKE '%merck%' OR lower(m.label) LIKE '%beigene%' OR lower(n.label) LIKE '%beone%')",
+      "rows": [
+        [
+          "ORG:merckco|PARENT_OF|ORG:mercksharpdohme|hand-curated corporate map",
+          "Merck & Co",
+          "Merck Sharp & Dohme",
+          "{\"note\": \"hand-curated; no licensed ownership dataset was used\"}"
+        ],
+        [
+          "ORG:merckkgaa|PARENT_OF|ORG:emdserono|hand-curated corporate map",
+          "Merck KGaA",
+          "Emd Serono",
+          "{\"note\": \"hand-curated; no licensed ownership dataset was used\"}"
+        ],
+        [
+          "ORG:merckkgaa|PARENT_OF|ORG:merckkgaadarmstadtgermany|hand-curated corporate map",
+          "Merck KGaA",
+          "Merck Kgaa Darmstadt Germany",
+          "{\"note\": \"hand-curated; no licensed ownership dataset was used\"}"
+        ],
+        [
+          "ORG:merckkgaa|PARENT_OF|ORG:emdseronoresearchdevelopmentinstitute|hand-curated corporate map",
+          "Merck KGaA",
+          "Emd Serono Research & Development Institute",
+          "{\"note\": \"hand-curated; no licensed ownership dataset was used\"}"
+        ],
+        [
+          "ORG:merckco|PARENT_OF|ORG:prometheus|hand-curated corporate map",
+          "Merck & Co",
+          "Prometheus",
+          "{\"note\": \"hand-curated; no licensed ownership dataset was used\"}"
+        ],
+        [
+          "ORG:merckkgaa|PARENT_OF|ORG:merckseronojapan|hand-curated corporate map",
+          "Merck KGaA",
+          "Merck Serono Japan",
+          "{\"note\": \"hand-curated; no licensed ownership dataset was used\"}"
+        ],
+        [
+          "ORG:beonemedicines|PARENT_OF|ORG:beigene|hand-curated corporate map",
+          "BeOne Medicines",
+          "Beigene",
+          "{\"note\": \"hand-curated; no licensed ownership dataset was used\"}"
+        ],
+        [
+          "ORG:merckco|PARENT_OF|ORG:scheringplough|hand-curated corporate map",
+          "Merck & Co",
+          "Schering-plough",
+          "{\"note\": \"hand-curated; no licensed ownership dataset was used\"}"
+        ],
+        [
+          "ORG:merckkgaa|PARENT_OF|ORG:merckhealthcarekgaadarmstadtgermanyanaffiliateofmerckkgaadarmstadtgermany|hand-curated corporate map",
+          "Merck KGaA",
+          "Merck Healthcare Kgaa Darmstadt Germany An Affiliate Of Merck Kgaa Darmstadt Germany",
+          "{\"note\": \"hand-curated; no licensed ownership dataset was used\"}"
+        ],
+        [
+          "ORG:merckco|PARENT_OF|ORG:mercksharpdohmerahwaynj|hand-curated corporate map",
+          "Merck & Co",
+          "Merck Sharp & Dohme Rahway Nj",
+          "{\"note\": \"hand-curated; no licensed ownership dataset was used\"}"
+        ]
+      ]
+    }
+  ],
+  "groundedness": [
+    {
+      "claim": "pembrolizumab is safe in patients with autoimmune disease.",
+      "result": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 2,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "claim": "xyzabumab cures cancer.",
+      "result": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 2,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "claim": "pembrolizumab cures cancer in forty-seven percent of patients.",
+      "result": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 2,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "claim": "pembrolizumab has a 47% response rate.",
+      "result": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "number",
+            "value": "47",
+            "why": "not present in the retrieved evidence"
+          }
+        ],
+        "evidence_count": 2,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "claim": "pembrolizumab causes cancer.",
+      "result": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 2,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    }
+  ],
+  "numeric_checks": [
+    {
+      "claim": "response was 47.5 percent in 1,234 patients.",
+      "result": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "number",
+            "value": "47.5",
+            "why": "not present in the retrieved evidence"
+          },
+          {
+            "kind": "number",
+            "value": "1,234",
+            "why": "not present in the retrieved evidence"
+          }
+        ],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "claim": "response was 47 percent.",
+      "result": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    }
+  ],
+  "retirement": [
+    {
+      "build": 0,
+      "stats": {
+        "build_id": "audit0",
+        "nodes": 1700,
+        "edges": 2192,
+        "added": 2192,
+        "changed": 0,
+        "retired": 0,
+        "restored": 0,
+        "nodes_by_type": {
+          "Company": 3,
+          "Disease": 1,
+          "Drug": 1066,
+          "Target": 629,
+          "Trial": 1
+        },
+        "edges_by_rel": {
+          "ACTS_ON": 2186,
+          "EVALUATES": 1,
+          "PARENT_OF": 1,
+          "SPONSORS": 2,
+          "SPONSORS_TRIAL_OF": 1,
+          "STUDIES": 1
+        }
+      },
+      "live_edges": [
+        [
+          "ACTS_ON",
+          2186
+        ],
+        [
+          "EVALUATES",
+          1
+        ],
+        [
+          "PARENT_OF",
+          1
+        ],
+        [
+          "SPONSORS",
+          2
+        ],
+        [
+          "SPONSORS_TRIAL_OF",
+          1
+        ],
+        [
+          "STUDIES",
+          1
+        ]
+      ],
+      "trial_nodes": [
+        [
+          "NCT00200395",
+          "Trial"
+        ]
+      ]
+    },
+    {
+      "build": 1,
+      "stats": {
+        "build_id": "audit1",
+        "nodes": 1700,
+        "edges": 2187,
+        "added": 0,
+        "changed": 0,
+        "retired": 5,
+        "restored": 0,
+        "nodes_by_type": {
+          "Company": 3,
+          "Disease": 1,
+          "Drug": 1066,
+          "Target": 629,
+          "Trial": 1
+        },
+        "edges_by_rel": {
+          "ACTS_ON": 2186,
+          "SPONSORS_TRIAL_OF": 1
+        }
+      },
+      "live_edges": [
+        [
+          "ACTS_ON",
+          2186
+        ],
+        [
+          "SPONSORS_TRIAL_OF",
+          1
+        ]
+      ],
+      "trial_nodes": [
+        [
+          "NCT00200395",
+          "Trial"
+        ]
+      ]
+    },
+    {
+      "build": 2,
+      "stats": {
+        "build_id": "audit2",
+        "nodes": 1700,
+        "edges": 2186,
+        "added": 0,
+        "changed": 0,
+        "retired": 1,
+        "restored": 0,
+        "nodes_by_type": {
+          "Company": 3,
+          "Disease": 1,
+          "Drug": 1066,
+          "Target": 629,
+          "Trial": 1
+        },
+        "edges_by_rel": {
+          "ACTS_ON": 2186
+        }
+      },
+      "live_edges": [
+        [
+          "ACTS_ON",
+          2186
+        ]
+      ],
+      "trial_nodes": [
+        [
+          "NCT00200395",
+          "Trial"
+        ]
+      ]
+    }
+  ],
+  "node_type_update": [
+    [
+      "ORG:test",
+      "Company",
+      "John Smith"
+    ]
+  ],
+  "company_probes": [
+    {
+      "raw": "Dr. Xiuning Le",
+      "person": false,
+      "normalized": {
+        "raw": "Dr. Xiuning Le",
+        "key": "drxiuningle",
+        "display": "Dr Xiuning Le",
+        "parent": null,
+        "rules": []
+      }
+    },
+    {
+      "raw": "Xiuning Le",
+      "person": false,
+      "normalized": {
+        "raw": "Xiuning Le",
+        "key": "xiuningle",
+        "display": "Xiuning Le",
+        "parent": null,
+        "rules": []
+      }
+    },
+    {
+      "raw": "John Smith, MD",
+      "person": true,
+      "normalized": {
+        "raw": "John Smith, MD",
+        "key": "johnsmithmd",
+        "display": "John Smith Md",
+        "parent": null,
+        "rules": []
+      }
+    },
+    {
+      "raw": "Alliance For Clinical Trials In Oncology",
+      "person": false,
+      "normalized": {
+        "raw": "Alliance For Clinical Trials In Oncology",
+        "key": "allianceforclinicaltrialsinoncology",
+        "display": "Alliance For Clinical Trials In Oncology",
+        "parent": null,
+        "rules": []
+      }
+    },
+    {
+      "raw": "Spanish Lung Cancer Group",
+      "person": false,
+      "normalized": {
+        "raw": "Spanish Lung Cancer Group",
+        "key": "spanishlungcancergroup",
+        "display": "Spanish Lung Cancer Group",
+        "parent": null,
+        "rules": []
+      }
+    },
+    {
+      "raw": "Hellenic Oncology Research Group",
+      "person": false,
+      "normalized": {
+        "raw": "Hellenic Oncology Research Group",
+        "key": "helleniconcologyresearchgroup",
+        "display": "Hellenic Oncology Research Group",
+        "parent": null,
+        "rules": []
+      }
+    },
+    {
+      "raw": "Merck",
+      "person": false,
+      "normalized": {
+        "raw": "Merck",
+        "key": "merck",
+        "display": "Merck",
+        "parent": "Merck KGaA",
+        "rules": [
+          "curated_parent_map"
+        ]
+      }
+    },
+    {
+      "raw": "Merck & Co., Inc.",
+      "person": false,
+      "normalized": {
+        "raw": "Merck & Co., Inc.",
+        "key": "merck",
+        "display": "Merck",
+        "parent": "Merck KGaA",
+        "rules": [
+          "strip_legal_suffix",
+          "curated_parent_map"
+        ]
+      }
+    },
+    {
+      "raw": "MSD",
+      "person": false,
+      "normalized": {
+        "raw": "MSD",
+        "key": "msd",
+        "display": "Msd",
+        "parent": null,
+        "rules": []
+      }
+    },
+    {
+      "raw": "Schering AG",
+      "person": false,
+      "normalized": {
+        "raw": "Schering AG",
+        "key": "schering",
+        "display": "Schering",
+        "parent": "Merck & Co",
+        "rules": [
+          "strip_legal_suffix",
+          "curated_parent_map"
+        ]
+      }
+    },
+    {
+      "raw": "BeiGene",
+      "person": false,
+      "normalized": {
+        "raw": "BeiGene",
+        "key": "beigene",
+        "display": "Beigene",
+        "parent": "BeOne Medicines",
+        "rules": [
+          "curated_parent_map"
+        ]
+      }
+    }
+  ],
+  "dashboard_top_companies": [],
+  "investigator_primary_source": "https://faculty.mdanderson.org/profiles/xiuning_le.html",
+  "cli": {
+    "exit_code": 0,
+    "stdout": "========================================================================\nQ: Which companies are developing osimertinib?\n   intent=companies_for_drug  entities=[('Drug', 'OSIMERTINIB')]\n   generated_by=refusal (no supporting evidence)\nThe entities in the question were recognised but the graph holds no edges that answer it.\n   grounded=True  unsupported=[]\n========================================================================\nQ: Is pembrolizumab safe in patients with autoimmune disease?\n   intent=drug_profile  entities=[('Drug', 'PEMBROLIZUMAB')]\n   generated_by=deterministic template (no language model)\nProfile:\n  - PEMBROLIZUMAB is a Antibody, max clinical stage APPROVAL, appearing in 216 NSCLC trial(s) in this graph [CHEMBL3137343]\n  - PEMBROLIZUMAB acts on PDCD1 (inhibitor) [CHEMBL3137343]\n\nScope: 2 edge(s) from this graph; non-small cell lung cancer only.\n   grounded=None  unsupported=[]\n========================================================================\nQ: What is the capital of France?\n   intent=unsupported  entities=[]\n   generated_by=refusal (no supporting evidence)\nThis graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.\n   grounded=True  unsupported=[]\n\n-> query_examples.json\n",
+    "stderr": ""
+  }
+}

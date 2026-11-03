@@ -1,0 +1,144 @@
+﻿{
+  "reviewed_count": 58,
+  "selected_ids": [
+    1,
+    2,
+    3,
+    4,
+    13,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147
+  ],
+  "tiers": {
+    "ALIAS": 5,
+    "BLOCKED_PLACEBO": 8,
+    "CONTAINED_ALIAS": 30,
+    "PARENTHETICAL": 15
+  },
+  "test_absent_tiers": [
+    "FUZZY_AUTO",
+    "SALT_STRIPPED",
+    "CLEANED",
+    "FUZZY_REVIEW"
+  ],
+  "criterion": "Molecule identity plus the repository explicitly declared preservation of distinct regulatory/formulation products. Under an active-moiety-only ontology, product-collapse labels and all earlier corrections need redefinition.",
+  "disagreement_ids": [
+    "13",
+    "141"
+  ],
+  "headline_after_two_changes": {
+    "raw_correct": 103,
+    "raw_total": 115,
+    "raw_precision": 0.8956521739130435,
+    "author_current_weight_stratified_precision": 0.9600915331807781
+  },
+  "postfix_additional_disagreement": {
+    "file": "reports/gold_postfix.csv",
+    "line": 9,
+    "id": "8",
+    "surface": "Nab-paclitaxel",
+    "target": "CHEMBL428647 PACLITAXEL",
+    "author": "correct",
+    "audit": "incorrect",
+    "reason": "Exact same product-collapse as corrected test id22; unchanged lenient postfix label.",
+    "source": "https://www.cancer.gov/about-cancer/treatment/drugs/nanoparticlepaclitaxel",
+    "raw_after": 0.9473684210526315
+  },
+  "component_binding_sensitivity_not_main_headline": {
+    "ids": [
+      140,
+      142,
+      143
+    ],
+    "raw_if_a_different_pre_parenthetical_binding_metric_is_used": 0.8695652173913043,
+    "scope_caveat": "Not a definite correction to the repository emitted-target precision: KEYTRUDA is present in each raw intervention. Actual resolver branch binds unknown agents to unrelated parentheses, drops their residue and duplicates pembrolizumab. Retain current labels and report parser/provenance defect separately."
+  }
+}
+PENDING test#3: correct -> incorrect
+applied 0, already correct 4
+all corrections are already in the labels
+
+Probe outputs:
+tobramycin [('tobramycin', 'ALIAS', 'CHEMBL384467')]
+corticosteroid [('corticosteroid', 'FUZZY_AUTO', 'CHEMBL635')]
+corticosteroids [('corticosteroids', 'FUZZY_AUTO', 'CHEMBL635')]
+prednisolone phosphate [('prednisolone phosphate', 'SALT_STRIPPED', 'CHEMBL131')]
+etoposide phosphate [('etoposide phosphate', 'ALIAS', 'CHEMBL44657')]
+Leucovorin calcium [('Leucovorin calcium', 'EXACT', 'CHEMBL1201138')]
+Leucovorin [('Leucovorin', 'EXACT', 'CHEMBL1679')]
+Mvasi [('Mvasi', 'ALIAS', 'CHEMBL1201583')]
+Alymsys [('Alymsys', 'ALIAS', 'CHEMBL1201583')]
+Zirabev [('Zirabev', 'ALIAS', 'CHEMBL1201583')]
+Bevacizumab biosimilars [('Bevacizumab', 'CONTAINED_ALIAS', 'CHEMBL1201583'), ('biosimilars', 'UNRESOLVED', None)]
+NanoPac (sterile nanoparticulate paclitaxel) Powder for Suspension [('sterile nanoparticulate paclitaxel', 'PARENTHETICAL', 'CHEMBL428647')]
+CC-486 [('CC-486', 'ALIAS', 'CHEMBL1489')]
+Liposomal Doxorubicin and cisplatin [('Doxorubicin', 'EXACT', 'CHEMBL53463'), ('cisplatin', 'EXACT', 'CHEMBL11359')]
+paclitaxel liposome [('paclitaxel', 'EXACT', 'CHEMBL428647')]
+paclitaxel polymeric micelles [('paclitaxel', 'CONTAINED_ALIAS', 'CHEMBL428647'), ('polymeric micelles', 'UNRESOLVED', None)]
+cemiplimab-rwlc [('cemiplimab-rwlc', 'BLOCKED_DISTINCT_PRODUCT', None)]
+amivantamab-vmjw [('amivantamab-vmjw', 'BLOCKED_DISTINCT_PRODUCT', None)]
+tarlatamab-dlle [('tarlatamab-dlle', 'BLOCKED_DISTINCT_PRODUCT', None)]
+Injection of pembrolizumab [('of pembrolizumab', 'BLOCKED_DISTINCT_PRODUCT', None)]
+pembrolizumab antibody [('pembrolizumab antibody', 'BLOCKED_CLASS_TERM', None)]
+mab inhibitor [('mab inhibitor', 'UNRESOLVED', None)]
+Antineoplastic agents [('Antineoplastic agents', 'UNRESOLVED', None)]
+No pembrolizumab [('pembrolizumab', 'CONTAINED_ALIAS', 'CHEMBL3137343')]
+pembrolizumab without paclitaxel [('pembrolizumab', 'CONTAINED_ALIAS', 'CHEMBL3137343'), ('paclitaxel', 'CONTAINED_ALIAS', 'CHEMBL428647'), ('without', 'UNRESOLVED', None)]
+DrugX and pembrolizumab (Keytruda) [('Keytruda', 'PARENTHETICAL', 'CHEMBL3137343'), ('pembrolizumab', 'EXACT', 'CHEMBL3137343')]
+pembrolizumab + placebo to match docetaxel [('pembrolizumab + placebo to match docetaxel', 'BLOCKED_PLACEBO', None)]
+DB-1303/BNT323 [('DB-1303', 'UNRESOLVED', None), ('BNT323', 'UNRESOLVED', None)]
+trastuzumab deruxtecan/T-DXd [('trastuzumab deruxtecan', 'EXACT', 'CHEMBL4297844'), ('T-DXd', 'ALIAS', 'CHEMBL4297844')]
+GV20-0251 and Pembrolizumab [KEYTRUDA®] [('KEYTRUDA®', 'PARENTHETICAL', 'CHEMBL3137343'), ('Pembrolizumab', 'EXACT', 'CHEMBL3137343')]
+NGM707 plus pembrolizumab (KEYTRUDA®) [('KEYTRUDA®', 'PARENTHETICAL', 'CHEMBL3137343'), ('pembrolizumab', 'EXACT', 'CHEMBL3137343')]
+NGM831 and NGM438 plus pembrolizumab (KEYTRUDA®) [('KEYTRUDA®', 'PARENTHETICAL', 'CHEMBL3137343'), ('KEYTRUDA®', 'PARENTHETICAL', 'CHEMBL3137343'), ('pembrolizumab', 'EXACT', 'CHEMBL3137343')]

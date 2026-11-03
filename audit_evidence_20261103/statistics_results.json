@@ -1,0 +1,1191 @@
+{
+  "method": "Independent calculations directlyfromgoldCSVsandresolvedtriples;noimportevaluate.py",
+  "stats": {
+    "dev": {
+      "sample_size": 214,
+      "accepted_n": 137,
+      "accepted_correct": 126,
+      "raw_precision": 0.9197080291970803,
+      "independent_wilson95": [
+        0.8619444038577043,
+        0.9545765336767967
+      ],
+      "stratified_precision": 0.9764912280701754,
+      "weights_unique": {
+        "SALT_STRIPPED": 5,
+        "CONTAINED_ALIAS": 207,
+        "PARENTHETICAL": 23,
+        "FUZZY_AUTO": 16,
+        "CLEANED": 1,
+        "EXACT": 1410,
+        "ALIAS": 523
+      },
+      "weight_denominator": 2185,
+      "carried": [],
+      "carried_accepted_weight": 0.0,
+      "excluded_carried_point": 0.9764912280701754,
+      "tier_counts": {
+        "ALIAS": {
+          "n": 30,
+          "correct": 28
+        },
+        "AMBIGUOUS": {
+          "n": 12,
+          "correct": 12
+        },
+        "BLOCKED_CLASS_TERM": {
+          "n": 8,
+          "correct": 8
+        },
+        "BLOCKED_PLACEBO": {
+          "n": 8,
+          "correct": 5
+        },
+        "BLOCKED_TARGET_TERM": {
+          "n": 8,
+          "correct": 8
+        },
+        "CLEANED": {
+          "n": 1,
+          "correct": 1
+        },
+        "CONTAINED_ALIAS": {
+          "n": 30,
+          "correct": 29
+        },
+        "EXACT": {
+          "n": 40,
+          "correct": 40
+        },
+        "FUZZY_AUTO": {
+          "n": 16,
+          "correct": 11
+        },
+        "FUZZY_REVIEW": {
+          "n": 16,
+          "correct": 6
+        },
+        "PARENTHETICAL": {
+          "n": 15,
+          "correct": 12
+        },
+        "SALT_STRIPPED": {
+          "n": 5,
+          "correct": 5
+        },
+        "UNRESOLVED": {
+          "n": 25,
+          "correct": 24
+        }
+      }
+    },
+    "test": {
+      "sample_size": 172,
+      "accepted_n": 115,
+      "accepted_correct": 105,
+      "raw_precision": 0.9130434782608695,
+      "independent_wilson95": [
+        0.8473028279572066,
+        0.9520815025846652
+      ],
+      "stratified_precision": 0.9687719298245615,
+      "weights_unique": {
+        "SALT_STRIPPED": 5,
+        "CONTAINED_ALIAS": 207,
+        "PARENTHETICAL": 23,
+        "FUZZY_AUTO": 16,
+        "CLEANED": 1,
+        "EXACT": 1410,
+        "ALIAS": 523
+      },
+      "weight_denominator": 2185,
+      "carried": [
+        "CLEANED",
+        "FUZZY_AUTO",
+        "FUZZY_REVIEW",
+        "SALT_STRIPPED"
+      ],
+      "carried_accepted_weight": 0.010068649885583524,
+      "excluded_carried_point": 0.9707659115426107,
+      "tier_counts": {
+        "ALIAS": {
+          "n": 30,
+          "correct": 28
+        },
+        "AMBIGUOUS": {
+          "n": 12,
+          "correct": 12
+        },
+        "BLOCKED_CLASS_TERM": {
+          "n": 8,
+          "correct": 8
+        },
+        "BLOCKED_PLACEBO": {
+          "n": 8,
+          "correct": 8
+        },
+        "BLOCKED_TARGET_TERM": {
+          "n": 4,
+          "correct": 4
+        },
+        "CONTAINED_ALIAS": {
+          "n": 30,
+          "correct": 27
+        },
+        "EXACT": {
+          "n": 40,
+          "correct": 40
+        },
+        "PARENTHETICAL": {
+          "n": 15,
+          "correct": 10
+        },
+        "UNRESOLVED": {
+          "n": 25,
+          "correct": 24
+        },
+        "CLEANED": {
+          "n": 1,
+          "correct": 1
+        },
+        "FUZZY_AUTO": {
+          "n": 16,
+          "correct": 11
+        },
+        "FUZZY_REVIEW": {
+          "n": 16,
+          "correct": 6
+        },
+        "SALT_STRIPPED": {
+          "n": 5,
+          "correct": 5
+        }
+      },
+      "stratified_row_bootstrap_95_percentile": [
+        0.942273073989321,
+        0.9895041952707856
+      ],
+      "bootstrap_note": "200000 resamples, numpy default_rng seed20261103, test then postfix sequential RNG; resample independently within tiers, including carried dev rows. Degenerate at 100% observed tiers and not a valid replacement CI."
+    },
+    "postfix": {
+      "sample_size": 58,
+      "accepted_n": 38,
+      "accepted_correct": 37,
+      "raw_precision": 0.9736842105263158,
+      "independent_wilson95": [
+        0.8650512388404787,
+        0.9953394123142312
+      ],
+      "stratified_precision": 0.9913958810068649,
+      "weights_unique": {
+        "SALT_STRIPPED": 5,
+        "CONTAINED_ALIAS": 207,
+        "PARENTHETICAL": 23,
+        "FUZZY_AUTO": 16,
+        "CLEANED": 1,
+        "EXACT": 1410,
+        "ALIAS": 523
+      },
+      "weight_denominator": 2185,
+      "carried": [
+        "AMBIGUOUS",
+        "BLOCKED_TARGET_TERM",
+        "CLEANED",
+        "FUZZY_AUTO",
+        "FUZZY_REVIEW",
+        "SALT_STRIPPED"
+      ],
+      "carried_accepted_weight": 0.010068649885583524,
+      "excluded_carried_point": 0.9936199722607488,
+      "tier_counts": {
+        "ALIAS": {
+          "n": 10,
+          "correct": 10
+        },
+        "BLOCKED_CLASS_TERM": {
+          "n": 6,
+          "correct": 6
+        },
+        "BLOCKED_PLACEBO": {
+          "n": 4,
+          "correct": 3
+        },
+        "CONTAINED_ALIAS": {
+          "n": 15,
+          "correct": 14
+        },
+        "EXACT": {
+          "n": 10,
+          "correct": 10
+        },
+        "PARENTHETICAL": {
+          "n": 3,
+          "correct": 3
+        },
+        "UNRESOLVED": {
+          "n": 10,
+          "correct": 10
+        },
+        "AMBIGUOUS": {
+          "n": 12,
+          "correct": 12
+        },
+        "BLOCKED_TARGET_TERM": {
+          "n": 8,
+          "correct": 8
+        },
+        "CLEANED": {
+          "n": 1,
+          "correct": 1
+        },
+        "FUZZY_AUTO": {
+          "n": 16,
+          "correct": 11
+        },
+        "FUZZY_REVIEW": {
+          "n": 16,
+          "correct": 6
+        },
+        "SALT_STRIPPED": {
+          "n": 5,
+          "correct": 5
+        }
+      },
+      "stratified_row_bootstrap_95_percentile": [
+        0.9778489702517162,
+        0.9990846681922196
+      ],
+      "bootstrap_note": "200000 resamples, numpy default_rng seed20261103, test then postfix sequential RNG; resample independently within tiers, including carried dev rows. Degenerate at 100% observed tiers and not a valid replacement CI."
+    }
+  },
+  "changed_gold_rows": {
+    "dev": [
+      {
+        "id": "22",
+        "tier": "ALIAS",
+        "raw": "Nab paclitaxel",
+        "component": "Nab paclitaxel",
+        "drug_id": "CHEMBL428647",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "51",
+        "tier": "BLOCKED_PLACEBO",
+        "raw": "AZD9291 80 mg/40 mg + placebo",
+        "component": "AZD9291 80 mg/40 mg + placebo",
+        "drug_id": "",
+        "verdict": "incorrect",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "53",
+        "tier": "BLOCKED_PLACEBO",
+        "raw": "Placebo and Paclitaxel-Carboplatin",
+        "component": "Placebo and Paclitaxel-Carboplatin",
+        "drug_id": "",
+        "verdict": "incorrect",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "56",
+        "tier": "BLOCKED_PLACEBO",
+        "raw": "Placebo plus chemotherapy",
+        "component": "Placebo plus chemotherapy",
+        "drug_id": "",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "57",
+        "tier": "BLOCKED_PLACEBO",
+        "raw": "placebo plus docetaxel",
+        "component": "placebo plus docetaxel",
+        "drug_id": "",
+        "verdict": "incorrect",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "72",
+        "tier": "CONTAINED_ALIAS",
+        "raw": "Biological: Sintilimab Drug: Cisplatin Drug: Paclitaxel for Injection (Albumin Bound) Drug: Carboplatin",
+        "component": "Sintilimab",
+        "drug_id": "CHEMBL4297829",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "73",
+        "tier": "CONTAINED_ALIAS",
+        "raw": "Biological: Sintilimab Drug: Cisplatin Drug: Paclitaxel for Injection (Albumin Bound) Drug: Carboplatin",
+        "component": "Paclitaxel",
+        "drug_id": "CHEMBL428647",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "88",
+        "tier": "CONTAINED_ALIAS",
+        "raw": "Pemetrexed Chemotherapy",
+        "component": "Pemetrexed",
+        "drug_id": "CHEMBL225072",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "94",
+        "tier": "CONTAINED_ALIAS",
+        "raw": "Preoperative docetaxel-cisplatin combination chemotherapy",
+        "component": "cisplatin",
+        "drug_id": "CHEMBL11359",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "165",
+        "tier": "FUZZY_REVIEW",
+        "raw": "Pegylated rhG-CSF: 100µg/kg",
+        "component": "Pegylated rhG-CSF",
+        "drug_id": "CHEMBL1201568",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "166",
+        "tier": "FUZZY_REVIEW",
+        "raw": "Pegylated rhG-CSF: 6mg",
+        "component": "Pegylated rhG-CSF",
+        "drug_id": "CHEMBL1201568",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "170",
+        "tier": "PARENTHETICAL",
+        "raw": "[18F]DK222 radiotracer",
+        "component": "18F",
+        "drug_id": "CHEMBL2030434",
+        "verdict": "incorrect",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "171",
+        "tier": "PARENTHETICAL",
+        "raw": "Atezolizumab (MPDL3280A), an engineered anti-PD-L1 antibody",
+        "component": "MPDL3280A",
+        "drug_id": "CHEMBL3707227",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "181",
+        "tier": "PARENTHETICAL",
+        "raw": "Pegylated liposomal doxorubicin (PLD)",
+        "component": "PLD",
+        "drug_id": "CHEMBL53463",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "183",
+        "tier": "PARENTHETICAL",
+        "raw": "radiopharmaceutical (Flotegatide (18F) or RGD (68Ga)",
+        "component": "18F",
+        "drug_id": "CHEMBL2030434",
+        "verdict": "incorrect",
+        "current_tiers_for_same_triple": []
+      }
+    ],
+    "test": [
+      {
+        "id": "3",
+        "tier": "ALIAS",
+        "raw": "Abraxane (Maintenance)",
+        "component": "Abraxane",
+        "drug_id": "CHEMBL428647",
+        "verdict": "incorrect",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "22",
+        "tier": "ALIAS",
+        "raw": "Paclitaxel or Nab-Paclitaxel",
+        "component": "Nab-Paclitaxel",
+        "drug_id": "CHEMBL428647",
+        "verdict": "incorrect",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "67",
+        "tier": "CONTAINED_ALIAS",
+        "raw": "Bevacizumab Biosimilar HLX04",
+        "component": "Bevacizumab Biosimilar",
+        "drug_id": "CHEMBL1201583",
+        "verdict": "incorrect",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "68",
+        "tier": "CONTAINED_ALIAS",
+        "raw": "Bevacizumab-Pfizer",
+        "component": "Bevacizumab",
+        "drug_id": "CHEMBL1201583",
+        "verdict": "incorrect",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "69",
+        "tier": "CONTAINED_ALIAS",
+        "raw": "Carboplatin Chemotherapy",
+        "component": "Carboplatin",
+        "drug_id": "CHEMBL1351",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "92",
+        "tier": "CONTAINED_ALIAS",
+        "raw": "Post-therapy 18F-thymidine (FLT) PET/CT to assess for pemetrexed induced tumor FLT \"flare\"",
+        "component": "thymidine",
+        "drug_id": "CHEMBL52609",
+        "verdict": "incorrect",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "133",
+        "tier": "PARENTHETICAL",
+        "raw": "[18F]-αvβ6-BP",
+        "component": "18F",
+        "drug_id": "CHEMBL2030434",
+        "verdict": "incorrect",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "134",
+        "tier": "PARENTHETICAL",
+        "raw": "[18F]F-AraG Imaging",
+        "component": "18F",
+        "drug_id": "CHEMBL2030434",
+        "verdict": "incorrect",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "135",
+        "tier": "PARENTHETICAL",
+        "raw": "[18F]F-ARAG PET",
+        "component": "18F",
+        "drug_id": "CHEMBL2030434",
+        "verdict": "incorrect",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "136",
+        "tier": "PARENTHETICAL",
+        "raw": "[18F]F-AraG PET imaging",
+        "component": "18F",
+        "drug_id": "CHEMBL2030434",
+        "verdict": "incorrect",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "137",
+        "tier": "PARENTHETICAL",
+        "raw": "[18F]F-PDL1-3",
+        "component": "18F",
+        "drug_id": "CHEMBL2030434",
+        "verdict": "incorrect",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "145",
+        "tier": "PARENTHETICAL",
+        "raw": "TORIPALIMAB INJECTION (JS001 ) combine with chemotherapy",
+        "component": "JS001",
+        "drug_id": "CHEMBL4297843",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "148",
+        "tier": "UNRESOLVED",
+        "raw": "allogeneic tumor cell vaccine",
+        "component": "allogeneic tumor cell vaccine",
+        "drug_id": "",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": [
+          "BLOCKED_CLASS_TERM"
+        ]
+      },
+      {
+        "id": "156",
+        "tier": "UNRESOLVED",
+        "raw": "Dendritic cell immunotherapy",
+        "component": "Dendritic cell immunotherapy",
+        "drug_id": "",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": [
+          "BLOCKED_CLASS_TERM"
+        ]
+      },
+      {
+        "id": "159",
+        "tier": "UNRESOLVED",
+        "raw": "Furmonertinib 160 mg, Q.D.",
+        "component": "Q.D",
+        "drug_id": "",
+        "verdict": "incorrect",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "161",
+        "tier": "UNRESOLVED",
+        "raw": "H1 receptor antagonist",
+        "component": "H1 receptor antagonist",
+        "drug_id": "",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": [
+          "BLOCKED_CLASS_TERM"
+        ]
+      },
+      {
+        "id": "164",
+        "tier": "UNRESOLVED",
+        "raw": "No Local Definitive Radiotherapy",
+        "component": "No Local Definitive Radiotherapy",
+        "drug_id": "",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": [
+          "BLOCKED_CLASS_TERM"
+        ]
+      },
+      {
+        "id": "165",
+        "tier": "UNRESOLVED",
+        "raw": "Non-platinum chemotherapy: paclitaxel or nab-paclitaxel for squamous cell NSCLC or pemetrexed for nonsquamous cell NSCLC",
+        "component": "squamous NSCLC",
+        "drug_id": "",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "166",
+        "tier": "UNRESOLVED",
+        "raw": "PD -1/PD-L1 monoclonal antibody",
+        "component": "PD-L1 monoclonal antibody",
+        "drug_id": "",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": [
+          "BLOCKED_CLASS_TERM"
+        ]
+      },
+      {
+        "id": "167",
+        "tier": "UNRESOLVED",
+        "raw": "Radiation Therapy",
+        "component": "Radiation",
+        "drug_id": "",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": [
+          "BLOCKED_CLASS_TERM"
+        ]
+      }
+    ],
+    "postfix": [
+      {
+        "id": "8",
+        "tier": "ALIAS",
+        "raw": "Nab-paclitaxel",
+        "component": "Nab-paclitaxel",
+        "drug_id": "CHEMBL428647",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": []
+      },
+      {
+        "id": "55",
+        "tier": "UNRESOLVED",
+        "raw": "ORIENT-31 regimen",
+        "component": "ORIENT-31",
+        "drug_id": "",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": [
+          "BLOCKED_CLASS_TERM"
+        ]
+      },
+      {
+        "id": "56",
+        "tier": "UNRESOLVED",
+        "raw": "Platinum chemotherapy (cisplatin or carboplatin)",
+        "component": "Platinum chemotherapy",
+        "drug_id": "",
+        "verdict": "correct",
+        "current_tiers_for_same_triple": [
+          "BLOCKED_CLASS_TERM"
+        ]
+      }
+    ]
+  },
+  "number_audit": [
+    {
+      "claim": "3000 trials; 2742 distinct drug strings; 2175 conditions; roughly1000 molecules",
+      "readme_lines": [
+        "README.md:26-28",
+        "README.ko.md:16-17"
+      ],
+      "status": "VERIFIED",
+      "evidence": "data/raw/trials.json:data protocolSections; data/raw/drugs.json:_record_count",
+      "actual": {
+        "trials": 3000,
+        "drug_or_biological_names": 2742,
+        "conditions": 2175,
+        "reference_drugs": 1066
+      }
+    },
+    {
+      "claim": "dev sample rows, accepted rows, raw precision CI, stratified precision CI",
+      "readme_lines": [
+        "README.md:52",
+        "README.ko.md:39"
+      ],
+      "status": "VERIFIED",
+      "evidence": "reports/evaluation_dev.json:gold_sample_size,raw_sample_precision,accepted_precision",
+      "actual": {
+        "gold_sample_size": 214,
+        "raw_sample_precision": {
+          "accepted_rows_scored": 137,
+          "accepted_rows_correct": 126,
+          "rate": 0.9197,
+          "ci95": [
+            0.8619,
+            0.9546
+          ],
+          "note": "the unweighted result over the rows a human actually read. 137 of the 214 rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 214, the precision denominator is 137 -- these are different numbers and quoting the first as the second overstates the evidence"
+        },
+        "accepted_precision": {
+          "estimate": 0.9765,
+          "ci95": [
+            0.8665,
+            0.9932
+          ],
+          "method": "stratified estimate weighted by distinct resolutions per tier; interval propagated from per-tier Wilson bounds, not a normal approximation",
+          "weighted_over_tiers": [
+            "EXACT",
+            "ALIAS",
+            "CLEANED",
+            "SALT_STRIPPED",
+            "PARENTHETICAL",
+            "CONTAINED_ALIAS",
+            "FUZZY_AUTO"
+          ],
+          "caveat": "the sample is drawn by a disproportionate per-tier quota, so this reweighting is required; it is also what makes the figure higher than the raw rows, so read it next to raw_sample_precision below"
+        }
+      }
+    },
+    {
+      "claim": "test sample rows, accepted rows, raw precision CI, stratified precision CI",
+      "readme_lines": [
+        "README.md:53",
+        "README.ko.md:40"
+      ],
+      "status": "VERIFIED",
+      "evidence": "reports/evaluation_frozen_test.json:gold_sample_size,raw_sample_precision,accepted_precision",
+      "actual": {
+        "gold_sample_size": 172,
+        "raw_sample_precision": {
+          "accepted_rows_scored": 115,
+          "accepted_rows_correct": 105,
+          "rate": 0.913,
+          "ci95": [
+            0.8473,
+            0.9521
+          ],
+          "note": "the unweighted result over the rows a human actually read. 115 of the 172 rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 172, the precision denominator is 115 -- these are different numbers and quoting the first as the second overstates the evidence"
+        },
+        "accepted_precision": {
+          "estimate": 0.9688,
+          "ci95": [
+            0.8566,
+            0.9897
+          ],
+          "method": "stratified estimate weighted by distinct resolutions per tier; interval propagated from per-tier Wilson bounds, not a normal approximation",
+          "weighted_over_tiers": [
+            "EXACT",
+            "ALIAS",
+            "CLEANED",
+            "SALT_STRIPPED",
+            "PARENTHETICAL",
+            "CONTAINED_ALIAS",
+            "FUZZY_AUTO"
+          ],
+          "caveat": "the sample is drawn by a disproportionate per-tier quota, so this reweighting is required; it is also what makes the figure higher than the raw rows, so read it next to raw_sample_precision below"
+        }
+      }
+    },
+    {
+      "claim": "postfix sample rows, accepted rows, raw precision CI, stratified precision CI",
+      "readme_lines": [
+        "README.md:54",
+        "README.ko.md:41"
+      ],
+      "status": "VERIFIED",
+      "evidence": "reports/evaluation_postfix.json:gold_sample_size,raw_sample_precision,accepted_precision",
+      "actual": {
+        "gold_sample_size": 58,
+        "raw_sample_precision": {
+          "accepted_rows_scored": 38,
+          "accepted_rows_correct": 37,
+          "rate": 0.9737,
+          "ci95": [
+            0.865,
+            0.9953
+          ],
+          "note": "the unweighted result over the rows a human actually read. 38 of the 58 rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 58, the precision denominator is 38 -- these are different numbers and quoting the first as the second overstates the evidence"
+        },
+        "accepted_precision": {
+          "estimate": 0.9914,
+          "ci95": [
+            0.7149,
+            0.9978
+          ],
+          "method": "stratified estimate weighted by distinct resolutions per tier; interval propagated from per-tier Wilson bounds, not a normal approximation",
+          "weighted_over_tiers": [
+            "EXACT",
+            "ALIAS",
+            "CLEANED",
+            "SALT_STRIPPED",
+            "PARENTHETICAL",
+            "CONTAINED_ALIAS",
+            "FUZZY_AUTO"
+          ],
+          "caveat": "the sample is drawn by a disproportionate per-tier quota, so this reweighting is required; it is also what makes the figure higher than the raw rows, so read it next to raw_sample_precision below"
+        }
+      }
+    },
+    {
+      "claim": "Three disjoint samples",
+      "readme_lines": [
+        "README.md:47",
+        "README.ko.md:34"
+      ],
+      "status": "VERIFIED",
+      "evidence": "gold_dev/test/postfix.csv triples (raw,component,drug_id)",
+      "actual": {
+        "pairwise_overlap_counts": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "claim": "105 correct of115 accepted among172 heldout",
+      "readme_lines": [
+        "README.md:58-59",
+        "README.ko.md:44-45"
+      ],
+      "status": "VERIFIED",
+      "evidence": "reports/evaluation_frozen_test.json:raw_sample_precision",
+      "actual": {
+        "correct": 105,
+        "accepted": 115,
+        "sample": 172
+      }
+    },
+    {
+      "claim": "Coverage78.2%,4969/6351",
+      "readme_lines": [
+        "README.md:75",
+        "README.ko.md:58"
+      ],
+      "status": "VERIFIED",
+      "evidence": "reports/evaluation_frozen_test.json:coverage",
+      "actual": {
+        "component_occurrences_total": 6788,
+        "component_occurrences_excluding_blocked": 6351,
+        "accepted_occurrences": 4969,
+        "resolved_rate_of_substance_like": 0.7824,
+        "resolved_rate_of_all": 0.732
+      }
+    },
+    {
+      "claim": "FUZZY_REVIEW37.5%",
+      "readme_lines": [
+        "README.md:81",
+        "README.ko.md:64"
+      ],
+      "status": "VERIFIED",
+      "evidence": "reports/evaluation_frozen_test.json:per_tier.FUZZY_REVIEW",
+      "actual": {
+        "sampled": 16,
+        "correct": 6,
+        "rate": 0.375,
+        "ci95": [
+          0.1848,
+          0.6136
+        ],
+        "population_unique": 14,
+        "population_occurrences": 16,
+        "source": "development sample (no independent test rows available)"
+      }
+    },
+    {
+      "claim": "Placebo8/8,100%,Wilson67.6-100",
+      "readme_lines": [
+        "README.md:84",
+        "README.ko.md:66"
+      ],
+      "status": "VERIFIED",
+      "evidence": "reports/evaluation_frozen_test.json:per_tier.BLOCKED_PLACEBO",
+      "actual": {
+        "sampled": 8,
+        "correct": 8,
+        "rate": 1.0,
+        "ci95": [
+          0.6756,
+          1.0
+        ],
+        "population_unique": 53,
+        "population_occurrences": 151,
+        "source": "test sample"
+      }
+    },
+    {
+      "claim": "Dictionary defect counts134/124/80/78/47/7/6",
+      "readme_lines": [
+        "README.md:219-225",
+        "README.ko.md:167-173"
+      ],
+      "status": "VERIFIED",
+      "evidence": "reports/quality_report.json:totals.by_family.dictionary",
+      "actual": {
+        "class_term_as_synonym": 134,
+        "cross_drug_synonym": 80,
+        "distinct_product_alias": 7,
+        "placebo_string_in_synonym_list": 6,
+        "genuinely_ambiguous_alias": 124,
+        "suspected_duplicate_entity": 47,
+        "parent_child_collapse": 78
+      }
+    },
+    {
+      "claim": "Curation2193->69,1997->4056",
+      "readme_lines": [
+        "README.md:228",
+        "README.ko.md:175-176"
+      ],
+      "status": "VERIFIED",
+      "evidence": "reports/curation_effect.json:headline",
+      "actual": {
+        "ambiguous_before": 2193,
+        "ambiguous_after": 69,
+        "exact_before": 1997,
+        "exact_after": 4056
+      }
+    },
+    {
+      "claim": "6476 nodes17591live edges; perrelation table",
+      "readme_lines": [
+        "README.md:235-246",
+        "README.ko.md:182-193"
+      ],
+      "status": "VERIFIED",
+      "evidence": "reports/graph_stats.json:nodes,edges,edges_by_rel; independentSQLite count",
+      "actual": {
+        "nodes_by_type": {
+          "Company": 1570,
+          "Disease": 1,
+          "Drug": 1066,
+          "Investigator": 36,
+          "Target": 803,
+          "Trial": 3000
+        },
+        "live_edges_by_rel": {
+          "ACTS_ON": 2186,
+          "ASSOCIATED_WITH": 300,
+          "EVALUATES": 4449,
+          "PARENT_OF": 43,
+          "SPONSORS": 4652,
+          "SPONSORS_TRIAL_OF": 3187,
+          "STUDIES": 2774
+        },
+        "derived_sponsor_classes": {
+          "INDUSTRY": 1313,
+          "OTHER": 1675,
+          "NETWORK": 84,
+          "OTHER_GOV": 40,
+          "NIH": 73,
+          "FED": 2
+        },
+        "industry_fraction": 0.41198619391277064,
+        "credentialed_lead_trial_count": 36
+      }
+    },
+    {
+      "claim": "3187derivededges,41.2%industry58.8%nonindustry",
+      "readme_lines": [
+        "README.md:253-254",
+        "README.ko.md:199-200"
+      ],
+      "status": "VERIFIED",
+      "evidence": "SQLite edge WHERE rel=SPONSORS_TRIAL_OF AND retired_at IS NULL, parsed props.sponsor_class",
+      "actual": {
+        "industry": 1313,
+        "nonindustry": 1874,
+        "all": 3187,
+        "industry_fraction": 0.41198619391277064
+      }
+    },
+    {
+      "claim": "36 credentialed Investigator nodes and36lead-sponsored trials",
+      "readme_lines": [
+        "README.md:111-112",
+        "README.md:334-335",
+        "README.ko.md:87",
+        "README.ko.md:232"
+      ],
+      "status": "VERIFIED",
+      "evidence": "SQLite node.type=Investigator; edge SPONSORS props.role=lead_sponsor",
+      "actual": {
+        "investigator_nodes": 36,
+        "lead_trials": 36
+      }
+    },
+    {
+      "claim": "Four other molecules inatezolizumab aliases",
+      "readme_lines": [
+        "README.md:210-212",
+        "README.ko.md:160-162"
+      ],
+      "status": "MISMATCH",
+      "evidence": "README.md:330 says MEDI4736 isdurvalumab; alias list contains durvalumab andMEDI4736",
+      "actual": {
+        "claimed_molecules": 4,
+        "actual_molecules": 3,
+        "alias_strings": 4
+      }
+    },
+    {
+      "claim": "Other62independently re-scored rows agreed plus5corrections",
+      "readme_lines": [
+        "README.md:315-316",
+        "README.ko.md:219"
+      ],
+      "status": "MISMATCH",
+      "evidence": "src/apply_label_corrections.py:8 states62totalre-scored and5disagreed",
+      "actual": {
+        "claimed_total": 67,
+        "script_total": 62,
+        "script_implied_agreement": 57,
+        "row_level_reviewer_artifact": "absent"
+      }
+    },
+    {
+      "claim": "Four carried tiers about1%stratifiedweight",
+      "readme_lines": [
+        "README.md:319-323",
+        "README.ko.md:221-223"
+      ],
+      "status": "VERIFIED",
+      "evidence": "reports/evaluation_frozen_test.json:tiers_carried_from_dev andper_tier population_unique;FUZZY_REVIEWnotaccepting",
+      "actual": {
+        "carried_tiers": 4,
+        "accepted_carried_tiers": 3,
+        "accepted_unique_weight": 22,
+        "accepted_population": 2185,
+        "share": 0.010068649885583524
+      }
+    },
+    {
+      "claim": "Postfix58rows,10EXACT,71.5-99.8interval",
+      "readme_lines": [
+        "README.md:324-326",
+        "README.ko.md:224-225"
+      ],
+      "status": "VERIFIED",
+      "evidence": "reports/evaluation_postfix.json:gold_sample_size,per_tier.EXACT.sampled,accepted_precision.ci95",
+      "actual": {
+        "sample_size": 58,
+        "exact_n": 10,
+        "interval": [
+          0.7149,
+          0.9978
+        ]
+      }
+    },
+    {
+      "claim": "24tests",
+      "readme_lines": [
+        "README.md:348",
+        "README.md:389",
+        "README.ko.md:245"
+      ],
+      "status": "VERIFIED",
+      "evidence": "tests/test_pipeline.py count top-level test functions; root executes pytest",
+      "actual": {
+        "test_functions": 24
+      }
+    },
+    {
+      "claim": "12edges Tagrisso query example",
+      "readme_lines": [
+        "README.md:281"
+      ],
+      "status": "VERIFIED",
+      "evidence": "reports/query_examples.json[0].evidence",
+      "actual": {
+        "evidence_rows": 12
+      }
+    },
+    {
+      "claim": "Mostrecent3000trials",
+      "readme_lines": [
+        "README.md:398-399",
+        "README.ko.md:260"
+      ],
+      "status": "UNVERIFIABLE",
+      "evidence": "src/ingest.py:185-190 no sortparameter;trials snapshot doesnotretainlastupdate/postdates",
+      "actual": {
+        "count": 3000,
+        "ordering_proof": null
+      }
+    },
+    {
+      "claim": "Historical88%weight on100%tiers,old99.1[98.4,99.8],old6481/6475,56,78.3,2008->66",
+      "readme_lines": [
+        "README.md:70",
+        "README.md:118-120",
+        "README.ko.md:54",
+        "README.ko.md:92-94"
+      ],
+      "status": "UNVERIFIABLE",
+      "evidence": "Historical claims repeated inHANDOFF/CODEX_AUDIT prose;currentreportcannotreproducepriorcodeandweights",
+      "actual": null
+    },
+    {
+      "claim": "Five applied labelcorrections",
+      "readme_lines": [
+        "README.md:97-104",
+        "README.ko.md:77-82"
+      ],
+      "status": "VERIFIED",
+      "evidence": "src/apply_label_corrections.py:CORRECTIONS",
+      "actual": {
+        "corrections": 5,
+        "current_correctness_audit": "seepharmacologyreview"
+      }
+    }
+  ],
+  "independent_graph_counts": {
+    "nodes_by_type": {
+      "Company": 1570,
+      "Disease": 1,
+      "Drug": 1066,
+      "Investigator": 36,
+      "Target": 803,
+      "Trial": 3000
+    },
+    "live_edges_by_rel": {
+      "ACTS_ON": 2186,
+      "ASSOCIATED_WITH": 300,
+      "EVALUATES": 4449,
+      "PARENT_OF": 43,
+      "SPONSORS": 4652,
+      "SPONSORS_TRIAL_OF": 3187,
+      "STUDIES": 2774
+    },
+    "derived_sponsor_classes": {
+      "INDUSTRY": 1313,
+      "OTHER": 1675,
+      "NETWORK": 84,
+      "OTHER_GOV": 40,
+      "NIH": 73,
+      "FED": 2
+    },
+    "industry_fraction": 0.41198619391277064,
+    "credentialed_lead_trial_count": 36
+  },
+  "simulation": {
+    "seed": 42,
+    "draws_each": 200000,
+    "tiers": [
+      "ALIAS",
+      "CLEANED",
+      "CONTAINED_ALIAS",
+      "EXACT",
+      "FUZZY_AUTO",
+      "PARENTHETICAL",
+      "SALT_STRIPPED"
+    ],
+    "ns": [
+      30,
+      1,
+      30,
+      40,
+      16,
+      15,
+      5
+    ],
+    "weights": [
+      0.23935926773455377,
+      0.0004576659038901602,
+      0.09473684210526316,
+      0.6453089244851259,
+      0.007322654462242563,
+      0.010526315789473684,
+      0.002288329519450801
+    ],
+    "coverage": [
+      {
+        "true_all_tier_probability": 0.5,
+        "coverage": 0.99656
+      },
+      {
+        "true_all_tier_probability": 0.9,
+        "coverage": 0.99344
+      },
+      {
+        "true_all_tier_probability": 0.95,
+        "coverage": 0.98969
+      },
+      {
+        "true_all_tier_probability": 0.97,
+        "coverage": 0.98719
+      },
+      {
+        "true_all_tier_probability": 0.99,
+        "coverage": 0.97622
+      },
+      {
+        "true_all_tier_probability": 0.995,
+        "coverage": 0.980415
+      },
+      {
+        "true_all_tier_probability": 0.999,
+        "coverage": 0.93195
+      }
+    ],
+    "qualification": "Hypotheticalindependentbinomialtiers, notfinitepopulationcalibrationoractualaccuracy. MarginalWilsonendpointsumisnotcalibrated95%;typicalinteriorcasesovercover;nearboundarycounterexampleundercovers."
+  },
+  "rescoring_effects_from_pharma_agent": {
+    "test": {
+      "new_incorrect_ids": [
+        "13",
+        "141"
+      ],
+      "raw_before": 0.9130434782608695,
+      "raw_after": 0.8956521739130435,
+      "stratified_before": 0.9687719298245615,
+      "stratified_after": 0.9600915331807781,
+      "stratified_delta_percentage_points": -0.868039664378337
+    },
+    "postfix": {
+      "new_incorrect_ids": [
+        "8"
+      ],
+      "raw_before": 0.9736842105263158,
+      "raw_after": 0.9473684210526315,
+      "stratified_before": 0.9913958810068649,
+      "stratified_after": 0.9674599542334096,
+      "stratified_delta_percentage_points": -2.3935926773455374
+    }
+  }
+}

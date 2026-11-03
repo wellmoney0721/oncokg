@@ -1,0 +1,707 @@
+{
+  "reproduction": "python audit_evidence_20261103/labels_reproduce.py",
+  "probes": [
+    {
+      "raw": "tobramycin",
+      "components": [
+        {
+          "component": "tobramycin",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL384467",
+          "score": null,
+          "rules": [],
+          "matched_alias": "tobramycin",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "corticosteroid",
+      "components": [
+        {
+          "component": "corticosteroid",
+          "tier": "FUZZY_AUTO",
+          "drug_id": "CHEMBL635",
+          "score": 96.6,
+          "rules": [
+            "fuzzy_match"
+          ],
+          "matched_alias": "a corticosteroid",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "corticosteroids",
+      "components": [
+        {
+          "component": "corticosteroids",
+          "tier": "FUZZY_AUTO",
+          "drug_id": "CHEMBL635",
+          "score": 93.3,
+          "rules": [
+            "fuzzy_match"
+          ],
+          "matched_alias": "a corticosteroid",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "prednisolone phosphate",
+      "components": [
+        {
+          "component": "prednisolone phosphate",
+          "tier": "SALT_STRIPPED",
+          "drug_id": "CHEMBL131",
+          "score": null,
+          "rules": [
+            "match_after_salt_strip"
+          ],
+          "matched_alias": "PREDNISOLONE",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "etoposide phosphate",
+      "components": [
+        {
+          "component": "etoposide phosphate",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL44657",
+          "score": null,
+          "rules": [],
+          "matched_alias": "etoposide phosphate",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "Leucovorin calcium",
+      "components": [
+        {
+          "component": "Leucovorin calcium",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL1201138",
+          "score": null,
+          "rules": [],
+          "matched_alias": "LEUCOVORIN CALCIUM",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "Leucovorin",
+      "components": [
+        {
+          "component": "Leucovorin",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL1679",
+          "score": null,
+          "rules": [],
+          "matched_alias": "LEUCOVORIN",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "Mvasi",
+      "components": [
+        {
+          "component": "Mvasi",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1201583",
+          "score": null,
+          "rules": [],
+          "matched_alias": "Mvasi",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "Alymsys",
+      "components": [
+        {
+          "component": "Alymsys",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1201583",
+          "score": null,
+          "rules": [],
+          "matched_alias": "Alymsys",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "Zirabev",
+      "components": [
+        {
+          "component": "Zirabev",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1201583",
+          "score": null,
+          "rules": [],
+          "matched_alias": "Zirabev",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "Bevacizumab biosimilars",
+      "components": [
+        {
+          "component": "Bevacizumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201583",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "BEVACIZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'Bevacizumab biosimilars'"
+        },
+        {
+          "component": "biosimilars",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    },
+    {
+      "raw": "NanoPac (sterile nanoparticulate paclitaxel) Powder for Suspension",
+      "components": [
+        {
+          "component": "sterile nanoparticulate paclitaxel",
+          "tier": "PARENTHETICAL",
+          "drug_id": "CHEMBL428647",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "strip_formulation",
+            "match_on_parenthetical"
+          ],
+          "matched_alias": "sterile nanoparticulate paclitaxel",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "CC-486",
+      "components": [
+        {
+          "component": "CC-486",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1489",
+          "score": null,
+          "rules": [],
+          "matched_alias": "cc-486",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "Liposomal Doxorubicin and cisplatin",
+      "components": [
+        {
+          "component": "Doxorubicin",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL53463",
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "split_combination"
+          ],
+          "matched_alias": "DOXORUBICIN",
+          "candidates": null
+        },
+        {
+          "component": "cisplatin",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL11359",
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "split_combination"
+          ],
+          "matched_alias": "CISPLATIN",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "paclitaxel liposome",
+      "components": [
+        {
+          "component": "paclitaxel",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL428647",
+          "score": null,
+          "rules": [
+            "strip_formulation"
+          ],
+          "matched_alias": "PACLITAXEL",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "paclitaxel polymeric micelles",
+      "components": [
+        {
+          "component": "paclitaxel",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL428647",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "PACLITAXEL",
+          "candidates": null,
+          "note": "segmented out of 'paclitaxel polymeric micelles'"
+        },
+        {
+          "component": "polymeric micelles",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    },
+    {
+      "raw": "cemiplimab-rwlc",
+      "components": [
+        {
+          "component": "cemiplimab-rwlc",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    {
+      "raw": "amivantamab-vmjw",
+      "components": [
+        {
+          "component": "amivantamab-vmjw",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    {
+      "raw": "tarlatamab-dlle",
+      "components": [
+        {
+          "component": "tarlatamab-dlle",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    {
+      "raw": "Injection of pembrolizumab",
+      "components": [
+        {
+          "component": "of pembrolizumab",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    {
+      "raw": "pembrolizumab antibody",
+      "components": [
+        {
+          "component": "pembrolizumab antibody",
+          "tier": "BLOCKED_CLASS_TERM",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "class_term_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "category term, not an identifiable substance"
+        }
+      ]
+    },
+    {
+      "raw": "mab inhibitor",
+      "components": [
+        {
+          "component": "mab inhibitor",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [],
+          "matched_alias": null,
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "Antineoplastic agents",
+      "components": [
+        {
+          "component": "Antineoplastic agents",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [],
+          "matched_alias": null,
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "No pembrolizumab",
+      "components": [
+        {
+          "component": "pembrolizumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "PEMBROLIZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'No pembrolizumab'"
+        }
+      ]
+    },
+    {
+      "raw": "pembrolizumab without paclitaxel",
+      "components": [
+        {
+          "component": "pembrolizumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "PEMBROLIZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'pembrolizumab without paclitaxel'"
+        },
+        {
+          "component": "paclitaxel",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL428647",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "PACLITAXEL",
+          "candidates": null,
+          "note": "segmented out of 'pembrolizumab without paclitaxel'"
+        },
+        {
+          "component": "without",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    },
+    {
+      "raw": "DrugX and pembrolizumab (Keytruda)",
+      "components": [
+        {
+          "component": "Keytruda",
+          "tier": "PARENTHETICAL",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination",
+            "match_on_parenthetical"
+          ],
+          "matched_alias": "Keytruda",
+          "candidates": null
+        },
+        {
+          "component": "pembrolizumab",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination"
+          ],
+          "matched_alias": "PEMBROLIZUMAB",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "pembrolizumab + placebo to match docetaxel",
+      "components": [
+        {
+          "component": "pembrolizumab + placebo to match docetaxel",
+          "tier": "BLOCKED_PLACEBO",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "placebo_guard",
+            "placebo_reference_arm"
+          ],
+          "note": "placebo arm naming its reference drug - no exposure"
+        }
+      ]
+    },
+    {
+      "raw": "DB-1303/BNT323",
+      "components": [
+        {
+          "component": "DB-1303",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "split_combination",
+            "dev_code_no_fuzzy"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "alphanumeric development code: approximate matching disabled to avoid binding to a neighbouring code"
+        },
+        {
+          "component": "BNT323",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "split_combination",
+            "dev_code_no_fuzzy"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "alphanumeric development code: approximate matching disabled to avoid binding to a neighbouring code"
+        }
+      ]
+    },
+    {
+      "raw": "trastuzumab deruxtecan/T-DXd",
+      "components": [
+        {
+          "component": "trastuzumab deruxtecan",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL4297844",
+          "score": null,
+          "rules": [
+            "split_combination"
+          ],
+          "matched_alias": "TRASTUZUMAB DERUXTECAN",
+          "candidates": null
+        },
+        {
+          "component": "T-DXd",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL4297844",
+          "score": null,
+          "rules": [
+            "split_combination"
+          ],
+          "matched_alias": "t-dxd",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "GV20-0251 and Pembrolizumab [KEYTRUDA®]",
+      "components": [
+        {
+          "component": "KEYTRUDA®",
+          "tier": "PARENTHETICAL",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination",
+            "match_on_parenthetical"
+          ],
+          "matched_alias": "Keytruda",
+          "candidates": null
+        },
+        {
+          "component": "Pembrolizumab",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination"
+          ],
+          "matched_alias": "PEMBROLIZUMAB",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "NGM707 plus pembrolizumab (KEYTRUDA®)",
+      "components": [
+        {
+          "component": "KEYTRUDA®",
+          "tier": "PARENTHETICAL",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination",
+            "match_on_parenthetical"
+          ],
+          "matched_alias": "Keytruda",
+          "candidates": null
+        },
+        {
+          "component": "pembrolizumab",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination"
+          ],
+          "matched_alias": "PEMBROLIZUMAB",
+          "candidates": null
+        }
+      ]
+    },
+    {
+      "raw": "NGM831 and NGM438 plus pembrolizumab (KEYTRUDA®)",
+      "components": [
+        {
+          "component": "KEYTRUDA®",
+          "tier": "PARENTHETICAL",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination",
+            "match_on_parenthetical"
+          ],
+          "matched_alias": "Keytruda",
+          "candidates": null
+        },
+        {
+          "component": "KEYTRUDA®",
+          "tier": "PARENTHETICAL",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination",
+            "match_on_parenthetical"
+          ],
+          "matched_alias": "Keytruda",
+          "candidates": null
+        },
+        {
+          "component": "pembrolizumab",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination"
+          ],
+          "matched_alias": "PEMBROLIZUMAB",
+          "candidates": null
+        }
+      ]
+    }
+  ],
+  "line_references": {
+    "salt": "src/textrules.py:41-49; src/normalize.py:572-579",
+    "class": "src/textrules.py:97-117",
+    "distinct": "src/textrules.py:123-149; src/normalize.py:467-469,509,525",
+    "containment": "src/normalize.py:424-458,590-625",
+    "global_parenthetical": "src/normalize.py:559-570",
+    "combo": "src/textrules.py:155-159,283-294"
+  },
+  "sources": {
+    "ateganosine": "https://cdn.who.int/media/docs/default-source/international-nonproprietary-names-%28inn%29/pl130.pdf",
+    "zimberelimab": "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/zimberelimab",
+    "retlirafusp": "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/retlirafusp-alfa",
+    "abraxane": "https://www.cancer.gov/about-cancer/treatment/drugs/nanoparticlepaclitaxel",
+    "onureg": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/214120s000lbl.pdf",
+    "cc486": "https://www.cancer.gov/news-events/cancer-currents-blog/2020/cc-486-aml-improves-survival-maintenance-therapy",
+    "nanopac": "https://nanology.us/wp-content/uploads/2020/06/Nanology_Nanopac_lung_cancer_IND.pdf",
+    "nanopac_trial": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8421313/",
+    "hlx04": "https://www.henlius.com/en/newsd/0/31147.html",
+    "zirabev": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2019/761099Orig1s000SumR.pdf",
+    "mvasi": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761028s011lbl.pdf",
+    "interferon": "https://www.ama-assn.org/about/united-states-adopted-names-usan/interferons",
+    "apatinib": "https://precision.fda.gov/uniisearch/srs/unii/5s371k6132",
+    "cisplatin": "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/cisplatin",
+    "savolitinib": "https://dctd.cancer.gov/drug-discovery-development/reagents-materials/formulary/about/agents/savolitinib",
+    "pexmetinib": "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/pexmetinib",
+    "flt": "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/fluorothymidine-f-18",
+    "farag": "https://cdn.clinicaltrials.gov/large-docs/40/NCT04678440/Prot_SAP_000.pdf",
+    "calcitriol": "https://clinicaltrials.gov/study/NCT00182741",
+    "keytruda": "https://www.cancer.gov/about-cancer/treatment/drugs/pembrolizumab",
+    "js001": "https://cdn.clinicaltrials.gov/large-docs/40/NCT03474640/Prot_000.pdf",
+    "bortezomib": "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/bortezomib",
+    "etoposide_phosphate": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/020457s019lbl.pdf",
+    "prednisolone_phosphate": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/019157_PEDIAPRED_ORIGINAL_AP.pdf",
+    "tobramycin": "https://www.fda.gov/drugs/development-resources/fda-rationale-recognition-decision-gentamicin-tobramycin-and-amikacin-enterobacterales-and-p",
+    "cemiplimab": "https://www.fda.gov/drugs/drug-approvals-and-databases/fda-approves-cemiplimab-rwlc-metastatic-or-locally-advanced-cutaneous-squamous-cell-carcinoma",
+    "amivantamab": "https://www.cancer.gov/about-cancer/treatment/drugs/amivantamab-vmjw",
+    "db1303": "https://www.cancer.gov/research/participate/clinical-trials-search/v?id=NCI-2024-07665",
+    "gv20": "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/anti-igsf8-monoclonal-antibody-gv20-0251",
+    "ngm707": "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/anti-ilt2-anti-ilt4-monoclonal-antibody-ngm707",
+    "ngm831": "https://www.cancer.gov/research/participate/clinical-trials-search/v?id=NCI-2022-01100&r=1",
+    "ngm438": "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/anti-lair1-monoclonal-antibody-ngm438"
+  }
+}

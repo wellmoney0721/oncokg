@@ -1,0 +1,32 @@
+{
+  "reviewer": "graph_query independent second-eye",
+  "confirmed_probes": [
+    {
+      "input": "tobramycin",
+      "result": "ALIAS -> CHEMBL384467 DEXAMETHASONE",
+      "assessment": "Unequivocal wrong molecule. Tobramycin and dexamethasone can be co-ingredients; they are not synonyms.",
+      "primary_source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7f310e0e-0d3b-493d-b6c4-238493a2a9b9"
+    },
+    {
+      "input": "Liposomal Doxorubicin",
+      "result": "BLOCKED_DISTINCT_PRODUCT"
+    },
+    {
+      "input": "Liposomal Doxorubicin and cisplatin",
+      "result": "DOXORUBICIN EXACT plus CISPLATIN EXACT",
+      "assessment": "Internal guard bypass demonstrated by addition of a combination component."
+    },
+    {
+      "input": "NanoPac (sterile nanoparticulate paclitaxel) Powder for Suspension",
+      "result": "PARENTHETICAL -> CHEMBL428647 PACLITAXEL",
+      "assessment": "Product identity is lost under the repository product-preserving policy; do not describe it as a different active molecule. Official manufacturer source calls this submicron particles of pure paclitaxel.",
+      "primary_source": "https://nanology.us/wp-content/uploads/2020/06/Nanology_Nanopac_lung_cancer_IND.pdf"
+    },
+    {
+      "input": "CC-486",
+      "result": "ALIAS -> CHEMBL1489 AZACITIDINE",
+      "assessment": "Wrong under repository product-preserving policy; FDA explicitly forbids substituting oral ONUREG for IV/SC azacitidine. Same active molecule does not imply same product.",
+      "primary_source": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/214120s000lbl.pdf"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+﻿**Needs revision.** No source code or labels were changed.
+
+[Audit report](<C:/Users/geoum/Dropbox/GY's Formal Workspace/2026 Job recruting/바이오리서치에이아이/oncokg/audit_evidence_20261103/AUDIT_REPORT.md>) · [Evidence index](<C:/Users/geoum/Dropbox/GY's Formal Workspace/2026 Job recruting/바이오리서치에이아이/oncokg/audit_evidence_20261103/evidence_index.json>)
+
+## BLOCKERS
+
+- **The relation rename broke retrieval and the dashboard.** `src/query.py:206,286` and `src/make_dashboard_data.py:57,82,86` still query `DEVELOPS`. Company questions return no evidence despite **54** live sponsorship edges for osimertinib. `web/data.json.top_companies=[]`.
+- **Corporate identities remain wrong.** `normalize_company("Merck & Co., Inc.")` assigns **Merck KGaA** as parent (`src/normalize.py:926–933`), although these are [separate companies](https://www.emdgroup.com/en/company/our-name-and-brands.html). SQLite also represents BeiGene’s [rename to BeOne](https://ir.beonemedicines.com/news/beone-medicines-launches-following-redomiciliation-to-switzerland-marking-a-new-chapter-in-global-oncology/3bf1505f-9411-4a38-b445-54544ad4c88e) as `ORG:beonemedicines|PARENT_OF|ORG:beigene|hand-curated corporate map`.
+- **Removed evidence remains live.** Derivation precedes retirement (`src/graph.py:308,333`). Removing sole trial NCT00200395 preserves its derived sponsorship until another rebuild. Removed trial nodes persist; node updates omit `type` (`:121,335`).
+- **Groundedness accepts inventions.** `xyzabumab cures cancer.` and fabricated percentages written in words pass (`src/query.py:437–451`). Evidence containing `47.5` accepts invented `47` but rejects exact `47.5`. These were direct checker tests; no API key was available.
+- **Correction verification falsely succeeds.** With a pending correction, `--check` prints both “PENDING” and “all corrections are already in the labels”, exiting 0 (`src/apply_label_corrections.py:83–85,99–101`). Its guard checks ID/verdict without checking surface/target (`:69–82`).
+
+## LABEL DISAGREEMENTS
+
+Independently reviewed **58 held-out rows**: 30 CONTAINED_ALIAS, 15 PARENTHETICAL, eight placebo and five difficult ALIAS. FUZZY_AUTO and SALT_STRIPPED are absent from this test sample.
+
+Under the repository’s declared **product-preserving criterion**, these author-`correct` labels become `incorrect`:
+
+| Location | Surface → assigned target | Evidence |
+|---|---|---|
+| `reports/gold_test.csv:14` | CC-486 → AZACITIDINE | Oral formulation; [FDA prohibits substitution with IV/SC azacitidine](https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/214120s000lbl.pdf). |
+| `reports/gold_test.csv:142` | NanoPac → PACLITAXEL | Distinct nanoparticle formulation documented in its [trial protocol](https://cdn.clinicaltrials.gov/large-docs/85/NCT03029585/Prot_000.pdf). |
+| `reports/gold_postfix.csv:9` | Nab-paclitaxel → PACLITAXEL | Same product-collapse error already corrected in test ID22. [NCI](https://www.cancer.gov/about-cancer/treatment/drugs/nanoparticlepaclitaxel) |
+
+Test precision becomes **103/115 = 89.57%**, weighted **96.01%**. Postfix becomes **36/38 = 94.74%**, weighted **96.75%**. These distinguish products, not different active molecules.
+
+The previous five corrected verdicts survive that criterion. Correction ID22’s explanation does not: NCT07318883 compares HLX07/placebo, not paclitaxel formulations (`apply_label_corrections.py:38–41`).
+
+## DOMAIN ERRORS
+
+- Curated lookup still maps **tobramycin → DEXAMETHASONE** (`data/raw/drugs.json:40259`; `src/normalize.py:187–202`). They are [separate ingredients](https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/050818s010lbl.pdf). `corticosteroid` also auto-resolves to HYDROCORTISONE (`drugs.json:77781`).
+- `Mvasi`, `Alymsys` and `Zirabev` collapse to bevacizumab. Adding `and cisplatin` makes otherwise-blocked liposomal doxorubicin acceptable because cleaning removes its qualifier (`normalize.py:467,509,525`).
+- The suffix guard wrongly blocks the [originator cemiplimab-rwlc](https://www.fda.gov/drugs/drug-approvals-and-databases/fda-approves-cemiplimab-rwlc-metastatic-or-locally-advanced-cutaneous-squamous-cell-carcinoma) (`textrules.py:138–139`).
+- `prednisolone phosphate` loses a [covalent ester](https://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/019157_PEDIAPRED_ORIGINAL_AP.pdf) as though it were a salt (`textrules.py:41–49`). `pembrolizumab antibody` is blocked while `mab inhibitor` escapes the class guard (`:97–117`).
+- `No pembrolizumab` becomes an accepted exposure (`normalize.py:424–458`). Shared parentheses overwrite unknown combination components (`:561`).
+
+## STATISTICAL OBJECTIONS
+
+Independent calculation confirms the original **105/115 = 91.3043%**, Wilson **84.7303–95.2082%**.
+
+Unique-resolution weighting matches the sampler (`make_gold_sample.py:79–97`); it does not estimate precision over trial occurrences or graph edges. However, `evaluate.py:65–71` combines **current population weights with historical labels**: 20/172 test rows changed, including 12 accepted rows and every originally incorrect accepted match.
+
+Carried accepting tiers contribute **22/2,185 = 1.0069%**. FUZZY_REVIEW contributes zero. Excluding carried tiers gives **97.0766%**, versus 96.8772%.
+
+A weighted sum of marginal Wilson endpoints (`evaluate.py:116–120`) is not a calibrated 95% interval. A 200,000-resample stratified bootstrap gives **94.23–98.95%**, versus published **85.66–98.97%**. Bootstrap cannot discover errors in empirically perfect tiers, so it is no replacement. Postfix **71.49–99.78%** reproduces but does not establish repair success.
+
+## OVERCLAIMS
+
+- “Every edge carries its **source**, the **source record**, the **fetch timestamp**, the **resolution tier** that produced it and a **confidence**.” (`README.md:248–249`; `README.ko.md:195`). **3,187** live edges have null `source_record`; **10,368** have null `tier`.
+- “The facts are identical either way; only the prose changes.” (`README.md:293–294`). The checker does not enforce this.
+- “Rebuilding from unchanged sources records zero changes.” (`README.md:260–261`; Korean `:204`). False following the demonstrated source-removal build.
+- **MISMATCH:** “four other molecules” (`README.md:210–212`; Korean `:160–162`) names three: MEDI4736 is durvalumab.
+- **MISMATCH:** “other 62 re-scored rows agreed” (`README.md:316`; Korean `:219`) conflicts with 62 total/five disagreements (`apply_label_corrections.py:8`).
+- **UNVERIFIABLE:** “most recent 3,000” (`README.md:398–399`; Korean `:260`): ingestion specifies no sort (`ingest.py:185–190`).
+
+## WHAT SURVIVED
+
+Original and fresh archive: **24 tests passed**, two offline builds each exited **0**, Python stderr empty. Both second builds reported **added/changed/retired = 0/0/0**. No missing rebuild files or original-directory imports. Differences were only build IDs and expected `added:17591→0`; tracked artifacts were restored.
+
+**VERIFIED numerically**, with exact source fields recorded in `statistics_results.json.number_audit`:
+
+| Claim | Reproduced |
+|---|---|
+| Raw precision; accepted denominators | 92.0/91.3/97.4%; 137/115/38 |
+| Weighted estimates | 97.7/96.9/99.1% |
+| Coverage; distinct drugs/conditions; trials | 4,969/6,351; 2,742/2,175; 3,000 |
+| Review proposals; placebo | 37.5%; 8/8 |
+| Curation ambiguity; exact | 2,193→69; 1,997→4,056 |
+| Dictionary defect counts | 134/124/80/78/47/7/6 |
+| Nodes; live edges | 6,476; 17,591 |
+| Seven relation counts, README order | 4,652/4,449/3,187/2,774/2,186/300/43 |
+| Industry/non-industry | 41.2%/58.8% |
+
+Live template `applicable:false`, France refusal, academic-name preservation and deterministic output survive. Committed `reports/query_examples.json[0].checks` remains stale.
+
+Repairs **1/2/3/5/6/9/11/13** hold; **4/7/8/10/12/14** remain incomplete. All 59 corporate keys were inspected; continued legal existence of every subsidiary remains unverified.

@@ -1,0 +1,61 @@
+{
+  "five_corrections": [
+    {
+      "sample": "test",
+      "id": "3",
+      "audit_of_new_verdict": "valid under product-preserving ontology",
+      "source_urls": [
+        "https://www.cancer.gov/about-cancer/treatment/drugs/nanoparticlepaclitaxel"
+      ]
+    },
+    {
+      "sample": "test",
+      "id": "22",
+      "audit_of_new_verdict": "valid under product-preserving ontology",
+      "source_urls": [
+        "https://www.cancer.gov/about-cancer/treatment/drugs/nanoparticlepaclitaxel"
+      ]
+    },
+    {
+      "sample": "test",
+      "id": "67",
+      "audit_of_new_verdict": "valid under product-preserving ontology",
+      "source_urls": [
+        "https://www.henlius.com/en/newsd/0/31147.html"
+      ]
+    },
+    {
+      "sample": "test",
+      "id": "68",
+      "audit_of_new_verdict": "valid under product-preserving ontology",
+      "source_urls": [
+        "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2019/761099Orig1s000SumR.pdf"
+      ]
+    },
+    {
+      "sample": "dev",
+      "id": "139",
+      "audit_of_new_verdict": "valid: class name cannot identify a molecular product",
+      "source_urls": [
+        "https://www.ama-assn.org/about/united-states-adopted-names-usan/interferons"
+      ]
+    }
+  ],
+  "one_pending_check_stdout": "PENDING test#3: correct -> incorrect\napplied 0, already correct 4\nall corrections are already in the labels\n",
+  "one_pending_check_exit_code": 0,
+  "guard_defects": [
+    "--check prints all corrections applied while pending; applied cannot increment on check path.",
+    "Identity guard uses row id plus verdict only; no raw or drug_id assertion.",
+    "Per-file writes before later sample validation make operation non-atomic."
+  ],
+  "rationale_error": {
+    "file": "src/apply_label_corrections.py",
+    "lines": [
+      38,
+      41
+    ],
+    "claim": "trial whose whole point is the comparison between them",
+    "evidence": "NCT07318883 is HLX07 versus placebo atop chemotherapy; paclitaxel/nab-paclitaxel are permitted chemotherapy options in all arms, not the primary comparison.",
+    "snapshot_field": "data/raw/trials.json:data[protocolSection.identificationModule.nctId=NCT07318883].protocolSection.identificationModule.officialTitle"
+  }
+}

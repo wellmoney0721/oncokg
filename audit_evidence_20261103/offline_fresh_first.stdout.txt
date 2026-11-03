@@ -1,0 +1,156 @@
+building drug dictionary ...
+  1066 molecules, 9750 aliases, 7992 lookup keys, 338 ambiguous before curation
+curating dictionary ...
+    134  class_term_as_synonym
+    124  genuinely_ambiguous_alias
+     80  cross_drug_synonym
+     78  parent_child_collapse
+     47  suspected_duplicate_entity
+      7  distinct_product_alias
+      6  placebo_string_in_synonym_list
+  7858 lookup keys after curation, 124 still ambiguous
+  disease dictionary: 17 surface forms
+  target guard vocabulary: 4247 symbols
+resolving trial records ...
+  -> data\processed\resolved.json
+
+intervention component resolution tiers:
+    3997  EXACT
+    1226  UNRESOLVED
+     698  ALIAS
+     273  BLOCKED_CLASS_TERM
+     217  CONTAINED_ALIAS
+     151  BLOCKED_PLACEBO
+      74  BLOCKED_DISTINCT_PRODUCT
+      66  AMBIGUOUS
+      31  PARENTHETICAL
+      16  FUZZY_REVIEW
+      16  FUZZY_AUTO
+      13  BLOCKED_TARGET_TERM
+       9  SALT_STRIPPED
+       1  CLEANED
+1428 findings -> reports\quality_report.json
+
+[dictionary]
+     134  class_term_as_synonym
+     124  genuinely_ambiguous_alias
+      80  cross_drug_synonym
+      78  parent_child_collapse
+      47  suspected_duplicate_entity
+       7  distinct_product_alias
+       6  placebo_string_in_synonym_list
+
+[record]
+     435  no_substance_resolved
+     226  out_of_scope_trial
+     169  missing_structural_field
+      55  recurrent_unresolved_surface
+      16  incomplete_intervention_parse
+
+[graph]
+      35  stage_disagrees_with_reference
+      16  company_names_merged
+pass 1: raw dictionary, exactly as the reference data supplies it
+pass 2: curated dictionary
+
+  ambiguous resolutions : 2193 -> 69
+  exact resolutions     : 1997 -> 4056
+  ambiguous lookup keys : 338 -> 124
+
+-> reports\curation_effect.json
+graph -> data\processed\oncokg.sqlite
+  nodes 6476   edges 17591
+  added 17591  changed 0  retired 0  restored 0
+  nodes by type: {'Company': 1570, 'Disease': 1, 'Drug': 1066, 'Investigator': 36, 'Target': 803, 'Trial': 3000}
+  edges by relation: {'ACTS_ON': 2186, 'ASSOCIATED_WITH': 300, 'EVALUATES': 4449, 'PARENT_OF': 43, 'SPONSORS': 4652, 'SPONSORS_TRIAL_OF': 3187, 'STUDIES': 2774}
+=== resolution quality ===
+tier                      n   ok    rate            95% CI   uniq    occ
+EXACT                    40   40  100.0%  [ 91.2%,100.0%]   1410   3997
+ALIAS                    30   28   93.3%  [ 78.7%, 98.2%]    523    698
+CLEANED                   1    1  100.0%  [ 20.6%,100.0%]      1      1
+SALT_STRIPPED             5    5  100.0%  [ 56.5%,100.0%]      5      9
+PARENTHETICAL            15   10   66.7%  [ 41.7%, 84.8%]     23     31
+CONTAINED_ALIAS          30   27   90.0%  [ 74.4%, 96.5%]    207    217
+FUZZY_AUTO               16   11   68.8%  [ 44.4%, 85.8%]     16     16
+FUZZY_REVIEW             16    6   37.5%  [ 18.5%, 61.4%]     14     16
+AMBIGUOUS                12   12  100.0%  [ 75.8%,100.0%]     46     66
+BLOCKED_PLACEBO           8    8  100.0%  [ 67.6%,100.0%]     53    151
+BLOCKED_CLASS_TERM        8    8  100.0%  [ 67.6%,100.0%]    210    273
+BLOCKED_TARGET_TERM       4    4  100.0%  [ 51.0%,100.0%]     12     13
+UNRESOLVED               25   24   96.0%  [ 80.5%, 99.3%]   1106   1226
+
+accepted-match precision : 96.9% (95% CI 85.7-99.0%)
+coverage of substance-like strings: 78.2% (4969/6351)
+
+-> reports\evaluation_frozen_test.json
+-> web\data.json  (52 KB)
+-> web\dashboard.html  (81 KB)
+-> web\index.html  (81 KB)
+=== resolution quality ===
+tier                      n   ok    rate            95% CI   uniq    occ
+EXACT                    40   40  100.0%  [ 91.2%,100.0%]   1410   3997
+ALIAS                    30   28   93.3%  [ 78.7%, 98.2%]    523    698
+CLEANED                   1    1  100.0%  [ 20.6%,100.0%]      1      1
+SALT_STRIPPED             5    5  100.0%  [ 56.5%,100.0%]      5      9
+PARENTHETICAL            15   12   80.0%  [ 54.8%, 93.0%]     23     31
+CONTAINED_ALIAS          30   29   96.7%  [ 83.3%, 99.4%]    207    217
+FUZZY_AUTO               16   11   68.8%  [ 44.4%, 85.8%]     16     16
+FUZZY_REVIEW             16    6   37.5%  [ 18.5%, 61.4%]     14     16
+AMBIGUOUS                12   12  100.0%  [ 75.8%,100.0%]     46     66
+BLOCKED_PLACEBO           8    5   62.5%  [ 30.6%, 86.3%]     53    151
+BLOCKED_CLASS_TERM        8    8  100.0%  [ 67.6%,100.0%]    210    273
+BLOCKED_TARGET_TERM       8    8  100.0%  [ 67.6%,100.0%]     12     13
+UNRESOLVED               25   24   96.0%  [ 80.5%, 99.3%]   1106   1226
+
+accepted-match precision : 97.7% (95% CI 86.7-99.3%)
+coverage of substance-like strings: 78.2% (4969/6351)
+
+-> reports\evaluation_dev.json
+=== resolution quality ===
+tier                      n   ok    rate            95% CI   uniq    occ
+EXACT                    10   10  100.0%  [ 72.2%,100.0%]   1410   3997
+ALIAS                    10   10  100.0%  [ 72.2%,100.0%]    523    698
+CLEANED                   1    1  100.0%  [ 20.6%,100.0%]      1      1
+SALT_STRIPPED             5    5  100.0%  [ 56.5%,100.0%]      5      9
+PARENTHETICAL             3    3  100.0%  [ 43.9%,100.0%]     23     31
+CONTAINED_ALIAS          15   14   93.3%  [ 70.2%, 98.8%]    207    217
+FUZZY_AUTO               16   11   68.8%  [ 44.4%, 85.8%]     16     16
+FUZZY_REVIEW             16    6   37.5%  [ 18.5%, 61.4%]     14     16
+AMBIGUOUS                12   12  100.0%  [ 75.8%,100.0%]     46     66
+BLOCKED_PLACEBO           4    3   75.0%  [ 30.1%, 95.4%]     53    151
+BLOCKED_CLASS_TERM        6    6  100.0%  [ 61.0%,100.0%]    210    273
+BLOCKED_TARGET_TERM       8    8  100.0%  [ 67.6%,100.0%]     12     13
+UNRESOLVED               10   10  100.0%  [ 72.2%,100.0%]   1106   1226
+
+accepted-match precision : 99.1% (95% CI 71.5-99.8%)
+coverage of substance-like strings: 78.2% (4969/6351)
+
+-> reports\evaluation_postfix.json
+== skipping ingest (offline): fetch public records and snapshot them
+
+== normalize: build the dictionary, curate it, resolve every record
+  [normalize finished in 17.3s]
+
+== qc: run the quality checks
+  [qc finished in 0.5s]
+
+== curation_effect: resolve twice, with and without curation
+  [curation_effect finished in 55.0s]
+
+== graph: build the knowledge graph with provenance
+  [graph finished in 1.7s]
+
+== evaluate: score the held-out sample
+  [evaluate finished in 0.4s]
+
+== make_dashboard_data: assemble the dashboard payload
+  [make_dashboard_data finished in 1.2s]
+
+== build_dashboard: render the dashboard
+  [build_dashboard finished in 0.2s]
+
+  [evaluate finished in 0.3s]
+
+  [evaluate finished in 0.4s]
+
+done. open web/index.html, or run: python -m pytest tests -q

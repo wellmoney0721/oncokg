@@ -1,0 +1,49 @@
+{
+  "audit_commit": "e79049b062678975569118c11355ddac2c1e832f",
+  "report": "AUDIT_REPORT.md",
+  "reproduction": [
+    "execution.json",
+    "reproduction_comparison.json",
+    "status_before.stdout.txt",
+    "diff_before.stdout.txt",
+    "status_after_second.stdout.txt",
+    "diff_after_second.stdout.txt",
+    "status_final.stdout.txt",
+    "diff_final.stdout.txt"
+  ],
+  "numeric_claims": [
+    "statistics_results.json",
+    "statistics_reproduction.txt"
+  ],
+  "rescore": [
+    "labels_rescore.json",
+    "labels_corrections_check.json"
+  ],
+  "domain": [
+    "labels_domain_probes.json",
+    "labels_parenthetical_trace.json",
+    "labels_reproduce.py",
+    "labels_reproduce_output.txt",
+    "pharma_second_eye.json"
+  ],
+  "graph_and_queries": [
+    "graph_query_audit.py",
+    "graph_query_audit.json"
+  ],
+  "corporate": [
+    "corporate_map_review.json",
+    "corporate_probes.json"
+  ],
+  "readme": [
+    "readme_overclaims.json"
+  ],
+  "previous_repairs": [
+    "previous_repairs.json"
+  ],
+  "limitations": [
+    "No ANTHROPIC_API_KEY; generated-answer checker tested directly.",
+    "All59 corporate-map keys reviewed; exact continued legal existence of every subsidiary was not independently established.",
+    "Product-policy rescoring distinguishes regulatory formulations; it is not a claim that their active moieties differ.",
+    "Fresh archive shares installed dependencies but all project imports were confirmed inside archive."
+  ]
+}

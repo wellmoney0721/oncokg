@@ -1,0 +1,155 @@
+[
+  {
+    "file": "README.md",
+    "lines": [
+      184,
+      186
+    ],
+    "exact_excerpt": "complete, which nothing downstream can detect. Greedy dictionary segmentation\nextracts every component, and whatever is left over is emitted as an explicit\nunresolved residue rather than dropped.",
+    "counterexample": "Global parentheticals replace unknown combination components; labels_parenthetical_trace.json. Negation residue can also be silently discarded."
+  },
+  {
+    "file": "README.ko.md",
+    "lines": [
+      139,
+      141
+    ],
+    "exact_excerpt": "**부분 파싱은 미파싱보다 나쁩니다.** 구분자 없이 6개 물질을 나열한 문자열에서 첫 번째만 잡고\n나머지를 버리면 **완전해 보이는 불완전한 레코드**가 생기고, 하류 어디서도 이를 탐지할 수\n없습니다. 사전 기반 최장일치 분절로 모든 성분을 추출하고, 잔여물은 명시적 미해결로 방출합니다.",
+    "counterexample": "Same parser counterexamples."
+  },
+  {
+    "file": "README.md",
+    "lines": [
+      191,
+      194
+    ],
+    "exact_excerpt": "asset under study vanish. There is no identifier for these in the vocabulary, so\nthey are refused with a reason code. The same rule covers liposomal and\nalbumin-bound reformulations, and `abraxane`, `doxil`, `caelyx` and `onivyde`\nare removed from the synonym index before any record is matched.",
+    "counterexample": "Liposomal Doxorubicin and cisplatin bypasses distinct-product guard; Mvasi resolves to BEVACIZUMAB."
+  },
+  {
+    "file": "README.ko.md",
+    "lines": [
+      145,
+      147
+    ],
+    "exact_excerpt": "제넨텍 분자 위에 올리고, 정작 연구 대상 자산은 사라집니다. 어휘에 식별자가 없으므로 사유\n코드와 함께 거절합니다. 리포솜·알부민결합 재제형에도 같은 규칙이 적용되고, `abraxane`·`doxil`·\n`caelyx`·`onivyde`는 매칭 전에 동의어 색인에서 제거됩니다.",
+    "counterexample": "Same product-guard counterexamples."
+  },
+  {
+    "file": "README.md",
+    "lines": [
+      201,
+      203
+    ],
+    "exact_excerpt": "the chemical element in seven trials. Exact membership in a blocklist can never\nbe complete, so a pattern rule now catches any gene or pathway qualifier in\nfront of a head noun like `inhibitor` or `blockade`.",
+    "counterexample": "mab inhibitor is UNRESOLVED with no rule; INN exemption also blocks pembrolizumab antibody."
+  },
+  {
+    "file": "README.ko.md",
+    "lines": [
+      153,
+      154
+    ],
+    "exact_excerpt": "찾아냈습니다. 목록 완전성은 원리적으로 달성 불가능하므로, `inhibitor`·`blockade` 같은 핵어 앞에\n유전자나 경로 수식어가 붙은 패턴을 규칙으로 잡습니다.",
+    "counterexample": "Same class-pattern limitations."
+  },
+  {
+    "file": "README.md",
+    "lines": [
+      248,
+      249
+    ],
+    "exact_excerpt": "Every edge carries its **source**, the **source record**, the **fetch\ntimestamp**, the **resolution tier** that produced it and a **confidence**. Only",
+    "counterexample": "3187 live derived edges have null source_record;10368 edges have null tier."
+  },
+  {
+    "file": "README.ko.md",
+    "lines": [
+      195,
+      195
+    ],
+    "exact_excerpt": "모든 엣지가 **출처 · 원본 레코드 · 수집 시각 · 해석 계층 · 신뢰도**를 함께 보유합니다.",
+    "counterexample": "Same provenance field counts."
+  },
+  {
+    "file": "README.md",
+    "lines": [
+      258,
+      261
+    ],
+    "exact_excerpt": "Re-running against a newer snapshot **retires** edges instead of deleting them\nand writes every attribute change to a change log, so \"when did this relationship\nappear, and on what evidence?\" stays answerable. Rebuilding from unchanged\nsources records zero changes.",
+    "counterexample": "Derived edge survives removed trial until next unchanged build; nodes persist; node attributes and source_fetched_at updates not all change-logged."
+  },
+  {
+    "file": "README.ko.md",
+    "lines": [
+      203,
+      204
+    ],
+    "exact_excerpt": "최신 스냅샷으로 재구축해도 엣지를 삭제하지 않고 **은퇴(retire)**시키며 속성 변경을 전부\n변경 로그에 기록합니다. 소스가 그대로면 변경 0건입니다.",
+    "counterexample": "Same retirement and change-log counterexamples."
+  },
+  {
+    "file": "README.md",
+    "lines": [
+      288,
+      294
+    ],
+    "exact_excerpt": "With `ANTHROPIC_API_KEY` set, a language model writes the prose from the\nretrieved evidence and nothing else, and the result is checked back against that\nevidence: entities and tokenised numbers in the generated text must appear in\nthe retrieved set. With no key, the same evidence is rendered directly and the\ncheck reports `applicable: false`, because a template built from the evidence\ncannot fail a test against it. The facts are identical either way; only the\nprose changes. The pipeline has no required dependency on a model.",
+    "counterexample": "Lowercase invented entities, spelled-out figures, and unsupported relations pass; decimal/thousands checks are inconsistent."
+  },
+  {
+    "file": "README.md",
+    "lines": [
+      357,
+      360
+    ],
+    "exact_excerpt": "Nothing is cached silently: `data/raw/*.json` are the fetched snapshots, each\nstamped with the query that produced it and the time it was fetched, and every\nlater stage reads only from those files. A changed result can always be traced to\neither the source changing or the logic changing, never both at once.",
+    "counterexample": "evaluate reads gold CSV and processed JSON; graph reads prior SQLite. Snapshot and logic can change together; no version-pair enforcement."
+  },
+  {
+    "file": "README.ko.md",
+    "lines": [
+      250,
+      252
+    ],
+    "exact_excerpt": "조용히 캐시되는 것은 없습니다. `data/raw/*.json`이 수집 스냅샷이고 각각 질의 내용과 수집 시각이\n찍혀 있으며, 이후 모든 단계는 그 파일만 읽습니다. 결과가 달라지면 원인이 **소스 변경인지 로직\n변경인지** 항상 구분할 수 있고, 둘이 뒤섞이지 않습니다.",
+    "counterexample": "Same state dependence."
+  },
+  {
+    "file": "README.md",
+    "lines": [
+      142,
+      150
+    ],
+    "exact_excerpt": "**The corporate map was stale, and in one place wrong in a way a pharma reader\nwould catch immediately.** Sandoz was mapped to Novartis three years after its\nspin-off. BeiGene was not mapped to its 2025 name, BeOne Medicines, so one\ncompany sat under two nodes. Seagen, Mirati, Turning Point, RayzeBio, Acerta and\nAlexion were unparented. And **Merck KGaA had no entries at all** while Merck &\nCo had five — so EMD Serono, the Darmstadt company's North American arm, floated\nfree while its competitor was fully mapped. The two Mercks are different\ncompanies; the map now says so, and the bare key `merck` is deliberately absent\nbecause an unqualified \"Merck\" is genuinely ambiguous.",
+    "counterexample": "Merck & Co., Inc. and bare Merck map to Merck KGaA; BeOne and BeiGene remain separate nodes with false PARENT_OF."
+  },
+  {
+    "file": "README.ko.md",
+    "lines": [
+      110,
+      117
+    ],
+    "exact_excerpt": "\n**모회사 지도가 낡았고, 제약 업계 사람이라면 즉시 알아챌 오류가 하나 있었습니다.** Sandoz를\n분사 3년 뒤까지 Novartis 자회사로 두었고, BeiGene의 2025년 신규 사명 BeOne Medicines를 반영하지\n않아 한 회사가 두 노드로 존재했고, Seagen·Mirati·Turning Point·RayzeBio·Acerta·Alexion이\n전부 미연결이었습니다. 그리고 **Merck KGaA 항목이 하나도 없는 채 Merck & Co만 다섯 개** 있었기\n때문에, 다름슈타트 회사의 북미 법인인 EMD Serono가 떠 있는 동안 경쟁사만 온전히 매핑돼\n있었습니다. 두 Merck는 다른 회사이고, 지도가 이제 그렇게 말합니다. 수식어 없는 `merck` 키는\n일부러 비워 뒀습니다 — 그냥 \"Merck\"는 진짜로 모호하기 때문입니다.",
+    "counterexample": "Same corporate-map counterexamples."
+  },
+  {
+    "file": "README.md",
+    "lines": [
+      398,
+      399
+    ],
+    "exact_excerpt": "non-small cell lung cancer (`MONDO_0005233`) and the most recent 3,000\ninterventional trials the condition query returns.",
+    "counterexample": "Most recent is unverified: ingest omits sort and snapshot dates needed to establish order."
+  },
+  {
+    "file": "README.ko.md",
+    "lines": [
+      259,
+      260
+    ],
+    "exact_excerpt": "전부 공개 데이터이며 라이선스 데이터셋은 쓰지 않았습니다. 범위는 비소세포폐암\n(`MONDO_0005233`)과 조건 질의가 반환한 최근 중재연구 3,000건입니다.",
+    "counterexample": "Same recency gap."
+  }
+]

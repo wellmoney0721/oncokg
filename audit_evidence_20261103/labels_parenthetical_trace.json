@@ -1,0 +1,200 @@
+[
+  {
+    "gold_test_id": "140",
+    "original_parts": [
+      "GV20-0251",
+      "Pembrolizumab"
+    ],
+    "shared_parentheticals": [
+      "KEYTRUDA®"
+    ],
+    "lookup_calls_in_order": [
+      {
+        "lookup_text": "GV20-0251",
+        "matched_drugs": []
+      },
+      {
+        "lookup_text": "KEYTRUDA®",
+        "matched_drugs": [
+          "CHEMBL3137343"
+        ]
+      },
+      {
+        "lookup_text": "Pembrolizumab",
+        "matched_drugs": [
+          "CHEMBL3137343"
+        ]
+      }
+    ],
+    "result": {
+      "raw": "GV20-0251 and Pembrolizumab [KEYTRUDA®]",
+      "components": [
+        {
+          "component": "KEYTRUDA®",
+          "tier": "PARENTHETICAL",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination",
+            "match_on_parenthetical"
+          ],
+          "matched_alias": "Keytruda",
+          "candidates": null
+        },
+        {
+          "component": "Pembrolizumab",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination"
+          ],
+          "matched_alias": "PEMBROLIZUMAB",
+          "candidates": null
+        }
+      ]
+    }
+  },
+  {
+    "gold_test_id": "142",
+    "original_parts": [
+      "NGM707",
+      "pembrolizumab"
+    ],
+    "shared_parentheticals": [
+      "KEYTRUDA®"
+    ],
+    "lookup_calls_in_order": [
+      {
+        "lookup_text": "NGM707",
+        "matched_drugs": []
+      },
+      {
+        "lookup_text": "KEYTRUDA®",
+        "matched_drugs": [
+          "CHEMBL3137343"
+        ]
+      },
+      {
+        "lookup_text": "pembrolizumab",
+        "matched_drugs": [
+          "CHEMBL3137343"
+        ]
+      }
+    ],
+    "result": {
+      "raw": "NGM707 plus pembrolizumab (KEYTRUDA®)",
+      "components": [
+        {
+          "component": "KEYTRUDA®",
+          "tier": "PARENTHETICAL",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination",
+            "match_on_parenthetical"
+          ],
+          "matched_alias": "Keytruda",
+          "candidates": null
+        },
+        {
+          "component": "pembrolizumab",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination"
+          ],
+          "matched_alias": "PEMBROLIZUMAB",
+          "candidates": null
+        }
+      ]
+    }
+  },
+  {
+    "gold_test_id": "143",
+    "original_parts": [
+      "NGM831",
+      "NGM438",
+      "pembrolizumab"
+    ],
+    "shared_parentheticals": [
+      "KEYTRUDA®"
+    ],
+    "lookup_calls_in_order": [
+      {
+        "lookup_text": "NGM831",
+        "matched_drugs": []
+      },
+      {
+        "lookup_text": "KEYTRUDA®",
+        "matched_drugs": [
+          "CHEMBL3137343"
+        ]
+      },
+      {
+        "lookup_text": "NGM438",
+        "matched_drugs": []
+      },
+      {
+        "lookup_text": "KEYTRUDA®",
+        "matched_drugs": [
+          "CHEMBL3137343"
+        ]
+      },
+      {
+        "lookup_text": "pembrolizumab",
+        "matched_drugs": [
+          "CHEMBL3137343"
+        ]
+      }
+    ],
+    "result": {
+      "raw": "NGM831 and NGM438 plus pembrolizumab (KEYTRUDA®)",
+      "components": [
+        {
+          "component": "KEYTRUDA®",
+          "tier": "PARENTHETICAL",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination",
+            "match_on_parenthetical"
+          ],
+          "matched_alias": "Keytruda",
+          "candidates": null
+        },
+        {
+          "component": "KEYTRUDA®",
+          "tier": "PARENTHETICAL",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination",
+            "match_on_parenthetical"
+          ],
+          "matched_alias": "Keytruda",
+          "candidates": null
+        },
+        {
+          "component": "pembrolizumab",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination"
+          ],
+          "matched_alias": "PEMBROLIZUMAB",
+          "candidates": null
+        }
+      ]
+    }
+  }
+]

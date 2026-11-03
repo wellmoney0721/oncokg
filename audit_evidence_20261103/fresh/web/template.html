@@ -1,0 +1,492 @@
+<title>OncoKG NSCLC</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout: one measured column; summary tiles, then evidence, then the caveats. */
+:root{
+  --bg:#fbfbfa; --surface:#ffffff; --surface-2:#f4f5f7; --line:#e2e4e9;
+  --ink:#16181d; --ink-2:#4e535e; --ink-3:#787e8b;
+  --accent:#2a78d6; --accent-soft:#eaf1fc;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100;
+  --good:#0ca30c; --warn:#fab219; --serious:#ec835a; --critical:#d03b3b;
+  --display:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono","SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#101216; --surface:#171a20; --surface-2:#1e222a; --line:#2b3039;
+  --ink:#eceef2; --ink-2:#b2b8c4; --ink-3:#848b99;
+  --accent:#5c9bea; --accent-soft:#17283d;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500;
+  --good:#0ca30c; --warn:#fab219; --serious:#ec835a; --critical:#d03b3b;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#101216; --surface:#171a20; --surface-2:#1e222a; --line:#2b3039;
+  --ink:#eceef2; --ink-2:#b2b8c4; --ink-3:#848b99;
+  --accent:#5c9bea; --accent-soft:#17283d;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500;
+  --good:#0ca30c; --warn:#fab219; --serious:#ec835a; --critical:#d03b3b;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);
+  font-size:15px;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:0 72px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;font-weight:600}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.15;letter-spacing:-.01em}
+h2{font-size:clamp(20px,3vw,25px);line-height:1.25}
+h3{font-size:17px;font-family:var(--body);font-weight:600}
+p{margin:0}
+a{color:var(--accent)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-3)}
+section{padding-block:40px;border-top:1px solid var(--line)}
+section>.lede{color:var(--ink-2);max-width:66ch;margin-top:10px}
+.stack{display:flex;flex-direction:column;gap:18px}
+.num{font-variant-numeric:tabular-nums}
+
+/* header */
+header{padding-block:44px 8px}
+.title-row{display:flex;flex-wrap:wrap;gap:14px;align-items:baseline}
+.sub{color:var(--ink-2);max-width:68ch;margin-top:14px;font-size:16px}
+.srcline{margin-top:18px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);
+  display:flex;flex-wrap:wrap;gap:6px 14px}
+
+/* tiles */
+.tiles{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-top:26px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  padding:16px 16px 14px;min-width:0}
+.tile .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3)}
+.tile .v{font-family:var(--display);font-size:30px;line-height:1.1;margin-top:8px;
+  font-variant-numeric:tabular-nums}
+.tile .n{font-size:12.5px;color:var(--ink-2);margin-top:6px}
+.tile.hero{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 35%,transparent)}
+
+/* bars */
+.chart{margin-top:22px;display:flex;flex-direction:column;gap:7px}
+.bar-row{display:grid;grid-template-columns:minmax(118px,auto) 1fr auto;
+  gap:12px;align-items:center}
+.bar-row .lab{font-size:12.5px;color:var(--ink-2);text-align:right;min-width:0;
+  overflow-wrap:anywhere}
+.bar-track{background:var(--surface-2);border-radius:4px;height:16px;min-width:0;
+  position:relative;overflow:hidden}
+.bar-fill{height:100%;border-radius:0 4px 4px 0;transition:width .5s ease}
+.bar-row .val{font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums;
+  color:var(--ink);min-width:48px;text-align:right}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;font-size:12.5px;
+  color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.dot{width:10px;height:10px;border-radius:3px;flex:none}
+
+/* tables */
+.tablebox{overflow-x:auto;margin-top:20px;border:1px solid var(--line);border-radius:10px;
+  background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:560px}
+th,td{padding:9px 13px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:400;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.accepting td:first-child{font-weight:600}
+tr.withholding{color:var(--ink-2)}
+
+/* chips */
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px;
+  border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);white-space:nowrap}
+.chip.high{border-color:var(--critical);color:var(--critical)}
+.chip.medium{border-color:var(--serious);color:var(--serious)}
+.chip.low{border-color:var(--ink-3)}
+.chip.ok{border-color:var(--good);color:var(--good)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));margin-top:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  padding:16px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.card h3{font-size:14px}
+.card .why{font-size:13px;color:var(--ink-2)}
+.mono-s{font-family:var(--mono);font-size:12px;overflow-wrap:anywhere}
+.flow{font-family:var(--mono);font-size:12.5px;display:flex;flex-wrap:wrap;
+  align-items:center;gap:7px}
+.flow .from{color:var(--critical);text-decoration:line-through}
+.flow .to{color:var(--good)}
+.flow .arrow{color:var(--ink-3)}
+
+/* demo */
+.demo{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;
+  display:flex;flex-direction:column;gap:12px;min-width:0}
+.q{font-family:var(--display);font-size:17px}
+.ans{font-family:var(--mono);font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere;
+  background:var(--surface-2);border-radius:8px;padding:12px;margin:0;color:var(--ink)}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.ev{font-size:12.5px;color:var(--ink-2);display:flex;flex-direction:column;gap:5px}
+.ev a{font-family:var(--mono);font-size:11.5px}
+details>summary{cursor:pointer;font-size:12.5px;color:var(--accent);
+  font-family:var(--mono);padding:2px 0}
+details>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* graph */
+.graphbox{overflow-x:auto;margin-top:22px;border:1px solid var(--line);border-radius:10px;
+  background:var(--surface);padding:10px}
+svg{display:block}
+.backlog li{margin-bottom:9px}
+ul{padding-left:20px;margin:0}
+li{color:var(--ink-2)}
+li b{color:var(--ink);font-weight:600}
+footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);font-size:12.5px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <p class="eyebrow">Entity resolution &middot; knowledge graph &middot; grounded retrieval</p>
+  <div class="title-row" style="margin-top:12px">
+    <h1>Reading messy trial text into a drug graph</h1>
+  </div>
+  <p class="sub">Clinical trial registries describe the same molecule as <span class="mono-s">Tarceva</span>,
+  <span class="mono-s">OSI-774</span>, <span class="mono-s">erlotinib hydrochloride</span> and
+  <span class="mono-s">Gemicitabine</span>&mdash;with a typo. This pipeline turns that text into a
+  knowledge graph of companies, drugs, targets and trials in non-small cell lung cancer, and reports
+  what it got wrong.</p>
+  <div class="srcline" id="srcline"></div>
+  <div class="tiles" id="tiles"></div>
+</header>
+
+<section>
+  <p class="eyebrow">01 &middot; The measurement</p>
+  <h2>What the numbers are worth</h2>
+  <p class="lede">Precision was measured three times on separate hand-scored samples. The development
+  sample shaped the rules, so its number is optimistic by construction; the held-out test sample is the
+  honest one; the post-fix sample checks that the repairs the test forced actually held.</p>
+  <div class="tablebox"><table id="evaltable"></table></div>
+  <p class="lede" style="margin-top:16px" id="evalnote"></p>
+</section>
+
+<section>
+  <p class="eyebrow">02 &middot; The decision</p>
+  <h2>Every string gets a tier, and a reason</h2>
+  <p class="lede">A resolution is never a bare yes. Each one records how it was reached, and anything
+  below the automatic threshold is routed to review instead of being accepted quietly. Blocked tiers
+  are refusals the pipeline makes on purpose.</p>
+  <div class="chart" id="tierchart"></div>
+  <div class="legend">
+    <span><i class="dot" style="background:var(--s1)"></i>accepted &mdash; becomes an edge</span>
+    <span><i class="dot" style="background:var(--s4)"></i>held for review</span>
+    <span><i class="dot" style="background:var(--s2)"></i>refused on purpose</span>
+    <span><i class="dot" style="background:var(--ink-3)"></i>unresolved</span>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">03 &middot; The finding</p>
+  <h2>The reference database is wrong too</h2>
+  <p class="lede">Treating a curated vocabulary as ground truth is the easiest way to inherit its
+  errors. ChEMBL lists <span class="mono-s">avelumab</span>, <span class="mono-s">durvalumab</span> and
+  <span class="mono-s">adebrelimab</span> among atezolizumab's synonyms, and
+  <span class="mono-s">durvalumab placebo</span> among durvalumab's. Each defect below was detected
+  automatically and repaired before any record was matched against the dictionary.</p>
+  <div class="cards" id="contamination"></div>
+  <div class="chart" id="dictchart" style="margin-top:28px"></div>
+</section>
+
+<section>
+  <p class="eyebrow">04 &middot; The guardrails</p>
+  <h2>Four ways a naive matcher invents facts</h2>
+  <div class="cards" id="guards"></div>
+</section>
+
+<section>
+  <p class="eyebrow">05 &middot; The graph</p>
+  <h2>Companies, drugs, targets, trials</h2>
+  <p class="lede">Every edge carries its source record, the time that record was fetched, the
+  resolution tier that produced it and a confidence. Re-running against a newer snapshot retires
+  edges rather than deleting them, so the history of a relationship stays answerable.</p>
+  <div class="chart" id="relchart"></div>
+  <div class="graphbox"><svg id="ego" role="img"
+    aria-label="EGFR with the drugs acting on it and their lead sponsors"></svg></div>
+  <div class="cards" style="margin-top:20px">
+    <div class="card"><h3>Most-studied molecules</h3><div class="chart" id="topdrugs"></div></div>
+    <div class="card"><h3>Broadest NSCLC portfolios</h3><div class="chart" id="topcos"></div></div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">06 &middot; The answers</p>
+  <h2>Retrieval that checks itself</h2>
+  <p class="lede">Questions are resolved against the same dictionary the pipeline uses, so a question
+  naming a trade name finds a graph that stores a ChEMBL id. The answer is then verified against its
+  own evidence: entities and numbers that do not appear in the retrieved set are reported rather than
+  shipped. With no language model key the evidence is rendered directly; with one, the model sees the
+  retrieved evidence and nothing else.</p>
+  <div class="stack" id="demos" style="margin-top:22px"></div>
+</section>
+
+<section>
+  <p class="eyebrow">07 &middot; The quality report</p>
+  <h2>1,400-odd things worth a second look</h2>
+  <p class="lede">Findings are claims a curator should check, not verdicts. Each carries its evidence
+  and a severity.</p>
+  <div class="chart" id="qcchart"></div>
+  <div class="cards" id="qccards"></div>
+</section>
+
+<section>
+  <p class="eyebrow">08 &middot; Known defects</p>
+  <h2>What is still broken</h2>
+  <p class="lede">These came out of the post-fix sample and are unrepaired. Leaving them listed is
+  cheaper than a number that quietly assumes they do not exist.</p>
+  <ul class="backlog" style="margin-top:18px">
+    <li><b>The placebo rule needs a separator.</b> <span class="mono-s">Placebo Drug: Docetaxel Drug:
+    Carboplatin</span> has no <span class="mono-s">+</span> or <span class="mono-s">and</span>, so it
+    reads as a reference arm and two genuinely administered drugs are dropped. The fix is to treat a
+    repeated <span class="mono-s">Drug:</span> label as a separator.</li>
+    <li><b>Vector and platform words match as products.</b> <span class="mono-s">adenovirus</span>
+    inside <span class="mono-s">dendritic cell-adenovirus CCL21 vaccine</span> resolves to a specific
+    oncolytic product. The generic-term list that already blocks <span class="mono-s">platinum</span>
+    needs the vector vocabulary added to it.</li>
+    <li><b>Coverage is capped by scope, not by skill.</b> The vocabulary holds only drugs Open Targets
+    links to NSCLC, so <span class="mono-s">propranolol</span> and
+    <span class="mono-s">Diklofenak Sodyum</span> are correctly refused and still count against
+    coverage. Widening to the full ChEMBL drug set is the obvious next step, and would need its own
+    precision measurement.</li>
+    <li><b>One annotator.</b> Every verdict in the three samples is the author's. A second independent
+    reviewer, and the agreement rate between them, is what would turn these numbers from defensible
+    into solid.</li>
+    <li><b>Three tiers were never independently tested.</b> <span class="mono-s">FUZZY_AUTO</span>,
+    <span class="mono-s">SALT_STRIPPED</span> and <span class="mono-s">CLEANED</span> have so few
+    distinct values that the development sample consumed all of them, so their rates are carried over
+    from the data the rules were tuned on and should be read as optimistic.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Built from public data: Open Targets Platform, ChEMBL (via Open Targets) and the
+  ClinicalTrials.gov API v2. No licensed or proprietary dataset is used, and nothing here is
+  medical advice or a commercial intelligence product.</p>
+  <p style="margin-top:10px" id="builtline"></p>
+</footer>
+</div>
+
+<script type="application/json" id="payload">__PAYLOAD__</script>
+<script>
+(function(){
+  const D = JSON.parse(document.getElementById("payload").textContent);
+  const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const pct = x => (x*100).toFixed(1)+"%";
+  const num = n => Number(n).toLocaleString("en-US");
+  const el = (h) => { const t=document.createElement("template"); t.innerHTML=h.trim(); return t.content; };
+
+  /* ---- header ---- */
+  const H = D.headline;
+  document.getElementById("srcline").innerHTML =
+    D.meta.sources.map(s=>`<span>${esc(s)}</span>`).join("")+
+    `<span>scope: ${esc(D.meta.disease)}</span>`;
+  const tiles = [
+    ["Accepted-match precision", pct(H.accepted_precision.estimate),
+     `95% CI ${pct(H.accepted_precision.ci95[0])}&ndash;${pct(H.accepted_precision.ci95[1])}`, true],
+    ["Coverage", pct(H.coverage.resolved_rate_of_substance_like),
+     `${num(H.coverage.accepted_occurrences)} of ${num(H.coverage.component_occurrences_excluding_blocked)} substance-like strings`],
+    ["Trials parsed", num(H.trials), "ClinicalTrials.gov, interventional"],
+    ["Molecules &middot; aliases", num(H.molecules)+" &middot; "+num(H.aliases), "reference vocabulary after curation"],
+    ["Graph", num(H.nodes)+" / "+num(H.edges), "nodes / live edges"],
+    ["Quality findings", num(H.qc_findings), "raised for review"],
+  ];
+  document.getElementById("tiles").innerHTML = tiles.map(([k,v,n,hero])=>
+    `<div class="tile${hero?" hero":""}"><div class="k">${k}</div><div class="v num">${v}</div><div class="n">${n}</div></div>`).join("");
+  document.getElementById("builtline").textContent =
+    "Sources fetched " + (D.meta.built_from.trials||"").slice(0,16).replace("T"," ") + " UTC.";
+
+  /* ---- bar chart helper ---- */
+  function bars(node, rows, opts){
+    opts = opts||{};
+    const max = Math.max(...rows.map(r=>r.value), 1);
+    node.innerHTML = rows.map(r=>{
+      const w = Math.max(2, (r.value/max)*100);
+      return `<div class="bar-row"><div class="lab">${esc(r.label)}</div>`+
+        `<div class="bar-track"><div class="bar-fill" style="width:${w}%;background:${r.color||"var(--s1)"}"`+
+        ` title="${esc(r.label)}: ${esc(r.display||r.value)}"></div></div>`+
+        `<div class="val">${esc(r.display||num(r.value))}</div></div>`;
+    }).join("");
+  }
+
+  /* ---- 01 evaluation table ---- */
+  const ACC = new Set(["EXACT","ALIAS","CLEANED","SALT_STRIPPED","PARENTHETICAL","CONTAINED_ALIAS","FUZZY_AUTO"]);
+  const order = ["EXACT","ALIAS","CONTAINED_ALIAS","PARENTHETICAL","SALT_STRIPPED","CLEANED","FUZZY_AUTO",
+                 "FUZZY_REVIEW","AMBIGUOUS","BLOCKED_PLACEBO","BLOCKED_CLASS_TERM","BLOCKED_TARGET_TERM","UNRESOLVED"];
+  const E = D.evaluation;
+  const cell = (s,t) => {
+    const r = (E[s].per_tier||{})[t];
+    if(!r) return '<td class="n">&mdash;</td>';
+    const carried = r.source && r.source.indexOf("development")===0 && s!=="dev";
+    return `<td class="n" title="${r.correct}/${r.sampled} correct">${pct(r.rate)}${carried?' <span style="color:var(--ink-3)">*</span>':""}</td>`;
+  };
+  document.getElementById("evaltable").innerHTML =
+    `<thead><tr><th>Tier</th><th>Distinct</th><th>Dev</th><th>Held-out test</th><th>Post-fix</th><th>What the tier does</th></tr></thead><tbody>`+
+    order.map(t=>{
+      const any = E.postfix.per_tier[t]||E.test.per_tier[t]||E.dev.per_tier[t];
+      if(!any) return "";
+      const role = ACC.has(t) ? "becomes an edge" :
+        (t==="FUZZY_REVIEW" ? "proposal held back for a human" :
+         t==="UNRESOLVED" ? "left unmatched on purpose" :
+         t==="AMBIGUOUS" ? "several molecules, no evidence to choose" : "refused as a non-substance");
+      return `<tr class="${ACC.has(t)?"accepting":"withholding"}"><td class="mono-s">${esc(t)}</td>`+
+        `<td class="n">${num(any.population_unique)}</td>${cell("dev",t)}${cell("test",t)}${cell("postfix",t)}`+
+        `<td style="color:var(--ink-2)">${role}</td></tr>`;
+    }).join("")+`</tbody>`;
+  document.getElementById("evalnote").innerHTML =
+    `Held-out test: <b>${pct(E.test.accepted_precision.estimate)}</b> accepted-match precision over `+
+    `${E.test.sample_size} hand-scored rows, with every development row excluded. `+
+    `Post-fix: <b>${pct(E.postfix.accepted_precision.estimate)}</b> over a third sample of `+
+    `${E.postfix.sample_size} rows drawn after the repairs. `+
+    `A rate marked <span style="color:var(--ink-3)">*</span> is carried over from the development `+
+    `sample because that tier had no distinct values left to sample independently. `+
+    `For <span class="mono-s">FUZZY_REVIEW</span> the figure means something different: it is how `+
+    `often a proposal held back for review would have been right. At `+
+    `${pct(E.dev.per_tier.FUZZY_REVIEW.rate)} the threshold is doing its job.`;
+
+  /* ---- 02 tiers ---- */
+  const colorFor = t => ACC.has(t) ? "var(--s1)" :
+    t==="FUZZY_REVIEW" ? "var(--s4)" :
+    t.indexOf("BLOCKED")===0 || t==="AMBIGUOUS" ? "var(--s2)" : "var(--ink-3)";
+  bars(document.getElementById("tierchart"),
+    D.tiers.map(t=>({label:t.tier.replace(/_/g," ").toLowerCase(), value:t.count,
+                     color:colorFor(t.tier)})));
+
+  /* ---- 03 contamination ---- */
+  document.getElementById("contamination").innerHTML = D.quality.contamination.map(f=>{
+    const wrong = (f.wrongly_listing_drugs||[]).map(d=>esc(d.name)).join(", ");
+    return `<div class="card"><div class="meta"><span class="chip high">${esc(f.severity)}</span>`+
+      `<span class="chip">cross-drug synonym</span></div>`+
+      `<div class="flow"><span class="mono-s">&ldquo;${esc(f.alias)}&rdquo;</span>`+
+      `<span class="arrow">listed by</span><span class="from">${wrong}</span></div>`+
+      `<div class="flow"><span class="arrow">bound to</span><span class="to">${esc(f.resolved_to_name)}</span>`+
+      `<span class="mono-s" style="color:var(--ink-3)">${esc(f.resolved_to)}</span></div>`+
+      `<p class="why">${esc(f.why)}</p></div>`;
+  }).join("");
+  const dictTypes = D.quality.totals.by_family.dictionary||{};
+  bars(document.getElementById("dictchart"),
+    Object.entries(dictTypes).sort((a,b)=>b[1]-a[1])
+      .map(([k,v])=>({label:k.replace(/_/g," "), value:v, color:"var(--s3)"})));
+
+  /* ---- 04 guards ---- */
+  const guards = [
+    ["Placebo arms", "placebo plus docetaxel", "docetaxel recorded, placebo refused",
+     "A placebo-controlled arm is not a drug-free arm. Blocking the whole string loses a real exposure; accepting it invents one. The separator decides which."],
+    ["Development codes", "BMS-986504", "no approximate match, ever",
+     "One digit apart is a different molecule, so string similarity is actively misleading here. Fuzzy matching is disabled for anything shaped like a development code."],
+    ["Numeric disagreement", "recombinant interleukin-12", "not aldesleukin (IL-2)",
+     "Two strings one character apart scored 97.9. Any disagreement in the digits now vetoes the match outright."],
+    ["Unseparated combinations", "Cisplatin Docetaxel Gefitinib Pemetrexed", "all four, not the first",
+     "Matching one drug and discarding the rest produces a record that looks complete and is not — the most dangerous kind of error, because nothing downstream can detect it."],
+  ];
+  document.getElementById("guards").innerHTML = guards.map(([t,from,to,why])=>
+    `<div class="card"><h3>${esc(t)}</h3>`+
+    `<div class="flow"><span class="mono-s">${esc(from)}</span><span class="arrow">&rarr;</span>`+
+    `<span class="to">${esc(to)}</span></div>`+
+    `<p class="why">${esc(why)}</p></div>`).join("");
+
+  /* ---- 05 graph ---- */
+  const rel = D.graph.stats.edges_by_rel;
+  bars(document.getElementById("relchart"),
+    Object.entries(rel).sort((a,b)=>b[1]-a[1])
+      .map(([k,v])=>({label:k.replace(/_/g," ").toLowerCase(), value:v, color:"var(--s1)"})));
+  bars(document.getElementById("topdrugs"),
+    D.top_drugs.slice(0,10).map(d=>({label:d.name.toLowerCase(), value:d.trials, color:"var(--s1)"})));
+  bars(document.getElementById("topcos"),
+    D.top_companies.slice(0,10).map(c=>({label:c.name, value:c.drugs, color:"var(--s3)"})));
+
+  /* ego network: target at centre, drugs on a ring, sponsors outside */
+  (function(){
+    const g = D.graph.ego, W=940, Hh=520, cx=W/2, cy=Hh/2;
+    const centre = g.nodes.find(n=>n.type==="Target");
+    const drugs = g.nodes.filter(n=>n.type==="Drug");
+    const cos = g.nodes.filter(n=>n.type==="Company");
+    const pos = {};
+    if(centre) pos[centre.id] = [cx,cy];
+    drugs.forEach((d,i)=>{ const a=(i/drugs.length)*Math.PI*2 - Math.PI/2;
+      pos[d.id]=[cx+Math.cos(a)*150, cy+Math.sin(a)*120]; });
+    cos.forEach((c,i)=>{ const a=(i/cos.length)*Math.PI*2 - Math.PI/2 + 0.12;
+      pos[c.id]=[cx+Math.cos(a)*395, cy+Math.sin(a)*218]; });
+    let s = `<svg viewBox="0 0 ${W} ${Hh}" width="100%" style="min-width:680px;height:auto"
+      xmlns="http://www.w3.org/2000/svg">`;
+    g.edges.forEach(e=>{ const a=pos[e.src], b=pos[e.dst]; if(!a||!b) return;
+      s += `<line x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}"
+        stroke="var(--line)" stroke-width="${e.rel==="ACTS_ON"?2:1.2}" />`; });
+    cos.forEach(c=>{ const p=pos[c.id]; if(!p) return;
+      s += `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="5" fill="var(--s3)" />`+
+        `<text x="${p[0].toFixed(1)}" y="${(p[1]-10).toFixed(1)}" text-anchor="middle"
+          font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-2)">${esc(c.label.slice(0,22))}</text>`; });
+    drugs.forEach(d=>{ const p=pos[d.id]; if(!p) return;
+      const r = Math.min(13, 5 + Math.sqrt(d.trials||0)*1.7);
+      s += `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="${r.toFixed(1)}" fill="var(--s1)"
+        stroke="var(--surface)" stroke-width="2" />`+
+        `<text x="${p[0].toFixed(1)}" y="${(p[1]+r+13).toFixed(1)}" text-anchor="middle"
+          font-size="11" font-family="IBM Plex Mono, monospace" fill="var(--ink)">${esc(d.label.toLowerCase())}</text>`; });
+    if(centre){ s += `<circle cx="${cx}" cy="${cy}" r="24" fill="var(--s2)" stroke="var(--surface)" stroke-width="3" />`+
+      `<text x="${cx}" y="${cy+5}" text-anchor="middle" font-size="13" font-weight="600"
+        font-family="IBM Plex Sans, sans-serif" fill="#ffffff">${esc(centre.label)}</text>`; }
+    s += `</svg>`;
+    document.getElementById("ego").outerHTML = s;
+  })();
+
+  /* ---- 06 demos ---- */
+  document.getElementById("demos").innerHTML = D.demos.map(d=>{
+    const g = d.checks.grounded;
+    const ev = d.evidence.slice(0,5).map(e=>{
+      const src = e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.source_record||e.source)}</a>`
+                        : `<span class="mono-s" style="color:var(--ink-3)">${esc(e.source_record||e.source)}</span>`;
+      return `<div>&bull; ${esc(e.statement)} &mdash; ${src} <span class="mono-s"
+        style="color:var(--ink-3)">conf ${Number(e.confidence).toFixed(2)}</span></div>`;
+    }).join("");
+    return `<div class="demo"><p class="q">${esc(d.question)}</p>`+
+      `<div class="meta"><span class="chip">${esc(d.intent)}</span>`+
+      `<span class="chip ${g?"ok":"medium"}">${g?"grounded":"unsupported claim"}</span>`+
+      `<span class="chip">${esc(d.generated_by)}</span></div>`+
+      `<pre class="ans">${esc(d.answer)}</pre>`+
+      (ev?`<details><summary>evidence with provenance (${d.evidence.length})</summary>`+
+          `<div class="ev" style="margin-top:8px">${ev}</div></details>`:"")+
+      `</div>`;
+  }).join("");
+
+  /* ---- 07 quality ---- */
+  const fams = D.quality.totals.by_family;
+  const all = [];
+  Object.keys(fams).forEach(f=>Object.entries(fams[f]).forEach(([k,v])=>all.push([f,k,v])));
+  const famColor = {dictionary:"var(--s3)", record:"var(--s1)", graph:"var(--s4)"};
+  bars(document.getElementById("qcchart"),
+    all.sort((a,b)=>b[2]-a[2]).map(([f,k,v])=>({label:k.replace(/_/g," "), value:v, color:famColor[f]||"var(--s1)"})));
+  const pick = ["cross_drug_synonym","incomplete_intervention_parse","recurrent_unresolved_surface",
+                "out_of_scope_trial","stage_disagrees_with_reference","suspected_duplicate_entity"];
+  document.getElementById("qccards").innerHTML = pick.map(t=>{
+    const xs = D.quality.examples[t]; if(!xs||!xs.length) return "";
+    const f = xs[0];
+    const detail = t==="incomplete_intervention_parse"
+        ? `<div class="flow"><span class="mono-s">${esc(f.surface)}</span></div>
+           <p class="why">resolved ${esc((f.resolved_to||[]).join(", "))}; not accounted for:
+           <span class="mono-s" style="color:var(--critical)">${esc((f.not_accounted_for||[]).join(", "))}</span></p>`
+      : t==="recurrent_unresolved_surface"
+        ? `<div class="flow"><span class="mono-s">${esc(f.surface)}</span>
+           <span class="arrow">&times;${esc(f.occurrences)} trials</span></div>`
+      : t==="out_of_scope_trial"
+        ? `<div class="flow"><span class="mono-s">${esc((f.conditions||[])[0]||"")}</span></div>`
+      : t==="stage_disagrees_with_reference"
+        ? `<div class="flow"><span class="mono-s">${esc(f.drug_name)}</span>
+           <span class="arrow">registry phase ${esc(f.trial_phase)} vs reference ${esc(f.reference_phase_in_nsclc)}</span></div>`
+      : t==="suspected_duplicate_entity"
+        ? `<div class="flow"><span class="mono-s">${esc(f.drug_a.name)}</span><span class="arrow">&harr;</span>
+           <span class="mono-s">${esc(f.drug_b.name)}</span>
+           <span class="arrow">${esc(f.shared_alias_count)} shared aliases</span></div>`
+      : `<div class="flow"><span class="mono-s">&ldquo;${esc(f.alias)}&rdquo;</span>
+         <span class="arrow">&rarr;</span><span class="to">${esc(f.resolved_to_name||"")}</span></div>`;
+    const n = (fams.dictionary||{})[t] || (fams.record||{})[t] || (fams.graph||{})[t] || 0;
+    return `<div class="card"><div class="meta"><span class="chip ${esc(f.severity||"low")}">${esc(f.severity||"low")}</span>`+
+      `<span class="chip">${esc(n)} found</span></div><h3>${esc(t.replace(/_/g," "))}</h3>`+
+      detail + `<p class="why">${esc(f.why||"")}</p></div>`;
+  }).join("");
+})();
+</script>
