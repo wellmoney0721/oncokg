@@ -589,3 +589,19 @@ def test_suffixed_dye_codes_and_any_further_partner_of_a_named_adc_refuse():
         assert e.explore(t).get("refused"), t
     assert (e.explore("trastuzumab emtansine is an antibody drug conjugate")["center"]["label"]
             == "TRASTUZUMAB EMTANSINE")
+
+
+# Codex review m30
+def test_linked_fails_closed_and_modification_verbs_refuse():
+    import app
+    e = app.Engine()
+    for t in ("trastuzumab linked to eFluor 450", "VioBlue linked to trastuzumab",
+              "trastuzumab emtansine linked to eFluor 450", "biotinylated trastuzumab",
+              "FITC-derivatized trastuzumab", "trastuzumab functionalized with Pacific Blue"):
+        assert e.explore(t).get("refused"), t
+    for t, label in (("trastuzumab not biotinylated", "TRASTUZUMAB"),
+                     ("osimertinib linked to improved 3-year survival", "OSIMERTINIB"),
+                     ("resistance linked to osimertinib", "OSIMERTINIB")):
+        assert e.explore(t)["center"]["label"] == label, t
+    q = e.kg.link_entities("Which trials evaluate trastuzumab emtansine antibody-drug conjugate?")
+    assert [x["label"] for x in q if x["type"] == "Drug"] == ["TRASTUZUMAB EMTANSINE"]

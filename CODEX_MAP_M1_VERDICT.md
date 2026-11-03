@@ -308,3 +308,13 @@ Known over-refusal (recorded): a conjugate named with its own payload spelled ou
 | M29-B2 | "trastuzumab emtansine conjugated to ATTO 647N / streptavidin", "trastuzumab deruxtecan conjugated to Cy3B" | beside a named conjugate, a joining word refuses unless every other word is an ADC descriptor (antibody, drug, conjugate, ADC, articles) — the partner need not be a known reagent |
 
 Stored-alias sweep: no change. Tests 357.
+
+## Round 30 (audit_evidence_claims/m30) — CHANGES REQUIRED (two blockers, one regression)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M30-B1 | "trastuzumab linked to eFluor 450 / VioBlue / BUV395 / BB515 / Super Bright 600" (and reversed, and on named ADCs): dye names outside the list | "linked" fails closed: it refuses unless the words it joins the drug to (three on the side away from the drug, up to a clause word) are all clinical-relation words or numbers ("linked to longer PFS", "linked with poor prognosis", "resistance linked to osimertinib") |
+| M30-B2 | "biotinylated trastuzumab", "FITC-derivatized", "derivatized with", "functionalized with" | biotinylat-, derivatiz-/derivatis-, functionaliz-/functionalis-, pegylat-, fluoresceinat- are joining words |
+| M30-S1 | "Which trials evaluate trastuzumab emtansine antibody-drug conjugate?" refused: the question words counted as a further partner | a named conjugate's partners are only the words beside each joining word, stopping at the drug's own name |
+
+README test counts updated. Stored-alias sweep: no change. Tests 358.

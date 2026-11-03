@@ -223,7 +223,8 @@ def _negated_end(flat: list, i: int) -> int:
 # Words that say the drug is joined to something else (a dye, a payload): a distinct
 # product ("trastuzumab conjugated to DM1", "IRDye800CW-conjugated trastuzumab")
 _JOINED = ("conjugat", "covalently", "bioconjugat", "immunoconjugat", "coupled", "coupling",
-           "attached", "tethered", "crosslinked", "chemically")
+           "attached", "tethered", "crosslinked", "chemically", "biotinylat", "derivatiz",
+           "derivatis", "functionaliz", "functionalis", "pegylat", "fluoresceinat")
 # Payload words that mark a drug's own name as a conjugate (TRASTUZUMAB EMTANSINE,
 # ETIRINOTECAN PEGOL): a later word of a several-word name, never the molecule itself
 # (IRINOTECAN, TOPOTECAN, TASIDOTIN carry the same letters but are plain molecules)
@@ -270,12 +271,45 @@ _ADC_WORDS = {"antibody", "drug", "conjugate", "conjugates", "adc", "adcs", "imm
               "a", "an", "the", "is", "as", "this", "of", "and", "or"}
 
 
-@functools.lru_cache(maxsize=4096)
-def _beyond_adc_words(words: tuple) -> bool:
-    """A named conjugate with a joining word beside it: fine for "antibody-drug conjugate",
-    a further modification for anything else ("... conjugated to ATTO 647N", "... to
-    streptavidin") — the partner need not be a known reagent."""
-    return any(x.lower() not in _ADC_WORDS for x in _alnum_words(" ".join(words)))
+# Where the drug's own name stood in its list item: partner windows stop there
+_DRUG_MARK = "zzdrugzz"
+# Words that end a partner window: a new clause or a preposition that starts a setting
+_WINDOW_STOP = {"and", "but", "or", "which", "that", "in", "among", "at", "for", "after",
+                "before", "during", "versus", "vs", "compared", _DRUG_MARK}
+# Words skipped inside a partner window
+_WINDOW_SKIP = {"to", "with", "via", "a", "an", "the", "of", "is", "are", "was", "be", "been"}
+# What "linked to" may relate a drug to without describing a conjugate ("osimertinib
+# linked to longer PFS", "... to drug resistance", "... with poor prognosis")
+_RELATION_WORDS = {
+    "resistance", "resistant", "response", "responses", "survival", "pfs", "os", "orr", "dfs",
+    "efs", "prognosis", "outcome", "outcomes", "toxicity", "toxicities", "risk", "risks",
+    "efficacy", "benefit", "benefits", "improved", "improvement", "longer", "shorter", "better",
+    "worse", "poor", "poorer", "good", "increased", "decreased", "reduced", "higher", "lower",
+    "overall", "progression", "free", "disease", "mutation", "mutations", "expression", "adverse",
+    "event", "events", "side", "effect", "effects", "sensitivity", "recurrence", "relapse",
+    "death", "deaths", "mortality", "cardiotoxicity", "hepatotoxicity", "neutropenia", "rash",
+    "diarrhea", "diarrhoea", "fatigue", "pneumonitis", "failure", "success", "remission",
+    "control", "rate", "rates", "time", "duration", "treatment", "therapy", "use", "exposure",
+    "level", "levels", "dose", "doses", "dosing", "quality", "life", "qol", "cost", "costs",
+    "clinical", "tumor", "tumour", "shrinkage", "growth", "metastasis", "metastases", "brain",
+    "cns", "activity", "acquired", "intrinsic", "primary", "secondary", "drug", "year", "years",
+    "month", "months", "week", "weeks", "day", "days", "patient", "patients", "longer-term",
+    "long", "term", "short", "complete", "partial", "objective", "median", "greater", "less",
+    "more", "fewer", "lung", "injury", "damage", "hospitalization", "hospitalisation"}
+
+
+def _partners(flat: list, i: int) -> list:
+    """The words a joining word at flat[i] joins the drug to: up to three on the side away
+    from the drug, stopping at a clause word or at the drug itself."""
+    out = []
+    for step in (1, -1):
+        k, got = i + step, []
+        while 0 <= k < len(flat) and len(got) < 3 and flat[k] not in _WINDOW_STOP:
+            if flat[k] not in _WINDOW_SKIP:
+                got.append(flat[k])
+            k += step
+        out += got
+    return out
 
 
 @functools.lru_cache(maxsize=4096)
@@ -308,9 +342,25 @@ def _item_joined(words: tuple) -> bool:
         if x.startswith(_JOINED):
             return True
         if x == "linked":
-            # "linked via a linker to", or "linked" with a payload, dye or carrier named in
-            # the item; not a relation in words ("osimertinib linked to longer PFS")
+            # "linked via a linker to", "linked" with a reagent named in the item, or linked
+            # to anything that is not a clinical relation (fail closed: "eFluor 450 linked
+            # to trastuzumab"); "osimertinib linked to longer PFS" is a relation
             if "via" in flat[i + 1:i + 4] or reagent:
+                return True
+            if any(not (p in _RELATION_WORDS or p.isdigit()) for p in _partners(flat, i)):
+                return True
+    return False
+
+
+@functools.lru_cache(maxsize=4096)
+def _joined_beyond_adc(words: tuple) -> bool:
+    """For a drug whose own name is the conjugate: is it joined to something more than
+    its own description ("antibody-drug conjugate")? The words beside each joining word
+    are its partners ("... conjugated to ATTO 647N", "Cy3B-conjugated ...")."""
+    flat = [x.lower() for x in _alnum_words(" ".join(words))]
+    for i, x in enumerate(flat):
+        if x.startswith(_JOINED) or x == "linked":
+            if any(p not in _ADC_WORDS for p in _partners(flat, i)):
                 return True
     return False
 
@@ -620,9 +670,10 @@ class OncoKG:
         # a drug whose own name is the conjugate (TRASTUZUMAB EMTANSINE) keeps "antibody-drug
         # conjugate", but not a further dye or carrier named beside it ("... linked to Alexa
         # Fluor 488", "... conjugated to polyethylene glycol")
-        rest = tuple(tokens[k] for k in same if not a <= k < b)
+        rest = tuple(_DRUG_MARK if a <= k < b else tokens[k] for k in same
+                     if not a < k < b)
         if _item_joined(rest) and (not _payload_name(self.dic["drugs"][did]["name"])
-                                   or _item_reagent(rest) or _beyond_adc_words(rest)):
+                                   or _item_reagent(rest) or _joined_beyond_adc(rest)):
             return name
         # A one-letter element is left to the case-marked word check above: lower-case
         # chemistry ("13-cis retinoic acid") is not carbon-13.
