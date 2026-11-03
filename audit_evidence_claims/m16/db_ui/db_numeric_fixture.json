@@ -1,0 +1,651 @@
+{
+  "setup": "isolated in-memory X->ASSOCIATED_WITH->Y and O->SPONSORS_TRIAL_OF->D",
+  "cases": [
+    {
+      "stored_json_numeric_literal": "null",
+      "requests": [
+        {
+          "input": "X",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "out",
+                "type": "Disease",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "Y",
+                    "type": "Disease",
+                    "label": "Fixture disease",
+                    "edge_id": "A",
+                    "score": null,
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture company",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "D",
+                    "type": "Drug",
+                    "label": "Fixture drug",
+                    "edge_id": "S",
+                    "trials": 0,
+                    "max_phase": null,
+                    "evidence_trials": null,
+                    "weight": 0,
+                    "sponsor_class": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_json_numeric_literal": "true",
+      "requests": [
+        {
+          "input": "X",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "out",
+                "type": "Disease",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "Y",
+                    "type": "Disease",
+                    "label": "Fixture disease",
+                    "edge_id": "A",
+                    "score": null,
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture company",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "D",
+                    "type": "Drug",
+                    "label": "Fixture drug",
+                    "edge_id": "S",
+                    "trials": 0,
+                    "max_phase": null,
+                    "evidence_trials": null,
+                    "weight": 0,
+                    "sponsor_class": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_json_numeric_literal": "false",
+      "requests": [
+        {
+          "input": "X",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "out",
+                "type": "Disease",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "Y",
+                    "type": "Disease",
+                    "label": "Fixture disease",
+                    "edge_id": "A",
+                    "score": null,
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture company",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "D",
+                    "type": "Drug",
+                    "label": "Fixture drug",
+                    "edge_id": "S",
+                    "trials": 0,
+                    "max_phase": null,
+                    "evidence_trials": null,
+                    "weight": 0,
+                    "sponsor_class": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_json_numeric_literal": "0",
+      "requests": [
+        {
+          "input": "X",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "out",
+                "type": "Disease",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "Y",
+                    "type": "Disease",
+                    "label": "Fixture disease",
+                    "edge_id": "A",
+                    "score": 0,
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture company",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "D",
+                    "type": "Drug",
+                    "label": "Fixture drug",
+                    "edge_id": "S",
+                    "trials": 0,
+                    "max_phase": null,
+                    "evidence_trials": 0,
+                    "weight": 0,
+                    "sponsor_class": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_json_numeric_literal": "1",
+      "requests": [
+        {
+          "input": "X",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "out",
+                "type": "Disease",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "Y",
+                    "type": "Disease",
+                    "label": "Fixture disease",
+                    "edge_id": "A",
+                    "score": 1,
+                    "weight": 1
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture company",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "D",
+                    "type": "Drug",
+                    "label": "Fixture drug",
+                    "edge_id": "S",
+                    "trials": 0,
+                    "max_phase": null,
+                    "evidence_trials": 1,
+                    "weight": 1,
+                    "sponsor_class": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_json_numeric_literal": "3.5",
+      "requests": [
+        {
+          "input": "X",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "out",
+                "type": "Disease",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "Y",
+                    "type": "Disease",
+                    "label": "Fixture disease",
+                    "edge_id": "A",
+                    "score": 3.5,
+                    "weight": 3.5
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture company",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "D",
+                    "type": "Drug",
+                    "label": "Fixture drug",
+                    "edge_id": "S",
+                    "trials": 0,
+                    "max_phase": null,
+                    "evidence_trials": 3.5,
+                    "weight": 3.5,
+                    "sponsor_class": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_json_numeric_literal": "\"3\"",
+      "requests": [
+        {
+          "input": "X",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "out",
+                "type": "Disease",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "Y",
+                    "type": "Disease",
+                    "label": "Fixture disease",
+                    "edge_id": "A",
+                    "score": null,
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture company",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "D",
+                    "type": "Drug",
+                    "label": "Fixture drug",
+                    "edge_id": "S",
+                    "trials": 0,
+                    "max_phase": null,
+                    "evidence_trials": null,
+                    "weight": 0,
+                    "sponsor_class": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_json_numeric_literal": "NaN",
+      "requests": [
+        {
+          "input": "X",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "out",
+                "type": "Disease",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "Y",
+                    "type": "Disease",
+                    "label": "Fixture disease",
+                    "edge_id": "A",
+                    "score": null,
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture company",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "D",
+                    "type": "Drug",
+                    "label": "Fixture drug",
+                    "edge_id": "S",
+                    "trials": 0,
+                    "max_phase": null,
+                    "evidence_trials": null,
+                    "weight": 0,
+                    "sponsor_class": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_json_numeric_literal": "Infinity",
+      "requests": [
+        {
+          "input": "X",
+          "status": 400,
+          "body": {
+            "error": "Out of range float values are not JSON compliant: inf"
+          }
+        },
+        {
+          "input": "O",
+          "status": 400,
+          "body": {
+            "error": "Out of range float values are not JSON compliant: inf"
+          }
+        }
+      ]
+    },
+    {
+      "stored_json_numeric_literal": "-Infinity",
+      "requests": [
+        {
+          "input": "X",
+          "status": 400,
+          "body": {
+            "error": "Out of range float values are not JSON compliant: -inf"
+          }
+        },
+        {
+          "input": "O",
+          "status": 400,
+          "body": {
+            "error": "Out of range float values are not JSON compliant: -inf"
+          }
+        }
+      ]
+    }
+  ]
+}

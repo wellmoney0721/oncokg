@@ -177,3 +177,12 @@ In-111, I-123..131, Lu-177, Ra-223, ...; stable 2H/13C/15N excluded so "13-cis" 
 
 Same list item, fail closed: "osimertinib with [89Zr] trastuzumab" refuses both; "osimertinib, [89Zr] trastuzumab" keeps
 osimertinib. Additional known over-refusals: `GS-11CAL-101`, `3en3hg4wsw` (codes that read as C-11 / H-3). Tests 343.
+
+## Round 16 (audit_evidence_claims/m16) — CHANGES REQUIRED (one blocker)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M16-B1 | "I-124-labelled trastuzumab": element-first one-letter isotope | a lone letter followed by a medical mass inside one word ("I-124", "F18", "C14", "Y-90") counts; a letter inside a letter run ("BKM120", "AZD9291") does not |
+| M16-S1 | the item's isotope state was recomputed for every match (seconds under the lock) | computed once per item (cached) |
+
+Stored-alias sweep: no change. Tests 344.

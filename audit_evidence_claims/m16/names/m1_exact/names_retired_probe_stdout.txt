@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ORG:hoffmannlaroche",
+    "type": "Company",
+    "label": "Hoffmann-la Roche",
+    "retired_at": "2026-11-03T05:26:42+00:00"
+  },
+  {
+    "id": "ORG:gsk",
+    "type": "Company",
+    "label": "GSK",
+    "retired_at": "2026-11-03T06:14:44+00:00"
+  },
+  {
+    "id": "ORG:oncoethixasubsidiaryofmerckrahwaynewjerseyusa",
+    "type": "Company",
+    "label": "Oncoethix A Subsidiary Of Merck & (rahway New Jersey Usa)",
+    "retired_at": "2026-11-03T06:14:44+00:00"
+  },
+  {
+    "id": "ORG:beigene",
+    "type": "Company",
+    "label": "Beigene",
+    "retired_at": "2026-11-03T05:26:42+00:00"
+  },
+  {
+    "id": "ORG:scheringplough",
+    "type": "Company",
+    "label": "Schering-plough",
+    "retired_at": "2026-11-03T06:14:44+00:00"
+  },
+  {
+    "id": "ORG:arquleasubsidiaryofmercksharpdohmeasubsidiaryofmerckrahwaynjusa",
+    "type": "Company",
+    "label": "Arqule A Subsidiary Of Merck Sharp & Dohme A Subsidiary Of Merck & (rahway Nj Usa)",
+    "retired_at": "2026-11-03T06:14:44+00:00"
+  },
+  {
+    "id": "ORG:immunedesignasubsidiaryofmerckrahwaynewjerseyusa",
+    "type": "Company",
+    "label": "Immune Design A Subsidiary Of Merck & (rahway New Jersey Usa)",
+    "retired_at": "2026-11-03T06:14:44+00:00"
+  }
+]
+{"input": "ORG:hoffmannlaroche", "result": {"not_found": "ORG:hoffmannlaroche"}, "groups": []}
+{"input": "Hoffmann-la Roche", "result": {"center": {"id": "ORG:roche", "type": "Company", "label": "Roche", "matched_text": "Hoffmann-la Roche", "trials": null, "props": {}}, "also": []}, "groups": [["SPONSORS", "out", 45], ["SPONSORS", "out", 26], ["SPONSORS_TRIAL_OF", "out", 23], ["PARENT_OF", "out", 4]]}
+{"input": "ORG:gsk", "result": {"not_found": "ORG:gsk"}, "groups": []}
+{"input": "GSK", "result": {"center": {"id": "ORG:glaxosmithkline", "type": "Company", "label": "Glaxosmithkline", "matched_text": "GSK", "trials": null, "props": {}}, "also": []}, "groups": [["SPONSORS_TRIAL_OF", "out", 24], ["SPONSORS", "out", 19], ["SPONSORS", "out", 2]]}
+{"input": "ORG:oncoethixasubsidiaryofmerckrahwaynewjerseyusa", "result": {"not_found": "ORG:oncoethixasubsidiaryofmerckrahwaynewjerseyusa"}, "groups": []}
+{"input": "Oncoethix A Subsidiary Of Merck & (rahway New Jersey Usa)", "result": {"not_found": "Oncoethix A Subsidiary Of Merck & (rahway New Jersey Usa)"}, "groups": []}
+{"input": "ORG:beigene", "result": {"not_found": "ORG:beigene"}, "groups": []}
+{"input": "Beigene", "result": {"center": {"id": "ORG:beonemedicines", "type": "Company", "label": "Beigene", "matched_text": "Beigene", "trials": null, "props": {}}, "also": []}, "groups": [["SPONSORS_TRIAL_OF", "out", 11], ["SPONSORS", "out", 6], ["SPONSORS", "out", 3]]}
+{"input": "ORG:scheringplough", "result": {"not_found": "ORG:scheringplough"}, "groups": []}
+{"input": "Schering-plough", "result": {"center": {"id": "ORG:merckco", "type": "Company", "label": "Merck & Co", "matched_text": "Schering-plough", "trials": null, "props": {}}, "also": []}, "groups": [["PARENT_OF", "out", 3], ["SPONSORS", "out", 3], ["SPONSORS", "out", 2], ["SPONSORS_TRIAL_OF", "out", 2]]}
+{"input": "ORG:arquleasubsidiaryofmercksharpdohmeasubsidiaryofmerckrahwaynjusa", "result": {"not_found": "ORG:arquleasubsidiaryofmercksharpdohmeasubsidiaryofmerckrahwaynjusa"}, "groups": []}
+{"input": "Arqule A Subsidiary Of Merck Sharp & Dohme A Subsidiary Of Merck & (rahway Nj Usa)", "result": {"not_found": "Arqule A Subsidiary Of Merck Sharp & Dohme A Subsidiary Of Merck & (rahway Nj Usa)"}, "groups": []}
+{"input": "ORG:immunedesignasubsidiaryofmerckrahwaynewjerseyusa", "result": {"not_found": "ORG:immunedesignasubsidiaryofmerckrahwaynewjerseyusa"}, "groups": []}
+{"input": "Immune Design A Subsidiary Of Merck & (rahway New Jersey Usa)", "result": {"not_found": "Immune Design A Subsidiary Of Merck & (rahway New Jersey Usa)"}, "groups": []}

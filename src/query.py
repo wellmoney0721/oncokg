@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import json
 import os
+import functools
 import re
 import sqlite3
 import sys
@@ -148,6 +149,25 @@ def _medical_isotope_in(key: str, one_letter: bool = True) -> bool:
             return True
     return False
 
+
+
+@functools.lru_cache(maxsize=4096)
+def _item_has_isotope(words: tuple) -> bool:
+    """Is a medical isotope written anywhere in this list item? Worked out once per item.
+
+    Two-letter elements are read across words ("trastuzumab Ga 68"); a one-letter element
+    only inside one word, mass first ("3hvinblastine") or element first ("I-124-labelled"),
+    so "13 NSCLC" is not N-13 and "BKM120" is not M-120."""
+    if _medical_isotope_in(T.canonical_key(" ".join(words)), one_letter=False):
+        return True
+    for w in words:
+        key = T.canonical_key(w)
+        if _medical_isotope_in(key):
+            return True
+        for m in re.finditer(r"(?<![a-z])([a-z])(\d{1,3})(?!\d)", key):
+            if int(m.group(2)) in _MEDICAL_MASS.get(m.group(1), set()):
+                return True
+    return False
 
 def _labelled(drug_name: str) -> bool:
     """Does a drug's preferred name carry an isotope (it is the radiolabelled product)?"""
@@ -372,9 +392,7 @@ class OncoKG:
         # together, however it is split or cased ("89-ZrDFO trastuzumab", "3hvinblastine",
         # "trastuzumab Ga68"), refuses an unlabelled drug. A drug whose own name carries a
         # label (LUTETIUM LU 177 DOTATATE, FLUDEOXYGLUCOSE F 18) is the labelled product.
-        item_key = T.canonical_key(" ".join(tokens[k] for k in same))
-        if ((_medical_isotope_in(item_key, one_letter=False)
-             or any(_medical_isotope_in(T.canonical_key(tokens[k])) for k in same))
+        if (_item_has_isotope(tuple(tokens[k] for k in same))
                 and not _labelled(self.dic["drugs"][did]["name"])):
             return name
         # A one-letter element is left to the case-marked word check above: lower-case

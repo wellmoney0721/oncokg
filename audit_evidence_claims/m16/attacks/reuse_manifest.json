@@ -1,0 +1,59 @@
+[
+  {
+    "source": "audit_evidence_claims\\m15\\attacks\\focused.py",
+    "output": "audit_evidence_claims\\m16\\attacks\\focused.py",
+    "source_sha256": "5529c26d4a611e1cae9617ec26c5a0687ede5c298372247b9e197869e8bcd291",
+    "adaptations": [
+      "Python module name m15_previous -> m16_previous; outputs derive from script location; all original input lists unchanged"
+    ]
+  },
+  {
+    "source": "audit_evidence_claims\\m15\\attacks\\fresh.py",
+    "output": "audit_evidence_claims\\m16\\attacks\\fresh.py",
+    "source_sha256": "f30638dc351c50c743575e5c31d8f8751962a64e1ce7fb6cf658cbfd53d210f9",
+    "adaptations": [
+      "Python module name m15_previous -> m16_previous; outputs derive from script location; all original input lists unchanged"
+    ]
+  },
+  {
+    "source": "audit_evidence_claims\\m15\\attacks\\edge_probe.py",
+    "output": "audit_evidence_claims\\m16\\attacks\\edge_probe.py",
+    "source_sha256": "1f09c1556abbe34a90471eab1cda68fb419039a7264f82194c1a86d26bb5623b",
+    "adaptations": [
+      "Python module name m15_previous -> m16_previous; outputs derive from script location; all original input lists unchanged"
+    ]
+  },
+  {
+    "source": "audit_evidence_claims\\m15\\attacks\\targeted_probe.py",
+    "output": "audit_evidence_claims\\m16\\attacks\\targeted_probe.py",
+    "source_sha256": "f7e4a715a66f7d7a07f0f522b829183269ab735515f7856fd5e34d6b99034167",
+    "adaptations": [
+      "Python module name m15_previous -> m16_previous; outputs derive from script location; all original input lists unchanged"
+    ]
+  },
+  {
+    "source": "audit_evidence_claims\\m15\\attacks\\alias_variants.py",
+    "output": "audit_evidence_claims\\m16\\attacks\\alias_variants.py",
+    "source_sha256": "1d8ad6dd5ed39234de9df843ad7c97051c97767cd5b7893bfe238f06588f9b98",
+    "adaptations": [
+      "Python module name m15_previous -> m16_previous; outputs derive from script location; all original input lists unchanged"
+    ]
+  },
+  {
+    "source": "audit_evidence_claims/m15/attacks/targeted_probe.py",
+    "output": "audit_evidence_claims/m16/attacks/new_probe.py",
+    "adaptations": [
+      "Replace cases with 42 new targeted controls/attacks",
+      "Rename outputs new_* and previous in-memory module m16_previous"
+    ]
+  },
+  {
+    "source": "audit_evidence_claims/m15/attacks/targeted_http.py",
+    "output": "audit_evidence_claims/m16/attacks/new_http.py",
+    "adaptations": [
+      "Replace cases with same 42 targeted inputs",
+      "Port 8945 -> 8970",
+      "Rename outputs new_*"
+    ]
+  }
+]

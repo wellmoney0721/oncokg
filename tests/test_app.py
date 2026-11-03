@@ -395,3 +395,20 @@ def test_a_medical_isotope_anywhere_in_the_item_refuses_an_unlabelled_drug():
                      ("lu-177 dotatate", "LUTETIUM OXODOTREOTIDE LU-177"),
                      ("lorlatinib 13 NSCLC trials", "LORLATINIB"), ("paclitaxel 2 cycles", "PACLITAXEL")):
         assert e.explore(t)["center"]["label"] == label, t
+
+
+# Codex review m16: an element-first one-letter isotope inside a word
+def test_element_first_one_letter_isotopes_refuse():
+    import time
+    import app
+    e = app.Engine()
+    for t in ("I-124-labelled trastuzumab", "trastuzumab labelled with I-124", "F18 trastuzumab",
+              "C14 paclitaxel"):
+        r = e.explore(t)
+        assert r.get("refused") or r["center"]["id"] not in ("CHEMBL1201585", "CHEMBL428647"), t
+    assert not e.kg.answer("Which trials evaluate I-124-labelled trastuzumab?", use_llm=False).evidence
+    for t in ("BKM-120NX", "AZD9291", "IL-2"):
+        assert e.explore(t).get("center"), t
+    t0 = time.time()
+    e.kg.link_entities(" ".join(["osimertinib"] * 80))
+    assert time.time() - t0 < 1.0
