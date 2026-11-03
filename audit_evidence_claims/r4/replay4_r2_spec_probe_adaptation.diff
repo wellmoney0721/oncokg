@@ -1,0 +1,8 @@
+--- audit_evidence_claims\r2\spec_probe.py
++++ audit_evidence_claims\r4\replay4_r2_spec_probe.py
+@@ -83,4 +83,4 @@
+ ('action_control_antagonist','What does fulvestrant target?','Fulvestrant is an antagonist of ESR1.'),
+ ]
+ for args in CASES:run(*args)
+-Path(__file__).with_name('spec_probe_results.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False),encoding='utf-8')
++Path(__file__).with_name('replay4_r2_spec_probe_results.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False),encoding='utf-8')

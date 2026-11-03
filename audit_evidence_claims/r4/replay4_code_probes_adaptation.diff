@@ -1,0 +1,11 @@
+--- audit_evidence_claims\independent_code_probes.py
++++ audit_evidence_claims\r4\replay4_code_probes.py
+@@ -1,7 +1,7 @@
+ import sys, json
+ from pathlib import Path
+ sys.dont_write_bytecode = True
+-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
++sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'src'))
+ from app import Engine
+ from claims import check_claims, _units
+ eng = Engine()

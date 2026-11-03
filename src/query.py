@@ -479,6 +479,15 @@ class OncoKG:
                         "circular and would always pass"),
             }
 
+        if linker is not None:
+            # a citation whose every id is a record of this evidence is a citation,
+            # not a claim; anything else in brackets stays and is checked
+            from claims import _strip_citations
+            known = {x.strip().lower() for e in evidence
+                     for part in (e.source_record or "", e.edge_id or "", e.statement or "")
+                     for x in re.split(r"[,;\s|]+", part) if x.strip()}
+            text = _strip_citations(text, known)
+
         haystack = " ".join(
             [e.statement for e in evidence]
             + [str(v) for e in evidence for v in e.detail.values()]
@@ -534,7 +543,8 @@ class OncoKG:
         capitalised = set(re.findall(r"\b[A-Z][A-Za-z0-9\-]{3,}\b", text))
         stop = {"Scope", "Organisations", "Trials", "Profile", "Findings",
                 "Agents", "Reported", "This", "The", "None", "NSCLC", "What",
-                "There", "These", "That", "Those", "According", "Sponsors"}
+                "There", "These", "That", "Those", "According", "Sponsors",
+                "They", "Them", "Their", "Its"}
         for name in capitalised - stop:
             if name.lower() not in haystack and not alias_in_evidence(name):
                 unsupported.append({"kind": "entity", "value": name,

@@ -1,0 +1,8 @@
+--- audit_evidence_claims\r3\docs3_probe.py
++++ audit_evidence_claims\r4\replay4_r3_docs3_probe.py
+@@ -85,4 +85,4 @@
+   en=kg.link_entities(Q[q]); ev=kg.retrieve(kg.classify(Q[q],en),en)
+   rows.append(dict(id=f'{family}_{i:02}',family=family,q=q,question=Q[q],answer=a,result=r,full_evidence=[asdict(e) for e in ev]))
+   print(family,i,q,r['checks']['grounded'],[(f['kind'],f['value']) for f in r['checks']['unsupported_claims']],repr(a))
+-Path(__file__).with_name('docs3_probe_results.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False),encoding='utf-8')
++Path(__file__).with_name('replay4_r3_docs3_probe_results.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False),encoding='utf-8')

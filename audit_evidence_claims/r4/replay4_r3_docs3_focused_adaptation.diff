@@ -1,0 +1,8 @@
+--- audit_evidence_claims\r3\docs3_focused.py
++++ audit_evidence_claims\r4\replay4_r3_docs3_focused.py
+@@ -21,4 +21,4 @@
+  r=x.check(q,a); en=kg.link_entities(q); ev=kg.retrieve(kg.classify(q,en),en)
+  rows.append(dict(id=f'focused_{i:02}',question=q,answer=a,result=r,full_evidence=[asdict(e) for e in ev]))
+  print(i,r['checks']['grounded'],[(f['kind'],f['value']) for f in r['checks']['unsupported_claims']],repr(a))
+-Path(__file__).with_name('docs3_focused_results.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False),encoding='utf-8')
++Path(__file__).with_name('replay4_r3_docs3_focused_results.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False),encoding='utf-8')

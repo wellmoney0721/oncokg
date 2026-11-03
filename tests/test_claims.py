@@ -311,3 +311,63 @@ FAITHFUL3 = [
 def test_round3_faithful_forms_pass(q, a):
     grounded, found = kinds(q, a)
     assert grounded is True, found
+
+
+# Codex round 4: each of these passed the fourth version
+ROUND4 = [
+    ("What does osimertinib target?", "The following safe drugs:\n- OSIMERTINIB acts on EGFR (inhibitor)."),
+    ("What does osimertinib target?",
+     "The following discontinued drugs:\n- OSIMERTINIB acts on EGFR (inhibitor)."),
+    ("What does osimertinib target?", "The following safe drugs:\n- Osimertinib"),
+    ("What trials evaluate Tagrisso?",
+     "The following terminated trials:\n- NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB."),
+    ("Which drugs act on ALK?",
+     "PLB1003 and LORLATINIB act on ALK and they act on ALK and they are approved."),
+    ("Which drugs act on ALK?", "LORLATINIB and PLB1003 act on ALK and are approved."),
+    ("What is AstraZeneca running in NSCLC?",
+     "AstraZeneca sponsors osimertinib and carboplatin. It sponsors them in 10 trials."),
+    ("What is AstraZeneca running in NSCLC?",
+     "AstraZeneca sponsors osimertinib and carboplatin. It sponsors them. They have 10 trials."),
+    ("What is AstraZeneca running in NSCLC?",
+     "AstraZeneca sponsors osimertinib and carboplatin in trials: 10."),
+    ("What trials evaluate Tagrisso?",
+     "NCT03909334 and NCT07680790 are recruiting trials of osimertinib."),
+    ("What trials evaluate Tagrisso?",
+     "NCT03909334 and NCT07680790 are phase 3 trials of osimertinib."),
+    ("What trials evaluate Tagrisso?",
+     "Recruiting trials evaluating osimertinib include NCT07680790 and NCT03909334."),
+    ("What does osimertinib target?", "EGFR is a drug inhibited by osimertinib."),
+    ("Which drugs act on ALK?", "PLB1003 inhibits ALK in clinical trials in this graph."),
+    ("Which drugs act on ALK?", "PLB1003 acts on ALK in NSCLC trials."),
+    ("What does osimertinib target?", "Osimertinib does N O T inhibit EGFR."),
+    ("Which drugs act on ALK?", "ALK is targeted by PLB1003 and LORLATINIB. they are approved."),
+    ("Which drugs act on ALK?", "LORLATINIB and PLB1003 act on ALK. it is approved."),
+    ("What does osimertinib target?", "Osimertinib inhibits EGFR and is EGFR."),
+    ("Which drugs act on ALK?", "LORLATINIB has 13% NSCLC trials."),
+    ("Which drugs act on ALK?", "PLB1003 has 1 phase."),
+]
+
+
+@pytest.mark.parametrize("q,a", ROUND4)
+def test_round4_attacks_are_caught(q, a):
+    grounded, found = kinds(q, a)
+    assert grounded is False, a
+
+
+FAITHFUL4 = [
+    ("Which drugs act on ALK?", "LORLATINIB and CRIZOTINIB act on ALK. They are approved."),
+    ("Which drugs act on ALK?", "LORLATINIB and CRIZOTINIB act on ALK. they are approved."),
+    ("What trials evaluate Tagrisso?", "NCT07680790 and NCT02411448 are phase 3."),
+    ("What is AstraZeneca running in NSCLC?",
+     "AstraZeneca sponsors 14 trials of osimertinib (Tagrisso)."),
+    ("What does osimertinib target?",
+     "Osimertinib acts on EGFR [CHEMBL3353410, ENSG00000146648]."),
+    ("What trials evaluate Tagrisso?",
+     "Trials of osimertinib include NCT03909334 and NCT07680790."),
+]
+
+
+@pytest.mark.parametrize("q,a", FAITHFUL4)
+def test_round4_faithful_forms_pass(q, a):
+    grounded, found = kinds(q, a)
+    assert grounded is True, found

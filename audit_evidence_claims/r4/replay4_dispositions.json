@@ -1,0 +1,2122 @@
+[
+  {
+    "finding": "R1 B1 direction/endpoints",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R1",
+        "source": "adversarial_results",
+        "id": "reversed_target",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "EGFR acts on osimertinib.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation_direction",
+              "value": "EGFR acts OSIMERTINIB",
+              "sentence": "EGFR acts on osimertinib.",
+              "why": "this relation runs from a drug to a target; the sentence has it the other way or between the wrong kinds"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "main_results",
+        "id": "reverse_noun",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "EGFR is an osimertinib inhibitor.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation_direction",
+              "value": "EGFR inhibitor OSIMERTINIB",
+              "sentence": "EGFR is an osimertinib inhibitor.",
+              "why": "this relation runs from a drug to a target; the sentence has it the other way or between the wrong kinds"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "adversarial_results",
+        "id": "reversed_trial",
+        "questions": [
+          "What trials evaluate Tagrisso?"
+        ],
+        "answer": "osimertinib evaluates NCT03909334.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation_direction",
+              "value": "OSIMERTINIB evaluates NCT03909334",
+              "sentence": "osimertinib evaluates NCT03909334.",
+              "why": "this relation runs from a trial to a drug; the sentence has it the other way or between the wrong kinds"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "adversarial_results",
+        "id": "reversed_sponsor",
+        "questions": [
+          "What is AstraZeneca running in NSCLC?"
+        ],
+        "answer": "osimertinib sponsors AstraZeneca.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation_direction",
+              "value": "OSIMERTINIB sponsors Astrazeneca",
+              "sentence": "osimertinib sponsors AstraZeneca.",
+              "why": "this relation runs from a company to a drug; the sentence has it the other way or between the wrong kinds"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "main_results",
+        "id": "wrong_type_relation",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "Osimertinib sponsors EGFR.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation_direction",
+              "value": "OSIMERTINIB sponsors EGFR",
+              "sentence": "Osimertinib sponsors EGFR.",
+              "why": "this relation runs from a company to a drug; the sentence has it the other way or between the wrong kinds"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R1 B2 pronoun subject loss",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R1",
+        "source": "adversarial_results",
+        "id": "pronoun_target_same_line",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "osimertinib acts on EGFR. It inhibits ALK.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation",
+              "value": "OSIMERTINIB — inhibits — ALK",
+              "sentence": "It inhibits ALK.",
+              "why": "no retrieved edge links these two entities this way"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "adversarial_results",
+        "id": "pronoun_target_newline",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "osimertinib acts on EGFR.\nIt inhibits ALK.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation",
+              "value": "OSIMERTINIB — inhibits — ALK",
+              "sentence": "It inhibits ALK.",
+              "why": "no retrieved edge links these two entities this way"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "adversarial_results",
+        "id": "pronoun_this_drug",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "osimertinib acts on EGFR. This drug inhibits ALK.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation",
+              "value": "OSIMERTINIB — inhibits — ALK",
+              "sentence": "This drug inhibits ALK.",
+              "why": "no retrieved edge links these two entities this way"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "adversarial_results",
+        "id": "trial_pronoun_reset",
+        "questions": [
+          "What trials evaluate Tagrisso?"
+        ],
+        "answer": "NCT03909334 evaluates osimertinib. It evaluates osimertinib and is phase 3.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "phase",
+              "value": "phase 3",
+              "sentence": "It evaluates osimertinib and is phase 3.",
+              "why": "no evidence statement about these entities gives that phase"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R1 B3 phase/status/count pooling",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R1",
+        "source": "adversarial_results",
+        "id": "swapped_trial_phases",
+        "questions": [
+          "What trials evaluate Tagrisso?"
+        ],
+        "answer": "NCT03909334 is phase 3 and NCT07680790 is phase 2.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "phase",
+              "value": "phase 2",
+              "sentence": "NCT03909334 is phase 3 and NCT07680790 is phase 2.",
+              "why": "no evidence statement about these entities gives that phase"
+            },
+            {
+              "kind": "phase",
+              "value": "phase 3",
+              "sentence": "NCT03909334 is phase 3 and NCT07680790 is phase 2.",
+              "why": "no evidence statement about these entities gives that phase"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "adversarial_results",
+        "id": "pooled_trial_status2",
+        "questions": [
+          "What trials evaluate Tagrisso?"
+        ],
+        "answer": "NCT03909334 and NCT07680790 are recruiting.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "identity",
+              "value": "NCT03909334 = NCT07680790",
+              "sentence": "NCT03909334 and NCT07680790 are recruiting.",
+              "why": "two different entities joined by a verb the graph has no edge for"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "adversarial_results",
+        "id": "wrong_sponsor_count",
+        "questions": [
+          "What is AstraZeneca running in NSCLC?"
+        ],
+        "answer": "AstraZeneca sponsors 10 NSCLC trials evaluating osimertinib.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "number",
+              "value": "10",
+              "sentence": "AstraZeneca sponsors 10 NSCLC trials evaluating osimertinib.",
+              "why": "no evidence statement about these entities gives that figure"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "adversarial_results",
+        "id": "wrong_drug_count_target",
+        "questions": [
+          "Which drugs act on ALK?"
+        ],
+        "answer": "PLB1003 acts on ALK with 13 NSCLC trials.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "number",
+              "value": "13",
+              "sentence": "PLB1003 acts on ALK with 13 NSCLC trials.",
+              "why": "no evidence statement about these entities gives that figure"
+            }
+          ],
+          "evidence_count": 11,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "main_results",
+        "id": "clinical_from_alk",
+        "questions": [
+          "Which drugs act on ALK?"
+        ],
+        "answer": "PLB1003 is approved for all lung cancer and acts on ALK.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "wording",
+              "value": "all",
+              "sentence": "PLB1003 is approved for all lung cancer and acts on ALK.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            },
+            {
+              "kind": "wording",
+              "value": "approved",
+              "sentence": "PLB1003 is approved for all lung cancer and acts on ALK.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            },
+            {
+              "kind": "indication",
+              "value": "lung cancer",
+              "sentence": "PLB1003 is approved for all lung cancer and acts on ALK.",
+              "why": "a claim about the disease itself (what a drug is for or is); the graph holds trials, not indications"
+            }
+          ],
+          "evidence_count": 11,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R1 B4 bigram laundering",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R1",
+        "source": "main_results",
+        "id": "quoted_developing",
+        "questions": [
+          "Which companies are developing osimertinib?"
+        ],
+        "answer": "AstraZeneca is developing the drug osimertinib.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "identity",
+              "value": "Astrazeneca = OSIMERTINIB",
+              "sentence": "AstraZeneca is developing the drug osimertinib.",
+              "why": "two different entities joined by a verb the graph has no edge for"
+            },
+            {
+              "kind": "development_claim",
+              "value": "developing",
+              "sentence": "AstraZeneca is developing the drug osimertinib.",
+              "why": "the graph records trial sponsorship, which is not evidence of developing, owning or marketing a drug"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "main_results",
+        "id": "quoted_developing_2",
+        "questions": [
+          "Which companies are developing osimertinib?"
+        ],
+        "answer": "AstraZeneca has evidence of developing osimertinib.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "identity",
+              "value": "Astrazeneca = OSIMERTINIB",
+              "sentence": "AstraZeneca has evidence of developing osimertinib.",
+              "why": "two different entities joined by a verb the graph has no edge for"
+            },
+            {
+              "kind": "development_claim",
+              "value": "developing",
+              "sentence": "AstraZeneca has evidence of developing osimertinib.",
+              "why": "the graph records trial sponsorship, which is not evidence of developing, owning or marketing a drug"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "main_results",
+        "id": "quoted_absence_natural",
+        "questions": [
+          "Which companies are developing osimertinib?"
+        ],
+        "answer": "This is not evidence that AstraZeneca sponsors osimertinib.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "negation",
+              "value": "not",
+              "sentence": "This is not evidence that AstraZeneca sponsors osimertinib.",
+              "why": "the graph stores only relations that exist; it cannot confirm an absence or a failure"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R1 B5 non- negation",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R1",
+        "source": "main_results",
+        "id": "non_inhibitor",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "Osimertinib is a non-inhibitor of EGFR.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "negation",
+              "value": "non",
+              "sentence": "Osimertinib is a non-inhibitor of EGFR.",
+              "why": "the graph stores only relations that exist; it cannot confirm an absence or a failure"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "main_results",
+        "id": "non_hyphen",
+        "questions": [
+          "What trials evaluate Tagrisso?"
+        ],
+        "answer": "NCT07680790 is non-recruiting.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "negation",
+              "value": "non",
+              "sentence": "NCT07680790 is non-recruiting.",
+              "why": "the graph stores only relations that exist; it cannot confirm an absence or a failure"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R1 B6 brackets/non-English",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R1",
+        "source": "main_results",
+        "id": "square_bracket_claim",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "Osimertinib [is safe and discontinued] acts on EGFR.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "wording",
+              "value": "discontinued",
+              "sentence": "Osimertinib [is safe and discontinued] acts on EGFR.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            },
+            {
+              "kind": "wording",
+              "value": "safe",
+              "sentence": "Osimertinib [is safe and discontinued] acts on EGFR.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "main_results",
+        "id": "markdown_link_label",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "[osimertinib is safe](osimertinib) acts on EGFR.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "wording",
+              "value": "safe",
+              "sentence": "osimertinib is safe acts on EGFR.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "main_results",
+        "id": "korean_only",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "오시머티닙은 안전하며 부작용이 없다.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "unreadable",
+              "value": "오시머티닙은 안전하며 부작용이 없다.",
+              "sentence": "오시머티닙은 안전하며 부작용이 없다.",
+              "why": "text in a language the check cannot read is not verified"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "main_results",
+        "id": "korean_mixed_relation",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "osimertinib 은 EGFR 을 억제하지 않는다.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "unreadable",
+              "value": "osimertinib 은 EGFR 을 억제하지 않는다.",
+              "sentence": "osimertinib 은 EGFR 을 억제하지 않는다.",
+              "why": "text in a language the check cannot read is not verified"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R1 B7 clinical grammar/action",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R1",
+        "source": "main_results",
+        "id": "plain_clinical_grammar",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "Osimertinib is a treatment for all cancer.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "wording",
+              "value": "all",
+              "sentence": "Osimertinib is a treatment for all cancer.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            },
+            {
+              "kind": "wording",
+              "value": "cancer",
+              "sentence": "Osimertinib is a treatment for all cancer.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            },
+            {
+              "kind": "wording",
+              "value": "treatment",
+              "sentence": "Osimertinib is a treatment for all cancer.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "main_results",
+        "id": "activator_as_inhibitor",
+        "questions": [
+          "What does omaveloxolone target?"
+        ],
+        "answer": "Omaveloxolone inhibits NFE2L2.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "action",
+              "value": "OMAVELOXOLONE inhibits NFE2L2",
+              "sentence": "Omaveloxolone inhibits NFE2L2.",
+              "why": "the evidence gives a different or no action type"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R1 B8 numeric layouts",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R1",
+        "source": "adversarial_pairs_results",
+        "id": "phase_13_regex",
+        "questions": [
+          "Which drugs act on ALK?"
+        ],
+        "answer": "PLB1003 is phase 13.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "phase",
+              "value": "phase 13",
+              "sentence": "PLB1003 is phase 13.",
+              "why": "no evidence statement about these entities gives that phase"
+            }
+          ],
+          "evidence_count": 11,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "code_probes",
+        "id": "phase_suffix",
+        "questions": [
+          "What trials evaluate Tagrisso?"
+        ],
+        "answer": "NCT07680790 is phase 3b.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "phase",
+              "value": "phase 3b",
+              "sentence": "NCT07680790 is phase 3b.",
+              "why": "no evidence statement about these entities gives that phase"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "adversarial_results",
+        "id": "count_long_unit",
+        "questions": [
+          "Which drugs act on ALK?"
+        ],
+        "answer": "PLB1003 has 13 non small cell lung cancer trials.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "number",
+              "value": "13",
+              "sentence": "PLB1003 has 13 non small cell lung cancer trials.",
+              "why": "no evidence statement about these entities gives that figure"
+            }
+          ],
+          "evidence_count": 11,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R1",
+        "source": "adversarial_pairs_results",
+        "id": "count_after_colon_list",
+        "questions": [
+          "Which drugs act on ALK?"
+        ],
+        "answer": "- PLB1003: NSCLC trials: 13\n- lorlatinib: NSCLC trials: 0",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "number",
+              "value": "0",
+              "sentence": "lorlatinib: NSCLC trials: 0",
+              "why": "no evidence statement about these entities gives that figure"
+            },
+            {
+              "kind": "number",
+              "value": "13",
+              "sentence": "PLB1003: NSCLC trials: 13",
+              "why": "no evidence statement about these entities gives that figure"
+            },
+            {
+              "kind": "indication",
+              "value": "lung cancer",
+              "sentence": "PLB1003: NSCLC trials: 13",
+              "why": "a claim about the disease itself (what a drug is for or is); the graph holds trials, not indications"
+            },
+            {
+              "kind": "wording",
+              "value": "trials",
+              "sentence": "PLB1003: NSCLC trials: 13",
+              "why": "calls something a drug, company or trial that the evidence does not"
+            }
+          ],
+          "evidence_count": 11,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R2 B1 reversed noun/cleft",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R1",
+        "source": "main_results",
+        "id": "reverse_noun",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "EGFR is an osimertinib inhibitor.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation_direction",
+              "value": "EGFR inhibitor OSIMERTINIB",
+              "sentence": "EGFR is an osimertinib inhibitor.",
+              "why": "this relation runs from a drug to a target; the sentence has it the other way or between the wrong kinds"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "spec_probe_results",
+        "id": "passive_cleft",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "EGFR is what inhibited osimertinib.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation_direction",
+              "value": "EGFR inhibited OSIMERTINIB",
+              "sentence": "EGFR is what inhibited osimertinib.",
+              "why": "this relation runs from a drug to a target; the sentence has it the other way or between the wrong kinds"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "spec_probe_results",
+        "id": "passive_cleft_trial",
+        "questions": [
+          "What trials evaluate Tagrisso?"
+        ],
+        "answer": "Osimertinib is what evaluated NCT03909334.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation_direction",
+              "value": "OSIMERTINIB evaluated NCT03909334",
+              "sentence": "Osimertinib is what evaluated NCT03909334.",
+              "why": "this relation runs from a trial to a drug; the sentence has it the other way or between the wrong kinds"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "spec_probe_results",
+        "id": "passive_cleft_sponsor",
+        "questions": [
+          "What is AstraZeneca running in NSCLC?"
+        ],
+        "answer": "Osimertinib is what sponsored AstraZeneca.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation_direction",
+              "value": "OSIMERTINIB sponsored Astrazeneca",
+              "sentence": "Osimertinib is what sponsored AstraZeneca.",
+              "why": "this relation runs from a company to a drug; the sentence has it the other way or between the wrong kinds"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R2 B2 hidden extra endpoint",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R2",
+        "source": "spec_probe_results",
+        "id": "endpoint_preposition",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "Osimertinib acts on EGFR and on ALK.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation",
+              "value": "OSIMERTINIB — acts — ALK",
+              "sentence": "Osimertinib acts on EGFR and on ALK.",
+              "why": "no retrieved edge links these two entities this way"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "spec_probe_results",
+        "id": "endpoint_noun",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "Osimertinib is an inhibitor of EGFR and of ALK.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation",
+              "value": "OSIMERTINIB — inhibitor — ALK",
+              "sentence": "Osimertinib is an inhibitor of EGFR and of ALK.",
+              "why": "no retrieved edge links these two entities this way"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "spec_probe_results",
+        "id": "endpoint_adverb",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "Osimertinib inhibits EGFR and also ALK.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation",
+              "value": "OSIMERTINIB — inhibits — ALK",
+              "sentence": "Osimertinib inhibits EGFR and also ALK.",
+              "why": "no retrieved edge links these two entities this way"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "spec_probe_results",
+        "id": "noun_target_second",
+        "questions": [
+          "What does osimertinib target?",
+          "What does crizotinib target?"
+        ],
+        "answer": "EGFR is a target of osimertinib and of crizotinib.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation",
+              "value": "CRIZOTINIB — target — EGFR",
+              "sentence": "EGFR is a target of osimertinib and of crizotinib.",
+              "why": "no retrieved edge links these two entities this way"
+            }
+          ],
+          "evidence_count": 7,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R2 B3 pronoun timing/verbatim trial",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R2",
+        "source": "spec_probe_results",
+        "id": "pronoun_stale",
+        "questions": [
+          "What does osimertinib target?",
+          "What does crizotinib target?"
+        ],
+        "answer": "Osimertinib acts on EGFR. Crizotinib acts on ALK and it inhibits EGFR.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation",
+              "value": "CRIZOTINIB — inhibits — EGFR",
+              "sentence": "Crizotinib acts on ALK and it inhibits EGFR.",
+              "why": "no retrieved edge links these two entities this way"
+            }
+          ],
+          "evidence_count": 7,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "spec_probe_results",
+        "id": "pronoun_stale2",
+        "questions": [
+          "What does osimertinib target?",
+          "What does crizotinib target?"
+        ],
+        "answer": "Osimertinib acts on EGFR. Crizotinib acts on ALK while this drug inhibits EGFR.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation",
+              "value": "CRIZOTINIB — inhibits — EGFR",
+              "sentence": "Crizotinib acts on ALK while this drug inhibits EGFR.",
+              "why": "no retrieved edge links these two entities this way"
+            }
+          ],
+          "evidence_count": 7,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "root_design_probe",
+        "id": "verbatim_antecedent_trial",
+        "questions": [
+          "What trials evaluate Tagrisso?"
+        ],
+        "answer": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB. It is phase 3.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "phase",
+              "value": "phase 3",
+              "sentence": "It is phase 3.",
+              "why": "no evidence statement about these entities gives that phase"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R2 B4 numeric ownership/count slots",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R2",
+        "source": "spec_probe_results",
+        "id": "number_drug_other",
+        "questions": [
+          "What is AstraZeneca running in NSCLC?"
+        ],
+        "answer": "AstraZeneca sponsors osimertinib in 10 trials with carboplatin.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "unrelated_entity",
+              "value": "CARBOPLATIN",
+              "sentence": "AstraZeneca sponsors osimertinib in 10 trials with carboplatin.",
+              "why": "named in a clause that states a relation, but not part of any relation that was checked"
+            },
+            {
+              "kind": "count_ambiguous",
+              "value": "OSIMERTINIB / CARBOPLATIN",
+              "sentence": "AstraZeneca sponsors osimertinib in 10 trials with carboplatin.",
+              "why": "a trial count in a clause naming several drugs, without a count for each drug of its own"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "spec_probe_results",
+        "id": "count_morph",
+        "questions": [
+          "Which drugs act on ALK?"
+        ],
+        "answer": "PLB1003 has 1 clinical trial.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "number",
+              "value": "1",
+              "sentence": "PLB1003 has 1 clinical trial.",
+              "why": "no evidence statement about these entities gives that figure"
+            }
+          ],
+          "evidence_count": 11,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R2 B5 action substring",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R2",
+        "source": "spec_probe_results",
+        "id": "action_antagonist",
+        "questions": [
+          "What does fulvestrant target?"
+        ],
+        "answer": "Fulvestrant activates ESR1.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "action",
+              "value": "FULVESTRANT activates ESR1",
+              "sentence": "Fulvestrant activates ESR1.",
+              "why": "the evidence gives a different or no action type"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "spec_probe_results",
+        "id": "action_noun_agonist",
+        "questions": [
+          "What does fulvestrant target?"
+        ],
+        "answer": "Fulvestrant is an agonist of ESR1.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "action",
+              "value": "FULVESTRANT agonist ESR1",
+              "sentence": "Fulvestrant is an agonist of ESR1.",
+              "why": "the evidence gives a different or no action type"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R2 B6 headings",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R2",
+        "source": "root_design_probe",
+        "id": "discarded_heading",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "osimertinib is safe:",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "wording",
+              "value": "safe",
+              "sentence": "osimertinib is safe",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "root_design_probe",
+        "id": "discarded_heading_before_prose",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "osimertinib is discontinued:\nOsimertinib acts on EGFR.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "wording",
+              "value": "discontinued",
+              "sentence": "osimertinib is discontinued",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "root_design_probe",
+        "id": "verbatim_under_unsafe_heading",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "these drugs are safe:\n- OSIMERTINIB acts on EGFR (inhibitor)",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "wording",
+              "value": "safe",
+              "sentence": "OSIMERTINIB acts on EGFR (inhibitor) are safe",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "root_design_probe",
+        "id": "verbatim_under_negated_heading",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "these drugs do not act on EGFR:\n- OSIMERTINIB acts on EGFR (inhibitor)",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "negation",
+              "value": "not",
+              "sentence": "OSIMERTINIB acts on EGFR (inhibitor) do not act on EGFR",
+              "why": "the graph stores only relations that exist; it cannot confirm an absence or a failure"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "root_design_probe",
+        "id": "verbatim_under_reversed_heading",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "EGFR acts on these drugs:\n- OSIMERTINIB acts on EGFR (inhibitor)",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation_direction",
+              "value": "EGFR acts OSIMERTINIB",
+              "sentence": "EGFR acts on OSIMERTINIB acts on EGFR (inhibitor)",
+              "why": "this relation runs from a drug to a target; the sentence has it the other way or between the wrong kinds"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R2 B7 META clinical claims",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R2",
+        "source": "root_design_probe",
+        "id": "meta_france_unsupported_phase",
+        "questions": [
+          "What is the capital of France?"
+        ],
+        "answer": "This trial is phase 4.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "no_antecedent",
+              "value": "this trial",
+              "sentence": "This trial is phase 4.",
+              "why": "a pronoun with nothing before it to refer to"
+            }
+          ],
+          "evidence_count": 0,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "root_design_probe",
+        "id": "meta_missing_typed_phase",
+        "questions": [
+          "What trials evaluate Tagrisso?"
+        ],
+        "answer": "This trial is phase 3.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "no_antecedent",
+              "value": "this trial",
+              "sentence": "This trial is phase 3.",
+              "why": "a pronoun with nothing before it to refer to"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "root_design_probe",
+        "id": "meta_missing_negation",
+        "questions": [
+          "What trials evaluate Tagrisso?"
+        ],
+        "answer": "This drug is not in trials.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "negation",
+              "value": "not",
+              "sentence": "This drug is not in trials.",
+              "why": "the graph stores only relations that exist; it cannot confirm an absence or a failure"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "root_design_probe",
+        "id": "meta_missing_count",
+        "questions": [
+          "Which companies are developing osimertinib?"
+        ],
+        "answer": "It has 14 trials.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "number",
+              "value": "14",
+              "sentence": "It has 14 trials.",
+              "why": "no evidence statement about these entities gives that figure"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R2 B8 refused spans",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R2",
+        "source": "standards_probe",
+        "id": "refused_liposomal",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "osimertinib is liposomal.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "distinct_product",
+              "value": "is liposomal",
+              "sentence": "osimertinib is liposomal.",
+              "why": "names a distinct product (biosimilar, other formulation, tracer) the graph does not hold"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "standards_probe",
+        "id": "refused_biosimilar",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "osimertinib is a biosimilar.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "distinct_product",
+              "value": "a biosimilar",
+              "sentence": "osimertinib is a biosimilar.",
+              "why": "names a distinct product (biosimilar, other formulation, tracer) the graph does not hold"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "standards_probe",
+        "id": "refused_negation",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "Osimertinib is not liposomal.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "distinct_product",
+              "value": "not liposomal",
+              "sentence": "Osimertinib is not liposomal.",
+              "why": "names a distinct product (biosimilar, other formulation, tracer) the graph does not hold"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "standards_probe",
+        "id": "refused_alias",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "liposomal Tagrisso.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "distinct_product",
+              "value": "liposomal Tagrisso",
+              "sentence": "liposomal Tagrisso.",
+              "why": "names a distinct product (biosimilar, other formulation, tracer) the graph does not hold"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R2 B9 ORG citation content",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R2",
+        "source": "root_design_probe",
+        "id": "citation_embedded_claim",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "Osimertinib [ORG:is safe] acts on EGFR.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "wording",
+              "value": "org",
+              "sentence": "Osimertinib [ORG:is safe] acts on EGFR.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            },
+            {
+              "kind": "wording",
+              "value": "safe",
+              "sentence": "Osimertinib [ORG:is safe] acts on EGFR.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R2",
+        "source": "root_design_probe",
+        "id": "citation_embedded_wrong_relation",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "Osimertinib [ORG:inhibits ALK and] acts on EGFR.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation",
+              "value": "OSIMERTINIB — inhibits — ALK",
+              "sentence": "Osimertinib [ORG:inhibits ALK and] acts on EGFR.",
+              "why": "no retrieved edge links these two entities this way"
+            },
+            {
+              "kind": "wording",
+              "value": "org",
+              "sentence": "Osimertinib [ORG:inhibits ALK and] acts on EGFR.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R3 B1 plural pronouns",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R3",
+        "source": "root3_probe",
+        "id": "pronoun_same_clause",
+        "questions": [
+          "Which drugs act on ALK?"
+        ],
+        "answer": "LORLATINIB and PLB1003 act on ALK and they are approved.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "wording",
+              "value": "approved",
+              "sentence": "LORLATINIB and PLB1003 act on ALK and they are approved.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            }
+          ],
+          "evidence_count": 11,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R3",
+        "source": "root3_probe",
+        "id": "pronoun_two_sentences",
+        "questions": [
+          "Which drugs act on ALK?"
+        ],
+        "answer": "LORLATINIB and PLB1003 act on ALK. they are approved.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "wording",
+              "value": "approved",
+              "sentence": "they are approved.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            }
+          ],
+          "evidence_count": 11,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R3 B2 count borrowing",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R3",
+        "source": "numeric3_probe",
+        "id": "count_swap_tail",
+        "questions": [
+          "What is AstraZeneca running in NSCLC?"
+        ],
+        "answer": "AstraZeneca sponsors osimertinib in 10 trials evaluating carboplatin.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "count_ambiguous",
+              "value": "OSIMERTINIB / CARBOPLATIN",
+              "sentence": "AstraZeneca sponsors osimertinib in 10 trials evaluating carboplatin.",
+              "why": "a trial count in a clause naming several drugs, without a count for each drug of its own"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R3",
+        "source": "numeric3_probe",
+        "id": "count_coordinated",
+        "questions": [
+          "What is AstraZeneca running in NSCLC?"
+        ],
+        "answer": "AstraZeneca sponsors 10 trials evaluating carboplatin and osimertinib.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "count_ambiguous",
+              "value": "CARBOPLATIN / OSIMERTINIB",
+              "sentence": "AstraZeneca sponsors 10 trials evaluating carboplatin and osimertinib.",
+              "why": "a trial count in a clause naming several drugs, without a count for each drug of its own"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R3",
+        "source": "root3_probe",
+        "id": "count_shared_group",
+        "questions": [
+          "What is AstraZeneca running in NSCLC?"
+        ],
+        "answer": "AstraZeneca sponsors osimertinib and carboplatin in 10 trials.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "count_ambiguous",
+              "value": "OSIMERTINIB / CARBOPLATIN",
+              "sentence": "AstraZeneca sponsors osimertinib and carboplatin in 10 trials.",
+              "why": "a trial count in a clause naming several drugs, without a count for each drug of its own"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R3 B3 headings",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R3",
+        "source": "root3_probe",
+        "id": "heading_sponsors_full",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "these drugs are sponsors of trials:\n- OSIMERTINIB acts on EGFR (inhibitor)",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation_incomplete",
+              "value": "sponsors",
+              "sentence": "OSIMERTINIB acts on EGFR (inhibitor) are sponsors of trials",
+              "why": "a relation whose two sides could not both be identified in the sentence"
+            },
+            {
+              "kind": "wording",
+              "value": "trials",
+              "sentence": "OSIMERTINIB acts on EGFR (inhibitor) are sponsors of trials",
+              "why": "calls something a drug, company or trial that the evidence does not"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R3",
+        "source": "root3_probe",
+        "id": "heading_activators_full",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "these drugs are activators:\n- OSIMERTINIB acts on EGFR (inhibitor)",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation_incomplete",
+              "value": "activators",
+              "sentence": "OSIMERTINIB acts on EGFR (inhibitor) are activators",
+              "why": "a relation whose two sides could not both be identified in the sentence"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R3",
+        "source": "root3_probe",
+        "id": "heading_with_alk",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "these drugs inhibit EGFR with ALK:\n- OSIMERTINIB acts on EGFR (inhibitor)",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "unrelated_entity",
+              "value": "ALK",
+              "sentence": "OSIMERTINIB acts on EGFR (inhibitor) inhibit EGFR with ALK",
+              "why": "named in a clause that states a relation, but not part of any relation that was checked"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R3 B4 clinical/kind/identity",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R3",
+        "source": "root3_probe",
+        "id": "clinical_trial_unsupported",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "Osimertinib is in clinical trials.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "wording",
+              "value": "clinical",
+              "sentence": "Osimertinib is in clinical trials.",
+              "why": "calls something a drug, company or trial that the evidence does not"
+            },
+            {
+              "kind": "wording",
+              "value": "trials",
+              "sentence": "Osimertinib is in clinical trials.",
+              "why": "calls something a drug, company or trial that the evidence does not"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R3",
+        "source": "root3_probe",
+        "id": "nsclc_trial_unsupported",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "Osimertinib is in NSCLC trials.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "indication",
+              "value": "lung cancer",
+              "sentence": "Osimertinib is in NSCLC trials.",
+              "why": "a claim about the disease itself (what a drug is for or is); the graph holds trials, not indications"
+            },
+            {
+              "kind": "wording",
+              "value": "trials",
+              "sentence": "Osimertinib is in NSCLC trials.",
+              "why": "calls something a drug, company or trial that the evidence does not"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R3",
+        "source": "root3_probe",
+        "id": "indication_drug",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "Osimertinib is an NSCLC drug.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "indication",
+              "value": "lung cancer",
+              "sentence": "Osimertinib is an NSCLC drug.",
+              "why": "a claim about the disease itself (what a drug is for or is); the graph holds trials, not indications"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R3",
+        "source": "docs3_focused_results",
+        "id": "focused_07",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "EGFR is a drug.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "wording",
+              "value": "drug",
+              "sentence": "EGFR is a drug.",
+              "why": "calls something a drug, company or trial that the evidence does not"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R3",
+        "source": "root3_probe",
+        "id": "zero_evidence_clinical",
+        "questions": [
+          "What is the capital of France?"
+        ],
+        "answer": "There are clinical trials.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "no_subject",
+              "value": "clinical trials",
+              "sentence": "There are clinical trials.",
+              "why": "this clause names no entity the evidence can be checked against"
+            }
+          ],
+          "evidence_count": 0,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R3",
+        "source": "root3_probe",
+        "id": "fragment_drug_identity",
+        "questions": [
+          "Which drugs act on ALK?"
+        ],
+        "answer": "PLB1003 is LORLATINIB.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "identity",
+              "value": "PLB1003 = LORLATINIB",
+              "sentence": "PLB1003 is LORLATINIB.",
+              "why": "two different entities joined by a verb the graph has no edge for"
+            }
+          ],
+          "evidence_count": 11,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R3",
+        "source": "root3_probe",
+        "id": "fragment_trial_identity",
+        "questions": [
+          "What trials evaluate Tagrisso?"
+        ],
+        "answer": "NCT03909334 is NCT07680790.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "identity",
+              "value": "NCT03909334 = NCT07680790",
+              "sentence": "NCT03909334 is NCT07680790.",
+              "why": "two different entities joined by a verb the graph has no edge for"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R3 weaker count-after-colon",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R3",
+        "source": "root3_probe",
+        "id": "unknown_number_only",
+        "questions": [
+          "Which drugs act on ALK?"
+        ],
+        "answer": "PLB1003 has NSCLC trials: 1.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "number",
+              "value": "1",
+              "sentence": "PLB1003 has NSCLC trials: 1.",
+              "why": "no evidence statement about these entities gives that figure"
+            },
+            {
+              "kind": "indication",
+              "value": "lung cancer",
+              "sentence": "PLB1003 has NSCLC trials: 1.",
+              "why": "a claim about the disease itself (what a drug is for or is); the graph holds trials, not indications"
+            },
+            {
+              "kind": "wording",
+              "value": "trials",
+              "sentence": "PLB1003 has NSCLC trials: 1.",
+              "why": "calls something a drug, company or trial that the evidence does not"
+            }
+          ],
+          "evidence_count": 11,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R3 weaker approval-in-NSCLC",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R3",
+        "source": "root3_probe",
+        "id": "indication_approved_in",
+        "questions": [
+          "Which drugs act on ALK?"
+        ],
+        "answer": "LORLATINIB is approved in NSCLC.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "indication",
+              "value": "lung cancer",
+              "sentence": "LORLATINIB is approved in NSCLC.",
+              "why": "a claim about the disease itself (what a drug is for or is); the graph holds trials, not indications"
+            }
+          ],
+          "evidence_count": 11,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  },
+  {
+    "finding": "R3 weaker id-shaped citations",
+    "status": "FIXED",
+    "still_passing": 0,
+    "inputs": [
+      {
+        "round": "R3",
+        "source": "docs3_focused_results",
+        "id": "focused_18",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "Osimertinib [ORG:is-safe] acts on EGFR.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "wording",
+              "value": "org",
+              "sentence": "Osimertinib [ORG:is-safe] acts on EGFR.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            },
+            {
+              "kind": "wording",
+              "value": "safe",
+              "sentence": "Osimertinib [ORG:is-safe] acts on EGFR.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R3",
+        "source": "docs3_focused_results",
+        "id": "focused_19",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "Osimertinib [ORG:inhibits-ALK] acts on EGFR.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "wording",
+              "value": "alk",
+              "sentence": "Osimertinib [ORG:inhibits-ALK] acts on EGFR.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            },
+            {
+              "kind": "wording",
+              "value": "org",
+              "sentence": "Osimertinib [ORG:inhibits-ALK] acts on EGFR.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      },
+      {
+        "round": "R3",
+        "source": "docs3_focused_results",
+        "id": "focused_20",
+        "questions": [
+          "What does osimertinib target?"
+        ],
+        "answer": "Osimertinib [ORG:does-not-inhibit] acts on EGFR.",
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "negation",
+              "value": "not",
+              "sentence": "Osimertinib [ORG:does-not-inhibit] acts on EGFR.",
+              "why": "the graph stores only relations that exist; it cannot confirm an absence or a failure"
+            },
+            {
+              "kind": "wording",
+              "value": "org",
+              "sentence": "Osimertinib [ORG:does-not-inhibit] acts on EGFR.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        }
+      }
+    ]
+  }
+]

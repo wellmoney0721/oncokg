@@ -1,0 +1,19 @@
+--- audit_evidence_claims\independent_faithful_probe.py
++++ audit_evidence_claims\r4\replay4_faithful_probe.py
+@@ -1,6 +1,6 @@
+ import json, sys
+ from pathlib import Path
+-sys.path.insert(0,str(Path(__file__).resolve().parents[1] / "src"))
++sys.path.insert(0,str(Path(__file__).resolve().parents[2] / "src"))
+ from app import Engine
+ engine=Engine()
+ corpus = [
+@@ -67,7 +67,7 @@
+   rows=[r for r in results if r['question']==question]
+   summary.append({'question':question,'total':len(rows),'flagged':sum(not r['checks']['grounded'] for r in rows),'refusal_question':qi==6})
+ out={'method':'Hand-authored six plausible faithful phrasings per demo question; not statistical LLM distribution. Refusal case kept separate from evidence paraphrases.','summary':summary,'cases':results,'templates':templates}
+-Path(__file__).with_name('independent_faithful_results.json').write_text(json.dumps(out,indent=2,ensure_ascii=False),encoding='utf-8')
++Path(__file__).with_name('replay4_faithful_results.json').write_text(json.dumps(out,indent=2,ensure_ascii=False),encoding='utf-8')
+ for row in summary: print(json.dumps(row))
+ for r in results:
+  print(r['id'],r['checks']['grounded'],r['answer'].replace('\n','\\n'),[(x['kind'],x['value']) for x in r['checks']['unsupported_claims']])

@@ -353,10 +353,11 @@ platinum의 경우 7건의 시험에서 **신뢰도 1.00으로 화학 원소에 
     장치가 없습니다.
 13. **주장 검사는 뜻이 아니라 단어 순서를 읽습니다.** 생성된 답을 절마다 주어·관계·목적어로 읽어
     (`src/claims.py`, 규칙은 docstring) 그 대상들의 근거와 대조합니다. 정해진 문장 모양을 읽는 규칙이라
-    처음 보는 모양에는 약합니다. 적대 검증 세 차례에서 33개, 약 40개, 약 25개의 빠져나가는 모양(뒤집힌
+    처음 보는 모양에는 약합니다. 적대 검증 네 차례에서 33개, 약 40개, 약 25개, 약 20개의 빠져나가는 모양(뒤집힌
     명사형, 강조 구문, "and on" 뒤 두 번째 대상, 너무 일찍 풀린 대명사, 복수 대명사, 단계 숫자나 다른 약의
     숫자를 시험 수로 빌림, antagonist 안의 agonist, 목록 제목, 대괄호 글, 거절된 제품 이름, "clinical
-    trials"·"drug"를 문법 단어로 취급, "approved in NSCLC")이 나왔고 모두 회귀 시험이 됐지만, 아직 아무도
+    trials"·"drug"를 문법 단어로 취급, "approved in NSCLC", "the following safe drugs", 두 시험이 나눈
+    단계·상태, 한 글자씩 띄워 쓴 단어)이 나왔고 모두 회귀 시험이 됐지만, 아직 아무도
     시도하지 않은 모양은 잘못 읽을 수 있습니다. 알려진 통과: 한 대상에 대한 근거 문장 하나의 단어·대상·숫자로
     다른 주장을 짜 맞춘 절, 어휘에 없고 INN 모양도 아닌 약 이름, 근거와 어긋나지 않는 어색한 표현("osimertinib
     is the inhibition of EGFR"). 알려진 과잉 차단: 그래프에 없는 참인 사실, 단어가 없는 바꿔 말하기
@@ -377,7 +378,7 @@ pip install -r requirements.txt
 python src/run_all.py              # 수집 → 해석 → 검증 → 그래프 → 채점 → 렌더
 python src/run_all.py --offline    # data/raw 스냅샷으로 재현
 
-python -m pytest tests -q          # 213개 테스트
+python -m pytest tests -q          # 240개 테스트
 python src/app.py                  # 직접 써 보기 화면: http://localhost:8765
 python src/apply_label_corrections.py --check
 python src/curation_effect.py      # 큐레이션 전후 두 번 해석

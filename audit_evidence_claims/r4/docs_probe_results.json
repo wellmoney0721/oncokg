@@ -1,0 +1,1737 @@
+[
+  {
+    "id": "kind_trial_borrow",
+    "question": "Which drugs act on ALK?",
+    "answer": "PLB1003 inhibits ALK in clinical trials.",
+    "result": {
+      "intent": "drugs_for_target",
+      "entities": [
+        {
+          "type": "Target",
+          "id": "ENSG00000171094",
+          "label": "ALK",
+          "matched_text": "ALK"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 11,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL4650298",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL3899477",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL3545360",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL3707320",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL3286830",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL4113131",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL1983268",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL3545311",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 11
+    },
+    "full_evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL4650298",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL4650298",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1"
+        }
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3899477",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3899477",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1_2"
+        }
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3545360",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3545360",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1"
+        }
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3707320",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3707320",
+          "trials_in_graph": 1,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3286830",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3286830",
+          "trials_in_graph": 13,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL4113131",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL4113131",
+          "trials_in_graph": 10,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL1983268",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL1983268",
+          "trials_in_graph": 5,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3545311",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3545311",
+          "trials_in_graph": 9,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL2403108",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL2403108",
+          "trials_in_graph": 9,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL601719",
+          "trials_in_graph": 15,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL1738797",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL1738797",
+          "trials_in_graph": 16,
+          "max_phase_overall": "APPROVAL"
+        }
+      }
+    ]
+  },
+  {
+    "id": "kind_trial_borrow2",
+    "question": "Which drugs act on ALK?",
+    "answer": "PLB1003 inhibits ALK in NSCLC trials.",
+    "result": {
+      "intent": "drugs_for_target",
+      "entities": [
+        {
+          "type": "Target",
+          "id": "ENSG00000171094",
+          "label": "ALK",
+          "matched_text": "ALK"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 11,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL4650298",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL3899477",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL3545360",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL3707320",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL3286830",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL4113131",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL1983268",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL3545311",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 11
+    },
+    "full_evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL4650298",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL4650298",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1"
+        }
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3899477",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3899477",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1_2"
+        }
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3545360",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3545360",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1"
+        }
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3707320",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3707320",
+          "trials_in_graph": 1,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3286830",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3286830",
+          "trials_in_graph": 13,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL4113131",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL4113131",
+          "trials_in_graph": 10,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL1983268",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL1983268",
+          "trials_in_graph": 5,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3545311",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3545311",
+          "trials_in_graph": 9,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL2403108",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL2403108",
+          "trials_in_graph": 9,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL601719",
+          "trials_in_graph": 15,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL1738797",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL1738797",
+          "trials_in_graph": 16,
+          "max_phase_overall": "APPROVAL"
+        }
+      }
+    ]
+  },
+  {
+    "id": "kind_drug_target",
+    "question": "What does osimertinib target?",
+    "answer": "EGFR is a drug inhibited by osimertinib.",
+    "result": {
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    "full_evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3353410",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      }
+    ]
+  },
+  {
+    "id": "kind_company_drug",
+    "question": "What is AstraZeneca running in NSCLC?",
+    "answer": "AstraZeneca is a drug sponsoring trials of osimertinib.",
+    "result": {
+      "intent": "company_portfolio",
+      "entities": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "AstraZeneca",
+          "also_matching_ids": []
+        },
+        {
+          "type": "Disease",
+          "id": "MONDO_0005233",
+          "label": "non-small cell lung carcinoma",
+          "matched_text": "NSCLC"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+          "source_record": "NCT01802632, NCT02143466, NCT02224053",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+          "source_record": "NCT00006049, NCT00322452, NCT01000896",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+          "source_record": "NCT00006049, NCT00034879, NCT00234442",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+          "source_record": "NCT02740985, NCT03164616, NCT03703297",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+          "source_record": "NCT02453282, NCT03164616, NCT04035486",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+          "source_record": "NCT00372788, NCT02453282, NCT03164616",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+          "source_record": "NCT00006049, NCT00322452, NCT01000896",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+          "source_record": "NCT05123482, NCT06357533, NCT06627647",
+          "source": "derived",
+          "url": null
+        }
+      ],
+      "evidence_count": 12
+    },
+    "full_evidence": [
+      {
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 14,
+          "example_trials": [
+            "NCT01802632",
+            "NCT02143466",
+            "NCT02224053"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 10,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 8,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00034879",
+            "NCT00234442"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 7,
+          "example_trials": [
+            "NCT02740985",
+            "NCT03164616",
+            "NCT03703297"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT02453282",
+            "NCT03164616",
+            "NCT04035486"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00372788",
+            "NCT02453282",
+            "NCT03164616"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT05123482",
+            "NCT06357533",
+            "NCT06627647"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT01605916, NCT01933932",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00372788",
+            "NCT01605916",
+            "NCT01933932"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT06627647, NCT06692738",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT06627647",
+            "NCT06692738"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00478049, NCT01933932, NCT02740985",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00478049",
+            "NCT01933932",
+            "NCT02740985"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT07098338, NCT07291037",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT07098338",
+            "NCT07291037"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "kind_drug_company",
+    "question": "What is AstraZeneca running in NSCLC?",
+    "answer": "Osimertinib is a company sponsored by AstraZeneca.",
+    "result": {
+      "intent": "company_portfolio",
+      "entities": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "AstraZeneca",
+          "also_matching_ids": []
+        },
+        {
+          "type": "Disease",
+          "id": "MONDO_0005233",
+          "label": "non-small cell lung carcinoma",
+          "matched_text": "NSCLC"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+          "source_record": "NCT01802632, NCT02143466, NCT02224053",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+          "source_record": "NCT00006049, NCT00322452, NCT01000896",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+          "source_record": "NCT00006049, NCT00034879, NCT00234442",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+          "source_record": "NCT02740985, NCT03164616, NCT03703297",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+          "source_record": "NCT02453282, NCT03164616, NCT04035486",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+          "source_record": "NCT00372788, NCT02453282, NCT03164616",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+          "source_record": "NCT00006049, NCT00322452, NCT01000896",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+          "source_record": "NCT05123482, NCT06357533, NCT06627647",
+          "source": "derived",
+          "url": null
+        }
+      ],
+      "evidence_count": 12
+    },
+    "full_evidence": [
+      {
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 14,
+          "example_trials": [
+            "NCT01802632",
+            "NCT02143466",
+            "NCT02224053"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 10,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 8,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00034879",
+            "NCT00234442"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 7,
+          "example_trials": [
+            "NCT02740985",
+            "NCT03164616",
+            "NCT03703297"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT02453282",
+            "NCT03164616",
+            "NCT04035486"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00372788",
+            "NCT02453282",
+            "NCT03164616"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT05123482",
+            "NCT06357533",
+            "NCT06627647"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT01605916, NCT01933932",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00372788",
+            "NCT01605916",
+            "NCT01933932"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT06627647, NCT06692738",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT06627647",
+            "NCT06692738"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00478049, NCT01933932, NCT02740985",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00478049",
+            "NCT01933932",
+            "NCT02740985"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT07098338, NCT07291037",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT07098338",
+            "NCT07291037"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "head_safe",
+    "question": "What does osimertinib target?",
+    "answer": "The following safe drugs:\n- OSIMERTINIB acts on EGFR (inhibitor).",
+    "result": {
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    "full_evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3353410",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      }
+    ]
+  },
+  {
+    "id": "head_discontinued",
+    "question": "What does osimertinib target?",
+    "answer": "The following discontinued drugs:\n- OSIMERTINIB acts on EGFR (inhibitor).",
+    "result": {
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    "full_evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3353410",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      }
+    ]
+  },
+  {
+    "id": "head_noninhibitor",
+    "question": "What does osimertinib target?",
+    "answer": "These noninhibitor drugs:\n- OSIMERTINIB acts on EGFR (inhibitor).",
+    "result": {
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    "full_evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3353410",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      }
+    ]
+  },
+  {
+    "id": "head_safe_notcopied",
+    "question": "What does osimertinib target?",
+    "answer": "The following safe drugs:\n- Osimertinib inhibits EGFR.",
+    "result": {
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    "full_evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3353410",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      }
+    ]
+  },
+  {
+    "id": "head_safe_bare",
+    "question": "What does osimertinib target?",
+    "answer": "The following safe drugs:\n- Osimertinib",
+    "result": {
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    "full_evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3353410",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      }
+    ]
+  },
+  {
+    "id": "head_non",
+    "question": "What does osimertinib target?",
+    "answer": "These non-inhibitor drugs:\n- OSIMERTINIB acts on EGFR (inhibitor).",
+    "result": {
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "distinct_product",
+            "value": "OSIMERTINIB-inhibitor drugs",
+            "sentence": "OSIMERTINIB acts on EGFR (inhibitor)-inhibitor drugs",
+            "why": "names a distinct product (biosimilar, other formulation, tracer) the graph does not hold"
+          }
+        ],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    "full_evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3353410",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      }
+    ]
+  },
+  {
+    "id": "head_no_trials",
+    "question": "Which drugs act on ALK?",
+    "answer": "The following clinical trials:\n- PLB1003 acts on ALK (inhibitor); max stage PHASE_1; 0 NSCLC trial(s) in this graph.",
+    "result": {
+      "intent": "drugs_for_target",
+      "entities": [
+        {
+          "type": "Target",
+          "id": "ENSG00000171094",
+          "label": "ALK",
+          "matched_text": "ALK"
+        }
+      ],
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "wording",
+            "value": "trials",
+            "sentence": "PLB1003 acts on ALK (inhibitor); max stage PHASE_1; 0 NSCLC trial(s) in this graph trials",
+            "why": "calls something a drug, company or trial that the evidence does not"
+          }
+        ],
+        "evidence_count": 11,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL4650298",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL3899477",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL3545360",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL3707320",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL3286830",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL4113131",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL1983268",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        },
+        {
+          "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+          "source_record": "CHEMBL3545311",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 11
+    },
+    "full_evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL4650298",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL4650298",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1"
+        }
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3899477",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3899477",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1_2"
+        }
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3545360",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3545360",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1"
+        }
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3707320",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3707320",
+          "trials_in_graph": 1,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3286830",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3286830",
+          "trials_in_graph": 13,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL4113131",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL4113131",
+          "trials_in_graph": 10,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL1983268",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL1983268",
+          "trials_in_graph": 5,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3545311",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3545311",
+          "trials_in_graph": 9,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL2403108",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL2403108",
+          "trials_in_graph": 9,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL601719",
+          "trials_in_graph": 15,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL1738797",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL1738797",
+          "trials_in_graph": 16,
+          "max_phase_overall": "APPROVAL"
+        }
+      }
+    ]
+  }
+]
