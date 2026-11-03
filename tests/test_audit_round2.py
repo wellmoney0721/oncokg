@@ -269,3 +269,8 @@ def test_groundedness_catches_known_drugs_and_odd_numbers():
               "Osimertinib in ⅔ of patients."):
         assert Q.OncoKG.check_groundedness(t, ev, [{"label": "OSIMERTINIB"}], True,
                                            vocabulary=vocab)["grounded"] is False, t
+
+
+def test_vector_word_is_not_a_product():
+    assert all(name != "TASADENOTUREV"
+               for _t, name in resolve("Recombinant adenovirus- Ad/L523S"))

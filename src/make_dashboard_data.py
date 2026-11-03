@@ -118,7 +118,10 @@ def main() -> None:
         "headline": {
             "trials": len(resolved["trials"]),
             "molecules": len(drugs),
-            "aliases": sum(len(d["aliases"]) for d in drugs.values()),
+            # aliases as listed by the sources, before curation removed any
+            "aliases_listed": sum(len(d["aliases"]) for d in drugs.values()),
+            # what curation left: the keys a string can actually match
+            "lookup_keys": len(resolved["dictionary"]["index"]),
             "targets": len(resolved["targets"]),
             "companies": graph_stats["nodes_by_type"].get("Company", 0),
             "nodes": graph_stats["nodes"],

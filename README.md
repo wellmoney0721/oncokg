@@ -47,26 +47,29 @@ Those strings fail in recognisable families:
 Precision was measured on **three disjoint hand-scored samples**, because a
 number measured on the data you tuned against is not a measurement.
 
-**The headline is 89.6%** — 103 of 115 accepted matches correct on the held-out
-test sample (Wilson 82.6–93.9), scoring the pipeline as it was when that sample
-was held out. It was 91.3% until a second independent audit found three more
-leniently-scored labels; the figure went down, and this is the defensible one.
+**The headline is 88.7%** — 102 of 115 accepted matches correct on the held-out
+test sample (Wilson 81.6–93.3), scoring the pipeline as it was when that sample
+was held out. It started as 91.3%; a second independent audit found two more
+leniently-scored held-out labels (89.6%), and a third found one more (88.7%).
+Each time the figure went down, and this is the defensible one.
 
-| sample | rows | accepted rows, as labelled | **raw precision, as labelled** | rows still current | raw, current pipeline | stratified, current pipeline (Wilson-bound / bootstrap) |
-| --- | --- | --- | --- | --- | --- | --- |
-| development | 214 | 137 | 92.0% (86.2–95.5) | 183 | 113/118 = 95.8% | 97.9% (86.6–99.5 / 95.4–99.9) |
-| **held-out test** | **172** | **115** | **89.6% (82.6–93.9)** | 147 | 99/99 = 100% | 99.9% (89.5–100.0 / 99.8–100.0) |
-| post-fix | 58 | 38 | 94.7% (82.7–98.5) | 54 | 35/36 = 97.2% | 99.3% (70.6–99.9 / 97.9–100.0) |
+| sample | rows | accepted rows, as labelled | **raw precision, as labelled** |
+| --- | --- | --- | --- |
+| development | 214 | 137 | 90.5% (84.4–94.4) |
+| **held-out test** | **172** | **115** | **88.7% (81.6–93.3)** |
+| post-fix | 58 | 38 | 92.1% (79.2–97.3) |
 
-**Why the right-hand columns are not the headline.** Two audit rounds used the
-test sample to find defects, and the repairs changed the resolution of 25 of its
-172 rows. Those rows are *stale*: their label scores a resolution the pipeline no
-longer produces, so `src/evaluate.py` sets them aside and lists them for
-re-labelling instead of inventing a verdict. What remains — 99 of 99 accepted
-rows correct — is the sample the repairs were aimed at, scored again. It is not
-a held-out estimate of anything, and quoting it as one would be the error this
-project exists to avoid. **Measuring the repaired pipeline needs a new sample,
-labelled by someone other than the author.**
+**There is no held-out figure for the repaired pipeline, and none is
+published.** Three audit rounds used the test sample to find defects, and the
+repairs changed the resolution of 26 of its 172 rows. Those rows are *stale*:
+their label scores a resolution the pipeline no longer produces, so
+`src/evaluate.py` sets them aside and lists them for re-labelling instead of
+inventing a verdict. What remains scores 98 of 98 — but the stale rows held
+every one of the errors, so the survivors are exactly the rows the repairs left
+alone. The evaluation JSON still carries a stratified estimate and two
+intervals for those survivors (`accepted_precision`); they are survivor-selected
+and are not reported here as a precision. **Measuring the repaired pipeline
+needs a new sample, labelled by someone other than the author.**
 
 **The sample size is not the precision denominator.** Only rows in an accepting
 tier can be right or wrong about a match; the rest are refusals, scored
@@ -74,24 +77,16 @@ separately. Of the 172 held-out rows, 115 asserted a match when labelled.
 Quoting 172 as the denominator overstates the evidence, and an earlier version
 of this file did exactly that.
 
-**The stratified estimate is a reweighting, not a better number.** The sample is
-drawn by a disproportionate per-tier quota, so reweighting by each tier's share
-of the population is required — the raw mean is the biased figure. Reweighting
-is also what lifts the result, so both are reported and neither travels alone.
-It is computed only for the current pipeline, because the tier populations at
-labelling time were not saved; combining today's populations with older labels
-mixes two pipelines into one number, which is what the first version did.
+**Why the headline is raw, not stratified.** The sample is drawn by a
+disproportionate per-tier quota, so a stratified estimate is the right estimator
+in principle — but it needs the tier populations at labelling time, and those
+were not saved. Weighting old labels by today's populations mixes two pipelines
+into one number, which is what the first version did. An earlier version also
+put a normal-approximation interval on the stratified mean and published
+`99.1% [98.4, 99.8]`; with 88% of the weight in tiers that scored 100%, the
+variance term was zero and the interval collapsed.
 
-**Two intervals, because neither is right on its own.** The first is a weighted
-sum of per-tier Wilson bounds: conservative, but not a calibrated 95% interval.
-The second is a stratified bootstrap over the sampled rows (20,000 resamples):
-narrower, and blind by construction to errors in a tier that scored 100%,
-because such a tier resamples to 100% every time. The spread between them is the
-honest statement of what this sample size supports. An earlier version used a
-normal approximation and published `99.1% [98.4, 99.8]`; with 88% of the weight
-in tiers that scored 100%, the variance term was zero and the interval collapsed.
-
-Coverage of substance-like strings is **77.8%** (4,942 of 6,355). Precision and
+Coverage of substance-like strings is **78.0%** (4,936 of 6,329). Precision and
 coverage are reported separately on purpose: coverage can always be bought by
 lowering a threshold, and one number hides that trade.
 
@@ -111,15 +106,57 @@ Two more figures matter as much as the headline:
 The labels in all three samples were assigned by one annotator — the same person
 who wrote the matching rules. Saying so in a limitations section is not the same
 as testing it, so the project was handed to independent reviewers with
-instructions to disagree, twice, and both times they did. The second round's
-report is `codex_report.txt` with its evidence in `audit_evidence_20261103/`,
-and `CODEX_R2_VERDICT.md` records which findings were reproduced, which were
-partly wrong, and two the reviewer missed. Everything below is a defect a review
-found and this repository now carries the fix.
+instructions to disagree, three times, and each time they did. The second and third
+rounds' reports are `codex_report.txt` and `codex_report_round3.txt`, with
+evidence in `audit_evidence_20261103/` and `audit_evidence_round3/`;
+`CODEX_R2_VERDICT.md` and `CODEX_R3_VERDICT.md` record which findings were
+reproduced, which were partly wrong, and what the reviewers missed. Everything
+below is a defect a review found and this repository now carries the fix.
+
+### Round 3
+
+**A defect this file said was fixed was not.** Round 2's write-up removed the
+`adenovirus` vaccine item from the known defects because it "no longer
+reproduces" — but only the short string had been tried. The sample's actual
+string, `autologous dendritic cell-adenovirus CCL21 vaccine`, is 50 characters;
+the class pattern capped its qualifier at 40, so it still resolved to
+TASADENOTUREV and produced live edges. The cap is 90 now, bare vector words
+(`adenovirus`, `vaccinia`, `lentivirus`) are class terms, and both edges are
+retired.
+
+**The query layer bypassed the resolver's refusals.** It linked question words
+straight against the synonym index, so "What trials evaluate Mvasi?" answered
+with twelve bevacizumab trials. Distinct-product names no longer enter the index
+from any source, and a question naming one is refused.
+
+**Renames were still recorded as ownership.** `GSK` became a subsidiary of
+`GlaxoSmithKline` (the self-parent check compared the parent's display name),
+and Schering-Plough sat under Merck & Co although it was the legal survivor of
+the 2009 merger and renamed itself Merck & Co., Inc. Both are now one entity.
+
+**Four more labels were lenient**, by the same product criterion: `DN-101`
+(high-dose calcitriol), `Genexol-PM`, pegylated liposomal doxorubicin and
+`ABI-007` (Abraxane's code) — one held-out, two development, one post-fix. The
+held-out figure fell from 89.6% to 88.7%. The label-correction guard also
+ignored the component column, and an outdated reason survived in a CSV note;
+both are fixed.
+
+**More domain rules were wrong:** `pembrolizumab-free regimen` resolved to
+pembrolizumab (`free` read as an FDA suffix); `[89Zr]pembrolizumab` lost its
+isotope; growth-factor biosimilars (`filgrastim-sndz`) and `Pazenir` reached
+their reference molecules while an uppercase originator suffix
+(`Cemiplimab-RWLC`) was blocked; the ester guard ran after the synonym lookup;
+`ICE`, a regimen, resolved to ifosfamide because only registry synonyms were
+screened; and `cisplatin + placebo to match pembrolizumab` lost the cisplatin
+the arm really received. The groundedness check still passed `aspirin`, `1e6`
+and `⅔`. Each has a regression test.
 
 ### Round 2
 
-**Three more gold labels were wrong, again leniently.** `CC-486` (oral
+### Round 2
+
+**Three more gold labels were wrong, again leniently** — two held-out, one
+post-fix. `CC-486` (oral
 azacitidine, whose label forbids substituting it for the injectable),
 `NanoPac` (nanoparticulate paclitaxel) and a post-fix `Nab-paclitaxel` had been
 scored correct as AZACITIDINE and PACLITAXEL. Round 1 had already set the rule
@@ -168,8 +205,9 @@ under DEXAMETHASONE, `carboplatin` under CISPLATIN, `docetaxel` under
 PACLITAXEL, `CHOP` under PREDNISONE, the bare word `mab` under PEMBROLIZUMAB.
 A curation rule now removes registry synonyms that name another ingredient, a
 regimen, an abbreviation that does not single out one molecule, or a distinct
-product — 318 of them. It errs toward refusal, and the errors it makes are
-listed under known defects.
+product. It errs toward refusal, and the errors it makes are listed under known
+defects. Round 3 measured its cost before its own repairs: with the rule switched off,
+accepted occurrences went from 4,942 to 4,950 — ten lost, two gained.
 
 **Several domain rules were wrong in a way a pharmacist would catch.** Biosimilar
 brands (`Mvasi`, `Alymsys`, `Zirabev`) resolved to bevacizumab; FDA four-letter
@@ -272,8 +310,10 @@ match outright.
 Pemetrexed Vinorelbine Gemcitabine` names six substances with no separator at
 all. Matching the first and discarding the rest produces a record that *looks*
 complete, which nothing downstream can detect. Greedy dictionary segmentation
-extracts every component, and whatever is left over is emitted as an explicit
-unresolved residue rather than dropped.
+extracts every component it can, and a leftover of five or more letters, or
+anything shaped like a development code, is emitted as an explicit unresolved
+residue. Shorter leftovers are dropped as parse filler, so a three-letter code
+next to a known drug (`pembrolizumab new XYZ`) disappears without a trace.
 
 **A biosimilar is not its originator.** `Bevacizumab Biosimilar HLX04` and
 `Bevacizumab-Pfizer` name separate regulatory products. Resolving them to
@@ -316,48 +356,48 @@ the registry rule runs first, so the later rows count what it left:
 
 | defect | found | what the rule does |
 | --- | --- | --- |
-| `registry_alias_removed` | 318 | an AACT-sourced synonym naming another ingredient (`tobramycin` under dexamethasone), a regimen (`CHOP`, `AC`), an abbreviation shared by several molecules (`lv`, `ici`) or a distinct product — removed |
-| `class_term_as_synonym` | 117 | `anti-PD-L1`, `pd-l1 blockade` removed from the lookup index |
-| `genuinely_ambiguous_alias` | 98 | kept ambiguous; records matching it go to review |
+| `registry_alias_removed` | 248 | an AACT-sourced synonym naming another ingredient (`tobramycin` under dexamethasone), a regimen (`CHOP`, `AC`), an abbreviation shared by several molecules (`lv`, `ici`) or a distinct product — removed |
+| `distinct_product_alias` | 204 | biosimilar and reformulation names (`abraxane`, `doxil`, `mvasi`, `bevacizumab-awwb`) dropped before indexing, from any source |
+| `class_term_as_synonym` | 118 | `anti-PD-L1`, `pd-l1 blockade` removed from the lookup index |
+| `genuinely_ambiguous_alias` | 99 | kept ambiguous; records matching it go to review |
 | `parent_child_collapse` | 60 | salt and child forms folded into the parent |
 | `cross_drug_synonym` | 57 | an alias that is another molecule's **preferred name** is bound to that molecule; the records listing it carry a suspected upstream error |
-| `suspected_duplicate_entity` | 47 | two identifiers that look like one substance — reported, never auto-merged |
-| `distinct_product_alias` | 7 | `abraxane`, `doxil`, `caelyx` dropped: same moiety, different product |
+| `suspected_duplicate_entity` | 46 | two identifiers that look like one substance — reported, never auto-merged |
 | `placebo_string_in_synonym_list` | 6 | `durvalumab placebo` dropped before indexing |
 
 Measured by resolving the corpus twice, curation cuts ambiguous resolutions from
-**2,189 to 65** and raises exact matches from **1,997 to 4,054**
+**2,187 to 65** and raises exact matches from **1,997 to 4,053**
 (`reports/curation_effect.json`).
 
 ---
 
 ## The graph
 
-6,474 live nodes and 17,576 live edges over `Company`, `Investigator`, `Drug`,
+6,469 live nodes and 17,564 live edges over `Company`, `Investigator`, `Drug`,
 `Target`, `Disease` and `Trial`.
 
 | relation | edges |
 | --- | --- |
 | `SPONSORS` | 4,652 |
-| `EVALUATES` | 4,442 |
-| `SPONSORS_TRIAL_OF` *(derived)* | 3,181 |
+| `EVALUATES` | 4,437 |
+| `SPONSORS_TRIAL_OF` *(derived)* | 3,176 |
 | `STUDIES` | 2,774 |
 | `ACTS_ON` | 2,186 |
 | `ASSOCIATED_WITH` | 300 |
-| `PARENT_OF` | 41 |
+| `PARENT_OF` | 39 |
 
 Every edge carries its **source**, its **fetch timestamp** and a **confidence**.
 Edges read from a single record carry that **source record**; the derived
 `SPONSORS_TRIAL_OF` edges have no single record and carry the full list of
-trials they rest on in their properties instead, so all 3,181 of them have an
+trials they rest on in their properties instead, so all 3,176 of them have an
 empty `source_record` by design. Only edges produced by resolving a free-text
 string carry a **resolution tier** — `EVALUATES` and `STUDIES` — so the other
-10,360 have none. Only accepted resolutions become edges; ambiguous, blocked and
+10,353 have none. Only accepted resolutions become edges; ambiguous, blocked and
 unresolved components stay in the quality report, because the graph is the part
 that claims to be true.
 
-The one derived relation says only what the evidence shows. Of its 3,181 edges,
-41.3% have an industry lead sponsor and 58.7% do not; the class rides on the
+The one derived relation says only what the evidence shows. Of its 3,176 edges,
+41.2% have an industry lead sponsor and 58.8% do not; the class rides on the
 edge so a consumer can filter. Its confidence is a flat 1.0 meaning "the
 sponsorship is recorded", not a score derived from the trial count.
 
@@ -378,7 +418,9 @@ it found first.
 ## Asking it things
 
 Questions are linked against the same dictionary the pipeline uses, so a question
-naming a trade name finds a graph that stores a ChEMBL id.
+naming a trade name finds a graph that stores a ChEMBL id. A question naming a
+distinct product (`Mvasi`, `liposomal doxorubicin`) is refused rather than
+answered as the originator.
 
 ```
 $ python src/query.py "What trials evaluate Tagrisso?"
@@ -395,15 +437,17 @@ listed below as a defect rather than described as a feature.
 
 With `ANTHROPIC_API_KEY` set, a language model writes the prose from the
 retrieved evidence and nothing else, and the result is checked back against that
-evidence: capitalised entities, drug-shaped names and whole numbers in the
-generated text must appear in the retrieved set, and figures written in words
-are refused. With no key, the same evidence is rendered directly and the check
+evidence: capitalised entities, drug-shaped names, any word the drug vocabulary
+knows, and whole numbers in the generated text must appear in the retrieved
+set; figures written in words, in scientific notation or as Unicode fractions
+are refused as unverifiable. With no key, the same evidence is rendered directly and the check
 reports `applicable: false`, because a template built from the evidence cannot
 fail a test against it.
 
 The model path is **not** guaranteed to state the same facts as the template.
-The check catches invented names and invented figures; it cannot catch a
-relation the evidence does not support, a negation, a comparison, a clinical
+The check catches invented names and figures in the forms above — a drug name
+outside the vocabulary that does not look like an INN still passes — and it
+cannot catch a relation the evidence does not support, a negation, a comparison, a clinical
 claim made of ordinary words ("is safe"), or two true figures paired wrongly.
 The pipeline has no required dependency on a model.
 
@@ -411,10 +455,10 @@ The pipeline has no required dependency on a model.
 
 ## Known defects
 
-Left listed rather than quietly assumed away. One earlier item is gone because
-it no longer reproduces: `adenovirus` inside `dendritic cell-adenovirus CCL21
-vaccine` used to resolve to an oncolytic product and now falls to the class
-guard on `vaccine`. Its number has been reused.
+Left listed rather than quietly assumed away. Round 2 removed an item here
+(`adenovirus` in a vaccine name resolving to an oncolytic product) as no longer
+reproducing; round 3 showed it still did, on the sample's longer string. It is
+fixed now, and its number has been reused.
 
 1. **The placebo rule needs a separator.** `Placebo Drug: Docetaxel Drug:
    Carboplatin` has no `+` or `and`, so it reads as a reference arm and two
@@ -425,27 +469,29 @@ guard on `vaccine`. Its number has been reused.
    and `+mFOLFOX6` still drop 5-FU, leucovorin, irinotecan, oxaliplatin and
    capecitabine on the floor. They need a regimen expansion table.
 3. **The repaired pipeline has no held-out measurement.** The test sample was
-   used by two audit rounds; 25 of its 172 rows are stale and the rest are the
-   rows the repairs were aimed at. The development and post-fix samples are in
-   the same position (31 and 4 stale). A new sample, ideally labelled by a
+   used by three audit rounds; 26 of its 172 rows are stale and they held every
+   error, so the 98/98 survivors are not an estimate. The development and
+   post-fix samples are in the same position (33 and 5 stale). A new sample, ideally labelled by a
    second annotator, is the only way to put a number on the current pipeline.
 4. **Coverage is capped by scope.** The vocabulary holds only drugs Open Targets
    links to NSCLC, so `propranolol` is correctly refused and still counts against
    coverage. Widening to the full ChEMBL drug set would need its own precision
    measurement.
-5. **Still one annotator, now with two independent re-scores.** Round 1
-   re-scored 62 rows and disagreed on five; round 2 re-scored 58 held-out rows
-   and disagreed on three. All eight corrections went the same way — the author
-   had been lenient. That is still not an inter-annotator agreement rate over
+5. **Still one annotator, now with three independent re-scores.** Round 1
+   re-scored 62 rows and disagreed on five; round 2 re-scored 58 held-out rows,
+   disagreed on two and found a third in the post-fix sample; round 3 re-scored
+   47 difficult rows and disagreed on four. All twelve corrections went the same
+   way — the author had been lenient. The rounds deliberately picked hard rows,
+   so this is not a disagreement rate. That is still not an inter-annotator agreement rate over
    the full sample.
 6. **Four tiers were never independently tested.** `CLEANED`, `SALT_STRIPPED`,
    `FUZZY_AUTO` and `FUZZY_REVIEW` have too few distinct values; the development
    sample consumed all of them, so their rates are carried from the data the
    rules were tuned on and are marked `carried` in the evaluation JSON. They
    hold 0.9% of the stratified weight (`carried_tiers_weight_share`).
-7. **The post-fix interval is uninformatively wide** (70.6–99.9). With so few
-   rows per tier, no stratified interval over that weight can be tight. It
-   confirms the repairs; it does not re-measure the pipeline.
+7. **The post-fix sample confirms nothing about the repairs.** Its interval is
+   uninformatively wide and it was scored with the same one annotator; the
+   evidence that a repair holds is its regression test, not this sample.
 11. **The registry-synonym rule errs toward refusal.** It removes some correct
     names along with the contaminated ones: misspellings it cannot tell from a
     different ingredient (`terelizumab` for tislelizumab, `slulimumab` for
@@ -454,14 +500,20 @@ guard on `vaccine`. Its number has been reused.
     variants under disitamab vedotin), and short abbreviations that are
     ambiguous across the vocabulary (`epi`, `hr3`, `il-2`). Each removal is a
     finding in the quality report with its reason, so they can be reviewed.
-12. **The corporate map is a dated assertion.** All 59 keys were checked for the
+12. **The corporate map is a dated assertion.** Its 56 parent keys and 8
+    same-entity keys were checked for the
     obvious changes (spin-offs, renames, the two Mercks), but continued legal
     existence of every subsidiary is unverified, and nothing re-checks the map
     when ownership changes.
 13. **The groundedness check is a floor.** It catches invented names and
     figures. It does not verify relations, negations, comparisons or clinical
     claims made of ordinary words, and it counts any number word, including
-    "one", as an unverifiable figure.
+    "one", as an unverifiable figure. A drug name outside the vocabulary that
+    does not look like an INN still passes.
+14. **Provenance does not record the code version.** Snapshots carry their
+    fetch time, but the graph does not store which revision of the rules built
+    it, so a change that arrives with a new snapshot and a code change together
+    cannot be separated from the database alone; only git history can.
 8. **The query layer answers the nearest question it can.** "Is pembrolizumab
    safe in patients with autoimmune disease?" returns a drug profile rather than
    refusing. It refuses only when no entity links at all.
@@ -483,7 +535,7 @@ pip install -r requirements.txt
 python src/run_all.py              # fetch, resolve, check, build, score, render
 python src/run_all.py --offline    # rebuild from the snapshots in data/raw
 
-python -m pytest tests -q                    # 44 tests
+python -m pytest tests -q                    # 56 tests
 python src/curation_effect.py                # resolve twice, with and without curation
 python src/apply_label_corrections.py --check
 python src/query.py "Which companies are developing osimertinib?"
@@ -492,10 +544,11 @@ python src/query.py "Which companies are developing osimertinib?"
 The dashboard is `web/index.html`; serve the folder (`python -m http.server`) or
 open the file directly.
 
-Nothing is cached silently: `data/raw/*.json` are the fetched snapshots, each
-stamped with the query that produced it and the time it was fetched, and every
-later stage reads only from those files. A changed result can always be traced to
-either the source changing or the logic changing, never both at once.
+Nothing is fetched silently: `data/raw/*.json` are the fetched snapshots, each
+stamped with the query that produced it and the time it was fetched. Later
+stages read those and each other's outputs (`resolved.json`, the SQLite graph,
+the gold CSVs). Keeping a source change and a logic change apart is up to git:
+the artifacts do not record which code revision produced them.
 
 ---
 
@@ -525,10 +578,12 @@ reports/
   quality_report.json         every finding, with its evidence
 tests/
   test_pipeline.py            24 tests, each pinning a real failure mode
-  test_audit_round2.py        20 tests, one per defect the second audit found
+  test_audit_round2.py        32 tests, one per defect the second and third audits found
 codex_report.txt              the second independent audit, verbatim
-CODEX_R2_VERDICT.md           each finding reproduced, partly wrong, or missed
-audit_evidence_20261103/      the auditor's evidence files
+codex_report_round3.txt       the third, verbatim
+CODEX_R2_VERDICT.md           round 2: each finding reproduced, partly wrong, or missed
+CODEX_R3_VERDICT.md           round 3, the same
+audit_evidence_*/             the auditors' evidence files
 web/
   index.html                  the dashboard
 ```

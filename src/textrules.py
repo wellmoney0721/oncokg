@@ -95,6 +95,12 @@ CLASS_TERMS = {
     "oral corticosteroids", "antiemetic", "antiemetics", "premedication",
     "analgesic", "analgesics", "antihistamine", "antihistamines",
     "hypomethylating agent", "anti-vegf agent",
+    # added in audit round 3: a vector or platform names how a product is
+    # built, not which product it is ("adenovirus" -> TASADENOTUREV)
+    "adenovirus", "adenoviral vector", "recombinant adenovirus", "vaccinia",
+    "vaccinia virus", "lentivirus", "lentiviral vector", "retrovirus",
+    "retroviral vector", "plasmid", "plasmid dna", "mrna", "mrna vaccine",
+    "aav", "adeno-associated virus", "viral vector", "virus",
 }
 
 # A category pattern, rather than an exact category string. A head noun like

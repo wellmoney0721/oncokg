@@ -162,9 +162,10 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
   <h2>What the numbers are worth</h2>
   <p class="lede">Precision was measured on three separate hand-scored samples. The development
   sample shaped the rules, so its number is optimistic by construction; the held-out test sample, scored
-  as it was labelled, is the honest one. Two audit rounds have since used the test rows to find
-  defects, so the per-tier rates below describe the repaired pipeline on rows it was tuned against, not
-  a held-out measurement of it.</p>
+  as it was labelled, is the honest one. Three audit rounds have since used the test rows to find
+  defects. The per-tier rates below are the repaired pipeline on the rows whose resolution did not
+  change &mdash; and the rows that changed held every error, so these rates are survivors, not a
+  measurement.</p>
   <div class="tablebox"><table id="evaltable"></table></div>
   <p class="lede" style="margin-top:16px" id="evalnote"></p>
 </section>
@@ -250,16 +251,16 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
     Carboplatin</span> has no <span class="mono-s">+</span> or <span class="mono-s">and</span>, so it
     reads as a reference arm and two genuinely administered drugs are dropped. The fix is to treat a
     repeated <span class="mono-s">Drug:</span> label as a separator.</li>
-    <li><b>The repaired pipeline has no held-out measurement.</b> The test sample was used by two
-    audit rounds; 25 of its 172 rows now resolve differently and are set aside as stale. Putting a
+    <li><b>The repaired pipeline has no held-out measurement.</b> The test sample was used by three
+    audit rounds; 26 of its 172 rows now resolve differently and are set aside as stale. Putting a
     number on the current pipeline needs a new sample, labelled by someone other than the author.</li>
     <li><b>Coverage is capped by scope, not by skill.</b> The vocabulary holds only drugs Open Targets
     links to NSCLC, so <span class="mono-s">propranolol</span> and
     <span class="mono-s">Diklofenak Sodyum</span> are correctly refused and still count against
     coverage. Widening to the full ChEMBL drug set is the obvious next step, and would need its own
     precision measurement.</li>
-    <li><b>One annotator, two independent re-scores.</b> Every verdict is the author's; two reviews
-    re-scored 120 rows and disagreed on eight, every one lenient. An agreement rate over the full
+    <li><b>One annotator, three independent re-scores.</b> Every verdict is the author's; three
+    reviews re-scored 167 deliberately difficult rows and disagreed on twelve, every one lenient. An agreement rate over the full
     sample is what would turn these numbers from defensible into solid.</li>
     <li><b>Four tiers were never independently tested.</b> <span class="mono-s">FUZZY_AUTO</span>,
     <span class="mono-s">FUZZY_REVIEW</span>, <span class="mono-s">SALT_STRIPPED</span> and
@@ -300,7 +301,7 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
     ["Coverage", pct(H.coverage.resolved_rate_of_substance_like),
      `${num(H.coverage.accepted_occurrences)} of ${num(H.coverage.component_occurrences_excluding_blocked)} substance-like strings`],
     ["Trials parsed", num(H.trials), "ClinicalTrials.gov, interventional"],
-    ["Molecules &middot; aliases", num(H.molecules)+" &middot; "+num(H.aliases), "reference vocabulary after curation"],
+    ["Molecules &middot; lookup keys", num(H.molecules)+" &middot; "+num(H.lookup_keys), "reference vocabulary after curation"],
     ["Graph", num(H.nodes)+" / "+num(H.edges), "nodes / live edges"],
     ["Quality findings", num(H.qc_findings), "raised for review"],
   ];
