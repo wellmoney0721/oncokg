@@ -104,8 +104,14 @@ class OncoKG:
         # renamed after it), so a key maps to every matching node, not one.
         self.companies: dict[str, list[str]] = {}
         for row in self.conn.execute(
-                "SELECT id,label FROM node WHERE type='Company'"):
+                "SELECT id,label FROM node WHERE type='Company' AND retired_at IS NULL"):
             self.companies.setdefault(T.canonical_key(row["label"]), []).append(row["id"])
+            self.companies.setdefault(row["id"].removeprefix("ORG:"), []).append(row["id"])
+        # a former name ("BeiGene") must still find the merged node
+        for old, same in N.CURATED_SAME_ENTITY.items():
+            if same in self.companies:
+                self.companies.setdefault(old, []).extend(self.companies[same])
+        self.companies = {k: sorted(set(v)) for k, v in self.companies.items()}
 
     # -- entity linking ---------------------------------------------------- #
     def link_entities(self, question: str) -> list[dict]:
@@ -203,17 +209,22 @@ class OncoKG:
             for r in self._rows("""
                 SELECT e.id, e.src, e.confidence, e.props, n.label AS company
                 FROM edge e JOIN node n ON n.id = e.src
-                WHERE e.rel='DEVELOPS' AND e.dst=? AND e.retired_at IS NULL
+                WHERE e.rel='SPONSORS_TRIAL_OF' AND e.dst=? AND e.retired_at IS NULL
                 ORDER BY json_extract(e.props,'$.evidence_trials') DESC LIMIT ?
             """, (drug["id"], limit)):
                 p = json.loads(r["props"])
                 ev.append(Evidence(
-                    statement=f"{r['company']} is lead sponsor of "
-                              f"{p['evidence_trials']} trial(s) evaluating {drug['label']}",
-                    edge_id=r["id"], relation="DEVELOPS", source="derived",
+                    # sponsorship only; the sponsor class is stated so a reader
+                    # can tell an originator from a cooperative group
+                    statement=f"{r['company']} ({(p.get('sponsor_class') or 'unknown class').lower()} "
+                              f"sponsor) is lead sponsor of "
+                              f"{p['evidence_trials']} trial(s) evaluating {drug['label']}"
+                              " - a sponsorship, not evidence of developing the drug",
+                    edge_id=r["id"], relation="SPONSORS_TRIAL_OF", source="derived",
                     source_record=", ".join(p.get("evidence_sample", [])[:3]),
                     fetched_at=None, confidence=r["confidence"],
                     detail={"derived_rule": p.get("rule"),
+                            "sponsor_class": p.get("sponsor_class"),
                             "evidence_trials": p["evidence_trials"],
                             "example_trials": p.get("evidence_sample", [])[:3]}))
 
@@ -283,7 +294,7 @@ class OncoKG:
                        m.label AS org
                 FROM edge e JOIN node n ON n.id = e.dst
                 JOIN node m ON m.id = e.src
-                WHERE e.rel='DEVELOPS' AND e.src IN ({placeholders})
+                WHERE e.rel='SPONSORS_TRIAL_OF' AND e.src IN ({placeholders})
                   AND e.retired_at IS NULL
                 ORDER BY json_extract(e.props,'$.evidence_trials') DESC LIMIT ?
             """, (*org_ids, limit)):
@@ -291,7 +302,7 @@ class OncoKG:
                 ev.append(Evidence(
                     statement=f"{r['org']} sponsors {p['evidence_trials']} "
                               f"NSCLC trial(s) evaluating {r['drug']}",
-                    edge_id=r["id"], relation="DEVELOPS", source="derived",
+                    edge_id=r["id"], relation="SPONSORS_TRIAL_OF", source="derived",
                     source_record=", ".join(p.get("evidence_sample", [])[:3]),
                     fetched_at=None, confidence=r["confidence"],
                     detail={"evidence_trials": p["evidence_trials"],
@@ -408,11 +419,15 @@ class OncoKG:
            answer was rendered rather than generated, the check reports
            `applicable=False` and asserts nothing.
         2. Even on generated prose it is a floor, not a proof. It verifies that
-           entities and numbers appear in the retrieved set. It cannot detect a
-           *relation* that the evidence does not support: "AstraZeneca has
-           discontinued this drug" passes, because both tokens are present. It
-           catches fabricated entities and fabricated figures, which is the
-           failure mode that matters most here, and nothing beyond that.
+           capitalised entities, drug-shaped names and numbers appear in the
+           retrieved set, and refuses figures written in words. It cannot
+           detect a *relation* the evidence does not support ("AstraZeneca has
+           discontinued this drug" passes, because both tokens are present),
+           a negation or reversal ("does not act on EGFR"), a comparison or
+           ranking, a causal or clinical claim made of ordinary words
+           ("cures cancer", "is safe"), or a wrong pairing of two true
+           figures. It catches fabricated names and fabricated figures and
+           nothing beyond that.
         """
         if not generated:
             return {
@@ -432,17 +447,26 @@ class OncoKG:
             + [e.source_record or "" for e in evidence]
             + [en["label"] for en in entities]
         ).lower()
-        # tokenised, so a figure is matched as a number and not as a substring
-        # of an unrelated identifier: "47" must not be satisfied by NCT02303977
+        # Words are tokenised so "47" is not satisfied by NCT02303977. Numbers
+        # are tokenised separately and whole, decimals included: splitting on
+        # non-alphanumerics turned evidence "47.5" into the tokens "47" and
+        # "5", so an invented "47" passed and the exact "47.5" was rejected.
         haystack_tokens = set(re.findall(r"[a-z0-9]+", haystack))
+        haystack_numbers = {n.replace(",", "") for n in RE_NUMBER.findall(haystack)}
 
         unsupported: list[dict] = []
 
-        for num in set(re.findall(r"\b\d[\d,]{0,8}(?:\.\d+)?\b", text)):
-            bare = num.replace(",", "")
-            if bare not in haystack_tokens and num.lower() not in haystack_tokens:
+        for num in set(RE_NUMBER.findall(text)):
+            if num.replace(",", "") not in haystack_numbers:
                 unsupported.append({"kind": "number", "value": num,
                                     "why": "not present in the retrieved evidence"})
+
+        # A figure written in words cannot be matched against the evidence, so
+        # it is reported as unverifiable rather than allowed through.
+        for word in set(RE_NUMBER_WORD.findall(text.lower())):
+            unsupported.append({"kind": "number_in_words", "value": word,
+                                "why": "a figure written in words cannot be "
+                                       "checked against the evidence"})
 
         capitalised = set(re.findall(r"\b[A-Z][A-Za-z0-9\-]{3,}\b", text))
         stop = {"Scope", "Organisations", "Trials", "Profile", "Findings",
@@ -452,6 +476,20 @@ class OncoKG:
                 unsupported.append({"kind": "entity", "value": name,
                                     "why": "named in the answer but not in the evidence"})
 
+        # Drug names are usually lowercase in prose ("xyzabumab cures cancer"
+        # passed the capitalised-only check). Anything shaped like an INN or a
+        # development code must appear in the evidence too.
+        for name in set(RE_DRUGLIKE.findall(text)):
+            if name.lower() not in haystack_tokens and name.lower() not in haystack:
+                unsupported.append({"kind": "drug_like_name", "value": name,
+                                    "why": "looks like a drug name or code but "
+                                           "is not in the evidence"})
+
+        # one finding per value, first reason kept, in a stable order
+        seen_values: set[str] = set()
+        unsupported = [u for u in sorted(unsupported, key=lambda u: (u["value"], u["kind"]))
+                       if not (u["value"] in seen_values or seen_values.add(u["value"]))]
+
         return {
             "grounded": not unsupported,
             "applicable": True,
@@ -460,6 +498,20 @@ class OncoKG:
             "method": ("entity and tokenised-numeric overlap against the "
                        "retrieved evidence; does not verify relations"),
         }
+
+
+RE_NUMBER = re.compile(r"(?<![\w.])\d[\d,]{0,8}(?:\.\d+)?(?![\w])")
+RE_NUMBER_WORD = re.compile(
+    r"\b(?:zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|"
+    r"twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|"
+    r"twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|"
+    r"million|half|third|quarter|percent)\b")
+# INN stems common in oncology, plus development codes (letters, optional
+# hyphen, digits: "AZD9291", "MK-3475", "CC-486")
+RE_DRUGLIKE = re.compile(
+    r"\b(?:[a-z]{3,}(?:mab|nib|tinib|parib|ciclib|lisib|platin|taxel|rubicin|"
+    r"mycin|fosfamide|trexate|citabine|abine|tecan|stat|zomib|degib|rafenib|"
+    r"ximab|zumab|umab|limus|mustine)|[A-Za-z]{1,5}-?\d{2,6}[A-Za-z]?)\b")
 
 
 def main() -> None:

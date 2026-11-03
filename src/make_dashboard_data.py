@@ -54,7 +54,7 @@ def main() -> None:
             SELECT n.label AS label, COUNT(DISTINCT e.dst) AS n,
                    json_extract(n.props,'$.class') AS cls
             FROM edge e JOIN node n ON n.id = e.src
-            WHERE e.rel='DEVELOPS' AND e.retired_at IS NULL
+            WHERE e.rel='SPONSORS_TRIAL_OF' AND e.retired_at IS NULL
             GROUP BY e.src ORDER BY n DESC LIMIT 15""")
     ]
 
@@ -79,11 +79,11 @@ def main() -> None:
                 SELECT e.src AS cid, n.label AS label,
                        json_extract(e.props,'$.evidence_trials') AS n
                 FROM edge e JOIN node n ON n.id = e.src
-                WHERE e.rel='DEVELOPS' AND e.dst=? AND e.retired_at IS NULL
+                WHERE e.rel='SPONSORS_TRIAL_OF' AND e.dst=? AND e.retired_at IS NULL
                 ORDER BY n DESC LIMIT 2""", (r["did"],)):
                 ego_nodes.setdefault(c["cid"], {"id": c["cid"], "label": c["label"],
                                                 "type": "Company"})
-                ego_edges.append({"src": c["cid"], "dst": r["did"], "rel": "DEVELOPS",
+                ego_edges.append({"src": c["cid"], "dst": r["did"], "rel": "SPONSORS_TRIAL_OF",
                                   "weight": c["n"]})
 
     by_type: dict[str, list] = defaultdict(list)

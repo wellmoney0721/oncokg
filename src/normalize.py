@@ -773,7 +773,9 @@ CURATED_PARENTS = {
     "msd": "Merck & Co",
     "mercksharpdohme": "Merck & Co",
     "merckcoinc": "Merck & Co",
-    "schering": "Merck & Co",
+    # Schering-Plough merged into Merck & Co in 2009. The bare key "schering"
+    # also matched Bayer Schering Pharma and Schering AG, which belong to Bayer.
+    "scheringplough": "Merck & Co",
     "prometheusbiosciences": "Merck & Co",
     "merckkgaa": "Merck KGaA",
     "emdserono": "Merck KGaA",
@@ -795,7 +797,7 @@ CURATED_PARENTS = {
     "loxo": "Eli Lilly",
     "pfizer": "Pfizer",
     "wyeth": "Pfizer",
-    "array": "Pfizer",
+    "array": "Pfizer",                    # Array BioPharma; exact match only
     "seagen": "Pfizer",
     "novartis": "Novartis",
     # "sandoz" deliberately absent: Sandoz was spun off as the independent
@@ -816,20 +818,35 @@ CURATED_PARENTS = {
     "amgen": "Amgen",
     "bayer": "Bayer",
     "daiichisankyo": "Daiichi Sankyo",
+    "daiichi": "Daiichi Sankyo",          # Daiichi Pharmaceutical, merged 2005
     "eisai": "Eisai",
-    # BeiGene renamed to BeOne Medicines in 2025; both surface forms appear in
-    # the registry and must land on one group, or the same company is counted
-    # twice under two names.
-    "beigene": "BeOne Medicines",
     "beonemedicines": "BeOne Medicines",
-    "beone": "BeOne Medicines",
-    "hengrui": "Jiangsu Hengrui",
     "jiangsuhengrui": "Jiangsu Hengrui",
     "innovent": "Innovent",
     "junshi": "Junshi",
     "yuhan": "Yuhan",
     "hanmi": "Hanmi",
 }
+
+# One legal entity under several names. These are applied to the key *before*
+# the parent lookup, so the names land on one node instead of one name being
+# made the parent of the other. An earlier version put them in CURATED_PARENTS,
+# and the graph then asserted "BeOne Medicines PARENT_OF BeiGene" -- a rename
+# recorded as an ownership relation. Only renames and plain short forms of the
+# same company belong here; a subsidiary, however wholly owned, does not.
+CURATED_SAME_ENTITY = {
+    "beigene": "beonemedicines",        # renamed BeOne Medicines, 2025
+    "beone": "beonemedicines",
+    "lilly": "elililly",
+    "elilillyand": "elililly",          # "Eli Lilly and Company" after stripping
+    "gsk": "glaxosmithkline",
+    "hoffmannlaroche": "roche",
+    "hengrui": "jiangsuhengrui",
+}
+
+# Map keys shorter than this are only ever matched exactly. A short key used as
+# a prefix catches unrelated firms ("juno" would take any "Juno..." company).
+MIN_PREFIX_KEY = 5
 
 
 # A credential suffix, or a bare two-to-three word personal name, is a person
@@ -918,19 +935,31 @@ def normalize_company(raw: str) -> dict:
     text = re.sub(r"\s+(?:and|&|a|an|the|of|for)$", "", text, flags=re.I)
     text = T.RE_MULTISPACE.sub(" ", text).strip(" -,&")
     key = T.canonical_key(text)
-    parent = None
-    # Longest key first, so "merckkgaa" is not captured by a shorter "merck*"
-    # entry, and both directions of the prefix test carry the same length
-    # guard. Written without the guard the first branch matched any key with a
-    # short prefix in the map.
-    for k, p in sorted(CURATED_PARENTS.items(), key=lambda kv: -len(kv[0])):
-        if len(k) >= 4 and len(key) >= 4 and (key.startswith(k) or k.startswith(key)):
-            # a company is not its own parent; the map exists to connect
-            # distinct legal entities, not to restate one
-            if T.canonical_key(p) != key:
-                parent = p
-                rules.append("curated_parent_map")
+    for k, same in sorted(CURATED_SAME_ENTITY.items(), key=lambda kv: -len(kv[0])):
+        if key.startswith(same):
+            break                       # already the current name
+        if key == k or (len(k) >= MIN_PREFIX_KEY and key.startswith(k)):
+            key = same + key[len(k):]
+            rules.append("curated_same_entity")
             break
+    parent = None
+    # Exact key first, then the longest map key that is a *prefix of this
+    # name* ("mercksharpdohmecorp" -> "mercksharpdohme"). The reverse test --
+    # this name being a prefix of a map key -- was removed: "Merck & Co., Inc."
+    # reduces to "merck" once the legal suffixes go, "merckkgaa" starts with
+    # "merck", and the American company was made a subsidiary of its German
+    # competitor. A short name that matches nothing exactly stays unparented.
+    match = CURATED_PARENTS.get(key)
+    if match is None:
+        for k, p in sorted(CURATED_PARENTS.items(), key=lambda kv: -len(kv[0])):
+            if len(k) >= MIN_PREFIX_KEY and key.startswith(k):
+                match = p
+                break
+    # a company is not its own parent; the map exists to connect distinct
+    # legal entities, not to restate one
+    if match is not None and T.canonical_key(match) != key:
+        parent = match
+        rules.append("curated_parent_map")
     # The organisation keeps its own name. A corporate parent is a *relationship*,
     # not a rename: collapsing MedImmune into "AstraZeneca" produces two nodes
     # with one label, and any lookup by name then silently picks one of them.

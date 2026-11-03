@@ -46,7 +46,8 @@ CREATE TABLE IF NOT EXISTS node (
   label TEXT NOT NULL,
   props TEXT NOT NULL DEFAULT '{}',
   first_seen TEXT NOT NULL,
-  last_seen TEXT NOT NULL
+  last_seen TEXT NOT NULL,
+  retired_at TEXT
 );
 CREATE INDEX IF NOT EXISTS node_type ON node(type);
 CREATE INDEX IF NOT EXISTS node_label ON node(label);
@@ -105,11 +106,13 @@ class GraphWriter:
         self.build_id = build_id
         self.ts = ts
         self.seen_edges: set[str] = set()
+        self.seen_nodes: set[str] = set()
         self.stats = {"added": 0, "changed": 0, "retired": 0, "restored": 0}
 
     # -- nodes ------------------------------------------------------------- #
     def node(self, node_id: str, type_: str, label: str, props: dict | None = None):
         props_json = json.dumps(props or {}, ensure_ascii=False, sort_keys=True)
+        self.seen_nodes.add(node_id)
         row = self.c.execute("SELECT props FROM node WHERE id=?", (node_id,)).fetchone()
         if row is None:
             self.c.execute(
@@ -117,9 +120,12 @@ class GraphWriter:
                 " VALUES(?,?,?,?,?,?)",
                 (node_id, type_, label, props_json, self.ts, self.ts))
         else:
+            # the type is updated too: a sponsor re-typed from Company to
+            # Investigator by a later rule must not keep its old type
             self.c.execute(
-                "UPDATE node SET label=?, props=?, last_seen=? WHERE id=?",
-                (label, props_json, self.ts, node_id))
+                "UPDATE node SET type=?, label=?, props=?, last_seen=?, retired_at=NULL"
+                " WHERE id=?",
+                (type_, label, props_json, self.ts, node_id))
         return node_id
 
     # -- edges ------------------------------------------------------------- #
@@ -169,9 +175,11 @@ class GraphWriter:
             (props_json, confidence, tier, fetched_at, self.ts, edge_id))
         return edge_id
 
-    def retire_unseen(self):
+    def retire_unseen(self, exclude_rels: tuple[str, ...] = ()):
         rows = self.c.execute(
-            "SELECT id FROM edge WHERE retired_at IS NULL").fetchall()
+            "SELECT id FROM edge WHERE retired_at IS NULL"
+            + (f" AND rel NOT IN ({','.join('?' * len(exclude_rels))})"
+               if exclude_rels else ""), exclude_rels).fetchall()
         for (edge_id,) in rows:
             if edge_id in self.seen_edges:
                 continue
@@ -179,6 +187,15 @@ class GraphWriter:
                            (self.ts, edge_id))
             self._log(edge_id, "retired", None, None, None)
             self.stats["retired"] += 1
+
+    def retire_unseen_nodes(self):
+        """A node no source mentions any more is kept for its history but
+        marked retired, so it no longer counts as part of the live graph."""
+        for (node_id,) in self.c.execute(
+                "SELECT id FROM node WHERE retired_at IS NULL").fetchall():
+            if node_id not in self.seen_nodes:
+                self.c.execute("UPDATE node SET retired_at=? WHERE id=?",
+                               (self.ts, node_id))
 
     def _log(self, edge_id, change_type, field, old, new):
         self.c.execute(
@@ -192,6 +209,8 @@ def build(resolved: dict, db_path: Path = DB_PATH, build_id: str | None = None) 
     build_id = build_id or f"build-{ts}"
     conn = sqlite3.connect(db_path)
     conn.executescript(SCHEMA)
+    if "retired_at" not in {r[1] for r in conn.execute("PRAGMA table_info(node)")}:
+        conn.execute("ALTER TABLE node ADD COLUMN retired_at TEXT")
     g = GraphWriter(conn, build_id, ts)
 
     src_meta = resolved["_built_from"]
@@ -291,10 +310,17 @@ def build(resolved: dict, db_path: Path = DB_PATH, build_id: str | None = None) 
                               "intervention_type": iv.get("intervention_type"),
                               "resolution_rules": comp.get("rules")})
 
+    # Base edges from this build's sources are settled first. Deriving before
+    # retiring let a trial that had left the sources keep its EVALUATES and
+    # SPONSORS edges live long enough to re-derive the sponsorship it implied,
+    # so a removed trial's claim survived one more build.
+    g.retire_unseen(exclude_rels=("SPONSORS_TRIAL_OF",))
+
     # Derived relation. An earlier version of this file called this edge
     # DEVELOPS, reasoning that a company that sponsors trials of a drug
     # develops it. Measuring the result showed the inference is unsound:
-    # 60.6% of the edges had a non-industry lead sponsor, so the graph
+    # most of the edges had a non-industry lead sponsor (58.8% in the current
+    # snapshot; see reports/graph_stats.json), so the graph
     # asserted "National Cancer Institute develops paclitaxel", "Memorial
     # Sloan Kettering develops cisplatin", and — where a trial's lead sponsor
     # is an individual investigator — that a named physician develops
@@ -303,8 +329,10 @@ def build(resolved: dict, db_path: Path = DB_PATH, build_id: str | None = None) 
     #
     # The edge is therefore named for what the evidence actually shows. The
     # sponsor class travels on the edge so a consumer can filter to industry
-    # sponsors, and no confidence is manufactured from the trial count: a
-    # sponsorship is either recorded or it is not.
+    # sponsors. Confidence is a flat 1.0 meaning "the sponsorship is recorded
+    # in the source"; it is not scored from the trial count. The edge has no
+    # single source record -- it is derived from several -- so source_record
+    # stays empty and the full list of evidence trials is carried in props.
     rows = conn.execute("""
         SELECT s.src AS org, e.dst AS drug, COUNT(DISTINCT e.src) AS n,
                GROUP_CONCAT(DISTINCT e.src) AS ncts,
@@ -316,11 +344,13 @@ def build(resolved: dict, db_path: Path = DB_PATH, build_id: str | None = None) 
         GROUP BY s.src, e.dst
     """).fetchall()
     for org, drug, n, ncts, cls in rows:
-        evidence = (ncts or "").split(",")[:10]
+        evidence_all = sorted((ncts or "").split(","))
+        evidence = evidence_all[:10]
         g.edge(org, drug, "SPONSORS_TRIAL_OF", source="derived",
                source_record=None, fetched_at=ts, confidence=1.0,
                props={"derived": True, "evidence_trials": n,
                       "evidence_sample": evidence,
+                      "evidence_trials_all": evidence_all,
                       "sponsor_class": cls,
                       "is_industry_sponsor": cls == "INDUSTRY",
                       "rule": "lead sponsor of trials evaluating this drug",
@@ -331,8 +361,10 @@ def build(resolved: dict, db_path: Path = DB_PATH, build_id: str | None = None) 
                           "organisations' drugs"})
 
     g.retire_unseen()
+    g.retire_unseen_nodes()
 
-    node_count = conn.execute("SELECT COUNT(*) FROM node").fetchone()[0]
+    node_count = conn.execute(
+        "SELECT COUNT(*) FROM node WHERE retired_at IS NULL").fetchone()[0]
     edge_count = conn.execute(
         "SELECT COUNT(*) FROM edge WHERE retired_at IS NULL").fetchone()[0]
     conn.execute(
@@ -343,7 +375,8 @@ def build(resolved: dict, db_path: Path = DB_PATH, build_id: str | None = None) 
     conn.commit()
 
     stats = {"build_id": build_id, "nodes": node_count, "edges": edge_count, **g.stats}
-    by_type = dict(conn.execute("SELECT type, COUNT(*) FROM node GROUP BY type").fetchall())
+    by_type = dict(conn.execute("SELECT type, COUNT(*) FROM node"
+                                " WHERE retired_at IS NULL GROUP BY type").fetchall())
     by_rel = dict(conn.execute(
         "SELECT rel, COUNT(*) FROM edge WHERE retired_at IS NULL GROUP BY rel").fetchall())
     stats["nodes_by_type"] = by_type

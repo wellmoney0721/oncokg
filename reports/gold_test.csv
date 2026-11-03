@@ -11,7 +11,7 @@ id,tier,raw,component,drug_id,resolved_name,score,rules,note,example_nct,verdict
 10,ALIAS,"Avastin, Alimta",Alimta,CHEMBL225072,PEMETREXED,,split_combination,,NCT00254319,correct,
 11,ALIAS,"Bevacizumab (Avastin), Taxotere (Docetaxel), Vinorelbine Tartrate (Navelbine)",Taxotere,CHEMBL3545252,DOCETAXEL,,extract_parenthetical|split_combination,,NCT00675597,correct,
 12,ALIAS,Carrelizumab + chemotherapy + apatinib,apatinib,CHEMBL3186534,RIVOCERANIB,,split_combination,,NCT04950400,correct,
-13,ALIAS,CC-486,CC-486,CHEMBL1489,AZACITIDINE,,,,NCT02223052,correct,
+13,ALIAS,CC-486,CC-486,CHEMBL1489,AZACITIDINE,,,,NCT02223052,incorrect,"corrected after independent re-score: CC-486 is oral azacitidine (Onureg). Its label states it must not be substituted for intravenous or subcutaneous azacitidine, so by the Abraxane criterion it is a distinct product, not AZACITIDINE."
 14,ALIAS,Combined group of ensatinib and arotinib,arotinib,CHEMBL4303201,CATEQUENTINIB,,split_combination,,NCT07671560,correct,
 15,ALIAS,gemcitabine HCL,gemcitabine HCL,CHEMBL1637,GEMCITABINE HYDROCHLORIDE,,,,NCT00407550,correct,
 16,ALIAS,HLX10+chemo,HLX10,CHEMBL4594550,SERPLULIMAB,,split_combination,,NCT04976647,correct,
@@ -139,7 +139,7 @@ id,tier,raw,component,drug_id,resolved_name,score,rules,note,example_nct,verdict
 138,PARENTHETICAL,cisplatin (cis-diamminedichloroplatinum(II) (CDDP)),CDDP,CHEMBL11359,CISPLATIN,,extract_parenthetical|match_on_parenthetical,,NCT07495098,correct,
 139,PARENTHETICAL,DN-101 (calcitriol) - Drug,calcitriol,CHEMBL846,CALCITRIOL,,extract_parenthetical|match_on_parenthetical,,NCT00285675,correct,
 140,PARENTHETICAL,GV20-0251 and Pembrolizumab [KEYTRUDA®],KEYTRUDA®,CHEMBL3137343,PEMBROLIZUMAB,,extract_parenthetical|split_combination|match_on_parenthetical,,NCT05669430,correct,
-141,PARENTHETICAL,NanoPac (sterile nanoparticulate paclitaxel) Powder for Suspension,sterile nanoparticulate paclitaxel,CHEMBL428647,PACLITAXEL,,extract_parenthetical|strip_formulation|match_on_parenthetical,,NCT04314895,correct,
+141,PARENTHETICAL,NanoPac (sterile nanoparticulate paclitaxel) Powder for Suspension,sterile nanoparticulate paclitaxel,CHEMBL428647,PACLITAXEL,,extract_parenthetical|strip_formulation|match_on_parenthetical,,NCT04314895,incorrect,"corrected after independent re-score: NanoPac is a nanoparticulate paclitaxel formulation for local administration with its own development programme -- the same class of error as Abraxane, resolved through its parenthetical."
 142,PARENTHETICAL,NGM707 plus pembrolizumab (KEYTRUDA®),KEYTRUDA®,CHEMBL3137343,PEMBROLIZUMAB,,extract_parenthetical|split_combination|match_on_parenthetical,,NCT04913337,correct,
 143,PARENTHETICAL,NGM831 and NGM438 plus pembrolizumab (KEYTRUDA®),KEYTRUDA®,CHEMBL3137343,PEMBROLIZUMAB,,extract_parenthetical|split_combination|match_on_parenthetical,,NCT05215574,correct,
 144,PARENTHETICAL,Steroid mouthwash (dexamethasone or equivalent),dexamethasone or equivalent,CHEMBL384467,DEXAMETHASONE,,extract_parenthetical|match_on_parenthetical,,NCT06788912,correct,

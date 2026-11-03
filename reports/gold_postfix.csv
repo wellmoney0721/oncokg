@@ -6,7 +6,7 @@ id,tier,raw,component,drug_id,resolved_name,score,rules,note,example_nct,verdict
 5,ALIAS,CHR-2797 (tosedostat),CHR-2797,CHEMBL2103847,TOSEDOSTAT,,extract_parenthetical,,NCT00522938,correct,
 6,ALIAS,"cisplatine, etoposide, cetuximab",cisplatine,CHEMBL11359,CISPLATIN,,split_combination,,NCT00985855,correct,
 7,ALIAS,EU-approved Avastin®,EU-approved Avastin®,CHEMBL1201583,BEVACIZUMAB,,,,NCT03296163,correct,
-8,ALIAS,Nab-paclitaxel,Nab-paclitaxel,CHEMBL428647,PACLITAXEL,,,,NCT04892953,correct,
+8,ALIAS,Nab-paclitaxel,Nab-paclitaxel,CHEMBL428647,PACLITAXEL,,,,NCT04892953,incorrect,corrected after independent re-score: Nab-paclitaxel was corrected to incorrect in the test sample (rows 3 and 22) but left correct here. The same surface cannot be right in one sample and wrong in another.
 9,ALIAS,RPH-075,RPH-075,CHEMBL3137343,PEMBROLIZUMAB,,,,NCT06307093,correct,
 10,ALIAS,TQB2450 injection,TQB2450,CHEMBL5315042,BENMELSTOBART,,strip_formulation,,NCT04964479,correct,
 11,BLOCKED_CLASS_TERM,Chemotherapy (pemetrexed + cisplatin/carboplatin),Chemotherapy,,,,extract_parenthetical,"category term, not an identifiable substance",NCT06746870,correct,
