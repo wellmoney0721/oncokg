@@ -491,3 +491,18 @@ def test_fused_mass_symbols_and_radio_words_refuse():
                      ("cisplatin radiochemotherapy", "CISPLATIN"),
                      ("osimertinib after radiofrequency ablation", "OSIMERTINIB")):
         assert e.explore(t)["center"]["label"] == label, t
+
+
+# Codex review m23
+def test_interior_symbol_isotopes_and_conjugates_refuse():
+    import app
+    e = app.Engine()
+    for t in ("DOTACe134 trastuzumab", "trastuzumab DOTAMn52", "trastuzumab conjugated to IRDye800CW",
+              "trastuzumab conjugated to DM1", "IRDye800CW-conjugated trastuzumab",
+              "trastuzumab covalently linked to DM1"):
+        assert e.explore(t).get("refused"), t
+    for t, label in (("non-radio-astatinated trastuzumab", "TRASTUZUMAB"),
+                     ("trastuzumab not radioactively labelled", "TRASTUZUMAB"),
+                     ("trastuzumab deruxtecan antibody-drug conjugate", "TRASTUZUMAB DERUXTECAN"),
+                     ("Paclitaxel conjugate with poly-l-glutamic acid", "PACLITAXEL POLIGLUMEX")):
+        assert e.explore(t)["center"]["label"] == label, t

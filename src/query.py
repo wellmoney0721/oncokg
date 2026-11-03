@@ -198,6 +198,52 @@ _LABEL_WORDS = {"tritiated", "tritium", "radiotracer", "radiotracers", "radiolig
                 "radioconjugate", "radioimmunoconjugate", "radiopharmaceutical", "radioactive",
                 "radiolabelled", "radiolabeled", "radiolabel"}
 
+def _strong_label(x: str) -> bool:
+    return x in _LABEL_WORDS or x in _LABELLED or x.startswith(_LABEL_STEMS)
+
+
+def _negated_end(flat: list, i: int) -> int:
+    """The end of the label a negation just before flat[i] governs: the shortest glued run
+    that is a known label ("non-labelled", "non-radio-labelled"), a bare "radio" with the
+    word it prefixes ("non-radio-astatinated"), and a label after its adverb ("not
+    radioactively labelled"); never a separate later label ("non-labelled radiolabelled")."""
+    end = i + 1
+    for j in range(i + 1, min(len(flat), i + 3) + 1):
+        if _strong_label("".join(flat[i:j])):
+            end = j
+            break
+    else:
+        if flat[i] == "radio" and i + 1 < len(flat):
+            end = i + 2
+    if flat[end - 1].endswith("ly") and end < len(flat) and _strong_label(flat[end]):
+        end += 1
+    return end
+
+
+# Words that say the drug is joined to something else (a dye, a payload): a distinct
+# product ("trastuzumab conjugated to DM1", "IRDye800CW-conjugated trastuzumab")
+_JOINED = ("conjugat", "covalently", "bioconjugat", "immunoconjugat")
+# Payload stems that mark a drug's own name as a conjugate (TRASTUZUMAB EMTANSINE)
+_PAYLOAD = re.compile(r"(tansine|tecan|dotin|ozogamicin|tesirine|duocarmazine|conjugate|"
+                      r"pegol|sudotox|aritox|pasudotox)", re.I)
+
+
+@functools.lru_cache(maxsize=4096)
+def _item_joined(words: tuple) -> bool:
+    """Does this list item say the drug is conjugated or covalently linked to something?"""
+    flat = [x.lower() for x in _alnum_words(" ".join(words))]
+    negated: set = set()
+    for i, x in enumerate(flat):
+        if i and flat[i - 1] in _NOT_WORDS:
+            negated.add(i)
+        if i in negated:
+            continue
+        if x.startswith(_JOINED) or (x == "linked" and i + 1 < len(flat)
+                                     and flat[i + 1] in ("to", "with")):
+            return True
+    return False
+
+
 @functools.lru_cache(maxsize=4096)
 def _item_has_isotope(words: tuple) -> bool:
     """Is a medical isotope written anywhere in this list item? Worked out once per item.
@@ -213,15 +259,7 @@ def _item_has_isotope(words: tuple) -> bool:
     negated: set = set()                     # the up-to-three words a negation governs
     for i in range(len(flat)):
         if i and flat[i - 1] in _NOT_WORDS:
-            # only the label word it negates: "non-labelled", "non-radio-labelled" (the
-            # shortest glued run that is a label), not a later label in the item
-            for j in range(i + 1, min(len(flat), i + 3) + 1):
-                x = "".join(flat[i:j])
-                if x in _LABEL_WORDS or x in _LABELLED or x.startswith(_LABEL_STEMS):
-                    negated.update(range(i, j))
-                    break
-            else:
-                negated.add(i)
+            negated.update(range(i, _negated_end(flat, i)))
         if i in negated:
             continue
         for j in range(i + 1, min(len(flat), i + 3) + 1):
@@ -265,7 +303,7 @@ def _item_has_isotope(words: tuple) -> bool:
             run = d.group(2)
             if named(run[:2], d.group(1)) or (run[:1] == "m" and named(run[1:3], d.group(1))):
                 return True
-        for d in re.finditer(r"(?<![a-z])([a-z]{2})(\d{1,3})(?!\d)", x):
+        for d in re.finditer(r"([a-z]{2})(\d{1,3})(?!\d)", x):
             if named(d.group(1), d.group(2)):
                 return True
     for w in words:
@@ -505,6 +543,11 @@ class OncoKG:
         # label (LUTETIUM LU 177 DOTATATE, FLUDEOXYGLUCOSE F 18) is the labelled product.
         if (_item_has_isotope(tuple(tokens[k] for k in same))
                 and not _labelled(self.dic["drugs"][did]["name"])):
+            return name
+        # a joining word inside the matched name is the conjugate's own name
+        # ("cbr96 - doxorubicin immunoconjugate"), so only the rest of the item counts
+        if (_item_joined(tuple(tokens[k] for k in same if not a <= k < b))
+                and not _PAYLOAD.search(self.dic["drugs"][did]["name"])):
             return name
         # A one-letter element is left to the case-marked word check above: lower-case
         # chemistry ("13-cis retinoic acid") is not carbon-13.

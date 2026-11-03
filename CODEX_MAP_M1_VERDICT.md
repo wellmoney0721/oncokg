@@ -240,3 +240,14 @@ Stored-alias sweep: no change. Tests 348.
 | M22-B3 | "astatinated", "radioastatinated", "radiofluorinated", "radiobrominated trastuzumab" | every "radio..." word is a label (fail closed) except treatment and method words (radiotherapy, radiation, radiology, radiofrequency, radiochemotherapy, ...); "astatinated"; "labelled"/"labeled"/"tagged" on their own ("isotope-labelled", "FITC-labelled") |
 
 A negation covers only the label word it negates ("non-labelled", "non-radio-labelled"), not a later label in the same item. Stored-alias sweep: no change. Tests 350.
+
+## Round 23 (audit_evidence_claims/m23) — CHANGES REQUIRED (two blockers)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M23-B1 | "DOTACe134 trastuzumab", "trastuzumab DOTAMn52": symbol-first pair inside a longer word | symbol then mass is read at any position in a word |
+| M23-B2 | "trastuzumab conjugated to IRDye800CW", "trastuzumab conjugated to DM1" (and covalently linked, ... conjugate) | conjugat-, covalently, "linked to/with" in the item refuse a drug, unless the joining word is part of the matched name ("cbr96 - doxorubicin immunoconjugate") or the drug's own name carries a payload (TRASTUZUMAB EMTANSINE, ... DERUXTECAN) |
+| M23-S1 | "non-radio-astatinated" refused; "not radioactively labelled" refused | a negation covers a bare "radio" with the word it prefixes, and a label word after its adverb |
+| M23-D1 | "13-cis retinoic acid" draws TRETINOIN: an AACT synonym in the dictionary maps 13-cis-retinoic acid and isotretinoin to CHEMBL38 | data limitation, recorded; needs dictionary curation and remeasurement (owner's decision, with the bevacizumab synonyms) |
+
+Stored-alias sweep: no change. Tests 351.
