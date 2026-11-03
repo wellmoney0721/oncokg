@@ -8,9 +8,13 @@ cd <this repo>
 codex exec "$(cat CODEX_AUDIT.md)"
 ```
 
-Paste the output back to whoever is maintaining the project. A previous round
-of this exercise found seven real defects, listed at the bottom so you can check
+Paste the output back to whoever is maintaining the project. Two previous rounds
+of this exercise found real defects, listed at the bottom so you can check
 whether the repairs actually hold rather than taking the README's word for it.
+The second round's report is `codex_report.txt` and the maintainer's reply to
+it, finding by finding, is `CODEX_R2_VERDICT.md`. Do not trust either: the
+reply may have rejected a correct finding, and the repairs may have introduced
+new defects. Repairs that change behaviour are the most likely place for those.
 
 ---
 
@@ -25,6 +29,8 @@ claim that is reproducible but misleading is a worse one.
 
 Do not fix anything. Report only, with exact `file:line` or exact JSON field
 for every finding.
+Write any evidence files under `audit_evidence_round3/` only, and leave every
+tracked file exactly as you found it (restore anything a rebuild rewrites).
 
 ## What the project is
 
@@ -81,16 +87,20 @@ exact field and value you found), MISMATCH (claimed X, artifact says Y), or
 UNVERIFIABLE (no artifact backs it). The figures include, but are not limited
 to:
 
-- dev / held-out test / post-fix: raw precision 92.0% / 91.3% / 97.4% on
-  137 / 115 / 38 accepted rows; stratified 97.7% / 96.9% / 99.1%
-- coverage 78.2%, 4,969 of 6,351
+- headline: held-out raw precision **as labelled** 103/115 = 89.6% (Wilson
+  82.6–93.9); dev 126/137 = 92.0%; post-fix 36/38 = 94.7%
+- current-pipeline figures: rows still current 183 / 147 / 54, raw 113/118,
+  99/99, 35/36; stratified 97.9% / 99.9% / 99.3% with Wilson-bound and
+  bootstrap intervals; stale rows 31 / 25 / 4
+- coverage 77.8%, 4,942 of 6,355
 - 2,742 distinct drug strings; 2,175 distinct condition strings; 3,000 trials
-- FUZZY_REVIEW would-have-been-correct 37.5%; placebo guard 8/8 on the held-out
-  sample
-- curation: ambiguous resolutions 2,193 → 69, exact 1,997 → 4,056
-- graph: 6,476 nodes, 17,591 live edges, and the per-relation table
-- `SPONSORS_TRIAL_OF`: 3,187 edges, 41.2% industry / 58.8% non-industry
-- the dictionary defect table (134 / 124 / 80 / 78 / 47 / 7 / 6)
+- FUZZY_REVIEW would-have-been-correct 44.4% (4 of 9); placebo guard 8/8 on the
+  held-out sample
+- curation: ambiguous resolutions 2,189 → 65, exact 1,997 → 4,054
+- graph: 6,474 live nodes, 17,576 live edges, and the per-relation table
+- `SPONSORS_TRIAL_OF`: 3,181 edges, 41.3% industry / 58.7% non-industry
+- the dictionary defect table (318 / 117 / 98 / 60 / 57 / 47 / 7 / 6)
+- the dashboard headline tile in `web/dashboard.html` (`data.json.headline`)
 
 Sources: `reports/evaluation_dev.json`, `reports/evaluation_frozen_test.json`,
 `reports/evaluation_postfix.json`, `reports/curation_effect.json`,
@@ -214,7 +224,38 @@ Under 1,200 words. No hedging. Structure:
 
 ---
 
-## Defects found in the previous round
+## Defects found in previous rounds
+
+### Round 2 (repairs claimed in commits 8d8be5b, ca27e4b, eb37439, da5e3ba)
+
+Check each repair holds, and look hardest at what the repairs themselves
+could have broken. In particular:
+
+- **Is "as labelled" really the honest headline?** `src/evaluate.py` now sets
+  aside rows whose resolution changed since labelling ("stale") and reports the
+  rest separately. Is that exclusion biased? Is the as-labelled figure
+  computable exactly from the artifacts, and does it describe the pipeline the
+  README says it does?
+- **The registry-synonym rule** (`_foreign_registry_alias`,
+  `_ambiguous_short_alias`, `REGIMEN_ACRONYMS` in `src/normalize.py`) removed
+  318 AACT-sourced synonyms. Find correct synonyms it removed that the README's
+  known-defects list does not admit, and contaminated ones it kept. Measure the
+  coverage it cost.
+- **The same-entity map and prefix rule** in `normalize_company`: find a company
+  now merged with a different one, or newly unparented.
+- **The negation guard, ester rule, FDA-suffix rule, biosimilar/reformulation
+  name lists, per-component parentheticals and raw-part distinct-product check**
+  in `src/textrules.py` / `src/normalize.py`: construct false positives and
+  false negatives.
+- **Graph liveness**: node `retired_at`, derived edges recomputed after base
+  retirement. Does anything still count retired nodes? Does a source removal
+  followed by a re-add behave?
+- **The groundedness checker** after its rewrite: what invented content still
+  passes, and what true content is now wrongly rejected?
+- **Did the label corrections stay consistent?** Are there other rows in any of
+  the three samples that the same product-level criterion would flip?
+
+### Round 1
 
 Check whether each repair is real, complete, and did not introduce something
 worse. Do not assume a fix works because the README says so.
