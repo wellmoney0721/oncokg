@@ -6,33 +6,33 @@
   "trials": "2026-11-03T02:31:37.196527+00:00"
  },
  "totals": {
-  "findings": 1669,
+  "findings": 1798,
   "by_severity": {
-   "high": 253,
-   "medium": 944,
-   "low": 472
+   "high": 449,
+   "medium": 876,
+   "low": 473
   },
   "by_family": {
    "dictionary": {
     "class_term_as_synonym": 117,
     "cross_drug_synonym": 57,
-    "distinct_product_alias": 7,
+    "distinct_product_alias": 204,
     "placebo_string_in_synonym_list": 6,
-    "registry_alias_removed": 318,
-    "genuinely_ambiguous_alias": 98,
-    "suspected_duplicate_entity": 47,
+    "registry_alias_removed": 248,
+    "genuinely_ambiguous_alias": 99,
+    "suspected_duplicate_entity": 46,
     "parent_child_collapse": 60
    },
    "record": {
-    "incomplete_intervention_parse": 16,
-    "no_substance_resolved": 439,
-    "recurrent_unresolved_surface": 58,
+    "incomplete_intervention_parse": 15,
+    "no_substance_resolved": 442,
+    "recurrent_unresolved_surface": 57,
     "missing_structural_field": 169,
     "out_of_scope_trial": 226
    },
    "graph": {
     "stage_disagrees_with_reference": 34,
-    "company_names_merged": 17
+    "company_names_merged": 18
    }
   }
  },
@@ -2405,6 +2405,270 @@
   {
    "type": "distinct_product_alias",
    "severity": "high",
+   "alias": "peg il-2",
+   "affected_drugs": [
+    "CHEMBL1201438"
+   ],
+   "affected_drug_name": "ALDESLEUKIN",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "peg-il-2",
+   "affected_drugs": [
+    "CHEMBL1201438"
+   ],
+   "affected_drug_name": "ALDESLEUKIN",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "peg-ifn",
+   "affected_drugs": [
+    "CHEMBL2108506"
+   ],
+   "affected_drug_name": "INTERFERON ALFA",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "pegylated interferon alfa",
+   "affected_drugs": [
+    "CHEMBL2108506"
+   ],
+   "affected_drug_name": "INTERFERON ALFA",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "pegylated interferon alfa 2a",
+   "affected_drugs": [
+    "CHEMBL2108506"
+   ],
+   "affected_drug_name": "INTERFERON ALFA",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "pegylated interferon alfa 2b",
+   "affected_drugs": [
+    "CHEMBL2108506"
+   ],
+   "affected_drug_name": "INTERFERON ALFA",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Denosumab biosimilar (ct-p41)",
+   "affected_drugs": [
+    "CHEMBL1237023"
+   ],
+   "affected_drug_name": "DENOSUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Denosumab biosimilar (hlx-14)",
+   "affected_drugs": [
+    "CHEMBL1237023"
+   ],
+   "affected_drug_name": "DENOSUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Denosumab biosimilar (ql-1206)",
+   "affected_drugs": [
+    "CHEMBL1237023"
+   ],
+   "affected_drug_name": "DENOSUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Denosumab biosimilar tk-006",
+   "affected_drugs": [
+    "CHEMBL1237023"
+   ],
+   "affected_drug_name": "DENOSUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Denosumab-bbdz",
+   "affected_drugs": [
+    "CHEMBL1237023"
+   ],
+   "affected_drug_name": "DENOSUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Doxorubicin liposomal complex of the hydrochloride",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Liposomal doxorubicin hydrochloride",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "lipodox",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "liposomal doxorubicin",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "non-pegylated liposomal doxorubicin",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "nonpegylated liposomal doxorubicin",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "pegylated doxorubicin hcl liposome",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "pegylated liposomal doxorubicin",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "pegylated liposomal doxorubicin hydrochloride",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "pegylated liposomal doxorubicine",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "stealth liposomal doxorubicin hydrochloride",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
    "alias": "Caelyx",
    "affected_drugs": [
     "CHEMBL359744"
@@ -2412,6 +2676,30 @@
    "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
    "action": "alias dropped before indexing",
    "why": "Caelyx is liposomal doxorubicin, not conventional doxorubicin",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Caelyx pegylated liposomal",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Celdoxome pegylated liposomal",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
    "family": "dictionary"
   },
   {
@@ -2429,6 +2717,1266 @@
   {
    "type": "distinct_product_alias",
    "severity": "high",
+   "alias": "Doxil (liposomal)",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Doxorubicin hydrochloride (liposomal)",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Myocet liposomal (previously myocet)",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Zolsketil pegylated liposomal",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Tocilizumab biosimilar (bat-1806)",
+   "affected_drugs": [
+    "CHEMBL1237022"
+   ],
+   "affected_drug_name": "TOCILIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Tocilizumab biosimilar (msb11456)",
+   "affected_drugs": [
+    "CHEMBL1237022"
+   ],
+   "affected_drug_name": "TOCILIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Tocilizumab biosimilar (rgb-19)",
+   "affected_drugs": [
+    "CHEMBL1237022"
+   ],
+   "affected_drug_name": "TOCILIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "dn-101",
+   "affected_drugs": [
+    "CHEMBL846"
+   ],
+   "affected_drug_name": "CALCITRIOL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Liposomal vinorelbine tartrate",
+   "affected_drugs": [
+    "CHEMBL538943"
+   ],
+   "affected_drug_name": "VINORELBINE TARTRATE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Vinorelbine liposomal",
+   "affected_drugs": [
+    "CHEMBL538943"
+   ],
+   "affected_drug_name": "VINORELBINE TARTRATE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "liposomal curcumin",
+   "affected_drugs": [
+    "CHEMBL140"
+   ],
+   "affected_drug_name": "CURCUMIN",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "SIROLIMUS COMPONENT OF NAB-RAPAMYCIN  RAPAMYCIN",
+   "affected_drugs": [
+    "CHEMBL413"
+   ],
+   "affected_drug_name": "SIROLIMUS",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "nab-rapamycin",
+   "affected_drugs": [
+    "CHEMBL413"
+   ],
+   "affected_drug_name": "SIROLIMUS",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "nab-sirolimus",
+   "affected_drugs": [
+    "CHEMBL413"
+   ],
+   "affected_drug_name": "SIROLIMUS",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "sirolimus for injection (albumin-bound)",
+   "affected_drugs": [
+    "CHEMBL413"
+   ],
+   "affected_drug_name": "SIROLIMUS",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Sirolimus component of nab-rapamycin  rapamycin",
+   "affected_drugs": [
+    "CHEMBL413"
+   ],
+   "affected_drug_name": "SIROLIMUS",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Abp-980 (trastuzumab biosimilar)",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "DMB-3111 (TRASTUZUMAB BIOSIMILAR)",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Eg-12014 (trastuzumab biosimilar)",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Eg12014 trastuzumab biosimilar",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Hercessi",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Herzuma",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Hlx-02 trastuzumab biosimilar",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Kanjinti",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Ogivri",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Ontruzant",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Sb-3 (trastuzumab biosimilar)",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Trastuzumab biosimilar (abp-980)",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Trastuzumab biosimilar (amgen)",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Trastuzumab biosimilar (ct-p6)",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Trastuzumab biosimilar (pfizer)",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Trastuzumab biosimilar (sb-3)",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Trastuzumab-anns",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Trastuzumab-dkst",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Trastuzumab-dttb",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Trastuzumab-pfizer",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Trastuzumab-pkrb",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Trastuzumab-qyyp",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Trastuzumab-strf",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Trazimera",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Zercepac",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "proposed trastuzumab biosimilar",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "trastuzumab biosimilar",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "trastuzumab-biosimilar",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "trastuzumab-eu",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "trastuzumab-us",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Herzuma",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Kanjinti",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Ogivri",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Ontruzant",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Trazimera",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Zercepac",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Infliximab biosimilar (amgen)",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Infliximab biosimilar (celltrion)",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Infliximab biosimilar (pfizer)",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Infliximab biosimilar (sb-2)",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Infliximab-pfizer",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "biosimilar ct-p13",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "biosimilar infliximab",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "infliximab biosimilar",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "infliximab biosimilar 3",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "trastuzumab-emtansine",
+   "affected_drugs": [
+    "CHEMBL1743082"
+   ],
+   "affected_drug_name": "TRASTUZUMAB EMTANSINE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Aflibercept biosimilar (amgen)",
+   "affected_drugs": [
+    "CHEMBL1742982"
+   ],
+   "affected_drug_name": "AFLIBERCEPT",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Aflibercept biosimilar (lubt-017)",
+   "affected_drugs": [
+    "CHEMBL1742982"
+   ],
+   "affected_drug_name": "AFLIBERCEPT",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "liposomal tretinoin",
+   "affected_drugs": [
+    "CHEMBL38"
+   ],
+   "affected_drug_name": "TRETINOIN",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "MBP-426 (LIPOSOMAL OXALIPLATIN)",
+   "affected_drugs": [
+    "CHEMBL414804"
+   ],
+   "affected_drug_name": "OXALIPLATIN",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "liposomal irinotecan",
+   "affected_drugs": [
+    "CHEMBL481"
+   ],
+   "affected_drug_name": "IRINOTECAN",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "liposomal irinotecan (ii)",
+   "affected_drugs": [
+    "CHEMBL481"
+   ],
+   "affected_drug_name": "IRINOTECAN",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "cc-486",
+   "affected_drugs": [
+    "CHEMBL1489"
+   ],
+   "affected_drug_name": "AZACITIDINE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "oral azacitidine",
+   "affected_drugs": [
+    "CHEMBL1489"
+   ],
+   "affected_drug_name": "AZACITIDINE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Onureg",
+   "affected_drugs": [
+    "CHEMBL1489"
+   ],
+   "affected_drug_name": "AZACITIDINE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Ff-10850 (liposomal topotecan)",
+   "affected_drugs": [
+    "CHEMBL84"
+   ],
+   "affected_drug_name": "TOPOTECAN",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "trastuzumab-deruxtecan",
+   "affected_drugs": [
+    "CHEMBL4297844"
+   ],
+   "affected_drug_name": "TRASTUZUMAB DERUXTECAN",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Alymsys",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Avzivi",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Bevacizumab biosimilar (abp-215)",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Bevacizumab biosimilar (amgen)",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Bevacizumab biosimilar (ct-p16)",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Bevacizumab biosimilar (fkb-238)",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Bevacizumab biosimilar (gp-2019)",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Bevacizumab biosimilar (pfizer)",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Bevacizumab-adcd",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Bevacizumab-awwb",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Bevacizumab-bvzr",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Bevacizumab-maly",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Bevacizumab-tnjn",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "CT-P16 (BIOSIMILAR OF BEVACIZUMAB)",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Mvasi",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Oyavas",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Vegzelma",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Zirabev",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "a bevacizumab biosimilar",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "bevacizumab biosimilar",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "bevacizumab biosimilar ibi305",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "bevacizumab-eu",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Abevmy",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Alymsys",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Avzivi",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Aybintio",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Mvasi",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Onbevzi",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Oyavas",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Vegzelma",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Zirabev",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "liposomal irinotecan",
+   "affected_drugs": [
+    "CHEMBL3989514"
+   ],
+   "affected_drug_name": "IRINOTECAN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
    "alias": "Onivyde",
    "affected_drugs": [
     "CHEMBL3989514"
@@ -2436,6 +3984,162 @@
    "affected_drug_name": "IRINOTECAN HYDROCHLORIDE",
    "action": "alias dropped before indexing",
    "why": "Onivyde is liposomal irinotecan, a distinct product",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Onivyde pegylated liposomal (previously known as onivyde)",
+   "affected_drugs": [
+    "CHEMBL3989514"
+   ],
+   "affected_drug_name": "IRINOTECAN HYDROCHLORIDE",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "lipodox",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "liposomal doxorubicin",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "lyso-thermosensitive liposomal doxorubicin",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "non-pegylated liposomal doxorubicin",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "pegylated liposomal doxorubicin",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "pegylated liposomal doxorubicin hydrochloride",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "pegylated liposomal doxorubicine",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "albumin-bound docetaxel",
+   "affected_drugs": [
+    "CHEMBL3545252"
+   ],
+   "affected_drug_name": "DOCETAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "docetaxel for injection (albumin-bound)",
+   "affected_drugs": [
+    "CHEMBL3545252"
+   ],
+   "affected_drug_name": "DOCETAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "peg-ifn",
+   "affected_drugs": [
+    "CHEMBL2108494"
+   ],
+   "affected_drug_name": "INTERFERON",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "pegylated interferon",
+   "affected_drugs": [
+    "CHEMBL2108494"
+   ],
+   "affected_drug_name": "INTERFERON",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "ABI-007",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
    "family": "dictionary"
   },
   {
@@ -2453,6 +4157,186 @@
   {
    "type": "distinct_product_alias",
    "severity": "high",
+   "alias": "APEALEA",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "GENEXOL",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "GENEXOL-PM",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Genexol",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Genexol-pm",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "PACLITAXEL COMPONENT OF ABI 007",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "PACLITAXEL COMPONENT OF ABI-007",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "PACLITAXEL COMPONENT OF ABRAXANE",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "PACLITAXEL COMPONENT OF NAB-",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "PAZENIR",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "albumin bound paclitaxel",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "albumin-bound paclitaxel",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "liporaxel",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "liposomal paclitaxel",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "lipusu",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
    "alias": "nab paclitaxel",
    "affected_drugs": [
     "CHEMBL428647"
@@ -2460,6 +4344,30 @@
    "affected_drug_name": "PACLITAXEL",
    "action": "alias dropped before indexing",
    "why": "nab-paclitaxel is a distinct albumin-bound product, routinely compared head-to-head against paclitaxel",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "nab-p",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "nab-pac",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
    "family": "dictionary"
   },
   {
@@ -2477,6 +4385,150 @@
   {
    "type": "distinct_product_alias",
    "severity": "high",
+   "alias": "nab-ptx",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "nanopac",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "nanoparticle albumin-bound paclitaxel",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "nanoparticle paclitaxel",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "nanoparticulate paclitaxel",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "paclitaxel (albumin bound)",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "paclitaxel (albumin-bound type)",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "paclitaxel (albumin-bound)",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "paclitaxel albumin-bound particles",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "paclitaxel for injection (albumin bound)",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "paclitaxel for injection (albumin-bound)",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "sterile nanoparticulate paclitaxel",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
    "alias": "Abraxane",
    "affected_drugs": [
     "CHEMBL428647"
@@ -2484,6 +4536,318 @@
    "affected_drug_name": "PACLITAXEL",
    "action": "alias dropped before indexing",
    "why": "Abraxane is nab-paclitaxel (albumin-bound), a separate product from solvent-based paclitaxel with its own approval and its own trial arms",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Apealea",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Paclitaxel component of abi 007",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Paclitaxel component of abraxane",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Paclitaxel component of nab-",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Pazenir",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "peg plus ascorbic acid",
+   "affected_drugs": [
+    "CHEMBL196"
+   ],
+   "affected_drug_name": "ASCORBIC ACID",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "peg-asc",
+   "affected_drugs": [
+    "CHEMBL196"
+   ],
+   "affected_drug_name": "ASCORBIC ACID",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "biosimilar epoetin alfa",
+   "affected_drugs": [
+    "CHEMBL1201565"
+   ],
+   "affected_drug_name": "EPOETIN ALFA",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Filgrastim-aafi",
+   "affected_drugs": [
+    "CHEMBL1201567"
+   ],
+   "affected_drug_name": "FILGRASTIM",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Filgrastim-sndz",
+   "affected_drugs": [
+    "CHEMBL1201567"
+   ],
+   "affected_drug_name": "FILGRASTIM",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "biosimilar filgrastim",
+   "affected_drugs": [
+    "CHEMBL1201567"
+   ],
+   "affected_drug_name": "FILGRASTIM",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "pegylated filgrastim",
+   "affected_drugs": [
+    "CHEMBL1201567"
+   ],
+   "affected_drug_name": "FILGRASTIM",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Granix",
+   "affected_drugs": [
+    "CHEMBL1201567"
+   ],
+   "affected_drug_name": "FILGRASTIM",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Nivestym",
+   "affected_drugs": [
+    "CHEMBL1201567"
+   ],
+   "affected_drug_name": "FILGRASTIM",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Releuko",
+   "affected_drugs": [
+    "CHEMBL1201567"
+   ],
+   "affected_drug_name": "FILGRASTIM",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Zarxio",
+   "affected_drugs": [
+    "CHEMBL1201567"
+   ],
+   "affected_drug_name": "FILGRASTIM",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Sysa-1901 (pertuzumab biosimilar)",
+   "affected_drugs": [
+    "CHEMBL2007641"
+   ],
+   "affected_drug_name": "PERTUZUMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "Cetuximab biosimilar (abp-494)",
+   "affected_drugs": [
+    "CHEMBL1201577"
+   ],
+   "affected_drug_name": "CETUXIMAB",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "peg intron",
+   "affected_drugs": [
+    "CHEMBL1201558"
+   ],
+   "affected_drug_name": "INTERFERON ALFA-2B",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "peg-ifn",
+   "affected_drugs": [
+    "CHEMBL1201558"
+   ],
+   "affected_drug_name": "INTERFERON ALFA-2B",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "peg-ifn alfa-2b",
+   "affected_drugs": [
+    "CHEMBL1201558"
+   ],
+   "affected_drug_name": "INTERFERON ALFA-2B",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "peg-intron",
+   "affected_drugs": [
+    "CHEMBL1201558"
+   ],
+   "affected_drug_name": "INTERFERON ALFA-2B",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "pegylated interferon",
+   "affected_drugs": [
+    "CHEMBL1201558"
+   ],
+   "affected_drug_name": "INTERFERON ALFA-2B",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "pegylated interferon alfa-2b",
+   "affected_drugs": [
+    "CHEMBL1201558"
+   ],
+   "affected_drug_name": "INTERFERON ALFA-2B",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "pegylated interferon α-2b",
+   "affected_drugs": [
+    "CHEMBL1201558"
+   ],
+   "affected_drug_name": "INTERFERON ALFA-2B",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "distinct_product_alias",
+   "severity": "high",
+   "alias": "pegylated interferon-α",
+   "affected_drugs": [
+    "CHEMBL1201558"
+   ],
+   "affected_drug_name": "INTERFERON ALFA-2B",
+   "action": "alias dropped before indexing",
+   "why": "a biosimilar or reformulated product named by the alias is not the originator molecule",
    "family": "dictionary"
   },
   {
@@ -2617,20 +4981,6 @@
     "QL1706",
     "QL2107",
     "QLS5132"
-   ],
-   "why": "the record names something the parse could not account for, so any exposure count built on it may be understated"
-  },
-  {
-   "family": "record",
-   "type": "incomplete_intervention_parse",
-   "severity": "high",
-   "nct_id": "NCT00601094",
-   "surface": "autologous dendritic cell-adenovirus CCL21 vaccine",
-   "resolved_to": [
-    "TASADENOTUREV"
-   ],
-   "not_accounted_for": [
-    "CCL21"
    ],
    "why": "the record names something the parse could not account for, so any exposure count built on it may be understated"
   },
@@ -3687,6 +6037,24 @@
     {
      "drug_id": "CHEMBL1201560",
      "name": "PEGINTERFERON ALFA-2A"
+    },
+    {
+     "drug_id": "CHEMBL2108506",
+     "name": "INTERFERON ALFA"
+    }
+   ],
+   "action": "kept ambiguous; records matching it are routed to review",
+   "why": "no rule can separate these without evidence outside the record",
+   "family": "dictionary"
+  },
+  {
+   "type": "genuinely_ambiguous_alias",
+   "severity": "medium",
+   "alias": "pegintron",
+   "candidates": [
+    {
+     "drug_id": "CHEMBL1201558",
+     "name": "INTERFERON ALFA-2B"
     },
     {
      "drug_id": "CHEMBL2108506",
@@ -6102,6 +8470,16 @@
    "family": "record",
    "type": "no_substance_resolved",
    "severity": "medium",
+   "nct_id": "NCT00285675",
+   "surfaces": [
+    "DN-101 (calcitriol) - Drug"
+   ],
+   "why": "the trial has drug arms but none could be tied to a known molecule, so it is invisible to any drug-centred question"
+  },
+  {
+   "family": "record",
+   "type": "no_substance_resolved",
+   "severity": "medium",
    "nct_id": "NCT01669707",
    "surfaces": [
     "Endostar -Continued Pumping into+GP",
@@ -7138,6 +9516,16 @@
    "family": "record",
    "type": "no_substance_resolved",
    "severity": "medium",
+   "nct_id": "NCT00601094",
+   "surfaces": [
+    "autologous dendritic cell-adenovirus CCL21 vaccine"
+   ],
+   "why": "the trial has drug arms but none could be tied to a known molecule, so it is invisible to any drug-centred question"
+  },
+  {
+   "family": "record",
+   "type": "no_substance_resolved",
+   "severity": "medium",
    "nct_id": "NCT01941654",
    "surfaces": [
     "Oral TKI"
@@ -7348,6 +9736,16 @@
     "SMET12",
     "SMET12",
     "SMET12"
+   ],
+   "why": "the trial has drug arms but none could be tied to a known molecule, so it is invisible to any drug-centred question"
+  },
+  {
+   "family": "record",
+   "type": "no_substance_resolved",
+   "severity": "medium",
+   "nct_id": "NCT07500285",
+   "surfaces": [
+    "Yttrium-90-Labeled Fibroblast Activation Protein Inhibitor (Y-90 FAPI)"
    ],
    "why": "the trial has drug arms but none could be tied to a known molecule, so it is invisible to any drug-centred question"
   },
@@ -10129,15 +12527,6 @@
    "family": "record",
    "type": "recurrent_unresolved_surface",
    "severity": "medium",
-   "surface": "Ac-FL-261",
-   "occurrences": 3,
-   "example_nct": "NCT07873450",
-   "why": "a string this frequent is a missing dictionary entry, and is the highest-value place to extend coverage"
-  },
-  {
-   "family": "record",
-   "type": "recurrent_unresolved_surface",
-   "severity": "medium",
    "surface": "RC148",
    "occurrences": 3,
    "example_nct": "NCT07416474",
@@ -10337,19 +12726,6 @@
    "affected_drug_name": "FOLINIC ACID",
    "action": "alias removed from lookup index",
    "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "peg il-2",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201438"
-   ],
-   "affected_drug_name": "ALDESLEUKIN",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
    "family": "dictionary"
   },
   {
@@ -10875,129 +13251,12 @@
   {
    "type": "registry_alias_removed",
    "severity": "medium",
-   "alias": "peg-ifn",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL2108506"
-   ],
-   "affected_drug_name": "INTERFERON ALFA",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "peg-ifn",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201560"
-   ],
-   "affected_drug_name": "PEGINTERFERON ALFA-2A",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "peg-ifn",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL2108494"
-   ],
-   "affected_drug_name": "INTERFERON",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "peg-ifn",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201558"
-   ],
-   "affected_drug_name": "INTERFERON ALFA-2B",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
    "alias": "peg-intron",
    "reason": "distinct_product",
    "affected_drugs": [
     "CHEMBL1201560"
    ],
    "affected_drug_name": "PEGINTERFERON ALFA-2A",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "peg intron",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201558"
-   ],
-   "affected_drug_name": "INTERFERON ALFA-2B",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "pegylated interferon alfa",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL2108506"
-   ],
-   "affected_drug_name": "INTERFERON ALFA",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "pegylated interferon alfa 2a",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL2108506"
-   ],
-   "affected_drug_name": "INTERFERON ALFA",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "pegylated interferon alfa 2b",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL2108506"
-   ],
-   "affected_drug_name": "INTERFERON ALFA",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "pegylated interferon alfa-2b",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201558"
-   ],
-   "affected_drug_name": "INTERFERON ALFA-2B",
    "action": "alias removed from lookup index",
    "why": "a biosimilar or reformulated product is not the originator molecule",
    "family": "dictionary"
@@ -11330,162 +13589,6 @@
   {
    "type": "registry_alias_removed",
    "severity": "medium",
-   "alias": "lipodox",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL359744"
-   ],
-   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "liposomal doxorubicin",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL359744"
-   ],
-   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "liposomal doxorubicin",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL53463"
-   ],
-   "affected_drug_name": "DOXORUBICIN",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "non-pegylated liposomal doxorubicin",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL359744"
-   ],
-   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "non-pegylated liposomal doxorubicin",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL53463"
-   ],
-   "affected_drug_name": "DOXORUBICIN",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "pegylated doxorubicin hcl liposome",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL359744"
-   ],
-   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "pegylated liposomal doxorubicin",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL359744"
-   ],
-   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "pegylated liposomal doxorubicin",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL53463"
-   ],
-   "affected_drug_name": "DOXORUBICIN",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "pegylated liposomal doxorubicin hydrochloride",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL359744"
-   ],
-   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "pegylated liposomal doxorubicin hydrochloride",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL53463"
-   ],
-   "affected_drug_name": "DOXORUBICIN",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "pegylated liposomal doxorubicine",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL359744"
-   ],
-   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "pegylated liposomal doxorubicine",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL53463"
-   ],
-   "affected_drug_name": "DOXORUBICIN",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
    "alias": "pld",
    "reason": "abbreviation",
    "affected_drugs": [
@@ -11507,19 +13610,6 @@
    "affected_drug_name": "DOXORUBICIN",
    "action": "alias removed from lookup index",
    "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "stealth liposomal doxorubicin hydrochloride",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL359744"
-   ],
-   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
    "family": "dictionary"
   },
   {
@@ -11811,12 +13901,12 @@
   {
    "type": "registry_alias_removed",
    "severity": "medium",
-   "alias": "liposomal curcumin",
+   "alias": "peg-ifn",
    "reason": "distinct_product",
    "affected_drugs": [
-    "CHEMBL140"
+    "CHEMBL1201560"
    ],
-   "affected_drug_name": "CURCUMIN",
+   "affected_drug_name": "PEGINTERFERON ALFA-2A",
    "action": "alias removed from lookup index",
    "why": "a biosimilar or reformulated product is not the originator molecule",
    "family": "dictionary"
@@ -11915,32 +14005,6 @@
   {
    "type": "registry_alias_removed",
    "severity": "medium",
-   "alias": "pegylated interferon",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL2108494"
-   ],
-   "affected_drug_name": "INTERFERON",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "pegylated interferon",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201558"
-   ],
-   "affected_drug_name": "INTERFERON ALFA-2B",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
    "alias": "pegylated interferon (peg-ifn) alfa-2a",
    "reason": "distinct_product",
    "affected_drugs": [
@@ -12019,45 +14083,6 @@
   {
    "type": "registry_alias_removed",
    "severity": "medium",
-   "alias": "nab-rapamycin",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL413"
-   ],
-   "affected_drug_name": "SIROLIMUS",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "nab-sirolimus",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL413"
-   ],
-   "affected_drug_name": "SIROLIMUS",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "sirolimus for injection (albumin-bound)",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL413"
-   ],
-   "affected_drug_name": "SIROLIMUS",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
    "alias": "peg-g-csf",
    "reason": "distinct_product",
    "affected_drugs": [
@@ -12090,19 +14115,6 @@
     "CHEMBL1201568"
    ],
    "affected_drug_name": "PEGFILGRASTIM",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "pegylated filgrastim",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201567"
-   ],
-   "affected_drug_name": "FILGRASTIM",
    "action": "alias removed from lookup index",
    "why": "a biosimilar or reformulated product is not the originator molecule",
    "family": "dictionary"
@@ -12201,58 +14213,6 @@
   {
    "type": "registry_alias_removed",
    "severity": "medium",
-   "alias": "proposed trastuzumab biosimilar",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201585"
-   ],
-   "affected_drug_name": "TRASTUZUMAB",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "trastuzumab biosimilar",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201585"
-   ],
-   "affected_drug_name": "TRASTUZUMAB",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "trastuzumab-eu",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201585"
-   ],
-   "affected_drug_name": "TRASTUZUMAB",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "trastuzumab-us",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201585"
-   ],
-   "affected_drug_name": "TRASTUZUMAB",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
    "alias": "ev",
    "reason": "abbreviation",
    "affected_drugs": [
@@ -12261,58 +14221,6 @@
    "affected_drug_name": "ENFORTUMAB VEDOTIN",
    "action": "alias removed from lookup index",
    "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "biosimilar ct-p13",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201581"
-   ],
-   "affected_drug_name": "INFLIXIMAB",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "biosimilar infliximab",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201581"
-   ],
-   "affected_drug_name": "INFLIXIMAB",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "infliximab biosimilar",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201581"
-   ],
-   "affected_drug_name": "INFLIXIMAB",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "infliximab biosimilar 3",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201581"
-   ],
-   "affected_drug_name": "INFLIXIMAB",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
    "family": "dictionary"
   },
   {
@@ -12534,19 +14442,6 @@
    "affected_drug_name": "BORTEZOMIB",
    "action": "alias removed from lookup index",
    "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "liposomal tretinoin",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL38"
-   ],
-   "affected_drug_name": "TRETINOIN",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
    "family": "dictionary"
   },
   {
@@ -12968,71 +14863,6 @@
   {
    "type": "registry_alias_removed",
    "severity": "medium",
-   "alias": "liposomal irinotecan",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL481"
-   ],
-   "affected_drug_name": "IRINOTECAN",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "liposomal irinotecan",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL3989514"
-   ],
-   "affected_drug_name": "IRINOTECAN HYDROCHLORIDE",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "liposomal irinotecan (ii)",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL481"
-   ],
-   "affected_drug_name": "IRINOTECAN",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "cc-486",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1489"
-   ],
-   "affected_drug_name": "AZACITIDINE",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "oral azacitidine",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1489"
-   ],
-   "affected_drug_name": "AZACITIDINE",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
    "alias": "cis",
    "reason": "abbreviation",
    "affected_drugs": [
@@ -13106,58 +14936,6 @@
    "affected_drug_name": "ETOPOSIDE",
    "action": "alias removed from lookup index",
    "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "a bevacizumab biosimilar",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201583"
-   ],
-   "affected_drug_name": "BEVACIZUMAB",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "bevacizumab biosimilar",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201583"
-   ],
-   "affected_drug_name": "BEVACIZUMAB",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "bevacizumab biosimilar ibi305",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201583"
-   ],
-   "affected_drug_name": "BEVACIZUMAB",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "bevacizumab-eu",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201583"
-   ],
-   "affected_drug_name": "BEVACIZUMAB",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
    "family": "dictionary"
   },
   {
@@ -13241,45 +15019,6 @@
   {
    "type": "registry_alias_removed",
    "severity": "medium",
-   "alias": "lyso-thermosensitive liposomal doxorubicin",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL53463"
-   ],
-   "affected_drug_name": "DOXORUBICIN",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "albumin-bound docetaxel",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL3545252"
-   ],
-   "affected_drug_name": "DOCETAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "docetaxel for injection (albumin-bound)",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL3545252"
-   ],
-   "affected_drug_name": "DOCETAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
    "alias": "mm",
    "reason": "abbreviation",
    "affected_drugs": [
@@ -13288,214 +15027,6 @@
    "affected_drug_name": "MITOMYCIN",
    "action": "alias removed from lookup index",
    "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "albumin bound paclitaxel",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL428647"
-   ],
-   "affected_drug_name": "PACLITAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "liporaxel",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL428647"
-   ],
-   "affected_drug_name": "PACLITAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "liposomal paclitaxel",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL428647"
-   ],
-   "affected_drug_name": "PACLITAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "lipusu",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL428647"
-   ],
-   "affected_drug_name": "PACLITAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "nab-p",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL428647"
-   ],
-   "affected_drug_name": "PACLITAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "nab-pac",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL428647"
-   ],
-   "affected_drug_name": "PACLITAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "nab-ptx",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL428647"
-   ],
-   "affected_drug_name": "PACLITAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "nanopac",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL428647"
-   ],
-   "affected_drug_name": "PACLITAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "nanoparticle albumin-bound paclitaxel",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL428647"
-   ],
-   "affected_drug_name": "PACLITAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "nanoparticle paclitaxel",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL428647"
-   ],
-   "affected_drug_name": "PACLITAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "nanoparticulate paclitaxel",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL428647"
-   ],
-   "affected_drug_name": "PACLITAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "paclitaxel (albumin bound)",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL428647"
-   ],
-   "affected_drug_name": "PACLITAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "paclitaxel (albumin-bound type)",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL428647"
-   ],
-   "affected_drug_name": "PACLITAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "paclitaxel albumin-bound particles",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL428647"
-   ],
-   "affected_drug_name": "PACLITAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "paclitaxel for injection (albumin bound)",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL428647"
-   ],
-   "affected_drug_name": "PACLITAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "sterile nanoparticulate paclitaxel",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL428647"
-   ],
-   "affected_drug_name": "PACLITAXEL",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
    "family": "dictionary"
   },
   {
@@ -13566,40 +15097,14 @@
   {
    "type": "registry_alias_removed",
    "severity": "medium",
-   "alias": "peg plus ascorbic acid",
-   "reason": "distinct_product",
+   "alias": "ice",
+   "reason": "regimen",
    "affected_drugs": [
-    "CHEMBL196"
+    "CHEMBL1024"
    ],
-   "affected_drug_name": "ASCORBIC ACID",
+   "affected_drug_name": "IFOSFAMIDE",
    "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "peg-asc",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL196"
-   ],
-   "affected_drug_name": "ASCORBIC ACID",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "biosimilar epoetin alfa",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201565"
-   ],
-   "affected_drug_name": "EPOETIN ALFA",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
    "family": "dictionary"
   },
   {
@@ -13631,19 +15136,6 @@
   {
    "type": "registry_alias_removed",
    "severity": "medium",
-   "alias": "biosimilar filgrastim",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201567"
-   ],
-   "affected_drug_name": "FILGRASTIM",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
    "alias": "ag",
    "reason": "abbreviation",
    "affected_drugs": [
@@ -13652,6 +15144,19 @@
    "affected_drug_name": "GEMCITABINE",
    "action": "alias removed from lookup index",
    "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "EPOCH",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL2109092"
+   ],
+   "affected_drug_name": "EPOETIN BETA",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
    "family": "dictionary"
   },
   {
@@ -13678,32 +15183,6 @@
    "affected_drug_name": "FLUOROURACIL",
    "action": "alias removed from lookup index",
    "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "peg-ifn alfa-2b",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201558"
-   ],
-   "affected_drug_name": "INTERFERON ALFA-2B",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
-   "family": "dictionary"
-  },
-  {
-   "type": "registry_alias_removed",
-   "severity": "medium",
-   "alias": "pegylated interferon α-2b",
-   "reason": "distinct_product",
-   "affected_drugs": [
-    "CHEMBL1201558"
-   ],
-   "affected_drug_name": "INTERFERON ALFA-2B",
-   "action": "alias removed from lookup index",
-   "why": "a biosimilar or reformulated product is not the originator molecule",
    "family": "dictionary"
   },
   {
@@ -14201,56 +15680,6 @@
    "type": "suspected_duplicate_entity",
    "severity": "medium",
    "drug_a": {
-    "drug_id": "CHEMBL1201558",
-    "name": "INTERFERON ALFA-2B"
-   },
-   "drug_b": {
-    "drug_id": "CHEMBL2108506",
-    "name": "INTERFERON ALFA"
-   },
-   "shared_alias_count": 7,
-   "shared_aliases": [
-    "ifn",
-    "ifna",
-    "interferonalfa",
-    "interferonalfa2b",
-    "pegintron",
-    "pegylatedinterferonalfa2b",
-    "recombinantinterferonalfa"
-   ],
-   "action": "flagged for curator review; not merged",
-   "why": "identifiers sharing this many aliases usually describe one substance",
-   "family": "dictionary"
-  },
-  {
-   "type": "suspected_duplicate_entity",
-   "severity": "medium",
-   "drug_a": {
-    "drug_id": "CHEMBL1201567",
-    "name": "FILGRASTIM"
-   },
-   "drug_b": {
-    "drug_id": "CHEMBL1201568",
-    "name": "PEGFILGRASTIM"
-   },
-   "shared_alias_count": 7,
-   "shared_aliases": [
-    "filgrastim",
-    "gcsf",
-    "granulocytecolonystimulatingfactor",
-    "neulasta",
-    "neupogen",
-    "pegfilgrastim",
-    "pegylatedfilgrastim"
-   ],
-   "action": "flagged for curator review; not merged",
-   "why": "identifiers sharing this many aliases usually describe one substance",
-   "family": "dictionary"
-  },
-  {
-   "type": "suspected_duplicate_entity",
-   "severity": "medium",
-   "drug_a": {
     "drug_id": "CHEMBL131",
     "name": "PREDNISOLONE"
    },
@@ -14291,6 +15720,30 @@
     "leucovorin",
     "lfolinicacid",
     "lleucovorin"
+   ],
+   "action": "flagged for curator review; not merged",
+   "why": "identifiers sharing this many aliases usually describe one substance",
+   "family": "dictionary"
+  },
+  {
+   "type": "suspected_duplicate_entity",
+   "severity": "medium",
+   "drug_a": {
+    "drug_id": "CHEMBL1201558",
+    "name": "INTERFERON ALFA-2B"
+   },
+   "drug_b": {
+    "drug_id": "CHEMBL2108506",
+    "name": "INTERFERON ALFA"
+   },
+   "shared_alias_count": 6,
+   "shared_aliases": [
+    "ifn",
+    "ifna",
+    "interferonalfa",
+    "interferonalfa2b",
+    "pegintron",
+    "recombinantinterferonalfa"
    ],
    "action": "flagged for curator review; not merged",
    "why": "identifiers sharing this many aliases usually describe one substance",
@@ -14387,6 +15840,30 @@
     "recombinanthumanendostatin",
     "recombinanthumanendostatininjection",
     "rhendostatin"
+   ],
+   "action": "flagged for curator review; not merged",
+   "why": "identifiers sharing this many aliases usually describe one substance",
+   "family": "dictionary"
+  },
+  {
+   "type": "suspected_duplicate_entity",
+   "severity": "medium",
+   "drug_a": {
+    "drug_id": "CHEMBL1201567",
+    "name": "FILGRASTIM"
+   },
+   "drug_b": {
+    "drug_id": "CHEMBL1201568",
+    "name": "PEGFILGRASTIM"
+   },
+   "shared_alias_count": 6,
+   "shared_aliases": [
+    "filgrastim",
+    "gcsf",
+    "granulocytecolonystimulatingfactor",
+    "neulasta",
+    "neupogen",
+    "pegfilgrastim"
    ],
    "action": "flagged for curator review; not merged",
    "why": "identifiers sharing this many aliases usually describe one substance",
@@ -14558,50 +16035,6 @@
    "type": "suspected_duplicate_entity",
    "severity": "medium",
    "drug_a": {
-    "drug_id": "CHEMBL1201558",
-    "name": "INTERFERON ALFA-2B"
-   },
-   "drug_b": {
-    "drug_id": "CHEMBL2108494",
-    "name": "INTERFERON"
-   },
-   "shared_alias_count": 4,
-   "shared_aliases": [
-    "ifn",
-    "interferon",
-    "interferonalfa2b",
-    "pegylatedinterferon"
-   ],
-   "action": "flagged for curator review; not merged",
-   "why": "identifiers sharing this many aliases usually describe one substance",
-   "family": "dictionary"
-  },
-  {
-   "type": "suspected_duplicate_entity",
-   "severity": "medium",
-   "drug_a": {
-    "drug_id": "CHEMBL1201558",
-    "name": "INTERFERON ALFA-2B"
-   },
-   "drug_b": {
-    "drug_id": "CHEMBL1201560",
-    "name": "PEGINTERFERON ALFA-2A"
-   },
-   "shared_alias_count": 4,
-   "shared_aliases": [
-    "interferon",
-    "peginterferonalfa2b",
-    "pegintron",
-    "pegylatedinterferon"
-   ],
-   "action": "flagged for curator review; not merged",
-   "why": "identifiers sharing this many aliases usually describe one substance",
-   "family": "dictionary"
-  },
-  {
-   "type": "suspected_duplicate_entity",
-   "severity": "medium",
-   "drug_a": {
     "drug_id": "CHEMBL2087361",
     "name": "ICOTINIB"
    },
@@ -14635,8 +16068,8 @@
    "shared_aliases": [
     "interferon",
     "pegasys",
-    "peginterferon",
-    "pegylatedinterferon"
+    "pegifn",
+    "peginterferon"
    ],
    "action": "flagged for curator review; not merged",
    "why": "identifiers sharing this many aliases usually describe one substance",
@@ -14859,18 +16292,39 @@
    "type": "suspected_duplicate_entity",
    "severity": "medium",
    "drug_a": {
-    "drug_id": "CHEMBL1201560",
-    "name": "PEGINTERFERON ALFA-2A"
+    "drug_id": "CHEMBL1201558",
+    "name": "INTERFERON ALFA-2B"
    },
    "drug_b": {
-    "drug_id": "CHEMBL2108506",
-    "name": "INTERFERON ALFA"
+    "drug_id": "CHEMBL2108494",
+    "name": "INTERFERON"
    },
    "shared_alias_count": 3,
    "shared_aliases": [
-    "interferonalfa2a",
-    "pegintron",
-    "pegylatedinterferonalfa2a"
+    "ifn",
+    "interferon",
+    "interferonalfa2b"
+   ],
+   "action": "flagged for curator review; not merged",
+   "why": "identifiers sharing this many aliases usually describe one substance",
+   "family": "dictionary"
+  },
+  {
+   "type": "suspected_duplicate_entity",
+   "severity": "medium",
+   "drug_a": {
+    "drug_id": "CHEMBL1201558",
+    "name": "INTERFERON ALFA-2B"
+   },
+   "drug_b": {
+    "drug_id": "CHEMBL1201560",
+    "name": "PEGINTERFERON ALFA-2A"
+   },
+   "shared_alias_count": 3,
+   "shared_aliases": [
+    "interferon",
+    "peginterferonalfa2b",
+    "pegintron"
    ],
    "action": "flagged for curator review; not merged",
    "why": "identifiers sharing this many aliases usually describe one substance",
@@ -15310,6 +16764,19 @@
    "merged_names": [
     "NovoCure GmbH",
     "NovoCure Ltd."
+   ],
+   "why": "reported so a reviewer can confirm these are one organisation; legal-suffix stripping cannot tell a subsidiary from a namesake"
+  },
+  {
+   "family": "graph",
+   "type": "company_names_merged",
+   "severity": "low",
+   "canonical_key": "merckco",
+   "merged_names": [
+    "ArQule, Inc., a subsidiary of Merck Sharp & Dohme LLC, a subsidiary of Merck & Co., Inc. (Rahway, NJ USA)",
+    "Immune Design, a subsidiary of Merck & Co., Inc. (Rahway, New Jersey USA)",
+    "Oncoethix GmbH, a subsidiary of Merck & Co., Inc. (Rahway, New Jersey USA)",
+    "Schering-Plough"
    ],
    "why": "reported so a reviewer can confirm these are one organisation; legal-suffix stripping cannot tell a subsidiary from a namesake"
   },

@@ -204,3 +204,68 @@ def test_class_guard_exempts_named_antibodies_only():
 def test_three_letter_abbreviation_kept_when_unambiguous():
     assert resolve("PTX")[0][1] == "PACLITAXEL"
     assert resolve("AC") == [(N.TIER_UNRESOLVED, None)]   # a regimen
+
+
+# --------------------------------------------------------------------------- #
+# round 3 (codex_report_round3.txt)
+# --------------------------------------------------------------------------- #
+def test_long_vaccine_phrase_is_a_class_term():
+    assert resolve("autologous dendritic cell-adenovirus CCL21 vaccine") == [
+        (N.TIER_BLOCKED_CLASS, None)]
+
+
+def test_drug_free_is_an_absence():
+    assert resolve("pembrolizumab-free regimen") == [(N.TIER_BLOCKED_NEGATED, None)]
+
+
+def test_bracketed_isotope_is_a_tracer():
+    assert resolve("[89Zr]pembrolizumab") == [(N.TIER_BLOCKED_CLASS, None)]
+
+
+def test_growth_factor_biosimilars_and_reformulation_brands():
+    for s in ("filgrastim-sndz", "pegfilgrastim-jmdb", "Pazenir", "ABI-007"):
+        assert resolve(s) == [(N.TIER_BLOCKED_DISTINCT_PRODUCT, None)], s
+
+
+def test_uppercase_originator_suffix_resolves():
+    assert [n for _t, n in resolve("Cemiplimab-RWLC")] == ["CEMIPLIMAB"]
+
+
+def test_ester_is_checked_before_any_lookup():
+    for s in ("dexamethasone sodium phosphate", "etoposide phosphate"):
+        assert resolve(s) == [(N.TIER_UNRESOLVED, None)], s
+
+
+def test_regimen_acronym_from_any_source():
+    assert resolve("ICE") == [(N.TIER_UNRESOLVED, None)]
+
+
+def test_placebo_reference_blocks_only_its_own_drug():
+    tiers = resolve("cisplatin + placebo to match pembrolizumab")
+    assert (N.TIER_EXACT, "CISPLATIN") in tiers
+    assert all(name != "PEMBROLIZUMAB" for _t, name in tiers)
+
+
+def test_legal_renames_are_not_ownership():
+    for name in ("GSK", "GlaxoSmithKline", "Schering-Plough"):
+        assert N.normalize_company(name)["parent"] is None, name
+    assert (N.normalize_company("Schering-Plough")["key"]
+            == N.normalize_company("Merck & Co., Inc.")["key"])
+
+
+def test_query_refuses_distinct_products():
+    kg = Q.OncoKG()
+    for q in ("What trials evaluate Mvasi?", "What trials evaluate liposomal doxorubicin?"):
+        assert not [e for e in kg.link_entities(q) if e["type"] == "Drug"], q
+
+
+def test_groundedness_catches_known_drugs_and_odd_numbers():
+    kg = Q.OncoKG()
+    vocab = set(kg.dic["index"])
+    ev = [Q.Evidence(statement="Osimertinib was evaluated in 12 trials", edge_id="e",
+                     relation="R", source="s", source_record="NCT1", fetched_at=None,
+                     confidence=1.0)]
+    for t in ("Osimertinib with aspirin in 12 trials.", "Osimertinib in 1e6 patients.",
+              "Osimertinib in ⅔ of patients."):
+        assert Q.OncoKG.check_groundedness(t, ev, [{"label": "OSIMERTINIB"}], True,
+                                           vocabulary=vocab)["grounded"] is False, t

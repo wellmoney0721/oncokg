@@ -129,7 +129,10 @@ def build_drug_dictionary(drug_rows: list[dict]) -> dict:
         def add(label: str, alias_type: str, source: str | None = None):
             if not label:
                 return
-            if T.canonical_key(label) in DISTINCT_PRODUCT_ALIASES:
+            own = drugs[did]["name"] or ""
+            if (T.canonical_key(label) in DISTINCT_PRODUCT_ALIASES
+                    or (T.is_distinct_product(label) and not T.is_distinct_product(own)
+                        and not re.search(r"peg|liposom|albumin|nanopart", own, re.I))):
                 build_findings.append({
                     "type": "distinct_product_alias",
                     "severity": "high",
@@ -137,7 +140,10 @@ def build_drug_dictionary(drug_rows: list[dict]) -> dict:
                     "affected_drugs": [did],
                     "affected_drug_name": drugs[did]["name"],
                     "action": "alias dropped before indexing",
-                    "why": DISTINCT_PRODUCT_ALIASES[T.canonical_key(label)],
+                    "why": DISTINCT_PRODUCT_ALIASES.get(
+                        T.canonical_key(label),
+                        "a biosimilar or reformulated product named by the alias "
+                        "is not the originator molecule"),
                 })
                 return
             if T.is_placebo(label):
@@ -232,13 +238,23 @@ def curate_dictionary(dic: dict) -> list[dict]:
         entries = index[key]
         keep = []
         for e in entries:
-            if e.get("source") != "AACT" or e["alias_type"] == "preferred_name":
+            if e["alias_type"] == "preferred_name":
                 keep.append(e)
                 continue
-            reason = _foreign_registry_alias(e["alias"], drugs[e["drug_id"]])
-            if (reason is None and len(key) <= 3 and not T.is_dev_code(e["alias"])
-                    and _ambiguous_short_alias(e["alias"], index)):
-                reason = "abbreviation"
+            if e.get("source") != "AACT":
+                # curated synonyms are trusted, except that a regimen acronym
+                # is never one drug whoever lists it ("ICE" under IFOSFAMIDE)
+                if T.canonical_key(e["alias"]) not in REGIMEN_ACRONYMS:
+                    keep.append(e)
+                    continue
+                reason = "regimen"
+            else:
+                reason = None
+            if reason is None:
+                reason = _foreign_registry_alias(e["alias"], drugs[e["drug_id"]])
+                if (reason is None and len(key) <= 3 and not T.is_dev_code(e["alias"])
+                        and _ambiguous_short_alias(e["alias"], index)):
+                    reason = "abbreviation"
             if reason is None:
                 keep.append(e)
                 continue
@@ -355,8 +371,17 @@ REGIMEN_ACRONYMS = {
     "xelox", "capox", "gemcis", "gemcarbo", "gemox", "abvd", "beacopp", "mvac",
     "ddmvac", "pfregimen", "tcbh", "tcb", "ecf", "eox", "flot", "icecure",
     "vac", "vip", "pcv", "tpf", "dcf", "gp", "gc", "tc", "cp", "pc", "ep",
-    "ac", "ec", "fec", "cmf", "rd", "vrd", "vd", "mp", "dm",
+    "ac", "ec", "fec", "cmf", "rd", "vrd", "vd", "mp", "dm", "ice", "rice",
+    "mice", "epoch", "repoch", "dhap", "eshap", "gdp", "beam", "cav", "cvd",
 }
+
+
+def _same_entity_key(key: str) -> str:
+    """The key a name lands on after same-entity merging."""
+    for k, same in CURATED_SAME_ENTITY.items():
+        if key == k:
+            return same
+    return key
 
 
 def _ambiguous_short_alias(alias: str, index: dict) -> bool:
@@ -612,7 +637,10 @@ def resolve_drug_string(raw: str, dic: dict, index_keys: list[str],
     # a placebo joined by a combination separator means co-administration, a
     # placebo naming its reference drug does not.
     if T.is_placebo(raw):
-        reference_arm = len(parts) == 1 or T.has_placebo_reference_marker(raw)
+        # Only a single-component string is a whole reference arm. In a
+        # combination, "cisplatin + placebo to match pembrolizumab" really did
+        # give cisplatin; the placebo part is blocked on its own below.
+        reference_arm = len(parts) == 1
         if reference_arm:
             out["components"].append({
                 "component": raw, "tier": TIER_BLOCKED_PLACEBO, "drug_id": None,
@@ -621,6 +649,19 @@ def resolve_drug_string(raw: str, dic: dict, index_keys: list[str],
             })
             return out
         cleaned_doc["rules"].append("placebo_co_administration_split")
+
+    # drugs a placebo part says it imitates ("placebo to match X" -> X)
+    referenced: set[str] = set()
+    if T.is_placebo(raw) and T.has_placebo_reference_marker(raw):
+        for p in parts:
+            if T.is_placebo(p):
+                target = T.RE_PLACEBO_REFERENCE.sub(" ", p)
+                target = T.RE_PLACEBO.sub(" ", target).strip(" ,;:-")
+                if target and target != p:
+                    for c in resolve_drug_string(target, dic, index_keys,
+                                                 target_keys)["components"]:
+                        if c.get("drug_id"):
+                            referenced.add(c["drug_id"])
 
     # Each cleaned part is paired with the uncleaned text it came from. Cleaning
     # removes "liposomal" as a formulation word, so the distinct-product guard
@@ -681,7 +722,8 @@ def resolve_drug_string(raw: str, dic: dict, index_keys: list[str],
 
         # a radiolabelled tracer is its own entity; its unlabelled moiety is not
         # the administered drug, so no component of it may be matched
-        if T.is_radiotracer(part) or T.is_isotope_label(part):
+        if (T.is_radiotracer(part) or T.is_isotope_label(part)
+                or T.is_radiotracer(raw_part)):
             res["tier"] = TIER_BLOCKED_CLASS
             res["rules"].append("radiotracer_guard")
             res["note"] = ("radiolabelled tracer or isotope label, not a "
@@ -689,8 +731,12 @@ def resolve_drug_string(raw: str, dic: dict, index_keys: list[str],
             out["components"].append(res)
             continue
 
-        # 1. direct hit on the raw component
+        # 1. direct hit on the raw component. An ester form may only match a
+        # record whose preferred name it is (the ester's own molecule), never a
+        # synonym listed under the parent steroid.
         hits = _lookup(index, part)
+        if hits and T.RE_ESTER_FORM.search(part):
+            hits = [h for h in hits if h["alias_type"] == "preferred_name"]
         tier = None
         if hits:
             tier = (TIER_EXACT if any(h["alias_type"] == "preferred_name" for h in hits)
@@ -820,6 +866,16 @@ def resolve_drug_string(raw: str, dic: dict, index_keys: list[str],
                 res["matched_alias"] = hits[0]["alias"]
         out["components"].append(res)
 
+    # A placebo that names its reference drug blocks that drug wherever else it
+    # appears in the string ("Placebo to Match AZD9291, Osimertinib" lists one
+    # drug twice), but not a different drug the arm really received.
+    if referenced:
+        for c in out["components"]:
+            if c.get("drug_id") in referenced:
+                c.update({"tier": TIER_BLOCKED_PLACEBO, "drug_id": None,
+                          "note": "the drug this arm's placebo imitates - no exposure"})
+                c.setdefault("rules", []).append("placebo_reference_match")
+
     return out
 
 
@@ -942,9 +998,8 @@ CURATED_PARENTS = {
     "msd": "Merck & Co",
     "mercksharpdohme": "Merck & Co",
     "merckcoinc": "Merck & Co",
-    # Schering-Plough merged into Merck & Co in 2009. The bare key "schering"
-    # also matched Bayer Schering Pharma and Schering AG, which belong to Bayer.
-    "scheringplough": "Merck & Co",
+    # Schering-Plough is in CURATED_SAME_ENTITY (renamed Merck & Co). The bare
+    # key "schering" used to match Bayer Schering Pharma and Schering AG too.
     "prometheusbiosciences": "Merck & Co",
     "merckkgaa": "Merck KGaA",
     "emdserono": "Merck KGaA",
@@ -1009,6 +1064,9 @@ CURATED_SAME_ENTITY = {
     "lilly": "elililly",
     "elilillyand": "elililly",          # "Eli Lilly and Company" after stripping
     "gsk": "glaxosmithkline",
+    # Schering-Plough was the legal survivor of the 2009 merger and renamed
+    # itself Merck & Co., Inc.; it is that company, not a subsidiary of it
+    "scheringplough": "merckco",
     "hoffmannlaroche": "roche",
     "hengrui": "jiangsuhengrui",
 }
@@ -1104,6 +1162,9 @@ def normalize_company(raw: str) -> dict:
     text = re.sub(r"\s+(?:and|&|a|an|the|of|for)$", "", text, flags=re.I)
     text = T.RE_MULTISPACE.sub(" ", text).strip(" -,&")
     key = T.canonical_key(text)
+    if re.search(r"\bmerck\s*(?:&|and)\s*co\b", name, re.I):
+        key = "merckco"
+        rules.append("curated_same_entity")
     for k, same in sorted(CURATED_SAME_ENTITY.items(), key=lambda kv: -len(kv[0])):
         if key.startswith(same):
             break                       # already the current name
@@ -1126,7 +1187,7 @@ def normalize_company(raw: str) -> dict:
                 break
     # a company is not its own parent; the map exists to connect distinct
     # legal entities, not to restate one
-    if match is not None and T.canonical_key(match) != key:
+    if match is not None and _same_entity_key(T.canonical_key(match)) != key:
         parent = match
         rules.append("curated_parent_map")
     # The organisation keeps its own name. A corporate parent is a *relationship*,

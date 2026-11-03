@@ -40,8 +40,8 @@
         0.6756,
         1.0
       ],
-      "population_unique": 206,
-      "population_occurrences": 268,
+      "population_unique": 227,
+      "population_occurrences": 291,
       "source": "test sample"
     },
     "BLOCKED_PLACEBO": {
@@ -52,8 +52,8 @@
         0.6756,
         1.0
       ],
-      "population_unique": 53,
-      "population_occurrences": 151,
+      "population_unique": 54,
+      "population_occurrences": 152,
       "source": "test sample"
     },
     "BLOCKED_TARGET_TERM": {
@@ -76,8 +76,8 @@
         0.8713,
         1.0
       ],
-      "population_unique": 208,
-      "population_occurrences": 218,
+      "population_unique": 205,
+      "population_occurrences": 215,
       "source": "test sample"
     },
     "EXACT": {
@@ -88,20 +88,20 @@
         0.9124,
         1.0
       ],
-      "population_unique": 1408,
-      "population_occurrences": 3995,
+      "population_unique": 1407,
+      "population_occurrences": 3994,
       "source": "test sample"
     },
     "PARENTHETICAL": {
-      "sampled": 6,
-      "correct": 6,
+      "sampled": 5,
+      "correct": 5,
       "rate": 1.0,
       "ci95": [
-        0.6097,
+        0.5655,
         1.0
       ],
-      "population_unique": 13,
-      "population_occurrences": 14,
+      "population_unique": 12,
+      "population_occurrences": 13,
       "source": "test sample"
     },
     "UNRESOLVED": {
@@ -112,8 +112,8 @@
         0.8157,
         1.0
       ],
-      "population_unique": 1128,
-      "population_occurrences": 1248,
+      "population_unique": 1108,
+      "population_occurrences": 1226,
       "source": "test sample"
     },
     "CLEANED": {
@@ -168,7 +168,7 @@
   "accepted_precision": {
     "estimate": 0.9991,
     "ci95": [
-      0.8947,
+      0.8946,
       0.9997
     ],
     "method": "stratified estimate weighted by distinct resolutions per tier; interval propagated from per-tier Wilson bounds, not a normal approximation",
@@ -192,17 +192,17 @@
   },
   "as_labelled_raw_precision": {
     "accepted_rows_scored": 115,
-    "accepted_rows_correct": 103,
-    "rate": 0.8957,
+    "accepted_rows_correct": 102,
+    "rate": 0.887,
     "ci95": [
-      0.8264,
-      0.9393
+      0.8162,
+      0.9327
     ],
     "note": "every labelled accepted row, scored on the resolution it had when labelled. On the held-out test sample this is the frozen measurement of the pipeline before the audit repairs; it does not describe the current pipeline"
   },
   "held_out_status": "the test sample has been used to motivate repairs in two audit rounds; figures for the current pipeline on it are not a held-out estimate. Measuring the repaired pipeline needs a new sample",
   "stale_labels": {
-    "count": 25,
+    "count": 26,
     "note": "rows whose resolution has changed since they were labelled; excluded from every figure above and listed for re-labelling",
     "rows": [
       {
@@ -310,6 +310,14 @@
         "labelled_verdict": "incorrect"
       },
       {
+        "id": "139",
+        "raw": "DN-101 (calcitriol) - Drug",
+        "component": "calcitriol",
+        "labelled_tier": "PARENTHETICAL",
+        "labelled_drug_id": "CHEMBL846",
+        "labelled_verdict": "incorrect"
+      },
+      {
         "id": "140",
         "raw": "GV20-0251 and Pembrolizumab [KEYTRUDA®]",
         "component": "KEYTRUDA®",
@@ -408,21 +416,21 @@
     ]
   },
   "raw_sample_precision": {
-    "accepted_rows_scored": 99,
-    "accepted_rows_correct": 99,
+    "accepted_rows_scored": 98,
+    "accepted_rows_correct": 98,
     "rate": 1.0,
     "ci95": [
-      0.9626,
+      0.9623,
       1.0
     ],
-    "note": "the unweighted result over the rows a human actually read. 99 of the 147 current rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 172 (25 stale), the precision denominator is 99 -- these are different numbers and quoting the first as the second overstates the evidence"
+    "note": "the unweighted result over the rows a human actually read. 98 of the 146 current rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 172 (26 stale), the precision denominator is 98 -- these are different numbers and quoting the first as the second overstates the evidence"
   },
   "coverage": {
-    "component_occurrences_total": 6789,
-    "component_occurrences_excluding_blocked": 6355,
-    "accepted_occurrences": 4942,
-    "resolved_rate_of_substance_like": 0.7777,
-    "resolved_rate_of_all": 0.7279
+    "component_occurrences_total": 6787,
+    "component_occurrences_excluding_blocked": 6329,
+    "accepted_occurrences": 4937,
+    "resolved_rate_of_substance_like": 0.7801,
+    "resolved_rate_of_all": 0.7274
   },
   "withheld_tier_quality": {
     "FUZZY_REVIEW_would_have_been_correct": 0.4444444444444444,

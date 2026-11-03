@@ -2,8 +2,8 @@
   "what_this_measures": "the same corpus resolved twice -- once against the dictionary as the reference data supplies it, once after curation -- so the effect of curation is a measurement rather than a recollection",
   "why_absolute_counts_differ_from_the_pipeline": "this pass resolves every intervention in the raw snapshot, while the pipeline first drops out-of-scope trials, so the absolute totals here run slightly higher than reports/evaluation_*.json. Both arms of this comparison use the identical corpus, so the before/after delta is unaffected",
   "lookup_keys_ambiguous": {
-    "before": 338,
-    "after": 98
+    "before": 327,
+    "after": 99
   },
   "resolutions_by_tier": {
     "ALIAS": {
@@ -12,28 +12,28 @@
       "delta": 16
     },
     "AMBIGUOUS": {
-      "before": 2189,
+      "before": 2187,
       "after": 65,
-      "delta": -2124
+      "delta": -2122
     },
     "BLOCKED_CLASS_TERM": {
-      "before": 540,
-      "after": 540,
+      "before": 569,
+      "after": 569,
       "delta": 0
     },
     "BLOCKED_DISTINCT_PRODUCT": {
-      "before": 89,
-      "after": 89,
+      "before": 90,
+      "after": 90,
       "delta": 0
     },
     "BLOCKED_NEGATED": {
-      "before": 10,
-      "after": 10,
+      "before": 11,
+      "after": 11,
       "delta": 0
     },
     "BLOCKED_PLACEBO": {
-      "before": 195,
-      "after": 195,
+      "before": 196,
+      "after": 196,
       "delta": 0
     },
     "BLOCKED_TARGET_TERM": {
@@ -47,14 +47,14 @@
       "delta": 0
     },
     "CONTAINED_ALIAS": {
-      "before": 135,
-      "after": 234,
-      "delta": 99
+      "before": 133,
+      "after": 231,
+      "delta": 98
     },
     "EXACT": {
       "before": 1997,
-      "after": 4054,
-      "delta": 2057
+      "after": 4053,
+      "delta": 2056
     },
     "FUZZY_AUTO": {
       "before": 10,
@@ -67,8 +67,8 @@
       "delta": 0
     },
     "PARENTHETICAL": {
-      "before": 14,
-      "after": 15,
+      "before": 13,
+      "after": 14,
       "delta": 1
     },
     "SALT_STRIPPED": {
@@ -77,23 +77,23 @@
       "delta": 0
     },
     "UNRESOLVED": {
-      "before": 2494,
-      "after": 2488,
-      "delta": -6
+      "before": 2466,
+      "after": 2459,
+      "delta": -7
     }
   },
   "headline": {
-    "ambiguous_before": 2189,
+    "ambiguous_before": 2187,
     "ambiguous_after": 65,
     "exact_before": 1997,
-    "exact_after": 4054
+    "exact_after": 4053
   },
   "curation_findings_by_type": {
-    "distinct_product_alias": 7,
+    "distinct_product_alias": 204,
     "placebo_string_in_synonym_list": 6,
     "class_term_as_synonym": 117,
-    "registry_alias_removed": 318,
-    "genuinely_ambiguous_alias": 98,
+    "registry_alias_removed": 248,
+    "genuinely_ambiguous_alias": 99,
     "cross_drug_synonym": 57,
     "parent_child_collapse": 60
   }

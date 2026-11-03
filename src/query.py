@@ -119,8 +119,34 @@ class OncoKG:
         seen: set = set()
         tokens = [t.strip(" ?.,") for t in re.split(r"[\s,]+", question) if t.strip(" ?.,")]
 
+        # The resolver's refusals apply to questions too. Linking straight
+        # against the index let "Mvasi" or "liposomal doxorubicin" answer as
+        # the originator molecule. A token naming a distinct product is
+        # refused; a qualifier ("liposomal", "biosimilar") takes its
+        # neighbours with it.
+        refused: set[int] = set()
+        for i, tok in enumerate(tokens):
+            if T.is_distinct_product(tok) or T.is_radiotracer(tok):
+                refused.add(i)
+                if not T.canonical_key(tok) in self.dic["index"]:
+                    refused.update({i - 1, i + 1})
+        refused = {x for x in refused if 0 <= x < len(tokens)}
+        run: list[int] = []
+        for i in sorted(refused) + [None]:
+            if run and (i is None or i != run[-1] + 1):
+                span = " ".join(tokens[run[0]:run[-1] + 1])
+                found.append({"type": "Refused", "id": None, "label": span,
+                              "matched_text": span,
+                              "why": "names a distinct product or tracer, not "
+                                     "the originator molecule"})
+                run = []
+            if i is not None:
+                run.append(i)
+
         for size in range(min(5, len(tokens)), 0, -1):
             for i in range(len(tokens) - size + 1):
+                if refused & set(range(i, i + size)):
+                    continue
                 window = " ".join(tokens[i:i + size])
                 if len(window) < 3:
                     continue
@@ -357,7 +383,8 @@ class OncoKG:
         # world, so it is excluded from the groundedness check
         claim_text = text.split("\nScope:")[0]
         checks = self.check_groundedness(claim_text, evidence, entities,
-                                         generated=generated)
+                                         generated=generated,
+                                         vocabulary=set(self.dic["index"]))
         return Answer(question, intent, entities, text, evidence, by, checks)
 
     @staticmethod
@@ -406,7 +433,8 @@ class OncoKG:
     # -- answer quality ---------------------------------------------------- #
     @staticmethod
     def check_groundedness(text: str, evidence: list[Evidence],
-                           entities: list[dict], generated: bool = True) -> dict:
+                           entities: list[dict], generated: bool = True,
+                           vocabulary: set | None = None) -> dict:
         """Verify a *generated* answer says nothing the evidence does not contain.
 
         Two things this check is not, both found by an adversarial review and
@@ -485,6 +513,20 @@ class OncoKG:
                                     "why": "looks like a drug name or code but "
                                            "is not in the evidence"})
 
+        # Any word the drug vocabulary knows ("aspirin") is a drug name,
+        # whatever its shape, and must be in the evidence.
+        if vocabulary:
+            for w in set(re.findall(r"[A-Za-z][A-Za-z0-9\-]{3,}", text)):
+                if T.canonical_key(w) in vocabulary and w.lower() not in haystack:
+                    unsupported.append({"kind": "drug_name", "value": w,
+                                        "why": "a known drug name not in the evidence"})
+
+        # Figures in forms the number matcher does not read: scientific
+        # notation ("1e6") and Unicode fractions or superscripts ("⅔").
+        for odd in set(RE_ODD_NUMBER.findall(text)):
+            unsupported.append({"kind": "number_unreadable", "value": odd,
+                                "why": "a figure in a form the check cannot match"})
+
         # one finding per value, first reason kept, in a stable order
         seen_values: set[str] = set()
         unsupported = [u for u in sorted(unsupported, key=lambda u: (u["value"], u["kind"]))
@@ -500,6 +542,7 @@ class OncoKG:
         }
 
 
+RE_ODD_NUMBER = re.compile(r"\d+(?:\.\d+)?[eE][+\-]?\d+|[\u00bc-\u00be\u2150-\u215e\u00b2\u00b3\u00b9\u2070-\u2079]")
 RE_NUMBER = re.compile(r"(?<![\w.])\d[\d,]{0,8}(?:\.\d+)?(?![\w])")
 RE_NUMBER_WORD = re.compile(
     r"\b(?:zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|"

@@ -30,8 +30,8 @@
         0.6097,
         1.0
       ],
-      "population_unique": 206,
-      "population_occurrences": 268,
+      "population_unique": 227,
+      "population_occurrences": 291,
       "source": "postfix sample"
     },
     "BLOCKED_PLACEBO": {
@@ -42,20 +42,20 @@
         0.3006,
         0.9544
       ],
-      "population_unique": 53,
-      "population_occurrences": 151,
+      "population_unique": 54,
+      "population_occurrences": 152,
       "source": "postfix sample"
     },
     "CONTAINED_ALIAS": {
-      "sampled": 15,
+      "sampled": 14,
       "correct": 14,
-      "rate": 0.9333333333333333,
+      "rate": 1.0,
       "ci95": [
-        0.7018,
-        0.9881
+        0.7847,
+        1.0
       ],
-      "population_unique": 208,
-      "population_occurrences": 218,
+      "population_unique": 205,
+      "population_occurrences": 215,
       "source": "postfix sample"
     },
     "EXACT": {
@@ -66,8 +66,8 @@
         0.7225,
         1.0
       ],
-      "population_unique": 1408,
-      "population_occurrences": 3995,
+      "population_unique": 1407,
+      "population_occurrences": 3994,
       "source": "postfix sample"
     },
     "PARENTHETICAL": {
@@ -78,8 +78,8 @@
         0.4385,
         1.0
       ],
-      "population_unique": 13,
-      "population_occurrences": 14,
+      "population_unique": 12,
+      "population_occurrences": 13,
       "source": "postfix sample"
     },
     "UNRESOLVED": {
@@ -90,8 +90,8 @@
         0.6756,
         1.0
       ],
-      "population_unique": 1128,
-      "population_occurrences": 1248,
+      "population_unique": 1108,
+      "population_occurrences": 1226,
       "source": "postfix sample"
     },
     "AMBIGUOUS": {
@@ -168,10 +168,10 @@
     }
   },
   "accepted_precision": {
-    "estimate": 0.9927,
+    "estimate": 0.9991,
     "ci95": [
-      0.7061,
-      0.9986
+      0.7141,
+      0.9997
     ],
     "method": "stratified estimate weighted by distinct resolutions per tier; interval propagated from per-tier Wilson bounds, not a normal approximation",
     "weighted_over_tiers": [
@@ -185,26 +185,26 @@
     ],
     "caveat": "the sample is drawn by a disproportionate per-tier quota, so this reweighting is required; it is also what makes the figure higher than the raw rows, so read it next to raw_sample_precision below. The interval is a weighted sum of per-tier Wilson bounds: conservative, but not a calibrated 95% interval",
     "bootstrap_ci95": [
-      0.9794,
+      0.9977,
       1.0
     ],
     "bootstrap_note": "stratified bootstrap over the sampled rows, 20,000 resamples. Narrower, and blind to errors in tiers that scored 100% in the sample",
     "carried_tiers_weight_share": 0.0088,
-    "estimate_without_carried_tiers": 0.9935
+    "estimate_without_carried_tiers": 1.0
   },
   "as_labelled_raw_precision": {
     "accepted_rows_scored": 38,
-    "accepted_rows_correct": 36,
-    "rate": 0.9474,
+    "accepted_rows_correct": 35,
+    "rate": 0.9211,
     "ci95": [
-      0.8271,
-      0.9854
+      0.792,
+      0.9728
     ],
     "note": "every labelled accepted row, scored on the resolution it had when labelled. On the held-out test sample this is the frozen measurement of the pipeline before the audit repairs; it does not describe the current pipeline"
   },
   "held_out_status": "not a held-out sample",
   "stale_labels": {
-    "count": 4,
+    "count": 5,
     "note": "rows whose resolution has changed since they were labelled; excluded from every figure above and listed for re-labelling",
     "rows": [
       {
@@ -213,7 +213,7 @@
         "component": "ABI-007",
         "labelled_tier": "ALIAS",
         "labelled_drug_id": "CHEMBL428647",
-        "labelled_verdict": "correct"
+        "labelled_verdict": "incorrect"
       },
       {
         "id": "8",
@@ -221,6 +221,14 @@
         "component": "Nab-paclitaxel",
         "labelled_tier": "ALIAS",
         "labelled_drug_id": "CHEMBL428647",
+        "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "22",
+        "raw": "autologous dendritic cell-adenovirus CCL21 vaccine",
+        "component": "adenovirus",
+        "labelled_tier": "CONTAINED_ALIAS",
+        "labelled_drug_id": "CHEMBL3990045",
         "labelled_verdict": "incorrect"
       },
       {
@@ -242,21 +250,21 @@
     ]
   },
   "raw_sample_precision": {
-    "accepted_rows_scored": 36,
+    "accepted_rows_scored": 35,
     "accepted_rows_correct": 35,
-    "rate": 0.9722,
+    "rate": 1.0,
     "ci95": [
-      0.8583,
-      0.9951
+      0.9011,
+      1.0
     ],
-    "note": "the unweighted result over the rows a human actually read. 36 of the 54 current rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 58 (4 stale), the precision denominator is 36 -- these are different numbers and quoting the first as the second overstates the evidence"
+    "note": "the unweighted result over the rows a human actually read. 35 of the 53 current rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 58 (5 stale), the precision denominator is 35 -- these are different numbers and quoting the first as the second overstates the evidence"
   },
   "coverage": {
-    "component_occurrences_total": 6789,
-    "component_occurrences_excluding_blocked": 6355,
-    "accepted_occurrences": 4942,
-    "resolved_rate_of_substance_like": 0.7777,
-    "resolved_rate_of_all": 0.7279
+    "component_occurrences_total": 6787,
+    "component_occurrences_excluding_blocked": 6329,
+    "accepted_occurrences": 4937,
+    "resolved_rate_of_substance_like": 0.7801,
+    "resolved_rate_of_all": 0.7274
   },
   "withheld_tier_quality": {
     "FUZZY_REVIEW_would_have_been_correct": 0.4444444444444444,

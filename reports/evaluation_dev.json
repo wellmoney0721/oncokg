@@ -35,20 +35,20 @@
         0.6756,
         1.0
       ],
-      "population_unique": 206,
-      "population_occurrences": 268,
+      "population_unique": 227,
+      "population_occurrences": 291,
       "source": "dev sample"
     },
     "BLOCKED_PLACEBO": {
-      "sampled": 4,
-      "correct": 4,
+      "sampled": 3,
+      "correct": 3,
       "rate": 1.0,
       "ci95": [
-        0.5101,
+        0.4385,
         1.0
       ],
-      "population_unique": 53,
-      "population_occurrences": 151,
+      "population_unique": 54,
+      "population_occurrences": 152,
       "source": "dev sample"
     },
     "BLOCKED_TARGET_TERM": {
@@ -83,8 +83,8 @@
         0.8111,
         0.9932
       ],
-      "population_unique": 208,
-      "population_occurrences": 218,
+      "population_unique": 205,
+      "population_occurrences": 215,
       "source": "dev sample"
     },
     "EXACT": {
@@ -95,8 +95,8 @@
         0.9124,
         1.0
       ],
-      "population_unique": 1408,
-      "population_occurrences": 3995,
+      "population_unique": 1407,
+      "population_occurrences": 3994,
       "source": "dev sample"
     },
     "FUZZY_AUTO": {
@@ -131,8 +131,8 @@
         0.5101,
         1.0
       ],
-      "population_unique": 13,
-      "population_occurrences": 14,
+      "population_unique": 12,
+      "population_occurrences": 13,
       "source": "dev sample"
     },
     "SALT_STRIPPED": {
@@ -148,22 +148,22 @@
       "source": "dev sample"
     },
     "UNRESOLVED": {
-      "sampled": 25,
-      "correct": 24,
-      "rate": 0.96,
+      "sampled": 24,
+      "correct": 23,
+      "rate": 0.9583333333333334,
       "ci95": [
-        0.8046,
-        0.9929
+        0.7976,
+        0.9926
       ],
-      "population_unique": 1128,
-      "population_occurrences": 1248,
+      "population_unique": 1108,
+      "population_occurrences": 1226,
       "source": "dev sample"
     }
   },
   "accepted_precision": {
     "estimate": 0.9789,
     "ci95": [
-      0.8656,
+      0.8658,
       0.9945
     ],
     "method": "stratified estimate weighted by distinct resolutions per tier; interval propagated from per-tier Wilson bounds, not a normal approximation",
@@ -187,17 +187,17 @@
   },
   "as_labelled_raw_precision": {
     "accepted_rows_scored": 137,
-    "accepted_rows_correct": 126,
-    "rate": 0.9197,
+    "accepted_rows_correct": 124,
+    "rate": 0.9051,
     "ci95": [
-      0.8619,
-      0.9546
+      0.8444,
+      0.9437
     ],
     "note": "every labelled accepted row, scored on the resolution it had when labelled. On the held-out test sample this is the frozen measurement of the pipeline before the audit repairs; it does not describe the current pipeline"
   },
   "held_out_status": "not a held-out sample",
   "stale_labels": {
-    "count": 31,
+    "count": 33,
     "note": "rows whose resolution has changed since they were labelled; excluded from every figure above and listed for re-labelling",
     "rows": [
       {
@@ -247,6 +247,14 @@
         "labelled_tier": "BLOCKED_PLACEBO",
         "labelled_drug_id": "",
         "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "58",
+        "raw": "Placebo to Match ZD6474, Vandetanib",
+        "component": "Placebo to Match ZD6474, Vandetanib",
+        "labelled_tier": "BLOCKED_PLACEBO",
+        "labelled_drug_id": "",
+        "labelled_verdict": "correct"
       },
       {
         "id": "72",
@@ -430,7 +438,7 @@
         "component": "Genexol-PM®",
         "labelled_tier": "PARENTHETICAL",
         "labelled_drug_id": "CHEMBL428647",
-        "labelled_verdict": "correct"
+        "labelled_verdict": "incorrect"
       },
       {
         "id": "181",
@@ -438,7 +446,7 @@
         "component": "PLD",
         "labelled_tier": "PARENTHETICAL",
         "labelled_drug_id": "CHEMBL53463",
-        "labelled_verdict": "correct"
+        "labelled_verdict": "incorrect"
       },
       {
         "id": "183",
@@ -447,6 +455,14 @@
         "labelled_tier": "PARENTHETICAL",
         "labelled_drug_id": "CHEMBL2030434",
         "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "190",
+        "raw": "[64Cu]Cu-AKY-2519 (imaging)",
+        "component": "Cu-AKY-2519",
+        "labelled_tier": "UNRESOLVED",
+        "labelled_drug_id": "",
+        "labelled_verdict": "correct"
       }
     ]
   },
@@ -458,14 +474,14 @@
       0.9046,
       0.9818
     ],
-    "note": "the unweighted result over the rows a human actually read. 118 of the 183 current rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 214 (31 stale), the precision denominator is 118 -- these are different numbers and quoting the first as the second overstates the evidence"
+    "note": "the unweighted result over the rows a human actually read. 118 of the 181 current rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 214 (33 stale), the precision denominator is 118 -- these are different numbers and quoting the first as the second overstates the evidence"
   },
   "coverage": {
-    "component_occurrences_total": 6789,
-    "component_occurrences_excluding_blocked": 6355,
-    "accepted_occurrences": 4942,
-    "resolved_rate_of_substance_like": 0.7777,
-    "resolved_rate_of_all": 0.7279
+    "component_occurrences_total": 6787,
+    "component_occurrences_excluding_blocked": 6329,
+    "accepted_occurrences": 4937,
+    "resolved_rate_of_substance_like": 0.7801,
+    "resolved_rate_of_all": 0.7274
   },
   "withheld_tier_quality": {
     "FUZZY_REVIEW_would_have_been_correct": 0.4444444444444444,

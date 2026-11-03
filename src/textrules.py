@@ -101,7 +101,7 @@ CLASS_TERMS = {
 # "inhibitor" or "blockade" qualified by a gene or pathway is a class, whatever
 # the qualifier is, so the exact-membership set above can never be complete.
 RE_CLASS_PATTERN = re.compile(
-    r"^(?:[A-Za-z0-9\-/\s]{2,40}?)\s*"
+    r"^(?:[A-Za-z0-9\-/\s]{2,90}?)\s*"
     r"(?:inhibitors?|blockades?|antagonists?|agonists?|modulators?|"
     r"chemotherapy|chemotherapies|immunotherapy|immunotherapies|"
     r"radiotherapy|regimens?|doublets?|triplets?|backbones?|"
@@ -148,7 +148,12 @@ RE_DISTINCT_PRODUCT = re.compile(
 # "Bevacizumab-Pfizer", "Trastuzumab-dkst": a hyphenated sponsor name or an
 # FDA four-letter suffix on an INN stem.
 RE_BIOSIMILAR_SUFFIX = re.compile(
-    r"^[A-Za-z]{6,}(?:mab|cept|tinib|ase)\s*[\-–]\s*(?P<suffix>[A-Za-z]{2,12})$", re.I)
+    r"^[A-Za-z]{6,}(?:mab|cept|tinib|ase|grastim|stim|poetin)\s*[\-–]\s*(?P<suffix>[A-Za-z]{2,12})$", re.I)
+
+# Words that follow a drug name after a hyphen but are not suffixes at all.
+# "pembrolizumab-free" is an absence, not a product.
+SUFFIX_LOOKALIKES = {"free", "only", "like", "base", "type", "form", "dose",
+                     "naive", "based", "alone", "mono", "plus", "arm"}
 
 # Since 2017 the FDA gives a four-letter suffix to *originator* biologics as
 # well (cemiplimab-rwlc, dostarlimab-gxly, tislelizumab-jsgr), so a suffix on
@@ -175,7 +180,7 @@ BIOSIMILAR_BRANDS = {
     "onbevzi", "oyavas", "abevmy", "byooviz", "kanjinti", "ogivri", "herzuma",
     "ontruzant", "trazimera", "hercessi", "zercepac", "truxima", "ruxience",
     "riabni", "rixathon", "udenyca", "fulphila", "ziextenzo", "nyvepria",
-    "fylnetra", "stimufend", "zarxio", "nivestym", "releuko",
+    "fylnetra", "stimufend", "zarxio", "nivestym", "releuko", "granix",
 }
 
 
@@ -184,6 +189,7 @@ BIOSIMILAR_BRANDS = {
 REFORMULATION_NAMES = {
     "abraxane", "abraxis", "doxil", "caelyx", "lipodox", "onivyde", "depocyt",
     "nanopac", "liporaxel", "lipusu", "genexol", "onureg", "cc486",
+    "pazenir", "abi007", "apealea", "dn101", "asentar",
 }
 
 
@@ -202,19 +208,29 @@ def is_distinct_product(text: str) -> bool:
     if not m:
         return False
     suffix = m.group("suffix")
-    if len(suffix) == 4 and suffix.islower():
-        return suffix in BIOSIMILAR_FDA_SUFFIXES
+    if suffix.lower() in SUFFIX_LOOKALIKES:
+        return False
+    # an FDA suffix is four letters, written in either case ("-rwlc", "-RWLC");
+    # a title-case word is a sponsor name ("-Pfizer", "-Teva")
+    if len(suffix) == 4 and (suffix.islower() or suffix.isupper()):
+        return suffix.lower() in BIOSIMILAR_FDA_SUFFIXES
     return True
 
 
 # An originator's FDA suffix carries no information about the molecule, so it
 # is removed before lookup: "cemiplimab-rwlc" -> "cemiplimab".
-RE_FDA_SUFFIX = re.compile(r"^(?P<inn>[A-Za-z]{6,}(?:mab|cept|ase))\s*-\s*[a-z]{4}$")
+RE_FDA_SUFFIX = re.compile(
+    r"^(?P<inn>[A-Za-z]{6,}(?:mab|cept|ase|grastim|stim|poetin))\s*-\s*(?P<sfx>[A-Za-z]{4})$")
 
 
 def strip_fda_suffix(text: str) -> str | None:
     m = RE_FDA_SUFFIX.match((text or "").strip())
-    return m.group("inn") if m else None
+    if not m:
+        return None
+    sfx = m.group("sfx")
+    if sfx.lower() in SUFFIX_LOOKALIKES or not (sfx.islower() or sfx.isupper()):
+        return None
+    return m.group("inn")
 
 
 # "No pembrolizumab", "without bevacizumab": a negated substance is the
@@ -225,8 +241,16 @@ RE_NEGATED = re.compile(
     r"withdrawal\s+of|discontinu(?:e|ed|ation\s+of))\b[\s\-]*", re.I)
 
 
+# "pembrolizumab-free regimen", "free of steroids": an absence written after
+# the substance rather than before it
+# ("free base" is a chemical form, not an absence)
+RE_NEGATED_AFTER = re.compile(
+    r"\b[A-Za-z0-9]+[\s\-]free\b(?![\s\-]*base)|\bfree\s+of\b", re.I)
+
+
 def is_negated(text: str) -> bool:
-    return bool(RE_NEGATED.match(text or ""))
+    t = text or ""
+    return bool(RE_NEGATED.match(t) or RE_NEGATED_AFTER.search(t))
 
 # A placebo arm must never create a "this company administered this drug" edge.
 RE_PLACEBO = re.compile(r"\bplacebo\b|\bsham\b|\bvehicle\s+control\b", re.I)
@@ -271,7 +295,8 @@ def is_isotope_label(text: str) -> bool:
 # "[18F]F-AraG", "68Ga-DOTATATE": an isotope prefix marks the whole string as a
 # radiolabelled tracer, whose unlabelled moiety is not the administered drug.
 RE_RADIOTRACER = re.compile(
-    r"(?:^|[\s\(\[])\[?\d{1,3}m?[\s\-]?[A-Za-z]{1,2}\]?\s*[-–]\s*\w", re.I)
+    r"(?:^|[\s\(\[])\[?\d{1,3}m?[\s\-]?[A-Za-z]{1,2}\]?\s*[-–]\s*\w"
+    r"|(?:^|[\s\(])\[\d{1,3}m?[\s\-]?[A-Za-z]{1,2}\]\s*[A-Za-z]", re.I)
 
 
 def is_radiotracer(text: str) -> bool:
