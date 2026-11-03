@@ -1,0 +1,53 @@
+{
+  "python": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+  "asserted_passing_unsupported_examples": 29,
+  "root_case_count": 34,
+  "spec_case_count": 57,
+  "report_sha256": "56c232cd0410be808481f84f4f595cbcde1f60c2156bfb1e5bed10c3750381da",
+  "checks": {
+    "head": {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "returncode": 0,
+      "stdout": "a12762b4818842131b27704cfd769f8d05b78ac5\n",
+      "stderr": ""
+    },
+    "tracked_diff": {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "HEAD",
+        "--",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "warning: unable to access 'C:\\Users\\geoum/.config/git/ignore': Permission denied\n"
+    },
+    "staged_diff": {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--exit-code"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "warning: unable to access 'C:\\Users\\geoum/.config/git/ignore': Permission denied\n"
+    },
+    "status": {
+      "command": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "returncode": 0,
+      "stdout": "?? audit_evidence_claims/r2/\n",
+      "stderr": "warning: unable to access 'C:\\Users\\geoum/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\geoum/.config/git/ignore': Permission denied\n"
+    }
+  }
+}

@@ -117,7 +117,8 @@ class OncoKG:
     def link_entities(self, question: str) -> list[dict]:
         found: list[dict] = []
         seen: set = set()
-        tokens = [t.strip(" ?.,") for t in re.split(r"[\s,]+", question) if t.strip(" ?.,")]
+        tokens = [t.strip(" ?.,!;:") for t in re.split(r"[\s,]+", question)
+                  if t.strip(" ?.,!;:")]
 
         # The resolver's refusals apply to questions too. Linking straight
         # against the index let "Mvasi" or "liposomal doxorubicin" answer as
@@ -444,7 +445,7 @@ class OncoKG:
     def check_groundedness(text: str, evidence: list[Evidence],
                            entities: list[dict], generated: bool = True,
                            vocabulary: set | None = None, linker=None) -> dict:
-        """Verify a *generated* answer says nothing the evidence does not contain.
+        """Report what in a *generated* answer the retrieved evidence does not support.
 
         Two things this check is not, both found by an adversarial review and
         written down here rather than papered over:
@@ -455,15 +456,14 @@ class OncoKG:
            `grounded=True` for it would be a test that always passes. When the
            answer was rendered rather than generated, the check reports
            `applicable=False` and asserts nothing.
-        2. Names and numbers alone are a floor. It verifies that capitalised
-           entities, drug-shaped names and numbers appear in the retrieved set,
-           and refuses figures written in words. Given a `linker` (the query
-           layer's entity linker), it also reads the answer sentence by sentence
-           (claims.check_claims): every stated relation must hold between the
-           same entities in the evidence, and every other content word must be
-           grammar or appear in evidence about that sentence's own entities, so
-           "AstraZeneca has discontinued this drug", "does not act on EGFR" and
-           "is safe" are reported. It reads words, not meaning; see claims.py.
+        2. It is a reader of word order, not of meaning. Without a `linker` it
+           only checks that capitalised entities, drug-shaped names and numbers
+           appear somewhere in the retrieved set. With one (the query layer's
+           entity linker) it also reads each clause into subject, relation and
+           object (claims.check_claims) and reports relations, values and words
+           the evidence does not give for those entities. Sentence shapes it was
+           not written for can still be misread; claims.py and README known
+           defect 13 list what is known to get through.
         """
         if not generated:
             return {
@@ -503,7 +503,15 @@ class OncoKG:
         haystack_flat = re.sub(r"[\s_\-]+", "", haystack)
         phase_nums = {n for m in re.finditer(r"\bphase\s*(\d)(?:\s*/\s*(\d))?\b", text, re.I)
                       for n in m.groups() if n}
-        for num in set(RE_NUMBER.findall(text)):
+        # digits inside a linked name ("AZD 9291") are part of the name, not a figure
+        number_text = text
+        if linker is not None:
+            for e in linker(text):
+                mt = e.get("matched_text") or ""
+                if mt and e.get("type") != "Refused" and re.search(r"\d", mt):
+                    number_text = re.sub(r"[\W_]+".join(map(re.escape, mt.split())),
+                                         " ", number_text, flags=re.I)
+        for num in set(RE_NUMBER.findall(number_text)):
             if num in phase_nums and (linker is not None or f"phase{num}" in haystack_flat):
                 continue      # with a linker, claims.py checks the phase per entity
             if num.replace(",", "") not in haystack_numbers:
@@ -553,7 +561,7 @@ class OncoKG:
 
         if linker is not None:
             from claims import check_claims
-            unsupported.extend(check_claims(text, evidence, linker))
+            unsupported.extend(check_claims(text, evidence, linker, entities))
 
         # one finding per value, first reason kept, in a stable order
         seen_values: set[str] = set()

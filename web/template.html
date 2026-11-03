@@ -260,8 +260,9 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
   <p class="lede">질문 속 약 이름도 같은 사전으로 맞추기 때문에, 상품명(예: Tagrisso)으로 물어도 표준 번호로 저장된 지도에서 찾습니다.
   답을 만든 뒤에는 <b>찾은 근거에 없는 약 이름이나 숫자가 답에 들어갔는지</b> 검사해서, 있으면 그대로 내보내지 않고 표시합니다.
   관련 없는 질문(예: 프랑스 수도)에는 답하지 않습니다.</p>
-  <div class="plain"><b>어디까지 잡나</b> &mdash; 답을 절마다 읽어, &ldquo;이 약이 이 표적에 작용한다&rdquo; 같은 관계는 말한 방향대로 같은 두 대상 사이의 근거가 있어야 통과하고, 단계&middot;숫자는 그 값이 속한 대상의 근거에 있어야 합니다.
-  &ldquo;안전하다&rdquo;, &ldquo;중단했다&rdquo;, &ldquo;~하지 않는다&rdquo;, &ldquo;개발한다&rdquo;처럼 그래프가 보증할 수 없는 말은 걸립니다.
+  <div class="plain"><b>어디까지 잡나</b> &mdash; AI가 쓴 답을 절마다 주어&middot;관계&middot;목적어로 읽어, 관계는 말한 방향대로 같은 두 대상 사이의 근거가 있는지,
+  단계&middot;숫자는 그 값이 속한 대상의 근거에 있는지 봅니다. &ldquo;안전하다&rdquo;, &ldquo;중단했다&rdquo;, &ldquo;~하지 않는다&rdquo;, &ldquo;개발한다&rdquo;처럼 그래프가 보증할 수 없는 말도 걸러냅니다.
+  다만 뜻이 아니라 단어 순서를 읽는 규칙이라, 처음 보는 문장 모양은 잘못 읽을 수 있습니다 (적대 검증 두 차례에서 찾은 빠져나가는 모양은 모두 회귀 시험으로 막았습니다).
   일부러 엄격하게 만들어 그래프에 없는 사실은 맞는 말이어도 &lsquo;확인 불가&rsquo;로 걸고, 판단은 사람에게 넘깁니다.
   지금 보이는 답은 언어 모델 없이 근거를 정해진 틀로 보여 준 것이라 검사 대상이 아닙니다.</div>
   <div class="stack" id="demos" style="margin-top:22px"></div>

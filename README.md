@@ -505,19 +505,23 @@ fixed now, and its number has been reused.
     obvious changes (spin-offs, renames, the two Mercks), but continued legal
     existence of every subsidiary is unverified, and nothing re-checks the map
     when ownership changes.
-13. **The claim check reads words, not meaning.** Generated answers are checked
-    clause by clause (`src/claims.py`). A stated relation must run in the stated
-    direction between the stated entities and match an edge of that relation (and
-    its action, for inhibits/activates); phases, statuses and figures must appear
-    in evidence about the entity they belong to; every other content word must be
-    grammar or appear in evidence naming every entity of the clause; negations,
-    comparisons, modal verbs and "develops/owns/markets" are always reported; text
-    it cannot read (non-English) is reported. It is strict on purpose: a true fact
-    the graph does not hold is reported as unverifiable, and a paraphrase it has
-    no word for ("supports trials") is reported too. What still gets through is a
-    clause whose words, entities and figures all come from one evidence statement
-    about those entities but are arranged into a different claim, and a drug name
-    outside the vocabulary that does not look like an INN.
+13. **The claim check reads word order, not meaning.** Generated answers are read
+    clause by clause into subject, relation and object (`src/claims.py`, rules in
+    its docstring) and compared with the retrieved evidence for those entities. It
+    is a set of patterns, so it is only as good as the sentence shapes it was
+    written for: two adversarial rounds found 33 and then about 40 shapes that got
+    through (reversed nouns, clefts, a second object after "and on", pronouns read
+    too early, a count borrowed from a phase, `agonist` matching inside
+    `antagonist`, headings, bracketed text, refused product names). Each is now a
+    regression test, but a shape nobody has tried yet can still be misread. Known
+    to get through: a clause whose words, entities and figures all come from one
+    evidence statement about those entities but are arranged into a different
+    claim; a drug name outside the vocabulary that does not look like an INN.
+    Known to be over-strict: a true fact the graph does not hold, a paraphrase it
+    has no word for ("supports trials"), and a refusal worded with a pronoun
+    ("so it cannot answer"). Two narrow exceptions are deliberate: a line copied
+    verbatim from an evidence statement passes, and a clause with no entity that
+    only talks about the graph ("this graph cannot answer that") passes.
 14. **Provenance does not record the code version.** Snapshots carry their
     fetch time, but the graph does not store which revision of the rules built
     it, so a change that arrives with a new snapshot and a code change together
@@ -543,7 +547,7 @@ pip install -r requirements.txt
 python src/run_all.py              # fetch, resolve, check, build, score, render
 python src/run_all.py --offline    # rebuild from the snapshots in data/raw
 
-python -m pytest tests -q                    # 128 tests
+python -m pytest tests -q                    # 175 tests
 python src/app.py                            # try-it page: http://localhost:8765
 python src/curation_effect.py                # resolve twice, with and without curation
 python src/apply_label_corrections.py --check

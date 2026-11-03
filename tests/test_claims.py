@@ -17,8 +17,12 @@ VOCAB = set(KG.dic["index"])
 
 
 def kinds(question, answer):
-    ents = KG.link_entities(question)
-    ev = KG.retrieve(KG.classify(question, ents), ents)
+    questions = [question] if isinstance(question, str) else question
+    ents, ev = [], []
+    for q in questions:          # several questions: the union of their evidence
+        e = KG.link_entities(q)
+        ents += e
+        ev += KG.retrieve(KG.classify(q, e), e)
     r = KG.check_groundedness(answer, ev, ents, True, VOCAB, linker=KG.link_entities)
     return r["grounded"], {u["kind"] for u in r["unsupported_claims"]}
 
@@ -158,5 +162,77 @@ FAITHFUL = [
 
 @pytest.mark.parametrize("q,a", FAITHFUL)
 def test_faithful_paraphrases_pass(q, a):
+    grounded, found = kinds(q, a)
+    assert grounded is True, found
+
+
+# Codex round 2: each of these passed the second version
+Q3C = ["What does osimertinib target?", "What does crizotinib target?"]
+ROUND2 = [
+    ("What does osimertinib target?", "EGFR is an osimertinib inhibitor."),
+    ("What does osimertinib target?", "EGFR is what inhibited osimertinib."),
+    ("What trials evaluate Tagrisso?", "Osimertinib is what evaluated NCT03909334."),
+    ("What is AstraZeneca running in NSCLC?", "Osimertinib is what sponsored AstraZeneca."),
+    ("What does osimertinib target?", "EGFR was inhibited osimertinib."),
+    ("What does osimertinib target?", "Osimertinib acts on EGFR and on ALK."),
+    ("What does osimertinib target?", "Osimertinib is an inhibitor of EGFR and of ALK."),
+    ("What does osimertinib target?", "Osimertinib inhibits EGFR and also ALK."),
+    (Q3C, "EGFR is a target of osimertinib and of crizotinib."),
+    (Q3C, "Osimertinib acts on EGFR. Crizotinib acts on ALK and it inhibits EGFR."),
+    (Q3C, "Osimertinib acts on EGFR. Crizotinib acts on ALK while this drug inhibits EGFR."),
+    (Q3C, "Osimertinib acts on EGFR; crizotinib on EGFR."),
+    (Q3C, "Crizotinib acts on ALK. On EGFR."),
+    ("What trials evaluate Tagrisso?",
+     "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB. It is phase 3."),
+    ("What trials evaluate Tagrisso?", "It is phase 3."),
+    ("What trials evaluate Tagrisso?", "phase 3."),
+    ("What is AstraZeneca running in NSCLC?",
+     "AstraZeneca sponsors osimertinib in 10 trials with carboplatin."),
+    ("Which drugs act on ALK?", "PLB1003 has 1 clinical trial."),
+    ("Which drugs act on ALK?", "PLB1003 has 1 NSCLC trials."),
+    ("Which drugs act on ALK?", "PLB1003: 1 trial."),
+    ("Which drugs act on ALK?", "CONTELTINIB is phase 1."),
+    ("Which companies are developing osimertinib?", "It has 14 trials."),
+    ("What does fulvestrant target?", "Fulvestrant activates ESR1."),
+    ("What does fulvestrant target?", "Fulvestrant is an agonist of ESR1."),
+    ("What does osimertinib target?", "osimertinib is safe:"),
+    ("What does osimertinib target?", "osimertinib is discontinued:\nOsimertinib acts on EGFR."),
+    ("What does osimertinib target?", "these drugs are safe:\n- OSIMERTINIB acts on EGFR (inhibitor)"),
+    ("What does osimertinib target?",
+     "these drugs do not act on EGFR:\n- OSIMERTINIB acts on EGFR (inhibitor)"),
+    ("What does osimertinib target?", "EGFR acts on these drugs:\n- OSIMERTINIB acts on EGFR (inhibitor)"),
+    ("What is the capital of France?", "This trial is phase 4."),
+    ("What trials evaluate Tagrisso?", "This trial is phase 3."),
+    ("What does osimertinib target?", "osimertinib is liposomal."),
+    ("What does osimertinib target?", "osimertinib is a biosimilar."),
+    ("What does osimertinib target?", "Osimertinib is not liposomal."),
+    ("What does osimertinib target?", "liposomal Tagrisso."),
+    ("What does osimertinib target?", "Osimertinib [ORG:is safe] acts on EGFR."),
+    ("What does osimertinib target?", "Osimertinib [ORG:inhibits ALK and] acts on EGFR."),
+    ("What does osimertinib target?", "Osimertinib is for lung cancer."),
+    ("What does osimertinib target?", "Osimertinib is lung cancer."),
+]
+
+
+@pytest.mark.parametrize("q,a", ROUND2)
+def test_round2_attacks_are_caught(q, a):
+    grounded, found = kinds(q, a)
+    assert grounded is False, a
+
+
+FAITHFUL2 = [
+    ("What does osimertinib target?", "Osimertinib acts on EGFR and it inhibits EGFR."),
+    ("What does osimertinib target?", "Osimertinib (Tagrisso) acts on EGFR."),
+    ("What does osimertinib target?", "AZD 9291 acts on EGFR."),
+    ("What does osimertinib target?", "Osimertinib is an EGFR inhibitor."),
+    ("What does fulvestrant target?", "Fulvestrant is an antagonist of ESR1."),
+    (Q3C, "Osimertinib acts on EGFR. Crizotinib acts on ALK and it inhibits ALK."),
+    (Q3C, "osimertinib acts on EGFR and crizotinib acts on ALK."),
+    ("What is the capital of France?", "This graph cannot answer that question."),
+]
+
+
+@pytest.mark.parametrize("q,a", FAITHFUL2)
+def test_round2_faithful_forms_pass(q, a):
     grounded, found = kinds(q, a)
     assert grounded is True, found
