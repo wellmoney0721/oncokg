@@ -1,0 +1,330 @@
+{
+  "port": 53283,
+  "retired_trial": {
+    "input": "D",
+    "response": {
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "D",
+          "type": "Drug",
+          "label": "Fixture drug",
+          "trials": 1,
+          "props": {}
+        },
+        "groups": [
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "total": 1,
+            "items": [
+              {
+                "id": "X",
+                "type": "Target",
+                "label": "Fixture target",
+                "edge_id": "A",
+                "weight": 0,
+                "action": null
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "malformed": [
+    {
+      "table": "node",
+      "id": "D",
+      "props": "null",
+      "input": "X",
+      "response": {
+        "status": 400,
+        "body": {
+          "error": "'NoneType' object has no attribute 'get'"
+        }
+      },
+      "after_restore": {
+        "status": 200,
+        "body": {
+          "center": {
+            "id": "X",
+            "type": "Target",
+            "label": "Fixture target",
+            "trials": null,
+            "props": {}
+          },
+          "groups": [
+            {
+              "rel": "ACTS_ON",
+              "dir": "in",
+              "type": "Drug",
+              "total": 1,
+              "items": [
+                {
+                  "id": "D",
+                  "type": "Drug",
+                  "label": "Fixture drug",
+                  "edge_id": "A",
+                  "weight": 1,
+                  "max_phase": null,
+                  "action": null
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "table": "node",
+      "id": "D",
+      "props": "[]",
+      "input": "X",
+      "response": {
+        "status": 400,
+        "body": {
+          "error": "'list' object has no attribute 'get'"
+        }
+      },
+      "after_restore": {
+        "status": 200,
+        "body": {
+          "center": {
+            "id": "X",
+            "type": "Target",
+            "label": "Fixture target",
+            "trials": null,
+            "props": {}
+          },
+          "groups": [
+            {
+              "rel": "ACTS_ON",
+              "dir": "in",
+              "type": "Drug",
+              "total": 1,
+              "items": [
+                {
+                  "id": "D",
+                  "type": "Drug",
+                  "label": "Fixture drug",
+                  "edge_id": "A",
+                  "weight": 1,
+                  "max_phase": null,
+                  "action": null
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "table": "node",
+      "id": "D",
+      "props": "{broken",
+      "input": "X",
+      "response": {
+        "status": 400,
+        "body": {
+          "error": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+        }
+      },
+      "after_restore": {
+        "status": 200,
+        "body": {
+          "center": {
+            "id": "X",
+            "type": "Target",
+            "label": "Fixture target",
+            "trials": null,
+            "props": {}
+          },
+          "groups": [
+            {
+              "rel": "ACTS_ON",
+              "dir": "in",
+              "type": "Drug",
+              "total": 1,
+              "items": [
+                {
+                  "id": "D",
+                  "type": "Drug",
+                  "label": "Fixture drug",
+                  "edge_id": "A",
+                  "weight": 1,
+                  "max_phase": null,
+                  "action": null
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "table": "edge",
+      "id": "A",
+      "props": "null",
+      "input": "X",
+      "response": {
+        "status": 400,
+        "body": {
+          "error": "'NoneType' object has no attribute 'get'"
+        }
+      },
+      "after_restore": {
+        "status": 200,
+        "body": {
+          "center": {
+            "id": "X",
+            "type": "Target",
+            "label": "Fixture target",
+            "trials": null,
+            "props": {}
+          },
+          "groups": [
+            {
+              "rel": "ACTS_ON",
+              "dir": "in",
+              "type": "Drug",
+              "total": 1,
+              "items": [
+                {
+                  "id": "D",
+                  "type": "Drug",
+                  "label": "Fixture drug",
+                  "edge_id": "A",
+                  "weight": 1,
+                  "max_phase": null,
+                  "action": null
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "table": "edge",
+      "id": "A",
+      "props": "[]",
+      "input": "X",
+      "response": {
+        "status": 400,
+        "body": {
+          "error": "'list' object has no attribute 'get'"
+        }
+      },
+      "after_restore": {
+        "status": 200,
+        "body": {
+          "center": {
+            "id": "X",
+            "type": "Target",
+            "label": "Fixture target",
+            "trials": null,
+            "props": {}
+          },
+          "groups": [
+            {
+              "rel": "ACTS_ON",
+              "dir": "in",
+              "type": "Drug",
+              "total": 1,
+              "items": [
+                {
+                  "id": "D",
+                  "type": "Drug",
+                  "label": "Fixture drug",
+                  "edge_id": "A",
+                  "weight": 1,
+                  "max_phase": null,
+                  "action": null
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "table": "edge",
+      "id": "A",
+      "props": "{broken",
+      "input": "X",
+      "response": {
+        "status": 400,
+        "body": {
+          "error": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+        }
+      },
+      "after_restore": {
+        "status": 200,
+        "body": {
+          "center": {
+            "id": "X",
+            "type": "Target",
+            "label": "Fixture target",
+            "trials": null,
+            "props": {}
+          },
+          "groups": [
+            {
+              "rel": "ACTS_ON",
+              "dir": "in",
+              "type": "Drug",
+              "total": 1,
+              "items": [
+                {
+                  "id": "D",
+                  "type": "Drug",
+                  "label": "Fixture drug",
+                  "edge_id": "A",
+                  "weight": 1,
+                  "max_phase": null,
+                  "action": null
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "current_live_edge_retired_endpoint": [],
+  "current_evaluates_counts": [
+    {
+      "n": 4455,
+      "retired_edges": 18,
+      "live_edges_with_retired_endpoint": 0
+    }
+  ],
+  "live_sponsor_classes": [
+    {
+      "sponsor_class": "FED",
+      "n": 2
+    },
+    {
+      "sponsor_class": "INDUSTRY",
+      "n": 1310
+    },
+    {
+      "sponsor_class": "NETWORK",
+      "n": 84
+    },
+    {
+      "sponsor_class": "NIH",
+      "n": 73
+    },
+    {
+      "sponsor_class": "OTHER",
+      "n": 1667
+    },
+    {
+      "sponsor_class": "OTHER_GOV",
+      "n": 40
+    }
+  ]
+}

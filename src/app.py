@@ -7,7 +7,7 @@ then four boxes: type an intervention string the way a registry would write it a
 how the resolver reads it, or ask a question and see the grounded answer with its
 evidence, give a structured answer (claims citing evidence edges) and see which
 claims the graph supports and the answer written from them, or paste free prose and
-see what the auxiliary word-order check flags. All three call
+see what the auxiliary word-order check flags. All of them call
 the functions the pipeline uses (resolve_drug_string, OncoKG.answer,
 OncoKG.check_groundedness) on the built artefacts, so what the page shows is what the
 pipeline would do. Nothing is written; the language model is never called.
@@ -24,6 +24,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import config as C
 import normalize as N
+import textrules as T
 from query import OncoKG
 
 PAGE = C.WEB / "try.html"
@@ -67,26 +68,48 @@ class Engine:
         return out
 
     def explore(self, text: str, per_group: int = 30) -> dict:
-        """One node and everything a live edge ties it to, grouped by relation.
+        """One live node and the live nodes its live edges tie it to, grouped by relation.
 
-        `text` is a node id or a name the question linker reads as one entity; a name
-        the linker refuses (a biosimilar, a tracer) is reported, not mapped to the
-        originator. Neighbours are ordered by how much evidence stands behind them."""
+        `text` is a node id or a name the question linker reads as one entity. A name
+        the linker refuses (a biosimilar, a reformulation, a tracer) is reported, never
+        mapped to the originator. Each group keeps `per_group` neighbours, sorted as the
+        page states: trials by start date (latest first), drugs by trials in the graph,
+        sponsors by trials they lead, disease targets by association score. Sponsorship
+        keeps its role (lead sponsor or collaborator)."""
         conn = self.kg.conn
+        also: list = []
+        matched = None
         row = conn.execute("SELECT id FROM node WHERE id=? AND retired_at IS NULL",
                            (text,)).fetchone()
         if row:
             nid = row["id"]
         else:
             ents = self.kg.link_entities(text)
+            refused = [e for e in ents if e["type"] == "Refused"]
             hits = [e for e in ents if e.get("id") and e["type"] != "Refused"]
             if not hits:
-                refused = [e for e in ents if e["type"] == "Refused"]
                 if refused:
                     return {"refused": refused[0]["label"], "why": refused[0]["why"]}
                 return {"not_found": text}
-            nid = hits[0]["id"]
-        node = conn.execute("SELECT id, type, label, props FROM node WHERE id=?", (nid,)).fetchone()
+            nid, matched = hits[0]["id"], hits[0].get("matched_alias") or hits[0].get("matched_text")
+            also = [{"id": e["id"], "type": e["type"], "label": e["label"]} for e in hits[1:]]
+            # the same words may also name an organisation or a target the linker
+            # passed over because a drug alias came first ("Roche" is a folic acid alias)
+            key = T.canonical_key(text)
+            for cid in self.kg.companies.get(key, []):
+                if cid != nid:
+                    lab = conn.execute("SELECT label FROM node WHERE id=? AND retired_at IS NULL",
+                                       (cid,)).fetchone()
+                    if lab:
+                        also.append({"id": cid, "type": "Company", "label": lab["label"]})
+            t = self.kg.targets.get(text.strip().lower())
+            if t and t["target_id"] != nid:
+                also.append({"id": t["target_id"], "type": "Target", "label": t["symbol"]})
+            also += [{"refused": e["label"]} for e in refused]
+        node = conn.execute("SELECT id, type, label, props FROM node WHERE id=? "
+                            "AND retired_at IS NULL", (nid,)).fetchone()
+        if node is None:                              # a name can outlive its node
+            return {"not_found": text}
         rows = conn.execute(
             "SELECT e.id AS eid, e.rel, e.src, e.props AS eprops, n.id, n.type, n.label, "
             "n.props AS nprops FROM edge e JOIN node n "
@@ -97,41 +120,52 @@ class Engine:
         trials = {}
         for i in range(0, len(drug_ids), 500):
             chunk = drug_ids[i:i + 500]
-            trials.update(conn.execute(
-                "SELECT dst, COUNT(*) FROM edge WHERE rel='EVALUATES' AND retired_at IS NULL "
-                f"AND dst IN ({','.join('?' * len(chunk))}) GROUP BY dst", chunk).fetchall())
+            trials.update(conn.execute(               # live trials only
+                "SELECT e.dst, COUNT(*) FROM edge e JOIN node t ON t.id = e.src "
+                "WHERE e.rel='EVALUATES' AND e.retired_at IS NULL AND t.retired_at IS NULL "
+                f"AND e.dst IN ({','.join('?' * len(chunk))}) GROUP BY e.dst", chunk).fetchall())
         groups: dict = {}
         for r in rows:
-            ep, np_ = json.loads(r["eprops"] or "{}"), json.loads(r["nprops"] or "{}")
+            ep, np_ = _obj(r["eprops"]), _obj(r["nprops"])
             item = {"id": r["id"], "type": r["type"], "label": r["label"], "edge_id": r["eid"]}
+            role = ep.get("role") if r["rel"] == "SPONSORS" else None
+            if r["type"] == "Drug":
+                item["trials"] = trials.get(r["id"], 0)
+                item["max_phase"] = np_.get("max_phase_overall")
             if r["rel"] == "SPONSORS_TRIAL_OF":
                 item["weight"] = ep.get("evidence_trials") or 0
                 item["sponsor_class"] = ep.get("sponsor_class")
             elif r["type"] == "Trial":
                 item.update({k: np_.get(k) for k in ("phases", "status", "title", "start_date", "url")})
-                item["weight"] = np_.get("start_date") or ""
+                item["weight"] = str(np_.get("start_date") or "")
             elif r["type"] == "Drug":
-                item["weight"] = trials.get(r["id"], 0)
-                item["max_phase"] = np_.get("max_phase_overall")
+                item["weight"] = item["trials"]
+            elif r["rel"] == "ASSOCIATED_WITH":
+                score = ep.get("association_score")
+                item["score"] = score if isinstance(score, (int, float)) else None
+                item["weight"] = item["score"] or 0
             else:
                 item["weight"] = 0
             if r["rel"] == "ACTS_ON":
                 item["action"] = ep.get("action_type")
-            key = (r["rel"], "out" if r["src"] == nid else "in", r["type"])
+            if role:
+                item["role"] = role
+            key = (r["rel"], "out" if r["src"] == nid else "in", r["type"], role)
             groups.setdefault(key, []).append(item)
         out = []
-        for (rel, direction, ntype), items in groups.items():
+        for (rel, direction, ntype, role), items in groups.items():
             items.sort(key=lambda x: (x["weight"], x["label"] or ""), reverse=True)
-            out.append({"rel": rel, "dir": direction, "type": ntype, "total": len(items),
-                        "items": items[:per_group]})
+            out.append({"rel": rel, "dir": direction, "type": ntype, "role": role,
+                        "total": len(items), "items": items[:per_group]})
         out.sort(key=lambda g: -g["total"])
-        props = json.loads(node["props"] or "{}")
+        props = _obj(node["props"])
         return {"center": {"id": node["id"], "type": node["type"], "label": node["label"],
-                           "trials": trials.get(node["id"]) if node["type"] == "Drug" else None,
+                           "matched_text": matched,
+                           "trials": trials.get(node["id"], 0) if node["type"] == "Drug" else None,
                            "props": {k: props.get(k) for k in
                                      ("max_phase_overall", "drug_type", "phases", "status",
                                       "title", "url", "start_date") if props.get(k) is not None}},
-                "groups": out}
+                "also": also, "groups": out}
 
     def ask(self, question: str) -> dict:
         return self.kg.answer(question, use_llm=False).to_dict()
@@ -158,6 +192,15 @@ class Engine:
                 "evidence": [{"statement": e.statement, "source_record": e.source_record,
                               "source": e.source, "url": e.url} for e in evidence[:8]],
                 "evidence_count": len(evidence)}
+
+
+def _obj(raw) -> dict:
+    """Stored props as a dict; anything else (null, a list, broken JSON) as empty."""
+    try:
+        v = json.loads(raw) if raw else {}
+    except ValueError:
+        return {}
+    return v if isinstance(v, dict) else {}
 
 
 def make_handler(engine: Engine):

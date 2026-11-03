@@ -150,6 +150,16 @@ class OncoKG:
                 window = " ".join(tokens[i:i + size])
                 if len(window) < 3:
                     continue
+                # A product or tracer spelt across several tokens ("bevacizumab -
+                # awwb", "[89Zr] trastuzumab") is refused whole, so no part of it
+                # links to the originator.
+                if size > 1 and (T.is_distinct_product(window) or T.is_radiotracer(window)):
+                    found.append({"type": "Refused", "id": None, "label": window,
+                                  "matched_text": window,
+                                  "why": "names a distinct product or tracer, not "
+                                         "the originator molecule"})
+                    refused.update(range(i, i + size))
+                    continue
                 key = T.canonical_key(window)
 
                 hits = self.dic["index"].get(key)

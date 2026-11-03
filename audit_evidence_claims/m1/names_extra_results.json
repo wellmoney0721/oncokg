@@ -1,0 +1,677 @@
+{
+  "direct": [
+    {
+      "input": "ABP 215",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "ABP 215",
+          "matched_alias": "Abp-215"
+        }
+      ],
+      "explore": {
+        "center": {
+          "id": "CHEMBL1201583",
+          "type": "Drug",
+          "label": "BEVACIZUMAB",
+          "trials": 122,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        }
+      },
+      "resolver": [
+        {
+          "component": "ABP 215",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1201583"
+        }
+      ]
+    },
+    {
+      "input": "ABP-215",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "ABP-215",
+          "matched_alias": "Abp-215"
+        }
+      ],
+      "explore": {
+        "center": {
+          "id": "CHEMBL1201583",
+          "type": "Drug",
+          "label": "BEVACIZUMAB",
+          "trials": 122,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        }
+      },
+      "resolver": [
+        {
+          "component": "ABP-215",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1201583"
+        }
+      ]
+    },
+    {
+      "input": "89Zr trastuzumab",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201585",
+          "label": "TRASTUZUMAB",
+          "matched_text": "89Zr trastuzumab",
+          "matched_alias": "89zr-trastuzumab"
+        }
+      ],
+      "explore": {
+        "center": {
+          "id": "CHEMBL1201585",
+          "type": "Drug",
+          "label": "TRASTUZUMAB",
+          "trials": 13,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        }
+      },
+      "resolver": [
+        {
+          "component": "89Zr trastuzumab",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1201585"
+        }
+      ]
+    },
+    {
+      "input": "89Zr-trastuzumab",
+      "linked": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "89Zr-trastuzumab",
+          "matched_text": "89Zr-trastuzumab",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "explore": {
+        "refused": "89Zr-trastuzumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "resolver": [
+        {
+          "component": "89Zr-trastuzumab",
+          "tier": "BLOCKED_CLASS_TERM",
+          "drug_id": null
+        }
+      ]
+    },
+    {
+      "input": "Mvasi and bevacizumab",
+      "linked": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Mvasi and",
+          "matched_text": "Mvasi and",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "bevacizumab",
+          "matched_alias": "BEVACIZUMAB"
+        }
+      ],
+      "explore": {
+        "center": {
+          "id": "CHEMBL1201583",
+          "type": "Drug",
+          "label": "BEVACIZUMAB",
+          "trials": 122,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        }
+      },
+      "resolver": [
+        {
+          "component": "Mvasi",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null
+        },
+        {
+          "component": "bevacizumab",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL1201583"
+        }
+      ]
+    },
+    {
+      "input": "Mvasi and osimertinib",
+      "linked": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Mvasi and",
+          "matched_text": "Mvasi and",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "explore": {
+        "center": {
+          "id": "CHEMBL3353410",
+          "type": "Drug",
+          "label": "OSIMERTINIB",
+          "trials": 79,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        }
+      },
+      "resolver": [
+        {
+          "component": "Mvasi",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null
+        },
+        {
+          "component": "osimertinib",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL3353410"
+        }
+      ]
+    },
+    {
+      "input": "bevacizumab awwb",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "bevacizumab awwb",
+          "matched_alias": "Bevacizumab awwb"
+        }
+      ],
+      "explore": {
+        "center": {
+          "id": "CHEMBL1201583",
+          "type": "Drug",
+          "label": "BEVACIZUMAB",
+          "trials": 122,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        }
+      },
+      "resolver": [
+        {
+          "component": "bevacizumab awwb",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1201583"
+        }
+      ]
+    },
+    {
+      "input": "bevacizumab-awwb",
+      "linked": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "bevacizumab-awwb",
+          "matched_text": "bevacizumab-awwb",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "explore": {
+        "refused": "bevacizumab-awwb",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "resolver": [
+        {
+          "component": "bevacizumab-awwb",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null
+        }
+      ]
+    },
+    {
+      "input": "Ｍｖａｓｉ",
+      "linked": [],
+      "explore": {
+        "not_found": "Ｍｖａｓｉ"
+      },
+      "resolver": [
+        {
+          "component": "Ｍｖａｓｉ",
+          "tier": "FUZZY_REVIEW",
+          "drug_id": "CHEMBL986"
+        }
+      ]
+    },
+    {
+      "input": "ｍｖａｓｉ",
+      "linked": [],
+      "explore": {
+        "not_found": "ｍｖａｓｉ"
+      },
+      "resolver": [
+        {
+          "component": "ｍｖａｓｉ",
+          "tier": "FUZZY_REVIEW",
+          "drug_id": "CHEMBL986"
+        }
+      ]
+    },
+    {
+      "input": "ＡＢＰ－２１５",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "ＡＢＰ－２１５",
+          "matched_alias": "Abp-215"
+        }
+      ],
+      "explore": {
+        "center": {
+          "id": "CHEMBL1201583",
+          "type": "Drug",
+          "label": "BEVACIZUMAB",
+          "trials": 122,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        }
+      },
+      "resolver": [
+        {
+          "component": "ＡＢＰ－２１５",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1201583"
+        }
+      ]
+    },
+    {
+      "input": "ＡＢＰ ２１５",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "ＡＢＰ ２１５",
+          "matched_alias": "Abp-215"
+        }
+      ],
+      "explore": {
+        "center": {
+          "id": "CHEMBL1201583",
+          "type": "Drug",
+          "label": "BEVACIZUMAB",
+          "trials": 122,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        }
+      },
+      "resolver": [
+        {
+          "component": "ＡＢＰ ２１５",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1201583"
+        }
+      ]
+    },
+    {
+      "input": "Roche",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1622",
+          "label": "FOLIC ACID",
+          "matched_text": "Roche",
+          "matched_alias": "Roche"
+        }
+      ],
+      "explore": {
+        "center": {
+          "id": "CHEMBL1622",
+          "type": "Drug",
+          "label": "FOLIC ACID",
+          "trials": 3,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        }
+      },
+      "resolver": [
+        {
+          "component": "Roche",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1622"
+        }
+      ]
+    },
+    {
+      "input": "ORG:roche",
+      "linked": [],
+      "explore": {
+        "center": {
+          "id": "ORG:roche",
+          "type": "Company",
+          "label": "Roche",
+          "trials": null,
+          "props": {}
+        }
+      },
+      "resolver": [
+        {
+          "component": "ORG:roche",
+          "tier": "FUZZY_REVIEW",
+          "drug_id": "CHEMBL1622"
+        }
+      ]
+    },
+    {
+      "input": "Astra Zeneca",
+      "linked": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "Astra Zeneca",
+          "also_matching_ids": []
+        }
+      ],
+      "explore": {
+        "center": {
+          "id": "ORG:astrazeneca",
+          "type": "Company",
+          "label": "Astrazeneca",
+          "trials": null,
+          "props": {}
+        }
+      },
+      "resolver": [
+        {
+          "component": "Astra Zeneca",
+          "tier": "UNRESOLVED",
+          "drug_id": null
+        }
+      ]
+    },
+    {
+      "input": "EGFR​",
+      "linked": [],
+      "explore": {
+        "not_found": "EGFR​"
+      },
+      "resolver": [
+        {
+          "component": "EGFR​",
+          "tier": "BLOCKED_TARGET_TERM",
+          "drug_id": null
+        }
+      ]
+    },
+    {
+      "input": "  NCT00200395  ",
+      "linked": [],
+      "explore": {
+        "not_found": "  NCT00200395  "
+      },
+      "resolver": [
+        {
+          "component": "NCT00200395",
+          "tier": "UNRESOLVED",
+          "drug_id": null
+        }
+      ]
+    }
+  ],
+  "http": [
+    {
+      "input": "ABP 215",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "CHEMBL1201583",
+          "type": "Drug",
+          "label": "BEVACIZUMAB",
+          "trials": 122,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        }
+      },
+      "group_count": 3
+    },
+    {
+      "input": "ABP-215",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "CHEMBL1201583",
+          "type": "Drug",
+          "label": "BEVACIZUMAB",
+          "trials": 122,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        }
+      },
+      "group_count": 3
+    },
+    {
+      "input": "89Zr trastuzumab",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "CHEMBL1201585",
+          "type": "Drug",
+          "label": "TRASTUZUMAB",
+          "trials": 13,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        }
+      },
+      "group_count": 3
+    },
+    {
+      "input": "89Zr-trastuzumab",
+      "status": 200,
+      "body": {
+        "refused": "89Zr-trastuzumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "group_count": 0
+    },
+    {
+      "input": "Roche",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "CHEMBL1622",
+          "type": "Drug",
+          "label": "FOLIC ACID",
+          "trials": 3,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        }
+      },
+      "group_count": 2
+    },
+    {
+      "input": "ORG:roche",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "ORG:roche",
+          "type": "Company",
+          "label": "Roche",
+          "trials": null,
+          "props": {}
+        }
+      },
+      "group_count": 3
+    },
+    {
+      "input": "Mvasi bevacizumab",
+      "status": 200,
+      "body": {
+        "refused": "Mvasi bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "group_count": 0
+    },
+    {
+      "input": "Mvasi and bevacizumab",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "CHEMBL1201583",
+          "type": "Drug",
+          "label": "BEVACIZUMAB",
+          "trials": 122,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        }
+      },
+      "group_count": 3
+    },
+    {
+      "input": "nct00200395",
+      "status": 200,
+      "body": {
+        "not_found": "nct00200395"
+      },
+      "group_count": 0
+    },
+    {
+      "input": "  NCT00200395  ",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "NCT00200395",
+          "type": "Trial",
+          "label": "NCT00200395",
+          "trials": null,
+          "props": {
+            "phases": [
+              "PHASE2"
+            ],
+            "status": "COMPLETED",
+            "title": "OSI-774 (Erlotinib, Tarceva) in Elderly Patients",
+            "url": "https://clinicaltrials.gov/study/NCT00200395",
+            "start_date": "2003-07-02"
+          }
+        }
+      },
+      "group_count": 3
+    },
+    {
+      "input": "x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x osimertinib",
+      "status": 200,
+      "body": {
+        "not_found": "x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x "
+      },
+      "group_count": 0
+    },
+    {
+      "input": "osimertinib x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "CHEMBL3353410",
+          "type": "Drug",
+          "label": "OSIMERTINIB",
+          "trials": 79,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        }
+      },
+      "group_count": 4
+    }
+  ],
+  "retired_node_fixture": [
+    {
+      "input": "osimertinib",
+      "explore": {
+        "center": {
+          "id": "CHEMBL3353410",
+          "type": "Drug",
+          "label": "OSIMERTINIB",
+          "trials": 79,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        }
+      },
+      "groups": [
+        [
+          "EVALUATES",
+          "in",
+          79
+        ],
+        [
+          "SPONSORS_TRIAL_OF",
+          "in",
+          53
+        ],
+        [
+          "ACTS_ON",
+          "out",
+          1
+        ],
+        [
+          "SPONSORS_TRIAL_OF",
+          "in",
+          1
+        ]
+      ]
+    },
+    {
+      "input": "CHEMBL3353410",
+      "explore": {
+        "not_found": "CHEMBL3353410"
+      },
+      "groups": []
+    }
+  ]
+}

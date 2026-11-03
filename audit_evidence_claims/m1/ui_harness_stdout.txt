@@ -1,0 +1,386 @@
+﻿{
+  "trailError": "TypeError: Cannot read properties of undefined (reading '0')",
+  "action": "작용: 작용",
+  "binding": "작용: BINDING AGENT",
+  "real": {
+    "osimertinib": {
+      "center": {
+        "id": "CHEMBL3353410",
+        "type": "Drug",
+        "label": "OSIMERTINIB",
+        "trials": 79,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "total": 79,
+          "returned": 30
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "total": 53,
+          "returned": 30
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "total": 1,
+          "returned": 1
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Investigator",
+          "total": 1,
+          "returned": 1
+        }
+      ],
+      "drawn": 40
+    },
+    "AstraZeneca": {
+      "center": {
+        "id": "ORG:astrazeneca",
+        "type": "Company",
+        "label": "Astrazeneca",
+        "trials": null,
+        "props": {}
+      },
+      "groups": [
+        {
+          "rel": "SPONSORS",
+          "dir": "out",
+          "type": "Trial",
+          "total": 110,
+          "returned": 30
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "out",
+          "type": "Drug",
+          "total": 32,
+          "returned": 30
+        },
+        {
+          "rel": "PARENT_OF",
+          "dir": "out",
+          "type": "Company",
+          "total": 3,
+          "returned": 3
+        }
+      ],
+      "drawn": 41
+    },
+    "NCT00754364": {
+      "center": {
+        "id": "NCT00754364",
+        "type": "Trial",
+        "label": "NCT00754364",
+        "trials": null,
+        "props": {
+          "phases": [
+            "PHASE2"
+          ],
+          "status": "TERMINATED",
+          "title": "Mono Versus Polichemotherapy in Non Small Cell Lung Cancer (NSCLC) Elderly Patients",
+          "url": "https://clinicaltrials.gov/study/NCT00754364",
+          "start_date": "2008-10"
+        }
+      },
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "out",
+          "type": "Drug",
+          "total": 3,
+          "returned": 3
+        },
+        {
+          "rel": "SPONSORS",
+          "dir": "in",
+          "type": "Investigator",
+          "total": 1,
+          "returned": 1
+        },
+        {
+          "rel": "STUDIES",
+          "dir": "out",
+          "type": "Disease",
+          "total": 1,
+          "returned": 1
+        }
+      ],
+      "drawn": 5,
+      "groupLabels": [
+        {
+          "label": "이 임상이 시험하는 약",
+          "type": "Drug",
+          "items": [
+            {
+              "id": "CHEMBL1351",
+              "type": "Drug",
+              "label": "CARBOPLATIN",
+              "edge_id": "NCT00754364|EVALUATES|CHEMBL1351|NCT00754364",
+              "weight": 391,
+              "max_phase": "APPROVAL"
+            },
+            {
+              "id": "CHEMBL225072",
+              "type": "Drug",
+              "label": "PEMETREXED",
+              "edge_id": "NCT00754364|EVALUATES|CHEMBL225072|NCT00754364",
+              "weight": 290,
+              "max_phase": "APPROVAL"
+            },
+            {
+              "id": "CHEMBL888",
+              "type": "Drug",
+              "label": "GEMCITABINE",
+              "edge_id": "NCT00754364|EVALUATES|CHEMBL888|NCT00754364",
+              "weight": 144,
+              "max_phase": "APPROVAL"
+            }
+          ]
+        },
+        {
+          "label": "이 임상의 주관 기관",
+          "type": "Investigator",
+          "items": [
+            {
+              "id": "ORG:armandosantoromd",
+              "type": "Investigator",
+              "label": "Armando Santoro Md",
+              "edge_id": "ORG:armandosantoromd|SPONSORS|NCT00754364|NCT00754364",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "label": "대상 질환",
+          "type": "Disease",
+          "items": [
+            {
+              "id": "MONDO_0005233",
+              "type": "Disease",
+              "label": "non-small cell lung carcinoma",
+              "edge_id": "NCT00754364|STUDIES|MONDO_0005233|NCT00754364",
+              "weight": 0
+            }
+          ]
+        }
+      ]
+    },
+    "NCT00200395": {
+      "center": {
+        "id": "NCT00200395",
+        "type": "Trial",
+        "label": "NCT00200395",
+        "trials": null,
+        "props": {
+          "phases": [
+            "PHASE2"
+          ],
+          "status": "COMPLETED",
+          "title": "OSI-774 (Erlotinib, Tarceva) in Elderly Patients",
+          "url": "https://clinicaltrials.gov/study/NCT00200395",
+          "start_date": "2003-07-02"
+        }
+      },
+      "groups": [
+        {
+          "rel": "SPONSORS",
+          "dir": "in",
+          "type": "Company",
+          "total": 2,
+          "returned": 2
+        },
+        {
+          "rel": "STUDIES",
+          "dir": "out",
+          "type": "Disease",
+          "total": 1,
+          "returned": 1
+        },
+        {
+          "rel": "EVALUATES",
+          "dir": "out",
+          "type": "Drug",
+          "total": 1,
+          "returned": 1
+        }
+      ],
+      "drawn": 4,
+      "groupLabels": [
+        {
+          "label": "이 임상의 주관 기관",
+          "type": "Company",
+          "items": [
+            {
+              "id": "ORG:montefioremedicalcenter",
+              "type": "Company",
+              "label": "Montefiore Medical Center",
+              "edge_id": "ORG:montefioremedicalcenter|SPONSORS|NCT00200395|NCT00200395",
+              "weight": 0
+            },
+            {
+              "id": "ORG:genentech",
+              "type": "Company",
+              "label": "Genentech",
+              "edge_id": "ORG:genentech|SPONSORS|NCT00200395|NCT00200395",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "label": "대상 질환",
+          "type": "Disease",
+          "items": [
+            {
+              "id": "MONDO_0005233",
+              "type": "Disease",
+              "label": "non-small cell lung carcinoma",
+              "edge_id": "NCT00200395|STUDIES|MONDO_0005233|NCT00200395",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "label": "이 임상이 시험하는 약",
+          "type": "Drug",
+          "items": [
+            {
+              "id": "CHEMBL1079742",
+              "type": "Drug",
+              "label": "ERLOTINIB HYDROCHLORIDE",
+              "edge_id": "NCT00200395|EVALUATES|CHEMBL1079742|NCT00200395",
+              "weight": 31,
+              "max_phase": "APPROVAL"
+            }
+          ]
+        }
+      ]
+    },
+    "CHEMBL1201438": {
+      "center": {
+        "id": "CHEMBL1201438",
+        "type": "Drug",
+        "label": "ALDESLEUKIN",
+        "trials": 11,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Protein"
+        }
+      },
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "total": 11,
+          "returned": 11
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "total": 11,
+          "returned": 11
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "total": 3,
+          "returned": 3
+        }
+      ],
+      "drawn": 22
+    },
+    "MONDO_0005233": {
+      "center": {
+        "id": "MONDO_0005233",
+        "type": "Disease",
+        "label": "non-small cell lung carcinoma",
+        "trials": null,
+        "props": {}
+      },
+      "groups": [
+        {
+          "rel": "STUDIES",
+          "dir": "in",
+          "type": "Trial",
+          "total": 2774,
+          "returned": 30
+        },
+        {
+          "rel": "ASSOCIATED_WITH",
+          "dir": "in",
+          "type": "Target",
+          "total": 300,
+          "returned": 30
+        }
+      ],
+      "drawn": 39
+    },
+    "EGFR": {
+      "center": {
+        "id": "ENSG00000146648",
+        "type": "Target",
+        "label": "EGFR",
+        "trials": null,
+        "props": {}
+      },
+      "groups": [
+        {
+          "rel": "ACTS_ON",
+          "dir": "in",
+          "type": "Drug",
+          "total": 58,
+          "returned": 30
+        },
+        {
+          "rel": "ASSOCIATED_WITH",
+          "dir": "out",
+          "type": "Disease",
+          "total": 1,
+          "returned": 1
+        }
+      ],
+      "drawn": 31
+    },
+    "KRAS": {
+      "center": {
+        "id": "ENSG00000133703",
+        "type": "Target",
+        "label": "KRAS",
+        "trials": null,
+        "props": {}
+      },
+      "groups": [
+        {
+          "rel": "ACTS_ON",
+          "dir": "in",
+          "type": "Drug",
+          "total": 3,
+          "returned": 3
+        },
+        {
+          "rel": "ASSOCIATED_WITH",
+          "dir": "out",
+          "type": "Disease",
+          "total": 1,
+          "returned": 1
+        }
+      ],
+      "drawn": 4
+    }
+  }
+}

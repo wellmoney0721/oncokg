@@ -1,0 +1,419 @@
+{
+  "beforeFailure": {
+    "trail": "[[\"CHEMBL3353410\",\"OSIMERTINIB\"],[\"ENSG00000146648\",\"EGFR\"]]",
+    "html": "따라온 길: <button type=\"button\" class=\"ex\" data-back=\"0\">OSIMERTINIB</button> → <button type=\"button\" class=\"ex\" data-back=\"1\">EGFR</button>"
+  },
+  "afterRefusal": {
+    "trail": "[]",
+    "trailHTML": "따라온 길: <button type=\"button\" class=\"ex\" data-back=\"0\">OSIMERTINIB</button> → <button type=\"button\" class=\"ex\" data-back=\"1\">EGFR</button>",
+    "output": "<div class=\"comp no\"><div class=\"top\"><span class=\"verdict\">연결하지 않음</span><span class=\"s\">Mvasi</span></div><div class=\"detail\">바이오시밀러·개량 제형·추적자처럼 원래 약과 다른 제품이라, 원래 약의 관계로 그리지 않습니다.</div></div>"
+  },
+  "oldBackButtonError": "TypeError: Cannot read properties of undefined (reading '0')",
+  "failureVariants": {
+    "not_found": {
+      "trail": "[]",
+      "html": "따라온 길: <button type=\"button\" class=\"ex\" data-back=\"0\">OSIMERTINIB</button> → <button type=\"button\" class=\"ex\" data-back=\"1\">EGFR</button>",
+      "output": "<p class=\"err\">그래프에서 찾지 못했습니다: unknown-m1-entity (이 그래프는 비소세포폐암 임상시험 3,000건 범위입니다)</p>",
+      "backError": "TypeError: Cannot read properties of undefined (reading '0')"
+    },
+    "server_error": {
+      "trail": "[]",
+      "html": "따라온 길: <button type=\"button\" class=\"ex\" data-back=\"0\">OSIMERTINIB</button> → <button type=\"button\" class=\"ex\" data-back=\"1\">EGFR</button>",
+      "output": "<p class=\"err\">fixture error</p>",
+      "backError": "TypeError: Cannot read properties of undefined (reading '0')"
+    }
+  },
+  "doubleClick": {
+    "trail": "[[\"ENSG00000146648\",\"EGFR\"],[\"ENSG00000146648\",\"EGFR\"]]",
+    "html": "따라온 길: <button type=\"button\" class=\"ex\" data-back=\"0\">EGFR</button> → <button type=\"button\" class=\"ex\" data-back=\"1\">EGFR</button>"
+  },
+  "reverseResponses": {
+    "trail": "[[\"ENSG00000133703\",\"KRAS\"],[\"ENSG00000146648\",\"EGFR\"]]",
+    "finalOutput": "<div class=\"comp ok\"><div class=\"top\"><span class=\"verdict\">표적</span><span class=\"s\">EGFR</span><span class=\"code\">ENSG00000146648</span></div><div class=\"detail\"></div></div><div style=\"overflow-x:auto\"><svg viewBox=\"0 0 900 560\" width=\"100%\" style=\"min-width:640px;height:auto\" role=\"img\" aria-label=\"EGFR의 관계 지도\"><line x1=\"450\" y1=\"280\" x2=\"450.0\" y2=\"65.0\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"503.1\" y2=\"111.5\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"580.1\" y2=\"82.4\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"600.8\" y2=\"138.8\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"689.2\" y2=\"131.9\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"674.0\" y2=\"189.0\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"759.5\" y2=\"205.3\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"711.0\" y2=\"254.0\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"779.6\" y2=\"290.9\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"705.6\" y2=\"323.1\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"746.3\" y2=\"374.7\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"658.8\" y2=\"385.3\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"665.0\" y2=\"443.1\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"578.1\" y2=\"430.4\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"548.8\" y2=\"485.1\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"476.7\" y2=\"451.1\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"416.6\" y2=\"493.9\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"371.0\" y2=\"444.1\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"289.9\" y2=\"468.0\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"278.0\" y2=\"410.5\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"189.0\" y2=\"411.6\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"213.0\" y2=\"355.7\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"130.5\" y2=\"333.9\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"186.3\" y2=\"288.7\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"123.8\" y2=\"247.4\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"202.4\" y2=\"220.3\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"169.9\" y2=\"166.3\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"258.7\" y2=\"161.5\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"261.5\" y2=\"103.5\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"345.9\" y2=\"121.9\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><line x1=\"450\" y1=\"280\" x2=\"383.6\" y2=\"69.4\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><g class=\"nd\" data-id=\"CHEMBL553\" style=\"cursor:pointer\"><title>약: ERLOTINIB — 임상 118건 · 허가까지 · 작용: 억제</title><circle cx=\"450.0\" cy=\"65.0\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"450.0\" y=\"54.0\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">ERLOTINIB</text></g><g class=\"nd\" data-id=\"CHEMBL3353410\" style=\"cursor:pointer\"><title>약: OSIMERTINIB — 임상 79건 · 허가까지 · 작용: 억제</title><circle cx=\"503.1\" cy=\"111.5\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"503.1\" y=\"100.5\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">OSIMERTINIB</text></g><g class=\"nd\" data-id=\"CHEMBL939\" style=\"cursor:pointer\"><title>약: GEFITINIB — 임상 62건 · 허가까지 · 작용: 억제</title><circle cx=\"580.1\" cy=\"82.4\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"580.1\" y=\"71.4\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">GEFITINIB</text></g><g class=\"nd\" data-id=\"CHEMBL1201577\" style=\"cursor:pointer\"><title>약: CETUXIMAB — 임상 41건 · 허가까지 · 작용: 억제</title><circle cx=\"600.8\" cy=\"138.8\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"600.8\" y=\"127.8\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">CETUXIMAB</text></g><g class=\"nd\" data-id=\"CHEMBL1079742\" style=\"cursor:pointer\"><title>약: ERLOTINIB HYDROCHLORIDE — 임상 31건 · 허가까지 · 작용: 억제</title><circle cx=\"689.2\" cy=\"131.9\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"689.2\" y=\"120.9\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">ERLOTINIB HYDROCHLOR</text></g><g class=\"nd\" data-id=\"CHEMBL4297258\" style=\"cursor:pointer\"><title>약: FIRMONERTINIB — 임상 22건 · 허가까지 · 작용: 억제</title><circle cx=\"674.0\" cy=\"189.0\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"674.0\" y=\"178.0\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">FIRMONERTINIB</text></g><g class=\"nd\" data-id=\"CHEMBL2087361\" style=\"cursor:pointer\"><title>약: ICOTINIB — 임상 19건 · 허가까지 · 작용: 억제</title><circle cx=\"759.5\" cy=\"205.3\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"759.5\" y=\"194.3\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">ICOTINIB</text></g><g class=\"nd\" data-id=\"CHEMBL1173655\" style=\"cursor:pointer\"><title>약: AFATINIB — 임상 18건 · 허가까지 · 작용: 억제</title><circle cx=\"711.0\" cy=\"254.0\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"711.0\" y=\"243.0\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">AFATINIB</text></g><g class=\"nd\" data-id=\"CHEMBL4761468\" style=\"cursor:pointer\"><title>약: AUMOLERTINIB — 임상 16건 · 허가까지 · 작용: 억제</title><circle cx=\"779.6\" cy=\"290.9\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"779.6\" y=\"309.9\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">AUMOLERTINIB</text></g><g class=\"nd\" data-id=\"CHEMBL4558324\" style=\"cursor:pointer\"><title>약: LAZERTINIB — 임상 15건 · 허가까지 · 작용: 억제</title><circle cx=\"705.6\" cy=\"323.1\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"705.6\" y=\"342.1\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">LAZERTINIB</text></g><g class=\"nd\" data-id=\"CHEMBL24828\" style=\"cursor:pointer\"><title>약: VANDETANIB — 임상 12건 · 허가까지 · 작용: 억제</title><circle cx=\"746.3\" cy=\"374.7\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"746.3\" y=\"393.7\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">VANDETANIB</text></g><g class=\"nd\" data-id=\"CHEMBL4297774\" style=\"cursor:pointer\"><title>약: AMIVANTAMAB — 임상 11건 · 허가까지 · 작용: 억제</title><circle cx=\"658.8\" cy=\"385.3\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"658.8\" y=\"404.3\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">AMIVANTAMAB</text></g><g class=\"nd\" data-id=\"CHEMBL1743047\" style=\"cursor:pointer\"><title>약: NECITUMUMAB — 임상 9건 · 허가까지 · 작용: 억제</title><circle cx=\"665.0\" cy=\"443.1\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"665.0\" y=\"462.1\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">NECITUMUMAB</text></g><g class=\"nd\" data-id=\"CHEMBL3545311\" style=\"cursor:pointer\"><title>약: BRIGATINIB — 임상 9건 · 허가까지 · 작용: 억제</title><circle cx=\"578.1\" cy=\"430.4\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"578.1\" y=\"449.4\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">BRIGATINIB</text></g><g class=\"nd\" data-id=\"CHEMBL1201827\" style=\"cursor:pointer\"><title>약: PANITUMUMAB — 임상 8건 · 허가까지 · 작용: 억제</title><circle cx=\"548.8\" cy=\"485.1\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"548.8\" y=\"504.1\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">PANITUMUMAB</text></g><g class=\"nd\" data-id=\"CHEMBL3545063\" style=\"cursor:pointer\"><title>약: OSIMERTINIB MESYLATE — 임상 7건 · 허가까지 · 작용: 억제</title><circle cx=\"476.7\" cy=\"451.1\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"476.7\" y=\"470.1\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">OSIMERTINIB MESYLATE</text></g><g class=\"nd\" data-id=\"CHEMBL2105719\" style=\"cursor:pointer\"><title>약: DACOMITINIB — 임상 7건 · 허가까지 · 작용: 억제</title><circle cx=\"416.6\" cy=\"493.9\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"416.6\" y=\"512.9\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">DACOMITINIB</text></g><g class=\"nd\" data-id=\"CHEMBL3647420\" style=\"cursor:pointer\"><title>약: PYROTINIB — 임상 6건 · 허가까지 · 작용: 억제</title><circle cx=\"371.0\" cy=\"444.1\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"371.0\" y=\"463.1\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">PYROTINIB</text></g><g class=\"nd\" data-id=\"CHEMBL554\" style=\"cursor:pointer\"><title>약: LAPATINIB — 임상 5건 · 허가까지 · 작용: 억제</title><circle cx=\"289.9\" cy=\"468.0\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"289.9\" y=\"487.0\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">LAPATINIB</text></g><g class=\"nd\" data-id=\"CHEMBL3545154\" style=\"cursor:pointer\"><title>약: POZIOTINIB — 임상 4건 · 3상까지 · 작용: 억제</title><circle cx=\"278.0\" cy=\"410.5\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"278.0\" y=\"429.5\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">POZIOTINIB</text></g><g class=\"nd\" data-id=\"CHEMBL2110732\" style=\"cursor:pointer\"><title>약: DACOMITINIB ANHYDROUS — 임상 4건 · 허가까지 · 작용: 억제</title><circle cx=\"189.0\" cy=\"411.6\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"189.0\" y=\"430.6\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">DACOMITINIB ANHYDROU</text></g><g class=\"nd\" data-id=\"CHEMBL3545308\" style=\"cursor:pointer\"><title>약: ROCILETINIB — 임상 3건 · 허가까지 · 작용: 억제</title><circle cx=\"213.0\" cy=\"355.7\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"213.0\" y=\"374.7\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">ROCILETINIB</text></g><g class=\"nd\" data-id=\"CHEMBL2108359\" style=\"cursor:pointer\"><title>약: NIMOTUZUMAB — 임상 3건 · 허가까지 · 작용: 억제</title><circle cx=\"130.5\" cy=\"333.9\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"130.5\" y=\"352.9\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">NIMOTUZUMAB</text></g><g class=\"nd\" data-id=\"CHEMBL4650281\" style=\"cursor:pointer\"><title>약: CLN-081 — 임상 3건 · 3상까지 · 작용: 억제</title><circle cx=\"186.3\" cy=\"288.7\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"186.3\" y=\"307.7\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">CLN-081</text></g><g class=\"nd\" data-id=\"CHEMBL4594549\" style=\"cursor:pointer\"><title>약: PIMURUTAMAB — 임상 2건 · 2/3상까지 · 작용: 억제</title><circle cx=\"123.8\" cy=\"247.4\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"123.8\" y=\"236.4\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">PIMURUTAMAB</text></g><g class=\"nd\" data-id=\"CHEMBL180022\" style=\"cursor:pointer\"><title>약: NERATINIB — 임상 2건 · 허가까지 · 작용: 억제</title><circle cx=\"202.4\" cy=\"220.3\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"202.4\" y=\"209.3\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">NERATINIB</text></g><g class=\"nd\" data-id=\"CHEMBL3787344\" style=\"cursor:pointer\"><title>약: NAZARTINIB — 임상 2건 · 3상까지 · 작용: 억제</title><circle cx=\"169.9\" cy=\"166.3\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"169.9\" y=\"155.3\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">NAZARTINIB</text></g><g class=\"nd\" data-id=\"CHEMBL3663929\" style=\"cursor:pointer\"><title>약: NAQUOTINIB — 임상 2건 · 3상까지 · 작용: 억제</title><circle cx=\"258.7\" cy=\"161.5\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"258.7\" y=\"150.5\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">NAQUOTINIB</text></g><g class=\"nd\" data-id=\"CHEMBL4650319\" style=\"cursor:pointer\"><title>약: MOBOCERTINIB — 임상 2건 · 허가까지 · 작용: 억제</title><circle cx=\"261.5\" cy=\"103.5\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"261.5\" y=\"92.5\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">MOBOCERTINIB</text></g><g class=\"nd\" data-id=\"CHEMBL31965\" style=\"cursor:pointer\"><title>약: CANERTINIB — 임상 2건 · 2상까지 · 작용: 억제</title><circle cx=\"345.9\" cy=\"121.9\" r=\"7\" fill=\"var(--accent)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"345.9\" y=\"110.9\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">CANERTINIB</text></g><g class=\"nd\" data-id=\"MONDO_0005233\" style=\"cursor:pointer\"><title>질환: non-small cell lung carcinoma — </title><circle cx=\"383.6\" cy=\"69.4\" r=\"7\" fill=\"var(--no)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"383.6\" y=\"58.4\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">non-small cell lung </text></g><circle cx=\"450\" cy=\"280\" r=\"30\" fill=\"var(--ok)\" stroke=\"var(--surface)\" stroke-width=\"3\"/><text x=\"450\" y=\"330\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"600\" fill=\"var(--ink)\">EGFR</text></svg></div><div class=\"exs\"><span class=\"chip\"><span style=\"color:var(--accent)\">●</span> 약</span><span class=\"chip\"><span style=\"color:var(--ok)\">●</span> 표적</span><span class=\"chip\"><span style=\"color:var(--no)\">●</span> 질환</span></div><details ><summary style=\"cursor:pointer;margin-top:6px\"><b>이 표적에 작용하는 약</b> <span class=\"chip\">58</span> <span class=\"note\">근거가 많은 30개만</span></summary><div class=\"ev\"><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL553\">ERLOTINIB</button> 임상 118건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL553|ACTS_ON|ENSG00000146648|CHEMBL553</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL3353410\">OSIMERTINIB</button> 임상 79건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL939\">GEFITINIB</button> 임상 62건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL939|ACTS_ON|ENSG00000146648|CHEMBL939</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL1201577\">CETUXIMAB</button> 임상 41건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL1201577|ACTS_ON|ENSG00000146648|CHEMBL1201577</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL1079742\">ERLOTINIB HYDROCHLORIDE</button> 임상 31건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL1079742|ACTS_ON|ENSG00000146648|CHEMBL1079742</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL4297258\">FIRMONERTINIB</button> 임상 22건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL4297258|ACTS_ON|ENSG00000146648|CHEMBL4297258</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL2087361\">ICOTINIB</button> 임상 19건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL2087361|ACTS_ON|ENSG00000146648|CHEMBL2087361</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL1173655\">AFATINIB</button> 임상 18건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL1173655|ACTS_ON|ENSG00000146648|CHEMBL1173655</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL4761468\">AUMOLERTINIB</button> 임상 16건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL4761468|ACTS_ON|ENSG00000146648|CHEMBL4761468</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL4558324\">LAZERTINIB</button> 임상 15건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL4558324|ACTS_ON|ENSG00000146648|CHEMBL4558324</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL24828\">VANDETANIB</button> 임상 12건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL24828|ACTS_ON|ENSG00000146648|CHEMBL24828</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL4297774\">AMIVANTAMAB</button> 임상 11건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL4297774|ACTS_ON|ENSG00000146648|CHEMBL4297774</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL1743047\">NECITUMUMAB</button> 임상 9건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL1743047|ACTS_ON|ENSG00000146648|CHEMBL1743047</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL3545311\">BRIGATINIB</button> 임상 9건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL3545311|ACTS_ON|ENSG00000146648|CHEMBL3545311</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL1201827\">PANITUMUMAB</button> 임상 8건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL1201827|ACTS_ON|ENSG00000146648|CHEMBL1201827</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL3545063\">OSIMERTINIB MESYLATE</button> 임상 7건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL3545063|ACTS_ON|ENSG00000146648|CHEMBL3545063</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL2105719\">DACOMITINIB</button> 임상 7건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL2105719|ACTS_ON|ENSG00000146648|CHEMBL2105719</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL3647420\">PYROTINIB</button> 임상 6건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL3647420|ACTS_ON|ENSG00000146648|CHEMBL3647420</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL554\">LAPATINIB</button> 임상 5건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL554|ACTS_ON|ENSG00000146648|CHEMBL554</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL3545154\">POZIOTINIB</button> 임상 4건 · 3상까지 · 작용: 억제 <span class=\"code\">CHEMBL3545154|ACTS_ON|ENSG00000146648|CHEMBL3545154</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL2110732\">DACOMITINIB ANHYDROUS</button> 임상 4건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL2110732|ACTS_ON|ENSG00000146648|CHEMBL2110732</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL3545308\">ROCILETINIB</button> 임상 3건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL3545308|ACTS_ON|ENSG00000146648|CHEMBL3545308</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL2108359\">NIMOTUZUMAB</button> 임상 3건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL2108359|ACTS_ON|ENSG00000146648|CHEMBL2108359</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL4650281\">CLN-081</button> 임상 3건 · 3상까지 · 작용: 억제 <span class=\"code\">CHEMBL4650281|ACTS_ON|ENSG00000146648|CHEMBL4650281</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL4594549\">PIMURUTAMAB</button> 임상 2건 · 2/3상까지 · 작용: 억제 <span class=\"code\">CHEMBL4594549|ACTS_ON|ENSG00000146648|CHEMBL4594549</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL180022\">NERATINIB</button> 임상 2건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL180022|ACTS_ON|ENSG00000146648|CHEMBL180022</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL3787344\">NAZARTINIB</button> 임상 2건 · 3상까지 · 작용: 억제 <span class=\"code\">CHEMBL3787344|ACTS_ON|ENSG00000146648|CHEMBL3787344</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL3663929\">NAQUOTINIB</button> 임상 2건 · 3상까지 · 작용: 억제 <span class=\"code\">CHEMBL3663929|ACTS_ON|ENSG00000146648|CHEMBL3663929</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL4650319\">MOBOCERTINIB</button> 임상 2건 · 허가까지 · 작용: 억제 <span class=\"code\">CHEMBL4650319|ACTS_ON|ENSG00000146648|CHEMBL4650319</span></div><div><button type=\"button\" class=\"ex\" data-id=\"CHEMBL31965\">CANERTINIB</button> 임상 2건 · 2상까지 · 작용: 억제 <span class=\"code\">CHEMBL31965|ACTS_ON|ENSG00000146648|CHEMBL31965</span></div></div></details><details open><summary style=\"cursor:pointer;margin-top:6px\"><b>관련 질환</b> <span class=\"chip\">1</span></summary><div class=\"ev\"><div><button type=\"button\" class=\"ex\" data-id=\"MONDO_0005233\">non-small cell lung carcinoma</button>  <span class=\"code\">ENSG00000146648|ASSOCIATED_WITH|MONDO_0005233|MONDO_0005233</span></div></div></details>"
+  },
+  "injectionHTML": "<div class=\"comp ok\"><div class=\"top\"><span class=\"verdict\">임상시험</span><span class=\"s\">&lt;img src=x onerror=bad()&gt;</span><span class=\"code\">x&quot; onload=&quot;bad</span></div><div class=\"detail\">&lt;svg onload=bad()&gt; · <a href=\"javascript:alert(document.domain)\" target=\"_blank\" rel=\"noopener\">ClinicalTrials.gov</a></div></div><div style=\"overflow-x:auto\"><svg viewBox=\"0 0 900 560\" width=\"100%\" style=\"min-width:640px;height:auto\" role=\"img\" aria-label=\"&lt;img src=x onerror=bad()&gt;의 관계 지도\"><line x1=\"450\" y1=\"280\" x2=\"450.0\" y2=\"65.0\" stroke=\"var(--line)\" stroke-width=\"1.2\"/><g class=\"nd\" data-id=\"x&quot; onclick=&quot;bad()\" style=\"cursor:pointer\"><title>임상시험: &lt;script&gt;bad()&lt;/script&gt; — 2상 · &lt;img src=x onerror=bad()&gt;</title><circle cx=\"450.0\" cy=\"65.0\" r=\"7\" fill=\"var(--gray)\" stroke=\"var(--surface)\" stroke-width=\"2\"/><text x=\"450.0\" y=\"54.0\" text-anchor=\"middle\" font-size=\"10.5\" font-family=\"IBM Plex Mono, monospace\" fill=\"var(--ink-2)\">&lt;script&gt;bad()&lt;/script&gt;</text></g><circle cx=\"450\" cy=\"280\" r=\"30\" fill=\"var(--gray)\" stroke=\"var(--surface)\" stroke-width=\"3\"/><text x=\"450\" y=\"330\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"600\" fill=\"var(--ink)\">&lt;img src=x onerror=bad()&gt;</text></svg></div><div class=\"exs\"><span class=\"chip\"><span style=\"color:var(--gray)\">●</span> 임상시험</span></div><details open><summary style=\"cursor:pointer;margin-top:6px\"><b>이 임상이 시험하는 약</b> <span class=\"chip\">1</span></summary><div class=\"ev\"><div><button type=\"button\" class=\"ex\" data-id=\"x&quot; onclick=&quot;bad()\">&lt;script&gt;bad()&lt;/script&gt;</button> 2상 · &lt;img src=x onerror=bad()&gt; <a href=\"javascript:alert(document.domain)\" target=\"_blank\" rel=\"noopener\">↗</a> <span class=\"code\">e&quot; onclick=&quot;bad()</span></div></div></details>",
+  "action": "작용: 작용",
+  "binding": "작용: BINDING AGENT",
+  "unknownSponsorClass": "주관한 임상 2건 · 비산업(병원·학계·정부 등)",
+  "real": {
+    "osimertinib": {
+      "center": {
+        "id": "CHEMBL3353410",
+        "type": "Drug",
+        "label": "OSIMERTINIB",
+        "trials": 79,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "total": 79,
+          "returned": 30
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "total": 53,
+          "returned": 30
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "total": 1,
+          "returned": 1
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Investigator",
+          "total": 1,
+          "returned": 1
+        }
+      ],
+      "drawn": 40
+    },
+    "AstraZeneca": {
+      "center": {
+        "id": "ORG:astrazeneca",
+        "type": "Company",
+        "label": "Astrazeneca",
+        "trials": null,
+        "props": {}
+      },
+      "groups": [
+        {
+          "rel": "SPONSORS",
+          "dir": "out",
+          "type": "Trial",
+          "total": 110,
+          "returned": 30
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "out",
+          "type": "Drug",
+          "total": 32,
+          "returned": 30
+        },
+        {
+          "rel": "PARENT_OF",
+          "dir": "out",
+          "type": "Company",
+          "total": 3,
+          "returned": 3
+        }
+      ],
+      "drawn": 41
+    },
+    "NCT00754364": {
+      "center": {
+        "id": "NCT00754364",
+        "type": "Trial",
+        "label": "NCT00754364",
+        "trials": null,
+        "props": {
+          "phases": [
+            "PHASE2"
+          ],
+          "status": "TERMINATED",
+          "title": "Mono Versus Polichemotherapy in Non Small Cell Lung Cancer (NSCLC) Elderly Patients",
+          "url": "https://clinicaltrials.gov/study/NCT00754364",
+          "start_date": "2008-10"
+        }
+      },
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "out",
+          "type": "Drug",
+          "total": 3,
+          "returned": 3
+        },
+        {
+          "rel": "SPONSORS",
+          "dir": "in",
+          "type": "Investigator",
+          "total": 1,
+          "returned": 1
+        },
+        {
+          "rel": "STUDIES",
+          "dir": "out",
+          "type": "Disease",
+          "total": 1,
+          "returned": 1
+        }
+      ],
+      "drawn": 5,
+      "groupLabels": [
+        {
+          "label": "이 임상이 시험하는 약",
+          "type": "Drug",
+          "items": [
+            {
+              "id": "CHEMBL1351",
+              "type": "Drug",
+              "label": "CARBOPLATIN",
+              "edge_id": "NCT00754364|EVALUATES|CHEMBL1351|NCT00754364",
+              "weight": 391,
+              "max_phase": "APPROVAL"
+            },
+            {
+              "id": "CHEMBL225072",
+              "type": "Drug",
+              "label": "PEMETREXED",
+              "edge_id": "NCT00754364|EVALUATES|CHEMBL225072|NCT00754364",
+              "weight": 290,
+              "max_phase": "APPROVAL"
+            },
+            {
+              "id": "CHEMBL888",
+              "type": "Drug",
+              "label": "GEMCITABINE",
+              "edge_id": "NCT00754364|EVALUATES|CHEMBL888|NCT00754364",
+              "weight": 144,
+              "max_phase": "APPROVAL"
+            }
+          ]
+        },
+        {
+          "label": "이 임상의 주관 기관",
+          "type": "Investigator",
+          "items": [
+            {
+              "id": "ORG:armandosantoromd",
+              "type": "Investigator",
+              "label": "Armando Santoro Md",
+              "edge_id": "ORG:armandosantoromd|SPONSORS|NCT00754364|NCT00754364",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "label": "대상 질환",
+          "type": "Disease",
+          "items": [
+            {
+              "id": "MONDO_0005233",
+              "type": "Disease",
+              "label": "non-small cell lung carcinoma",
+              "edge_id": "NCT00754364|STUDIES|MONDO_0005233|NCT00754364",
+              "weight": 0
+            }
+          ]
+        }
+      ]
+    },
+    "NCT00200395": {
+      "center": {
+        "id": "NCT00200395",
+        "type": "Trial",
+        "label": "NCT00200395",
+        "trials": null,
+        "props": {
+          "phases": [
+            "PHASE2"
+          ],
+          "status": "COMPLETED",
+          "title": "OSI-774 (Erlotinib, Tarceva) in Elderly Patients",
+          "url": "https://clinicaltrials.gov/study/NCT00200395",
+          "start_date": "2003-07-02"
+        }
+      },
+      "groups": [
+        {
+          "rel": "SPONSORS",
+          "dir": "in",
+          "type": "Company",
+          "total": 2,
+          "returned": 2
+        },
+        {
+          "rel": "STUDIES",
+          "dir": "out",
+          "type": "Disease",
+          "total": 1,
+          "returned": 1
+        },
+        {
+          "rel": "EVALUATES",
+          "dir": "out",
+          "type": "Drug",
+          "total": 1,
+          "returned": 1
+        }
+      ],
+      "drawn": 4,
+      "groupLabels": [
+        {
+          "label": "이 임상의 주관 기관",
+          "type": "Company",
+          "items": [
+            {
+              "id": "ORG:montefioremedicalcenter",
+              "type": "Company",
+              "label": "Montefiore Medical Center",
+              "edge_id": "ORG:montefioremedicalcenter|SPONSORS|NCT00200395|NCT00200395",
+              "weight": 0
+            },
+            {
+              "id": "ORG:genentech",
+              "type": "Company",
+              "label": "Genentech",
+              "edge_id": "ORG:genentech|SPONSORS|NCT00200395|NCT00200395",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "label": "대상 질환",
+          "type": "Disease",
+          "items": [
+            {
+              "id": "MONDO_0005233",
+              "type": "Disease",
+              "label": "non-small cell lung carcinoma",
+              "edge_id": "NCT00200395|STUDIES|MONDO_0005233|NCT00200395",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "label": "이 임상이 시험하는 약",
+          "type": "Drug",
+          "items": [
+            {
+              "id": "CHEMBL1079742",
+              "type": "Drug",
+              "label": "ERLOTINIB HYDROCHLORIDE",
+              "edge_id": "NCT00200395|EVALUATES|CHEMBL1079742|NCT00200395",
+              "weight": 31,
+              "max_phase": "APPROVAL"
+            }
+          ]
+        }
+      ]
+    },
+    "CHEMBL1201438": {
+      "center": {
+        "id": "CHEMBL1201438",
+        "type": "Drug",
+        "label": "ALDESLEUKIN",
+        "trials": 11,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Protein"
+        }
+      },
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "total": 11,
+          "returned": 11
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "total": 11,
+          "returned": 11
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "total": 3,
+          "returned": 3
+        }
+      ],
+      "drawn": 22
+    },
+    "MONDO_0005233": {
+      "center": {
+        "id": "MONDO_0005233",
+        "type": "Disease",
+        "label": "non-small cell lung carcinoma",
+        "trials": null,
+        "props": {}
+      },
+      "groups": [
+        {
+          "rel": "STUDIES",
+          "dir": "in",
+          "type": "Trial",
+          "total": 2774,
+          "returned": 30
+        },
+        {
+          "rel": "ASSOCIATED_WITH",
+          "dir": "in",
+          "type": "Target",
+          "total": 300,
+          "returned": 30
+        }
+      ],
+      "drawn": 39
+    },
+    "EGFR": {
+      "center": {
+        "id": "ENSG00000146648",
+        "type": "Target",
+        "label": "EGFR",
+        "trials": null,
+        "props": {}
+      },
+      "groups": [
+        {
+          "rel": "ACTS_ON",
+          "dir": "in",
+          "type": "Drug",
+          "total": 58,
+          "returned": 30
+        },
+        {
+          "rel": "ASSOCIATED_WITH",
+          "dir": "out",
+          "type": "Disease",
+          "total": 1,
+          "returned": 1
+        }
+      ],
+      "drawn": 31
+    },
+    "KRAS": {
+      "center": {
+        "id": "ENSG00000133703",
+        "type": "Target",
+        "label": "KRAS",
+        "trials": null,
+        "props": {}
+      },
+      "groups": [
+        {
+          "rel": "ACTS_ON",
+          "dir": "in",
+          "type": "Drug",
+          "total": 3,
+          "returned": 3
+        },
+        {
+          "rel": "ASSOCIATED_WITH",
+          "dir": "out",
+          "type": "Disease",
+          "total": 1,
+          "returned": 1
+        }
+      ],
+      "drawn": 4
+    }
+  }
+}

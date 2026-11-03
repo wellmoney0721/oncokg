@@ -51,3 +51,42 @@ def test_explore_draws_a_drug_and_refuses_a_biosimilar():
     assert all(len(g["items"]) <= 30 for g in r["groups"])
     assert e.explore("Mvasi").get("refused")
     assert e.explore("no such thing zz").get("not_found")
+
+
+# Codex review m1
+def test_explore_refuses_products_and_tracers_spelt_across_tokens():
+    import app
+    e = app.Engine()
+    for t in ("bevacizumab - awwb", "89Zr - trastuzumab", "[89Zr] trastuzumab", "bevacizumab-awwb"):
+        r = e.explore(t)
+        assert r.get("refused"), t
+
+
+def test_explore_keeps_sponsor_role_and_investigator_type():
+    import app
+    e = app.Engine()
+    r = e.explore("NCT00200395")
+    roles = {(g["type"], g["role"]): [i["id"] for i in g["items"]]
+             for g in r["groups"] if g["rel"] == "SPONSORS"}
+    assert "ORG:genentech" in roles[("Company", "collaborator")]
+    assert "ORG:genentech" not in roles.get(("Company", "lead_sponsor"), [])
+    r = e.explore("NCT00754364")
+    assert any(g["rel"] == "SPONSORS" and g["type"] == "Investigator" for g in r["groups"])
+
+
+def test_explore_does_not_draw_a_retired_centre_by_name():
+    import app
+    import sqlite3
+    e = app.Engine()
+    mem = sqlite3.connect(":memory:", check_same_thread=False)
+    e.kg.conn.backup(mem)
+    mem.row_factory = sqlite3.Row
+    mem.execute("UPDATE node SET retired_at='T' WHERE id='CHEMBL3353410'")
+    e.kg.conn = mem
+    assert e.explore("osimertinib").get("not_found")
+
+
+def test_explore_shows_other_readings_of_an_ambiguous_name():
+    import app
+    r = app.Engine().explore("Roche")
+    assert any(x.get("id") == "ORG:roche" for x in r["also"])
