@@ -1,6 +1,6 @@
-<title>OncoKG NSCLC</title>
+<title>OncoKG 폐암 약물 지도</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@600&display=swap">
 <style>
 /* Layout: one measured column; summary tiles, then evidence, then the caveats. */
 :root{
@@ -9,8 +9,8 @@
   --accent:#2a78d6; --accent-soft:#eaf1fc;
   --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100;
   --good:#0ca30c; --warn:#fab219; --serious:#ec835a; --critical:#d03b3b;
-  --display:"Source Serif 4",Georgia,"Times New Roman",serif;
-  --body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  --display:"Noto Serif KR","Source Serif 4",Georgia,serif;
+  --body:"Pretendard","Noto Sans KR","IBM Plex Sans","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   --mono:"IBM Plex Mono","SF Mono",Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
@@ -42,8 +42,7 @@ h2{font-size:clamp(20px,3vw,25px);line-height:1.25}
 h3{font-size:17px;font-family:var(--body);font-weight:600}
 p{margin:0}
 a{color:var(--accent)}
-.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--ink-3)}
+.eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.04em;color:var(--accent)}
 section{padding-block:40px;border-top:1px solid var(--line)}
 section>.lede{color:var(--ink-2);max-width:66ch;margin-top:10px}
 .stack{display:flex;flex-direction:column;gap:18px}
@@ -60,8 +59,7 @@ header{padding-block:44px 8px}
 .tiles{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-top:26px}
 .tile{background:var(--surface);border:1px solid var(--line);border-radius:10px;
   padding:16px 16px 14px;min-width:0}
-.tile .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--ink-3)}
+.tile .k{font-size:12.5px;font-weight:600;color:var(--ink-2)}
 .tile .v{font-family:var(--display);font-size:30px;line-height:1.1;margin-top:8px;
   font-variant-numeric:tabular-nums}
 .tile .n{font-size:12.5px;color:var(--ink-2);margin-top:6px}
@@ -78,6 +76,7 @@ header{padding-block:44px 8px}
 .bar-fill{height:100%;border-radius:0 4px 4px 0;transition:width .5s ease}
 .bar-row .val{font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums;
   color:var(--ink);min-width:48px;text-align:right}
+.bar-row .lab{font-size:12.5px}
 .legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;font-size:12.5px;
   color:var(--ink-2)}
 .legend span{display:inline-flex;align-items:center;gap:7px}
@@ -88,7 +87,7 @@ header{padding-block:44px 8px}
   background:var(--surface)}
 table{border-collapse:collapse;width:100%;font-size:13px;min-width:560px}
 th,td{padding:9px 13px;text-align:left;border-bottom:1px solid var(--line)}
-th{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+th{font-size:12px;font-weight:600;
   color:var(--ink-3);font-weight:400;white-space:nowrap}
 tbody tr:last-child td{border-bottom:none}
 td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -139,144 +138,167 @@ ul{padding-left:20px;margin:0}
 li{color:var(--ink-2)}
 li b{color:var(--ink);font-weight:600}
 footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);font-size:12.5px}
+.plain{margin-top:16px;background:var(--accent-soft);border-radius:10px;padding:14px 16px;
+  font-size:14.5px;color:var(--ink);max-width:72ch}
+.plain b{font-weight:600}
+.steps{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:22px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.step .no{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.step h3{margin-top:6px}
+.step p{font-size:13.5px;color:var(--ink-2);margin-top:6px}
+.eng{font-size:12px;color:var(--ink-3);font-family:var(--mono)}
+.chip.k{text-transform:none;letter-spacing:0;font-family:var(--body);font-size:11.5px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
 <div class="wrap">
 <header>
-  <p class="eyebrow">Entity resolution &middot; knowledge graph &middot; grounded retrieval</p>
+  <p class="eyebrow">약 이름 정리 &middot; 지식그래프 &middot; 근거로만 답하는 검색</p>
   <div class="title-row" style="margin-top:12px">
-    <h1>Reading messy trial text into a drug graph</h1>
+    <h1>지저분한 임상시험 글을 약물 지도로 바꾸기</h1>
   </div>
-  <p class="sub">Clinical trial registries describe the same molecule as <span class="mono-s">Tarceva</span>,
-  <span class="mono-s">OSI-774</span>, <span class="mono-s">erlotinib hydrochloride</span> and
-  <span class="mono-s">Gemicitabine</span>&mdash;with a typo. This pipeline turns that text into a
-  knowledge graph of companies, drugs, targets and trials in non-small cell lung cancer, and reports
-  what it got wrong.</p>
+  <p class="sub">임상시험 등록 사이트에는 같은 약이 여러 이름으로 적혀 있습니다. 폐암 약 하나가
+  <span class="mono-s">Tarceva</span>(상품명), <span class="mono-s">OSI-774</span>(개발 코드),
+  <span class="mono-s">erlotinib hydrochloride</span>(염 이름)로 따로 적히고, 오타도 섞입니다.
+  이 프로젝트는 비소세포폐암(NSCLC) 임상시험 글을 읽어 <b>이 이름들이 모두 같은 약이라는 것</b>을
+  알아내고, 그 결과로 <b>회사 &middot; 약 &middot; 표적 &middot; 임상시험이 어떻게 이어지는지 보여 주는 지도
+  (지식그래프)</b>를 만듭니다. 그리고 <b>얼마나 맞았고 무엇을 아직 틀리는지</b>까지 숫자로 공개합니다.</p>
   <div class="srcline" id="srcline"></div>
   <div class="tiles" id="tiles"></div>
 </header>
 
 <section>
-  <p class="eyebrow">01 &middot; The measurement</p>
-  <h2>What the numbers are worth</h2>
-  <p class="lede">Precision was measured on three separate hand-scored samples. The development
-  sample shaped the rules, so its number is optimistic by construction; the held-out test sample, scored
-  as it was labelled, is the honest one. Three audit rounds have since used the test rows to find
-  defects. The per-tier rates below are the repaired pipeline on the rows whose resolution did not
-  change &mdash; and the rows that changed held every error, so these rates are survivors, not a
-  measurement.</p>
-  <div class="tablebox"><table id="evaltable"></table></div>
-  <p class="lede" style="margin-top:16px" id="evalnote"></p>
-</section>
-
-<section>
-  <p class="eyebrow">02 &middot; The decision</p>
-  <h2>Every string gets a tier, and a reason</h2>
-  <p class="lede">A resolution is never a bare yes. Each one records how it was reached, and anything
-  below the automatic threshold is routed to review instead of being accepted quietly. Blocked tiers
-  are refusals the pipeline makes on purpose.</p>
-  <div class="chart" id="tierchart"></div>
-  <div class="legend">
-    <span><i class="dot" style="background:var(--s1)"></i>accepted &mdash; becomes an edge</span>
-    <span><i class="dot" style="background:var(--s4)"></i>held for review</span>
-    <span><i class="dot" style="background:var(--s2)"></i>refused on purpose</span>
-    <span><i class="dot" style="background:var(--ink-3)"></i>unresolved</span>
+  <p class="eyebrow">한눈에 보기</p>
+  <h2>무엇을, 어떤 순서로 하나</h2>
+  <div class="steps">
+    <div class="step"><p class="no">1단계</p><h3>공개 자료 모으기</h3>
+      <p>ClinicalTrials.gov 에서 폐암 임상시험 3,000건, Open Targets &middot; ChEMBL 에서 약과 표적 정보를 받습니다.</p></div>
+    <div class="step"><p class="no">2단계</p><h3>약 이름 사전 다듬기</h3>
+      <p>참고 사전에도 틀린 동의어가 있어서, 그것부터 찾아 고치고 고친 이유를 남깁니다.</p></div>
+    <div class="step"><p class="no">3단계</p><h3>글 속 약 이름 맞추기</h3>
+      <p>시험 글에 적힌 이름을 사전의 표준 약 번호(ChEMBL ID)에 하나씩 연결합니다. 애매하면 연결하지 않습니다.</p></div>
+    <div class="step"><p class="no">4단계</p><h3>지도 만들기 &middot; 질문에 답하기</h3>
+      <p>연결 결과로 지도를 만들고, 질문을 받으면 지도에서 찾은 근거로만 답합니다.</p></div>
   </div>
 </section>
 
 <section>
-  <p class="eyebrow">03 &middot; The finding</p>
-  <h2>The reference database is wrong too</h2>
-  <p class="lede">Treating a curated vocabulary as ground truth is the easiest way to inherit its
-  errors. ChEMBL lists <span class="mono-s">avelumab</span>, <span class="mono-s">durvalumab</span> and
-  <span class="mono-s">adebrelimab</span> among atezolizumab's synonyms, and
-  <span class="mono-s">durvalumab placebo</span> among durvalumab's. Each defect below was detected
-  automatically and repaired before any record was matched against the dictionary.</p>
+  <p class="eyebrow">01 &middot; 얼마나 맞나</p>
+  <h2>정확도는 어떻게 쟀나</h2>
+  <p class="lede">사람이 직접 정답을 매긴 표본 세 묶음으로 쟀습니다. 규칙을 만들 때 본 <b>개발 표본</b>,
+  규칙을 만든 뒤 처음 열어 본 <b>시험 표본</b>, 고친 뒤 새로 뽑은 <b>수정 후 표본</b>입니다.
+  개발 표본은 규칙을 거기에 맞춰 만들었으니 점수가 좋게 나오는 게 당연하고, 믿을 만한 숫자는 시험 표본입니다.</p>
+  <div class="plain" id="evalplain"></div>
+  <details style="margin-top:18px"><summary>단계별 표 자세히 보기 (참고용)</summary>
+    <p class="lede" style="margin-top:10px">아래 표의 단계별 비율은 <b>지금 고친 프로그램</b>을 정답과 다시 대어 본 것입니다.
+    다만 감사에서 오류를 찾으려고 이 표본을 이미 썼고, 결과가 바뀐 행(=오류가 있던 행)은 빼고 셌기 때문에
+    실제보다 좋게 나옵니다. 정확도 숫자로 인용하지 않습니다.</p>
+    <div class="tablebox"><table id="evaltable"></table></div>
+    <p class="lede" style="margin-top:12px" id="evalnote"></p>
+  </details>
+</section>
+
+<section>
+  <p class="eyebrow">02 &middot; 어떻게 판단하나</p>
+  <h2>이름마다 &lsquo;어떻게 맞췄는지&rsquo; 꼬리표를 붙입니다</h2>
+  <p class="lede">그냥 &ldquo;맞다/아니다&rdquo;로 끝내지 않습니다. 이름 하나하나에 어떤 방법으로 맞췄는지 꼬리표를 남기고,
+  확신이 부족하면 자동으로 받아들이지 않고 사람 검토로 넘깁니다. 위약이나 &lsquo;약의 종류&rsquo;처럼
+  약 하나가 아닌 것은 일부러 거절합니다.</p>
+  <div class="plain"><b>쉽게 말하면</b> &mdash; 파란 막대만 지도에 올라갑니다. 노란 것은 사람이 확인해야 하고,
+  주황은 일부러 거절한 것, 회색은 사전에 없어서 못 찾은 것입니다. 아래 숫자는 시험 글에서 나온 이름 조각의 개수입니다.</div>
+  <div class="chart" id="tierchart"></div>
+  <div class="legend">
+    <span><i class="dot" style="background:var(--s1)"></i>받아들임 &mdash; 지도에 올라감</span>
+    <span><i class="dot" style="background:var(--s4)"></i>사람 검토로 넘김</span>
+    <span><i class="dot" style="background:var(--s2)"></i>일부러 거절</span>
+    <span><i class="dot" style="background:var(--ink-3)"></i>못 찾음</span>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">03 &middot; 발견한 것</p>
+  <h2>참고 사전도 틀립니다</h2>
+  <p class="lede">공인된 약물 데이터베이스(ChEMBL)를 그대로 정답으로 믿으면 그 안의 오류까지 물려받습니다.
+  예를 들어 ChEMBL 은 면역항암제 <span class="mono-s">atezolizumab</span> 의 다른 이름 목록에 전혀 다른 약인
+  <span class="mono-s">avelumab</span>, <span class="mono-s">durvalumab</span>, <span class="mono-s">adebrelimab</span> 을 넣어 두었고,
+  <span class="mono-s">durvalumab</span> 의 다른 이름에는 &lsquo;durvalumab placebo(위약)&rsquo;가 들어 있습니다.
+  이런 잘못된 동의어를 규칙으로 자동으로 찾아내고, 시험 글을 맞추기 <b>전에</b> 사전에서 고쳤습니다.</p>
+  <div class="plain"><b>쉽게 말하면</b> &mdash; 사전이 &ldquo;A 의 다른 이름은 B&rdquo;라고 잘못 적어 두면,
+  B 를 시험하는 임상이 A 의 임상으로 둔갑합니다. 그래서 사전부터 검사합니다. 아래 카드는 한 이름을 여러 약이 서로
+  자기 이름이라고 주장한 사례이고, 막대는 사전에서 찾아 고친 문제의 종류별 개수입니다.</div>
   <div class="cards" id="contamination"></div>
   <div class="chart" id="dictchart" style="margin-top:28px"></div>
 </section>
 
 <section>
-  <p class="eyebrow">04 &middot; The guardrails</p>
-  <h2>Four ways a naive matcher invents facts</h2>
+  <p class="eyebrow">04 &middot; 안전장치</p>
+  <h2>단순한 매칭이 사실을 지어내는 네 가지 경우</h2>
+  <p class="lede">글자가 비슷하다고 연결하면 그럴듯한 틀린 정보가 생깁니다. 이를 막는 규칙들입니다.</p>
   <div class="cards" id="guards"></div>
 </section>
 
 <section>
-  <p class="eyebrow">05 &middot; The graph</p>
-  <h2>Companies, drugs, targets, trials</h2>
-  <p class="lede">Every edge carries its source, the time it was fetched and a confidence. Edges read
-  from one record carry that record; the derived sponsorship edges carry the full list of trials they
-  rest on instead, and only edges made by resolving free text carry a resolution tier. Re-running
-  against a newer snapshot retires edges and nodes rather than deleting them, so the history of a
-  relationship stays answerable.</p>
+  <p class="eyebrow">05 &middot; 지도(지식그래프)</p>
+  <h2>회사 &middot; 약 &middot; 표적 &middot; 임상시험</h2>
+  <p class="lede">점(노드)은 회사, 약, 표적 유전자, 질환, 임상시험이고, 선(엣지)은 그 사이의 관계입니다.
+  선마다 <b>어디서 가져왔는지(출처), 언제 가져왔는지, 얼마나 확실한지</b>가 붙어 있습니다.
+  새 자료로 다시 돌리면 없어진 관계를 지우지 않고 &lsquo;은퇴&rsquo; 표시만 해서, 언제까지 있었는지 나중에도 확인할 수 있습니다.</p>
   <div class="chart" id="relchart"></div>
+  <p class="lede" style="margin-top:26px">예시: 폐암 표적 <b>EGFR</b>(가운데)에 작용하는 약(파란 점)과 그 약의 임상을 주관한 회사(초록 점).
+  파란 점이 클수록 임상시험이 많은 약입니다.</p>
   <div class="graphbox"><svg id="ego" role="img"
-    aria-label="EGFR with the drugs acting on it and their lead sponsors"></svg></div>
+    aria-label="EGFR 에 작용하는 약과 그 약의 임상을 주관한 회사"></svg></div>
   <div class="cards" style="margin-top:20px">
-    <div class="card"><h3>Most-studied molecules</h3><div class="chart" id="topdrugs"></div></div>
-    <div class="card"><h3>Broadest NSCLC portfolios</h3><div class="chart" id="topcos"></div></div>
+    <div class="card"><h3>임상시험이 가장 많은 약 (시험 수)</h3><div class="chart" id="topdrugs"></div></div>
+    <div class="card"><h3>폐암 약을 가장 많이 시험하는 회사 (약 수)</h3><div class="chart" id="topcos"></div></div>
   </div>
 </section>
 
 <section>
-  <p class="eyebrow">06 &middot; The answers</p>
-  <h2>Retrieval that checks itself</h2>
-  <p class="lede">Questions are resolved against the same dictionary the pipeline uses, so a question
-  naming a trade name finds a graph that stores a ChEMBL id. The answer is then verified against its
-  own evidence: names, drug-shaped words and numbers that do not appear in the retrieved set are
-  reported rather than shipped. The check cannot verify a relation, a negation or a clinical claim
-  made of ordinary words. With no language model key the evidence is rendered directly and the check
-  does not apply; with one, the model sees the retrieved evidence and nothing else.</p>
+  <p class="eyebrow">06 &middot; 질문에 답하기</p>
+  <h2>근거로만 답하고, 스스로 검사합니다</h2>
+  <p class="lede">질문 속 약 이름도 같은 사전으로 맞추기 때문에, 상품명(예: Tagrisso)으로 물어도 표준 번호로 저장된 지도에서 찾습니다.
+  답을 만든 뒤에는 <b>찾은 근거에 없는 약 이름이나 숫자가 답에 들어갔는지</b> 검사해서, 있으면 그대로 내보내지 않고 표시합니다.
+  관련 없는 질문(예: 프랑스 수도)에는 답하지 않습니다.</p>
+  <div class="plain"><b>한계</b> &mdash; 이 검사는 지어낸 이름&middot;숫자를 잡는 최소한의 장치입니다. &ldquo;안전하다&rdquo;처럼 평범한 단어로 된 주장이나
+  관계가 맞는지까지는 검사하지 못합니다. 지금 보이는 답은 언어 모델 없이 근거를 정해진 틀로 보여 준 것입니다.</div>
   <div class="stack" id="demos" style="margin-top:22px"></div>
 </section>
 
 <section>
-  <p class="eyebrow">07 &middot; The quality report</p>
-  <h2 id="qchead">Things worth a second look</h2>
-  <p class="lede">Findings are claims a curator should check, not verdicts. Each carries its evidence
-  and a severity.</p>
+  <p class="eyebrow">07 &middot; 품질 리포트</p>
+  <h2 id="qchead">다시 볼 만한 것들</h2>
+  <p class="lede">프로그램이 &ldquo;사람이 한 번 확인해 보세요&rdquo;라고 올린 목록입니다. 틀렸다는 판정이 아니라 확인 요청이며,
+  각각 근거와 심각도(높음&middot;중간&middot;낮음)가 붙어 있습니다.</p>
   <div class="chart" id="qcchart"></div>
+  <div class="legend">
+    <span><i class="dot" style="background:var(--s3)"></i>사전 문제</span>
+    <span><i class="dot" style="background:var(--s1)"></i>임상시험 기록 문제</span>
+    <span><i class="dot" style="background:var(--s4)"></i>지도 문제</span>
+  </div>
   <div class="cards" id="qccards"></div>
 </section>
 
 <section>
-  <p class="eyebrow">08 &middot; Known defects</p>
-  <h2>What is still broken</h2>
-  <p class="lede">Unrepaired, and listed in full in the README. Leaving them listed is cheaper than a
-  number that quietly assumes they do not exist.</p>
+  <p class="eyebrow">08 &middot; 아직 못 고친 것</p>
+  <h2>남아 있는 결함</h2>
+  <p class="lede">숨기지 않고 목록으로 둡니다. 전체 14개는 README 에 있고, 여기에는 이해하기 쉬운 것만 추렸습니다.</p>
   <ul class="backlog" style="margin-top:18px">
-    <li><b>The placebo rule needs a separator.</b> <span class="mono-s">Placebo Drug: Docetaxel Drug:
-    Carboplatin</span> has no <span class="mono-s">+</span> or <span class="mono-s">and</span>, so it
-    reads as a reference arm and two genuinely administered drugs are dropped. The fix is to treat a
-    repeated <span class="mono-s">Drug:</span> label as a separator.</li>
-    <li><b>The repaired pipeline has no held-out measurement.</b> The test sample was used by three
-    audit rounds; 26 of its 172 rows now resolve differently and are set aside as stale. Putting a
-    number on the current pipeline needs a new sample, labelled by someone other than the author.</li>
-    <li><b>Coverage is capped by scope, not by skill.</b> The vocabulary holds only drugs Open Targets
-    links to NSCLC, so <span class="mono-s">propranolol</span> and
-    <span class="mono-s">Diklofenak Sodyum</span> are correctly refused and still count against
-    coverage. Widening to the full ChEMBL drug set is the obvious next step, and would need its own
-    precision measurement.</li>
-    <li><b>One annotator, three independent re-scores.</b> Every verdict is the author's; three
-    reviews re-scored 167 deliberately difficult rows and disagreed on twelve, every one lenient. An agreement rate over the full
-    sample is what would turn these numbers from defensible into solid.</li>
-    <li><b>Four tiers were never independently tested.</b> <span class="mono-s">FUZZY_AUTO</span>,
-    <span class="mono-s">FUZZY_REVIEW</span>, <span class="mono-s">SALT_STRIPPED</span> and
-    <span class="mono-s">CLEANED</span> have so few distinct values that the development sample consumed
-    all of them, so their rates are carried over from the data the rules were tuned on and should be
-    read as optimistic.</li>
-    <li><b>The synonym clean-up errs toward refusal.</b> Removing contaminated registry synonyms also
-    removed some correct names (misspellings, code names a molecule record does not list); each removal
-    is a finding in the quality report.</li>
+    <li><b>구분 기호가 없으면 위약 규칙이 실수합니다.</b> <span class="mono-s">Placebo Drug: Docetaxel Drug: Carboplatin</span> 처럼
+    <span class="mono-s">+</span> 나 <span class="mono-s">and</span> 가 없으면 전체를 위약으로 읽어, 실제로 투여한 두 약을 빠뜨립니다.</li>
+    <li><b>고친 뒤의 정확도는 아직 따로 재지 못했습니다.</b> 시험 표본을 감사 세 번에 썼기 때문에, 지금 프로그램의 정확도를 말하려면
+    새 표본이 필요하고, 가능하면 다른 사람이 정답을 매겨야 합니다.</li>
+    <li><b>못 찾는 이름 중 일부는 범위 밖이라서입니다.</b> 사전에 폐암과 연결된 약만 넣었기 때문에
+    <span class="mono-s">propranolol</span>(혈압약) 같은 이름은 거절이 맞지만, &lsquo;못 찾음&rsquo; 비율에는 손해로 잡힙니다.</li>
+    <li><b>정답을 매긴 사람이 한 명입니다.</b> 독립 검토가 세 번 어려운 행을 다시 채점했고, 12건에서 의견이 갈렸는데 모두 제가 후하게 매긴 쪽이었습니다(전부 반영).</li>
+    <li><b>몇몇 방법은 따로 검증할 표본이 부족했습니다.</b> 오타 고치기, 염 이름 떼기 같은 단계는 사례가 적어 개발 표본에서 다 써 버렸습니다.</li>
+    <li><b>사전 정리가 &lsquo;거절&rsquo; 쪽으로 기웁니다.</b> 틀린 동의어를 지우면서 맞는 이름(오타, 코드명)도 일부 같이 지웠습니다. 지운 것마다 이유가 품질 리포트에 남습니다.</li>
   </ul>
 </section>
 
 <footer>
-  <p>Built from public data: Open Targets Platform, ChEMBL (via Open Targets) and the
-  ClinicalTrials.gov API v2. No licensed or proprietary dataset is used, and nothing here is
-  medical advice or a commercial intelligence product.</p>
+  <p>공개 자료만 썼습니다: Open Targets Platform, ChEMBL(Open Targets 경유), ClinicalTrials.gov API v2.
+  유료 데이터는 쓰지 않았고, 이 페이지는 의료 조언이나 상업용 분석 자료가 아닙니다.</p>
   <p style="margin-top:10px" id="builtline"></p>
 </footer>
 </div>
@@ -287,117 +309,153 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
   const D = JSON.parse(document.getElementById("payload").textContent);
   const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
   const pct = x => (x*100).toFixed(1)+"%";
-  const num = n => Number(n).toLocaleString("en-US");
-  const el = (h) => { const t=document.createElement("template"); t.innerHTML=h.trim(); return t.content; };
+  const num = n => Number(n).toLocaleString("ko-KR");
 
-  /* ---- header ---- */
+  /* 쉬운 말 이름표 */
+  const TIER = {
+    EXACT:"이름이 정확히 같음", ALIAS:"다른 이름(동의어)으로 찾음", CONTAINED_ALIAS:"긴 글 속에서 약 이름을 찾음",
+    PARENTHETICAL:"괄호 안 이름으로 찾음", SALT_STRIPPED:"염 이름(…염산염 등)을 떼고 찾음",
+    CLEANED:"용량·제형 같은 군더더기를 떼고 찾음", FUZZY_AUTO:"오타를 고쳐서 찾음(아주 비슷할 때만)",
+    FUZZY_REVIEW:"오타 같지만 확신이 없어 사람에게 넘김", AMBIGUOUS:"후보가 여럿이라 고를 근거가 없음",
+    BLOCKED_PLACEBO:"위약이라 거절", BLOCKED_CLASS_TERM:"약 하나가 아니라 약의 종류라 거절",
+    BLOCKED_TARGET_TERM:"약이 아니라 표적 이름이라 거절", BLOCKED_NEGATED:"'~없이'라는 뜻이라 거절",
+    BLOCKED_DISTINCT_PRODUCT:"바이오시밀러·개량 제형 등 다른 제품이라 거절", UNRESOLVED:"사전에서 못 찾음"
+  };
+  const REL = {
+    EVALUATES:"임상시험 → 약 (이 시험이 이 약을 시험함)", SPONSORS:"회사 → 임상시험 (이 회사가 주관함)",
+    SPONSORS_TRIAL_OF:"회사 → 약 (이 회사가 이 약의 시험을 주관함)", STUDIES:"임상시험 → 질환",
+    ACTS_ON:"약 → 표적 (이 약이 이 유전자에 작용함)", ASSOCIATED_WITH:"표적 → 질환", PARENT_OF:"모회사 → 자회사"
+  };
+  const QC = {
+    class_term_as_synonym:["사전","'약의 종류'가 특정 약의 다른 이름으로 들어가 있음"],
+    cross_drug_synonym:["사전","한 이름을 여러 약이 서로 자기 이름이라고 함"],
+    distinct_product_alias:["사전","바이오시밀러·개량 제형이 원래 약의 다른 이름으로 들어가 있음"],
+    placebo_string_in_synonym_list:["사전","'위약'이 약의 다른 이름으로 들어가 있음"],
+    registry_alias_removed:["사전","등록 사이트에서 온 미심쩍은 동의어를 지움"],
+    genuinely_ambiguous_alias:["사전","정말로 여러 약을 가리키는 이름"],
+    suspected_duplicate_entity:["사전","같은 약이 두 번 등록된 것 같음"],
+    parent_child_collapse:["사전","원래 약과 그 염 형태를 하나로 묶음"],
+    incomplete_intervention_parse:["기록","여러 약 중 일부만 읽혔음"],
+    no_substance_resolved:["기록","시험 글에서 약을 하나도 못 찾음"],
+    recurrent_unresolved_surface:["기록","여러 시험에서 반복해 못 찾는 이름"],
+    missing_structural_field:["기록","시험 단계·주관사 같은 칸이 비어 있음"],
+    out_of_scope_trial:["기록","폐암 시험이 아닌 것 같음"],
+    stage_disagrees_with_reference:["지도","시험 단계가 참고 자료와 다름"],
+    company_names_merged:["지도","표기만 다른 회사 이름을 하나로 합침"]
+  };
+  const SEV = {high:"높음", medium:"중간", low:"낮음"};
+  const INTENT = {
+    companies_for_drug:"이 약을 개발하는 회사는?", trials_for_entity:"이 약을 시험하는 임상시험은?",
+    drugs_for_target:"이 표적에 작용하는 약은?", targets_of_drug:"이 약의 표적은?",
+    company_portfolio:"이 회사가 폐암에서 하고 있는 것은?", unsupported:"관련 없는 질문"
+  };
+
+  /* ---- 머리 ---- */
   const H = D.headline;
   document.getElementById("srcline").innerHTML =
     D.meta.sources.map(s=>`<span>${esc(s)}</span>`).join("")+
-    `<span>scope: ${esc(D.meta.disease)}</span>`;
+    `<span>대상 질환: 비소세포폐암</span>`;
+  const HL = H.held_out_as_labelled;
   const tiles = [
-    ["Held-out precision", pct(H.held_out_as_labelled.rate),
-     `${H.held_out_as_labelled.accepted_rows_correct} of ${H.held_out_as_labelled.accepted_rows_scored} accepted matches, as labelled &middot; Wilson ${pct(H.held_out_as_labelled.ci95[0])}&ndash;${pct(H.held_out_as_labelled.ci95[1])}`, true],
-    ["Coverage", pct(H.coverage.resolved_rate_of_substance_like),
-     `${num(H.coverage.accepted_occurrences)} of ${num(H.coverage.component_occurrences_excluding_blocked)} substance-like strings`],
-    ["Trials parsed", num(H.trials), "ClinicalTrials.gov, interventional"],
-    ["Molecules &middot; lookup keys", num(H.molecules)+" &middot; "+num(H.lookup_keys), "reference vocabulary after curation"],
-    ["Graph", num(H.nodes)+" / "+num(H.edges), "nodes / live edges"],
-    ["Quality findings", num(H.qc_findings), "raised for review"],
+    ["정확도 (시험 표본)", pct(HL.rate),
+     `받아들인 연결 ${HL.accepted_rows_scored}개 중 ${HL.accepted_rows_correct}개가 맞음 &middot; 95% 범위 ${pct(HL.ci95[0])}&ndash;${pct(HL.ci95[1])}`, true],
+    ["찾아낸 비율", pct(H.coverage.resolved_rate_of_substance_like),
+     `약처럼 보이는 이름 ${num(H.coverage.component_occurrences_excluding_blocked)}개 중 ${num(H.coverage.accepted_occurrences)}개를 연결`],
+    ["읽은 임상시험", num(H.trials), "ClinicalTrials.gov, 중재 시험"],
+    ["사전에 넣은 약", num(H.molecules), `찾아보기 이름 ${num(H.lookup_keys)}개 (정리 후)`],
+    ["지도 크기", num(H.nodes)+" / "+num(H.edges), "점(노드) / 선(관계)"],
+    ["확인 요청", num(H.qc_findings), "사람이 다시 볼 것"],
   ];
   document.getElementById("tiles").innerHTML = tiles.map(([k,v,n,hero])=>
     `<div class="tile${hero?" hero":""}"><div class="k">${k}</div><div class="v num">${v}</div><div class="n">${n}</div></div>`).join("");
-  document.getElementById("builtline").textContent =
-    "Sources fetched " + (D.meta.built_from.trials||"").slice(0,16).replace("T"," ") + " UTC.";
+  const t0 = D.meta.built_from.trials;
+  document.getElementById("builtline").textContent = t0 ?
+    "자료 수집 시각: " + new Date(t0).toLocaleString("ko-KR",{timeZone:"Asia/Seoul",dateStyle:"long",timeStyle:"short"}) + " (한국 시간)" : "";
 
-  /* ---- bar chart helper ---- */
-  function bars(node, rows, opts){
-    opts = opts||{};
+  /* ---- 막대 ---- */
+  function bars(node, rows){
     const max = Math.max(...rows.map(r=>r.value), 1);
     node.innerHTML = rows.map(r=>{
       const w = Math.max(2, (r.value/max)*100);
       return `<div class="bar-row"><div class="lab">${esc(r.label)}</div>`+
         `<div class="bar-track"><div class="bar-fill" style="width:${w}%;background:${r.color||"var(--s1)"}"`+
-        ` title="${esc(r.label)}: ${esc(r.display||r.value)}"></div></div>`+
+        ` title="${esc(r.label)}: ${esc(r.display||num(r.value))}"></div></div>`+
         `<div class="val">${esc(r.display||num(r.value))}</div></div>`;
     }).join("");
   }
 
-  /* ---- 01 evaluation table ---- */
-  const ACC = new Set(["EXACT","ALIAS","CLEANED","SALT_STRIPPED","PARENTHETICAL","CONTAINED_ALIAS","FUZZY_AUTO"]);
+  /* ---- 01 정확도 ---- */
+  const ACC = new Set(D.accepting_tiers || ["EXACT","ALIAS","CLEANED","SALT_STRIPPED","PARENTHETICAL","CONTAINED_ALIAS","FUZZY_AUTO"]);
   const order = ["EXACT","ALIAS","CONTAINED_ALIAS","PARENTHETICAL","SALT_STRIPPED","CLEANED","FUZZY_AUTO",
                  "FUZZY_REVIEW","AMBIGUOUS","BLOCKED_PLACEBO","BLOCKED_CLASS_TERM","BLOCKED_TARGET_TERM","BLOCKED_NEGATED","BLOCKED_DISTINCT_PRODUCT","UNRESOLVED"];
   const E = D.evaluation;
+  const lab = s => E[s].as_labelled_raw_precision;
+  const line = (name,s) => { const r=lab(s); return r ?
+    `<li><b>${name}</b>: ${r.accepted_rows_scored}개 중 ${r.accepted_rows_correct}개 맞음 = <b>${pct(r.rate)}</b></li>` : ""; };
+  document.getElementById("evalplain").innerHTML =
+    `<b>쉽게 말하면</b> &mdash; 프로그램이 &ldquo;이 이름은 이 약&rdquo;이라고 연결한 것 가운데, 사람이 정답을 대 보니 맞은 비율입니다.`+
+    `<ul style="margin-top:8px">`+ line("시험 표본 (대표 숫자)","test") + line("개발 표본 (규칙을 만든 곳이라 좋게 나옴)","dev") +
+    line("수정 후 표본 (표본이 작아 참고만)","postfix") + `</ul>`+
+    `<p style="margin-top:8px">숫자는 정답을 매긴 그 시점의 결과 그대로입니다. 그 뒤 감사에서 찾은 오류를 고쳤지만, `+
+    `고친 프로그램의 점수를 같은 표본으로 다시 재면 스스로를 채점하는 셈이라 대표 숫자로 쓰지 않습니다. `+
+    `점수 변화 이력: 99.1% → 96.9% → 89.6% → ${pct(HL.rate)} (감사 때마다 놓친 오류를 찾아 라벨을 바로잡으며 내려감).</p>`;
   const cell = (s,t) => {
     const r = (E[s].per_tier||{})[t];
     if(!r) return '<td class="n">&mdash;</td>';
     const carried = r.source && r.source.indexOf("development")===0 && s!=="dev";
-    return `<td class="n" title="${r.correct}/${r.sampled} correct">${pct(r.rate)}${carried?' <span style="color:var(--ink-3)">*</span>':""}</td>`;
+    return `<td class="n" title="${r.correct}/${r.sampled} 맞음">${pct(r.rate)}${carried?' <span style="color:var(--ink-3)">*</span>':""}</td>`;
   };
   document.getElementById("evaltable").innerHTML =
-    `<thead><tr><th>Tier</th><th>Distinct</th><th>Dev</th><th>Held-out test</th><th>Post-fix</th><th>What the tier does</th></tr></thead><tbody>`+
+    `<thead><tr><th>방법</th><th>종류 수</th><th>개발</th><th>시험</th><th>수정 후</th><th>결과</th></tr></thead><tbody>`+
     order.map(t=>{
       const any = E.postfix.per_tier[t]||E.test.per_tier[t]||E.dev.per_tier[t];
       if(!any) return "";
-      const role = ACC.has(t) ? "becomes an edge" :
-        (t==="FUZZY_REVIEW" ? "proposal held back for a human" :
-         t==="UNRESOLVED" ? "left unmatched on purpose" :
-         t==="AMBIGUOUS" ? "several molecules, no evidence to choose" : "refused as a non-substance");
-      return `<tr class="${ACC.has(t)?"accepting":"withholding"}"><td class="mono-s">${esc(t)}</td>`+
+      const role = ACC.has(t) ? "지도에 올라감" :
+        (t==="FUZZY_REVIEW" ? "사람 검토로 넘김" : t==="UNRESOLVED" ? "연결 안 함" :
+         t==="AMBIGUOUS" ? "연결 안 함(후보 여럿)" : "일부러 거절");
+      return `<tr class="${ACC.has(t)?"accepting":"withholding"}"><td>${esc(TIER[t]||t)}<div class="eng">${esc(t)}</div></td>`+
         `<td class="n">${num(any.population_unique)}</td>${cell("dev",t)}${cell("test",t)}${cell("postfix",t)}`+
         `<td style="color:var(--ink-2)">${role}</td></tr>`;
     }).join("")+`</tbody>`;
+  const FR = E.dev.per_tier.FUZZY_REVIEW;
   document.getElementById("evalnote").innerHTML =
-    `Held-out test, scored as labelled: <b>${E.test.as_labelled_raw_precision.accepted_rows_correct}/`+
-    `${E.test.as_labelled_raw_precision.accepted_rows_scored} = ${pct(E.test.as_labelled_raw_precision.rate)}</b> `+
-    `of accepted matches correct, out of ${E.test.sample_size} hand-scored rows. That is the headline. `+
-    `The rates in the table are the current pipeline on the rows whose resolution has not changed since `+
-    `labelling (${E.test.stale_rows} test rows are stale and excluded); because the audits used these `+
-    `rows to find the defects, they are not a held-out estimate. `+
-    `A rate marked <span style="color:var(--ink-3)">*</span> is carried over from the development `+
-    `sample because that tier had no distinct values left to sample independently. `+
-    `For <span class="mono-s">FUZZY_REVIEW</span> the figure means something different: it is how `+
-    `often a proposal held back for review would have been right. At `+
-    `${pct(E.dev.per_tier.FUZZY_REVIEW.rate)} (${E.dev.per_tier.FUZZY_REVIEW.correct} of `+
-    `${E.dev.per_tier.FUZZY_REVIEW.sampled}) it is below half, which is weak evidence the threshold is `+
-    `not set too low.`;
-  document.getElementById("qchead").textContent =
-    `${num(D.quality.totals.findings)} things worth a second look`;
+    `시험 표본 ${E.test.sample_size}행 중 ${E.test.stale_rows}행은 고친 뒤 결과가 바뀌어 표에서 뺐습니다. `+
+    `<span style="color:var(--ink-3)">*</span> 표시는 따로 뽑을 사례가 남지 않아 개발 표본 값을 그대로 옮긴 것입니다. `+
+    (FR ? `&lsquo;사람에게 넘김&rsquo; 줄은 뜻이 다릅니다: 넘긴 제안이 실제로 맞았을 비율이 ${pct(FR.rate)}(${FR.sampled}개 중 ${FR.correct}개)로 절반 아래라, `+
+    `확신 없는 것을 자동으로 받아들이지 않은 판단이 맞았다는 약한 근거입니다.` : "");
+  document.getElementById("qchead").textContent = `다시 볼 만한 것 ${num(D.quality.totals.findings)}건`;
 
-  /* ---- 02 tiers ---- */
-  const colorFor = t => ACC.has(t) ? "var(--s1)" :
-    t==="FUZZY_REVIEW" ? "var(--s4)" :
+  /* ---- 02 판단 ---- */
+  const colorFor = t => ACC.has(t) ? "var(--s1)" : t==="FUZZY_REVIEW" ? "var(--s4)" :
     t.indexOf("BLOCKED")===0 || t==="AMBIGUOUS" ? "var(--s2)" : "var(--ink-3)";
   bars(document.getElementById("tierchart"),
-    D.tiers.map(t=>({label:t.tier.replace(/_/g," ").toLowerCase(), value:t.count,
-                     color:colorFor(t.tier)})));
+    D.tiers.map(t=>({label:TIER[t.tier]||t.tier, value:t.count, color:colorFor(t.tier)})));
 
-  /* ---- 03 contamination ---- */
+  /* ---- 03 사전 오류 ---- */
   document.getElementById("contamination").innerHTML = D.quality.contamination.map(f=>{
     const wrong = (f.wrongly_listing_drugs||[]).map(d=>esc(d.name)).join(", ");
-    return `<div class="card"><div class="meta"><span class="chip high">${esc(f.severity)}</span>`+
-      `<span class="chip">cross-drug synonym</span></div>`+
+    return `<div class="card"><div class="meta"><span class="chip k high">심각도 ${esc(SEV[f.severity]||f.severity)}</span>`+
+      `<span class="chip k">여러 약이 같은 이름을 주장</span></div>`+
       `<div class="flow"><span class="mono-s">&ldquo;${esc(f.alias)}&rdquo;</span>`+
-      `<span class="arrow">listed by</span><span class="from">${wrong}</span></div>`+
-      `<div class="flow"><span class="arrow">bound to</span><span class="to">${esc(f.resolved_to_name)}</span>`+
-      `<span class="mono-s" style="color:var(--ink-3)">${esc(f.resolved_to)}</span></div>`+
-      `<p class="why">${esc(f.why)}</p></div>`;
+      `</div><div class="flow"><span class="arrow">이 이름을 잘못 갖고 있던 약:</span><span class="from">${wrong}</span></div>`+
+      `<div class="flow"><span class="arrow">실제 주인:</span><span class="to">${esc(f.resolved_to_name)}</span>`+
+      `<span class="mono-s" style="color:var(--ink-3)">${esc(f.resolved_to)}</span></div></div>`;
   }).join("");
   const dictTypes = D.quality.totals.by_family.dictionary||{};
   bars(document.getElementById("dictchart"),
     Object.entries(dictTypes).sort((a,b)=>b[1]-a[1])
-      .map(([k,v])=>({label:k.replace(/_/g," "), value:v, color:"var(--s3)"})));
+      .map(([k,v])=>({label:(QC[k]||["",k])[1], value:v, color:"var(--s3)"})));
 
-  /* ---- 04 guards ---- */
+  /* ---- 04 안전장치 ---- */
   const guards = [
-    ["Placebo arms", "placebo plus docetaxel", "docetaxel recorded, placebo refused",
-     "A placebo-controlled arm is not a drug-free arm. Blocking the whole string loses a real exposure; accepting it invents one. The separator decides which."],
-    ["Development codes", "BMS-986504", "no approximate match, ever",
-     "One digit apart is a different molecule, so string similarity is actively misleading here. Fuzzy matching is disabled for anything shaped like a development code."],
-    ["Numeric disagreement", "recombinant interleukin-12", "not aldesleukin (IL-2)",
-     "Two strings one character apart scored 97.9. Any disagreement in the digits now vetoes the match outright."],
-    ["Unseparated combinations", "Cisplatin Docetaxel Gefitinib Pemetrexed", "all four, not the first",
-     "Matching one drug and discarding the rest produces a record that looks complete and is not — the most dangerous kind of error, because nothing downstream can detect it."],
+    ["위약이 섞인 경우", "placebo plus docetaxel", "docetaxel 만 기록, 위약은 거절",
+     "위약 대조군이라고 약이 없는 게 아닙니다. 통째로 버리면 실제 투여한 약을 잃고, 통째로 받으면 없는 약을 만들어 냅니다. '+' 같은 구분 기호를 보고 나눕니다."],
+    ["개발 코드", "BMS-986504", "비슷한 코드로 바꿔 맞추지 않음",
+     "숫자 하나만 달라도 다른 약입니다. 그래서 개발 코드처럼 생긴 이름에는 '비슷하면 맞춤'을 아예 쓰지 않습니다."],
+    ["숫자가 다른 경우", "recombinant interleukin-12", "IL-2 약(aldesleukin)으로 바꾸지 않음",
+     "한 글자 차이라 비슷함 점수가 97.9 였습니다. 지금은 이름 속 숫자가 하나라도 다르면 연결하지 않습니다."],
+    ["약 여러 개를 붙여 쓴 경우", "Cisplatin Docetaxel Gefitinib Pemetrexed", "첫 번째만이 아니라 네 개 모두",
+     "하나만 맞추고 나머지를 버리면 기록이 멀쩡해 보여서 아무도 모릅니다. 가장 위험한 종류의 오류라 따로 막습니다."],
   ];
   document.getElementById("guards").innerHTML = guards.map(([t,from,to,why])=>
     `<div class="card"><h3>${esc(t)}</h3>`+
@@ -405,17 +463,16 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
     `<span class="to">${esc(to)}</span></div>`+
     `<p class="why">${esc(why)}</p></div>`).join("");
 
-  /* ---- 05 graph ---- */
+  /* ---- 05 지도 ---- */
   const rel = D.graph.stats.edges_by_rel;
   bars(document.getElementById("relchart"),
     Object.entries(rel).sort((a,b)=>b[1]-a[1])
-      .map(([k,v])=>({label:k.replace(/_/g," ").toLowerCase(), value:v, color:"var(--s1)"})));
+      .map(([k,v])=>({label:REL[k]||k, value:v, color:"var(--s1)"})));
   bars(document.getElementById("topdrugs"),
     D.top_drugs.slice(0,10).map(d=>({label:d.name.toLowerCase(), value:d.trials, color:"var(--s1)"})));
   bars(document.getElementById("topcos"),
     D.top_companies.slice(0,10).map(c=>({label:c.name, value:c.drugs, color:"var(--s3)"})));
 
-  /* ego network: target at centre, drugs on a ring, sponsors outside */
   (function(){
     const g = D.graph.ego, W=940, Hh=520, cx=W/2, cy=Hh/2;
     const centre = g.nodes.find(n=>n.type==="Target");
@@ -428,7 +485,7 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
     cos.forEach((c,i)=>{ const a=(i/cos.length)*Math.PI*2 - Math.PI/2 + 0.12;
       pos[c.id]=[cx+Math.cos(a)*395, cy+Math.sin(a)*218]; });
     let s = `<svg viewBox="0 0 ${W} ${Hh}" width="100%" style="min-width:680px;height:auto"
-      xmlns="http://www.w3.org/2000/svg">`;
+      xmlns="http://www.w3.org/2000/svg" role="img" aria-label="EGFR 에 작용하는 약과 그 약의 임상을 주관한 회사">`;
     g.edges.forEach(e=>{ const a=pos[e.src], b=pos[e.dst]; if(!a||!b) return;
       s += `<line x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}"
         stroke="var(--line)" stroke-width="${e.rel==="ACTS_ON"?2:1.2}" />`; });
@@ -449,32 +506,33 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
     document.getElementById("ego").outerHTML = s;
   })();
 
-  /* ---- 06 demos ---- */
+  /* ---- 06 질문 ---- */
   document.getElementById("demos").innerHTML = D.demos.map(d=>{
     const g = d.checks.grounded;
+    const refused = d.intent==="unsupported";
     const ev = d.evidence.slice(0,5).map(e=>{
       const src = e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.source_record||e.source)}</a>`
                         : `<span class="mono-s" style="color:var(--ink-3)">${esc(e.source_record||e.source)}</span>`;
       return `<div>&bull; ${esc(e.statement)} &mdash; ${src} <span class="mono-s"
-        style="color:var(--ink-3)">conf ${Number(e.confidence).toFixed(2)}</span></div>`;
+        style="color:var(--ink-3)">확실도 ${Number(e.confidence).toFixed(2)}</span></div>`;
     }).join("");
     return `<div class="demo"><p class="q">${esc(d.question)}</p>`+
-      `<div class="meta"><span class="chip">${esc(d.intent)}</span>`+
-      `<span class="chip ${g?"ok":"medium"}">${g?"grounded":"unsupported claim"}</span>`+
-      `<span class="chip">${esc(d.generated_by)}</span></div>`+
+      `<div class="meta"><span class="chip k">${esc(INTENT[d.intent]||d.intent)}</span>`+
+      `<span class="chip k ${refused?"":(g?"ok":"medium")}">${refused?"답하지 않음":(g?"근거와 일치":"근거에 없는 내용 있음")}</span>`+
+      `<span class="chip k">${refused?"근거 없음 → 거절":"언어 모델 없이 정해진 틀로 작성"}</span></div>`+
       `<pre class="ans">${esc(d.answer)}</pre>`+
-      (ev?`<details><summary>evidence with provenance (${d.evidence.length})</summary>`+
+      (ev?`<details><summary>근거와 출처 보기 (${d.evidence.length}개)</summary>`+
           `<div class="ev" style="margin-top:8px">${ev}</div></details>`:"")+
       `</div>`;
   }).join("");
 
-  /* ---- 07 quality ---- */
+  /* ---- 07 품질 ---- */
   const fams = D.quality.totals.by_family;
   const all = [];
   Object.keys(fams).forEach(f=>Object.entries(fams[f]).forEach(([k,v])=>all.push([f,k,v])));
   const famColor = {dictionary:"var(--s3)", record:"var(--s1)", graph:"var(--s4)"};
   bars(document.getElementById("qcchart"),
-    all.sort((a,b)=>b[2]-a[2]).map(([f,k,v])=>({label:k.replace(/_/g," "), value:v, color:famColor[f]||"var(--s1)"})));
+    all.sort((a,b)=>b[2]-a[2]).map(([f,k,v])=>({label:(QC[k]||["",k])[1], value:v, color:famColor[f]||"var(--s1)"})));
   const pick = ["cross_drug_synonym","incomplete_intervention_parse","recurrent_unresolved_surface",
                 "out_of_scope_trial","stage_disagrees_with_reference","suspected_duplicate_entity"];
   document.getElementById("qccards").innerHTML = pick.map(t=>{
@@ -482,26 +540,25 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
     const f = xs[0];
     const detail = t==="incomplete_intervention_parse"
         ? `<div class="flow"><span class="mono-s">${esc(f.surface)}</span></div>
-           <p class="why">resolved ${esc((f.resolved_to||[]).join(", "))}; not accounted for:
+           <p class="why">읽힌 약: ${esc((f.resolved_to||[]).join(", "))} &middot; 빠진 부분:
            <span class="mono-s" style="color:var(--critical)">${esc((f.not_accounted_for||[]).join(", "))}</span></p>`
       : t==="recurrent_unresolved_surface"
         ? `<div class="flow"><span class="mono-s">${esc(f.surface)}</span>
-           <span class="arrow">&times;${esc(f.occurrences)} trials</span></div>`
+           <span class="arrow">임상시험 ${esc(f.occurrences)}건에서 못 찾음</span></div>`
       : t==="out_of_scope_trial"
-        ? `<div class="flow"><span class="mono-s">${esc((f.conditions||[])[0]||"")}</span></div>`
+        ? `<div class="flow"><span class="arrow">시험 대상 질환:</span><span class="mono-s">${esc((f.conditions||[])[0]||"")}</span></div>`
       : t==="stage_disagrees_with_reference"
         ? `<div class="flow"><span class="mono-s">${esc(f.drug_name)}</span>
-           <span class="arrow">registry phase ${esc(f.trial_phase)} vs reference ${esc(f.reference_phase_in_nsclc)}</span></div>`
+           <span class="arrow">등록 사이트 ${esc(f.trial_phase)} 단계 / 참고 자료 ${esc(f.reference_phase_in_nsclc)} 단계</span></div>`
       : t==="suspected_duplicate_entity"
         ? `<div class="flow"><span class="mono-s">${esc(f.drug_a.name)}</span><span class="arrow">&harr;</span>
            <span class="mono-s">${esc(f.drug_b.name)}</span>
-           <span class="arrow">${esc(f.shared_alias_count)} shared aliases</span></div>`
+           <span class="arrow">같은 다른 이름 ${esc(f.shared_alias_count)}개</span></div>`
       : `<div class="flow"><span class="mono-s">&ldquo;${esc(f.alias)}&rdquo;</span>
          <span class="arrow">&rarr;</span><span class="to">${esc(f.resolved_to_name||"")}</span></div>`;
     const n = (fams.dictionary||{})[t] || (fams.record||{})[t] || (fams.graph||{})[t] || 0;
-    return `<div class="card"><div class="meta"><span class="chip ${esc(f.severity||"low")}">${esc(f.severity||"low")}</span>`+
-      `<span class="chip">${esc(n)} found</span></div><h3>${esc(t.replace(/_/g," "))}</h3>`+
-      detail + `<p class="why">${esc(f.why||"")}</p></div>`;
+    return `<div class="card"><div class="meta"><span class="chip k ${esc(f.severity||"low")}">심각도 ${esc(SEV[f.severity]||"낮음")}</span>`+
+      `<span class="chip k">${num(n)}건</span></div><h3>${esc((QC[t]||["",t])[1])}</h3>`+ detail + `</div>`;
   }).join("");
 })();
 </script>

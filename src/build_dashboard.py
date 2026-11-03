@@ -22,7 +22,7 @@ FRAGMENT = C.WEB / "dashboard.html"
 STANDALONE = C.WEB / "index.html"
 
 WRAPPER_HEAD = """<!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
