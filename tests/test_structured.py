@@ -150,3 +150,43 @@ def test_empty_reply_means_no_answer_not_a_removed_claim(monkeypatch):
     monkeypatch.setattr(Q.OncoKG, "_llm_claims", staticmethod(lambda q, ev: ('{"claims": []}', "f")))
     a = KG.answer(Q3, use_llm=True)
     assert "removed" not in a.text and "nothing in the evidence" in a.text
+
+
+# Codex review s2
+def test_overflowing_and_non_finite_numbers_keep_the_result_serialisable():
+    raw = ('{"claims":[{"kind":"relation","relation":"SPONSORS_TRIAL_OF","subject":"AstraZeneca",'
+           '"object":"osimertinib","evidence":"' + AZ_OSI + '","trial_count":1e309}]}')
+    r = verify(Q5, raw=raw)
+    assert not r["verified"]
+    json.dumps(r, allow_nan=False)
+    direct = KG.verify_structured({"claims": [rel("SPONSORS_TRIAL_OF", "AstraZeneca", "osimertinib",
+                                                   AZ_OSI, trial_count=float("nan"))]}, evidence(Q5))
+    assert not direct["verified"]
+    json.dumps(direct, allow_nan=False)
+
+
+def test_a_label_shared_by_two_nodes_is_ambiguous(monkeypatch):
+    import structured as St
+    v = St.Verifier(KG)
+
+    class Conn:
+        def __init__(self, real):
+            self.real = real
+
+        def execute(self, sql, args=()):
+            if "lower(label)=lower(?)" in sql:
+                return type("R", (), {"fetchall": lambda s: [
+                    {"id": "CHEMBL1", "type": "Drug"}, {"id": "CHEMBL2", "type": "Drug"}]})()
+            return self.real.execute(sql, args)
+
+    monkeypatch.setattr(v, "kg", type("K", (), {"conn": Conn(KG.conn),
+                                                 "link_entities": KG.link_entities})())
+    ids, why = v.resolve("SHARED NAME", "Drug")
+    assert not ids and "use the id" in why
+
+
+def test_a_missing_or_failing_model_is_reported_not_presented_as_an_empty_answer(monkeypatch):
+    monkeypatch.setattr(Q.OncoKG, "_llm_claims",
+                        staticmethod(lambda q, ev: ("", "error: RuntimeError")))
+    a = KG.answer(Q3, use_llm=True)
+    assert "could not be used" in a.text and a.checks["applicable"] is False

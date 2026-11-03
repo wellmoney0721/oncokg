@@ -1,0 +1,40 @@
+{
+  "question": "What does osimertinib target?",
+  "fixture_only": true,
+  "fixture_sql": "UPDATE node SET label='OSIMERTINIB' WHERE id='CHEMBL3707320'",
+  "live_duplicate_label_count": 0,
+  "input": {
+    "claims": [
+      {
+        "kind": "relation",
+        "relation": "ACTS_ON",
+        "subject": "OSIMERTINIB",
+        "object": "EGFR",
+        "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+        "action": "INHIBITOR"
+      }
+    ]
+  },
+  "resolved_ids": [
+    "CHEMBL3353410",
+    "CHEMBL3707320"
+  ],
+  "resolve_reason": null,
+  "output": {
+    "verified": true,
+    "accepted": [
+      {
+        "kind": "relation",
+        "relation": "ACTS_ON",
+        "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+        "subject": "CHEMBL3353410",
+        "object": "ENSG00000146648",
+        "action": "INHIBITOR"
+      }
+    ],
+    "rejected": [],
+    "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"
+  },
+  "source_graph_integrity": "ok",
+  "fixture_graph_integrity": "ok"
+}

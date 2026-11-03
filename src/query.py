@@ -385,6 +385,13 @@ class OncoKG:
             # edge; the claims are checked exactly against the graph and the answer is
             # written from the accepted ones (structured.py).
             raw, by = self._llm_claims(question, evidence)
+            if by.startswith("error"):
+                return Answer(question, intent, entities,
+                              "The language model could not be used (" + by[7:] + "); no "
+                              "answer was generated.", evidence, by,
+                              {"grounded": None, "applicable": False, "accepted": 0,
+                               "rejected": [], "unsupported_claims": [],
+                               "method": "no model reply to check"})
             result = self.verify_structured(raw, evidence)
             text = result["text"] or (
                 "The model found nothing in the evidence that answers this question."
@@ -441,7 +448,7 @@ class OncoKG:
         try:
             import anthropic
         except ImportError:
-            return ('{"claims": []}', "error: the anthropic package is not installed")
+            return "", "error: the anthropic package is not installed"
         block = "\n".join(f"- id={e.edge_id} | {e.statement}" for e in evidence)
         prompt = (
             "You answer a question about a non-small cell lung cancer knowledge graph "
@@ -458,10 +465,13 @@ class OncoKG:
             "and no prose. If the evidence does not answer the question, reply "
             '{"claims": []}.\n\n'
             f"Question: {question}\n\nEvidence:\n{block}\n")
-        client = anthropic.Anthropic()
-        msg = client.messages.create(
-            model="claude-sonnet-4-5", max_tokens=1500,
-            messages=[{"role": "user", "content": prompt}])
+        try:
+            client = anthropic.Anthropic()
+            msg = client.messages.create(
+                model="claude-sonnet-4-5", max_tokens=1500,
+                messages=[{"role": "user", "content": prompt}])
+        except Exception as e:                    # an outage is reported, not raised
+            return "", f"error: {type(e).__name__}"
         raw = next((b.text for b in (msg.content or []) if getattr(b, "text", None)), "")
         raw = raw.strip()
         m = re.search(r"\{.*\}", raw, re.S)            # tolerate a code fence around it

@@ -27,7 +27,9 @@ A claim is accepted only when all of these hold:
     edge is live in the graph (or, for a drug claim, it is the drug's own profile
     record "profile:<id>" retrieved for this question);
   * the edge's relation is the claimed relation, and its two ends are the entities
-    the claim names (a name must resolve, as a whole, to exactly that node id);
+    the claim names: a name is a node id, a label that belongs to exactly one node of
+    that type, or a printable-ASCII alias the entity linker resolves, as a whole, to
+    one entity (for an organisation, that entity's merged ids count as one);
   * every value equals what the graph stores: the edge's action type, the sponsor's
     trial count, the trial's phase set and status, the drug's maximum stage, and the
     number of live trials evaluating the drug.
@@ -72,6 +74,28 @@ def _no_constant(name):
     raise ValueError(f"{name} is not a JSON number")
 
 
+def _finite_float(text):
+    v = float(text)
+    if v != v or v in (float("inf"), float("-inf")):
+        raise ValueError(f"{text} is not a finite number")      # "1e309" overflows
+    return v
+
+
+def _safe(v, depth=0):
+    """A rejected claim echoed back, with anything JSON cannot carry made a string."""
+    if depth > 20:
+        return "…"
+    if isinstance(v, float) and (v != v or v in (float("inf"), float("-inf"))):
+        return str(v)
+    if isinstance(v, dict):
+        return {str(k): _safe(x, depth + 1) for k, x in list(v.items())[:50]}
+    if isinstance(v, (list, tuple)):
+        return [_safe(x, depth + 1) for x in list(v)[:50]]
+    if v is None or isinstance(v, (bool, int, float)):
+        return v
+    return str(v)[:500]
+
+
 class Verifier:
     def __init__(self, kg):
         self.kg = kg
@@ -95,6 +119,9 @@ class Verifier:
             (name,)).fetchall()
         if rows:
             ids = {r["id"] for r in rows if r["type"] == want}
+            if len(ids) > 1:
+                return set(), (f"'{name}' is the label of {len(ids)} {want.lower()} nodes; "
+                               "use the id")
             if ids:
                 return ids, None
             return set(), f"{name} is a {rows[0]['type'].lower()}, not a {want.lower()}"
@@ -231,7 +258,8 @@ class Verifier:
         if isinstance(payload, str):
             try:
                 # NaN and Infinity are not JSON; refusing them keeps every echo valid JSON
-                payload = json.loads(payload, parse_constant=_no_constant)
+                payload = json.loads(payload, parse_constant=_no_constant,
+                                     parse_float=_finite_float)
             except (ValueError, RecursionError) as e:
                 return {"verified": False, "accepted": [], "text": "",
                         "rejected": [{"claim": None, "why": "not valid JSON: "
@@ -253,7 +281,7 @@ class Verifier:
             except Exception as e:           # a claim the checker cannot read is rejected
                 facts, why = None, f"the claim could not be read ({type(e).__name__})"
             if why:
-                rejected.append({"claim": c, "why": why})
+                rejected.append({"claim": _safe(c), "why": why})
             else:
                 accepted.append(facts)
         if len(claims) > 50:
