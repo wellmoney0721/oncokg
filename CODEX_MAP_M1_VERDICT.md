@@ -186,3 +186,11 @@ osimertinib. Additional known over-refusals: `GS-11CAL-101`, `3en3hg4wsw` (codes
 | M16-S1 | the item's isotope state was recomputed for every match (seconds under the lock) | computed once per item (cached) |
 
 Stored-alias sweep: no change. Tests 344.
+
+## Round 17 (audit_evidence_claims/m17) — CHANGES REQUIRED (one blocker)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M17-B1 | "trastuzumab labelled-I-124": punctuation was removed before the letter-boundary check, gluing the I to "labelled" | each word is also checked as its punctuation-separated pieces and every neighbouring pair glued ("I"+"124") |
+
+Stored-alias sweep: no change. Tests 345.

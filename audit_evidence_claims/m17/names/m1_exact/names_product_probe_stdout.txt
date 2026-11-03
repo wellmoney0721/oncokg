@@ -1,0 +1,212 @@
+[
+  {
+    "input": "bevacizumab - awwb",
+    "is_distinct_product": true,
+    "is_radiotracer": false,
+    "is_isotope_label_first": false,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab - awwb",
+        "matched_text": "bevacizumab - awwb",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "resolver": [
+      [
+        "BLOCKED_DISTINCT_PRODUCT",
+        null
+      ]
+    ],
+    "http_200": {
+      "refused": "bevacizumab - awwb",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "input": "bevacizumab – awwb",
+    "is_distinct_product": true,
+    "is_radiotracer": false,
+    "is_isotope_label_first": false,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab - awwb",
+        "matched_text": "bevacizumab - awwb",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "resolver": [
+      [
+        "BLOCKED_DISTINCT_PRODUCT",
+        null
+      ]
+    ],
+    "http_200": {
+      "refused": "bevacizumab - awwb",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "input": "89Zr - trastuzumab",
+    "is_distinct_product": false,
+    "is_radiotracer": true,
+    "is_isotope_label_first": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "89Zr - trastuzumab",
+        "matched_text": "89Zr - trastuzumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "resolver": [
+      [
+        "BLOCKED_CLASS_TERM",
+        null
+      ]
+    ],
+    "http_200": {
+      "refused": "89Zr - trastuzumab",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "input": "[89Zr] trastuzumab",
+    "is_distinct_product": false,
+    "is_radiotracer": true,
+    "is_isotope_label_first": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "89Zr trastuzumab",
+        "matched_text": "89Zr trastuzumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "resolver": [
+      [
+        "BLOCKED_CLASS_TERM",
+        null
+      ]
+    ],
+    "http_200": {
+      "refused": "89Zr trastuzumab",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "input": "[89Zr]trastuzumab",
+    "is_distinct_product": false,
+    "is_radiotracer": true,
+    "is_isotope_label_first": false,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "89Zr]trastuzumab",
+        "matched_text": "89Zr]trastuzumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "resolver": [
+      [
+        "BLOCKED_CLASS_TERM",
+        null
+      ]
+    ],
+    "http_200": {
+      "refused": "89Zr]trastuzumab",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "input": "ＡＶＡＳＴＩＮ",
+    "is_distinct_product": false,
+    "is_radiotracer": false,
+    "is_isotope_label_first": false,
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "AVASTIN",
+        "matched_alias": "Avastin"
+      }
+    ],
+    "resolver": [
+      [
+        "ALIAS",
+        "CHEMBL1201583"
+      ]
+    ],
+    "http_200": {
+      "center": {
+        "id": "CHEMBL1201583",
+        "type": "Drug",
+        "label": "BEVACIZUMAB",
+        "matched_text": "Avastin",
+        "trials": 122,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": []
+    }
+  },
+  {
+    "input": "bevacizumab－awwb",
+    "is_distinct_product": false,
+    "is_radiotracer": false,
+    "is_isotope_label_first": false,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab-awwb",
+        "matched_text": "bevacizumab-awwb",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "resolver": [
+      [
+        "ALIAS",
+        "CHEMBL1201583"
+      ]
+    ],
+    "http_200": {
+      "refused": "bevacizumab-awwb",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "input": "bevacizumab—awwb",
+    "is_distinct_product": false,
+    "is_radiotracer": false,
+    "is_isotope_label_first": false,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab-awwb",
+        "matched_text": "bevacizumab-awwb",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "resolver": [
+      [
+        "ALIAS",
+        "CHEMBL1201583"
+      ]
+    ],
+    "http_200": {
+      "refused": "bevacizumab-awwb",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  }
+]

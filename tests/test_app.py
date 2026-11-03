@@ -412,3 +412,13 @@ def test_element_first_one_letter_isotopes_refuse():
     t0 = time.time()
     e.kg.link_entities(" ".join(["osimertinib"] * 80))
     assert time.time() - t0 < 1.0
+
+
+# Codex review m17: punctuation before a one-letter isotope keeps its boundary
+def test_a_punctuated_element_first_isotope_refuses():
+    import app
+    e = app.Engine()
+    for t in ("trastuzumab labelled-I-124", "trastuzumab labelled_I_124", "paclitaxel tagged-C-14"):
+        r = e.explore(t)
+        assert r.get("refused") or r.get("not_found"), t
+    assert not e.kg.answer("Which trials evaluate trastuzumab labelled-I-124?", use_llm=False).evidence

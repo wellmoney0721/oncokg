@@ -1,0 +1,428 @@
+{
+  "description": "Every changed string constant in the 59 reused scripts checked: only output paths, baseline location, localhost port or port comments differ; all original test-input literals preserved.",
+  "scripts": [
+    {
+      "source": "audit_evidence_claims/m16/names/adapted_frozen_qa_relink_sweep.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names",
+          "adapted": "audit_evidence_claims/m17/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/adapted_m7_focus.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/adapted_names_m5_attack.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names",
+          "adapted": "audit_evidence_claims/m17/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/alias_checks/probe.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/alias_http.py",
+      "changed_string_constants": [
+        {
+          "original": "8951",
+          "adapted": "8981",
+          "allowed_output_or_port_change": true
+        },
+        {
+          "original": "http://127.0.0.1:8951/",
+          "adapted": "http://127.0.0.1:8981/",
+          "allowed_output_or_port_change": true
+        },
+        {
+          "original": "http://127.0.0.1:8951/api/",
+          "adapted": "http://127.0.0.1:8981/api/",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/alias_loss_controls.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/alias_regressions.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/attacks/lone_alias_probe.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/attacks/probe.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/compare_replays.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m15/names",
+          "adapted": "audit_evidence_claims/m16/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/focused_matrix.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/focused_new.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names",
+          "adapted": "audit_evidence_claims/m17/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/fresh_probe.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/frozen_qa_relink_sweep.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names",
+          "adapted": "audit_evidence_claims/m17/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/historical_focus.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/historical_qa_replay.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names",
+          "adapted": "audit_evidence_claims/m17/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/joined_label_probe.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m10_attacks/focus.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m10_attacks/probe.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m11_attacks/key_equivalence.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m11_exact.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m12_attacks/focused.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m14_exact/edge_probe.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m14_exact/fresh.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m14_supplement.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m15_exact/targeted_probe.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m1_exact/names_extra_probe.py",
+      "changed_string_constants": [
+        {
+          "original": "http://127.0.0.1:8951/api/explore",
+          "adapted": "http://127.0.0.1:8981/api/explore",
+          "allowed_output_or_port_change": true
+        },
+        {
+          "original": "audit_evidence_claims/m16/names/m1_exact/names_extra_results.json",
+          "adapted": "audit_evidence_claims/m17/names/m1_exact/names_extra_results.json",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m1_exact/names_probe.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names/m1_exact/names_results.json",
+          "adapted": "audit_evidence_claims/m17/names/m1_exact/names_results.json",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m1_exact/names_product_probe.py",
+      "changed_string_constants": [
+        {
+          "original": "http://127.0.0.1:8951/api/explore",
+          "adapted": "http://127.0.0.1:8981/api/explore",
+          "allowed_output_or_port_change": true
+        },
+        {
+          "original": "audit_evidence_claims/m16/names/m1_exact/names_product_bypass.json",
+          "adapted": "audit_evidence_claims/m17/names/m1_exact/names_product_bypass.json",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m1_exact/names_retired_http.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names/m1_exact/names_retired_http_results.json",
+          "adapted": "audit_evidence_claims/m17/names/m1_exact/names_retired_http_results.json",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m1_exact/names_retired_probe.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m1_exact/run_m1_exact.py",
+      "changed_string_constants": [
+        {
+          "original": "8951",
+          "adapted": "8981",
+          "allowed_output_or_port_change": true
+        },
+        {
+          "original": "http://127.0.0.1:8951/",
+          "adapted": "http://127.0.0.1:8981/",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m7_attacks/fresh_probe.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m7_focus.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m9_attacks/http_probe.py",
+      "changed_string_constants": [
+        {
+          "original": "Confirm fresh attack cases against the unmodified CLI server on owned port 8952.",
+          "adapted": "Confirm fresh attack cases against the unmodified CLI server on owned port 8982.",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/m9_attacks/probe.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/names_attack.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names",
+          "adapted": "audit_evidence_claims/m17/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/names_boundary_details.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names",
+          "adapted": "audit_evidence_claims/m17/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/names_cross_item_refusal.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names/names_cross_item_refusal.json",
+          "adapted": "audit_evidence_claims/m17/names/names_cross_item_refusal.json",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/names_demo_compare.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names",
+          "adapted": "audit_evidence_claims/m17/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/names_final_checks.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names",
+          "adapted": "audit_evidence_claims/m17/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/names_label_scan.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names/names_label_scan.json",
+          "adapted": "audit_evidence_claims/m17/names/names_label_scan.json",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/names_m5_attack.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names",
+          "adapted": "audit_evidence_claims/m17/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/names_m5_confirm.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names",
+          "adapted": "audit_evidence_claims/m17/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/names_new_boundaries.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names",
+          "adapted": "audit_evidence_claims/m17/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/names_qa_relink_sweep.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names",
+          "adapted": "audit_evidence_claims/m17/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/names_regressions.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names",
+          "adapted": "audit_evidence_claims/m17/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/names_reproduction.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names",
+          "adapted": "audit_evidence_claims/m17/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/names_separator_checks.py",
+      "changed_string_constants": [
+        {
+          "original": "audit_evidence_claims/m16/names",
+          "adapted": "audit_evidence_claims/m17/names",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/new_alias_confirmation.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/new_alias_regression.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/reversed_probe.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/run_additional.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/run_completion.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/run_final_replays.py",
+      "changed_string_constants": [
+        {
+          "original": "Remaining exact original m7/m9 HTTP reproductions; all owned servers use 8952.",
+          "adapted": "Remaining exact original m7/m9 HTTP reproductions; all owned servers use 8982.",
+          "allowed_output_or_port_change": true
+        }
+      ]
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/run_replays.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/run_round9.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/names/run_supplement.py",
+      "changed_string_constants": []
+    },
+    {
+      "source": "audit_evidence_claims/m16/attacks/new_probe.py",
+      "changed_string_constants": []
+    }
+  ]
+}

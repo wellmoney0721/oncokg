@@ -1,0 +1,24 @@
+## Cost and performance reproductions
+
+All nine inherited cost scripts exited zero, sequentially after other audit CPU/HTTP workloads finished. The additional M16 repeated-match instrumentation and HTTP reproducer also exited zero. Unrelated host load is uncontrolled; these are measurements, not service guarantees. Counterfactuals substitute only historical `query.py` against the same current app/data. [Execution](cost/execution_isolated.json), [provenance](reuse_manifest_root.json), [M16 follow-up execution](cost/repeated_match_execution.json).
+
+| Historical finding / exact workload | Current disposition and measured evidence |
+|---|---|
+| M5-S3 cubic qualifier scan, `' '.join(['x']*250)` (499 chars) | **FIXED for the original workload.** 2,224 calls to each predicate / 33,880 aggregate predicate-input characters, 0.02845 s direct. [Instrumentation](cost/perf_current.json). |
+| Original 999-character plain-answer timeout, `' '.join(['x']*500)` | **FIXED.** HTTP check 200 in 0.19197 s; later map 0.03369 s. [HTTP](cost/perf_check_http.json). |
+| M6/M7 repeated 2,000-piece resolver cost, `';'.join(['x']*2000)` | **FIXED for this repeated-piece control.** Current / historical `9bd7cb4` direct medians 0.21202 / 1.92070 s. HTTP check 0.42823 s, queued EGFR 0.34583 s, both 200. [Comparison](cost/fresh_cost_comparison.json), [HTTP](cost/fresh_cost_http.json), [stress](cost/cost_stress.json). |
+| M8-S1 4,097th resolver-cache entry | **FIXED.** 82/82 fill requests succeed; rollover and retry return OSIMERTINIB / CHEMBL3353410 with 79 trials, no KeyError. [HTTP](cost/cache_boundary_http.json). |
+| M10-M16 distinct-piece lock delay, `';'.join(f'isa x{i:04d}' for i in range(400))` | **NOT FIXED**, inherited cost concern. Cold check 2.65898 s, queued EGFR 2.59203 s, warm 0.51063 s; all 200. [HTTP](cost/isolated_unique_cost_http.json), [instrumentation](cost/unique_piece_cost.json). |
+| M11-M16 Unicode expansion, answer `'\ufdfa'*4000` | **NOT FIXED**, inherited cost concern. 4,000 chars expand to 72,000 under NFKC. Cold check 2.50050 s, queued EGFR 2.42491 s, warm 2.87081 s; all 200. [HTTP](cost/isolated_unicode_cost_http.json). |
+| M11-M16 punctuation normalization, `' - '.join(['x']*1000)+'xx'` | **NOT FIXED as measured overhead**, no error. Current / HEAD^ medians 0.37195 / 0.35989 s; at 499 chars 0.04917 / 0.04164 s. [Comparison](cost/normalization_cost.json). |
+| M12-M16 repeated matches, `' '.join(['isa']*1000)` | **NOT FIXED as residual repeated-match overhead**; **M16-S1 added isotope rescans FIXED**, detailed below. Current / HEAD^ direct medians 1.32586 / 4.50393 s; at 499 chars 0.03936 / 0.08517 s. [Comparison](cost/normalization_cost.json). |
+| M13-M16 repeated isotope alias, `';'.join(['A33 124i']*444)` | No error reproduced. Current / HEAD^ medians 0.06949 / 0.07035 s. Cached ordinary OSIMERTINIB 0.00014 / 0.00020 s. All 24 workload/version rows complete. [Comparison](cost/normalization_cost.json). |
+| Disease / ordinary concurrent maps | No failure reproduced: 2,774 Trials + 300 Targets, 30 per list, **18,575 bytes / 95.604 ms**. 24 requests / 12 workers all expected HTTP200 shapes in **1042.374 ms**. These ordinary early samples overlapped other audit work. [HTTP](root_checks/http_results.json). |
+
+### M16-S1: the item's isotope state is now computed once
+
+**FIXED for the exact reported extra work.** At 125 / 1,000 occurrences, instrumentation records **one whole-item scan** and **125 / 1,000 within-word helper calls**, respectively. The prior reproduction recorded 125 / 1,000 whole-item scans and 15,625 / 1,000,000 within-word calls. `@functools.lru_cache(maxsize=4096)` caches the pure tuple-keyed computation (`src/query.py:154-170`), called from `_marked` at `src/query.py:395-397`. The same single ISATUXIMAB entity survives. [Fresh instrumentation](cost/repeated_match_instrumentation.json), [reused script](cost/repeated_match_followup.py).
+
+For the legal 3,999-character **answer** field, the fresh HTTP check takes **2.38207 s**, queues EGFR for **2.29969 s**, and takes **2.65707 s** warm. The ordinary map after completion takes 0.04031 s; all return 200. This verifies the repair without claiming all repeated-match work was removed. `_marked` still constructs/scans token lists before checking the cache and runs before entity deduplication (`src/query.py:340-368,553-563`). [HTTP](cost/isolated_repeated_match_cost_http.json), [closed owned server / unchanged DB](cost/repeated_match_cost_lifecycle.json).
+
+`engine.lock` serializes API operations (`src/app.py:247-263`). These 3,999/4,000-character workloads use direct linking or the **answer field**; explore correctly rejects more than 500 characters. Limits precede NFKC (`src/app.py:239-243,260`; `src/query.py:117-118,254-256`). Residual costs are should-fix observations, not the reason for the verdict. **No model calls or model cost were incurred.**

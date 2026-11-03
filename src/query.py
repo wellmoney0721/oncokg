@@ -161,12 +161,15 @@ def _item_has_isotope(words: tuple) -> bool:
     if _medical_isotope_in(T.canonical_key(" ".join(words)), one_letter=False):
         return True
     for w in words:
-        key = T.canonical_key(w)
-        if _medical_isotope_in(key):
-            return True
-        for m in re.finditer(r"(?<![a-z])([a-z])(\d{1,3})(?!\d)", key):
-            if int(m.group(2)) in _MEDICAL_MASS.get(m.group(1), set()):
+        # the word as written, and its punctuation-separated pieces with each neighbouring
+        # pair glued, so a boundary the punctuation marks is kept ("labelled-I-124")
+        parts = [p.lower() for p in _alnum_words(w)]
+        for key in [T.canonical_key(w)] + parts + [a + b for a, b in zip(parts, parts[1:])]:
+            if _medical_isotope_in(key):
                 return True
+            for m in re.finditer(r"(?<![a-z])([a-z])(\d{1,3})(?!\d)", key):
+                if int(m.group(2)) in _MEDICAL_MASS.get(m.group(1), set()):
+                    return True
     return False
 
 def _labelled(drug_name: str) -> bool:
