@@ -221,3 +221,12 @@ A drug whose own name carries the label is still allowed ("fluorine-18 fluorodeo
 | M20-S1 | "non-radio-labelled trastuzumab" over-refused | a label run right after "non"/"not"/"no"/"un"/"without" does not count |
 
 Stored-alias sweep: no change. Tests 348.
+
+## Round 21 (audit_evidence_claims/m21) — CHANGES REQUIRED (two blockers)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M21-B1 | "trastuzumab labelled with Ce-134", "[134Ce] trastuzumab" (also Mn-52): name-only elements written as symbols | a two-letter symbol beside its mass counts inside one written word ("Ce-134", "134Ce") and across a space ("Ce 134"), except CR/CO/SE/LA across a space (everyday abbreviations) |
+| M21-B2 | "radioisotope-labelled trastuzumab", "labelled with a radioisotope" | label stems radioisotop, radiometal, radiochelat, radiohalogen, radiotheranost |
+
+"75 several", "51 criteria", "trastuzumab CR 51" still draw the drug. Stored-alias sweep: no change. Tests 349.

@@ -177,9 +177,12 @@ _ELEMENT_NAMES = {"hydrogen": "h", "tritium": "h", "carbon": "c", "nitrogen": "n
 # Stems that say the substance carries a radioactive label, read on a word or on two or
 # three neighbouring words glued ("radio-labelled", "radio-immuno-conjugate").
 _LABEL_STEMS = ("radiolabel", "radioiod", "radioactiv", "radioconjug", "radioimmuno",
-                "radiotracer", "radioligand", "radionuclid", "radiopharm", "tritiat")
+                "radiotracer", "radioligand", "radionuclid", "radiopharm", "tritiat",
+                "radioisotop", "radiometal", "radiochelat", "radiohalogen", "radiotheranost")
 # A word just before the label that says the opposite ("non-radio-labelled")
 _NOT_WORDS = {"non", "not", "no", "un", "without"}
+# Symbols that are also everyday abbreviations: read beside a mass only inside one word
+_SPACED_NOT = {"cr", "co", "se", "la"}
 # Words that say the substance carries a radioactive label.
 _LABEL_WORDS = {"tritiated", "tritium", "radiotracer", "radiotracers", "radioligand", "radionuclide",
                 "radioconjugate", "radioimmunoconjugate", "radiopharmaceutical", "radioactive",
@@ -205,15 +208,25 @@ def _item_has_isotope(words: tuple) -> bool:
             if x in _LABEL_WORDS or x.startswith(_LABEL_STEMS):
                 return True                  # "radiolabelled", "tritiated", "radiotracer"
 
-    def named(name: str, num: str) -> bool:
+    def named(name: str, num: str, apart: bool = False) -> bool:
         el = _ELEMENT_NAMES.get(name)
+        if el is None and len(name) == 2 and name in _NAME_MASS:
+            # a two-letter symbol counts as written ("Ce-134", "[134Ce]"); across a space
+            # only when it is not also a common abbreviation ("CR 51" = complete response)
+            if apart and name in _SPACED_NOT:
+                return False
+            el = name
         m = re.fullmatch(r"(\d{1,3})m?", num)
         return bool(el and m and int(m.group(1)) in _NAME_MASS.get(el, set()))
 
-    # element names written out, in either order, apart or glued ("iodine-124",
-    # "99m-technetium", "iodine124", "technetium99m", "99mtechnetium")
+    # element names or symbols beside a mass, in either order, apart or glued
+    # ("iodine-124", "99m-technetium", "iodine124", "technetium99m", "Ce 134")
     for a, b in zip(flat, flat[1:]):
-        if named(a, b) or named(b, a):
+        if named(a, b, apart=True) or named(b, a, apart=True):
+            return True
+    for w in words:                          # within one written word ("Ce-134", "Mn-52")
+        ps = [p.lower() for p in _alnum_words(w)]
+        if any(named(a, b) or named(b, a) for a, b in zip(ps, ps[1:])):
             return True
     for x in flat:
         m = re.fullmatch(r"(\d{1,3}m?)([a-z]+)|([a-z]+)(\d{1,3}m?)", x)

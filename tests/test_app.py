@@ -463,3 +463,15 @@ def test_therapy_nuclides_and_label_spellings_refuse():
     for t in ("non-radio-labelled trastuzumab", "unlabelled trastuzumab", "trastuzumab 600 mg sc"):
         assert e.explore(t)["center"]["label"] == "TRASTUZUMAB", t
     assert e.explore("osimertinib 51 criteria")["center"]["label"] == "OSIMERTINIB"
+
+
+# Codex review m21
+def test_bounded_symbol_isotopes_and_radioisotope_word_refuse():
+    import app
+    e = app.Engine()
+    for t in ("trastuzumab labelled with Ce-134", "[134Ce] trastuzumab", "134Ce-DOTA trastuzumab",
+              "trastuzumab labelled with Mn-52", "radioisotope-labelled trastuzumab",
+              "trastuzumab labelled with a radioisotope", "radio-isotope-labelled trastuzumab"):
+        assert e.explore(t).get("refused"), t
+    for t in ("75 several trastuzumab", "51 criteria trastuzumab", "trastuzumab CR 51"):
+        assert e.explore(t)["center"]["label"] == "TRASTUZUMAB", t
