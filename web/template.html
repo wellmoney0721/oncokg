@@ -160,9 +160,11 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
 <section>
   <p class="eyebrow">01 &middot; The measurement</p>
   <h2>What the numbers are worth</h2>
-  <p class="lede">Precision was measured three times on separate hand-scored samples. The development
-  sample shaped the rules, so its number is optimistic by construction; the held-out test sample is the
-  honest one; the post-fix sample checks that the repairs the test forced actually held.</p>
+  <p class="lede">Precision was measured on three separate hand-scored samples. The development
+  sample shaped the rules, so its number is optimistic by construction; the held-out test sample, scored
+  as it was labelled, is the honest one. Two audit rounds have since used the test rows to find
+  defects, so the per-tier rates below describe the repaired pipeline on rows it was tuned against, not
+  a held-out measurement of it.</p>
   <div class="tablebox"><table id="evaltable"></table></div>
   <p class="lede" style="margin-top:16px" id="evalnote"></p>
 </section>
@@ -203,9 +205,11 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
 <section>
   <p class="eyebrow">05 &middot; The graph</p>
   <h2>Companies, drugs, targets, trials</h2>
-  <p class="lede">Every edge carries its source record, the time that record was fetched, the
-  resolution tier that produced it and a confidence. Re-running against a newer snapshot retires
-  edges rather than deleting them, so the history of a relationship stays answerable.</p>
+  <p class="lede">Every edge carries its source, the time it was fetched and a confidence. Edges read
+  from one record carry that record; the derived sponsorship edges carry the full list of trials they
+  rest on instead, and only edges made by resolving free text carry a resolution tier. Re-running
+  against a newer snapshot retires edges and nodes rather than deleting them, so the history of a
+  relationship stays answerable.</p>
   <div class="chart" id="relchart"></div>
   <div class="graphbox"><svg id="ego" role="img"
     aria-label="EGFR with the drugs acting on it and their lead sponsors"></svg></div>
@@ -220,15 +224,16 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
   <h2>Retrieval that checks itself</h2>
   <p class="lede">Questions are resolved against the same dictionary the pipeline uses, so a question
   naming a trade name finds a graph that stores a ChEMBL id. The answer is then verified against its
-  own evidence: entities and numbers that do not appear in the retrieved set are reported rather than
-  shipped. With no language model key the evidence is rendered directly; with one, the model sees the
-  retrieved evidence and nothing else.</p>
+  own evidence: names, drug-shaped words and numbers that do not appear in the retrieved set are
+  reported rather than shipped. The check cannot verify a relation, a negation or a clinical claim
+  made of ordinary words. With no language model key the evidence is rendered directly and the check
+  does not apply; with one, the model sees the retrieved evidence and nothing else.</p>
   <div class="stack" id="demos" style="margin-top:22px"></div>
 </section>
 
 <section>
   <p class="eyebrow">07 &middot; The quality report</p>
-  <h2>1,400-odd things worth a second look</h2>
+  <h2 id="qchead">Things worth a second look</h2>
   <p class="lede">Findings are claims a curator should check, not verdicts. Each carries its evidence
   and a severity.</p>
   <div class="chart" id="qcchart"></div>
@@ -238,29 +243,32 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
 <section>
   <p class="eyebrow">08 &middot; Known defects</p>
   <h2>What is still broken</h2>
-  <p class="lede">These came out of the post-fix sample and are unrepaired. Leaving them listed is
-  cheaper than a number that quietly assumes they do not exist.</p>
+  <p class="lede">Unrepaired, and listed in full in the README. Leaving them listed is cheaper than a
+  number that quietly assumes they do not exist.</p>
   <ul class="backlog" style="margin-top:18px">
     <li><b>The placebo rule needs a separator.</b> <span class="mono-s">Placebo Drug: Docetaxel Drug:
     Carboplatin</span> has no <span class="mono-s">+</span> or <span class="mono-s">and</span>, so it
     reads as a reference arm and two genuinely administered drugs are dropped. The fix is to treat a
     repeated <span class="mono-s">Drug:</span> label as a separator.</li>
-    <li><b>Vector and platform words match as products.</b> <span class="mono-s">adenovirus</span>
-    inside <span class="mono-s">dendritic cell-adenovirus CCL21 vaccine</span> resolves to a specific
-    oncolytic product. The generic-term list that already blocks <span class="mono-s">platinum</span>
-    needs the vector vocabulary added to it.</li>
+    <li><b>The repaired pipeline has no held-out measurement.</b> The test sample was used by two
+    audit rounds; 25 of its 172 rows now resolve differently and are set aside as stale. Putting a
+    number on the current pipeline needs a new sample, labelled by someone other than the author.</li>
     <li><b>Coverage is capped by scope, not by skill.</b> The vocabulary holds only drugs Open Targets
     links to NSCLC, so <span class="mono-s">propranolol</span> and
     <span class="mono-s">Diklofenak Sodyum</span> are correctly refused and still count against
     coverage. Widening to the full ChEMBL drug set is the obvious next step, and would need its own
     precision measurement.</li>
-    <li><b>One annotator.</b> Every verdict in the three samples is the author's. A second independent
-    reviewer, and the agreement rate between them, is what would turn these numbers from defensible
-    into solid.</li>
-    <li><b>Three tiers were never independently tested.</b> <span class="mono-s">FUZZY_AUTO</span>,
-    <span class="mono-s">SALT_STRIPPED</span> and <span class="mono-s">CLEANED</span> have so few
-    distinct values that the development sample consumed all of them, so their rates are carried over
-    from the data the rules were tuned on and should be read as optimistic.</li>
+    <li><b>One annotator, two independent re-scores.</b> Every verdict is the author's; two reviews
+    re-scored 120 rows and disagreed on eight, every one lenient. An agreement rate over the full
+    sample is what would turn these numbers from defensible into solid.</li>
+    <li><b>Four tiers were never independently tested.</b> <span class="mono-s">FUZZY_AUTO</span>,
+    <span class="mono-s">FUZZY_REVIEW</span>, <span class="mono-s">SALT_STRIPPED</span> and
+    <span class="mono-s">CLEANED</span> have so few distinct values that the development sample consumed
+    all of them, so their rates are carried over from the data the rules were tuned on and should be
+    read as optimistic.</li>
+    <li><b>The synonym clean-up errs toward refusal.</b> Removing contaminated registry synonyms also
+    removed some correct names (misspellings, code names a molecule record does not list); each removal
+    is a finding in the quality report.</li>
   </ul>
 </section>
 
@@ -287,8 +295,8 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
     D.meta.sources.map(s=>`<span>${esc(s)}</span>`).join("")+
     `<span>scope: ${esc(D.meta.disease)}</span>`;
   const tiles = [
-    ["Accepted-match precision", pct(H.accepted_precision.estimate),
-     `95% CI ${pct(H.accepted_precision.ci95[0])}&ndash;${pct(H.accepted_precision.ci95[1])}`, true],
+    ["Held-out precision", pct(H.held_out_as_labelled.rate),
+     `${H.held_out_as_labelled.accepted_rows_correct} of ${H.held_out_as_labelled.accepted_rows_scored} accepted matches, as labelled &middot; Wilson ${pct(H.held_out_as_labelled.ci95[0])}&ndash;${pct(H.held_out_as_labelled.ci95[1])}`, true],
     ["Coverage", pct(H.coverage.resolved_rate_of_substance_like),
      `${num(H.coverage.accepted_occurrences)} of ${num(H.coverage.component_occurrences_excluding_blocked)} substance-like strings`],
     ["Trials parsed", num(H.trials), "ClinicalTrials.gov, interventional"],
@@ -339,15 +347,21 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
         `<td style="color:var(--ink-2)">${role}</td></tr>`;
     }).join("")+`</tbody>`;
   document.getElementById("evalnote").innerHTML =
-    `Held-out test: <b>${pct(E.test.accepted_precision.estimate)}</b> accepted-match precision over `+
-    `${E.test.sample_size} hand-scored rows, with every development row excluded. `+
-    `Post-fix: <b>${pct(E.postfix.accepted_precision.estimate)}</b> over a third sample of `+
-    `${E.postfix.sample_size} rows drawn after the repairs. `+
+    `Held-out test, scored as labelled: <b>${E.test.as_labelled_raw_precision.accepted_rows_correct}/`+
+    `${E.test.as_labelled_raw_precision.accepted_rows_scored} = ${pct(E.test.as_labelled_raw_precision.rate)}</b> `+
+    `of accepted matches correct, out of ${E.test.sample_size} hand-scored rows. That is the headline. `+
+    `The rates in the table are the current pipeline on the rows whose resolution has not changed since `+
+    `labelling (${E.test.stale_rows} test rows are stale and excluded); because the audits used these `+
+    `rows to find the defects, they are not a held-out estimate. `+
     `A rate marked <span style="color:var(--ink-3)">*</span> is carried over from the development `+
     `sample because that tier had no distinct values left to sample independently. `+
     `For <span class="mono-s">FUZZY_REVIEW</span> the figure means something different: it is how `+
     `often a proposal held back for review would have been right. At `+
-    `${pct(E.dev.per_tier.FUZZY_REVIEW.rate)} the threshold is doing its job.`;
+    `${pct(E.dev.per_tier.FUZZY_REVIEW.rate)} (${E.dev.per_tier.FUZZY_REVIEW.correct} of `+
+    `${E.dev.per_tier.FUZZY_REVIEW.sampled}) it is below half, which is weak evidence the threshold is `+
+    `not set too low.`;
+  document.getElementById("qchead").textContent =
+    `${num(D.quality.totals.findings)} things worth a second look`;
 
   /* ---- 02 tiers ---- */
   const colorFor = t => ACC.has(t) ? "var(--s1)" :

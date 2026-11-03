@@ -124,9 +124,13 @@ def main() -> None:
             "nodes": graph_stats["nodes"],
             "edges": graph_stats["edges"],
             "qc_findings": quality["totals"]["findings"],
-            "accepted_precision": evals["postfix"]["accepted_precision"],
-            "frozen_test_precision": evals["test"]["accepted_precision"],
-            "coverage": evals["postfix"]["coverage"],
+            # The headline is the held-out sample scored as labelled: the last
+            # measurement taken before anyone used those rows to repair the
+            # pipeline. An earlier dashboard put the post-fix stratified
+            # estimate here, the most flattering figure in the project.
+            "held_out_as_labelled": evals["test"]["as_labelled_raw_precision"],
+            "held_out_stale_rows": evals["test"]["stale_labels"]["count"],
+            "coverage": evals["test"]["coverage"],
         },
         "tiers": [{"tier": k, "count": v} for k, v in tiers.most_common()],
         # sorted, not list(set): set iteration order varies per process, which
@@ -136,6 +140,9 @@ def main() -> None:
         "evaluation": {
             k: {"per_tier": v["per_tier"],
                 "accepted_precision": v["accepted_precision"],
+                "raw_sample_precision": v["raw_sample_precision"],
+                "as_labelled_raw_precision": v["as_labelled_raw_precision"],
+                "stale_rows": v["stale_labels"]["count"],
                 "coverage": v["coverage"],
                 "sample_size": v["gold_sample_size"],
                 "limitations": v["limitations"]}
