@@ -230,3 +230,13 @@ Stored-alias sweep: no change. Tests 348.
 | M21-B2 | "radioisotope-labelled trastuzumab", "labelled with a radioisotope" | label stems radioisotop, radiometal, radiochelat, radiohalogen, radiotheranost |
 
 "75 several", "51 criteria", "trastuzumab CR 51" still draw the drug. Stored-alias sweep: no change. Tests 349.
+
+## Round 22 (audit_evidence_claims/m22) — CHANGES REQUIRED (three blockers)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M22-B1 | "trastuzumab labelled with 52Mn": the metastable "m" swallowed manganese's first letter | a fused mass and symbol is read both ways (with and without the "m") |
+| M22-B2 | "134CeDOTA trastuzumab", "134CeIII-DOTA", "trastuzumab DOTA134Ce": a symbol fused to its mass inside a longer word | mass then symbol, or symbol then mass, anywhere inside one word |
+| M22-B3 | "astatinated", "radioastatinated", "radiofluorinated", "radiobrominated trastuzumab" | every "radio..." word is a label (fail closed) except treatment and method words (radiotherapy, radiation, radiology, radiofrequency, radiochemotherapy, ...); "astatinated"; "labelled"/"labeled"/"tagged" on their own ("isotope-labelled", "FITC-labelled") |
+
+A negation covers only the label word it negates ("non-labelled", "non-radio-labelled"), not a later label in the same item. Stored-alias sweep: no change. Tests 350.

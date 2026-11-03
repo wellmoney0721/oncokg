@@ -475,3 +475,19 @@ def test_bounded_symbol_isotopes_and_radioisotope_word_refuse():
         assert e.explore(t).get("refused"), t
     for t in ("75 several trastuzumab", "51 criteria trastuzumab", "trastuzumab CR 51"):
         assert e.explore(t)["center"]["label"] == "TRASTUZUMAB", t
+
+
+# Codex review m22
+def test_fused_mass_symbols_and_radio_words_refuse():
+    import app
+    e = app.Engine()
+    for t in ("trastuzumab labelled with 52Mn", "134CeDOTA trastuzumab", "134CeIII-DOTA trastuzumab",
+              "trastuzumab DOTA134Ce", "astatinated trastuzumab", "radioastatinated trastuzumab",
+              "radio-fluorinated trastuzumab", "isotope-labelled trastuzumab",
+              "trastuzumab non-labelled radiolabelled"):
+        assert e.explore(t).get("refused"), t
+    for t, label in (("non-labelled trastuzumab", "TRASTUZUMAB"),
+                     ("non-radioastatinated trastuzumab", "TRASTUZUMAB"),
+                     ("cisplatin radiochemotherapy", "CISPLATIN"),
+                     ("osimertinib after radiofrequency ablation", "OSIMERTINIB")):
+        assert e.explore(t)["center"]["label"] == label, t

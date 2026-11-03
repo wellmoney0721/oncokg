@@ -178,7 +178,17 @@ _ELEMENT_NAMES = {"hydrogen": "h", "tritium": "h", "carbon": "c", "nitrogen": "n
 # three neighbouring words glued ("radio-labelled", "radio-immuno-conjugate").
 _LABEL_STEMS = ("radiolabel", "radioiod", "radioactiv", "radioconjug", "radioimmuno",
                 "radiotracer", "radioligand", "radionuclid", "radiopharm", "tritiat",
-                "radioisotop", "radiometal", "radiochelat", "radiohalogen", "radiotheranost")
+                "radioisotop", "radiometal", "radiochelat", "radiohalogen", "radiotheranost",
+                "astatinat")
+# Any other "radio..." word is read as a label (fail closed), except these, which name a
+# treatment or a method, not a labelled substance ("radiotherapy plus cisplatin")
+_RADIO_SAFE = ("radiotherap", "radiation", "radiolog", "radiograph", "radiosurg", "radiosensiti",
+               "radiofrequen", "radiomic", "radioresist", "radiochemotherap", "radioprotect",
+               "radiodermat", "radiotoxic", "radioresponsive", "radiocurab", "radiolucen",
+               "radiopaque", "radiopacit", "radiolysis", "radiologic", "radiograph")
+# "labelled" on its own: the substance carries a label of some kind ("isotope-labelled",
+# "FITC-labelled"); "unlabelled" and "non-labelled" do not count
+_LABELLED = {"labelled", "labeled", "labelling", "labeling", "tagged"}
 # A word just before the label that says the opposite ("non-radio-labelled")
 _NOT_WORDS = {"non", "not", "no", "un", "without"}
 # Symbols that are also everyday abbreviations: read beside a mass only inside one word
@@ -200,13 +210,30 @@ def _item_has_isotope(words: tuple) -> bool:
     flat = [x.lower() for x in _alnum_words(" ".join(words))]
     # each word, and two or three neighbouring words glued ("radio-labelled",
     # "radio-immuno-conjugate"), unless a negation stands just before ("non-radio-labelled")
+    negated: set = set()                     # the up-to-three words a negation governs
     for i in range(len(flat)):
         if i and flat[i - 1] in _NOT_WORDS:
+            # only the label word it negates: "non-labelled", "non-radio-labelled" (the
+            # shortest glued run that is a label), not a later label in the item
+            for j in range(i + 1, min(len(flat), i + 3) + 1):
+                x = "".join(flat[i:j])
+                if x in _LABEL_WORDS or x in _LABELLED or x.startswith(_LABEL_STEMS):
+                    negated.update(range(i, j))
+                    break
+            else:
+                negated.add(i)
+        if i in negated:
             continue
         for j in range(i + 1, min(len(flat), i + 3) + 1):
             x = "".join(flat[i:j])
             if x in _LABEL_WORDS or x.startswith(_LABEL_STEMS):
                 return True                  # "radiolabelled", "tritiated", "radiotracer"
+        if flat[i] in _LABELLED:
+            return True
+        if flat[i].startswith("radio"):
+            runs = ["".join(flat[i:j]) for j in range(i + 1, min(len(flat), i + 3) + 1)]
+            if not any(r.startswith(_RADIO_SAFE) for r in runs):
+                return True                  # "radioastatinated", "radio-fluorinated"
 
     def named(name: str, num: str, apart: bool = False) -> bool:
         el = _ELEMENT_NAMES.get(name)
@@ -232,6 +259,15 @@ def _item_has_isotope(words: tuple) -> bool:
         m = re.fullmatch(r"(\d{1,3}m?)([a-z]+)|([a-z]+)(\d{1,3}m?)", x)
         if m and (named(m.group(2), m.group(1)) if m.group(1) else named(m.group(3), m.group(4))):
             return True
+        # a symbol fused to its mass inside a longer word, mass first with or without the
+        # metastable "m" ("52Mn", "134CeDOTA", "DOTA52MnIII") or symbol first ("Ce134DOTA")
+        for d in re.finditer(r"(?<!\d)(\d{1,3})([a-z]+)", x):
+            run = d.group(2)
+            if named(run[:2], d.group(1)) or (run[:1] == "m" and named(run[1:3], d.group(1))):
+                return True
+        for d in re.finditer(r"(?<![a-z])([a-z]{2})(\d{1,3})(?!\d)", x):
+            if named(d.group(1), d.group(2)):
+                return True
     for w in words:
         # the word as written, and its punctuation-separated pieces with each neighbouring
         # pair glued, so a boundary the punctuation marks is kept ("labelled-I-124")
