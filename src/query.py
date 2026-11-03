@@ -259,11 +259,31 @@ class OncoKG:
         if lone and T.is_isotope_label(" ".join(own)):
             inside = []                      # the whole item is one isotope-shaped name
         name = " ".join(tokens[a:b])
-        if nxt and nxt[0].lower() in T.BIOSIMILAR_FDA_SUFFIXES:
-            return f"{name} {nxt[0]}"
+        # the neighbours glued back together the way the lookup key glues them, so a
+        # suffix or an isotope spelt in pieces is still seen ("a - w w b", "[89Z.r]")
+        nxt_all = _alnum_words(" ".join(tokens[k] for k in after))[:8]
+        prev_all = _alnum_words(" ".join(tokens[k] for k in before))[-8:]
+        for n in range(1, len(nxt_all) + 1):
+            glued = "".join(nxt_all[:n]).lower()
+            if glued in T.BIOSIMILAR_FDA_SUFFIXES or T.is_isotope_label(glued):
+                return f"{name} ({' '.join(nxt_all[:n])})"
+            if len(glued) > 6:
+                break
+        for n in range(1, len(prev_all) + 1):
+            glued = "".join(prev_all[-n:]).lower()
+            if T.is_isotope_label(glued):
+                return f"({' '.join(prev_all[-n:])}) {name}"
+            if len(glued) > 6:
+                break
         for ws in inside + [prev[-1:], prev, nxt[:1], nxt]:
             if ws and T.is_isotope_label(" ".join(ws)):
                 return name if ws in inside else f"{name} ({' '.join(ws)})"
+        # an isotope glued to the name itself ("89zr-trastuzumab" read through "[89Z.r]")
+        for i in range(2, min(6, len(key))):
+            for iso, rest in ((key[:i], key[i:]), (key[-i:], key[:-i])):
+                if rest and T.is_isotope_label(iso) and any(
+                        h["drug_id"] == did for h in self.dic["index"].get(rest, [])):
+                    return name
         return None
 
     def _whole_name(self, text: str, blocked: dict, found: list):

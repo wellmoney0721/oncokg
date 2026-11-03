@@ -1,0 +1,107 @@
+[
+  {
+    "finding": "M1-B2: collaborator described as lead; `NCT00200395`, reverse `ORG:genentech`",
+    "status": "FIXED",
+    "result": "**FIXED**. Lead and collaborator groups retain separate role-aware labels in both directions. `src/app.py:137,160-169`; `web/try.html:142-149`. [DB](db_validate.json), [rendered UI](ui_harness_results.json)."
+  },
+  {
+    "finding": "M1-B3: Investigator described as institution; `NCT00754364`, `ORG:armandosantoromd`",
+    "status": "FIXED",
+    "result": "**FIXED**. The incoming trial heading says researcher for Investigator. `web/try.html:143,148`. [DB](db_validate.json), [UI](ui_harness_results.json)."
+  },
+  {
+    "finding": "M1-B4: retire `CHEMBL3353410` in memory, query `osimertinib`, ID and `EGFR`",
+    "status": "FIXED",
+    "result": "**FIXED**. Name and ID return not_found; EGFR has no retired neighbour. `src/app.py:83-84,115-123`. [Real-handler fixture](db_retired_center.json)."
+  },
+  {
+    "finding": "M1: retired Trial still counted for live Drug; retired T -> EVALUATES -> live D, live D -> ACTS_ON -> X",
+    "status": "FIXED",
+    "result": "**FIXED**. D centre count and its count/weight under X are zero. `src/app.py:129-132`. [Fixture](db_fixtures.json)."
+  },
+  {
+    "finding": "M1-S1: misleading most-evidence wording and ordering, Disease",
+    "status": "FIXED",
+    "result": "**FIXED**. The page states start-date ordering for Trials, graph counts for Drugs, stored counts for sponsor relations, association scores for Disease/Target, and name ordering for equal weights. All-node oracle agrees. `src/app.py:141-170`; `web/try.html:148-158,231-235`. [Oracle](db_validate.json)."
+  },
+  {
+    "finding": "M1-S2: silent ring cut; `CHEMBL1201438`, `MONDO_0005233`, AstraZeneca",
+    "status": "FIXED",
+    "result": "**FIXED**. Ring counts and list cuts are disclosed. ALDESLEUKIN draws 22/25; Disease draws 39/3,074 with 30 items in each list. Every exercised nonempty group has ring representatives. `web/try.html:191,204,233`. [UI](ui_harness_results.json)."
+  },
+  {
+    "finding": "M1-S3: stale trail after Mvasi, unknown name, server/network errors",
+    "status": "FIXED",
+    "result": "**FIXED**. Terminal states clear trail/buttons; stale back handlers do not throw. `web/try.html:213-216,243-244`. [UI](ui_harness_results.json)."
+  },
+  {
+    "finding": "M1-S4: reverse response order, duplicate clicks, stale network error",
+    "status": "FIXED",
+    "result": "**FIXED**. Latest KRAS remains; duplicate completion yields one trail entry. `web/try.html:211-214`. [UI](ui_harness_results.json)."
+  },
+  {
+    "finding": "M1-S5: silent reading and alternatives; Roche, MET, `osimertinib EGFR`, `Mvasi and bevacizumab`",
+    "status": "FIXED",
+    "result": "**FIXED for disclosure**. Selected reading, additional company/target and refused-span chips are displayed. `web/try.html:222-226`. [UI](ui_harness_results.json). Semantic name resolution is covered by the naming worker."
+  },
+  {
+    "finding": "M1-S6: AGONIST/BINDING AGENT gloss and sponsor classes",
+    "status": "FIXED",
+    "result": "**FIXED**. Specific Korean glosses retain the stored action/class codes. `web/try.html:161-176`. [UI](ui_harness_results.json)."
+  },
+  {
+    "finding": "M1-S7: missing Trial start, sponsor-to-drug global count/phase, zero Trial count",
+    "status": "FIXED",
+    "result": "**FIXED**. `NCT00200395` displays start 2003-07-02; Drug details retain global count/phase alongside sponsor evidence; `CHEMBL925` displays zero. `src/app.py:172-177`; `web/try.html:173-174,228-229`. [UI](ui_harness_results.json)."
+  },
+  {
+    "finding": "M1-S8: node/edge props `null`, `[]`, `{broken`; restoration; 1,001-drug count chunking",
+    "status": "FIXED",
+    "result": "**FIXED**. Twelve malformed-property requests and all restored requests return 200; all 1,001 Drugs retain count/weight 1. `src/app.py:127-132,211-217`. [Fixtures](db_fixtures.json)."
+  },
+  {
+    "finding": "M1 URL/script/ID/text injection",
+    "status": "FIXED",
+    "result": "**FIXED for exercised generated-markup paths**. Unsafe javascript/data schemes and credential, prefix-host and backslash spoofs are rejected. Labels, IDs and other payload text are escaped; no raw injected image/script or javascript href appears. `web/try.html:104,180,199,221-235`. [UI](ui_regressions.json), [assertions](ui_assertions.json)."
+  },
+  {
+    "finding": "M1 unknown type Other / relation NEWREL",
+    "status": "FIXED",
+    "result": "**FIXED**. Raw fallback values survive; tooltip is not undefined. [UI](ui_regressions.json)."
+  },
+  {
+    "finding": "M1 module all-three/everything claims",
+    "status": "FIXED",
+    "result": "**FIXED**. The module says All of them and a capped list per relation. `src/app.py:5-11`."
+  },
+  {
+    "finding": "M2 partial/M2b: missing/unknown SPONSORS role and equal-weight A-Z",
+    "status": "FIXED",
+    "result": "**FIXED**. Eight role-property cases return 200; valid roles survive and unspecified roles receive neutral wording. All-node name ordering agrees. [DB](db_role_fallback.json), [UI](ui_regressions.json), [oracle](db_validate.json)."
+  },
+  {
+    "finding": "M2b-R2: Alaunos/ALDESLEUKIN derived edge props `null`, `[]`, `{broken`, `{}`, both endpoints",
+    "status": "FIXED",
+    "result": "**FIXED**. Missing count remains `evidence_trials:null` with sort weight zero and displays not recorded. Actual numeric zero remains zero. `src/app.py:141-146`; `web/try.html:173`. [DB](db_missing_sponsor_count.json), [UI](ui_missing_sponsor_count.json), [zero controls](ui_m3_checks.json)."
+  },
+  {
+    "finding": "M2b: boolean association score and hidden decimal rounding",
+    "status": "FIXED",
+    "result": "**FIXED**. Bool becomes unknown; both directions return 200; exact stored decimal 0.8883707400322897 is retained. [DB](db_score_fixture.json), [UI](ui_regressions.json)."
+  },
+  {
+    "finding": "M2b/M3: `phases='PHASE2'` render error through form/node/back/example",
+    "status": "FIXED",
+    "result": "**FIXED**. All four callbacks catch the error, clear state and recover; stale malformed response is ignored. `web/try.html:239-248`. [Callbacks](ui_m3_checks.json)."
+  },
+  {
+    "finding": "M3/M4 repeated blank/whitespace submission qualification",
+    "status": "NOT FIXED",
+    "result": "**NOT FIXED**, unchanged nonblocker. No request is made; previous view remains. `web/try.html:241`. [Callbacks](ui_m3_checks.json)."
+  },
+  {
+    "finding": "M3/M4 repeated positive/negative Infinity qualification",
+    "status": "NOT FIXED",
+    "result": "**NOT FIXED**, unchanged failure closed. The real handler returns controlled 400; no invalid map value is drawn and snapshot has none. `src/app.py:207-208,264-269`. [Fixture](db_numeric_fixture.json)."
+  }
+]

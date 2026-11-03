@@ -1,0 +1,1938 @@
+{
+  "description": "Current versus m10 loss-set comparison, not a defect count; previous values inside each row retain original historical-method baseline semantics.",
+  "count": 37,
+  "cases": [
+    {
+      "input": "Iopofosine (131i)",
+      "stored": {
+        "drug_id": "CHEMBL4297495",
+        "alias": "Iopofosine (131i)",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Iopofosine 131i",
+          "matched_text": "Iopofosine 131i",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL4297495",
+          "label": "IOPOFOSINE I 131",
+          "matched_text": "Iopofosine (131i)",
+          "matched_alias": "Iopofosine (131i)"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL4297495"
+      ],
+      "resolver": {
+        "raw": "Iopofosine (131i)",
+        "components": [
+          {
+            "component": "Iopofosine",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "NM-404 I-131",
+      "stored": {
+        "drug_id": "CHEMBL4297495",
+        "alias": "NM-404 I-131",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "NM-404 I-131",
+          "matched_text": "NM-404 I-131",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL4297495",
+          "label": "IOPOFOSINE I 131",
+          "matched_text": "NM-404 I-131",
+          "matched_alias": "NM-404 I-131"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL4297495"
+      ],
+      "resolver": {
+        "raw": "NM-404 I-131",
+        "components": [
+          {
+            "component": "NM-404 I-131",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL4297495",
+            "score": null,
+            "rules": [],
+            "matched_alias": "NM-404 I-131",
+            "candidates": null,
+            "drug": {
+              "name": "IOPOFOSINE I 131",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "PHASE_2",
+              "max_phase_in_nsclc": "PHASE_1_2",
+              "mechanisms": [],
+              "trials": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Propanix-160 sr",
+      "stored": {
+        "drug_id": "CHEMBL1671",
+        "alias": "Propanix-160 sr",
+        "alias_type": "trade_name",
+        "source": null
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Propanix-160 sr",
+          "matched_text": "Propanix-160 sr",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1671",
+          "label": "PROPRANOLOL HYDROCHLORIDE",
+          "matched_text": "Propanix-160 sr",
+          "matched_alias": "Propanix-160 sr"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1671"
+      ],
+      "resolver": {
+        "raw": "Propanix-160 sr",
+        "components": [
+          {
+            "component": "Propanix-160 sr",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1671",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Propanix-160 sr",
+            "candidates": null,
+            "drug": {
+              "name": "PROPRANOLOL HYDROCHLORIDE",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1",
+              "mechanisms": [
+                "Beta-1 adrenergic receptor antagonist",
+                "Beta-2 adrenergic receptor antagonist"
+              ],
+              "trials": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "9-amino-20(s)-camptothecin",
+      "stored": {
+        "drug_id": "CHEMBL274070",
+        "alias": "9-amino-20(s)-camptothecin",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "9-amino-20(s)-camptothecin",
+          "matched_text": "9-amino-20(s)-camptothecin",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL274070",
+          "label": "9-AMINOCAMPTOTHECIN",
+          "matched_text": "9-amino-20(s)-camptothecin",
+          "matched_alias": "9-amino-20(s)-camptothecin"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL274070"
+      ],
+      "resolver": {
+        "raw": "9-amino-20(s)-camptothecin",
+        "components": [
+          {
+            "component": "s",
+            "tier": "PARENTHETICAL",
+            "drug_id": "CHEMBL1789941",
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "match_on_parenthetical"
+            ],
+            "matched_alias": "S-",
+            "candidates": null,
+            "drug": {
+              "name": "RUXOLITINIB",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Tyrosine-protein kinase JAK1 inhibitor",
+                "Tyrosine-protein kinase JAK2 inhibitor",
+                "Tyrosine-protein kinase JAK3 inhibitor"
+              ],
+              "trials": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "il-6ra",
+      "stored": {
+        "drug_id": "CHEMBL1237022",
+        "alias": "il-6ra",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "il-6ra",
+          "matched_text": "il-6ra",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1237022",
+          "label": "TOCILIZUMAB",
+          "matched_text": "il-6ra",
+          "matched_alias": "il-6ra"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1237022"
+      ],
+      "resolver": {
+        "raw": "il-6ra",
+        "components": [
+          {
+            "component": "il-6ra",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1237022",
+            "score": null,
+            "rules": [],
+            "matched_alias": "il-6ra",
+            "candidates": null,
+            "drug": {
+              "name": "TOCILIZUMAB",
+              "drug_type": "Antibody",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Interleukin-6 receptor alpha subunit inhibitor"
+              ],
+              "trials": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Lutecio (177lu) oxodotreotida",
+      "stored": {
+        "drug_id": "CHEMBL4297545",
+        "alias": "Lutecio (177lu) oxodotreotida",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Lutecio 177lu oxodotreotida",
+          "matched_text": "Lutecio 177lu oxodotreotida",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL4297545",
+          "label": "LUTETIUM OXODOTREOTIDE LU-177",
+          "matched_text": "Lutecio (177lu) oxodotreotida",
+          "matched_alias": "Lutecio (177lu) oxodotreotida"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL4297545"
+      ],
+      "resolver": {
+        "raw": "Lutecio (177lu) oxodotreotida",
+        "components": [
+          {
+            "component": "Lutecio oxodotreotida",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "Lutecium (177lu) oxodotreotide",
+      "stored": {
+        "drug_id": "CHEMBL4297545",
+        "alias": "Lutecium (177lu) oxodotreotide",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Lutecium 177lu oxodotreotide",
+          "matched_text": "Lutecium 177lu oxodotreotide",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL4297545",
+          "label": "LUTETIUM OXODOTREOTIDE LU-177",
+          "matched_text": "Lutecium (177lu) oxodotreotide",
+          "matched_alias": "Lutecium (177lu) oxodotreotide"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL4297545"
+      ],
+      "resolver": {
+        "raw": "Lutecium (177lu) oxodotreotide",
+        "components": [
+          {
+            "component": "Lutecium oxodotreotide",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "Lutetium (177lu) dotatate",
+      "stored": {
+        "drug_id": "CHEMBL4297545",
+        "alias": "Lutetium (177lu) dotatate",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Lutetium 177lu dotatate",
+          "matched_text": "Lutetium 177lu dotatate",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL4297545",
+          "label": "LUTETIUM OXODOTREOTIDE LU-177",
+          "matched_text": "Lutetium (177lu) dotatate",
+          "matched_alias": "Lutetium (177lu) dotatate"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL4297545"
+      ],
+      "resolver": {
+        "raw": "Lutetium (177lu) dotatate",
+        "components": [
+          {
+            "component": "Lutetium dotatate",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "Lutetium (177lu) oxodotreotide",
+      "stored": {
+        "drug_id": "CHEMBL4297545",
+        "alias": "Lutetium (177lu) oxodotreotide",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Lutetium 177lu oxodotreotide",
+          "matched_text": "Lutetium 177lu oxodotreotide",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL4297545",
+          "label": "LUTETIUM OXODOTREOTIDE LU-177",
+          "matched_text": "Lutetium (177lu) oxodotreotide",
+          "matched_alias": "Lutetium (177lu) oxodotreotide"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL4297545"
+      ],
+      "resolver": {
+        "raw": "Lutetium (177lu) oxodotreotide",
+        "components": [
+          {
+            "component": "Lutetium oxodotreotide",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "NM-404 I-124",
+      "stored": {
+        "drug_id": "CHEMBL4297390",
+        "alias": "NM-404 I-124",
+        "alias_type": "preferred_name",
+        "source": null
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "NM-404 I-124",
+          "matched_text": "NM-404 I-124",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL4297390",
+          "label": "NM-404 I-124",
+          "matched_text": "NM-404 I-124",
+          "matched_alias": "NM-404 I-124"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL4297390"
+      ],
+      "resolver": {
+        "raw": "NM-404 I-124",
+        "components": [
+          {
+            "component": "NM-404 I-124",
+            "tier": "EXACT",
+            "drug_id": "CHEMBL4297390",
+            "score": null,
+            "rules": [],
+            "matched_alias": "NM-404 I-124",
+            "candidates": null,
+            "drug": {
+              "name": "NM-404 I-124",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "PHASE_2",
+              "max_phase_in_nsclc": "PHASE_1_2",
+              "mechanisms": [],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "INS NO. 100(I)",
+      "stored": {
+        "drug_id": "CHEMBL140",
+        "alias": "INS NO. 100(I)",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "INS NO 100(I",
+          "matched_text": "INS NO 100(I",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL140",
+          "label": "CURCUMIN",
+          "matched_text": "INS NO 100(I)",
+          "matched_alias": "INS NO. 100(I)"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL140"
+      ],
+      "resolver": {
+        "raw": "INS NO. 100(I)",
+        "components": [
+          {
+            "component": "INS NO. 100",
+            "tier": "FUZZY_AUTO",
+            "drug_id": "CHEMBL140",
+            "score": 94.1,
+            "rules": [
+              "extract_parenthetical",
+              "fuzzy_match"
+            ],
+            "matched_alias": "INS NO. 100(I)",
+            "candidates": null,
+            "drug": {
+              "name": "CURCUMIN",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1",
+              "mechanisms": [],
+              "trials": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "INS-100(I)",
+      "stored": {
+        "drug_id": "CHEMBL140",
+        "alias": "INS-100(I)",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "INS-100(I",
+          "matched_text": "INS-100(I",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL140",
+          "label": "CURCUMIN",
+          "matched_text": "INS-100(I)",
+          "matched_alias": "INS-100(I)"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL140"
+      ],
+      "resolver": {
+        "raw": "INS-100(I)",
+        "components": [
+          {
+            "component": "INS-100",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "dev_code_no_fuzzy"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "alphanumeric development code: approximate matching disabled to avoid binding to a neighbouring code"
+          }
+        ]
+      }
+    },
+    {
+      "input": "FW-635I-2",
+      "stored": {
+        "drug_id": "CHEMBL44",
+        "alias": "FW-635I-2",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "FW-635I-2",
+          "matched_text": "FW-635I-2",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL44",
+          "label": "GENISTEIN",
+          "matched_text": "FW-635I-2",
+          "matched_alias": "FW-635I-2"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL44"
+      ],
+      "resolver": {
+        "raw": "FW-635I-2",
+        "components": [
+          {
+            "component": "FW-635I-2",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL44",
+            "score": null,
+            "rules": [],
+            "matched_alias": "FW-635I-2",
+            "candidates": null,
+            "drug": {
+              "name": "GENISTEIN",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1_2",
+              "mechanisms": [],
+              "trials": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "N-[5-[(4-ETHYL-1-PIPERAZINYL)METHYL]-2-PYRIDINYL]-5-FLUORO-4-[4-FLUORO-2-METHYL-1-(1-METHYLETHYL)-1H-BENZIMIDAZOL-6-YL]-",
+      "stored": {
+        "drug_id": "CHEMBL3301610",
+        "alias": "N-[5-[(4-ETHYL-1-PIPERAZINYL)METHYL]-2-PYRIDINYL]-5-FLUORO-4-[4-FLUORO-2-METHYL-1-(1-METHYLETHYL)-1H-BENZIMIDAZOL-6-YL]-",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "N-[5-[(4-ETHYL-1-PIPERAZINYL)METHYL]-2-PYRIDINYL]-5-FLUORO-4-[4-FLUORO-2-METHYL-1-(1-METHYLETHYL)-1H-BENZIMIDAZOL-6-YL",
+          "matched_text": "N-[5-[(4-ETHYL-1-PIPERAZINYL)METHYL]-2-PYRIDINYL]-5-FLUORO-4-[4-FLUORO-2-METHYL-1-(1-METHYLETHYL)-1H-BENZIMIDAZOL-6-YL",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3301610",
+          "label": "ABEMACICLIB",
+          "matched_text": "N-[5-[(4-ETHYL-1-PIPERAZINYL)METHYL]-2-PYRIDINYL]-5-FLUORO-4-[4-FLUORO-2-METHYL-1-(1-METHYLETHYL)-1H-BENZIMIDAZOL-6-YL]-",
+          "matched_alias": "N-[5-[(4-ETHYL-1-PIPERAZINYL)METHYL]-2-PYRIDINYL]-5-FLUORO-4-[4-FLUORO-2-METHYL-1-(1-METHYLETHYL)-1H-BENZIMIDAZOL-6-YL]-"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL3301610"
+      ],
+      "resolver": {
+        "raw": "N-[5-[(4-ETHYL-1-PIPERAZINYL)METHYL]-2-PYRIDINYL]-5-FLUORO-4-[4-FLUORO-2-METHYL-1-(1-METHYLETHYL)-1H-BENZIMIDAZOL-6-YL]-",
+        "components": [
+          {
+            "component": "N-[5- -2-PYRIDINYL]-5-FLUORO-4",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "Radium (223ra) dichloride",
+      "stored": {
+        "drug_id": "CHEMBL2107816",
+        "alias": "Radium (223ra) dichloride",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Radium 223ra dichloride",
+          "matched_text": "Radium 223ra dichloride",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2107816",
+          "label": "RADIUM RA 223 DICHLORIDE",
+          "matched_text": "Radium (223ra) dichloride",
+          "matched_alias": "Radium (223ra) dichloride"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL2107816"
+      ],
+      "resolver": {
+        "raw": "Radium (223ra) dichloride",
+        "components": [
+          {
+            "component": "Radium dichloride",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "Fapi-02 ga-68",
+      "stored": {
+        "drug_id": "CHEMBL4650356",
+        "alias": "Fapi-02 ga-68",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Fapi-02 ga-68",
+          "matched_text": "Fapi-02 ga-68",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL4650356",
+          "label": "FAPI GA-68",
+          "matched_text": "Fapi-02 ga-68",
+          "matched_alias": "Fapi-02 ga-68"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL4650356"
+      ],
+      "resolver": {
+        "raw": "Fapi-02 ga-68",
+        "components": [
+          {
+            "component": "Fapi-02 ga-68",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL4650356",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Fapi-02 ga-68",
+            "candidates": null,
+            "drug": {
+              "name": "FAPI GA-68",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1",
+              "mechanisms": [],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Fapi-2 ga-68",
+      "stored": {
+        "drug_id": "CHEMBL4650356",
+        "alias": "Fapi-2 ga-68",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Fapi-2 ga-68",
+          "matched_text": "Fapi-2 ga-68",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL4650356",
+          "label": "FAPI GA-68",
+          "matched_text": "Fapi-2 ga-68",
+          "matched_alias": "Fapi-2 ga-68"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL4650356"
+      ],
+      "resolver": {
+        "raw": "Fapi-2 ga-68",
+        "components": [
+          {
+            "component": "Fapi-2 ga-68",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL4650356",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Fapi-2 ga-68",
+            "candidates": null,
+            "drug": {
+              "name": "FAPI GA-68",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1",
+              "mechanisms": [],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "A33 124i",
+      "stored": {
+        "drug_id": "CHEMBL5314551",
+        "alias": "A33 124i",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "A33 124i",
+          "matched_text": "A33 124i",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL5314551",
+          "label": "ADAKITUG",
+          "matched_text": "A33 124i",
+          "matched_alias": "A33 124i"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL5314551"
+      ],
+      "resolver": {
+        "raw": "A33 124i",
+        "components": [
+          {
+            "component": "A33 124i",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL5314551",
+            "score": null,
+            "rules": [],
+            "matched_alias": "A33 124i",
+            "candidates": null,
+            "drug": {
+              "name": "ADAKITUG",
+              "drug_type": "Antibody",
+              "max_phase_overall": "PHASE_2",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Interleukin-8 inhibitor"
+              ],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Lutetium (177lu) edotreotide",
+      "stored": {
+        "drug_id": "CHEMBL5095425",
+        "alias": "Lutetium (177lu) edotreotide",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Lutetium 177lu edotreotide",
+          "matched_text": "Lutetium 177lu edotreotide",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL5095425",
+          "label": "LUTETIUM LU177 EDOTREOTIDE",
+          "matched_text": "Lutetium (177lu) edotreotide",
+          "matched_alias": "Lutetium (177lu) edotreotide"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL5095425"
+      ],
+      "resolver": {
+        "raw": "Lutetium (177lu) edotreotide",
+        "components": [
+          {
+            "component": "Lutetium edotreotide",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "DKFZ-PSMA-11 GA-68",
+      "stored": {
+        "drug_id": "CHEMBL5095039",
+        "alias": "DKFZ-PSMA-11 GA-68",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "DKFZ-PSMA-11 GA-68",
+          "matched_text": "DKFZ-PSMA-11 GA-68",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL5095039",
+          "label": "GALLIUM GA 68 GOZETOTIDE",
+          "matched_text": "DKFZ-PSMA-11 GA-68",
+          "matched_alias": "DKFZ-PSMA-11 GA-68"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL5095039"
+      ],
+      "resolver": {
+        "raw": "DKFZ-PSMA-11 GA-68",
+        "components": [
+          {
+            "component": "DKFZ-PSMA-11 GA-68",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL5095039",
+            "score": null,
+            "rules": [],
+            "matched_alias": "DKFZ-PSMA-11 GA-68",
+            "candidates": null,
+            "drug": {
+              "name": "GALLIUM GA 68 GOZETOTIDE",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1",
+              "mechanisms": [],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Gallium (68ga) gozetotide",
+      "stored": {
+        "drug_id": "CHEMBL5095039",
+        "alias": "Gallium (68ga) gozetotide",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Gallium 68ga gozetotide",
+          "matched_text": "Gallium 68ga gozetotide",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL5095039",
+          "label": "GALLIUM GA 68 GOZETOTIDE",
+          "matched_text": "Gallium (68ga) gozetotide",
+          "matched_alias": "Gallium (68ga) gozetotide"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL5095039"
+      ],
+      "resolver": {
+        "raw": "Gallium (68ga) gozetotide",
+        "components": [
+          {
+            "component": "Gallium gozetotide",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "Psma-11 ga 68",
+      "stored": {
+        "drug_id": "CHEMBL5095039",
+        "alias": "Psma-11 ga 68",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Psma-11 ga 68",
+          "matched_text": "Psma-11 ga 68",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL5095039",
+          "label": "GALLIUM GA 68 GOZETOTIDE",
+          "matched_text": "Psma-11 ga 68",
+          "matched_alias": "Psma-11 ga 68"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL5095039"
+      ],
+      "resolver": {
+        "raw": "Psma-11 ga 68",
+        "components": [
+          {
+            "component": "Psma-11 ga 68",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL5095039",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Psma-11 ga 68",
+            "candidates": null,
+            "drug": {
+              "name": "GALLIUM GA 68 GOZETOTIDE",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1",
+              "mechanisms": [],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "9-nitro-20(s)-camptothecin",
+      "stored": {
+        "drug_id": "CHEMBL77305",
+        "alias": "9-nitro-20(s)-camptothecin",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "9-nitro-20(s)-camptothecin",
+          "matched_text": "9-nitro-20(s)-camptothecin",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL77305",
+          "label": "RUBITECAN",
+          "matched_text": "9-nitro-20(s)-camptothecin",
+          "matched_alias": "9-nitro-20(s)-camptothecin"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL77305"
+      ],
+      "resolver": {
+        "raw": "9-nitro-20(s)-camptothecin",
+        "components": [
+          {
+            "component": "s",
+            "tier": "PARENTHETICAL",
+            "drug_id": "CHEMBL1789941",
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "match_on_parenthetical"
+            ],
+            "matched_alias": "S-",
+            "candidates": null,
+            "drug": {
+              "name": "RUXOLITINIB",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Tyrosine-protein kinase JAK1 inhibitor",
+                "Tyrosine-protein kinase JAK2 inhibitor",
+                "Tyrosine-protein kinase JAK3 inhibitor"
+              ],
+              "trials": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "TAK-659F",
+      "stored": {
+        "drug_id": "CHEMBL3979920",
+        "alias": "TAK-659F",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "TAK-659F",
+          "matched_text": "TAK-659F",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3979920",
+          "label": "MIVAVOTINIB",
+          "matched_text": "TAK-659F",
+          "matched_alias": "TAK-659F"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL3979920"
+      ],
+      "resolver": {
+        "raw": "TAK-659F",
+        "components": [
+          {
+            "component": "TAK-659F",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL3979920",
+            "score": null,
+            "rules": [],
+            "matched_alias": "TAK-659F",
+            "candidates": null,
+            "drug": {
+              "name": "MIVAVOTINIB",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "PHASE_2",
+              "max_phase_in_nsclc": "PHASE_1",
+              "mechanisms": [
+                "Tyrosine-protein kinase SYK inhibitor"
+              ],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "2-deoxy-2-(18f)fluoro-d-glucose",
+      "stored": {
+        "drug_id": "CHEMBL2030434",
+        "alias": "2-deoxy-2-(18f)fluoro-d-glucose",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "2-deoxy-2-(18f)fluoro-d-glucose",
+          "matched_text": "2-deoxy-2-(18f)fluoro-d-glucose",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2030434",
+          "label": "FLUDEOXYGLUCOSE F 18",
+          "matched_text": "2-deoxy-2-(18f)fluoro-d-glucose",
+          "matched_alias": "2-deoxy-2-(18f)fluoro-d-glucose"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL2030434"
+      ],
+      "resolver": {
+        "raw": "2-deoxy-2-(18f)fluoro-d-glucose",
+        "components": [
+          {
+            "component": "2-deoxy-2- fluoro-d-glucose",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "Fludeoxyglucose ((sup 18)f)",
+      "stored": {
+        "drug_id": "CHEMBL2030434",
+        "alias": "Fludeoxyglucose ((sup 18)f)",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Fludeoxyglucose sup 18)f",
+          "matched_text": "Fludeoxyglucose sup 18)f",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2030434",
+          "label": "FLUDEOXYGLUCOSE F 18",
+          "matched_text": "Fludeoxyglucose ((sup 18)f)",
+          "matched_alias": "Fludeoxyglucose ((sup 18)f)"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL2030434"
+      ],
+      "resolver": {
+        "raw": "Fludeoxyglucose ((sup 18)f)",
+        "components": [
+          {
+            "component": "Fludeoxyglucose ( f)",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "Fludeoxyglucose (18f)",
+      "stored": {
+        "drug_id": "CHEMBL2030434",
+        "alias": "Fludeoxyglucose (18f)",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Fludeoxyglucose 18f",
+          "matched_text": "Fludeoxyglucose 18f",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2030434",
+          "label": "FLUDEOXYGLUCOSE F 18",
+          "matched_text": "Fludeoxyglucose (18f)",
+          "matched_alias": "Fludeoxyglucose (18f)"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL2030434"
+      ],
+      "resolver": {
+        "raw": "Fludeoxyglucose (18f)",
+        "components": [
+          {
+            "component": "Fludeoxyglucose",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "Fludesoxiglucosa (18f)",
+      "stored": {
+        "drug_id": "CHEMBL2030434",
+        "alias": "Fludesoxiglucosa (18f)",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Fludesoxiglucosa 18f",
+          "matched_text": "Fludesoxiglucosa 18f",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2030434",
+          "label": "FLUDEOXYGLUCOSE F 18",
+          "matched_text": "Fludesoxiglucosa (18f)",
+          "matched_alias": "Fludesoxiglucosa (18f)"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL2030434"
+      ],
+      "resolver": {
+        "raw": "Fludesoxiglucosa (18f)",
+        "components": [
+          {
+            "component": "Fludesoxiglucosa",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "Fludesoxyglucose (18f)",
+      "stored": {
+        "drug_id": "CHEMBL2030434",
+        "alias": "Fludesoxyglucose (18f)",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Fludesoxyglucose 18f",
+          "matched_text": "Fludesoxyglucose 18f",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2030434",
+          "label": "FLUDEOXYGLUCOSE F 18",
+          "matched_text": "Fludesoxyglucose (18f)",
+          "matched_alias": "Fludesoxyglucose (18f)"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL2030434"
+      ],
+      "resolver": {
+        "raw": "Fludesoxyglucose (18f)",
+        "components": [
+          {
+            "component": "Fludesoxyglucose",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "Fluorine (18f) fludeoxyglucose",
+      "stored": {
+        "drug_id": "CHEMBL2030434",
+        "alias": "Fluorine (18f) fludeoxyglucose",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Fluorine 18f fludeoxyglucose",
+          "matched_text": "Fluorine 18f fludeoxyglucose",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2030434",
+          "label": "FLUDEOXYGLUCOSE F 18",
+          "matched_text": "Fluorine (18f) fludeoxyglucose",
+          "matched_alias": "Fluorine (18f) fludeoxyglucose"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL2030434"
+      ],
+      "resolver": {
+        "raw": "Fluorine (18f) fludeoxyglucose",
+        "components": [
+          {
+            "component": "Fluorine fludeoxyglucose",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "Lutetium (177lu) vipivotide tetraxetan",
+      "stored": {
+        "drug_id": "CHEMBL4594406",
+        "alias": "Lutetium (177lu) vipivotide tetraxetan",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Lutetium 177lu vipivotide tetraxetan",
+          "matched_text": "Lutetium 177lu vipivotide tetraxetan",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL4594406",
+          "label": "LUTETIUM LU-177 VIPIVOTIDE TETRAXETAN",
+          "matched_text": "Lutetium (177lu) vipivotide tetraxetan",
+          "matched_alias": "Lutetium (177lu) vipivotide tetraxetan"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL4594406"
+      ],
+      "resolver": {
+        "raw": "Lutetium (177lu) vipivotide tetraxetan",
+        "components": [
+          {
+            "component": "vipivotide tetraxetan",
+            "tier": "CONTAINED_ALIAS",
+            "drug_id": "CHEMBL4594406",
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped",
+              "segmented_from_phrase"
+            ],
+            "matched_alias": "vipivotide tetraxetan",
+            "candidates": null,
+            "note": "segmented out of 'Lutetium vipivotide tetraxetan'",
+            "drug": {
+              "name": "LUTETIUM LU-177 VIPIVOTIDE TETRAXETAN",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1_2",
+              "mechanisms": [
+                "Glutamate carboxypeptidase II binding agent"
+              ],
+              "trials": 0
+            }
+          },
+          {
+            "component": "Lutetium",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped",
+              "segmentation_residue"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+          }
+        ]
+      }
+    },
+    {
+      "input": "Psma-617 lu-177",
+      "stored": {
+        "drug_id": "CHEMBL4594406",
+        "alias": "Psma-617 lu-177",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Psma-617 lu-177",
+          "matched_text": "Psma-617 lu-177",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL4594406",
+          "label": "LUTETIUM LU-177 VIPIVOTIDE TETRAXETAN",
+          "matched_text": "Psma-617 lu-177",
+          "matched_alias": "Psma-617 lu-177"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL4594406"
+      ],
+      "resolver": {
+        "raw": "Psma-617 lu-177",
+        "components": [
+          {
+            "component": "Psma-617 lu-177",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL4594406",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Psma-617 lu-177",
+            "candidates": null,
+            "drug": {
+              "name": "LUTETIUM LU-177 VIPIVOTIDE TETRAXETAN",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1_2",
+              "mechanisms": [
+                "Glutamate carboxypeptidase II binding agent"
+              ],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Yttrium (90 y)",
+      "stored": {
+        "drug_id": "CHEMBL4650364",
+        "alias": "Yttrium (90 y)",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Yttrium 90 y",
+          "matched_text": "Yttrium 90 y",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL4650364",
+          "label": "YTTRIUM Y-90",
+          "matched_text": "Yttrium (90 y)",
+          "matched_alias": "Yttrium (90 y)"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL4650364"
+      ],
+      "resolver": {
+        "raw": "Yttrium (90 y)",
+        "components": [
+          {
+            "component": "Yttrium",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "R-METHUIL-1RA",
+      "stored": {
+        "drug_id": "CHEMBL1201570",
+        "alias": "R-METHUIL-1RA",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "R-METHUIL-1RA",
+          "matched_text": "R-METHUIL-1RA",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201570",
+          "label": "ANAKINRA",
+          "matched_text": "R-METHUIL-1RA",
+          "matched_alias": "R-METHUIL-1RA"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201570"
+      ],
+      "resolver": {
+        "raw": "R-METHUIL-1RA",
+        "components": [
+          {
+            "component": "R-METHUIL-1RA",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201570",
+            "score": null,
+            "rules": [],
+            "matched_alias": "R-METHUIL-1RA",
+            "candidates": null,
+            "drug": {
+              "name": "ANAKINRA",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1_2",
+              "mechanisms": [
+                "Interleukin-1 receptor antagonist"
+              ],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "il-1ra",
+      "stored": {
+        "drug_id": "CHEMBL1201570",
+        "alias": "il-1ra",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "il-1ra",
+          "matched_text": "il-1ra",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201570",
+          "label": "ANAKINRA",
+          "matched_text": "il-1ra",
+          "matched_alias": "il-1ra"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201570"
+      ],
+      "resolver": {
+        "raw": "il-1ra",
+        "components": [
+          {
+            "component": "il-1ra",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201570",
+            "score": null,
+            "rules": [],
+            "matched_alias": "il-1ra",
+            "candidates": null,
+            "drug": {
+              "name": "ANAKINRA",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1_2",
+              "mechanisms": [
+                "Interleukin-1 receptor antagonist"
+              ],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "peg ifnα-2b",
+      "stored": {
+        "drug_id": "CHEMBL1201558",
+        "alias": "peg ifnα-2b",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "peg ifnα-2b",
+          "matched_text": "peg ifnα-2b",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201558",
+          "label": "INTERFERON ALFA-2B",
+          "matched_text": "peg ifnα-2b",
+          "matched_alias": "peg ifnα-2b"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201558"
+      ],
+      "resolver": {
+        "raw": "peg ifnα-2b",
+        "components": [
+          {
+            "component": "peg ifnα-2b",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201558",
+            "score": null,
+            "rules": [],
+            "matched_alias": "peg ifnα-2b",
+            "candidates": null,
+            "drug": {
+              "name": "INTERFERON ALFA-2B",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1_2",
+              "mechanisms": [
+                "Interferon alpha/beta receptor agonist"
+              ],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "dpp-4i linagliptin",
+      "stored": {
+        "drug_id": "CHEMBL237500",
+        "alias": "dpp-4i linagliptin",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "dpp-4i linagliptin",
+          "matched_text": "dpp-4i linagliptin",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL237500",
+          "label": "LINAGLIPTIN",
+          "matched_text": "dpp-4i linagliptin",
+          "matched_alias": "dpp-4i linagliptin"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL237500"
+      ],
+      "resolver": {
+        "raw": "dpp-4i linagliptin",
+        "components": [
+          {
+            "component": "dpp-4i linagliptin",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL237500",
+            "score": null,
+            "rules": [],
+            "matched_alias": "dpp-4i linagliptin",
+            "candidates": null,
+            "drug": {
+              "name": "LINAGLIPTIN",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1_2",
+              "mechanisms": [
+                "Dipeptidyl peptidase IV inhibitor"
+              ],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+[
+  {
+    "source": "audit_evidence_claims/m10/cost/run_cost.py",
+    "destination": "audit_evidence_claims/m11/cost/run_cost.py",
+    "source_sha256": "6ca1e74ce87dc7c639a77fc0b60db7182999a85185dcaff2c03efa2cf51b04cd",
+    "changes": [],
+    "output_root": "derived from script directory under m11/cost"
+  },
+  {
+    "source": "audit_evidence_claims/m10/cost/fresh_cost.py",
+    "destination": "audit_evidence_claims/m11/cost/fresh_cost.py",
+    "source_sha256": "c27e5d6190bd32b4634982ce98676de524505c4af4b1f0c9295b2d6c92e47012",
+    "changes": [
+      "port 8896 -> 8894"
+    ],
+    "output_root": "derived from script directory under m11/cost"
+  },
+  {
+    "source": "audit_evidence_claims/m10/cost/run_perf_current.py",
+    "destination": "audit_evidence_claims/m11/cost/run_perf_current.py",
+    "source_sha256": "9e3d5b73675554012c7ffe66ab6c478480a12ad726abab85f2da19e59d6cb439",
+    "changes": [],
+    "output_root": "derived from script directory under m11/cost"
+  },
+  {
+    "source": "audit_evidence_claims/m10/cost/perf_probe.py",
+    "destination": "audit_evidence_claims/m11/cost/perf_probe.py",
+    "source_sha256": "06d05753b56ccfd36a8ca09fab55e0b66730760b7a14fd4dcdd4e6bc1adeb837",
+    "changes": [],
+    "output_root": "derived from script directory under m11/cost"
+  },
+  {
+    "source": "audit_evidence_claims/m10/cost/cost_stress.py",
+    "destination": "audit_evidence_claims/m11/cost/cost_stress.py",
+    "source_sha256": "fd489534631c18aacdf55a99846d6e639b35d9afba8d001b93f3e44613031dc2",
+    "changes": [],
+    "output_root": "derived from script directory under m11/cost"
+  },
+  {
+    "source": "audit_evidence_claims/m10/cost/unique_piece_cost.py",
+    "destination": "audit_evidence_claims/m11/cost/unique_piece_cost.py",
+    "source_sha256": "88bda8c46b58d89a17d727a46ecca650da2d076a1ffd0bd514813823690176a5",
+    "changes": [],
+    "output_root": "derived from script directory under m11/cost"
+  },
+  {
+    "source": "audit_evidence_claims/m10/cost/unique_cost_http.py",
+    "destination": "audit_evidence_claims/m11/cost/unique_cost_http.py",
+    "source_sha256": "52cbe7525ec506b91337420a844149fae498bdfeff173c79129ad1793e1728dc",
+    "changes": [
+      "port 8896 -> 8894"
+    ],
+    "output_root": "derived from script directory under m11/cost"
+  },
+  {
+    "source": "audit_evidence_claims/m10/cost/cache_boundary_http.py",
+    "destination": "audit_evidence_claims/m11/cost/cache_boundary_http.py",
+    "source_sha256": "ccda2769ee983d1a2273b098f2ce232c38c8df7845e2e6a086dd5e2a82bc6329",
+    "changes": [
+      "port 8896 -> 8894"
+    ],
+    "output_root": "derived from script directory under m11/cost"
+  },
+  {
+    "source": "audit_evidence_claims/m10/root_checks/perf_check_http.py",
+    "destination": "audit_evidence_claims/m11/cost/perf_check_http.py",
+    "source_sha256": "372ae88dcdfdc119d2ed0243ee624432f66f014a0df03c0dbf8f7f04bce9d725",
+    "changes": [
+      "port 8897 -> 8894"
+    ],
+    "output_root": "derived from script directory under m11/cost"
+  },
+  {
+    "source": "audit_evidence_claims/m10/cost/unique_cost_http.py",
+    "destination": "audit_evidence_claims/m11/cost/unicode_cost_http.py",
+    "changes": [
+      "port 8896 -> 8894",
+      "payload replaced by 4000 U+FDFA characters",
+      "JSON transmitted as UTF-8 rather than escaped Unicode to remain under 20000-byte parser cap",
+      "output names unique_cost -> unicode_cost"
+    ]
+  }
+]

@@ -1,0 +1,502 @@
+[
+  {
+    "kind": "EX1",
+    "index": 0,
+    "input": {
+      "text": "Tarceva"
+    },
+    "requested": {
+      "text": "Tarceva"
+    },
+    "path": "/api/resolve",
+    "hasUiError": false,
+    "html": "<p class=\"detail\">&ldquo;Tarceva&rdquo;를 1개 조각으로 읽었습니다.</p><div class=\"comp ok\"><div class=\"top\"><span class=\"s\">Tarceva</span><span class=\"verdict\">다른 이름(동의어)으로 찾아 연결</span><span class=\"code\">ALIAS</span></div><div class=\"detail\">→ <b>ERLOTINIB HYDROCHLORIDE</b> <span class=\"code\">CHEMBL1079742</span> · Small molecule · 최고 단계 허가, 폐암에서 허가</div><div class=\"detail\">작용: Epidermal growth factor receptor erbB1 inhibitor</div><div class=\"detail\">이 기록으로 연결된 폐암 임상시험 31건 · 원래 분자 ERLOTINIB로는 118건</div><div class=\"detail\">사전에서 맞은 이름: <span class=\"code\">Tarceva</span></div></div>"
+  },
+  {
+    "kind": "EX1",
+    "index": 1,
+    "input": {
+      "text": "OSI-774"
+    },
+    "requested": {
+      "text": "OSI-774"
+    },
+    "path": "/api/resolve",
+    "hasUiError": false,
+    "html": "<p class=\"detail\">&ldquo;OSI-774&rdquo;를 1개 조각으로 읽었습니다.</p><div class=\"comp ok\"><div class=\"top\"><span class=\"s\">OSI-774</span><span class=\"verdict\">다른 이름(동의어)으로 찾아 연결</span><span class=\"code\">ALIAS</span></div><div class=\"detail\">→ <b>ERLOTINIB</b> <span class=\"code\">CHEMBL553</span> · Small molecule · 최고 단계 허가, 폐암에서 허가</div><div class=\"detail\">작용: Epidermal growth factor receptor erbB1 inhibitor</div><div class=\"detail\">이 기록으로 연결된 폐암 임상시험 118건</div><div class=\"detail\">사전에서 맞은 이름: <span class=\"code\">osi 774</span></div></div>"
+  },
+  {
+    "kind": "EX1",
+    "index": 2,
+    "input": {
+      "text": "Gemicitabine"
+    },
+    "requested": {
+      "text": "Gemicitabine"
+    },
+    "path": "/api/resolve",
+    "hasUiError": false,
+    "html": "<p class=\"detail\">&ldquo;Gemicitabine&rdquo;를 1개 조각으로 읽었습니다.</p><div class=\"comp ok\"><div class=\"top\"><span class=\"s\">Gemicitabine</span><span class=\"verdict\">오타로 보고 고쳐서 연결</span><span class=\"code\">FUZZY_AUTO</span></div><div class=\"detail\">→ <b>GEMCITABINE</b> <span class=\"code\">CHEMBL888</span> · Small molecule · 최고 단계 허가, 폐암에서 허가</div><div class=\"detail\">작용: Ribonucleoside-diphosphate reductase RR1 inhibitor / DNA polymerase (alpha/delta/epsilon) inhibitor</div><div class=\"detail\">이 기록으로 연결된 폐암 임상시험 144건</div><div class=\"detail\">사전에서 맞은 이름: <span class=\"code\">GEMCITABINE</span> (비슷함 95.7)</div><div class=\"code\">적용한 규칙: 오타 고치기</div></div>"
+  },
+  {
+    "kind": "EX1",
+    "index": 3,
+    "input": {
+      "text": "erlotinib hydrochloride 150 mg tablet"
+    },
+    "requested": {
+      "text": "erlotinib hydrochloride 150 mg tablet"
+    },
+    "path": "/api/resolve",
+    "hasUiError": false,
+    "html": "<p class=\"detail\">&ldquo;erlotinib hydrochloride 150 mg tablet&rdquo;를 1개 조각으로 읽었습니다.</p><div class=\"comp ok\"><div class=\"top\"><span class=\"s\">erlotinib hydrochloride</span><span class=\"verdict\">이름이 정확히 같아서 연결</span><span class=\"code\">EXACT</span></div><div class=\"detail\">→ <b>ERLOTINIB HYDROCHLORIDE</b> <span class=\"code\">CHEMBL1079742</span> · Small molecule · 최고 단계 허가, 폐암에서 허가</div><div class=\"detail\">작용: Epidermal growth factor receptor erbB1 inhibitor</div><div class=\"detail\">이 기록으로 연결된 폐암 임상시험 31건 · 원래 분자 ERLOTINIB로는 118건</div><div class=\"code\">적용한 규칙: strip_dose · strip_formulation</div></div>"
+  },
+  {
+    "kind": "EX1",
+    "index": 4,
+    "input": {
+      "text": "Cisplatin Docetaxel Gefitinib Pemetrexed"
+    },
+    "requested": {
+      "text": "Cisplatin Docetaxel Gefitinib Pemetrexed"
+    },
+    "path": "/api/resolve",
+    "hasUiError": false,
+    "html": "<p class=\"detail\">&ldquo;Cisplatin Docetaxel Gefitinib Pemetrexed&rdquo;를 4개 조각으로 읽었습니다.</p><div class=\"comp ok\"><div class=\"top\"><span class=\"s\">Cisplatin</span><span class=\"verdict\">긴 글 속에서 약 이름을 찾아 연결</span><span class=\"code\">CONTAINED_ALIAS</span></div><div class=\"detail\">→ <b>CISPLATIN</b> <span class=\"code\">CHEMBL11359</span> · Small molecule · 최고 단계 허가, 폐암에서 3상</div><div class=\"detail\">이 기록으로 연결된 폐암 임상시험 259건</div><div class=\"detail\">사전에서 맞은 이름: <span class=\"code\">CISPLATIN</span></div><div class=\"code\">적용한 규칙: 붙여 쓴 글을 약 이름 단위로 자름</div></div><div class=\"comp ok\"><div class=\"top\"><span class=\"s\">Docetaxel</span><span class=\"verdict\">긴 글 속에서 약 이름을 찾아 연결</span><span class=\"code\">CONTAINED_ALIAS</span></div><div class=\"detail\">→ <b>DOCETAXEL</b> <span class=\"code\">CHEMBL3545252</span> · Small molecule · 최고 단계 허가, 폐암에서 허가</div><div class=\"detail\">작용: Tubulin inhibitor</div><div class=\"detail\">이 기록으로 연결된 폐암 임상시험 203건</div><div class=\"detail\">사전에서 맞은 이름: <span class=\"code\">DOCETAXEL</span></div><div class=\"code\">적용한 규칙: 붙여 쓴 글을 약 이름 단위로 자름</div></div><div class=\"comp ok\"><div class=\"top\"><span class=\"s\">Gefitinib</span><span class=\"verdict\">긴 글 속에서 약 이름을 찾아 연결</span><span class=\"code\">CONTAINED_ALIAS</span></div><div class=\"detail\">→ <b>GEFITINIB</b> <span class=\"code\">CHEMBL939</span> · Small molecule · 최고 단계 허가, 폐암에서 허가</div><div class=\"detail\">작용: Epidermal growth factor receptor erbB1 inhibitor</div><div class=\"detail\">이 기록으로 연결된 폐암 임상시험 62건</div><div class=\"detail\">사전에서 맞은 이름: <span class=\"code\">GEFITINIB</span></div><div class=\"code\">적용한 규칙: 붙여 쓴 글을 약 이름 단위로 자름</div></div><div class=\"comp ok\"><div class=\"top\"><span class=\"s\">Pemetrexed</span><span class=\"verdict\">긴 글 속에서 약 이름을 찾아 연결</span><span class=\"code\">CONTAINED_ALIAS</span></div><div class=\"detail\">→ <b>PEMETREXED</b> <span class=\"code\">CHEMBL225072</span> · Small molecule · 최고 단계 허가, 폐암에서 허가</div><div class=\"detail\">작용: Thymidylate synthase inhibitor / Dihydrofolate reductase inhibitor / GAR transformylase inhibitor</div><div class=\"detail\">이 기록으로 연결된 폐암 임상시험 290건</div><div class=\"detail\">사전에서 맞은 이름: <span class=\"code\">PEMETREXED</span></div><div class=\"code\">적용한 규칙: 붙여 쓴 글을 약 이름 단위로 자름</div></div>"
+  },
+  {
+    "kind": "EX1",
+    "index": 5,
+    "input": {
+      "text": "placebo plus docetaxel"
+    },
+    "requested": {
+      "text": "placebo plus docetaxel"
+    },
+    "path": "/api/resolve",
+    "hasUiError": false,
+    "html": "<p class=\"detail\">&ldquo;placebo plus docetaxel&rdquo;를 2개 조각으로 읽었습니다.</p><div class=\"comp no\"><div class=\"top\"><span class=\"s\">placebo</span><span class=\"verdict\">위약이라 거절</span><span class=\"code\">BLOCKED_PLACEBO</span></div><div class=\"code\">적용한 규칙: 여러 약으로 나눔 · 위약과 함께 투여된 약을 따로 봄 · 위약 막기</div></div><div class=\"comp ok\"><div class=\"top\"><span class=\"s\">docetaxel</span><span class=\"verdict\">이름이 정확히 같아서 연결</span><span class=\"code\">EXACT</span></div><div class=\"detail\">→ <b>DOCETAXEL</b> <span class=\"code\">CHEMBL3545252</span> · Small molecule · 최고 단계 허가, 폐암에서 허가</div><div class=\"detail\">작용: Tubulin inhibitor</div><div class=\"detail\">이 기록으로 연결된 폐암 임상시험 203건</div><div class=\"code\">적용한 규칙: 여러 약으로 나눔 · 위약과 함께 투여된 약을 따로 봄</div></div>"
+  },
+  {
+    "kind": "EX1",
+    "index": 6,
+    "input": {
+      "text": "Placebo to match pembrolizumab"
+    },
+    "requested": {
+      "text": "Placebo to match pembrolizumab"
+    },
+    "path": "/api/resolve",
+    "hasUiError": false,
+    "html": "<p class=\"detail\">&ldquo;Placebo to match pembrolizumab&rdquo;를 1개 조각으로 읽었습니다.</p><div class=\"comp no\"><div class=\"top\"><span class=\"s\">Placebo to match pembrolizumab</span><span class=\"verdict\">위약이라 거절</span><span class=\"code\">BLOCKED_PLACEBO</span></div><div class=\"code\">적용한 규칙: 위약 막기 · placebo_reference_arm</div></div>"
+  },
+  {
+    "kind": "EX1",
+    "index": 7,
+    "input": {
+      "text": "Abraxane"
+    },
+    "requested": {
+      "text": "Abraxane"
+    },
+    "path": "/api/resolve",
+    "hasUiError": false,
+    "html": "<p class=\"detail\">&ldquo;Abraxane&rdquo;를 1개 조각으로 읽었습니다.</p><div class=\"comp no\"><div class=\"top\"><span class=\"s\">Abraxane</span><span class=\"verdict\">바이오시밀러·개량 제형 등 다른 제품이라 거절</span><span class=\"code\">BLOCKED_DISTINCT_PRODUCT</span></div><div class=\"code\">적용한 규칙: 다른 제품 막기</div></div>"
+  },
+  {
+    "kind": "EX1",
+    "index": 8,
+    "input": {
+      "text": "Mvasi"
+    },
+    "requested": {
+      "text": "Mvasi"
+    },
+    "path": "/api/resolve",
+    "hasUiError": false,
+    "html": "<p class=\"detail\">&ldquo;Mvasi&rdquo;를 1개 조각으로 읽었습니다.</p><div class=\"comp no\"><div class=\"top\"><span class=\"s\">Mvasi</span><span class=\"verdict\">바이오시밀러·개량 제형 등 다른 제품이라 거절</span><span class=\"code\">BLOCKED_DISTINCT_PRODUCT</span></div><div class=\"code\">적용한 규칙: 다른 제품 막기</div></div>"
+  },
+  {
+    "kind": "EX1",
+    "index": 9,
+    "input": {
+      "text": "pembrolizumab-free regimen"
+    },
+    "requested": {
+      "text": "pembrolizumab-free regimen"
+    },
+    "path": "/api/resolve",
+    "hasUiError": false,
+    "html": "<p class=\"detail\">&ldquo;pembrolizumab-free regimen&rdquo;를 1개 조각으로 읽었습니다.</p><div class=\"comp no\"><div class=\"top\"><span class=\"s\">pembrolizumab-free</span><span class=\"verdict\">'~ 없이'라는 뜻이라 거절</span><span class=\"code\">BLOCKED_NEGATED</span></div><div class=\"code\">적용한 규칙: 'regimen' 같은 말 떼기 · '없이' 표현 막기</div></div>"
+  },
+  {
+    "kind": "EX1",
+    "index": 10,
+    "input": {
+      "text": "MEDI4736"
+    },
+    "requested": {
+      "text": "MEDI4736"
+    },
+    "path": "/api/resolve",
+    "hasUiError": false,
+    "html": "<p class=\"detail\">&ldquo;MEDI4736&rdquo;를 1개 조각으로 읽었습니다.</p><div class=\"comp warn\"><div class=\"top\"><span class=\"s\">MEDI4736</span><span class=\"verdict\">후보가 여럿이라 연결하지 않음</span><span class=\"code\">AMBIGUOUS</span></div><div class=\"detail\">후보: DURVALUMAB, ATEZOLIZUMAB — 사전의 다른 이름이 두 약에 걸려 있어 고르지 않았습니다.</div></div>"
+  },
+  {
+    "kind": "EX1",
+    "index": 11,
+    "input": {
+      "text": "EGFR"
+    },
+    "requested": {
+      "text": "EGFR"
+    },
+    "path": "/api/resolve",
+    "hasUiError": false,
+    "html": "<p class=\"detail\">&ldquo;EGFR&rdquo;를 1개 조각으로 읽었습니다.</p><div class=\"comp no\"><div class=\"top\"><span class=\"s\">EGFR</span><span class=\"verdict\">약이 아니라 표적(유전자) 이름이라 거절</span><span class=\"code\">BLOCKED_TARGET_TERM</span></div><div class=\"code\">적용한 규칙: 표적 이름 막기</div></div>"
+  },
+  {
+    "kind": "EX1",
+    "index": 12,
+    "input": {
+      "text": "propranolol"
+    },
+    "requested": {
+      "text": "propranolol"
+    },
+    "path": "/api/resolve",
+    "hasUiError": false,
+    "html": "<p class=\"detail\">&ldquo;propranolol&rdquo;를 1개 조각으로 읽었습니다.</p><div class=\"comp gray\"><div class=\"top\"><span class=\"s\">propranolol</span><span class=\"verdict\">사전에서 찾지 못함</span><span class=\"code\">UNRESOLVED</span></div></div>"
+  },
+  {
+    "kind": "EX2",
+    "index": 0,
+    "input": {
+      "text": "What trials evaluate Tagrisso?"
+    },
+    "requested": {
+      "text": "What trials evaluate Tagrisso?"
+    },
+    "path": "/api/ask",
+    "hasUiError": false,
+    "html": "<div class=\"top\" style=\"display:flex;gap:8px;flex-wrap:wrap\"><span class=\"chip\">이 약·표적의 임상시험</span><span class=\"chip \">근거를 그대로 옮긴 답 (검사 해당 없음 — 3번에서 AI 답을 검사해 보세요)</span></div><p class=\"detail\">알아들은 이름: OSIMERTINIB <span class=\"code\">(Drug)</span></p><pre>Trials of this drug:\n  - NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT03909334]\n  - NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB [NCT07680790]\n  - NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT02411448]\n  - NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04285671]\n  - NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04141644]\n  - NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT03535363]\n  - NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04487080]\n  - NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB [NCT07738172]\n  - NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT04541407]\n  - NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB [NCT04772235]\n  - NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB [NCT05011487]\n  - NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT04479306]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.</pre><details><summary>근거와 출처 (12개 중 8개)</summary><div class=\"ev\"><div>• NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB — <a href=\"https://clinicaltrials.gov/study/NCT03909334\" target=\"_blank\" rel=\"noopener\">NCT03909334</a> <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334</span></div><div>• NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB — <a href=\"https://clinicaltrials.gov/study/NCT07680790\" target=\"_blank\" rel=\"noopener\">NCT07680790</a> <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790</span></div><div>• NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB — <a href=\"https://clinicaltrials.gov/study/NCT02411448\" target=\"_blank\" rel=\"noopener\">NCT02411448</a> <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448</span></div><div>• NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB — <a href=\"https://clinicaltrials.gov/study/NCT04285671\" target=\"_blank\" rel=\"noopener\">NCT04285671</a> <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671</span></div><div>• NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB — <a href=\"https://clinicaltrials.gov/study/NCT04141644\" target=\"_blank\" rel=\"noopener\">NCT04141644</a> <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644</span></div><div>• NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB — <a href=\"https://clinicaltrials.gov/study/NCT03535363\" target=\"_blank\" rel=\"noopener\">NCT03535363</a> <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363</span></div><div>• NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB — <a href=\"https://clinicaltrials.gov/study/NCT04487080\" target=\"_blank\" rel=\"noopener\">NCT04487080</a> <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080</span></div><div>• NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB — <a href=\"https://clinicaltrials.gov/study/NCT07738172\" target=\"_blank\" rel=\"noopener\">NCT07738172</a> <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172</span></div></div></details>"
+  },
+  {
+    "kind": "EX2",
+    "index": 1,
+    "input": {
+      "text": "Which companies are developing osimertinib?"
+    },
+    "requested": {
+      "text": "Which companies are developing osimertinib?"
+    },
+    "path": "/api/ask",
+    "hasUiError": false,
+    "html": "<div class=\"top\" style=\"display:flex;gap:8px;flex-wrap:wrap\"><span class=\"chip\">이 약을 개발하는 회사</span><span class=\"chip \">근거를 그대로 옮긴 답 (검사 해당 없음 — 3번에서 AI 답을 검사해 보세요)</span></div><p class=\"detail\">알아들은 이름: OSIMERTINIB <span class=\"code\">(Drug)</span></p><pre>Lead sponsorship of trials of this drug:\n  - Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT01802632, NCT02143466, NCT02224053]\n  - Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT03810807, NCT06741085, NCT07535437]\n  - National Cancer Institute (nih sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT03191149, NCT03831932, NCT04181060]\n  - Bristol Myers Squibb (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT06618287, NCT07680790]\n  - Eli Lilly (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT02411448, NCT02789345]\n  - M D Anderson Cancer Center (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT04479306, NCT05017025]\n  - Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT04425681, NCT06557096]\n  - Shanghai Jmt-bio (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT06391944, NCT06735391]\n  - Sichuan Kelun-biotech (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT06670196, NCT07622186]\n  - Tianjin Medical University Cancer Institute And Hospital (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT04029350, NCT05507606]\n  - Tyk Medicines (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT05382728, NCT05948813]\n  - Abbisko (industry sponsor) is lead sponsor of 1 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT07710612]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.</pre><details><summary>근거와 출처 (12개 중 8개)</summary><div class=\"ev\"><div>• Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT01802632, NCT02143466, NCT02224053 <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|</span></div><div>• Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT03810807, NCT06741085, NCT07535437 <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|</span></div><div>• National Cancer Institute (nih sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT03191149, NCT03831932, NCT04181060 <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL3353410|</span></div><div>• Bristol Myers Squibb (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT06618287, NCT07680790 <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: ORG:bristolmyerssquibb|SPONSORS_TRIAL_OF|CHEMBL3353410|</span></div><div>• Eli Lilly (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT02411448, NCT02789345 <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL3353410|</span></div><div>• M D Anderson Cancer Center (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT04479306, NCT05017025 <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|</span></div><div>• Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT04425681, NCT06557096 <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: ORG:secondaffiliatedhospitalofnanchanguniversity|SPONSORS_TRIAL_OF|CHEMBL3353410|</span></div><div>• Shanghai Jmt-bio (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT06391944, NCT06735391 <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: ORG:shanghaijmtbio|SPONSORS_TRIAL_OF|CHEMBL3353410|</span></div></div></details>"
+  },
+  {
+    "kind": "EX2",
+    "index": 2,
+    "input": {
+      "text": "Which drugs act on ALK?"
+    },
+    "requested": {
+      "text": "Which drugs act on ALK?"
+    },
+    "path": "/api/ask",
+    "hasUiError": false,
+    "html": "<div class=\"top\" style=\"display:flex;gap:8px;flex-wrap:wrap\"><span class=\"chip\">이 표적에 작용하는 약</span><span class=\"chip \">근거를 그대로 옮긴 답 (검사 해당 없음 — 3번에서 AI 답을 검사해 보세요)</span></div><p class=\"detail\">알아들은 이름: ALK <span class=\"code\">(Target)</span></p><pre>Agents for this target:\n  - PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) [CHEMBL4650298]\n  - CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph) [CHEMBL3899477]\n  - ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) [CHEMBL3545360]\n  - ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph) [CHEMBL3707320]\n  - LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph) [CHEMBL3286830]\n  - ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph) [CHEMBL4113131]\n  - ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph) [CHEMBL1983268]\n  - BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) [CHEMBL3545311]\n  - CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) [CHEMBL2403108]\n  - CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph) [CHEMBL601719]\n  - ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph) [CHEMBL1738797]\n\nScope: 11 edge(s) from this graph; non-small cell lung cancer only.</pre><details><summary>근거와 출처 (11개 중 8개)</summary><div class=\"ev\"><div>• PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) — CHEMBL4650298 <span class=\"code\">확실도 0.95</span><br><span class=\"code\">근거 id: CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298</span></div><div>• CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph) — CHEMBL3899477 <span class=\"code\">확실도 0.95</span><br><span class=\"code\">근거 id: CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477</span></div><div>• ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) — CHEMBL3545360 <span class=\"code\">확실도 0.95</span><br><span class=\"code\">근거 id: CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360</span></div><div>• ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph) — CHEMBL3707320 <span class=\"code\">확실도 0.95</span><br><span class=\"code\">근거 id: CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320</span></div><div>• LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph) — CHEMBL3286830 <span class=\"code\">확실도 0.95</span><br><span class=\"code\">근거 id: CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830</span></div><div>• ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph) — CHEMBL4113131 <span class=\"code\">확실도 0.95</span><br><span class=\"code\">근거 id: CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131</span></div><div>• ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph) — CHEMBL1983268 <span class=\"code\">확실도 0.95</span><br><span class=\"code\">근거 id: CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268</span></div><div>• BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) — CHEMBL3545311 <span class=\"code\">확실도 0.95</span><br><span class=\"code\">근거 id: CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311</span></div></div></details>"
+  },
+  {
+    "kind": "EX2",
+    "index": 3,
+    "input": {
+      "text": "What does osimertinib target?"
+    },
+    "requested": {
+      "text": "What does osimertinib target?"
+    },
+    "path": "/api/ask",
+    "hasUiError": false,
+    "html": "<div class=\"top\" style=\"display:flex;gap:8px;flex-wrap:wrap\"><span class=\"chip\">이 약의 표적</span><span class=\"chip \">근거를 그대로 옮긴 답 (검사 해당 없음 — 3번에서 AI 답을 검사해 보세요)</span></div><p class=\"detail\">알아들은 이름: OSIMERTINIB <span class=\"code\">(Drug)</span></p><pre>Reported mechanism:\n  - OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410]\n\nScope: 1 edge(s) from this graph; non-small cell lung cancer only.</pre><details><summary>근거와 출처 (1개 중 1개)</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor) — CHEMBL3353410 <span class=\"code\">확실도 0.95</span><br><span class=\"code\">근거 id: CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410</span></div></div></details>"
+  },
+  {
+    "kind": "EX2",
+    "index": 4,
+    "input": {
+      "text": "What is AstraZeneca running in NSCLC?"
+    },
+    "requested": {
+      "text": "What is AstraZeneca running in NSCLC?"
+    },
+    "path": "/api/ask",
+    "hasUiError": false,
+    "html": "<div class=\"top\" style=\"display:flex;gap:8px;flex-wrap:wrap\"><span class=\"chip\">이 회사의 폐암 파이프라인</span><span class=\"chip \">근거를 그대로 옮긴 답 (검사 해당 없음 — 3번에서 AI 답을 검사해 보세요)</span></div><p class=\"detail\">알아들은 이름: Astrazeneca <span class=\"code\">(Company)</span>, non-small cell lung carcinoma <span class=\"code\">(Disease)</span></p><pre>This organisation's NSCLC trials:\n  - Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB [NCT01802632, NCT02143466, NCT02224053]\n  - Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN [NCT00006049, NCT00322452, NCT01000896]\n  - Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB [NCT00006049, NCT00034879, NCT00234442]\n  - Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB [NCT02740985, NCT03164616, NCT03703297]\n  - Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN [NCT02453282, NCT03164616, NCT04035486]\n  - Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED [NCT00372788, NCT02453282, NCT03164616]\n  - Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL [NCT00006049, NCT00322452, NCT01000896]\n  - Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG [NCT05123482, NCT06357533, NCT06627647]\n  - Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB [NCT00372788, NCT01605916, NCT01933932]\n  - Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB [NCT06357533, NCT06627647, NCT06692738]\n  - Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL [NCT00478049, NCT01933932, NCT02740985]\n  - Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN [NCT06357533, NCT07098338, NCT07291037]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.</pre><details><summary>근거와 출처 (12개 중 8개)</summary><div class=\"ev\"><div>• Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB — NCT01802632, NCT02143466, NCT02224053 <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|</span></div><div>• Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN — NCT00006049, NCT00322452, NCT01000896 <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|</span></div><div>• Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB — NCT00006049, NCT00034879, NCT00234442 <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|</span></div><div>• Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB — NCT02740985, NCT03164616, NCT03703297 <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|</span></div><div>• Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN — NCT02453282, NCT03164616, NCT04035486 <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|</span></div><div>• Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED — NCT00372788, NCT02453282, NCT03164616 <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|</span></div><div>• Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL — NCT00006049, NCT00322452, NCT01000896 <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|</span></div><div>• Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG — NCT05123482, NCT06357533, NCT06627647 <span class=\"code\">확실도 1.00</span><br><span class=\"code\">근거 id: ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|</span></div></div></details>"
+  },
+  {
+    "kind": "EX2",
+    "index": 5,
+    "input": {
+      "text": "What trials evaluate Mvasi?"
+    },
+    "requested": {
+      "text": "What trials evaluate Mvasi?"
+    },
+    "path": "/api/ask",
+    "hasUiError": false,
+    "html": "<div class=\"top\" style=\"display:flex;gap:8px;flex-wrap:wrap\"><span class=\"chip\">이 약·표적의 임상시험</span><span class=\"chip \">근거를 그대로 옮긴 답 (검사 해당 없음 — 3번에서 AI 답을 검사해 보세요)</span></div><p class=\"detail\">알아들은 이름: What trials evaluate Mvasi <span class=\"code\">(거절)</span></p><pre>The entities in the question were recognised but the graph holds no edges that answer it.</pre>"
+  },
+  {
+    "kind": "EX2",
+    "index": 6,
+    "input": {
+      "text": "What is the capital of France?"
+    },
+    "requested": {
+      "text": "What is the capital of France?"
+    },
+    "path": "/api/ask",
+    "hasUiError": false,
+    "html": "<div class=\"top\" style=\"display:flex;gap:8px;flex-wrap:wrap\"><span class=\"chip\">관련 없는 질문</span><span class=\"chip no\">답하지 않음</span></div><pre>This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.</pre>"
+  },
+  {
+    "kind": "EX3",
+    "index": 0,
+    "input": {
+      "text": "Which drugs act on ALK?",
+      "answer": "Alectinib and lorlatinib act on ALK."
+    },
+    "requested": {
+      "text": "Which drugs act on ALK?",
+      "answer": "Alectinib and lorlatinib act on ALK."
+    },
+    "path": "/api/check",
+    "hasUiError": false,
+    "html": "<div><span class=\"chip ok\">걸린 것 없음</span> <span class=\"code\">근거 11개와 대조</span></div><p class=\"detail\">걸린 것이 없습니다. 이것이 답이 맞다는 증명은 아닙니다 &mdash; 검사는 단어 순서를 읽을 뿐이니 최종 판단은 직접 읽어 보고 하세요.</p><details><summary>대조한 근거 보기</summary><div class=\"ev\"><div>• PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) — CHEMBL4650298</div><div>• CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph) — CHEMBL3899477</div><div>• ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) — CHEMBL3545360</div><div>• ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph) — CHEMBL3707320</div><div>• LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph) — CHEMBL3286830</div><div>• ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph) — CHEMBL4113131</div><div>• ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph) — CHEMBL1983268</div><div>• BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) — CHEMBL3545311</div></div></details>"
+  },
+  {
+    "kind": "EX3",
+    "index": 1,
+    "input": {
+      "text": "Which drugs act on ALK?",
+      "answer": "Alectinib, lorlatinib and zorbatinib act on ALK."
+    },
+    "requested": {
+      "text": "Which drugs act on ALK?",
+      "answer": "Alectinib, lorlatinib and zorbatinib act on ALK."
+    },
+    "path": "/api/check",
+    "hasUiError": false,
+    "html": "<div><span class=\"chip no\">근거에 없는 내용 2개</span> <span class=\"code\">근거 11개와 대조</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"s\">zorbatinib</span><span class=\"verdict\">약처럼 생긴 이름인데 근거에 없음</span></div></div><div class=\"comp no\"><div class=\"top\"><span class=\"s\">zorbatinib</span><span class=\"verdict\">근거로 확인할 수 없는 말</span></div><div class=\"detail\">문장: Alectinib, lorlatinib and zorbatinib act on ALK.</div></div><details><summary>대조한 근거 보기</summary><div class=\"ev\"><div>• PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) — CHEMBL4650298</div><div>• CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph) — CHEMBL3899477</div><div>• ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) — CHEMBL3545360</div><div>• ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph) — CHEMBL3707320</div><div>• LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph) — CHEMBL3286830</div><div>• ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph) — CHEMBL4113131</div><div>• ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph) — CHEMBL1983268</div><div>• BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) — CHEMBL3545311</div></div></details>"
+  },
+  {
+    "kind": "EX3",
+    "index": 2,
+    "input": {
+      "text": "Which drugs act on ALK?",
+      "answer": "Alectinib acts on EGFR."
+    },
+    "requested": {
+      "text": "Which drugs act on ALK?",
+      "answer": "Alectinib acts on EGFR."
+    },
+    "path": "/api/check",
+    "hasUiError": false,
+    "html": "<div><span class=\"chip no\">근거에 없는 내용 2개</span> <span class=\"code\">근거 11개와 대조</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"s\">ALECTINIB — acts — EGFR</span><span class=\"verdict\">근거에 없는 관계</span></div><div class=\"detail\">문장: Alectinib acts on EGFR.</div></div><div class=\"comp no\"><div class=\"top\"><span class=\"s\">EGFR</span><span class=\"verdict\">근거에 없는 이름</span></div></div><details><summary>대조한 근거 보기</summary><div class=\"ev\"><div>• PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) — CHEMBL4650298</div><div>• CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph) — CHEMBL3899477</div><div>• ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) — CHEMBL3545360</div><div>• ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph) — CHEMBL3707320</div><div>• LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph) — CHEMBL3286830</div><div>• ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph) — CHEMBL4113131</div><div>• ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph) — CHEMBL1983268</div><div>• BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) — CHEMBL3545311</div></div></details>"
+  },
+  {
+    "kind": "EX3",
+    "index": 3,
+    "input": {
+      "text": "What trials evaluate Tagrisso?",
+      "answer": "Osimertinib is evaluated in 4,812 NSCLC trials."
+    },
+    "requested": {
+      "text": "What trials evaluate Tagrisso?",
+      "answer": "Osimertinib is evaluated in 4,812 NSCLC trials."
+    },
+    "path": "/api/check",
+    "hasUiError": false,
+    "html": "<div><span class=\"chip no\">근거에 없는 내용 3개</span> <span class=\"code\">근거 12개와 대조</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"s\">4,812</span><span class=\"verdict\">근거에 없는 숫자</span></div></div><div class=\"comp no\"><div class=\"top\"><span class=\"s\">4812</span><span class=\"verdict\">근거에 없는 숫자</span></div><div class=\"detail\">문장: Osimertinib is evaluated in 4,812 NSCLC trials.</div></div><div class=\"comp no\"><div class=\"top\"><span class=\"s\">lung cancer</span><span class=\"verdict\">질환에 대한 주장 (그래프는 시험만 기록)</span></div><div class=\"detail\">문장: Osimertinib is evaluated in 4,812 NSCLC trials.</div></div><details><summary>대조한 근거 보기</summary><div class=\"ev\"><div>• NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB — NCT03909334</div><div>• NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB — NCT07680790</div><div>• NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB — NCT02411448</div><div>• NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB — NCT04285671</div><div>• NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB — NCT04141644</div><div>• NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB — NCT03535363</div><div>• NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB — NCT04487080</div><div>• NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB — NCT07738172</div></div></details>"
+  },
+  {
+    "kind": "EX3",
+    "index": 4,
+    "input": {
+      "text": "Which companies are developing osimertinib?",
+      "answer": "AstraZeneca has discontinued osimertinib."
+    },
+    "requested": {
+      "text": "Which companies are developing osimertinib?",
+      "answer": "AstraZeneca has discontinued osimertinib."
+    },
+    "path": "/api/check",
+    "hasUiError": false,
+    "html": "<div><span class=\"chip no\">근거에 없는 내용 1개</span> <span class=\"code\">근거 12개와 대조</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"s\">discontinued</span><span class=\"verdict\">근거로 확인할 수 없는 말</span></div><div class=\"detail\">문장: AstraZeneca has discontinued osimertinib.</div></div><details><summary>대조한 근거 보기</summary><div class=\"ev\"><div>• Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT01802632, NCT02143466, NCT02224053</div><div>• Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT03810807, NCT06741085, NCT07535437</div><div>• National Cancer Institute (nih sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT03191149, NCT03831932, NCT04181060</div><div>• Bristol Myers Squibb (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT06618287, NCT07680790</div><div>• Eli Lilly (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT02411448, NCT02789345</div><div>• M D Anderson Cancer Center (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT04479306, NCT05017025</div><div>• Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT04425681, NCT06557096</div><div>• Shanghai Jmt-bio (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT06391944, NCT06735391</div></div></details>"
+  },
+  {
+    "kind": "EX3",
+    "index": 5,
+    "input": {
+      "text": "Which companies are developing osimertinib?",
+      "answer": "AstraZeneca develops osimertinib."
+    },
+    "requested": {
+      "text": "Which companies are developing osimertinib?",
+      "answer": "AstraZeneca develops osimertinib."
+    },
+    "path": "/api/check",
+    "hasUiError": false,
+    "html": "<div><span class=\"chip no\">근거에 없는 내용 2개</span> <span class=\"code\">근거 12개와 대조</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"s\">Astrazeneca OSIMERTINIB</span><span class=\"verdict\">동사 없는 조각 (관계를 읽을 수 없음)</span></div><div class=\"detail\">문장: AstraZeneca develops osimertinib.</div></div><div class=\"comp no\"><div class=\"top\"><span class=\"s\">develops</span><span class=\"verdict\">'개발·소유' 주장 (그래프는 시험 후원만 기록)</span></div><div class=\"detail\">문장: AstraZeneca develops osimertinib.</div></div><details><summary>대조한 근거 보기</summary><div class=\"ev\"><div>• Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT01802632, NCT02143466, NCT02224053</div><div>• Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT03810807, NCT06741085, NCT07535437</div><div>• National Cancer Institute (nih sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT03191149, NCT03831932, NCT04181060</div><div>• Bristol Myers Squibb (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT06618287, NCT07680790</div><div>• Eli Lilly (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT02411448, NCT02789345</div><div>• M D Anderson Cancer Center (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT04479306, NCT05017025</div><div>• Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT04425681, NCT06557096</div><div>• Shanghai Jmt-bio (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug — NCT06391944, NCT06735391</div></div></details>"
+  },
+  {
+    "kind": "EX3",
+    "index": 6,
+    "input": {
+      "text": "What does osimertinib target?",
+      "answer": "Osimertinib targets EGFR and is safe for all patients."
+    },
+    "requested": {
+      "text": "What does osimertinib target?",
+      "answer": "Osimertinib targets EGFR and is safe for all patients."
+    },
+    "path": "/api/check",
+    "hasUiError": false,
+    "html": "<div><span class=\"chip no\">근거에 없는 내용 3개</span> <span class=\"code\">근거 1개와 대조</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"s\">all</span><span class=\"verdict\">근거로 확인할 수 없는 말</span></div><div class=\"detail\">문장: Osimertinib targets EGFR and is safe for all patients.</div></div><div class=\"comp no\"><div class=\"top\"><span class=\"s\">patients</span><span class=\"verdict\">근거로 확인할 수 없는 말</span></div><div class=\"detail\">문장: Osimertinib targets EGFR and is safe for all patients.</div></div><div class=\"comp no\"><div class=\"top\"><span class=\"s\">safe</span><span class=\"verdict\">근거로 확인할 수 없는 말</span></div><div class=\"detail\">문장: Osimertinib targets EGFR and is safe for all patients.</div></div><details><summary>대조한 근거 보기</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor) — CHEMBL3353410</div></div></details>"
+  },
+  {
+    "kind": "EX3",
+    "index": 7,
+    "input": {
+      "text": "What does osimertinib target?",
+      "answer": "Osimertinib does not act on EGFR."
+    },
+    "requested": {
+      "text": "What does osimertinib target?",
+      "answer": "Osimertinib does not act on EGFR."
+    },
+    "path": "/api/check",
+    "hasUiError": false,
+    "html": "<div><span class=\"chip no\">근거에 없는 내용 1개</span> <span class=\"code\">근거 1개와 대조</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"s\">not</span><span class=\"verdict\">부정 표현 (그래프는 없음을 확인할 수 없음)</span></div><div class=\"detail\">문장: Osimertinib does not act on EGFR.</div></div><details><summary>대조한 근거 보기</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor) — CHEMBL3353410</div></div></details>"
+  },
+  {
+    "kind": "EX3",
+    "index": 8,
+    "input": {
+      "text": "What trials evaluate Tagrisso?",
+      "answer": "NCT07680790 is a phase 2 trial evaluating osimertinib."
+    },
+    "requested": {
+      "text": "What trials evaluate Tagrisso?",
+      "answer": "NCT07680790 is a phase 2 trial evaluating osimertinib."
+    },
+    "path": "/api/check",
+    "hasUiError": false,
+    "html": "<div><span class=\"chip no\">근거에 없는 내용 1개</span> <span class=\"code\">근거 12개와 대조</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"s\">phase 2</span><span class=\"verdict\">이 대상의 단계가 아님</span></div><div class=\"detail\">문장: NCT07680790 is a phase 2 trial evaluating osimertinib.</div></div><details><summary>대조한 근거 보기</summary><div class=\"ev\"><div>• NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB — NCT03909334</div><div>• NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB — NCT07680790</div><div>• NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB — NCT02411448</div><div>• NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB — NCT04285671</div><div>• NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB — NCT04141644</div><div>• NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB — NCT03535363</div><div>• NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB — NCT04487080</div><div>• NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB — NCT07738172</div></div></details>"
+  },
+  {
+    "kind": "EX4",
+    "index": 0,
+    "input": {
+      "text": "What does osimertinib target?",
+      "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"inhibitor\"}]}"
+    },
+    "requested": {
+      "text": "What does osimertinib target?",
+      "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"inhibitor\"}]}"
+    },
+    "path": "/api/structured",
+    "hasUiError": false,
+    "html": "<div><span class=\"chip ok\">모든 주장이 그래프와 일치</span> <span class=\"code\">받아들인 주장 1개</span></div><p class=\"detail\">이 주장들로 쓴 답 (그래프의 이름과 값으로):</p><pre>- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]</pre><details><summary>이번 질문의 근거와 id (1개)</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor)<br><span class=\"code\">CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410</span></div></div></details>"
+  },
+  {
+    "kind": "EX4",
+    "index": 1,
+    "input": {
+      "text": "What does osimertinib target?",
+      "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"EGFR\", \"object\": \"osimertinib\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\"}]}"
+    },
+    "requested": {
+      "text": "What does osimertinib target?",
+      "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"EGFR\", \"object\": \"osimertinib\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\"}]}"
+    },
+    "path": "/api/structured",
+    "hasUiError": false,
+    "html": "<div><span class=\"chip no\">버린 주장 1개</span> <span class=\"code\">받아들인 주장 0개</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"verdict\">버림</span></div><div class=\"detail\">EGFR is a target, not a drug</div><div class=\"code\">{&quot;kind&quot;:&quot;relation&quot;,&quot;relation&quot;:&quot;ACTS_ON&quot;,&quot;subject&quot;:&quot;EGFR&quot;,&quot;object&quot;:&quot;osimertinib&quot;,&quot;evidence&quot;:&quot;CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410&quot;}</div></div><details><summary>이번 질문의 근거와 id (1개)</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor)<br><span class=\"code\">CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410</span></div></div></details>"
+  },
+  {
+    "kind": "EX4",
+    "index": 2,
+    "input": {
+      "text": "What does osimertinib target?",
+      "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"activator\"}]}"
+    },
+    "requested": {
+      "text": "What does osimertinib target?",
+      "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"activator\"}]}"
+    },
+    "path": "/api/structured",
+    "hasUiError": false,
+    "html": "<div><span class=\"chip no\">버린 주장 1개</span> <span class=\"code\">받아들인 주장 0개</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"verdict\">버림</span></div><div class=\"detail\">the graph gives the action as INHIBITOR, not activator</div><div class=\"code\">{&quot;kind&quot;:&quot;relation&quot;,&quot;relation&quot;:&quot;ACTS_ON&quot;,&quot;subject&quot;:&quot;osimertinib&quot;,&quot;object&quot;:&quot;EGFR&quot;,&quot;evidence&quot;:&quot;CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410&quot;,&quot;action&quot;:&quot;activator&quot;}</div></div><details><summary>이번 질문의 근거와 id (1개)</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor)<br><span class=\"code\">CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410</span></div></div></details>"
+  },
+  {
+    "kind": "EX4",
+    "index": 3,
+    "input": {
+      "text": "What does osimertinib target?",
+      "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"note\": \"safe for all patients\"}]}"
+    },
+    "requested": {
+      "text": "What does osimertinib target?",
+      "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"note\": \"safe for all patients\"}]}"
+    },
+    "path": "/api/structured",
+    "hasUiError": false,
+    "html": "<div><span class=\"chip no\">버린 주장 1개</span> <span class=\"code\">받아들인 주장 0개</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"verdict\">버림</span></div><div class=\"detail\">unknown keys ['note'] (no free text is accepted)</div><div class=\"code\">{&quot;kind&quot;:&quot;relation&quot;,&quot;relation&quot;:&quot;ACTS_ON&quot;,&quot;subject&quot;:&quot;osimertinib&quot;,&quot;object&quot;:&quot;EGFR&quot;,&quot;evidence&quot;:&quot;CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410&quot;,&quot;note&quot;:&quot;safe for all patients&quot;}</div></div><details><summary>이번 질문의 근거와 id (1개)</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor)<br><span class=\"code\">CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410</span></div></div></details>"
+  },
+  {
+    "kind": "EX4",
+    "index": 4,
+    "input": {
+      "text": "What trials evaluate Tagrisso?",
+      "answer": "{\"claims\": [{\"kind\": \"trial\", \"trial\": \"NCT03909334\", \"evidence\": \"NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334\", \"phase\": [\"PHASE2\"], \"status\": \"ACTIVE_NOT_RECRUITING\"}, {\"kind\": \"trial\", \"trial\": \"NCT03909334\", \"evidence\": \"NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334\", \"status\": \"RECRUITING\"}]}"
+    },
+    "requested": {
+      "text": "What trials evaluate Tagrisso?",
+      "answer": "{\"claims\": [{\"kind\": \"trial\", \"trial\": \"NCT03909334\", \"evidence\": \"NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334\", \"phase\": [\"PHASE2\"], \"status\": \"ACTIVE_NOT_RECRUITING\"}, {\"kind\": \"trial\", \"trial\": \"NCT03909334\", \"evidence\": \"NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334\", \"status\": \"RECRUITING\"}]}"
+    },
+    "path": "/api/structured",
+    "hasUiError": false,
+    "html": "<div><span class=\"chip no\">버린 주장 1개</span> <span class=\"code\">받아들인 주장 1개</span></div><p class=\"detail\">이 주장들로 쓴 답 (그래프의 이름과 값으로):</p><pre>- NCT03909334: phase PHASE2; status ACTIVE_NOT_RECRUITING [NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334]</pre><div class=\"comp no\"><div class=\"top\"><span class=\"verdict\">버림</span></div><div class=\"detail\">the graph gives the status as ACTIVE_NOT_RECRUITING, not RECRUITING</div><div class=\"code\">{&quot;kind&quot;:&quot;trial&quot;,&quot;trial&quot;:&quot;NCT03909334&quot;,&quot;evidence&quot;:&quot;NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334&quot;,&quot;status&quot;:&quot;RECRUITING&quot;}</div></div><details><summary>이번 질문의 근거와 id (12개)</summary><div class=\"ev\"><div>• NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB<br><span class=\"code\">NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334</span></div><div>• NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB<br><span class=\"code\">NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790</span></div><div>• NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB<br><span class=\"code\">NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448</span></div><div>• NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB<br><span class=\"code\">NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671</span></div><div>• NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB<br><span class=\"code\">NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644</span></div><div>• NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB<br><span class=\"code\">NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363</span></div><div>• NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB<br><span class=\"code\">NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080</span></div><div>• NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB<br><span class=\"code\">NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172</span></div><div>• NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB<br><span class=\"code\">NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407</span></div><div>• NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB<br><span class=\"code\">NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235</span></div><div>• NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB<br><span class=\"code\">NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487</span></div><div>• NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB<br><span class=\"code\">NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306</span></div></div></details>"
+  },
+  {
+    "kind": "EX4",
+    "index": 5,
+    "input": {
+      "text": "What is AstraZeneca running in NSCLC?",
+      "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"SPONSORS_TRIAL_OF\", \"subject\": \"AstraZeneca\", \"object\": \"osimertinib\", \"evidence\": \"ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|\", \"trial_count\": 10}]}"
+    },
+    "requested": {
+      "text": "What is AstraZeneca running in NSCLC?",
+      "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"SPONSORS_TRIAL_OF\", \"subject\": \"AstraZeneca\", \"object\": \"osimertinib\", \"evidence\": \"ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|\", \"trial_count\": 10}]}"
+    },
+    "path": "/api/structured",
+    "hasUiError": false,
+    "html": "<div><span class=\"chip no\">버린 주장 1개</span> <span class=\"code\">받아들인 주장 0개</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"verdict\">버림</span></div><div class=\"detail\">the graph gives 14 trials, not 10</div><div class=\"code\">{&quot;kind&quot;:&quot;relation&quot;,&quot;relation&quot;:&quot;SPONSORS_TRIAL_OF&quot;,&quot;subject&quot;:&quot;AstraZeneca&quot;,&quot;object&quot;:&quot;osimertinib&quot;,&quot;evidence&quot;:&quot;ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|&quot;,&quot;trial_count&quot;:10}</div></div><details><summary>이번 질문의 근거와 id (12개)</summary><div class=\"ev\"><div>• Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB<br><span class=\"code\">ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|</span></div><div>• Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN<br><span class=\"code\">ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|</span></div><div>• Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB<br><span class=\"code\">ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|</span></div><div>• Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB<br><span class=\"code\">ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|</span></div><div>• Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN<br><span class=\"code\">ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|</span></div><div>• Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED<br><span class=\"code\">ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|</span></div><div>• Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL<br><span class=\"code\">ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|</span></div><div>• Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG<br><span class=\"code\">ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|</span></div><div>• Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB<br><span class=\"code\">ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|</span></div><div>• Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB<br><span class=\"code\">ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|</span></div><div>• Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL<br><span class=\"code\">ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|</span></div><div>• Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN<br><span class=\"code\">ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|</span></div></div></details>"
+  },
+  {
+    "kind": "EX4",
+    "index": 6,
+    "input": {
+      "text": "What does osimertinib target?",
+      "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"ALK\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000171094|CHEMBL3353410\"}]}"
+    },
+    "requested": {
+      "text": "What does osimertinib target?",
+      "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"ALK\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000171094|CHEMBL3353410\"}]}"
+    },
+    "path": "/api/structured",
+    "hasUiError": false,
+    "html": "<div><span class=\"chip no\">버린 주장 1개</span> <span class=\"code\">받아들인 주장 0개</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"verdict\">버림</span></div><div class=\"detail\">the cited evidence is not among the edges retrieved for this question</div><div class=\"code\">{&quot;kind&quot;:&quot;relation&quot;,&quot;relation&quot;:&quot;ACTS_ON&quot;,&quot;subject&quot;:&quot;osimertinib&quot;,&quot;object&quot;:&quot;ALK&quot;,&quot;evidence&quot;:&quot;CHEMBL3353410|ACTS_ON|ENSG00000171094|CHEMBL3353410&quot;}</div></div><details><summary>이번 질문의 근거와 id (1개)</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor)<br><span class=\"code\">CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410</span></div></div></details>"
+  }
+]

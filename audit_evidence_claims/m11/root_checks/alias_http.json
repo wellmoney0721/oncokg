@@ -1,0 +1,4600 @@
+{
+  "head": "2b9fc923f7b6f388f5babd2f998ed4c6e16d3439",
+  "base": "http://127.0.0.1:8898",
+  "page_matches_worktree": true,
+  "cases": [
+    {
+      "path": "/api/explore",
+      "payload": {
+        "text": "ENDOSTATIN, N-TERMINAL-MGGSHHHHH"
+      },
+      "status": 200,
+      "seconds": 0.026340699987486005,
+      "bytes": 255,
+      "body": {
+        "center": {
+          "id": "CHEMBL4297946",
+          "type": "Drug",
+          "label": "ENDOSTATIN, N-TERMINAL-MGGSHHHHH",
+          "matched_text": "ENDOSTATIN, N-TERMINAL-MGGSHHHHH",
+          "trials": 0,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Unknown"
+          }
+        },
+        "also": [],
+        "groups": []
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "payload": {
+        "text": "ENDOSTATIN, N-TERMINAL-MGGSHHHHH"
+      },
+      "status": 200,
+      "seconds": 0.016641399823129177,
+      "bytes": 552,
+      "body": {
+        "raw": "ENDOSTATIN, N-TERMINAL-MGGSHHHHH",
+        "components": [
+          {
+            "component": "ENDOSTATIN",
+            "tier": "EXACT",
+            "drug_id": "CHEMBL4297747",
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": "ENDOSTATIN",
+            "candidates": null,
+            "drug": {
+              "name": "ENDOSTATIN",
+              "drug_type": "Unknown",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_3",
+              "mechanisms": [],
+              "trials": 2
+            }
+          },
+          {
+            "component": "N-TERMINAL-MGGSHHHHH",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "payload": {
+        "text": "CHEMBL4297946"
+      },
+      "status": 200,
+      "seconds": 0.0217592001426965,
+      "bytes": 225,
+      "body": {
+        "center": {
+          "id": "CHEMBL4297946",
+          "type": "Drug",
+          "label": "ENDOSTATIN, N-TERMINAL-MGGSHHHHH",
+          "matched_text": null,
+          "trials": 0,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Unknown"
+          }
+        },
+        "also": [],
+        "groups": []
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "payload": {
+        "text": "CHEMBL4297946"
+      },
+      "status": 200,
+      "seconds": 0.02577519998885691,
+      "bytes": 182,
+      "body": {
+        "raw": "CHEMBL4297946",
+        "components": [
+          {
+            "component": "CHEMBL4297946",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "payload": {
+        "text": "Rapamycin, 42-o-(2-hydroxyethyl)-"
+      },
+      "status": 200,
+      "seconds": 0.048361499793827534,
+      "bytes": 5682,
+      "body": {
+        "center": {
+          "id": "CHEMBL1908360",
+          "type": "Drug",
+          "label": "EVEROLIMUS",
+          "matched_text": "Rapamycin, 42-o-(2-hydroxyethyl)-",
+          "trials": 9,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 9,
+            "items": [
+              {
+                "id": "NCT04591431",
+                "type": "Trial",
+                "label": "NCT04591431",
+                "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+                "start_date": "2020-10-07",
+                "url": "https://clinicaltrials.gov/study/NCT04591431",
+                "weight": "2020-10-07"
+              },
+              {
+                "id": "NCT02321501",
+                "type": "Trial",
+                "label": "NCT02321501",
+                "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+                "start_date": "2016-06-22",
+                "url": "https://clinicaltrials.gov/study/NCT02321501",
+                "weight": "2016-06-22"
+              },
+              {
+                "id": "NCT01063478",
+                "type": "Trial",
+                "label": "NCT01063478",
+                "edge_id": "NCT01063478|EVALUATES|CHEMBL1908360|NCT01063478",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "Dose Escalation Study of RAD001 in Combination w/Chemotherapy & Radiation in Patients With NSCLC",
+                "start_date": "2010-02",
+                "url": "https://clinicaltrials.gov/study/NCT01063478",
+                "weight": "2010-02"
+              },
+              {
+                "id": "NCT00933777",
+                "type": "Trial",
+                "label": "NCT00933777",
+                "edge_id": "NCT00933777|EVALUATES|CHEMBL1908360|NCT00933777",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "SORAVE - Sorafenib and Everolimus in Solid Tumors",
+                "start_date": "2009-07",
+                "url": "https://clinicaltrials.gov/study/NCT00933777",
+                "weight": "2009-07"
+              },
+              {
+                "id": "NCT00457119",
+                "type": "Trial",
+                "label": "NCT00457119",
+                "edge_id": "NCT00457119|EVALUATES|CHEMBL1908360|NCT00457119",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "Combination of RAD001 With Carboplatin, Paclitaxel and Bevacizumab in Non-small-cell Lung Cancer (NSCLC) Patients",
+                "start_date": "2007-02",
+                "url": "https://clinicaltrials.gov/study/NCT00457119",
+                "weight": "2007-02"
+              },
+              {
+                "id": "NCT00401778",
+                "type": "Trial",
+                "label": "NCT00401778",
+                "edge_id": "NCT00401778|EVALUATES|CHEMBL1908360|NCT00401778",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "Trial of RAD001 in Patients With Operable Non-Small Cell Lung Cancer (NSCLC)",
+                "start_date": "2006-11",
+                "url": "https://clinicaltrials.gov/study/NCT00401778",
+                "weight": "2006-11"
+              },
+              {
+                "id": "NCT00406276",
+                "type": "Trial",
+                "label": "NCT00406276",
+                "edge_id": "NCT00406276|EVALUATES|CHEMBL1908360|NCT00406276",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "Phase I/II Trial of RAD001 Plus Docetaxel in Patients With Metastatic or Recurrent Non-Small Cell Lung Cancer",
+                "start_date": "2006-11",
+                "url": "https://clinicaltrials.gov/study/NCT00406276",
+                "weight": "2006-11"
+              },
+              {
+                "id": "NCT00124280",
+                "type": "Trial",
+                "label": "NCT00124280",
+                "edge_id": "NCT00124280|EVALUATES|CHEMBL1908360|NCT00124280",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Study Investigating the Effect of Everolimus Monotherapy in Patients With Advanced Non-small Cell Lung Cancer (NSCLC)",
+                "start_date": "2005-07",
+                "url": "https://clinicaltrials.gov/study/NCT00124280",
+                "weight": "2005-07"
+              },
+              {
+                "id": "NCT00655655",
+                "type": "Trial",
+                "label": "NCT00655655",
+                "edge_id": "NCT00655655|EVALUATES|CHEMBL1908360|NCT00655655",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "Everolimus and Vatalanib in Treating Patients With Advanced Solid Tumors",
+                "start_date": "2004-12",
+                "url": "https://clinicaltrials.gov/study/NCT00655655",
+                "weight": "2004-12"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 7,
+            "items": [
+              {
+                "id": "ORG:emoryuniversity",
+                "type": "Company",
+                "label": "Emory University",
+                "edge_id": "ORG:emoryuniversity|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:novartis",
+                "type": "Company",
+                "label": "Novartis",
+                "edge_id": "ORG:novartis|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:fondazioneperlamedicinapersonalizzata",
+                "type": "Company",
+                "label": "Fondazione Per La Medicina Personalizzata",
+                "edge_id": "ORG:fondazioneperlamedicinapersonalizzata|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:mdandersoncancercenter",
+                "type": "Company",
+                "label": "M D Anderson Cancer Center",
+                "edge_id": "ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:mayoclinic",
+                "type": "Company",
+                "label": "Mayo Clinic",
+                "edge_id": "ORG:mayoclinic|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:universityofchicago",
+                "type": "Company",
+                "label": "University Of Chicago",
+                "edge_id": "ORG:universityofchicago|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:universityofcologne",
+                "type": "Company",
+                "label": "University Of Cologne",
+                "edge_id": "ORG:universityofcologne|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          },
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ENSG00000088832",
+                "type": "Target",
+                "label": "FKBP1A",
+                "edge_id": "CHEMBL1908360|ACTS_ON|ENSG00000088832|CHEMBL1908360",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "payload": {
+        "text": "Rapamycin, 42-o-(2-hydroxyethyl)-"
+      },
+      "status": 200,
+      "seconds": 0.032205300172790885,
+      "bytes": 735,
+      "body": {
+        "raw": "Rapamycin, 42-o-(2-hydroxyethyl)-",
+        "components": [
+          {
+            "component": "Rapamycin",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL413",
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "split_combination"
+            ],
+            "matched_alias": "(-)-RAPAMYCIN",
+            "candidates": null,
+            "drug": {
+              "name": "SIROLIMUS",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1_2",
+              "mechanisms": [
+                "FK506-binding protein 1A inhibitor"
+              ],
+              "trials": 5
+            }
+          },
+          {
+            "component": "42-o",
+            "tier": "BLOCKED_CLASS_TERM",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "split_combination",
+              "radiotracer_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "payload": {
+        "text": "CP-358,774"
+      },
+      "status": 200,
+      "seconds": 0.029721099883317947,
+      "bytes": 20432,
+      "body": {
+        "center": {
+          "id": "CHEMBL553",
+          "type": "Drug",
+          "label": "ERLOTINIB",
+          "matched_text": "CP-358,774",
+          "trials": 118,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 118,
+            "items": [
+              {
+                "id": "NCT05442060",
+                "type": "Trial",
+                "label": "NCT05442060",
+                "edge_id": "NCT05442060|EVALUATES|CHEMBL553|NCT05442060",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "To Evaluate OBI-833/OBI-821 in Combination With First-Line Erlotinib in Patients With EGFR-Mutated, Globo H-Positive, Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
+                "start_date": "2022-07-27",
+                "url": "https://clinicaltrials.gov/study/NCT05442060",
+                "weight": "2022-07-27"
+              },
+              {
+                "id": "NCT04591431",
+                "type": "Trial",
+                "label": "NCT04591431",
+                "edge_id": "NCT04591431|EVALUATES|CHEMBL553|NCT04591431",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+                "start_date": "2020-10-07",
+                "url": "https://clinicaltrials.gov/study/NCT04591431",
+                "weight": "2020-10-07"
+              },
+              {
+                "id": "NCT04455594",
+                "type": "Trial",
+                "label": "NCT04455594",
+                "edge_id": "NCT04455594|EVALUATES|CHEMBL553|NCT04455594",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "Almonertinib Vs. Erlotinib/Chemotherapy for Neo-adjuVant Treatment of Stage IIIA-N2 EGFR-mutated NSCLC",
+                "start_date": "2020-10",
+                "url": "https://clinicaltrials.gov/study/NCT04455594",
+                "weight": "2020-10"
+              },
+              {
+                "id": "NCT04449874",
+                "type": "Trial",
+                "label": "NCT04449874",
+                "edge_id": "NCT04449874|EVALUATES|CHEMBL553|NCT04449874",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "A Study to Evaluate the Safety, Pharmacokinetics, and Activity of GDC-6036 Alone or in Combination in Participants With Advanced or Metastatic Solid Tumors With a KRAS G12C Mutation",
+                "start_date": "2020-07-29",
+                "url": "https://clinicaltrials.gov/study/NCT04449874",
+                "weight": "2020-07-29"
+              },
+              {
+                "id": "NCT05081674",
+                "type": "Trial",
+                "label": "NCT05081674",
+                "edge_id": "NCT05081674|EVALUATES|CHEMBL553|NCT05081674",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Brazilian Lung Immunotherapy Study",
+                "start_date": "2020-01-01",
+                "url": "https://clinicaltrials.gov/study/NCT05081674",
+                "weight": "2020-01-01"
+              },
+              {
+                "id": "NCT03126799",
+                "type": "Trial",
+                "label": "NCT03126799",
+                "edge_id": "NCT03126799|EVALUATES|CHEMBL553|NCT03126799",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "A Study of Tarceva vs. Avastin+Tarceva for Advanced NSCLC With EGFR m(+)",
+                "start_date": "2016-11-01",
+                "url": "https://clinicaltrials.gov/study/NCT03126799",
+                "weight": "2016-11-01"
+              },
+              {
+                "id": "NCT02770014",
+                "type": "Trial",
+                "label": "NCT02770014",
+                "edge_id": "NCT02770014|EVALUATES|CHEMBL553|NCT02770014",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "Rapid Plasma Genotyping For Early Initiation Of Erlotinib In EGFR Mutant Lung Cancer",
+                "start_date": "2016-06",
+                "url": "https://clinicaltrials.gov/study/NCT02770014",
+                "weight": "2016-06"
+              },
+              {
+                "id": "NCT02633189",
+                "type": "Trial",
+                "label": "NCT02633189",
+                "edge_id": "NCT02633189|EVALUATES|CHEMBL553|NCT02633189",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "UNKNOWN",
+                "title": "Study Comparing Bevacizumab + Erlotinib vs Erlotinib Alone as First Line Treatment of Patients With EGFR Mutated Advanced Non Squamous Non Small Cell Lung Cancer",
+                "start_date": "2016-04",
+                "url": "https://clinicaltrials.gov/study/NCT02633189",
+                "weight": "2016-04"
+              },
+              {
+                "id": "NCT02495233",
+                "type": "Trial",
+                "label": "NCT02495233",
+                "edge_id": "NCT02495233|EVALUATES|CHEMBL553|NCT02495233",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "A Study of ASP2215 in Combination With Erlotinib in Subjects With Epidermal Growth Factor Receptor (EGFR) Activating Mutation-Positive (EGFRm+) Advanced Non-Small-Cell Lung Cancer (NSCLC) Who Have Acquired Resistance to an EGFR Tyrosine Kinase Inhibitor (TKI)",
+                "start_date": "2015-09-08",
+                "url": "https://clinicaltrials.gov/study/NCT02495233",
+                "weight": "2015-09-08"
+              },
+              {
+                "id": "NCT02342353",
+                "type": "Trial",
+                "label": "NCT02342353",
+                "edge_id": "NCT02342353|EVALUATES|CHEMBL553|NCT02342353",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "Pacritinib in Patients With Endothelial Growth Factor (EGFR) Mutant Non-small Cell Lung Cancer (NSCLC) After EGFR Tyrosine Kinase Inhibitor (TKI)",
+                "start_date": "2015-05-18",
+                "url": "https://clinicaltrials.gov/study/NCT02342353",
+                "weight": "2015-05-18"
+              },
+              {
+                "id": "NCT02411448",
+                "type": "Trial",
+                "label": "NCT02411448",
+                "edge_id": "NCT02411448|EVALUATES|CHEMBL553|NCT02411448",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "A Study of Ramucirumab (LY3009806) in Combination With Erlotinib in Previously Untreated Participants With EGFR Mutation-Positive Metastatic NSCLC (RELAY)",
+                "start_date": "2015-05-06",
+                "url": "https://clinicaltrials.gov/study/NCT02411448",
+                "weight": "2015-05-06"
+              },
+              {
+                "id": "NCT02424617",
+                "type": "Trial",
+                "label": "NCT02424617",
+                "edge_id": "NCT02424617|EVALUATES|CHEMBL553|NCT02424617",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "A Study of BGB324 (Bemcentinib) in Combination With Erlotinib in Patients With Non-Small Cell Lung Cancer",
+                "start_date": "2015-04-19",
+                "url": "https://clinicaltrials.gov/study/NCT02424617",
+                "weight": "2015-04-19"
+              },
+              {
+                "id": "NCT02296125",
+                "type": "Trial",
+                "label": "NCT02296125",
+                "edge_id": "NCT02296125|EVALUATES|CHEMBL553|NCT02296125",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "COMPLETED",
+                "title": "AZD9291 Versus Gefitinib or Erlotinib in Patients With Locally Advanced or Metastatic Non-small Cell Lung Cancer",
+                "start_date": "2014-12-03",
+                "url": "https://clinicaltrials.gov/study/NCT02296125",
+                "weight": "2014-12-03"
+              },
+              {
+                "id": "NCT02355431",
+                "type": "Trial",
+                "label": "NCT02355431",
+                "edge_id": "NCT02355431|EVALUATES|CHEMBL553|NCT02355431",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "WITHDRAWN",
+                "title": "Itacitinib in Combination With Erlotinib in Non Small Cell Lung Cancer Patients With Epidermal Growth Factor Receptor (EGFR) Activating Mutations",
+                "start_date": "2014-12",
+                "url": "https://clinicaltrials.gov/study/NCT02355431",
+                "weight": "2014-12"
+              },
+              {
+                "id": "NCT02206763",
+                "type": "Trial",
+                "label": "NCT02206763",
+                "edge_id": "NCT02206763|EVALUATES|CHEMBL553|NCT02206763",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "Erlotinib and Momelotinib for the Treatment of Epidermal Growth Factor Receptor (EGFR) Mutated EGFR Tyrosine Kinase Inhibitor (TKI) Naive Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+                "start_date": "2014-10-16",
+                "url": "https://clinicaltrials.gov/study/NCT02206763",
+                "weight": "2014-10-16"
+              },
+              {
+                "id": "NCT02080078",
+                "type": "Trial",
+                "label": "NCT02080078",
+                "edge_id": "NCT02080078|EVALUATES|CHEMBL553|NCT02080078",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "A Phase I Dose Escalation Study of Erlotinib in Combination With Theophylline",
+                "start_date": "2014-09",
+                "url": "https://clinicaltrials.gov/study/NCT02080078",
+                "weight": "2014-09"
+              },
+              {
+                "id": "NCT02044601",
+                "type": "Trial",
+                "label": "NCT02044601",
+                "edge_id": "NCT02044601|EVALUATES|CHEMBL553|NCT02044601",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "WITHDRAWN",
+                "title": "Biomarker-Integrated Approach of Targeted Therapy for Lung Cancer Elimination Plus External Beam Radiation Therapy (BATTLE-XRT)",
+                "start_date": "2014-06",
+                "url": "https://clinicaltrials.gov/study/NCT02044601",
+                "weight": "2014-06"
+              },
+              {
+                "id": "NCT02013219",
+                "type": "Trial",
+                "label": "NCT02013219",
+                "edge_id": "NCT02013219|EVALUATES|CHEMBL553|NCT02013219",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "A Phase 1b Study of Atezolizumab in Combination With Erlotinib or Alectinib in Participants With Non-Small Cell Lung Cancer (NSCLC)",
+                "start_date": "2014-04-03",
+                "url": "https://clinicaltrials.gov/study/NCT02013219",
+                "weight": "2014-04-03"
+              },
+              {
+                "id": "NCT01487265",
+                "type": "Trial",
+                "label": "NCT01487265",
+                "edge_id": "NCT01487265|EVALUATES|CHEMBL553|NCT01487265",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Trial of Erlotinib and BKM120 in Patients With Advanced Non Small Cell Lung Cancer Previously Sensitive to Erlotinib",
+                "start_date": "2014-03",
+                "url": "https://clinicaltrials.gov/study/NCT01487265",
+                "weight": "2014-03"
+              },
+              {
+                "id": "NCT02134015",
+                "type": "Trial",
+                "label": "NCT02134015",
+                "edge_id": "NCT02134015|EVALUATES|CHEMBL553|NCT02134015",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "TERMINATED",
+                "title": "Study of Patritumab in Combination With Erlotinib in Subjects With Locally Advanced or Metastatic Non-Small-Cell Lung Cancer (NSCLC). (HER3-Lung)",
+                "start_date": "2014-03",
+                "url": "https://clinicaltrials.gov/study/NCT02134015",
+                "weight": "2014-03"
+              },
+              {
+                "id": "NCT02000531",
+                "type": "Trial",
+                "label": "NCT02000531",
+                "edge_id": "NCT02000531|EVALUATES|CHEMBL553|NCT02000531",
+                "phases": [
+                  "PHASE4"
+                ],
+                "status": "COMPLETED",
+                "title": "Progression Free Survival (PFS) Using Erlotinib for Non-Small-Cell Lung Cancer (NSCLC) in Chinese Population",
+                "start_date": "2014-01",
+                "url": "https://clinicaltrials.gov/study/NCT02000531",
+                "weight": "2014-01"
+              },
+              {
+                "id": "NCT01998126",
+                "type": "Trial",
+                "label": "NCT01998126",
+                "edge_id": "NCT01998126|EVALUATES|CHEMBL553|NCT01998126",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "Combination Checkpoint Inhibitor Plus Erlotinib or Crizotinib for EGFR or ALK Mutated Stage IV Non-small Cell Lung Cancer",
+                "start_date": "2013-12-02",
+                "url": "https://clinicaltrials.gov/study/NCT01998126",
+                "weight": "2013-12-02"
+              },
+              {
+                "id": "NCT01887886",
+                "type": "Trial",
+                "label": "NCT01887886",
+                "edge_id": "NCT01887886|EVALUATES|CHEMBL553|NCT01887886",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "COMPLETED",
+                "title": "A Study of Onartuzumab in Combination With Erlotinib in Patients With MET-Positive Stage IIIB or IV Non-Small Cell Lung Cancer Carrying an Activating Epidermal Growth Factor Receptor (EGFR) Mutation",
+                "start_date": "2013-12",
+                "url": "https://clinicaltrials.gov/study/NCT01887886",
+                "weight": "2013-12"
+              },
+              {
+                "id": "NCT02001896",
+                "type": "Trial",
+                "label": "NCT02001896",
+                "edge_id": "NCT02001896|EVALUATES|CHEMBL553|NCT02001896",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "UNKNOWN",
+                "title": "Erlotinib Intercalated With Chemotherapy Versus Erlotinib as First Line Treatment in Stage IIIB/IV NSCLC Patients With EGFR Mutation",
+                "start_date": "2013-12",
+                "url": "https://clinicaltrials.gov/study/NCT02001896",
+                "weight": "2013-12"
+              },
+              {
+                "id": "NCT02006043",
+                "type": "Trial",
+                "label": "NCT02006043",
+                "edge_id": "NCT02006043|EVALUATES|CHEMBL553|NCT02006043",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "Evaluate Erlotinib Efficacy and Safety as the 2nd/3rd Treatment in NSCLC With EGFR M(-) and C-met(-)",
+                "start_date": "2013-12",
+                "url": "https://clinicaltrials.gov/study/NCT02006043",
+                "weight": "2013-12"
+              },
+              {
+                "id": "NCT01965275",
+                "type": "Trial",
+                "label": "NCT01965275",
+                "edge_id": "NCT01965275|EVALUATES|CHEMBL553|NCT01965275",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "High-Dose,Pulsatile Erlotinib/Gefitinib for Advanced NSCLC Patients After Failure of Standard Dose EGFR-TKIs",
+                "start_date": "2013-10",
+                "url": "https://clinicaltrials.gov/study/NCT01965275",
+                "weight": "2013-10"
+              },
+              {
+                "id": "NCT01897480",
+                "type": "Trial",
+                "label": "NCT01897480",
+                "edge_id": "NCT01897480|EVALUATES|CHEMBL553|NCT01897480",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "A Study of LY2875358 in Participants With Non-Small Cell Lung Cancer With Activating Epidermal Growth Factor Receptor Mutations",
+                "start_date": "2013-08-28",
+                "url": "https://clinicaltrials.gov/study/NCT01897480",
+                "weight": "2013-08-28"
+              },
+              {
+                "id": "NCT01887795",
+                "type": "Trial",
+                "label": "NCT01887795",
+                "edge_id": "NCT01887795|EVALUATES|CHEMBL553|NCT01887795",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "COMPLETED",
+                "title": "Phase Ⅲ Trial of WBRT Versus Erlotinib Concurrent Whole-brain Radiation Therapy as ﬁrst-line Treatment for Patients With Multiple Brain Metastases From Non-small-cell Lung Cancer(ENTER): a Multicentre, Open-label, Randomised Study",
+                "start_date": "2013-08",
+                "url": "https://clinicaltrials.gov/study/NCT01887795",
+                "weight": "2013-08"
+              },
+              {
+                "id": "NCT01900652",
+                "type": "Trial",
+                "label": "NCT01900652",
+                "edge_id": "NCT01900652|EVALUATES|CHEMBL553|NCT01900652",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "A Study of Emibetuzumab in Non Small Cell Lung Cancer (NSCLC) Participants",
+                "start_date": "2013-08",
+                "url": "https://clinicaltrials.gov/study/NCT01900652",
+                "weight": "2013-08"
+              },
+              {
+                "id": "NCT01573702",
+                "type": "Trial",
+                "label": "NCT01573702",
+                "edge_id": "NCT01573702|EVALUATES|CHEMBL553|NCT01573702",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Stereotactic Radiosurgery or Other Local Ablation Then Erlotinib in Epidermal Growth Factor Receptor (EGFR)",
+                "start_date": "2012-12-11",
+                "url": "https://clinicaltrials.gov/study/NCT01573702",
+                "weight": "2012-12-11"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 76,
+            "items": [
+              {
+                "id": "ORG:roche",
+                "type": "Company",
+                "label": "Roche",
+                "edge_id": "ORG:roche|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 21,
+                "weight": 21,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:elililly",
+                "type": "Company",
+                "label": "Eli Lilly",
+                "edge_id": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 4,
+                "weight": 4,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:mdandersoncancercenter",
+                "type": "Company",
+                "label": "M D Anderson Cancer Center",
+                "edge_id": "ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 4,
+                "weight": 4,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:daiichisankyo",
+                "type": "Company",
+                "label": "Daiichi Sankyo",
+                "edge_id": "ORG:daiichisankyo|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 3,
+                "weight": 3,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:genentech",
+                "type": "Company",
+                "label": "Genentech",
+                "edge_id": "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 3,
+                "weight": 3,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:pfizer",
+                "type": "Company",
+                "label": "Pfizer",
+                "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 3,
+                "weight": 3,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:danafarbercancerinstitute",
+                "type": "Company",
+                "label": "Dana-farber Cancer Institute",
+                "edge_id": "ORG:danafarbercancerinstitute|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:helleniconcologyresearchgroup",
+                "type": "Company",
+                "label": "Hellenic Oncology Research Group",
+                "edge_id": "ORG:helleniconcologyresearchgroup|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:kyowakirin",
+                "type": "Company",
+                "label": "Kyowa Kirin",
+                "edge_id": "ORG:kyowakirin|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:massachusettsgeneralhospital",
+                "type": "Company",
+                "label": "Massachusetts General Hospital",
+                "edge_id": "ORG:massachusettsgeneralhospital|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:memorialsloanketteringcancercenter",
+                "type": "Company",
+                "label": "Memorial Sloan Kettering Cancer Center",
+                "edge_id": "ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:nationalcancercenterkorea",
+                "type": "Company",
+                "label": "National Cancer Center Korea",
+                "edge_id": "ORG:nationalcancercenterkorea|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER_GOV"
+              },
+              {
+                "id": "ORG:nationalcancerinstitute",
+                "type": "Company",
+                "label": "National Cancer Institute",
+                "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "NIH"
+              },
+              {
+                "id": "ORG:scridevelopmentinnovations",
+                "type": "Company",
+                "label": "Scri Development Innovations",
+                "edge_id": "ORG:scridevelopmentinnovations|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:academicandcommunitycancerresearchunited",
+                "type": "Company",
+                "label": "Academic And Community Cancer Research United",
+                "edge_id": "ORG:academicandcommunitycancerresearchunited|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:agennix",
+                "type": "Company",
+                "label": "Agennix",
+                "edge_id": "ORG:agennix|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:ahscancercontrolalberta",
+                "type": "Company",
+                "label": "Ahs Cancer Control Alberta",
+                "edge_id": "ORG:ahscancercontrolalberta|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:amsterdamumclocationvumc",
+                "type": "Company",
+                "label": "Amsterdam Umc Location Vumc",
+                "edge_id": "ORG:amsterdamumclocationvumc|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:anhuimedicaluniversity",
+                "type": "Company",
+                "label": "Anhui Medical University",
+                "edge_id": "ORG:anhuimedicaluniversity|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:astellas",
+                "type": "Company",
+                "label": "Astellas",
+                "edge_id": "ORG:astellas|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:astellaspharmaglobaldevelopment",
+                "type": "Company",
+                "label": "Astellas Pharma Global Development",
+                "edge_id": "ORG:astellaspharmaglobaldevelopment|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:astrazeneca",
+                "type": "Company",
+                "label": "Astrazeneca",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:baohuihan",
+                "type": "Company",
+                "label": "Baohui Han",
+                "edge_id": "ORG:baohuihan|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:bergenbioasa",
+                "type": "Company",
+                "label": "Bergenbio Asa",
+                "edge_id": "ORG:bergenbioasa|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:bristolmyerssquibb",
+                "type": "Company",
+                "label": "Bristol Myers Squibb",
+                "edge_id": "ORG:bristolmyerssquibb|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:britishcolumbiacanceragency",
+                "type": "Company",
+                "label": "British Columbia Cancer Agency",
+                "edge_id": "ORG:britishcolumbiacanceragency|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:chineseplageneralhospital",
+                "type": "Company",
+                "label": "Chinese Pla General Hospital",
+                "edge_id": "ORG:chineseplageneralhospital|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:chroma",
+                "type": "Company",
+                "label": "Chroma",
+                "edge_id": "ORG:chroma|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:clinicalresearchcenterforsolidtumorkorea",
+                "type": "Company",
+                "label": "Clinical Research Center For Solid Tumor Korea",
+                "edge_id": "ORG:clinicalresearchcenterforsolidtumorkorea|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:dapinghospitalandtheresearchinstituteofsurgeryofthethirdmilitarymedicaluniversity",
+                "type": "Company",
+                "label": "Daping Hospital And The Research Institute Of Surgery Of The Third Military Medical University",
+                "edge_id": "ORG:dapinghospitalandtheresearchinstituteofsurgeryofthethirdmilitarymedicaluniversity|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Investigator",
+            "role": null,
+            "total": 2,
+            "items": [
+              {
+                "id": "ORG:lyudmilabazhenovamd",
+                "type": "Investigator",
+                "label": "Lyudmila Bazhenova M D",
+                "edge_id": "ORG:lyudmilabazhenovamd|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:pasiajannemdphd",
+                "type": "Investigator",
+                "label": "Pasi A Janne Md Phd",
+                "edge_id": "ORG:pasiajannemdphd|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          },
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ENSG00000146648",
+                "type": "Target",
+                "label": "EGFR",
+                "edge_id": "CHEMBL553|ACTS_ON|ENSG00000146648|CHEMBL553",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "payload": {
+        "text": "CP-358,774"
+      },
+      "status": 200,
+      "seconds": 0.02021680003963411,
+      "bytes": 625,
+      "body": {
+        "raw": "CP-358,774",
+        "components": [
+          {
+            "component": "CP-358",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1079742",
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": "CP-358",
+            "candidates": null,
+            "drug": {
+              "name": "ERLOTINIB HYDROCHLORIDE",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor"
+              ],
+              "trials": 31,
+              "parent": {
+                "name": "ERLOTINIB",
+                "trials": 118
+              }
+            }
+          },
+          {
+            "component": "774",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "payload": {
+        "text": "Usp mab 003, monoclonal igg1"
+      },
+      "status": 200,
+      "seconds": 0.028788299998268485,
+      "bytes": 483,
+      "body": {
+        "center": {
+          "id": "CHEMBL1743008",
+          "type": "Drug",
+          "label": "DROZITUMAB",
+          "matched_text": "Usp mab 003, monoclonal igg1",
+          "trials": 0,
+          "props": {
+            "max_phase_overall": "PHASE_2",
+            "drug_type": "Antibody"
+          }
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ENSG00000120889",
+                "type": "Target",
+                "label": "TNFRSF10B",
+                "edge_id": "CHEMBL1743008|ACTS_ON|ENSG00000120889|CHEMBL1743008",
+                "weight": 0,
+                "action": "AGONIST"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "payload": {
+        "text": "Usp mab 003, monoclonal igg1"
+      },
+      "status": 200,
+      "seconds": 0.013328499859198928,
+      "bytes": 377,
+      "body": {
+        "raw": "Usp mab 003, monoclonal igg1",
+        "components": [
+          {
+            "component": "Usp mab 003",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          },
+          {
+            "component": "monoclonal igg1",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "payload": {
+        "text": "12,13-desoxyepothilone b, cis"
+      },
+      "status": 200,
+      "seconds": 0.046199999982491136,
+      "bytes": 3562,
+      "body": {
+        "center": {
+          "id": "CHEMBL96172",
+          "type": "Drug",
+          "label": "EPOTHILONE D",
+          "matched_text": "12,13-desoxyepothilone b, cis",
+          "trials": 1,
+          "props": {
+            "max_phase_overall": "PHASE_2",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 15,
+            "items": [
+              {
+                "id": "ENSG00000167552",
+                "type": "Target",
+                "label": "TUBA1A",
+                "edge_id": "CHEMBL96172|ACTS_ON|ENSG00000167552|CHEMBL96172",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000123416",
+                "type": "Target",
+                "label": "TUBA1B",
+                "edge_id": "CHEMBL96172|ACTS_ON|ENSG00000123416|CHEMBL96172",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000167553",
+                "type": "Target",
+                "label": "TUBA1C",
+                "edge_id": "CHEMBL96172|ACTS_ON|ENSG00000167553|CHEMBL96172",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000198033",
+                "type": "Target",
+                "label": "TUBA3C",
+                "edge_id": "CHEMBL96172|ACTS_ON|ENSG00000198033|CHEMBL96172",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000152086",
+                "type": "Target",
+                "label": "TUBA3E",
+                "edge_id": "CHEMBL96172|ACTS_ON|ENSG00000152086|CHEMBL96172",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000127824",
+                "type": "Target",
+                "label": "TUBA4A",
+                "edge_id": "CHEMBL96172|ACTS_ON|ENSG00000127824|CHEMBL96172",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000196230",
+                "type": "Target",
+                "label": "TUBB",
+                "edge_id": "CHEMBL96172|ACTS_ON|ENSG00000196230|CHEMBL96172",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000101162",
+                "type": "Target",
+                "label": "TUBB1",
+                "edge_id": "CHEMBL96172|ACTS_ON|ENSG00000101162|CHEMBL96172",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000137267",
+                "type": "Target",
+                "label": "TUBB2A",
+                "edge_id": "CHEMBL96172|ACTS_ON|ENSG00000137267|CHEMBL96172",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000137285",
+                "type": "Target",
+                "label": "TUBB2B",
+                "edge_id": "CHEMBL96172|ACTS_ON|ENSG00000137285|CHEMBL96172",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000258947",
+                "type": "Target",
+                "label": "TUBB3",
+                "edge_id": "CHEMBL96172|ACTS_ON|ENSG00000258947|CHEMBL96172",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000104833",
+                "type": "Target",
+                "label": "TUBB4A",
+                "edge_id": "CHEMBL96172|ACTS_ON|ENSG00000104833|CHEMBL96172",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000188229",
+                "type": "Target",
+                "label": "TUBB4B",
+                "edge_id": "CHEMBL96172|ACTS_ON|ENSG00000188229|CHEMBL96172",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000176014",
+                "type": "Target",
+                "label": "TUBB6",
+                "edge_id": "CHEMBL96172|ACTS_ON|ENSG00000176014|CHEMBL96172",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000261456",
+                "type": "Target",
+                "label": "TUBB8",
+                "edge_id": "CHEMBL96172|ACTS_ON|ENSG00000261456|CHEMBL96172",
+                "weight": 0,
+                "action": "STABILISER"
+              }
+            ]
+          },
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "NCT00035516",
+                "type": "Trial",
+                "label": "NCT00035516",
+                "edge_id": "NCT00035516|EVALUATES|CHEMBL96172|NCT00035516",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "A Phase II Study of Epothilone Analog BMS-247550 in Patients With Non-Small Cell Lung Cancer Who Have Failed First Line Platinum Based Chemotherapy",
+                "start_date": "2001-02",
+                "url": "https://clinicaltrials.gov/study/NCT00035516",
+                "weight": "2001-02"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ORG:rpharm",
+                "type": "Company",
+                "label": "R-pharm",
+                "edge_id": "ORG:rpharm|SPONSORS_TRIAL_OF|CHEMBL96172|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "payload": {
+        "text": "12,13-desoxyepothilone b, cis"
+      },
+      "status": 200,
+      "seconds": 0.04091009986586869,
+      "bytes": 1196,
+      "body": {
+        "raw": "12,13-desoxyepothilone b, cis",
+        "components": [
+          {
+            "component": "12",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          },
+          {
+            "component": "desoxyepothilone b",
+            "tier": "CONTAINED_ALIAS",
+            "drug_id": "CHEMBL96172",
+            "score": null,
+            "rules": [
+              "split_combination",
+              "segmented_from_phrase"
+            ],
+            "matched_alias": "(-)-desoxyepothilone b",
+            "candidates": null,
+            "note": "segmented out of '13-desoxyepothilone b'",
+            "drug": {
+              "name": "EPOTHILONE D",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "PHASE_2",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Tubulin stabiliser"
+              ],
+              "trials": 1
+            }
+          },
+          {
+            "component": "cis",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL4582651",
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": "CIS-",
+            "candidates": null,
+            "drug": {
+              "name": "PRALSETINIB",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Tyrosine-protein kinase receptor RET inhibitor",
+                "Coiled-coil domain-containing protein 6/Tyrosine-protein kinase receptor RET inhibitor",
+                "Kinesin-1 heavy chain/ Tyrosine-protein kinase receptor RET inhibitor"
+              ],
+              "trials": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "payload": {
+        "text": "Erlotinib/hydrochloride"
+      },
+      "status": 200,
+      "seconds": 0.039366100216284394,
+      "bytes": 20431,
+      "body": {
+        "center": {
+          "id": "CHEMBL553",
+          "type": "Drug",
+          "label": "ERLOTINIB",
+          "matched_text": "ERLOTINIB",
+          "trials": 118,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 118,
+            "items": [
+              {
+                "id": "NCT05442060",
+                "type": "Trial",
+                "label": "NCT05442060",
+                "edge_id": "NCT05442060|EVALUATES|CHEMBL553|NCT05442060",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "To Evaluate OBI-833/OBI-821 in Combination With First-Line Erlotinib in Patients With EGFR-Mutated, Globo H-Positive, Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
+                "start_date": "2022-07-27",
+                "url": "https://clinicaltrials.gov/study/NCT05442060",
+                "weight": "2022-07-27"
+              },
+              {
+                "id": "NCT04591431",
+                "type": "Trial",
+                "label": "NCT04591431",
+                "edge_id": "NCT04591431|EVALUATES|CHEMBL553|NCT04591431",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+                "start_date": "2020-10-07",
+                "url": "https://clinicaltrials.gov/study/NCT04591431",
+                "weight": "2020-10-07"
+              },
+              {
+                "id": "NCT04455594",
+                "type": "Trial",
+                "label": "NCT04455594",
+                "edge_id": "NCT04455594|EVALUATES|CHEMBL553|NCT04455594",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "Almonertinib Vs. Erlotinib/Chemotherapy for Neo-adjuVant Treatment of Stage IIIA-N2 EGFR-mutated NSCLC",
+                "start_date": "2020-10",
+                "url": "https://clinicaltrials.gov/study/NCT04455594",
+                "weight": "2020-10"
+              },
+              {
+                "id": "NCT04449874",
+                "type": "Trial",
+                "label": "NCT04449874",
+                "edge_id": "NCT04449874|EVALUATES|CHEMBL553|NCT04449874",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "A Study to Evaluate the Safety, Pharmacokinetics, and Activity of GDC-6036 Alone or in Combination in Participants With Advanced or Metastatic Solid Tumors With a KRAS G12C Mutation",
+                "start_date": "2020-07-29",
+                "url": "https://clinicaltrials.gov/study/NCT04449874",
+                "weight": "2020-07-29"
+              },
+              {
+                "id": "NCT05081674",
+                "type": "Trial",
+                "label": "NCT05081674",
+                "edge_id": "NCT05081674|EVALUATES|CHEMBL553|NCT05081674",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Brazilian Lung Immunotherapy Study",
+                "start_date": "2020-01-01",
+                "url": "https://clinicaltrials.gov/study/NCT05081674",
+                "weight": "2020-01-01"
+              },
+              {
+                "id": "NCT03126799",
+                "type": "Trial",
+                "label": "NCT03126799",
+                "edge_id": "NCT03126799|EVALUATES|CHEMBL553|NCT03126799",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "A Study of Tarceva vs. Avastin+Tarceva for Advanced NSCLC With EGFR m(+)",
+                "start_date": "2016-11-01",
+                "url": "https://clinicaltrials.gov/study/NCT03126799",
+                "weight": "2016-11-01"
+              },
+              {
+                "id": "NCT02770014",
+                "type": "Trial",
+                "label": "NCT02770014",
+                "edge_id": "NCT02770014|EVALUATES|CHEMBL553|NCT02770014",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "Rapid Plasma Genotyping For Early Initiation Of Erlotinib In EGFR Mutant Lung Cancer",
+                "start_date": "2016-06",
+                "url": "https://clinicaltrials.gov/study/NCT02770014",
+                "weight": "2016-06"
+              },
+              {
+                "id": "NCT02633189",
+                "type": "Trial",
+                "label": "NCT02633189",
+                "edge_id": "NCT02633189|EVALUATES|CHEMBL553|NCT02633189",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "UNKNOWN",
+                "title": "Study Comparing Bevacizumab + Erlotinib vs Erlotinib Alone as First Line Treatment of Patients With EGFR Mutated Advanced Non Squamous Non Small Cell Lung Cancer",
+                "start_date": "2016-04",
+                "url": "https://clinicaltrials.gov/study/NCT02633189",
+                "weight": "2016-04"
+              },
+              {
+                "id": "NCT02495233",
+                "type": "Trial",
+                "label": "NCT02495233",
+                "edge_id": "NCT02495233|EVALUATES|CHEMBL553|NCT02495233",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "A Study of ASP2215 in Combination With Erlotinib in Subjects With Epidermal Growth Factor Receptor (EGFR) Activating Mutation-Positive (EGFRm+) Advanced Non-Small-Cell Lung Cancer (NSCLC) Who Have Acquired Resistance to an EGFR Tyrosine Kinase Inhibitor (TKI)",
+                "start_date": "2015-09-08",
+                "url": "https://clinicaltrials.gov/study/NCT02495233",
+                "weight": "2015-09-08"
+              },
+              {
+                "id": "NCT02342353",
+                "type": "Trial",
+                "label": "NCT02342353",
+                "edge_id": "NCT02342353|EVALUATES|CHEMBL553|NCT02342353",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "Pacritinib in Patients With Endothelial Growth Factor (EGFR) Mutant Non-small Cell Lung Cancer (NSCLC) After EGFR Tyrosine Kinase Inhibitor (TKI)",
+                "start_date": "2015-05-18",
+                "url": "https://clinicaltrials.gov/study/NCT02342353",
+                "weight": "2015-05-18"
+              },
+              {
+                "id": "NCT02411448",
+                "type": "Trial",
+                "label": "NCT02411448",
+                "edge_id": "NCT02411448|EVALUATES|CHEMBL553|NCT02411448",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "A Study of Ramucirumab (LY3009806) in Combination With Erlotinib in Previously Untreated Participants With EGFR Mutation-Positive Metastatic NSCLC (RELAY)",
+                "start_date": "2015-05-06",
+                "url": "https://clinicaltrials.gov/study/NCT02411448",
+                "weight": "2015-05-06"
+              },
+              {
+                "id": "NCT02424617",
+                "type": "Trial",
+                "label": "NCT02424617",
+                "edge_id": "NCT02424617|EVALUATES|CHEMBL553|NCT02424617",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "A Study of BGB324 (Bemcentinib) in Combination With Erlotinib in Patients With Non-Small Cell Lung Cancer",
+                "start_date": "2015-04-19",
+                "url": "https://clinicaltrials.gov/study/NCT02424617",
+                "weight": "2015-04-19"
+              },
+              {
+                "id": "NCT02296125",
+                "type": "Trial",
+                "label": "NCT02296125",
+                "edge_id": "NCT02296125|EVALUATES|CHEMBL553|NCT02296125",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "COMPLETED",
+                "title": "AZD9291 Versus Gefitinib or Erlotinib in Patients With Locally Advanced or Metastatic Non-small Cell Lung Cancer",
+                "start_date": "2014-12-03",
+                "url": "https://clinicaltrials.gov/study/NCT02296125",
+                "weight": "2014-12-03"
+              },
+              {
+                "id": "NCT02355431",
+                "type": "Trial",
+                "label": "NCT02355431",
+                "edge_id": "NCT02355431|EVALUATES|CHEMBL553|NCT02355431",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "WITHDRAWN",
+                "title": "Itacitinib in Combination With Erlotinib in Non Small Cell Lung Cancer Patients With Epidermal Growth Factor Receptor (EGFR) Activating Mutations",
+                "start_date": "2014-12",
+                "url": "https://clinicaltrials.gov/study/NCT02355431",
+                "weight": "2014-12"
+              },
+              {
+                "id": "NCT02206763",
+                "type": "Trial",
+                "label": "NCT02206763",
+                "edge_id": "NCT02206763|EVALUATES|CHEMBL553|NCT02206763",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "Erlotinib and Momelotinib for the Treatment of Epidermal Growth Factor Receptor (EGFR) Mutated EGFR Tyrosine Kinase Inhibitor (TKI) Naive Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+                "start_date": "2014-10-16",
+                "url": "https://clinicaltrials.gov/study/NCT02206763",
+                "weight": "2014-10-16"
+              },
+              {
+                "id": "NCT02080078",
+                "type": "Trial",
+                "label": "NCT02080078",
+                "edge_id": "NCT02080078|EVALUATES|CHEMBL553|NCT02080078",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "A Phase I Dose Escalation Study of Erlotinib in Combination With Theophylline",
+                "start_date": "2014-09",
+                "url": "https://clinicaltrials.gov/study/NCT02080078",
+                "weight": "2014-09"
+              },
+              {
+                "id": "NCT02044601",
+                "type": "Trial",
+                "label": "NCT02044601",
+                "edge_id": "NCT02044601|EVALUATES|CHEMBL553|NCT02044601",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "WITHDRAWN",
+                "title": "Biomarker-Integrated Approach of Targeted Therapy for Lung Cancer Elimination Plus External Beam Radiation Therapy (BATTLE-XRT)",
+                "start_date": "2014-06",
+                "url": "https://clinicaltrials.gov/study/NCT02044601",
+                "weight": "2014-06"
+              },
+              {
+                "id": "NCT02013219",
+                "type": "Trial",
+                "label": "NCT02013219",
+                "edge_id": "NCT02013219|EVALUATES|CHEMBL553|NCT02013219",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "A Phase 1b Study of Atezolizumab in Combination With Erlotinib or Alectinib in Participants With Non-Small Cell Lung Cancer (NSCLC)",
+                "start_date": "2014-04-03",
+                "url": "https://clinicaltrials.gov/study/NCT02013219",
+                "weight": "2014-04-03"
+              },
+              {
+                "id": "NCT01487265",
+                "type": "Trial",
+                "label": "NCT01487265",
+                "edge_id": "NCT01487265|EVALUATES|CHEMBL553|NCT01487265",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Trial of Erlotinib and BKM120 in Patients With Advanced Non Small Cell Lung Cancer Previously Sensitive to Erlotinib",
+                "start_date": "2014-03",
+                "url": "https://clinicaltrials.gov/study/NCT01487265",
+                "weight": "2014-03"
+              },
+              {
+                "id": "NCT02134015",
+                "type": "Trial",
+                "label": "NCT02134015",
+                "edge_id": "NCT02134015|EVALUATES|CHEMBL553|NCT02134015",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "TERMINATED",
+                "title": "Study of Patritumab in Combination With Erlotinib in Subjects With Locally Advanced or Metastatic Non-Small-Cell Lung Cancer (NSCLC). (HER3-Lung)",
+                "start_date": "2014-03",
+                "url": "https://clinicaltrials.gov/study/NCT02134015",
+                "weight": "2014-03"
+              },
+              {
+                "id": "NCT02000531",
+                "type": "Trial",
+                "label": "NCT02000531",
+                "edge_id": "NCT02000531|EVALUATES|CHEMBL553|NCT02000531",
+                "phases": [
+                  "PHASE4"
+                ],
+                "status": "COMPLETED",
+                "title": "Progression Free Survival (PFS) Using Erlotinib for Non-Small-Cell Lung Cancer (NSCLC) in Chinese Population",
+                "start_date": "2014-01",
+                "url": "https://clinicaltrials.gov/study/NCT02000531",
+                "weight": "2014-01"
+              },
+              {
+                "id": "NCT01998126",
+                "type": "Trial",
+                "label": "NCT01998126",
+                "edge_id": "NCT01998126|EVALUATES|CHEMBL553|NCT01998126",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "Combination Checkpoint Inhibitor Plus Erlotinib or Crizotinib for EGFR or ALK Mutated Stage IV Non-small Cell Lung Cancer",
+                "start_date": "2013-12-02",
+                "url": "https://clinicaltrials.gov/study/NCT01998126",
+                "weight": "2013-12-02"
+              },
+              {
+                "id": "NCT01887886",
+                "type": "Trial",
+                "label": "NCT01887886",
+                "edge_id": "NCT01887886|EVALUATES|CHEMBL553|NCT01887886",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "COMPLETED",
+                "title": "A Study of Onartuzumab in Combination With Erlotinib in Patients With MET-Positive Stage IIIB or IV Non-Small Cell Lung Cancer Carrying an Activating Epidermal Growth Factor Receptor (EGFR) Mutation",
+                "start_date": "2013-12",
+                "url": "https://clinicaltrials.gov/study/NCT01887886",
+                "weight": "2013-12"
+              },
+              {
+                "id": "NCT02001896",
+                "type": "Trial",
+                "label": "NCT02001896",
+                "edge_id": "NCT02001896|EVALUATES|CHEMBL553|NCT02001896",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "UNKNOWN",
+                "title": "Erlotinib Intercalated With Chemotherapy Versus Erlotinib as First Line Treatment in Stage IIIB/IV NSCLC Patients With EGFR Mutation",
+                "start_date": "2013-12",
+                "url": "https://clinicaltrials.gov/study/NCT02001896",
+                "weight": "2013-12"
+              },
+              {
+                "id": "NCT02006043",
+                "type": "Trial",
+                "label": "NCT02006043",
+                "edge_id": "NCT02006043|EVALUATES|CHEMBL553|NCT02006043",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "Evaluate Erlotinib Efficacy and Safety as the 2nd/3rd Treatment in NSCLC With EGFR M(-) and C-met(-)",
+                "start_date": "2013-12",
+                "url": "https://clinicaltrials.gov/study/NCT02006043",
+                "weight": "2013-12"
+              },
+              {
+                "id": "NCT01965275",
+                "type": "Trial",
+                "label": "NCT01965275",
+                "edge_id": "NCT01965275|EVALUATES|CHEMBL553|NCT01965275",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "High-Dose,Pulsatile Erlotinib/Gefitinib for Advanced NSCLC Patients After Failure of Standard Dose EGFR-TKIs",
+                "start_date": "2013-10",
+                "url": "https://clinicaltrials.gov/study/NCT01965275",
+                "weight": "2013-10"
+              },
+              {
+                "id": "NCT01897480",
+                "type": "Trial",
+                "label": "NCT01897480",
+                "edge_id": "NCT01897480|EVALUATES|CHEMBL553|NCT01897480",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "A Study of LY2875358 in Participants With Non-Small Cell Lung Cancer With Activating Epidermal Growth Factor Receptor Mutations",
+                "start_date": "2013-08-28",
+                "url": "https://clinicaltrials.gov/study/NCT01897480",
+                "weight": "2013-08-28"
+              },
+              {
+                "id": "NCT01887795",
+                "type": "Trial",
+                "label": "NCT01887795",
+                "edge_id": "NCT01887795|EVALUATES|CHEMBL553|NCT01887795",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "COMPLETED",
+                "title": "Phase Ⅲ Trial of WBRT Versus Erlotinib Concurrent Whole-brain Radiation Therapy as ﬁrst-line Treatment for Patients With Multiple Brain Metastases From Non-small-cell Lung Cancer(ENTER): a Multicentre, Open-label, Randomised Study",
+                "start_date": "2013-08",
+                "url": "https://clinicaltrials.gov/study/NCT01887795",
+                "weight": "2013-08"
+              },
+              {
+                "id": "NCT01900652",
+                "type": "Trial",
+                "label": "NCT01900652",
+                "edge_id": "NCT01900652|EVALUATES|CHEMBL553|NCT01900652",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "A Study of Emibetuzumab in Non Small Cell Lung Cancer (NSCLC) Participants",
+                "start_date": "2013-08",
+                "url": "https://clinicaltrials.gov/study/NCT01900652",
+                "weight": "2013-08"
+              },
+              {
+                "id": "NCT01573702",
+                "type": "Trial",
+                "label": "NCT01573702",
+                "edge_id": "NCT01573702|EVALUATES|CHEMBL553|NCT01573702",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Stereotactic Radiosurgery or Other Local Ablation Then Erlotinib in Epidermal Growth Factor Receptor (EGFR)",
+                "start_date": "2012-12-11",
+                "url": "https://clinicaltrials.gov/study/NCT01573702",
+                "weight": "2012-12-11"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 76,
+            "items": [
+              {
+                "id": "ORG:roche",
+                "type": "Company",
+                "label": "Roche",
+                "edge_id": "ORG:roche|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 21,
+                "weight": 21,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:elililly",
+                "type": "Company",
+                "label": "Eli Lilly",
+                "edge_id": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 4,
+                "weight": 4,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:mdandersoncancercenter",
+                "type": "Company",
+                "label": "M D Anderson Cancer Center",
+                "edge_id": "ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 4,
+                "weight": 4,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:daiichisankyo",
+                "type": "Company",
+                "label": "Daiichi Sankyo",
+                "edge_id": "ORG:daiichisankyo|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 3,
+                "weight": 3,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:genentech",
+                "type": "Company",
+                "label": "Genentech",
+                "edge_id": "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 3,
+                "weight": 3,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:pfizer",
+                "type": "Company",
+                "label": "Pfizer",
+                "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 3,
+                "weight": 3,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:danafarbercancerinstitute",
+                "type": "Company",
+                "label": "Dana-farber Cancer Institute",
+                "edge_id": "ORG:danafarbercancerinstitute|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:helleniconcologyresearchgroup",
+                "type": "Company",
+                "label": "Hellenic Oncology Research Group",
+                "edge_id": "ORG:helleniconcologyresearchgroup|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:kyowakirin",
+                "type": "Company",
+                "label": "Kyowa Kirin",
+                "edge_id": "ORG:kyowakirin|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:massachusettsgeneralhospital",
+                "type": "Company",
+                "label": "Massachusetts General Hospital",
+                "edge_id": "ORG:massachusettsgeneralhospital|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:memorialsloanketteringcancercenter",
+                "type": "Company",
+                "label": "Memorial Sloan Kettering Cancer Center",
+                "edge_id": "ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:nationalcancercenterkorea",
+                "type": "Company",
+                "label": "National Cancer Center Korea",
+                "edge_id": "ORG:nationalcancercenterkorea|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER_GOV"
+              },
+              {
+                "id": "ORG:nationalcancerinstitute",
+                "type": "Company",
+                "label": "National Cancer Institute",
+                "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "NIH"
+              },
+              {
+                "id": "ORG:scridevelopmentinnovations",
+                "type": "Company",
+                "label": "Scri Development Innovations",
+                "edge_id": "ORG:scridevelopmentinnovations|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:academicandcommunitycancerresearchunited",
+                "type": "Company",
+                "label": "Academic And Community Cancer Research United",
+                "edge_id": "ORG:academicandcommunitycancerresearchunited|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:agennix",
+                "type": "Company",
+                "label": "Agennix",
+                "edge_id": "ORG:agennix|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:ahscancercontrolalberta",
+                "type": "Company",
+                "label": "Ahs Cancer Control Alberta",
+                "edge_id": "ORG:ahscancercontrolalberta|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:amsterdamumclocationvumc",
+                "type": "Company",
+                "label": "Amsterdam Umc Location Vumc",
+                "edge_id": "ORG:amsterdamumclocationvumc|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:anhuimedicaluniversity",
+                "type": "Company",
+                "label": "Anhui Medical University",
+                "edge_id": "ORG:anhuimedicaluniversity|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:astellas",
+                "type": "Company",
+                "label": "Astellas",
+                "edge_id": "ORG:astellas|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:astellaspharmaglobaldevelopment",
+                "type": "Company",
+                "label": "Astellas Pharma Global Development",
+                "edge_id": "ORG:astellaspharmaglobaldevelopment|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:astrazeneca",
+                "type": "Company",
+                "label": "Astrazeneca",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:baohuihan",
+                "type": "Company",
+                "label": "Baohui Han",
+                "edge_id": "ORG:baohuihan|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:bergenbioasa",
+                "type": "Company",
+                "label": "Bergenbio Asa",
+                "edge_id": "ORG:bergenbioasa|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:bristolmyerssquibb",
+                "type": "Company",
+                "label": "Bristol Myers Squibb",
+                "edge_id": "ORG:bristolmyerssquibb|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:britishcolumbiacanceragency",
+                "type": "Company",
+                "label": "British Columbia Cancer Agency",
+                "edge_id": "ORG:britishcolumbiacanceragency|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:chineseplageneralhospital",
+                "type": "Company",
+                "label": "Chinese Pla General Hospital",
+                "edge_id": "ORG:chineseplageneralhospital|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:chroma",
+                "type": "Company",
+                "label": "Chroma",
+                "edge_id": "ORG:chroma|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:clinicalresearchcenterforsolidtumorkorea",
+                "type": "Company",
+                "label": "Clinical Research Center For Solid Tumor Korea",
+                "edge_id": "ORG:clinicalresearchcenterforsolidtumorkorea|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:dapinghospitalandtheresearchinstituteofsurgeryofthethirdmilitarymedicaluniversity",
+                "type": "Company",
+                "label": "Daping Hospital And The Research Institute Of Surgery Of The Third Military Medical University",
+                "edge_id": "ORG:dapinghospitalandtheresearchinstituteofsurgeryofthethirdmilitarymedicaluniversity|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Investigator",
+            "role": null,
+            "total": 2,
+            "items": [
+              {
+                "id": "ORG:lyudmilabazhenovamd",
+                "type": "Investigator",
+                "label": "Lyudmila Bazhenova M D",
+                "edge_id": "ORG:lyudmilabazhenovamd|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:pasiajannemdphd",
+                "type": "Investigator",
+                "label": "Pasi A Janne Md Phd",
+                "edge_id": "ORG:pasiajannemdphd|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          },
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ENSG00000146648",
+                "type": "Target",
+                "label": "EGFR",
+                "edge_id": "CHEMBL553|ACTS_ON|ENSG00000146648|CHEMBL553",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "payload": {
+        "text": "Erlotinib/hydrochloride"
+      },
+      "status": 200,
+      "seconds": 0.0356409999076277,
+      "bytes": 589,
+      "body": {
+        "raw": "Erlotinib/hydrochloride",
+        "components": [
+          {
+            "component": "Erlotinib",
+            "tier": "EXACT",
+            "drug_id": "CHEMBL553",
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": "ERLOTINIB",
+            "candidates": null,
+            "drug": {
+              "name": "ERLOTINIB",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor"
+              ],
+              "trials": 118
+            }
+          },
+          {
+            "component": "hydrochloride",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "payload": {
+        "text": "Erlotinib|hydrochloride"
+      },
+      "status": 200,
+      "seconds": 0.04355159983970225,
+      "bytes": 20431,
+      "body": {
+        "center": {
+          "id": "CHEMBL553",
+          "type": "Drug",
+          "label": "ERLOTINIB",
+          "matched_text": "ERLOTINIB",
+          "trials": 118,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 118,
+            "items": [
+              {
+                "id": "NCT05442060",
+                "type": "Trial",
+                "label": "NCT05442060",
+                "edge_id": "NCT05442060|EVALUATES|CHEMBL553|NCT05442060",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "To Evaluate OBI-833/OBI-821 in Combination With First-Line Erlotinib in Patients With EGFR-Mutated, Globo H-Positive, Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
+                "start_date": "2022-07-27",
+                "url": "https://clinicaltrials.gov/study/NCT05442060",
+                "weight": "2022-07-27"
+              },
+              {
+                "id": "NCT04591431",
+                "type": "Trial",
+                "label": "NCT04591431",
+                "edge_id": "NCT04591431|EVALUATES|CHEMBL553|NCT04591431",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+                "start_date": "2020-10-07",
+                "url": "https://clinicaltrials.gov/study/NCT04591431",
+                "weight": "2020-10-07"
+              },
+              {
+                "id": "NCT04455594",
+                "type": "Trial",
+                "label": "NCT04455594",
+                "edge_id": "NCT04455594|EVALUATES|CHEMBL553|NCT04455594",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "Almonertinib Vs. Erlotinib/Chemotherapy for Neo-adjuVant Treatment of Stage IIIA-N2 EGFR-mutated NSCLC",
+                "start_date": "2020-10",
+                "url": "https://clinicaltrials.gov/study/NCT04455594",
+                "weight": "2020-10"
+              },
+              {
+                "id": "NCT04449874",
+                "type": "Trial",
+                "label": "NCT04449874",
+                "edge_id": "NCT04449874|EVALUATES|CHEMBL553|NCT04449874",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "A Study to Evaluate the Safety, Pharmacokinetics, and Activity of GDC-6036 Alone or in Combination in Participants With Advanced or Metastatic Solid Tumors With a KRAS G12C Mutation",
+                "start_date": "2020-07-29",
+                "url": "https://clinicaltrials.gov/study/NCT04449874",
+                "weight": "2020-07-29"
+              },
+              {
+                "id": "NCT05081674",
+                "type": "Trial",
+                "label": "NCT05081674",
+                "edge_id": "NCT05081674|EVALUATES|CHEMBL553|NCT05081674",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Brazilian Lung Immunotherapy Study",
+                "start_date": "2020-01-01",
+                "url": "https://clinicaltrials.gov/study/NCT05081674",
+                "weight": "2020-01-01"
+              },
+              {
+                "id": "NCT03126799",
+                "type": "Trial",
+                "label": "NCT03126799",
+                "edge_id": "NCT03126799|EVALUATES|CHEMBL553|NCT03126799",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "A Study of Tarceva vs. Avastin+Tarceva for Advanced NSCLC With EGFR m(+)",
+                "start_date": "2016-11-01",
+                "url": "https://clinicaltrials.gov/study/NCT03126799",
+                "weight": "2016-11-01"
+              },
+              {
+                "id": "NCT02770014",
+                "type": "Trial",
+                "label": "NCT02770014",
+                "edge_id": "NCT02770014|EVALUATES|CHEMBL553|NCT02770014",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "Rapid Plasma Genotyping For Early Initiation Of Erlotinib In EGFR Mutant Lung Cancer",
+                "start_date": "2016-06",
+                "url": "https://clinicaltrials.gov/study/NCT02770014",
+                "weight": "2016-06"
+              },
+              {
+                "id": "NCT02633189",
+                "type": "Trial",
+                "label": "NCT02633189",
+                "edge_id": "NCT02633189|EVALUATES|CHEMBL553|NCT02633189",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "UNKNOWN",
+                "title": "Study Comparing Bevacizumab + Erlotinib vs Erlotinib Alone as First Line Treatment of Patients With EGFR Mutated Advanced Non Squamous Non Small Cell Lung Cancer",
+                "start_date": "2016-04",
+                "url": "https://clinicaltrials.gov/study/NCT02633189",
+                "weight": "2016-04"
+              },
+              {
+                "id": "NCT02495233",
+                "type": "Trial",
+                "label": "NCT02495233",
+                "edge_id": "NCT02495233|EVALUATES|CHEMBL553|NCT02495233",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "A Study of ASP2215 in Combination With Erlotinib in Subjects With Epidermal Growth Factor Receptor (EGFR) Activating Mutation-Positive (EGFRm+) Advanced Non-Small-Cell Lung Cancer (NSCLC) Who Have Acquired Resistance to an EGFR Tyrosine Kinase Inhibitor (TKI)",
+                "start_date": "2015-09-08",
+                "url": "https://clinicaltrials.gov/study/NCT02495233",
+                "weight": "2015-09-08"
+              },
+              {
+                "id": "NCT02342353",
+                "type": "Trial",
+                "label": "NCT02342353",
+                "edge_id": "NCT02342353|EVALUATES|CHEMBL553|NCT02342353",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "Pacritinib in Patients With Endothelial Growth Factor (EGFR) Mutant Non-small Cell Lung Cancer (NSCLC) After EGFR Tyrosine Kinase Inhibitor (TKI)",
+                "start_date": "2015-05-18",
+                "url": "https://clinicaltrials.gov/study/NCT02342353",
+                "weight": "2015-05-18"
+              },
+              {
+                "id": "NCT02411448",
+                "type": "Trial",
+                "label": "NCT02411448",
+                "edge_id": "NCT02411448|EVALUATES|CHEMBL553|NCT02411448",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "A Study of Ramucirumab (LY3009806) in Combination With Erlotinib in Previously Untreated Participants With EGFR Mutation-Positive Metastatic NSCLC (RELAY)",
+                "start_date": "2015-05-06",
+                "url": "https://clinicaltrials.gov/study/NCT02411448",
+                "weight": "2015-05-06"
+              },
+              {
+                "id": "NCT02424617",
+                "type": "Trial",
+                "label": "NCT02424617",
+                "edge_id": "NCT02424617|EVALUATES|CHEMBL553|NCT02424617",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "A Study of BGB324 (Bemcentinib) in Combination With Erlotinib in Patients With Non-Small Cell Lung Cancer",
+                "start_date": "2015-04-19",
+                "url": "https://clinicaltrials.gov/study/NCT02424617",
+                "weight": "2015-04-19"
+              },
+              {
+                "id": "NCT02296125",
+                "type": "Trial",
+                "label": "NCT02296125",
+                "edge_id": "NCT02296125|EVALUATES|CHEMBL553|NCT02296125",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "COMPLETED",
+                "title": "AZD9291 Versus Gefitinib or Erlotinib in Patients With Locally Advanced or Metastatic Non-small Cell Lung Cancer",
+                "start_date": "2014-12-03",
+                "url": "https://clinicaltrials.gov/study/NCT02296125",
+                "weight": "2014-12-03"
+              },
+              {
+                "id": "NCT02355431",
+                "type": "Trial",
+                "label": "NCT02355431",
+                "edge_id": "NCT02355431|EVALUATES|CHEMBL553|NCT02355431",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "WITHDRAWN",
+                "title": "Itacitinib in Combination With Erlotinib in Non Small Cell Lung Cancer Patients With Epidermal Growth Factor Receptor (EGFR) Activating Mutations",
+                "start_date": "2014-12",
+                "url": "https://clinicaltrials.gov/study/NCT02355431",
+                "weight": "2014-12"
+              },
+              {
+                "id": "NCT02206763",
+                "type": "Trial",
+                "label": "NCT02206763",
+                "edge_id": "NCT02206763|EVALUATES|CHEMBL553|NCT02206763",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "Erlotinib and Momelotinib for the Treatment of Epidermal Growth Factor Receptor (EGFR) Mutated EGFR Tyrosine Kinase Inhibitor (TKI) Naive Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+                "start_date": "2014-10-16",
+                "url": "https://clinicaltrials.gov/study/NCT02206763",
+                "weight": "2014-10-16"
+              },
+              {
+                "id": "NCT02080078",
+                "type": "Trial",
+                "label": "NCT02080078",
+                "edge_id": "NCT02080078|EVALUATES|CHEMBL553|NCT02080078",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "A Phase I Dose Escalation Study of Erlotinib in Combination With Theophylline",
+                "start_date": "2014-09",
+                "url": "https://clinicaltrials.gov/study/NCT02080078",
+                "weight": "2014-09"
+              },
+              {
+                "id": "NCT02044601",
+                "type": "Trial",
+                "label": "NCT02044601",
+                "edge_id": "NCT02044601|EVALUATES|CHEMBL553|NCT02044601",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "WITHDRAWN",
+                "title": "Biomarker-Integrated Approach of Targeted Therapy for Lung Cancer Elimination Plus External Beam Radiation Therapy (BATTLE-XRT)",
+                "start_date": "2014-06",
+                "url": "https://clinicaltrials.gov/study/NCT02044601",
+                "weight": "2014-06"
+              },
+              {
+                "id": "NCT02013219",
+                "type": "Trial",
+                "label": "NCT02013219",
+                "edge_id": "NCT02013219|EVALUATES|CHEMBL553|NCT02013219",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "A Phase 1b Study of Atezolizumab in Combination With Erlotinib or Alectinib in Participants With Non-Small Cell Lung Cancer (NSCLC)",
+                "start_date": "2014-04-03",
+                "url": "https://clinicaltrials.gov/study/NCT02013219",
+                "weight": "2014-04-03"
+              },
+              {
+                "id": "NCT01487265",
+                "type": "Trial",
+                "label": "NCT01487265",
+                "edge_id": "NCT01487265|EVALUATES|CHEMBL553|NCT01487265",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Trial of Erlotinib and BKM120 in Patients With Advanced Non Small Cell Lung Cancer Previously Sensitive to Erlotinib",
+                "start_date": "2014-03",
+                "url": "https://clinicaltrials.gov/study/NCT01487265",
+                "weight": "2014-03"
+              },
+              {
+                "id": "NCT02134015",
+                "type": "Trial",
+                "label": "NCT02134015",
+                "edge_id": "NCT02134015|EVALUATES|CHEMBL553|NCT02134015",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "TERMINATED",
+                "title": "Study of Patritumab in Combination With Erlotinib in Subjects With Locally Advanced or Metastatic Non-Small-Cell Lung Cancer (NSCLC). (HER3-Lung)",
+                "start_date": "2014-03",
+                "url": "https://clinicaltrials.gov/study/NCT02134015",
+                "weight": "2014-03"
+              },
+              {
+                "id": "NCT02000531",
+                "type": "Trial",
+                "label": "NCT02000531",
+                "edge_id": "NCT02000531|EVALUATES|CHEMBL553|NCT02000531",
+                "phases": [
+                  "PHASE4"
+                ],
+                "status": "COMPLETED",
+                "title": "Progression Free Survival (PFS) Using Erlotinib for Non-Small-Cell Lung Cancer (NSCLC) in Chinese Population",
+                "start_date": "2014-01",
+                "url": "https://clinicaltrials.gov/study/NCT02000531",
+                "weight": "2014-01"
+              },
+              {
+                "id": "NCT01998126",
+                "type": "Trial",
+                "label": "NCT01998126",
+                "edge_id": "NCT01998126|EVALUATES|CHEMBL553|NCT01998126",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "Combination Checkpoint Inhibitor Plus Erlotinib or Crizotinib for EGFR or ALK Mutated Stage IV Non-small Cell Lung Cancer",
+                "start_date": "2013-12-02",
+                "url": "https://clinicaltrials.gov/study/NCT01998126",
+                "weight": "2013-12-02"
+              },
+              {
+                "id": "NCT01887886",
+                "type": "Trial",
+                "label": "NCT01887886",
+                "edge_id": "NCT01887886|EVALUATES|CHEMBL553|NCT01887886",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "COMPLETED",
+                "title": "A Study of Onartuzumab in Combination With Erlotinib in Patients With MET-Positive Stage IIIB or IV Non-Small Cell Lung Cancer Carrying an Activating Epidermal Growth Factor Receptor (EGFR) Mutation",
+                "start_date": "2013-12",
+                "url": "https://clinicaltrials.gov/study/NCT01887886",
+                "weight": "2013-12"
+              },
+              {
+                "id": "NCT02001896",
+                "type": "Trial",
+                "label": "NCT02001896",
+                "edge_id": "NCT02001896|EVALUATES|CHEMBL553|NCT02001896",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "UNKNOWN",
+                "title": "Erlotinib Intercalated With Chemotherapy Versus Erlotinib as First Line Treatment in Stage IIIB/IV NSCLC Patients With EGFR Mutation",
+                "start_date": "2013-12",
+                "url": "https://clinicaltrials.gov/study/NCT02001896",
+                "weight": "2013-12"
+              },
+              {
+                "id": "NCT02006043",
+                "type": "Trial",
+                "label": "NCT02006043",
+                "edge_id": "NCT02006043|EVALUATES|CHEMBL553|NCT02006043",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "Evaluate Erlotinib Efficacy and Safety as the 2nd/3rd Treatment in NSCLC With EGFR M(-) and C-met(-)",
+                "start_date": "2013-12",
+                "url": "https://clinicaltrials.gov/study/NCT02006043",
+                "weight": "2013-12"
+              },
+              {
+                "id": "NCT01965275",
+                "type": "Trial",
+                "label": "NCT01965275",
+                "edge_id": "NCT01965275|EVALUATES|CHEMBL553|NCT01965275",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "High-Dose,Pulsatile Erlotinib/Gefitinib for Advanced NSCLC Patients After Failure of Standard Dose EGFR-TKIs",
+                "start_date": "2013-10",
+                "url": "https://clinicaltrials.gov/study/NCT01965275",
+                "weight": "2013-10"
+              },
+              {
+                "id": "NCT01897480",
+                "type": "Trial",
+                "label": "NCT01897480",
+                "edge_id": "NCT01897480|EVALUATES|CHEMBL553|NCT01897480",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "A Study of LY2875358 in Participants With Non-Small Cell Lung Cancer With Activating Epidermal Growth Factor Receptor Mutations",
+                "start_date": "2013-08-28",
+                "url": "https://clinicaltrials.gov/study/NCT01897480",
+                "weight": "2013-08-28"
+              },
+              {
+                "id": "NCT01887795",
+                "type": "Trial",
+                "label": "NCT01887795",
+                "edge_id": "NCT01887795|EVALUATES|CHEMBL553|NCT01887795",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "COMPLETED",
+                "title": "Phase Ⅲ Trial of WBRT Versus Erlotinib Concurrent Whole-brain Radiation Therapy as ﬁrst-line Treatment for Patients With Multiple Brain Metastases From Non-small-cell Lung Cancer(ENTER): a Multicentre, Open-label, Randomised Study",
+                "start_date": "2013-08",
+                "url": "https://clinicaltrials.gov/study/NCT01887795",
+                "weight": "2013-08"
+              },
+              {
+                "id": "NCT01900652",
+                "type": "Trial",
+                "label": "NCT01900652",
+                "edge_id": "NCT01900652|EVALUATES|CHEMBL553|NCT01900652",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "A Study of Emibetuzumab in Non Small Cell Lung Cancer (NSCLC) Participants",
+                "start_date": "2013-08",
+                "url": "https://clinicaltrials.gov/study/NCT01900652",
+                "weight": "2013-08"
+              },
+              {
+                "id": "NCT01573702",
+                "type": "Trial",
+                "label": "NCT01573702",
+                "edge_id": "NCT01573702|EVALUATES|CHEMBL553|NCT01573702",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Stereotactic Radiosurgery or Other Local Ablation Then Erlotinib in Epidermal Growth Factor Receptor (EGFR)",
+                "start_date": "2012-12-11",
+                "url": "https://clinicaltrials.gov/study/NCT01573702",
+                "weight": "2012-12-11"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 76,
+            "items": [
+              {
+                "id": "ORG:roche",
+                "type": "Company",
+                "label": "Roche",
+                "edge_id": "ORG:roche|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 21,
+                "weight": 21,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:elililly",
+                "type": "Company",
+                "label": "Eli Lilly",
+                "edge_id": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 4,
+                "weight": 4,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:mdandersoncancercenter",
+                "type": "Company",
+                "label": "M D Anderson Cancer Center",
+                "edge_id": "ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 4,
+                "weight": 4,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:daiichisankyo",
+                "type": "Company",
+                "label": "Daiichi Sankyo",
+                "edge_id": "ORG:daiichisankyo|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 3,
+                "weight": 3,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:genentech",
+                "type": "Company",
+                "label": "Genentech",
+                "edge_id": "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 3,
+                "weight": 3,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:pfizer",
+                "type": "Company",
+                "label": "Pfizer",
+                "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 3,
+                "weight": 3,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:danafarbercancerinstitute",
+                "type": "Company",
+                "label": "Dana-farber Cancer Institute",
+                "edge_id": "ORG:danafarbercancerinstitute|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:helleniconcologyresearchgroup",
+                "type": "Company",
+                "label": "Hellenic Oncology Research Group",
+                "edge_id": "ORG:helleniconcologyresearchgroup|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:kyowakirin",
+                "type": "Company",
+                "label": "Kyowa Kirin",
+                "edge_id": "ORG:kyowakirin|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:massachusettsgeneralhospital",
+                "type": "Company",
+                "label": "Massachusetts General Hospital",
+                "edge_id": "ORG:massachusettsgeneralhospital|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:memorialsloanketteringcancercenter",
+                "type": "Company",
+                "label": "Memorial Sloan Kettering Cancer Center",
+                "edge_id": "ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:nationalcancercenterkorea",
+                "type": "Company",
+                "label": "National Cancer Center Korea",
+                "edge_id": "ORG:nationalcancercenterkorea|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER_GOV"
+              },
+              {
+                "id": "ORG:nationalcancerinstitute",
+                "type": "Company",
+                "label": "National Cancer Institute",
+                "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "NIH"
+              },
+              {
+                "id": "ORG:scridevelopmentinnovations",
+                "type": "Company",
+                "label": "Scri Development Innovations",
+                "edge_id": "ORG:scridevelopmentinnovations|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:academicandcommunitycancerresearchunited",
+                "type": "Company",
+                "label": "Academic And Community Cancer Research United",
+                "edge_id": "ORG:academicandcommunitycancerresearchunited|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:agennix",
+                "type": "Company",
+                "label": "Agennix",
+                "edge_id": "ORG:agennix|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:ahscancercontrolalberta",
+                "type": "Company",
+                "label": "Ahs Cancer Control Alberta",
+                "edge_id": "ORG:ahscancercontrolalberta|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:amsterdamumclocationvumc",
+                "type": "Company",
+                "label": "Amsterdam Umc Location Vumc",
+                "edge_id": "ORG:amsterdamumclocationvumc|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:anhuimedicaluniversity",
+                "type": "Company",
+                "label": "Anhui Medical University",
+                "edge_id": "ORG:anhuimedicaluniversity|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:astellas",
+                "type": "Company",
+                "label": "Astellas",
+                "edge_id": "ORG:astellas|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:astellaspharmaglobaldevelopment",
+                "type": "Company",
+                "label": "Astellas Pharma Global Development",
+                "edge_id": "ORG:astellaspharmaglobaldevelopment|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:astrazeneca",
+                "type": "Company",
+                "label": "Astrazeneca",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:baohuihan",
+                "type": "Company",
+                "label": "Baohui Han",
+                "edge_id": "ORG:baohuihan|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:bergenbioasa",
+                "type": "Company",
+                "label": "Bergenbio Asa",
+                "edge_id": "ORG:bergenbioasa|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:bristolmyerssquibb",
+                "type": "Company",
+                "label": "Bristol Myers Squibb",
+                "edge_id": "ORG:bristolmyerssquibb|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:britishcolumbiacanceragency",
+                "type": "Company",
+                "label": "British Columbia Cancer Agency",
+                "edge_id": "ORG:britishcolumbiacanceragency|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:chineseplageneralhospital",
+                "type": "Company",
+                "label": "Chinese Pla General Hospital",
+                "edge_id": "ORG:chineseplageneralhospital|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:chroma",
+                "type": "Company",
+                "label": "Chroma",
+                "edge_id": "ORG:chroma|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:clinicalresearchcenterforsolidtumorkorea",
+                "type": "Company",
+                "label": "Clinical Research Center For Solid Tumor Korea",
+                "edge_id": "ORG:clinicalresearchcenterforsolidtumorkorea|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:dapinghospitalandtheresearchinstituteofsurgeryofthethirdmilitarymedicaluniversity",
+                "type": "Company",
+                "label": "Daping Hospital And The Research Institute Of Surgery Of The Third Military Medical University",
+                "edge_id": "ORG:dapinghospitalandtheresearchinstituteofsurgeryofthethirdmilitarymedicaluniversity|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Investigator",
+            "role": null,
+            "total": 2,
+            "items": [
+              {
+                "id": "ORG:lyudmilabazhenovamd",
+                "type": "Investigator",
+                "label": "Lyudmila Bazhenova M D",
+                "edge_id": "ORG:lyudmilabazhenovamd|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:pasiajannemdphd",
+                "type": "Investigator",
+                "label": "Pasi A Janne Md Phd",
+                "edge_id": "ORG:pasiajannemdphd|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          },
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ENSG00000146648",
+                "type": "Target",
+                "label": "EGFR",
+                "edge_id": "CHEMBL553|ACTS_ON|ENSG00000146648|CHEMBL553",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "payload": {
+        "text": "Erlotinib|hydrochloride"
+      },
+      "status": 200,
+      "seconds": 0.01924279984086752,
+      "bytes": 502,
+      "body": {
+        "raw": "Erlotinib|hydrochloride",
+        "components": [
+          {
+            "component": "Erlotinib|hydrochloride",
+            "tier": "EXACT",
+            "drug_id": "CHEMBL1079742",
+            "score": null,
+            "rules": [],
+            "matched_alias": "ERLOTINIB HYDROCHLORIDE",
+            "candidates": null,
+            "drug": {
+              "name": "ERLOTINIB HYDROCHLORIDE",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor"
+              ],
+              "trials": 31,
+              "parent": {
+                "name": "ERLOTINIB",
+                "trials": 118
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "payload": {
+        "text": "biosimilar anastrozole/Arimidex"
+      },
+      "status": 200,
+      "seconds": 0.028337599942460656,
+      "bytes": 1898,
+      "body": {
+        "center": {
+          "id": "CHEMBL1399",
+          "type": "Drug",
+          "label": "ANASTROZOLE",
+          "matched_text": "Arimidex",
+          "trials": 2,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": [
+          {
+            "refused": "biosimilar anastrozole"
+          }
+        ],
+        "groups": [
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 2,
+            "items": [
+              {
+                "id": "NCT02779751",
+                "type": "Trial",
+                "label": "NCT02779751",
+                "edge_id": "NCT02779751|EVALUATES|CHEMBL1399|NCT02779751",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "A Study of Abemaciclib (LY2835219) in Participants With Non-Small Cell Lung Cancer or Breast Cancer",
+                "start_date": "2016-11-14",
+                "url": "https://clinicaltrials.gov/study/NCT02779751",
+                "weight": "2016-11-14"
+              },
+              {
+                "id": "NCT00932152",
+                "type": "Trial",
+                "label": "NCT00932152",
+                "edge_id": "NCT00932152|EVALUATES|CHEMBL1399|NCT00932152",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "Fulvestrant and Anastrozole as Consolidation Therapy in Postmenopausal Women With Advanced Non-small Cell Lung Cancer",
+                "start_date": "2010-09",
+                "url": "https://clinicaltrials.gov/study/NCT00932152",
+                "weight": "2010-09"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 2,
+            "items": [
+              {
+                "id": "ORG:elililly",
+                "type": "Company",
+                "label": "Eli Lilly",
+                "edge_id": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL1399|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:universityofpittsburgh",
+                "type": "Company",
+                "label": "University Of Pittsburgh",
+                "edge_id": "ORG:universityofpittsburgh|SPONSORS_TRIAL_OF|CHEMBL1399|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          },
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ENSG00000137869",
+                "type": "Target",
+                "label": "CYP19A1",
+                "edge_id": "CHEMBL1399|ACTS_ON|ENSG00000137869|CHEMBL1399",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "payload": {
+        "text": "biosimilar anastrozole/Arimidex"
+      },
+      "status": 200,
+      "seconds": 0.014557599788531661,
+      "bytes": 750,
+      "body": {
+        "raw": "biosimilar anastrozole/Arimidex",
+        "components": [
+          {
+            "component": "biosimilar anastrozole",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          },
+          {
+            "component": "Arimidex",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1399",
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": "Arimidex",
+            "candidates": null,
+            "drug": {
+              "name": "ANASTROZOLE",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Cytochrome P450 19A1 inhibitor"
+              ],
+              "trials": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "payload": {
+        "text": "osimertinib/EGFR"
+      },
+      "status": 200,
+      "seconds": 0.027085100067779422,
+      "bytes": 20527,
+      "body": {
+        "center": {
+          "id": "CHEMBL3353410",
+          "type": "Drug",
+          "label": "OSIMERTINIB",
+          "matched_text": "OSIMERTINIB",
+          "trials": 79,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": [
+          {
+            "id": "ENSG00000146648",
+            "type": "Target",
+            "label": "EGFR"
+          }
+        ],
+        "groups": [
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 79,
+            "items": [
+              {
+                "id": "NCT07680790",
+                "type": "Trial",
+                "label": "NCT07680790",
+                "edge_id": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING",
+                "title": "Study of Izalontamab Brengitecan (BMS-986507) in Combination With Osimertinib Versus Osimertinib Monotherapy or Osimertinib in Combination With Platinum-based Chemotherapy for EGFRmt Non-small Cell Lung Cancer (IZABRIGHT-Lung02)",
+                "start_date": "2026-09-08",
+                "url": "https://clinicaltrials.gov/study/NCT07680790",
+                "weight": "2026-09-08"
+              },
+              {
+                "id": "NCT07738172",
+                "type": "Trial",
+                "label": "NCT07738172",
+                "edge_id": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING",
+                "title": "Osimertinib With or Without Primary Lung Tumor Resection for EGFR-Mutant Oligometastatic Non-Small Cell Lung Cancer",
+                "start_date": "2026-09-08",
+                "url": "https://clinicaltrials.gov/study/NCT07738172",
+                "weight": "2026-09-08"
+              },
+              {
+                "id": "NCT07710612",
+                "type": "Trial",
+                "label": "NCT07710612",
+                "edge_id": "NCT07710612|EVALUATES|CHEMBL3353410|NCT07710612",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "NOT_YET_RECRUITING",
+                "title": "A Phase 2 Study of ABSK043 Combined With Osimertinib",
+                "start_date": "2026-08-31",
+                "url": "https://clinicaltrials.gov/study/NCT07710612",
+                "weight": "2026-08-31"
+              },
+              {
+                "id": "NCT07640789",
+                "type": "Trial",
+                "label": "NCT07640789",
+                "edge_id": "NCT07640789|EVALUATES|CHEMBL3353410|NCT07640789",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING",
+                "title": "A Study Comparing BL-B01D1 in Combination With Osimertinib Versus Osimertinib Alone in Patients With Locally Advanced, Unresectable EGFR-mutated Non-small Cell Lung Cancer(Stage III) Whose Disease Has Not Progressed Following Definitive Platinum-based Chemoradiation Therapy(PANKU-Lung08)",
+                "start_date": "2026-08-28",
+                "url": "https://clinicaltrials.gov/study/NCT07640789",
+                "weight": "2026-08-28"
+              },
+              {
+                "id": "NCT07622186",
+                "type": "Trial",
+                "label": "NCT07622186",
+                "edge_id": "NCT07622186|EVALUATES|CHEMBL3353410|NCT07622186",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "A Study of SKB571 Combination Therapy in Participants With Non-Small Cell Lung Cancer (NSCLC)",
+                "start_date": "2026-07-15",
+                "url": "https://clinicaltrials.gov/study/NCT07622186",
+                "weight": "2026-07-15"
+              },
+              {
+                "id": "NCT07376382",
+                "type": "Trial",
+                "label": "NCT07376382",
+                "edge_id": "NCT07376382|EVALUATES|CHEMBL3353410|NCT07376382",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "NOT_YET_RECRUITING",
+                "title": "A Phase Ⅲ Clinical Study of SYS6010 in Combination With Osimertinib in Patients With Locally Advanced or Metastatic NSCLC",
+                "start_date": "2026-06-01",
+                "url": "https://clinicaltrials.gov/study/NCT07376382",
+                "weight": "2026-06-01"
+              },
+              {
+                "id": "NCT07485452",
+                "type": "Trial",
+                "label": "NCT07485452",
+                "edge_id": "NCT07485452|EVALUATES|CHEMBL3353410|NCT07485452",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "Boosting Osimertinib Blood Brain Barrier Penetration",
+                "start_date": "2026-06",
+                "url": "https://clinicaltrials.gov/study/NCT07485452",
+                "weight": "2026-06"
+              },
+              {
+                "id": "NCT07535437",
+                "type": "Trial",
+                "label": "NCT07535437",
+                "edge_id": "NCT07535437|EVALUATES|CHEMBL3353410|NCT07535437",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "A Study of Ivonescimab in Combination With Dato-DXd or Osimertinib in People With Non-Small Cell Lung Cancer",
+                "start_date": "2026-04-09",
+                "url": "https://clinicaltrials.gov/study/NCT07535437",
+                "weight": "2026-04-09"
+              },
+              {
+                "id": "NCT07379476",
+                "type": "Trial",
+                "label": "NCT07379476",
+                "edge_id": "NCT07379476|EVALUATES|CHEMBL3353410|NCT07379476",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "Local Ablative Therapy to Oligoresidual Metastasis in EGFR Mutated Non-small Cell Lung Cancer",
+                "start_date": "2026-02-11",
+                "url": "https://clinicaltrials.gov/study/NCT07379476",
+                "weight": "2026-02-11"
+              },
+              {
+                "id": "NCT07315113",
+                "type": "Trial",
+                "label": "NCT07315113",
+                "edge_id": "NCT07315113|EVALUATES|CHEMBL3353410|NCT07315113",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "RECRUITING",
+                "title": "Study of NXP900 With Osimertinib in Subjects With Advanced, EGFR-Mutated Non-Small Cell Lung Cancer",
+                "start_date": "2025-12-18",
+                "url": "https://clinicaltrials.gov/study/NCT07315113",
+                "weight": "2025-12-18"
+              },
+              {
+                "id": "NCT07058519",
+                "type": "Trial",
+                "label": "NCT07058519",
+                "edge_id": "NCT07058519|EVALUATES|CHEMBL3353410|NCT07058519",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "A Study of Osimertinib-based Adaptive Treatment Guided by ctDNA EGFRm+ Monitoring in NSCLC",
+                "start_date": "2025-09-23",
+                "url": "https://clinicaltrials.gov/study/NCT07058519",
+                "weight": "2025-09-23"
+              },
+              {
+                "id": "NCT06618287",
+                "type": "Trial",
+                "label": "NCT06618287",
+                "edge_id": "NCT06618287|EVALUATES|CHEMBL3353410|NCT06618287",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "A Study to Evaluate the Safety, Tolerability, Drug Levels, and Preliminary Efficacy of BMS-986507 Combinations in Adult Participants With Advanced Solid Tumors",
+                "start_date": "2025-02-04",
+                "url": "https://clinicaltrials.gov/study/NCT06618287",
+                "weight": "2025-02-04"
+              },
+              {
+                "id": "NCT06741085",
+                "type": "Trial",
+                "label": "NCT06741085",
+                "edge_id": "NCT06741085|EVALUATES|CHEMBL3353410|NCT06741085",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "A Study of Stereotactic Radiosurgery (SRS) and Standard Treatment in People With Lung Cancer That Has Spread to the Brain",
+                "start_date": "2024-12-13",
+                "url": "https://clinicaltrials.gov/study/NCT06741085",
+                "weight": "2024-12-13"
+              },
+              {
+                "id": "NCT06670196",
+                "type": "Trial",
+                "label": "NCT06670196",
+                "edge_id": "NCT06670196|EVALUATES|CHEMBL3353410|NCT06670196",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "A Study of SKB264 in Combination With Osimertinib Versus Osimertinib in Patients With Epidermal Growth Factor Receptor (EGFR) Mutations, Locally Advanced or Metastatic Non-Squamous Non-Small Cell Lung Cancer",
+                "start_date": "2024-11-27",
+                "url": "https://clinicaltrials.gov/study/NCT06670196",
+                "weight": "2024-11-27"
+              },
+              {
+                "id": "NCT06709274",
+                "type": "Trial",
+                "label": "NCT06709274",
+                "edge_id": "NCT06709274|EVALUATES|CHEMBL3353410|NCT06709274",
+                "phases": [
+                  "NA"
+                ],
+                "status": "NOT_YET_RECRUITING",
+                "title": "Minimal Residual Disease Guiding Adjuvant Therapy in Stage I NSCLC",
+                "start_date": "2024-11",
+                "url": "https://clinicaltrials.gov/study/NCT06709274",
+                "weight": "2024-11"
+              },
+              {
+                "id": "NCT06735391",
+                "type": "Trial",
+                "label": "NCT06735391",
+                "edge_id": "NCT06735391|EVALUATES|CHEMBL3353410|NCT06735391",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING",
+                "title": "A Clinical Study of JMT101 in Combination With Osimertinib Versus Osimertinib Alone as First-Line Treatment for Patients With Locally Advanced or Metastatic Non-Squamous Non-Small Cell Lung Cancer (NSCLC) Harboring Epidermal Growth Factor Receptor (EGFR) Sensitive Mutations",
+                "start_date": "2024-10-23",
+                "url": "https://clinicaltrials.gov/study/NCT06735391",
+                "weight": "2024-10-23"
+              },
+              {
+                "id": "NCT06827145",
+                "type": "Trial",
+                "label": "NCT06827145",
+                "edge_id": "NCT06827145|EVALUATES|CHEMBL3353410|NCT06827145",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "Combination of Vebreltinib and Osimertinib in Patients with EGFR 21 L858R Mutation Advanced NSCLC",
+                "start_date": "2024-10-14",
+                "url": "https://clinicaltrials.gov/study/NCT06827145",
+                "weight": "2024-10-14"
+              },
+              {
+                "id": "NCT06557096",
+                "type": "Trial",
+                "label": "NCT06557096",
+                "edge_id": "NCT06557096|EVALUATES|CHEMBL3353410|NCT06557096",
+                "phases": [
+                  "EARLY_PHASE1"
+                ],
+                "status": "NOT_YET_RECRUITING",
+                "title": "CSF CTC-Capture-Guided EGFR-TKI and Bevacizumab Combination Therapy in EGFR-Mutant Advanced NSCLC",
+                "start_date": "2024-08-20",
+                "url": "https://clinicaltrials.gov/study/NCT06557096",
+                "weight": "2024-08-20"
+              },
+              {
+                "id": "NCT06574347",
+                "type": "Trial",
+                "label": "NCT06574347",
+                "edge_id": "NCT06574347|EVALUATES|CHEMBL3353410|NCT06574347",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "Vebreltinib Plus PLB1004 as the First-line Therapy for Patients With EGFRm+/MET+ Locally Advanced or Metastatic NSCLC.",
+                "start_date": "2024-08-07",
+                "url": "https://clinicaltrials.gov/study/NCT06574347",
+                "weight": "2024-08-07"
+              },
+              {
+                "id": "NCT06319950",
+                "type": "Trial",
+                "label": "NCT06319950",
+                "edge_id": "NCT06319950|EVALUATES|CHEMBL3353410|NCT06319950",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "NOT_YET_RECRUITING",
+                "title": "High-dose Furmonertinib Versus Osimertinib in Advanced EGFRm NSCLC Patients With Brain Metastases",
+                "start_date": "2024-04-01",
+                "url": "https://clinicaltrials.gov/study/NCT06319950",
+                "weight": "2024-04-01"
+              },
+              {
+                "id": "NCT05401110",
+                "type": "Trial",
+                "label": "NCT05401110",
+                "edge_id": "NCT05401110|EVALUATES|CHEMBL3353410|NCT05401110",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "RECRUITING",
+                "title": "Study of Osimertinib With Carotuximab in Advanced, EGFR-mutated Non-Small Cell Lung Cancer",
+                "start_date": "2023-09-15",
+                "url": "https://clinicaltrials.gov/study/NCT05401110",
+                "weight": "2023-09-15"
+              },
+              {
+                "id": "NCT06018688",
+                "type": "Trial",
+                "label": "NCT06018688",
+                "edge_id": "NCT06018688|EVALUATES|CHEMBL3353410|NCT06018688",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "Osimertinib Combined With Aspirin Neoadjuvant Therapy for Resectable EGFR Mutated NSCLC Patients.",
+                "start_date": "2023-09-15",
+                "url": "https://clinicaltrials.gov/study/NCT06018688",
+                "weight": "2023-09-15"
+              },
+              {
+                "id": "NCT05785741",
+                "type": "Trial",
+                "label": "NCT05785741",
+                "edge_id": "NCT05785741|EVALUATES|CHEMBL3353410|NCT05785741",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "A Study of DB-1310 in Advanced/Metastatic Solid Tumors",
+                "start_date": "2023-08-17",
+                "url": "https://clinicaltrials.gov/study/NCT05785741",
+                "weight": "2023-08-17"
+              },
+              {
+                "id": "NCT05948813",
+                "type": "Trial",
+                "label": "NCT05948813",
+                "edge_id": "NCT05948813|EVALUATES|CHEMBL3353410|NCT05948813",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "TY-9591 in the Patients With EGFR Mutations in Advanced NSCLC With Brain Metastases",
+                "start_date": "2023-08-17",
+                "url": "https://clinicaltrials.gov/study/NCT05948813",
+                "weight": "2023-08-17"
+              },
+              {
+                "id": "NCT05642572",
+                "type": "Trial",
+                "label": "NCT05642572",
+                "edge_id": "NCT05642572|EVALUATES|CHEMBL3353410|NCT05642572",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "Comparing Combinations of Targeted Drugs for Advanced Non-Small Cell Lung Cancer That Has EGFR and MET Gene Changes (A Lung-MAP Treatment Trial)",
+                "start_date": "2023-05-05",
+                "url": "https://clinicaltrials.gov/study/NCT05642572",
+                "weight": "2023-05-05"
+              },
+              {
+                "id": "NCT05647122",
+                "type": "Trial",
+                "label": "NCT05647122",
+                "edge_id": "NCT05647122|EVALUATES|CHEMBL3353410|NCT05647122",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "First in Human Study of AZD9592 in Solid Tumors",
+                "start_date": "2022-12-21",
+                "url": "https://clinicaltrials.gov/study/NCT05647122",
+                "weight": "2022-12-21"
+              },
+              {
+                "id": "NCT05493501",
+                "type": "Trial",
+                "label": "NCT05493501",
+                "edge_id": "NCT05493501|EVALUATES|CHEMBL3353410|NCT05493501",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "TERMINATED",
+                "title": "Aumolertinib With Chemotherapy or Alone Compared With Osimertinib in Patients With Epidermal Growth Factor Receptor-Mutant Non-Small Cell Lung Cancer",
+                "start_date": "2022-12-14",
+                "url": "https://clinicaltrials.gov/study/NCT05493501",
+                "weight": "2022-12-14"
+              },
+              {
+                "id": "NCT05785208",
+                "type": "Trial",
+                "label": "NCT05785208",
+                "edge_id": "NCT05785208|EVALUATES|CHEMBL3353410|NCT05785208",
+                "phases": [
+                  "PHASE4"
+                ],
+                "status": "UNKNOWN",
+                "title": "Efficacy Study of Osimertinib in Treatment-naïve Patients With EGFR Mutant NSCLC According to TP53 Mutational Status.",
+                "start_date": "2022-06-28",
+                "url": "https://clinicaltrials.gov/study/NCT05785208",
+                "weight": "2022-06-28"
+              },
+              {
+                "id": "NCT05382728",
+                "type": "Trial",
+                "label": "NCT05382728",
+                "edge_id": "NCT05382728|EVALUATES|CHEMBL3353410|NCT05382728",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING",
+                "title": "Phase III Study of TY-9591 in Patients With Locally Advanced or Metastatic Non-small Cell Lung Cancer (FLETEO)",
+                "start_date": "2022-06-08",
+                "url": "https://clinicaltrials.gov/study/NCT05382728",
+                "weight": "2022-06-08"
+              },
+              {
+                "id": "NCT05120349",
+                "type": "Trial",
+                "label": "NCT05120349",
+                "edge_id": "NCT05120349|EVALUATES|CHEMBL3353410|NCT05120349",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "A Global Study to Assess the Effects of Osimertinib in Participants With EGFRm Stage IA2-IA3 NSCLC Following Complete Tumour Resection",
+                "start_date": "2022-02-21",
+                "url": "https://clinicaltrials.gov/study/NCT05120349",
+                "weight": "2022-02-21"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 53,
+            "items": [
+              {
+                "id": "ORG:astrazeneca",
+                "type": "Company",
+                "label": "Astrazeneca",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 14,
+                "weight": 14,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:memorialsloanketteringcancercenter",
+                "type": "Company",
+                "label": "Memorial Sloan Kettering Cancer Center",
+                "edge_id": "ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 3,
+                "weight": 3,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:nationalcancerinstitute",
+                "type": "Company",
+                "label": "National Cancer Institute",
+                "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 3,
+                "weight": 3,
+                "sponsor_class": "NIH"
+              },
+              {
+                "id": "ORG:bristolmyerssquibb",
+                "type": "Company",
+                "label": "Bristol Myers Squibb",
+                "edge_id": "ORG:bristolmyerssquibb|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:elililly",
+                "type": "Company",
+                "label": "Eli Lilly",
+                "edge_id": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:mdandersoncancercenter",
+                "type": "Company",
+                "label": "M D Anderson Cancer Center",
+                "edge_id": "ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:secondaffiliatedhospitalofnanchanguniversity",
+                "type": "Company",
+                "label": "Second Affiliated Hospital Of Nanchang University",
+                "edge_id": "ORG:secondaffiliatedhospitalofnanchanguniversity|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:shanghaijmtbio",
+                "type": "Company",
+                "label": "Shanghai Jmt-bio",
+                "edge_id": "ORG:shanghaijmtbio|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:sichuankelunbiotech",
+                "type": "Company",
+                "label": "Sichuan Kelun-biotech",
+                "edge_id": "ORG:sichuankelunbiotech|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:tianjinmedicaluniversitycancerinstituteandhospital",
+                "type": "Company",
+                "label": "Tianjin Medical University Cancer Institute And Hospital",
+                "edge_id": "ORG:tianjinmedicaluniversitycancerinstituteandhospital|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:tykmedicines",
+                "type": "Company",
+                "label": "Tyk Medicines",
+                "edge_id": "ORG:tykmedicines|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:abbisko",
+                "type": "Company",
+                "label": "Abbisko",
+                "edge_id": "ORG:abbisko|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:amsterdamumclocationvumc",
+                "type": "Company",
+                "label": "Amsterdam Umc Location Vumc",
+                "edge_id": "ORG:amsterdamumclocationvumc|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:avistone",
+                "type": "Company",
+                "label": "Avistone",
+                "edge_id": "ORG:avistone|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:beijingcancerpreventiontreatmentsociety",
+                "type": "Company",
+                "label": "Beijing Cancer Prevention & Treatment Society",
+                "edge_id": "ORG:beijingcancerpreventiontreatmentsociety|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:casecomprehensivecancercenter",
+                "type": "Company",
+                "label": "Case Comprehensive Cancer Center",
+                "edge_id": "ORG:casecomprehensivecancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:chineseuniversityofhongkong",
+                "type": "Company",
+                "label": "Chinese University Of Hong Kong",
+                "edge_id": "ORG:chineseuniversityofhongkong|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:cspcmegalith",
+                "type": "Company",
+                "label": "Cspc Megalith",
+                "edge_id": "ORG:cspcmegalith|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:daiichisankyo",
+                "type": "Company",
+                "label": "Daiichi Sankyo",
+                "edge_id": "ORG:daiichisankyo|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:danafarbercancerinstitute",
+                "type": "Company",
+                "label": "Dana-farber Cancer Institute",
+                "edge_id": "ORG:danafarbercancerinstitute|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:dapinghospitalandtheresearchinstituteofsurgeryofthethirdmilitarymedicaluniversity",
+                "type": "Company",
+                "label": "Daping Hospital And The Research Institute Of Surgery Of The Third Military Medical University",
+                "edge_id": "ORG:dapinghospitalandtheresearchinstituteofsurgeryofthethirdmilitarymedicaluniversity|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:dualitybio",
+                "type": "Company",
+                "label": "Dualitybio",
+                "edge_id": "ORG:dualitybio|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:emdseronoresearchdevelopmentinstitute",
+                "type": "Company",
+                "label": "Emd Serono Research & Development Institute",
+                "edge_id": "ORG:emdseronoresearchdevelopmentinstitute|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:eqrx",
+                "type": "Company",
+                "label": "Eqrx",
+                "edge_id": "ORG:eqrx|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:erasca",
+                "type": "Company",
+                "label": "Erasca",
+                "edge_id": "ORG:erasca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:fondazionepoliclinicouniversitarioagostinogemelliirccs",
+                "type": "Company",
+                "label": "Fondazione Policlinico Universitario Agostino Gemelli Irccs",
+                "edge_id": "ORG:fondazionepoliclinicouniversitarioagostinogemelliirccs|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:genprex",
+                "type": "Company",
+                "label": "Genprex",
+                "edge_id": "ORG:genprex|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:goetheuniversity",
+                "type": "Company",
+                "label": "Goethe University",
+                "edge_id": "ORG:goetheuniversity|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:guangdongassociationofclinicaltrials",
+                "type": "Company",
+                "label": "Guangdong Association Of Clinical Trials",
+                "edge_id": "ORG:guangdongassociationofclinicaltrials|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:incyte",
+                "type": "Company",
+                "label": "Incyte",
+                "edge_id": "ORG:incyte|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              }
+            ]
+          },
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ENSG00000146648",
+                "type": "Target",
+                "label": "EGFR",
+                "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Investigator",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ORG:lizhangmd",
+                "type": "Investigator",
+                "label": "Li Zhang Md",
+                "edge_id": "ORG:lizhangmd|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "payload": {
+        "text": "osimertinib/EGFR"
+      },
+      "status": 200,
+      "seconds": 0.012621999951079488,
+      "bytes": 680,
+      "body": {
+        "raw": "osimertinib/EGFR",
+        "components": [
+          {
+            "component": "osimertinib",
+            "tier": "EXACT",
+            "drug_id": "CHEMBL3353410",
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": "OSIMERTINIB",
+            "candidates": null,
+            "drug": {
+              "name": "OSIMERTINIB",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor"
+              ],
+              "trials": 79
+            }
+          },
+          {
+            "component": "EGFR",
+            "tier": "BLOCKED_TARGET_TERM",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "target_symbol_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "a target or gene symbol, not an administered substance"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/ask",
+      "payload": {
+        "text": "Which trials evaluate ENDOSTATIN, N-TERMINAL-MGGSHHHHH?"
+      },
+      "status": 200,
+      "seconds": 0.018965400056913495,
+      "bytes": 1973,
+      "body": {
+        "question": "Which trials evaluate ENDOSTATIN, N-TERMINAL-MGGSHHHHH?",
+        "intent": "trials_for_entity",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL4297747",
+            "label": "ENDOSTATIN",
+            "matched_text": "ENDOSTATIN",
+            "matched_alias": "ENDOSTATIN"
+          }
+        ],
+        "answer": "Trials of this drug:\n  - NCT02497118 (PHASE4, COMPLETED) evaluates ENDOSTATIN [NCT02497118]\n  - NCT01192230 (PHASE2, UNKNOWN) evaluates ENDOSTATIN [NCT01192230]\n\nScope: 2 edge(s) from this graph; non-small cell lung cancer only.",
+        "generated_by": "deterministic template (no language model)",
+        "checks": {
+          "grounded": null,
+          "applicable": false,
+          "unsupported_claims": [],
+          "evidence_count": 2,
+          "method": "not applicable",
+          "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+        },
+        "evidence": [
+          {
+            "statement": "NCT02497118 (PHASE4, COMPLETED) evaluates ENDOSTATIN",
+            "relation": "EVALUATES",
+            "edge_id": "NCT02497118|EVALUATES|CHEMBL4297747|NCT02497118",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT02497118",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT02497118",
+            "stated_intervention": "Endostatin",
+            "title": "Recombinant Human Endostatin Combined With NP in Neoadjuvant Chemotherapy of Stage ⅢA NSCLC",
+            "status": "COMPLETED",
+            "phases": [
+              "PHASE4"
+            ]
+          },
+          {
+            "statement": "NCT01192230 (PHASE2, UNKNOWN) evaluates ENDOSTATIN",
+            "relation": "EVALUATES",
+            "edge_id": "NCT01192230|EVALUATES|CHEMBL4297747|NCT01192230",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT01192230",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 0.8,
+            "resolution_tier": "FUZZY_AUTO",
+            "url": "https://clinicaltrials.gov/study/NCT01192230",
+            "stated_intervention": "Endostatins",
+            "title": "Study of Endostatin Combined With Docetaxel in the Treatment of Advanced Non-small Cell Lung Cancer Patients",
+            "status": "UNKNOWN",
+            "phases": [
+              "PHASE2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/ask",
+      "payload": {
+        "text": "Which companies sponsor ENDOSTATIN, N-TERMINAL-MGGSHHHHH?"
+      },
+      "status": 200,
+      "seconds": 0.014072900172322989,
+      "bytes": 2206,
+      "body": {
+        "question": "Which companies sponsor ENDOSTATIN, N-TERMINAL-MGGSHHHHH?",
+        "intent": "companies_for_drug",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL4297747",
+            "label": "ENDOSTATIN",
+            "matched_text": "ENDOSTATIN",
+            "matched_alias": "ENDOSTATIN"
+          }
+        ],
+        "answer": "Lead sponsorship of trials of this drug:\n  - Fudan University (other sponsor) is lead sponsor of 1 trial(s) evaluating ENDOSTATIN - a sponsorship, not evidence of developing the drug [NCT01192230]\n  - Tianjin Medical University Cancer Institute And Hospital (other sponsor) is lead sponsor of 1 trial(s) evaluating ENDOSTATIN - a sponsorship, not evidence of developing the drug [NCT02497118]\n\nScope: 2 edge(s) from this graph; non-small cell lung cancer only.",
+        "generated_by": "deterministic template (no language model)",
+        "checks": {
+          "grounded": null,
+          "applicable": false,
+          "unsupported_claims": [],
+          "evidence_count": 2,
+          "method": "not applicable",
+          "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+        },
+        "evidence": [
+          {
+            "statement": "Fudan University (other sponsor) is lead sponsor of 1 trial(s) evaluating ENDOSTATIN - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:fudanuniversity|SPONSORS_TRIAL_OF|CHEMBL4297747|",
+            "source": "derived",
+            "source_record": "NCT01192230",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 1,
+            "example_trials": [
+              "NCT01192230"
+            ]
+          },
+          {
+            "statement": "Tianjin Medical University Cancer Institute And Hospital (other sponsor) is lead sponsor of 1 trial(s) evaluating ENDOSTATIN - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:tianjinmedicaluniversitycancerinstituteandhospital|SPONSORS_TRIAL_OF|CHEMBL4297747|",
+            "source": "derived",
+            "source_record": "NCT02497118",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 1,
+            "example_trials": [
+              "NCT02497118"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/ask",
+      "payload": {
+        "text": "Which trials evaluate Rapamycin, 42-o-(2-hydroxyethyl)-?"
+      },
+      "status": 200,
+      "seconds": 0.011508200084790587,
+      "bytes": 4066,
+      "body": {
+        "question": "Which trials evaluate Rapamycin, 42-o-(2-hydroxyethyl)-?",
+        "intent": "trials_for_entity",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL413",
+            "label": "SIROLIMUS",
+            "matched_text": "Rapamycin",
+            "matched_alias": "(-)-RAPAMYCIN"
+          }
+        ],
+        "answer": "Trials of this drug:\n  - NCT01737502 (PHASE1, PHASE2, COMPLETED) evaluates SIROLIMUS [NCT01737502]\n  - NCT03217669 (PHASE1, UNKNOWN) evaluates SIROLIMUS [NCT03217669]\n  - NCT00993499 (PHASE1, COMPLETED) evaluates SIROLIMUS [NCT00993499]\n  - NCT00923273 (PHASE1, PHASE2, TERMINATED) evaluates SIROLIMUS [NCT00923273]\n  - NCT00098462 (PHASE1, PHASE2, WITHDRAWN) evaluates SIROLIMUS [NCT00098462]\n\nScope: 5 edge(s) from this graph; non-small cell lung cancer only.",
+        "generated_by": "deterministic template (no language model)",
+        "checks": {
+          "grounded": null,
+          "applicable": false,
+          "unsupported_claims": [],
+          "evidence_count": 5,
+          "method": "not applicable",
+          "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+        },
+        "evidence": [
+          {
+            "statement": "NCT01737502 (PHASE1, PHASE2, COMPLETED) evaluates SIROLIMUS",
+            "relation": "EVALUATES",
+            "edge_id": "NCT01737502|EVALUATES|CHEMBL413|NCT01737502",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT01737502",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT01737502",
+            "stated_intervention": "Sirolimus",
+            "title": "Sirolimus and Auranofin in Treating Patients With Advanced or Recurrent Non-Small Cell Lung Cancer or Small Cell Lung Cancer",
+            "status": "COMPLETED",
+            "phases": [
+              "PHASE1",
+              "PHASE2"
+            ]
+          },
+          {
+            "statement": "NCT03217669 (PHASE1, UNKNOWN) evaluates SIROLIMUS",
+            "relation": "EVALUATES",
+            "edge_id": "NCT03217669|EVALUATES|CHEMBL413|NCT03217669",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT03217669",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT03217669",
+            "stated_intervention": "sirolimus",
+            "title": "Epacadostat (INCB24360) in Combination With Sirolimus in Advanced Malignancy",
+            "status": "UNKNOWN",
+            "phases": [
+              "PHASE1"
+            ]
+          },
+          {
+            "statement": "NCT00993499 (PHASE1, COMPLETED) evaluates SIROLIMUS",
+            "relation": "EVALUATES",
+            "edge_id": "NCT00993499|EVALUATES|CHEMBL413|NCT00993499",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT00993499",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT00993499",
+            "stated_intervention": "Sirolimus (rapamycin)",
+            "title": "Trial of Continuous Once Daily Oral Treatment Using BIBW 2992 (Afatinib) Plus Sirolimus (Rapamune®) in Patients With Non-small Cell Lung Cancer Harbouring an EGFR Mutation and/or Disease Progression Following Prior Erlotinib or Gefitinib",
+            "status": "COMPLETED",
+            "phases": [
+              "PHASE1"
+            ]
+          },
+          {
+            "statement": "NCT00923273 (PHASE1, PHASE2, TERMINATED) evaluates SIROLIMUS",
+            "relation": "EVALUATES",
+            "edge_id": "NCT00923273|EVALUATES|CHEMBL413|NCT00923273",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT00923273",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT00923273",
+            "stated_intervention": "Sirolimus",
+            "title": "Sirolimus and Pemetrexed to Treat Non-Small Cell Lung Cancer",
+            "status": "TERMINATED",
+            "phases": [
+              "PHASE1",
+              "PHASE2"
+            ]
+          },
+          {
+            "statement": "NCT00098462 (PHASE1, PHASE2, WITHDRAWN) evaluates SIROLIMUS",
+            "relation": "EVALUATES",
+            "edge_id": "NCT00098462|EVALUATES|CHEMBL413|NCT00098462",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT00098462",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT00098462",
+            "stated_intervention": "sirolimus",
+            "title": "Gefitinib and Sirolimus in Treating Patients With Recurrent or Refractory Stage IIIB or Stage IV Non-Small Cell Lung Cancer",
+            "status": "WITHDRAWN",
+            "phases": [
+              "PHASE1",
+              "PHASE2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/ask",
+      "payload": {
+        "text": "Which companies sponsor Rapamycin, 42-o-(2-hydroxyethyl)-?"
+      },
+      "status": 200,
+      "seconds": 0.007787500042468309,
+      "bytes": 4189,
+      "body": {
+        "question": "Which companies sponsor Rapamycin, 42-o-(2-hydroxyethyl)-?",
+        "intent": "companies_for_drug",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL413",
+            "label": "SIROLIMUS",
+            "matched_text": "Rapamycin",
+            "matched_alias": "(-)-RAPAMYCIN"
+          }
+        ],
+        "answer": "Lead sponsorship of trials of this drug:\n  - Boehringer Ingelheim (industry sponsor) is lead sponsor of 1 trial(s) evaluating SIROLIMUS - a sponsorship, not evidence of developing the drug [NCT00993499]\n  - Chao Huang (other sponsor) is lead sponsor of 1 trial(s) evaluating SIROLIMUS - a sponsorship, not evidence of developing the drug [NCT03217669]\n  - Jonsson Comprehensive Cancer Center (other sponsor) is lead sponsor of 1 trial(s) evaluating SIROLIMUS - a sponsorship, not evidence of developing the drug [NCT00098462]\n  - Mayo Clinic (other sponsor) is lead sponsor of 1 trial(s) evaluating SIROLIMUS - a sponsorship, not evidence of developing the drug [NCT01737502]\n  - National Cancer Institute (nih sponsor) is lead sponsor of 1 trial(s) evaluating SIROLIMUS - a sponsorship, not evidence of developing the drug [NCT00923273]\n\nScope: 5 edge(s) from this graph; non-small cell lung cancer only.",
+        "generated_by": "deterministic template (no language model)",
+        "checks": {
+          "grounded": null,
+          "applicable": false,
+          "unsupported_claims": [],
+          "evidence_count": 5,
+          "method": "not applicable",
+          "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+        },
+        "evidence": [
+          {
+            "statement": "Boehringer Ingelheim (industry sponsor) is lead sponsor of 1 trial(s) evaluating SIROLIMUS - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:boehringeringelheim|SPONSORS_TRIAL_OF|CHEMBL413|",
+            "source": "derived",
+            "source_record": "NCT00993499",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 1,
+            "example_trials": [
+              "NCT00993499"
+            ]
+          },
+          {
+            "statement": "Chao Huang (other sponsor) is lead sponsor of 1 trial(s) evaluating SIROLIMUS - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:chaohuang|SPONSORS_TRIAL_OF|CHEMBL413|",
+            "source": "derived",
+            "source_record": "NCT03217669",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 1,
+            "example_trials": [
+              "NCT03217669"
+            ]
+          },
+          {
+            "statement": "Jonsson Comprehensive Cancer Center (other sponsor) is lead sponsor of 1 trial(s) evaluating SIROLIMUS - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:jonssoncomprehensivecancercenter|SPONSORS_TRIAL_OF|CHEMBL413|",
+            "source": "derived",
+            "source_record": "NCT00098462",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 1,
+            "example_trials": [
+              "NCT00098462"
+            ]
+          },
+          {
+            "statement": "Mayo Clinic (other sponsor) is lead sponsor of 1 trial(s) evaluating SIROLIMUS - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:mayoclinic|SPONSORS_TRIAL_OF|CHEMBL413|",
+            "source": "derived",
+            "source_record": "NCT01737502",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 1,
+            "example_trials": [
+              "NCT01737502"
+            ]
+          },
+          {
+            "statement": "National Cancer Institute (nih sponsor) is lead sponsor of 1 trial(s) evaluating SIROLIMUS - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL413|",
+            "source": "derived",
+            "source_record": "NCT00923273",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "NIH",
+            "evidence_trials": 1,
+            "example_trials": [
+              "NCT00923273"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "answer_cost": []
+}

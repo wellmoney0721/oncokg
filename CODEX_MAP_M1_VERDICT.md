@@ -124,3 +124,13 @@ Side effect: "osimertinib with [89Zr] trastuzumab" now refuses only trastuzumab 
 | M10-B4 | respelt qualifiers ("generic-version of", "albumin - bound", "follow-on-biologic") | item guards also see the item with every separator read as one space |
 
 Tests 338.
+
+## Round 11 (audit_evidence_claims/m11) — CHANGES REQUIRED
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M11-B1 | punctuation inside the element symbol ("[89Z.r] trastuzumab") | neighbour words are glued as the key glues them (up to the length of a label) and compared with isotope labels; a matched name whose key is an isotope label plus a key of the same drug ("89zr" + "trastuzumab") is refused |
+| M11-B2 | a suffix spelt in pieces beyond the five-token window ("bevacizumab a - w w b") | the words after a name are glued the same way and compared with the known biosimilar suffixes |
+| M11-S1 | further lone-alias losses (`9-amino-20(s)-camptothecin`, `il-6ra`, `TAK-659F`) | recorded as known over-refusals: their keys end or contain what reads as an isotope label; refusing never draws a wrong drug |
+
+Dose and schedule text after a name is unaffected ("osimertinib 80 mg", "paclitaxel 2 cycles", "cisplatin 75 mg/m2 day 1"). Tests 339.

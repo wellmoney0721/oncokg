@@ -326,3 +326,19 @@ def test_isotopes_inside_beside_or_instead_of_a_name_and_respelt_qualifiers_refu
     for name, did in (("18f", "CHEMBL2030434"), ("9-ac", "CHEMBL274070"), ("ADAKITUG", "CHEMBL5314551")):
         assert e.explore(name)["center"]["id"] == did, name
     assert e.explore("trastuzumab 89 - Zr, osimertinib")["center"]["id"] == "CHEMBL3353410"
+
+
+# Codex review m11: suffixes and isotopes spelt in pieces are glued back as the key glues them
+def test_split_isotopes_and_spelt_out_suffixes_refuse():
+    import app
+    e = app.Engine()
+    for t in ("[89Z.r] trastuzumab", "89Z_r trastuzumab", "trastuzumab [89Z.r]",
+              "bevacizumab a - w w b", "bevacizumab - a - w - w - b", "bevacizumab a_w_w_b"):
+        assert e.explore(t).get("refused"), t
+    for t in ("[89Z.r] trastuzumab, osimertinib", "bevacizumab a - w w b, osimertinib"):
+        assert e.explore(t)["center"]["id"] == "CHEMBL3353410", t
+    for q in ("Which trials evaluate [89Z.r] trastuzumab?", "Which trials evaluate bevacizumab a - w w b?"):
+        assert not e.kg.answer(q, use_llm=False).evidence, q
+    for t, did in (("osimertinib 80 mg", "CHEMBL3353410"), ("paclitaxel 2 cycles", "CHEMBL428647"),
+                   ("cisplatin 75 mg/m2 day 1", "CHEMBL11359")):
+        assert e.explore(t)["center"]["id"] == did, t
