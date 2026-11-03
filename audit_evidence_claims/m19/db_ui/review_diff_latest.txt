@@ -1,0 +1,82 @@
+diff --git a/CODEX_MAP_M1_VERDICT.md b/CODEX_MAP_M1_VERDICT.md
+index 78885f2..df8b122 100644
+--- a/CODEX_MAP_M1_VERDICT.md
++++ b/CODEX_MAP_M1_VERDICT.md
+@@ -194,3 +194,11 @@ Stored-alias sweep: no change. Tests 344.
+ | M17-B1 | "trastuzumab labelled-I-124": punctuation was removed before the letter-boundary check, gluing the I to "labelled" | each word is also checked as its punctuation-separated pieces and every neighbouring pair glued ("I"+"124") |
+ 
+ Stored-alias sweep: no change. Tests 345.
++
++## Round 18 (audit_evidence_claims/m18) — CHANGES REQUIRED (one blocker)
++
++| # | Finding | Repair |
++| --- | --- | --- |
++| M18-B1 | "trastuzumab radiolabelled with iodine-124": element names written out | element names (iodine, fluorine, zirconium, lutetium, gallium, technetium-99m, ...) beside a medical mass, in either order, count as the isotope; words that say the substance is labelled ("radiolabelled", "tritiated", "radiotracer", "radioligand", "radiopharmaceutical", ...) refuse an unlabelled drug in the item |
++
++A drug whose own name carries the label is still allowed ("fluorine-18 fluorodeoxyglucose"). Stored-alias sweep: no change. Tests 346.
+diff --git a/src/query.py b/src/query.py
+index a87c034..72b8007 100644
+--- a/src/query.py
++++ b/src/query.py
+@@ -151,6 +151,20 @@ def _medical_isotope_in(key: str, one_letter: bool = True) -> bool:
+ 
+ 
+ 
++
++# Element names written out, mapped to the symbols the mass table uses.
++_ELEMENT_NAMES = {"hydrogen": "h", "tritium": "h", "carbon": "c", "nitrogen": "n", "oxygen": "o",
++                  "fluorine": "f", "phosphorus": "p", "sulfur": "s", "sulphur": "s",
++                  "copper": "cu", "gallium": "ga", "bromine": "br", "rubidium": "rb",
++                  "strontium": "sr", "yttrium": "y", "zirconium": "zr", "technetium": "tc",
++                  "indium": "in", "iodine": "i", "samarium": "sm", "lutetium": "lu",
++                  "lutecium": "lu", "rhenium": "re", "lead": "pb", "astatine": "at",
++                  "radium": "ra", "actinium": "ac"}
++# Words that say the substance carries a radioactive label.
++_LABEL_WORDS = {"tritiated", "tritium", "radiotracer", "radiotracers", "radioligand", "radionuclide",
++                "radioconjugate", "radioimmunoconjugate", "radiopharmaceutical", "radioactive",
++                "radiolabelled", "radiolabeled", "radiolabel"}
++
+ @functools.lru_cache(maxsize=4096)
+ def _item_has_isotope(words: tuple) -> bool:
+     """Is a medical isotope written anywhere in this list item? Worked out once per item.
+@@ -160,6 +174,17 @@ def _item_has_isotope(words: tuple) -> bool:
+     so "13 NSCLC" is not N-13 and "BKM120" is not M-120."""
+     if _medical_isotope_in(T.canonical_key(" ".join(words)), one_letter=False):
+         return True
++    flat = [x.lower() for x in _alnum_words(" ".join(words))]
++    if any(x in _LABEL_WORDS or x.startswith(("radiolabel", "radioiod")) for x in flat):
++        return True                          # "radiolabelled", "tritiated", "radiotracer"
++    # element names written out ("iodine-124", "124-iodine", "fluorine 18")
++    for a, b in zip(flat, flat[1:]):
++        for name, num in ((a, b), (b, a)):
++            el = _ELEMENT_NAMES.get(name)
++            if el and num.isdigit() and int(num[:3]) in _MEDICAL_MASS.get(el, set()):
++                return True
++        if a == "technetium" and b in ("99m", "99"):
++            return True
+     for w in words:
+         # the word as written, and its punctuation-separated pieces with each neighbouring
+         # pair glued, so a boundary the punctuation marks is kept ("labelled-I-124")
+diff --git a/tests/test_app.py b/tests/test_app.py
+index 21be925..b8d47f1 100644
+--- a/tests/test_app.py
++++ b/tests/test_app.py
+@@ -422,3 +422,18 @@ def test_a_punctuated_element_first_isotope_refuses():
+         r = e.explore(t)
+         assert r.get("refused") or r.get("not_found"), t
+     assert not e.kg.answer("Which trials evaluate trastuzumab labelled-I-124?", use_llm=False).evidence
++
++
++# Codex review m18: element names written out, and words that say "radiolabelled"
++def test_written_out_isotopes_and_labelling_words_refuse():
++    import app
++    e = app.Engine()
++    for t in ("trastuzumab radiolabelled with iodine-124", "iodine-124 trastuzumab",
++              "trastuzumab labeled with zirconium 89", "tritiated vinblastine",
++              "trastuzumab radiotracer"):
++        assert e.explore(t).get("refused"), t
++    assert not e.kg.answer("Which trials evaluate trastuzumab radiolabelled with iodine-124?",
++                           use_llm=False).evidence
++    for t, label in (("fluorine-18 fluorodeoxyglucose", "FLUDEOXYGLUCOSE F 18"),
++                     ("lead compound osimertinib", "OSIMERTINIB")):
++        assert e.explore(t)["center"]["label"] == label, t

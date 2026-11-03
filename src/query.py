@@ -175,16 +175,17 @@ def _item_has_isotope(words: tuple) -> bool:
     if _medical_isotope_in(T.canonical_key(" ".join(words)), one_letter=False):
         return True
     flat = [x.lower() for x in _alnum_words(" ".join(words))]
-    if any(x in _LABEL_WORDS or x.startswith(("radiolabel", "radioiod")) for x in flat):
+    # each word, and each neighbouring pair glued ("radio-labelled", "tri tiated")
+    joined = flat + [a + b for a, b in zip(flat, flat[1:])]
+    if any(x in _LABEL_WORDS or x.startswith(("radiolabel", "radioiod")) for x in joined):
         return True                          # "radiolabelled", "tritiated", "radiotracer"
-    # element names written out ("iodine-124", "124-iodine", "fluorine 18")
+    # element names written out, in either order ("iodine-124", "99m-technetium")
     for a, b in zip(flat, flat[1:]):
         for name, num in ((a, b), (b, a)):
             el = _ELEMENT_NAMES.get(name)
-            if el and num.isdigit() and int(num[:3]) in _MEDICAL_MASS.get(el, set()):
+            m = re.fullmatch(r"(\d{1,3})m?", num)
+            if el and m and int(m.group(1)) in _MEDICAL_MASS.get(el, set()):
                 return True
-        if a == "technetium" and b in ("99m", "99"):
-            return True
     for w in words:
         # the word as written, and its punctuation-separated pieces with each neighbouring
         # pair glued, so a boundary the punctuation marks is kept ("labelled-I-124")

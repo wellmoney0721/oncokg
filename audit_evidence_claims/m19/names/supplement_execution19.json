@@ -1,0 +1,22 @@
+[
+  {
+    "script": "m18_exact/supplement_replay.py",
+    "exit_code": 0,
+    "execution": "Direct shell execution; source text fields frozen from M18 JSON; 15 cases"
+  },
+  {
+    "script": "m18_exact/alias_variants.py",
+    "exit_code": 0,
+    "execution": "Direct shell execution; 428 variants; exact-input result comparison unchanged"
+  },
+  {
+    "script": "compare_replays.py",
+    "exit_code": 0,
+    "execution": "Re-run after m17_exact generation; 36 compared files, no semantic differences"
+  },
+  {
+    "script": "summary19.py",
+    "exit_code": 0,
+    "execution": "Final validated run; corrected an overbroad review assertion to distinguish refused cetuximab plus accepted YTTRIUM Y-90 from no-centre refusal"
+  }
+]

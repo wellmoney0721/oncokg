@@ -1,0 +1,529 @@
+{
+  "cases": 22,
+  "requests": 88,
+  "checks": {
+    "all_http_200": true,
+    "five_new_leaks": true,
+    "paired_controls_refuse": true,
+    "explicit_labelled_drug_survives": true,
+    "lead_compound_survives": true,
+    "known_unaccepted_supplements_leak": true,
+    "deterministic_no_model": true
+  },
+  "assertions_passed": true,
+  "rows": [
+    {
+      "input": "trastuzumab",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL1201585",
+      "trials": 13,
+      "refused": null,
+      "also": [],
+      "resolver_tiers": [
+        "EXACT"
+      ],
+      "trial_rows": 12,
+      "sponsor_rows": 12,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    },
+    {
+      "input": "radio-labelled trastuzumab",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL1201585",
+      "trials": 13,
+      "refused": null,
+      "also": [],
+      "resolver_tiers": [
+        "CONTAINED_ALIAS",
+        "UNRESOLVED"
+      ],
+      "trial_rows": 12,
+      "sponsor_rows": 12,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    },
+    {
+      "input": "radio-labeled trastuzumab",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL1201585",
+      "trials": 13,
+      "refused": null,
+      "also": [],
+      "resolver_tiers": [
+        "CONTAINED_ALIAS",
+        "UNRESOLVED"
+      ],
+      "trial_rows": 12,
+      "sponsor_rows": 12,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    },
+    {
+      "input": "radiolabelled trastuzumab",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": null,
+      "trials": null,
+      "refused": "trastuzumab",
+      "also": null,
+      "resolver_tiers": [
+        "CONTAINED_ALIAS",
+        "UNRESOLVED"
+      ],
+      "trial_rows": 0,
+      "sponsor_rows": 0,
+      "generated_by": [
+        "refusal (no supporting evidence)",
+        "refusal (no supporting evidence)"
+      ]
+    },
+    {
+      "input": "radiolabeled trastuzumab",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": null,
+      "trials": null,
+      "refused": "trastuzumab",
+      "also": null,
+      "resolver_tiers": [
+        "CONTAINED_ALIAS",
+        "UNRESOLVED"
+      ],
+      "trial_rows": 0,
+      "sponsor_rows": 0,
+      "generated_by": [
+        "refusal (no supporting evidence)",
+        "refusal (no supporting evidence)"
+      ]
+    },
+    {
+      "input": "trastuzumab radioactively labelled",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL1201585",
+      "trials": 13,
+      "refused": null,
+      "also": [],
+      "resolver_tiers": [
+        "CONTAINED_ALIAS",
+        "UNRESOLVED"
+      ],
+      "trial_rows": 12,
+      "sponsor_rows": 12,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    },
+    {
+      "input": "trastuzumab radiolabelled with iodine-124",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": null,
+      "trials": null,
+      "refused": "trastuzumab",
+      "also": null,
+      "resolver_tiers": [
+        "CONTAINED_ALIAS",
+        "UNRESOLVED"
+      ],
+      "trial_rows": 0,
+      "sponsor_rows": 0,
+      "generated_by": [
+        "refusal (no supporting evidence)",
+        "refusal (no supporting evidence)"
+      ]
+    },
+    {
+      "input": "99m-technetium trastuzumab",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL1201585",
+      "trials": 13,
+      "refused": null,
+      "also": [],
+      "resolver_tiers": [
+        "CONTAINED_ALIAS",
+        "UNRESOLVED"
+      ],
+      "trial_rows": 12,
+      "sponsor_rows": 12,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    },
+    {
+      "input": "technetium-99m trastuzumab",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": null,
+      "trials": null,
+      "refused": "trastuzumab",
+      "also": null,
+      "resolver_tiers": [
+        "CONTAINED_ALIAS",
+        "UNRESOLVED"
+      ],
+      "trial_rows": 0,
+      "sponsor_rows": 0,
+      "generated_by": [
+        "refusal (no supporting evidence)",
+        "refusal (no supporting evidence)"
+      ]
+    },
+    {
+      "input": "trastuzumab 99m-technetium",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL1201585",
+      "trials": 13,
+      "refused": null,
+      "also": [],
+      "resolver_tiers": [
+        "CONTAINED_ALIAS",
+        "UNRESOLVED"
+      ],
+      "trial_rows": 12,
+      "sponsor_rows": 12,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    },
+    {
+      "input": "trastuzumab technetium-99m",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": null,
+      "trials": null,
+      "refused": "trastuzumab",
+      "also": null,
+      "resolver_tiers": [
+        "CONTAINED_ALIAS",
+        "UNRESOLVED"
+      ],
+      "trial_rows": 0,
+      "sponsor_rows": 0,
+      "generated_by": [
+        "refusal (no supporting evidence)",
+        "refusal (no supporting evidence)"
+      ]
+    },
+    {
+      "input": "osimertinib, radio-labelled trastuzumab",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL3353410",
+      "trials": 79,
+      "refused": null,
+      "also": [
+        {
+          "id": "CHEMBL1201585",
+          "type": "Drug",
+          "label": "TRASTUZUMAB"
+        }
+      ],
+      "resolver_tiers": [
+        "EXACT",
+        "CONTAINED_ALIAS",
+        "UNRESOLVED"
+      ],
+      "trial_rows": 12,
+      "sponsor_rows": 12,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    },
+    {
+      "input": "radio-labelled trastuzumab, osimertinib",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL1201585",
+      "trials": 13,
+      "refused": null,
+      "also": [
+        {
+          "id": "CHEMBL3353410",
+          "type": "Drug",
+          "label": "OSIMERTINIB"
+        }
+      ],
+      "resolver_tiers": [
+        "CONTAINED_ALIAS",
+        "UNRESOLVED",
+        "EXACT"
+      ],
+      "trial_rows": 12,
+      "sponsor_rows": 12,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    },
+    {
+      "input": "fluorine-18 fluorodeoxyglucose",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL2030434",
+      "trials": 1,
+      "refused": null,
+      "also": [],
+      "resolver_tiers": [
+        "ALIAS"
+      ],
+      "trial_rows": 1,
+      "sponsor_rows": 1,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    },
+    {
+      "input": "lead compound osimertinib",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL3353410",
+      "trials": 79,
+      "refused": null,
+      "also": [],
+      "resolver_tiers": [
+        "CONTAINED_ALIAS",
+        "UNRESOLVED"
+      ],
+      "trial_rows": 12,
+      "sponsor_rows": 12,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    },
+    {
+      "input": "BKM120",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL2017974",
+      "trials": 3,
+      "refused": null,
+      "also": [],
+      "resolver_tiers": [
+        "ALIAS"
+      ],
+      "trial_rows": 3,
+      "sponsor_rows": 3,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    },
+    {
+      "input": "AZD9291",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL3353410",
+      "trials": 79,
+      "refused": null,
+      "also": [],
+      "resolver_tiers": [
+        "ALIAS"
+      ],
+      "trial_rows": 12,
+      "sponsor_rows": 12,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    },
+    {
+      "input": "osimertinib 80 mg",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL3353410",
+      "trials": 79,
+      "refused": null,
+      "also": [],
+      "resolver_tiers": [
+        "EXACT"
+      ],
+      "trial_rows": 12,
+      "sponsor_rows": 12,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    },
+    {
+      "input": "paclitaxel 2 cycles",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL428647",
+      "trials": 234,
+      "refused": null,
+      "also": [],
+      "resolver_tiers": [
+        "CONTAINED_ALIAS"
+      ],
+      "trial_rows": 12,
+      "sponsor_rows": 12,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    },
+    {
+      "input": "13-cis retinoic acid",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL38",
+      "trials": 7,
+      "refused": null,
+      "also": [],
+      "resolver_tiers": [
+        "ALIAS"
+      ],
+      "trial_rows": 7,
+      "sponsor_rows": 6,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    },
+    {
+      "input": "b.i.o.similar bevacizumab",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL1201583",
+      "trials": 122,
+      "refused": null,
+      "also": [],
+      "resolver_tiers": [
+        "CONTAINED_ALIAS",
+        "UNRESOLVED"
+      ],
+      "trial_rows": 12,
+      "sponsor_rows": 12,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    },
+    {
+      "input": "lip.osomal doxorubicin",
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "center": "CHEMBL53463",
+      "trials": 3,
+      "refused": null,
+      "also": [],
+      "resolver_tiers": [
+        "CONTAINED_ALIAS",
+        "UNRESOLVED"
+      ],
+      "trial_rows": 3,
+      "sponsor_rows": 3,
+      "generated_by": [
+        "deterministic template (no language model)",
+        "deterministic template (no language model)"
+      ]
+    }
+  ]
+}

@@ -437,3 +437,14 @@ def test_written_out_isotopes_and_labelling_words_refuse():
     for t, label in (("fluorine-18 fluorodeoxyglucose", "FLUDEOXYGLUCOSE F 18"),
                      ("lead compound osimertinib", "OSIMERTINIB")):
         assert e.explore(t)["center"]["label"] == label, t
+
+
+# Codex review m19
+def test_split_labelling_words_and_metastable_mass_first_refuse():
+    import app
+    e = app.Engine()
+    for t in ("radio-labelled trastuzumab", "radio labeled trastuzumab",
+              "trastuzumab labelled with 99m-technetium", "trastuzumab radio-iodinated"):
+        assert e.explore(t).get("refused"), t
+    for t in ("radiotherapy plus cisplatin", "cisplatin and radiation"):
+        assert e.explore(t)["center"]["label"] == "CISPLATIN", t

@@ -1,0 +1,21 @@
+{
+  "head": "c476d9d559ce5e723c6f5d91fad5e6c3599cfe93",
+  "fixed_point": "4bed79c1f170ebe1efa3d452ce4398cce17b2113",
+  "app_ui_diff": "git diff bfcb83d...HEAD -- src/app.py web/try.html",
+  "latest_diff": "git show HEAD -- src/query.py tests/test_app.py",
+  "repository_standards_files": [],
+  "governing_user_instructions": [
+    "Evidence-based independent review",
+    "No tracked file changes",
+    "All scratch output under m19",
+    "Historical findings FIXED / NOT FIXED"
+  ],
+  "documented_violations": [],
+  "bootstrap_issue_tracker": "Not performed: user audit-only scope excludes tracked setup writes",
+  "KOA_comparison": "Conditional on code changes; no application code changed",
+  "source_findings": [
+    "README.md:565 and README.ko.md:386 retain stale 317-test comments. App descriptions at 566 and 387 remain accurate.",
+    "Engine.ask explicitly sets use_llm=False at src/app.py:181.",
+    "Engine.explore read paths and markup escaping reviewed; no new DB/UI blocker found."
+  ]
+}

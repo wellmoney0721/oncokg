@@ -202,3 +202,12 @@ Stored-alias sweep: no change. Tests 345.
 | M18-B1 | "trastuzumab radiolabelled with iodine-124": element names written out | element names (iodine, fluorine, zirconium, lutetium, gallium, technetium-99m, ...) beside a medical mass, in either order, count as the isotope; words that say the substance is labelled ("radiolabelled", "tritiated", "radiotracer", "radioligand", "radiopharmaceutical", ...) refuse an unlabelled drug in the item |
 
 A drug whose own name carries the label is still allowed ("fluorine-18 fluorodeoxyglucose"). Stored-alias sweep: no change. Tests 346.
+
+## Round 19 (audit_evidence_claims/m19) — CHANGES REQUIRED
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M19-B1 | "radio-labelled trastuzumab" | labelling words are also checked on each neighbouring pair of words glued |
+| M19-B2 | "trastuzumab labelled with 99m-technetium" | a mass beside a written-out element may carry the metastable "m", in either order |
+
+"radiotherapy plus cisplatin" and "cisplatin and radiation" still draw cisplatin. Stored-alias sweep: no change. Tests 347.
