@@ -261,3 +261,12 @@ Stored-alias sweep: no change. Tests 351.
 | M24-S1 | "not covalently linked to DM1", "non-radio-immuno-conjugated", "osimertinib linked to resistance" refused | a negation covers the joining phrase it starts (three words); "linked to" an ordinary word is a relation, not a conjugate |
 
 Stored-alias sweep: no change. Tests 352.
+
+## Round 25 (audit_evidence_claims/m25) — CHANGES REQUIRED (two blockers)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M25-B1 | "trastuzumab not radiolabelled but conjugated to DM1": the three-word negation reached the later affirmative "conjugated" | a negation covers the one word it negates, carried on only through an adverb or a prefix piece (radio, immuno, ...) |
+| M25-B2 | "trastuzumab linked to a DM1 payload", "linked to polyethylene glycol": only the word right after "to" was tested | up to three words after to/with (articles skipped) are tested for a code or a reagent noun (polyethylene glycol, payload, dye, toxin, chelator, ...) |
+
+"osimertinib linked to drug resistance", "linked with poor prognosis" still draw the drug. Stored-alias sweep: no change. Tests 353.

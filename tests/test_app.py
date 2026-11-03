@@ -521,3 +521,18 @@ def test_plain_molecule_with_payload_letters_and_coupling_wording_refuse():
                      ("non-radio-immuno-conjugated trastuzumab", "TRASTUZUMAB"),
                      ("osimertinib linked to resistance", "OSIMERTINIB")):
         assert e.explore(t)["center"]["label"] == label, t
+
+
+# Codex review m25
+def test_negation_stops_at_its_word_and_named_reagents_after_an_article_refuse():
+    import app
+    e = app.Engine()
+    for t in ("trastuzumab not radiolabelled but conjugated to DM1",
+              "non-radioactive trastuzumab conjugated to DM1", "trastuzumab linked to a DM1 payload",
+              "irinotecan linked to polyethylene glycol"):
+        assert e.explore(t).get("refused"), t
+    for t, label in (("trastuzumab not covalently linked to DM1", "TRASTUZUMAB"),
+                     ("trastuzumab not chemically attached to IRDye800CW", "TRASTUZUMAB"),
+                     ("osimertinib linked to drug resistance", "OSIMERTINIB"),
+                     ("osimertinib linked with poor prognosis", "OSIMERTINIB")):
+        assert e.explore(t)["center"]["label"] == label, t

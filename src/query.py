@@ -236,6 +236,15 @@ def _payload_name(name: str) -> bool:
     return any(_PAYLOAD.fullmatch(w) for w in words[1:]) or "conjugate" in name.lower()
 
 
+# Prefix pieces a negation carries through ("non-radio-immuno-conjugated")
+_PIECES = {"radio", "immuno", "bio", "chemo", "photo", "nano"}
+# Nouns that name what a drug is joined to ("linked to polyethylene glycol")
+_REAGENTS = ("polyethylene", "glycol", "peg", "payload", "toxin", "dye", "fluoro", "fluoresc",
+             "chelat", "polymer", "nanoparticle", "liposom", "albumin", "biotin", "maytansin",
+             "auristatin", "peptide", "linker", "cytotox",
+             "radionuclid", "isotop", "dextran", "dendrimer", "micelle", "lipid")
+
+
 @functools.lru_cache(maxsize=4096)
 def _item_joined(words: tuple) -> bool:
     """Does this list item say the drug is conjugated or covalently linked to something?"""
@@ -244,23 +253,31 @@ def _item_joined(words: tuple) -> bool:
     negated: set = set()
     for i, x in enumerate(flat):
         if i and flat[i - 1] in _NOT_WORDS:
-            # the negation covers the joining phrase it starts ("not covalently linked",
-            # "non-radio-immuno-conjugated")
-            negated.update(range(i, i + 3))
+            # the negation covers the one word it negates, carried on through an adverb
+            # or a prefix piece ("not covalently linked", "non-radio-immuno-conjugated"),
+            # never across to a separate affirmative ("not radiolabelled but conjugated")
+            j = i
+            negated.add(j)
+            while j + 1 < len(flat) and (flat[j].endswith("ly") or flat[j] in _PIECES):
+                j += 1
+                negated.add(j)
         if i in negated:
             continue
         if x.startswith(_JOINED):
             return True
         if x == "linked":
             after = flat[i + 1:i + 4]
-            # "linked via a linker to", or "linked to DM1" (a code or a named reagent);
-            # not a relation in words ("osimertinib linked to resistance")
+            # "linked via a linker to", or "linked to (a) DM1 payload" (a code or a named
+            # reagent); not a relation in words ("osimertinib linked to resistance")
             if "via" in after or "linker" in after:
                 return True
-            if after[:1] in (["to"], ["with"]) and i + 2 < len(raw) and (
-                    re.search(r"\d", raw[i + 2]) or raw[i + 2].isupper()
-                    or re.search(r"[a-z][A-Z]", raw[i + 2])):
-                return True
+            if after[:1] in (["to"], ["with"]):
+                obj = [k for k in range(i + 2, min(len(raw), i + 6))
+                       if flat[k] not in ("a", "an", "the")][:3]
+                if any(re.search(r"\d", raw[k]) or re.search(r"[a-z][A-Z]", raw[k])
+                       or (raw[k].isupper() and len(raw[k]) > 1)
+                       or flat[k].startswith(_REAGENTS) for k in obj):
+                    return True
     return False
 
 
