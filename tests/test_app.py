@@ -506,3 +506,18 @@ def test_interior_symbol_isotopes_and_conjugates_refuse():
                      ("trastuzumab deruxtecan antibody-drug conjugate", "TRASTUZUMAB DERUXTECAN"),
                      ("Paclitaxel conjugate with poly-l-glutamic acid", "PACLITAXEL POLIGLUMEX")):
         assert e.explore(t)["center"]["label"] == label, t
+
+
+# Codex review m24
+def test_plain_molecule_with_payload_letters_and_coupling_wording_refuse():
+    import app
+    e = app.Engine()
+    for t in ("irinotecan conjugated to polyethylene glycol", "tasidotin conjugated to PEG",
+              "trastuzumab coupled to IRDye800CW", "trastuzumab linked via a linker to IRDye800CW",
+              "trastuzumab chemically attached to IRDye800CW"):
+        assert e.explore(t).get("refused"), t
+    for t, label in (("irinotecan", "IRINOTECAN"), ("etirinotecan pegol", "ETIRINOTECAN PEGOL"),
+                     ("trastuzumab not covalently linked to DM1", "TRASTUZUMAB"),
+                     ("non-radio-immuno-conjugated trastuzumab", "TRASTUZUMAB"),
+                     ("osimertinib linked to resistance", "OSIMERTINIB")):
+        assert e.explore(t)["center"]["label"] == label, t

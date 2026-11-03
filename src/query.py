@@ -222,25 +222,45 @@ def _negated_end(flat: list, i: int) -> int:
 
 # Words that say the drug is joined to something else (a dye, a payload): a distinct
 # product ("trastuzumab conjugated to DM1", "IRDye800CW-conjugated trastuzumab")
-_JOINED = ("conjugat", "covalently", "bioconjugat", "immunoconjugat")
-# Payload stems that mark a drug's own name as a conjugate (TRASTUZUMAB EMTANSINE)
-_PAYLOAD = re.compile(r"(tansine|tecan|dotin|ozogamicin|tesirine|duocarmazine|conjugate|"
-                      r"pegol|sudotox|aritox|pasudotox)", re.I)
+_JOINED = ("conjugat", "covalently", "bioconjugat", "immunoconjugat", "coupled", "coupling",
+           "attached", "tethered", "crosslinked", "chemically")
+# Payload words that mark a drug's own name as a conjugate (TRASTUZUMAB EMTANSINE,
+# ETIRINOTECAN PEGOL): a later word of a several-word name, never the molecule itself
+# (IRINOTECAN, TOPOTECAN, TASIDOTIN carry the same letters but are plain molecules)
+_PAYLOAD = re.compile(r"\w*(tansine|tecan|dotin|ozogamicin|tesirine|duocarmazine|pegol|"
+                      r"sudotox|aritox|pasudotox)|conjugate", re.I)
+
+
+def _payload_name(name: str) -> bool:
+    words = re.findall(r"[A-Za-z0-9]+", name or "")
+    return any(_PAYLOAD.fullmatch(w) for w in words[1:]) or "conjugate" in name.lower()
 
 
 @functools.lru_cache(maxsize=4096)
 def _item_joined(words: tuple) -> bool:
     """Does this list item say the drug is conjugated or covalently linked to something?"""
-    flat = [x.lower() for x in _alnum_words(" ".join(words))]
+    raw = _alnum_words(" ".join(words))
+    flat = [x.lower() for x in raw]
     negated: set = set()
     for i, x in enumerate(flat):
         if i and flat[i - 1] in _NOT_WORDS:
-            negated.add(i)
+            # the negation covers the joining phrase it starts ("not covalently linked",
+            # "non-radio-immuno-conjugated")
+            negated.update(range(i, i + 3))
         if i in negated:
             continue
-        if x.startswith(_JOINED) or (x == "linked" and i + 1 < len(flat)
-                                     and flat[i + 1] in ("to", "with")):
+        if x.startswith(_JOINED):
             return True
+        if x == "linked":
+            after = flat[i + 1:i + 4]
+            # "linked via a linker to", or "linked to DM1" (a code or a named reagent);
+            # not a relation in words ("osimertinib linked to resistance")
+            if "via" in after or "linker" in after:
+                return True
+            if after[:1] in (["to"], ["with"]) and i + 2 < len(raw) and (
+                    re.search(r"\d", raw[i + 2]) or raw[i + 2].isupper()
+                    or re.search(r"[a-z][A-Z]", raw[i + 2])):
+                return True
     return False
 
 
@@ -547,7 +567,7 @@ class OncoKG:
         # a joining word inside the matched name is the conjugate's own name
         # ("cbr96 - doxorubicin immunoconjugate"), so only the rest of the item counts
         if (_item_joined(tuple(tokens[k] for k in same if not a <= k < b))
-                and not _PAYLOAD.search(self.dic["drugs"][did]["name"])):
+                and not _payload_name(self.dic["drugs"][did]["name"])):
             return name
         # A one-letter element is left to the case-marked word check above: lower-case
         # chemistry ("13-cis retinoic acid") is not carbon-13.

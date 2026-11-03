@@ -251,3 +251,13 @@ A negation covers only the label word it negates ("non-labelled", "non-radio-lab
 | M23-D1 | "13-cis retinoic acid" draws TRETINOIN: an AACT synonym in the dictionary maps 13-cis-retinoic acid and isotretinoin to CHEMBL38 | data limitation, recorded; needs dictionary curation and remeasurement (owner's decision, with the bevacizumab synonyms) |
 
 Stored-alias sweep: no change. Tests 351.
+
+## Round 24 (audit_evidence_claims/m24) — CHANGES REQUIRED (two blockers)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M24-B1 | "irinotecan conjugated to polyethylene glycol": IRINOTECAN contains "tecan", so the payload exemption let it through (also topotecan, tasidotin) | a drug counts as the conjugate only when a later word of its name is a payload (TRASTUZUMAB EMTANSINE, ETIRINOTECAN PEGOL) or the name says conjugate |
+| M24-B2 | "trastuzumab coupled to IRDye800CW", "linked via a linker to", "chemically attached to" | coupled/coupling/attached/tethered/crosslinked/chemically; "linked" followed by via or linker, or "linked to/with" a code or named reagent (DM1, IRDye800CW, PEG) |
+| M24-S1 | "not covalently linked to DM1", "non-radio-immuno-conjugated", "osimertinib linked to resistance" refused | a negation covers the joining phrase it starts (three words); "linked to" an ordinary word is a relation, not a conjugate |
+
+Stored-alias sweep: no change. Tests 352.
