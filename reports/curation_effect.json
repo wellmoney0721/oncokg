@@ -1,0 +1,94 @@
+{
+  "what_this_measures": "the same corpus resolved twice -- once against the dictionary as the reference data supplies it, once after curation -- so the effect of curation is a measurement rather than a recollection",
+  "why_absolute_counts_differ_from_the_pipeline": "this pass resolves every intervention in the raw snapshot, while the pipeline first drops out-of-scope trials, so the absolute totals here run slightly higher than reports/evaluation_*.json. Both arms of this comparison use the identical corpus, so the before/after delta is unaffected",
+  "lookup_keys_ambiguous": {
+    "before": 338,
+    "after": 124
+  },
+  "resolutions_by_tier": {
+    "ALIAS": {
+      "before": 689,
+      "after": 710,
+      "delta": 21
+    },
+    "AMBIGUOUS": {
+      "before": 2193,
+      "after": 69,
+      "delta": -2124
+    },
+    "BLOCKED_CLASS_TERM": {
+      "before": 545,
+      "after": 545,
+      "delta": 0
+    },
+    "BLOCKED_DISTINCT_PRODUCT": {
+      "before": 75,
+      "after": 75,
+      "delta": 0
+    },
+    "BLOCKED_PLACEBO": {
+      "before": 195,
+      "after": 195,
+      "delta": 0
+    },
+    "BLOCKED_TARGET_TERM": {
+      "before": 7,
+      "after": 16,
+      "delta": 9
+    },
+    "CLEANED": {
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    "CONTAINED_ALIAS": {
+      "before": 135,
+      "after": 233,
+      "delta": 98
+    },
+    "EXACT": {
+      "before": 1997,
+      "after": 4056,
+      "delta": 2059
+    },
+    "FUZZY_AUTO": {
+      "before": 10,
+      "after": 16,
+      "delta": 6
+    },
+    "FUZZY_REVIEW": {
+      "before": 26,
+      "after": 30,
+      "delta": 4
+    },
+    "PARENTHETICAL": {
+      "before": 28,
+      "after": 32,
+      "delta": 4
+    },
+    "SALT_STRIPPED": {
+      "before": 9,
+      "after": 9,
+      "delta": 0
+    },
+    "UNRESOLVED": {
+      "before": 2494,
+      "after": 2471,
+      "delta": -23
+    }
+  },
+  "headline": {
+    "ambiguous_before": 2193,
+    "ambiguous_after": 69,
+    "exact_before": 1997,
+    "exact_after": 4056
+  },
+  "curation_findings_by_type": {
+    "distinct_product_alias": 7,
+    "placebo_string_in_synonym_list": 6,
+    "class_term_as_synonym": 134,
+    "cross_drug_synonym": 80,
+    "genuinely_ambiguous_alias": 124,
+    "parent_child_collapse": 78
+  }
+}

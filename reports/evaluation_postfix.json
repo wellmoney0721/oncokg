@@ -1,0 +1,215 @@
+{
+  "evaluated_on": "gold_postfix.csv",
+  "gold_sample_size": 58,
+  "tiers_carried_from_dev": [
+    "AMBIGUOUS",
+    "BLOCKED_TARGET_TERM",
+    "CLEANED",
+    "FUZZY_AUTO",
+    "FUZZY_REVIEW",
+    "SALT_STRIPPED"
+  ],
+  "per_tier": {
+    "ALIAS": {
+      "sampled": 10,
+      "correct": 10,
+      "rate": 1.0,
+      "ci95": [
+        0.7225,
+        1.0
+      ],
+      "population_unique": 523,
+      "population_occurrences": 698,
+      "source": "postfix sample"
+    },
+    "BLOCKED_CLASS_TERM": {
+      "sampled": 6,
+      "correct": 6,
+      "rate": 1.0,
+      "ci95": [
+        0.6097,
+        1.0
+      ],
+      "population_unique": 210,
+      "population_occurrences": 273,
+      "source": "postfix sample"
+    },
+    "BLOCKED_PLACEBO": {
+      "sampled": 4,
+      "correct": 3,
+      "rate": 0.75,
+      "ci95": [
+        0.3006,
+        0.9544
+      ],
+      "population_unique": 53,
+      "population_occurrences": 151,
+      "source": "postfix sample"
+    },
+    "CONTAINED_ALIAS": {
+      "sampled": 15,
+      "correct": 14,
+      "rate": 0.9333333333333333,
+      "ci95": [
+        0.7018,
+        0.9881
+      ],
+      "population_unique": 207,
+      "population_occurrences": 217,
+      "source": "postfix sample"
+    },
+    "EXACT": {
+      "sampled": 10,
+      "correct": 10,
+      "rate": 1.0,
+      "ci95": [
+        0.7225,
+        1.0
+      ],
+      "population_unique": 1410,
+      "population_occurrences": 3997,
+      "source": "postfix sample"
+    },
+    "PARENTHETICAL": {
+      "sampled": 3,
+      "correct": 3,
+      "rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ],
+      "population_unique": 23,
+      "population_occurrences": 31,
+      "source": "postfix sample"
+    },
+    "UNRESOLVED": {
+      "sampled": 10,
+      "correct": 10,
+      "rate": 1.0,
+      "ci95": [
+        0.7225,
+        1.0
+      ],
+      "population_unique": 1106,
+      "population_occurrences": 1226,
+      "source": "postfix sample"
+    },
+    "AMBIGUOUS": {
+      "sampled": 12,
+      "correct": 12,
+      "rate": 1.0,
+      "ci95": [
+        0.7575,
+        1.0
+      ],
+      "population_unique": 46,
+      "population_occurrences": 66,
+      "source": "development sample (no independent test rows available)"
+    },
+    "BLOCKED_TARGET_TERM": {
+      "sampled": 8,
+      "correct": 8,
+      "rate": 1.0,
+      "ci95": [
+        0.6756,
+        1.0
+      ],
+      "population_unique": 12,
+      "population_occurrences": 13,
+      "source": "development sample (no independent test rows available)"
+    },
+    "CLEANED": {
+      "sampled": 1,
+      "correct": 1,
+      "rate": 1.0,
+      "ci95": [
+        0.2065,
+        1.0
+      ],
+      "population_unique": 1,
+      "population_occurrences": 1,
+      "source": "development sample (no independent test rows available)"
+    },
+    "FUZZY_AUTO": {
+      "sampled": 16,
+      "correct": 11,
+      "rate": 0.6875,
+      "ci95": [
+        0.444,
+        0.8584
+      ],
+      "population_unique": 16,
+      "population_occurrences": 16,
+      "source": "development sample (no independent test rows available)"
+    },
+    "FUZZY_REVIEW": {
+      "sampled": 16,
+      "correct": 6,
+      "rate": 0.375,
+      "ci95": [
+        0.1848,
+        0.6136
+      ],
+      "population_unique": 14,
+      "population_occurrences": 16,
+      "source": "development sample (no independent test rows available)"
+    },
+    "SALT_STRIPPED": {
+      "sampled": 5,
+      "correct": 5,
+      "rate": 1.0,
+      "ci95": [
+        0.5655,
+        1.0
+      ],
+      "population_unique": 5,
+      "population_occurrences": 9,
+      "source": "development sample (no independent test rows available)"
+    }
+  },
+  "accepted_precision": {
+    "estimate": 0.9914,
+    "ci95": [
+      0.7149,
+      0.9978
+    ],
+    "method": "stratified estimate weighted by distinct resolutions per tier; interval propagated from per-tier Wilson bounds, not a normal approximation",
+    "weighted_over_tiers": [
+      "EXACT",
+      "ALIAS",
+      "CLEANED",
+      "SALT_STRIPPED",
+      "PARENTHETICAL",
+      "CONTAINED_ALIAS",
+      "FUZZY_AUTO"
+    ],
+    "caveat": "the sample is drawn by a disproportionate per-tier quota, so this reweighting is required; it is also what makes the figure higher than the raw rows, so read it next to raw_sample_precision below"
+  },
+  "raw_sample_precision": {
+    "accepted_rows_scored": 38,
+    "accepted_rows_correct": 37,
+    "rate": 0.9737,
+    "ci95": [
+      0.865,
+      0.9953
+    ],
+    "note": "the unweighted result over the rows a human actually read. 38 of the 58 rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 58, the precision denominator is 38 -- these are different numbers and quoting the first as the second overstates the evidence"
+  },
+  "coverage": {
+    "component_occurrences_total": 6788,
+    "component_occurrences_excluding_blocked": 6351,
+    "accepted_occurrences": 4969,
+    "resolved_rate_of_substance_like": 0.7824,
+    "resolved_rate_of_all": 0.732
+  },
+  "withheld_tier_quality": {
+    "FUZZY_REVIEW_would_have_been_correct": 0.375,
+    "reading": "most proposals held for review are wrong, which is the evidence that the automatic threshold is not set too low"
+  },
+  "limitations": [
+    "labels assigned by one reviewer (the pipeline author); no second annotator",
+    "FUZZY_AUTO, SALT_STRIPPED and CLEANED have so few distinct values that the development sample consumed all of them; their rates are carried over and are therefore optimistic, since the rules were tuned on exactly those rows",
+    "reference vocabulary is scoped to NSCLC drug candidates, so a correct refusal to resolve an out-of-scope drug counts as missing coverage, not as an error",
+    "sampling is stratified by tier, so tier-level rates are far more precise than the rare tiers' raw counts suggest, but tiers with very few distinct values still carry wide intervals"
+  ]
+}

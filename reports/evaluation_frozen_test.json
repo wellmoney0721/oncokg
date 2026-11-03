@@ -1,0 +1,213 @@
+{
+  "evaluated_on": "gold_test.csv",
+  "gold_sample_size": 172,
+  "tiers_carried_from_dev": [
+    "CLEANED",
+    "FUZZY_AUTO",
+    "FUZZY_REVIEW",
+    "SALT_STRIPPED"
+  ],
+  "per_tier": {
+    "ALIAS": {
+      "sampled": 30,
+      "correct": 28,
+      "rate": 0.9333333333333333,
+      "ci95": [
+        0.7868,
+        0.9815
+      ],
+      "population_unique": 523,
+      "population_occurrences": 698,
+      "source": "test sample"
+    },
+    "AMBIGUOUS": {
+      "sampled": 12,
+      "correct": 12,
+      "rate": 1.0,
+      "ci95": [
+        0.7575,
+        1.0
+      ],
+      "population_unique": 46,
+      "population_occurrences": 66,
+      "source": "test sample"
+    },
+    "BLOCKED_CLASS_TERM": {
+      "sampled": 8,
+      "correct": 8,
+      "rate": 1.0,
+      "ci95": [
+        0.6756,
+        1.0
+      ],
+      "population_unique": 210,
+      "population_occurrences": 273,
+      "source": "test sample"
+    },
+    "BLOCKED_PLACEBO": {
+      "sampled": 8,
+      "correct": 8,
+      "rate": 1.0,
+      "ci95": [
+        0.6756,
+        1.0
+      ],
+      "population_unique": 53,
+      "population_occurrences": 151,
+      "source": "test sample"
+    },
+    "BLOCKED_TARGET_TERM": {
+      "sampled": 4,
+      "correct": 4,
+      "rate": 1.0,
+      "ci95": [
+        0.5101,
+        1.0
+      ],
+      "population_unique": 12,
+      "population_occurrences": 13,
+      "source": "test sample"
+    },
+    "CONTAINED_ALIAS": {
+      "sampled": 30,
+      "correct": 27,
+      "rate": 0.9,
+      "ci95": [
+        0.7438,
+        0.9654
+      ],
+      "population_unique": 207,
+      "population_occurrences": 217,
+      "source": "test sample"
+    },
+    "EXACT": {
+      "sampled": 40,
+      "correct": 40,
+      "rate": 1.0,
+      "ci95": [
+        0.9124,
+        1.0
+      ],
+      "population_unique": 1410,
+      "population_occurrences": 3997,
+      "source": "test sample"
+    },
+    "PARENTHETICAL": {
+      "sampled": 15,
+      "correct": 10,
+      "rate": 0.6666666666666666,
+      "ci95": [
+        0.4171,
+        0.8482
+      ],
+      "population_unique": 23,
+      "population_occurrences": 31,
+      "source": "test sample"
+    },
+    "UNRESOLVED": {
+      "sampled": 25,
+      "correct": 24,
+      "rate": 0.96,
+      "ci95": [
+        0.8046,
+        0.9929
+      ],
+      "population_unique": 1106,
+      "population_occurrences": 1226,
+      "source": "test sample"
+    },
+    "CLEANED": {
+      "sampled": 1,
+      "correct": 1,
+      "rate": 1.0,
+      "ci95": [
+        0.2065,
+        1.0
+      ],
+      "population_unique": 1,
+      "population_occurrences": 1,
+      "source": "development sample (no independent test rows available)"
+    },
+    "FUZZY_AUTO": {
+      "sampled": 16,
+      "correct": 11,
+      "rate": 0.6875,
+      "ci95": [
+        0.444,
+        0.8584
+      ],
+      "population_unique": 16,
+      "population_occurrences": 16,
+      "source": "development sample (no independent test rows available)"
+    },
+    "FUZZY_REVIEW": {
+      "sampled": 16,
+      "correct": 6,
+      "rate": 0.375,
+      "ci95": [
+        0.1848,
+        0.6136
+      ],
+      "population_unique": 14,
+      "population_occurrences": 16,
+      "source": "development sample (no independent test rows available)"
+    },
+    "SALT_STRIPPED": {
+      "sampled": 5,
+      "correct": 5,
+      "rate": 1.0,
+      "ci95": [
+        0.5655,
+        1.0
+      ],
+      "population_unique": 5,
+      "population_occurrences": 9,
+      "source": "development sample (no independent test rows available)"
+    }
+  },
+  "accepted_precision": {
+    "estimate": 0.9688,
+    "ci95": [
+      0.8566,
+      0.9897
+    ],
+    "method": "stratified estimate weighted by distinct resolutions per tier; interval propagated from per-tier Wilson bounds, not a normal approximation",
+    "weighted_over_tiers": [
+      "EXACT",
+      "ALIAS",
+      "CLEANED",
+      "SALT_STRIPPED",
+      "PARENTHETICAL",
+      "CONTAINED_ALIAS",
+      "FUZZY_AUTO"
+    ],
+    "caveat": "the sample is drawn by a disproportionate per-tier quota, so this reweighting is required; it is also what makes the figure higher than the raw rows, so read it next to raw_sample_precision below"
+  },
+  "raw_sample_precision": {
+    "accepted_rows_scored": 115,
+    "accepted_rows_correct": 105,
+    "rate": 0.913,
+    "ci95": [
+      0.8473,
+      0.9521
+    ],
+    "note": "the unweighted result over the rows a human actually read. 115 of the 172 rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 172, the precision denominator is 115 -- these are different numbers and quoting the first as the second overstates the evidence"
+  },
+  "coverage": {
+    "component_occurrences_total": 6788,
+    "component_occurrences_excluding_blocked": 6351,
+    "accepted_occurrences": 4969,
+    "resolved_rate_of_substance_like": 0.7824,
+    "resolved_rate_of_all": 0.732
+  },
+  "withheld_tier_quality": {
+    "FUZZY_REVIEW_would_have_been_correct": 0.375,
+    "reading": "most proposals held for review are wrong, which is the evidence that the automatic threshold is not set too low"
+  },
+  "limitations": [
+    "labels assigned by one reviewer (the pipeline author); no second annotator",
+    "FUZZY_AUTO, SALT_STRIPPED and CLEANED have so few distinct values that the development sample consumed all of them; their rates are carried over and are therefore optimistic, since the rules were tuned on exactly those rows",
+    "reference vocabulary is scoped to NSCLC drug candidates, so a correct refusal to resolve an out-of-scope drug counts as missing coverage, not as an error",
+    "sampling is stratified by tier, so tier-level rates are far more precise than the rare tiers' raw counts suggest, but tiers with very few distinct values still carry wide intervals"
+  ]
+}
