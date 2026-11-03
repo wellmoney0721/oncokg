@@ -1,0 +1,766 @@
+[
+  {
+    "tag": "dedup",
+    "question": "What does osimertinib target?",
+    "answer": "osimertinib is safe. osimertinib is safe for all.",
+    "units": [
+      [
+        0,
+        "osimertinib is safe."
+      ],
+      [
+        0,
+        "osimertinib is safe for all."
+      ]
+    ],
+    "raw_claims": [
+      {
+        "kind": "wording",
+        "value": "safe",
+        "sentence": "osimertinib is safe.",
+        "why": "this word makes a claim no evidence statement about the sentence's entities supports"
+      },
+      {
+        "kind": "wording",
+        "value": "safe",
+        "sentence": "osimertinib is safe for all.",
+        "why": "this word makes a claim no evidence statement about the sentence's entities supports"
+      }
+    ],
+    "result": {
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "wording",
+            "value": "safe",
+            "sentence": "osimertinib is safe.",
+            "why": "this word makes a claim no evidence statement about the sentence's entities supports"
+          }
+        ],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    }
+  },
+  {
+    "tag": "inheritance_same_line",
+    "question": "What trials evaluate Tagrisso?",
+    "answer": "NCT03909334 is ACTIVE_NOT_RECRUITING. It is recruiting.",
+    "units": [
+      [
+        0,
+        "NCT03909334 is ACTIVE_NOT_RECRUITING."
+      ],
+      [
+        0,
+        "It is recruiting."
+      ]
+    ],
+    "raw_claims": [
+      {
+        "kind": "wording",
+        "value": "recruiting",
+        "sentence": "It is recruiting.",
+        "why": "this word makes a claim no evidence statement about the sentence's entities supports"
+      }
+    ],
+    "result": {
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Tagrisso",
+          "matched_alias": "Tagrisso"
+        }
+      ],
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "wording",
+            "value": "recruiting",
+            "sentence": "It is recruiting.",
+            "why": "this word makes a claim no evidence statement about the sentence's entities supports"
+          }
+        ],
+        "evidence_count": 12,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT03909334",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT03909334"
+        },
+        {
+          "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT07680790",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT07680790"
+        },
+        {
+          "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT02411448",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT02411448"
+        },
+        {
+          "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT04285671",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT04285671"
+        },
+        {
+          "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT04141644",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT04141644"
+        },
+        {
+          "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+          "source_record": "NCT03535363",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT03535363"
+        },
+        {
+          "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT04487080",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT04487080"
+        },
+        {
+          "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT07738172",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT07738172"
+        }
+      ],
+      "evidence_count": 12
+    }
+  },
+  {
+    "tag": "inheritance_new_line",
+    "question": "What trials evaluate Tagrisso?",
+    "answer": "NCT03909334 is ACTIVE_NOT_RECRUITING.\nIt is recruiting.",
+    "units": [
+      [
+        0,
+        "NCT03909334 is ACTIVE_NOT_RECRUITING."
+      ],
+      [
+        1,
+        "It is recruiting."
+      ]
+    ],
+    "raw_claims": [
+      {
+        "kind": "wording",
+        "value": "recruiting",
+        "sentence": "It is recruiting.",
+        "why": "this word makes a claim no evidence statement about the sentence's entities supports"
+      }
+    ],
+    "result": {
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Tagrisso",
+          "matched_alias": "Tagrisso"
+        }
+      ],
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "wording",
+            "value": "recruiting",
+            "sentence": "It is recruiting.",
+            "why": "this word makes a claim no evidence statement about the sentence's entities supports"
+          }
+        ],
+        "evidence_count": 12,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT03909334",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT03909334"
+        },
+        {
+          "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT07680790",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT07680790"
+        },
+        {
+          "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT02411448",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT02411448"
+        },
+        {
+          "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT04285671",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT04285671"
+        },
+        {
+          "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT04141644",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT04141644"
+        },
+        {
+          "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+          "source_record": "NCT03535363",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT03535363"
+        },
+        {
+          "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT04487080",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT04487080"
+        },
+        {
+          "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT07738172",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT07738172"
+        }
+      ],
+      "evidence_count": 12
+    }
+  },
+  {
+    "tag": "missing_relation_arguments",
+    "question": "What does osimertinib target?",
+    "answer": "osimertinib is a drug. It sponsors EGFR.",
+    "units": [
+      [
+        0,
+        "osimertinib is a drug."
+      ],
+      [
+        0,
+        "It sponsors EGFR."
+      ]
+    ],
+    "raw_claims": [],
+    "result": {
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    }
+  },
+  {
+    "tag": "missing_relation_arguments_new_line",
+    "question": "What does osimertinib target?",
+    "answer": "osimertinib is a drug.\nIt sponsors EGFR.",
+    "units": [
+      [
+        0,
+        "osimertinib is a drug."
+      ],
+      [
+        1,
+        "It sponsors EGFR."
+      ]
+    ],
+    "raw_claims": [],
+    "result": {
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    }
+  },
+  {
+    "tag": "non_negation",
+    "question": "What does osimertinib target?",
+    "answer": "osimertinib is non-inhibiting EGFR.",
+    "units": [
+      [
+        0,
+        "osimertinib is non-inhibiting EGFR."
+      ]
+    ],
+    "raw_claims": [],
+    "result": {
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    }
+  },
+  {
+    "tag": "non_negation_trial",
+    "question": "What trials evaluate Tagrisso?",
+    "answer": "NCT07680790 is non-recruiting.",
+    "units": [
+      [
+        0,
+        "NCT07680790 is non-recruiting."
+      ]
+    ],
+    "raw_claims": [],
+    "result": {
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Tagrisso",
+          "matched_alias": "Tagrisso"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT03909334",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT03909334"
+        },
+        {
+          "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT07680790",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT07680790"
+        },
+        {
+          "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT02411448",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT02411448"
+        },
+        {
+          "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT04285671",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT04285671"
+        },
+        {
+          "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT04141644",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT04141644"
+        },
+        {
+          "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+          "source_record": "NCT03535363",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT03535363"
+        },
+        {
+          "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT04487080",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT04487080"
+        },
+        {
+          "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT07738172",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT07738172"
+        }
+      ],
+      "evidence_count": 12
+    }
+  },
+  {
+    "tag": "phase_suffix",
+    "question": "What trials evaluate Tagrisso?",
+    "answer": "NCT07680790 is phase 3b.",
+    "units": [
+      [
+        0,
+        "NCT07680790 is phase 3b."
+      ]
+    ],
+    "raw_claims": [],
+    "result": {
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Tagrisso",
+          "matched_alias": "Tagrisso"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT03909334",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT03909334"
+        },
+        {
+          "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT07680790",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT07680790"
+        },
+        {
+          "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT02411448",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT02411448"
+        },
+        {
+          "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT04285671",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT04285671"
+        },
+        {
+          "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT04141644",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT04141644"
+        },
+        {
+          "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+          "source_record": "NCT03535363",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT03535363"
+        },
+        {
+          "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT04487080",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT04487080"
+        },
+        {
+          "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+          "source_record": "NCT07738172",
+          "source": "clinicaltrials.gov",
+          "url": "https://clinicaltrials.gov/study/NCT07738172"
+        }
+      ],
+      "evidence_count": 12
+    }
+  },
+  {
+    "tag": "clinical_grammar",
+    "question": "What does osimertinib target?",
+    "answer": "osimertinib is an EGFR inhibitor. the inhibitor acts on all cancer.",
+    "units": [
+      [
+        0,
+        "osimertinib is an EGFR inhibitor."
+      ],
+      [
+        0,
+        "the inhibitor acts on all cancer."
+      ]
+    ],
+    "raw_claims": [],
+    "result": {
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    }
+  },
+  {
+    "tag": "quoted_developing",
+    "question": "Which companies are developing osimertinib?",
+    "answer": "AstraZeneca is developing the drug osimertinib.",
+    "units": [
+      [
+        0,
+        "AstraZeneca is developing the drug osimertinib."
+      ]
+    ],
+    "raw_claims": [],
+    "result": {
+      "intent": "companies_for_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT01802632, NCT02143466, NCT02224053",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT03810807, NCT06741085, NCT07535437",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "National Cancer Institute (nih sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT03191149, NCT03831932, NCT04181060",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Bristol Myers Squibb (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT06618287, NCT07680790",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Eli Lilly (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT02411448, NCT02789345",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "M D Anderson Cancer Center (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT04479306, NCT05017025",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT04425681, NCT06557096",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Shanghai Jmt-bio (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT06391944, NCT06735391",
+          "source": "derived",
+          "url": null
+        }
+      ],
+      "evidence_count": 12
+    }
+  },
+  {
+    "tag": "quoted_development_evidence",
+    "question": "Which companies are developing osimertinib?",
+    "answer": "AstraZeneca has evidence of developing osimertinib.",
+    "units": [
+      [
+        0,
+        "AstraZeneca has evidence of developing osimertinib."
+      ]
+    ],
+    "raw_claims": [],
+    "result": {
+      "intent": "companies_for_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT01802632, NCT02143466, NCT02224053",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT03810807, NCT06741085, NCT07535437",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "National Cancer Institute (nih sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT03191149, NCT03831932, NCT04181060",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Bristol Myers Squibb (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT06618287, NCT07680790",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Eli Lilly (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT02411448, NCT02789345",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "M D Anderson Cancer Center (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT04479306, NCT05017025",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT04425681, NCT06557096",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Shanghai Jmt-bio (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT06391944, NCT06735391",
+          "source": "derived",
+          "url": null
+        }
+      ],
+      "evidence_count": 12
+    }
+  }
+]

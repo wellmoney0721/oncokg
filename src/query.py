@@ -306,9 +306,12 @@ class OncoKG:
                 trials = self.conn.execute(
                     "SELECT COUNT(*) FROM edge WHERE rel='EVALUATES' AND dst=?"
                     " AND retired_at IS NULL", (r["did"],)).fetchone()[0]
+                p = json.loads(r["props"])
+                act = (p.get("action_type") or "").lower()
                 ev.append(Evidence(
                     statement=f"{r['drug']} acts on {target['label']}"
-                              f" (max stage {dp.get('max_phase_overall') or 'n/a'};"
+                              f" ({act + '; ' if act else ''}"
+                              f"max stage {dp.get('max_phase_overall') or 'n/a'};"
                               f" {trials} NSCLC trial(s) in this graph)",
                     edge_id=r["id"], relation="ACTS_ON", source="Open Targets / ChEMBL",
                     source_record=r["source_record"], fetched_at=r["source_fetched_at"],
@@ -489,13 +492,20 @@ class OncoKG:
 
         unsupported: list[dict] = []
 
+        def alias_in_evidence(word: str) -> bool:
+            if linker is None:
+                return False
+            return any(e.get("type") in ("Drug", "Target", "Company")
+                       and e["label"].lower() in haystack for e in linker(word))
+
         # "phase 3" is stated as PHASE3 in the evidence, so a phase number is
         # matched against that form, not against the bare figures
         haystack_flat = re.sub(r"[\s_\-]+", "", haystack)
-        phase_nums = {m.group(1) for m in re.finditer(r"\bphase\s*(\d)\b", text, re.I)}
+        phase_nums = {n for m in re.finditer(r"\bphase\s*(\d)(?:\s*/\s*(\d))?\b", text, re.I)
+                      for n in m.groups() if n}
         for num in set(RE_NUMBER.findall(text)):
-            if num in phase_nums and f"phase{num}" in haystack_flat:
-                continue
+            if num in phase_nums and (linker is not None or f"phase{num}" in haystack_flat):
+                continue      # with a linker, claims.py checks the phase per entity
             if num.replace(",", "") not in haystack_numbers:
                 unsupported.append({"kind": "number", "value": num,
                                     "why": "not present in the retrieved evidence"})
@@ -509,9 +519,10 @@ class OncoKG:
 
         capitalised = set(re.findall(r"\b[A-Z][A-Za-z0-9\-]{3,}\b", text))
         stop = {"Scope", "Organisations", "Trials", "Profile", "Findings",
-                "Agents", "Reported", "This", "The", "None", "NSCLC", "What"}
+                "Agents", "Reported", "This", "The", "None", "NSCLC", "What",
+                "There", "These", "That", "Those", "According", "Sponsors"}
         for name in capitalised - stop:
-            if name.lower() not in haystack:
+            if name.lower() not in haystack and not alias_in_evidence(name):
                 unsupported.append({"kind": "entity", "value": name,
                                     "why": "named in the answer but not in the evidence"})
 
@@ -519,7 +530,8 @@ class OncoKG:
         # passed the capitalised-only check). Anything shaped like an INN or a
         # development code must appear in the evidence too.
         for name in set(RE_DRUGLIKE.findall(text)):
-            if name.lower() not in haystack_tokens and name.lower() not in haystack:
+            if (name.lower() not in haystack_tokens and name.lower() not in haystack
+                    and not alias_in_evidence(name)):
                 unsupported.append({"kind": "drug_like_name", "value": name,
                                     "why": "looks like a drug name or code but "
                                            "is not in the evidence"})
@@ -528,7 +540,8 @@ class OncoKG:
         # whatever its shape, and must be in the evidence.
         if vocabulary:
             for w in set(re.findall(r"[A-Za-z][A-Za-z0-9\-]{3,}", text)):
-                if T.canonical_key(w) in vocabulary and w.lower() not in haystack:
+                if (T.canonical_key(w) in vocabulary and w.lower() not in haystack
+                        and not alias_in_evidence(w)):
                     unsupported.append({"kind": "drug_name", "value": w,
                                         "why": "a known drug name not in the evidence"})
 
@@ -544,8 +557,9 @@ class OncoKG:
 
         # one finding per value, first reason kept, in a stable order
         seen_values: set[str] = set()
-        unsupported = [u for u in sorted(unsupported, key=lambda u: (u["value"], u["kind"]))
-                       if not (u["value"] in seen_values or seen_values.add(u["value"]))]
+        key = lambda u: (str(u["value"]), u.get("sentence", ""))
+        unsupported = [u for u in sorted(unsupported, key=lambda u: (*key(u), u["kind"]))
+                       if not (key(u) in seen_values or seen_values.add(key(u)))]
 
         return {
             "grounded": not unsupported,
