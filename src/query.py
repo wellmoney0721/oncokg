@@ -244,7 +244,9 @@ _PAYLOAD_CODES = {"dm1", "dm4", "mmae", "mmaf", "sn38", "dxd", "pbd", "peg", "do
 _FOCUS = {"only", "merely", "solely", "exclusively", "just", "simply", "purely"}
 # Named dye families ("Alexa Fluor 488", "TAMRA", "BODIPY", "DyLight 650", "Texas Red")
 _DYE_STEMS = ("irdye", "alexa", "dylight", "bodipy", "tamra", "tritc", "texasred", "fluorescein",
-              "phycoerythrin", "allophycocyanin", "sulfocy", "quantumdot", "qdot")
+              "phycoerythrin", "allophycocyanin", "sulfocy", "quantumdot", "qdot",
+              "pacificblue", "pacificorange", "oregongreen", "cascadeblue", "brilliantviolet",
+              "streptavidin", "avidin", "neutravidin")
 # Prefix pieces a negation carries through ("non-radio-immuno-conjugated")
 _PIECES = {"radio", "immuno", "bio", "chemo", "photo", "nano"}
 # Nouns that name what a drug is joined to ("linked to polyethylene glycol")
@@ -259,7 +261,21 @@ def _names_reagent(flat: list) -> bool:
     neighbouring pair glued, so a hyphenated code counts ("SN-38", "DM-1", "Texas Red")."""
     pieces = flat + [a + b for a, b in zip(flat, flat[1:])]
     return any(x.startswith(_REAGENTS) or x in _PAYLOAD_CODES or x.startswith(_DYE_STEMS)
-               or re.fullmatch(r"(cy|atto|dy|af)\d{1,4}", x) for x in pieces)
+               or re.fullmatch(r"(cy|atto|dy|af|cf|bv|alexa|alexafluor)\d{1,4}[a-z0-9]{0,3}", x)
+               for x in pieces)
+
+
+# What may stand beside a conjugate's own name without describing a further modification
+_ADC_WORDS = {"antibody", "drug", "conjugate", "conjugates", "adc", "adcs", "immunoconjugate",
+              "a", "an", "the", "is", "as", "this", "of", "and", "or"}
+
+
+@functools.lru_cache(maxsize=4096)
+def _beyond_adc_words(words: tuple) -> bool:
+    """A named conjugate with a joining word beside it: fine for "antibody-drug conjugate",
+    a further modification for anything else ("... conjugated to ATTO 647N", "... to
+    streptavidin") — the partner need not be a known reagent."""
+    return any(x.lower() not in _ADC_WORDS for x in _alnum_words(" ".join(words)))
 
 
 @functools.lru_cache(maxsize=4096)
@@ -606,7 +622,7 @@ class OncoKG:
         # Fluor 488", "... conjugated to polyethylene glycol")
         rest = tuple(tokens[k] for k in same if not a <= k < b)
         if _item_joined(rest) and (not _payload_name(self.dic["drugs"][did]["name"])
-                                   or _item_reagent(rest)):
+                                   or _item_reagent(rest) or _beyond_adc_words(rest)):
             return name
         # A one-letter element is left to the case-marked word check above: lower-case
         # chemistry ("13-cis retinoic acid") is not carbon-13.

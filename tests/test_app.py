@@ -576,3 +576,16 @@ def test_focus_words_in_label_guard_dye_codes_and_extra_modification_of_an_adc()
     for t, label in (("trastuzumab not radiolabelled", "TRASTUZUMAB"),
                      ("trastuzumab deruxtecan antibody-drug conjugate", "TRASTUZUMAB DERUXTECAN")):
         assert e.explore(t)["center"]["label"] == label, t
+
+
+# Codex review m29 (partial: stopped at model capacity; attacks/assertions.json is the record)
+def test_suffixed_dye_codes_and_any_further_partner_of_a_named_adc_refuse():
+    import app
+    e = app.Engine()
+    for t in ("trastuzumab linked to ATTO 647N", "Cy3B linked to trastuzumab",
+              "trastuzumab linked to CF488A", "trastuzumab linked to Pacific Blue",
+              "trastuzumab emtansine conjugated to streptavidin",
+              "trastuzumab deruxtecan conjugated to Cy3B"):
+        assert e.explore(t).get("refused"), t
+    assert (e.explore("trastuzumab emtansine is an antibody drug conjugate")["center"]["label"]
+            == "TRASTUZUMAB EMTANSINE")

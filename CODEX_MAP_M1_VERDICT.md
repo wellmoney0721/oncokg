@@ -299,3 +299,12 @@ Stored-alias sweep: no change. Tests 354.
 | M28-B3 | "trastuzumab emtansine linked to Alexa Fluor 488", "... conjugated to polyethylene glycol": the conjugate's own name exempted any further modification | a drug whose name is the conjugate keeps "antibody-drug conjugate", but a dye or carrier named outside its name refuses it |
 
 Known over-refusal (recorded): a conjugate named with its own payload spelled out beside it ("trastuzumab emtansine antibody drug conjugate with DM1 payload"). Stored-alias sweep: no change. Tests 356.
+
+## Round 29 (audit_evidence_claims/m29) — incomplete (Codex stopped at model capacity before REPORT.md); its recorded leaks repaired
+
+| # | Finding (attacks/assertions.json, FINDINGS.md) | Repair |
+| --- | --- | --- |
+| M29-B1 | "trastuzumab linked to ATTO 647N", "Cy3B", "DY-647P1", "CF488A", "Pacific Blue" (both orders) | dye codes may carry a letter suffix (cy/atto/dy/af/cf/bv + number + up to three letters or digits); Pacific Blue, Oregon Green, Cascade Blue, Brilliant Violet; streptavidin/avidin |
+| M29-B2 | "trastuzumab emtansine conjugated to ATTO 647N / streptavidin", "trastuzumab deruxtecan conjugated to Cy3B" | beside a named conjugate, a joining word refuses unless every other word is an ADC descriptor (antibody, drug, conjugate, ADC, articles) — the partner need not be a known reagent |
+
+Stored-alias sweep: no change. Tests 357.
