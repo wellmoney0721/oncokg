@@ -1,0 +1,416 @@
+{
+  "setup": "isolated in-memory X:Target -> ASSOCIATED_WITH -> Y:Disease, no disk DB mutations",
+  "cases": [
+    {
+      "score": true,
+      "baseline": [
+        {
+          "text": "X",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "out",
+                "type": "Disease",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "Y",
+                    "type": "Disease",
+                    "label": "Fixture disease",
+                    "edge_id": "A",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "Y",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "Y",
+              "type": "Disease",
+              "label": "Fixture disease",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "in",
+                "type": "Target",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "X",
+                    "type": "Target",
+                    "label": "Fixture target",
+                    "edge_id": "A",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "HEAD": [
+        {
+          "text": "X",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "out",
+                "type": "Disease",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "Y",
+                    "type": "Disease",
+                    "label": "Fixture disease",
+                    "edge_id": "A",
+                    "score": null,
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "Y",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "Y",
+              "type": "Disease",
+              "label": "Fixture disease",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "in",
+                "type": "Target",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "X",
+                    "type": "Target",
+                    "label": "Fixture target",
+                    "edge_id": "A",
+                    "score": null,
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "score": false,
+      "baseline": [
+        {
+          "text": "X",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "out",
+                "type": "Disease",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "Y",
+                    "type": "Disease",
+                    "label": "Fixture disease",
+                    "edge_id": "A",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "Y",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "Y",
+              "type": "Disease",
+              "label": "Fixture disease",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "in",
+                "type": "Target",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "X",
+                    "type": "Target",
+                    "label": "Fixture target",
+                    "edge_id": "A",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "HEAD": [
+        {
+          "text": "X",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "out",
+                "type": "Disease",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "Y",
+                    "type": "Disease",
+                    "label": "Fixture disease",
+                    "edge_id": "A",
+                    "score": null,
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "Y",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "Y",
+              "type": "Disease",
+              "label": "Fixture disease",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "in",
+                "type": "Target",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "X",
+                    "type": "Target",
+                    "label": "Fixture target",
+                    "edge_id": "A",
+                    "score": null,
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "score": 0.8883707400322897,
+      "baseline": [
+        {
+          "text": "X",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "out",
+                "type": "Disease",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "Y",
+                    "type": "Disease",
+                    "label": "Fixture disease",
+                    "edge_id": "A",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "Y",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "Y",
+              "type": "Disease",
+              "label": "Fixture disease",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "in",
+                "type": "Target",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "X",
+                    "type": "Target",
+                    "label": "Fixture target",
+                    "edge_id": "A",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "HEAD": [
+        {
+          "text": "X",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "out",
+                "type": "Disease",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "Y",
+                    "type": "Disease",
+                    "label": "Fixture disease",
+                    "edge_id": "A",
+                    "score": 0.8883707400322897,
+                    "weight": 0.8883707400322897
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "Y",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "Y",
+              "type": "Disease",
+              "label": "Fixture disease",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ASSOCIATED_WITH",
+                "dir": "in",
+                "type": "Target",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "X",
+                    "type": "Target",
+                    "label": "Fixture target",
+                    "edge_id": "A",
+                    "score": 0.8883707400322897,
+                    "weight": 0.8883707400322897
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "current_score_json_types": [
+    [
+      "real",
+      300
+    ]
+  ]
+}

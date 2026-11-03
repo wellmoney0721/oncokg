@@ -1,0 +1,2641 @@
+[
+  {
+    "input": "Which trials evaluate osimertinib with generic version of bevacizumab?",
+    "current": {
+      "question": "Which trials evaluate osimertinib with generic version of bevacizumab?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "osimertinib with generic version",
+          "matched_text": "osimertinib with generic version",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "bevacizumab",
+          "matched_alias": "BEVACIZUMAB"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00955305]\n  - NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00445848]\n  - NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB [NCT03616691]\n  - NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00531960]\n  - NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB [NCT03390686]\n  - NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT01057212]\n  - NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB [NCT06400472]\n  - NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00271505]\n  - NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00251524]\n  - NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00741195]\n  - NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00976677]\n  - NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00101348]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00955305|EVALUATES|CHEMBL1201583|NCT00955305",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00955305",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00955305",
+          "stated_intervention": "Bevacizumab",
+          "title": "Paclitaxel, Carboplatin, and Bevacizumab With or Without Cixutumumab in Treating Patients With Stage IV or Recurrent Non-small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00445848|EVALUATES|CHEMBL1201583|NCT00445848",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00445848",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00445848",
+          "stated_intervention": "bevacizumab",
+          "title": "S0636: Erlotinib and Bevacizumab in Never-Smokers With Stage IIIB or Stage IV Primary Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT03616691|EVALUATES|CHEMBL1201583|NCT03616691",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03616691",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03616691",
+          "stated_intervention": "Bevacizumab",
+          "title": "Atezolizumab Monotherapy and Consequent Therapy With Atezolizumab Plus Bevacizumab for NSCLC",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00531960|EVALUATES|CHEMBL1201583|NCT00531960",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00531960",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00531960",
+          "stated_intervention": "Bevacizumab",
+          "title": "A Study of Tarceva (Erlotinib) in Combination With Avastin (Bevacizumab) in Patients With Advanced Non-Small Cell Lung Cancer.",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT03390686|EVALUATES|CHEMBL1201583|NCT03390686",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03390686",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03390686",
+          "stated_intervention": "Bevacizumab",
+          "title": "A Trial to Compare the Efficacy, Safety, Pharmacokinetics and Immunogenicity of HD204 to Avastin® in Advanced Non-squamous Non-small Cell Lung Cancer Patients",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01057212|EVALUATES|CHEMBL1201583|NCT01057212",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01057212",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01057212",
+          "stated_intervention": "bevacizumab",
+          "title": "Trial of Bevacizumab and Ixabepilone for Advanced or Metastatic Non-small Cell Lung Cancer (NSCLC)",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT06400472|EVALUATES|CHEMBL1201583|NCT06400472",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT06400472",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT06400472",
+          "stated_intervention": "bevacizumab",
+          "title": "A Study of Sofe-M in Participants With Selected Advanced Solid Tumors",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00271505|EVALUATES|CHEMBL1201583|NCT00271505",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00271505",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00271505",
+          "stated_intervention": "Bevacizumab (Avastin)",
+          "title": "Avastin/Docetaxel/Carboplatin in Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00251524|EVALUATES|CHEMBL1201583|NCT00251524",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00251524",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00251524",
+          "stated_intervention": "Bevacizumab, Oxaliplatin, Pemetrexed",
+          "title": "A Phase II Study of Eloxatin and Alimta in Combination With Bevacizumab in Advanced Non-Squamous NSCLC",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00741195|EVALUATES|CHEMBL1201583|NCT00741195",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00741195",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00741195",
+          "stated_intervention": "Bevacizumab",
+          "title": "Docetaxel Plus Bevacizumab in Metastatic Non Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00976677|EVALUATES|CHEMBL1201583|NCT00976677",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00976677",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00976677",
+          "stated_intervention": "bevacizumab",
+          "title": "Carboplatin, Paclitaxel, and Bevacizumab With or Without Erlotinib Hydrochloride in Treating Non-Smokers With Advanced Non-Small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00101348|EVALUATES|CHEMBL1201583|NCT00101348",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00101348",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00101348",
+          "stated_intervention": "bevacizumab",
+          "title": "Erlotinib and Cetuximab With or Without Bevacizumab in Treating Patients With Metastatic or Unresectable Kidney, Colorectal, Head and Neck, Pancreatic, or Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        }
+      ]
+    },
+    "previous": {
+      "question": "Which trials evaluate osimertinib with generic version of bevacizumab?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "generic version of bevacizumab",
+          "matched_text": "generic version of bevacizumab",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT03909334]\n  - NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB [NCT07680790]\n  - NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT02411448]\n  - NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04285671]\n  - NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04141644]\n  - NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT03535363]\n  - NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04487080]\n  - NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB [NCT07738172]\n  - NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT04541407]\n  - NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB [NCT04772235]\n  - NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB [NCT05011487]\n  - NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT04479306]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03909334",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03909334",
+          "stated_intervention": "Osimertinib",
+          "title": "Study of Osimertinib With and Without Ramucirumab in Locally Advanced or Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT07680790",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT07680790",
+          "stated_intervention": "Osimertinib",
+          "title": "Study of Izalontamab Brengitecan (BMS-986507) in Combination With Osimertinib Versus Osimertinib Monotherapy or Osimertinib in Combination With Platinum-based Chemotherapy for EGFRmt Non-small Cell Lung Cancer (IZABRIGHT-Lung02)",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT02411448",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT02411448",
+          "stated_intervention": "Osimertinib",
+          "title": "A Study of Ramucirumab (LY3009806) in Combination With Erlotinib in Previously Untreated Participants With EGFR Mutation-Positive Metastatic NSCLC (RELAY)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04285671",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04285671",
+          "stated_intervention": "Osimertinib",
+          "title": "Necitumumab and Trastuzumab in Combination With Osimertinib for the Treatment of Refractory Epidermal Growth Factor Receptor (EGFR)-Mutated Stage IV Non-small Cell Lung Cancer",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04141644",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04141644",
+          "stated_intervention": "Osimertinib",
+          "title": "Safety and Efficacy of Combination Osimertinib and Ipilimumab in Patients w EGFR Mutated NSCLC",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03535363",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03535363",
+          "stated_intervention": "Osimertinib",
+          "title": "Osimertinib With Stereotactic Radiosurgery (SRS) in Brain Metastases From EGFR Positive NSCLC",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04487080",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04487080",
+          "stated_intervention": "Osimertinib",
+          "title": "A Study of Amivantamab and Lazertinib Combination Therapy Versus Osimertinib in Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT07738172",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT07738172",
+          "stated_intervention": "Osimertinib",
+          "title": "Osimertinib With or Without Primary Lung Tumor Resection for EGFR-Mutant Oligometastatic Non-Small Cell Lung Cancer",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04541407",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04541407",
+          "stated_intervention": "Temozolomide plus Osimertinib",
+          "title": "Temodar Plus Tyrosine Kinase Inhibitors for Progressive CNS Disease",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04772235",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04772235",
+          "stated_intervention": "Osimertinib",
+          "title": "Phase I Study of Repotrectinib and Osimertinib in NSCLC Patients",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT05011487",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT05011487",
+          "stated_intervention": "Osimertinib",
+          "title": "Neoadjuvant Osimertinib + Chemotherapy for EGFR-mutant Stage III NSCLC",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04479306",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04479306",
+          "stated_intervention": "Osimertinib",
+          "title": "Osimertinib in Combination With Alisertib or Sapanisertib for the Treatment of Osimertinib-Resistant EGFR Mutant Stage IIIB or IV Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "Which companies sponsor osimertinib with generic version of bevacizumab?",
+    "current": {
+      "question": "Which companies sponsor osimertinib with generic version of bevacizumab?",
+      "intent": "companies_for_drug",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "osimertinib with generic version",
+          "matched_text": "osimertinib with generic version",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "bevacizumab",
+          "matched_alias": "BEVACIZUMAB"
+        }
+      ],
+      "answer": "Lead sponsorship of trials of this drug:\n  - Roche (industry sponsor) is lead sponsor of 8 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug [NCT00531960, NCT00773188, NCT00800202]\n  - Eli Lilly (industry sponsor) is lead sponsor of 5 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug [NCT00343291, NCT00762034, NCT00948675]\n  - Genentech (industry sponsor) is lead sponsor of 5 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug [NCT00095225, NCT00257608, NCT00434226]\n  - National Cancer Institute (nih sponsor) is lead sponsor of 5 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug [NCT00101348, NCT00368992, NCT00955305]\n  - Hellenic Oncology Research Group (other sponsor) is lead sponsor of 3 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug [NCT00741195, NCT00755170, NCT02179567]\n  - M D Anderson Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug [NCT00271505, NCT00533585, NCT04837716]\n  - Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug [NCT00130780, NCT00675597, NCT00807573]\n  - Scri Development Innovations (other sponsor) is lead sponsor of 3 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug [NCT00741988, NCT00892710, NCT00960297]\n  - Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 3 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug [NCT04425681, NCT04944069, NCT06557096]\n  - Amgen (industry sponsor) is lead sponsor of 2 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug [NCT00369070, NCT04466917]\n  - Ecog-acrin Cancer Research Group (network sponsor) is lead sponsor of 2 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug [NCT00828009, NCT01107626]\n  - Intergroupe Francophone De Cancerologie Thoracique (other sponsor) is lead sponsor of 2 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug [NCT01705184, NCT07420439]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "Roche (industry sponsor) is lead sponsor of 8 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:roche|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+          "source": "derived",
+          "source_record": "NCT00531960, NCT00773188, NCT00800202",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "INDUSTRY",
+          "evidence_trials": 8,
+          "example_trials": [
+            "NCT00531960",
+            "NCT00773188",
+            "NCT00800202"
+          ]
+        },
+        {
+          "statement": "Eli Lilly (industry sponsor) is lead sponsor of 5 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+          "source": "derived",
+          "source_record": "NCT00343291, NCT00762034, NCT00948675",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "INDUSTRY",
+          "evidence_trials": 5,
+          "example_trials": [
+            "NCT00343291",
+            "NCT00762034",
+            "NCT00948675"
+          ]
+        },
+        {
+          "statement": "Genentech (industry sponsor) is lead sponsor of 5 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+          "source": "derived",
+          "source_record": "NCT00095225, NCT00257608, NCT00434226",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "INDUSTRY",
+          "evidence_trials": 5,
+          "example_trials": [
+            "NCT00095225",
+            "NCT00257608",
+            "NCT00434226"
+          ]
+        },
+        {
+          "statement": "National Cancer Institute (nih sponsor) is lead sponsor of 5 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+          "source": "derived",
+          "source_record": "NCT00101348, NCT00368992, NCT00955305",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "NIH",
+          "evidence_trials": 5,
+          "example_trials": [
+            "NCT00101348",
+            "NCT00368992",
+            "NCT00955305"
+          ]
+        },
+        {
+          "statement": "Hellenic Oncology Research Group (other sponsor) is lead sponsor of 3 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:helleniconcologyresearchgroup|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+          "source": "derived",
+          "source_record": "NCT00741195, NCT00755170, NCT02179567",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "OTHER",
+          "evidence_trials": 3,
+          "example_trials": [
+            "NCT00741195",
+            "NCT00755170",
+            "NCT02179567"
+          ]
+        },
+        {
+          "statement": "M D Anderson Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+          "source": "derived",
+          "source_record": "NCT00271505, NCT00533585, NCT04837716",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "OTHER",
+          "evidence_trials": 3,
+          "example_trials": [
+            "NCT00271505",
+            "NCT00533585",
+            "NCT04837716"
+          ]
+        },
+        {
+          "statement": "Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+          "source": "derived",
+          "source_record": "NCT00130780, NCT00675597, NCT00807573",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "OTHER",
+          "evidence_trials": 3,
+          "example_trials": [
+            "NCT00130780",
+            "NCT00675597",
+            "NCT00807573"
+          ]
+        },
+        {
+          "statement": "Scri Development Innovations (other sponsor) is lead sponsor of 3 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:scridevelopmentinnovations|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+          "source": "derived",
+          "source_record": "NCT00741988, NCT00892710, NCT00960297",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "OTHER",
+          "evidence_trials": 3,
+          "example_trials": [
+            "NCT00741988",
+            "NCT00892710",
+            "NCT00960297"
+          ]
+        },
+        {
+          "statement": "Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 3 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:secondaffiliatedhospitalofnanchanguniversity|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+          "source": "derived",
+          "source_record": "NCT04425681, NCT04944069, NCT06557096",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "OTHER",
+          "evidence_trials": 3,
+          "example_trials": [
+            "NCT04425681",
+            "NCT04944069",
+            "NCT06557096"
+          ]
+        },
+        {
+          "statement": "Amgen (industry sponsor) is lead sponsor of 2 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:amgen|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+          "source": "derived",
+          "source_record": "NCT00369070, NCT04466917",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "INDUSTRY",
+          "evidence_trials": 2,
+          "example_trials": [
+            "NCT00369070",
+            "NCT04466917"
+          ]
+        },
+        {
+          "statement": "Ecog-acrin Cancer Research Group (network sponsor) is lead sponsor of 2 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:ecogacrincancerresearchgroup|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+          "source": "derived",
+          "source_record": "NCT00828009, NCT01107626",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "NETWORK",
+          "evidence_trials": 2,
+          "example_trials": [
+            "NCT00828009",
+            "NCT01107626"
+          ]
+        },
+        {
+          "statement": "Intergroupe Francophone De Cancerologie Thoracique (other sponsor) is lead sponsor of 2 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:intergroupefrancophonedecancerologiethoracique|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+          "source": "derived",
+          "source_record": "NCT01705184, NCT07420439",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "OTHER",
+          "evidence_trials": 2,
+          "example_trials": [
+            "NCT01705184",
+            "NCT07420439"
+          ]
+        }
+      ]
+    },
+    "previous": {
+      "question": "Which companies sponsor osimertinib with generic version of bevacizumab?",
+      "intent": "companies_for_drug",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "generic version of bevacizumab",
+          "matched_text": "generic version of bevacizumab",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "Lead sponsorship of trials of this drug:\n  - Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT01802632, NCT02143466, NCT02224053]\n  - Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT03810807, NCT06741085, NCT07535437]\n  - National Cancer Institute (nih sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT03191149, NCT03831932, NCT04181060]\n  - Bristol Myers Squibb (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT06618287, NCT07680790]\n  - Eli Lilly (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT02411448, NCT02789345]\n  - M D Anderson Cancer Center (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT04479306, NCT05017025]\n  - Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT04425681, NCT06557096]\n  - Shanghai Jmt-bio (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT06391944, NCT06735391]\n  - Sichuan Kelun-biotech (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT06670196, NCT07622186]\n  - Tianjin Medical University Cancer Institute And Hospital (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT04029350, NCT05507606]\n  - Tyk Medicines (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT05382728, NCT05948813]\n  - Abbisko (industry sponsor) is lead sponsor of 1 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT07710612]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "source": "derived",
+          "source_record": "NCT01802632, NCT02143466, NCT02224053",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "INDUSTRY",
+          "evidence_trials": 14,
+          "example_trials": [
+            "NCT01802632",
+            "NCT02143466",
+            "NCT02224053"
+          ]
+        },
+        {
+          "statement": "Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "source": "derived",
+          "source_record": "NCT03810807, NCT06741085, NCT07535437",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "OTHER",
+          "evidence_trials": 3,
+          "example_trials": [
+            "NCT03810807",
+            "NCT06741085",
+            "NCT07535437"
+          ]
+        },
+        {
+          "statement": "National Cancer Institute (nih sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "source": "derived",
+          "source_record": "NCT03191149, NCT03831932, NCT04181060",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "NIH",
+          "evidence_trials": 3,
+          "example_trials": [
+            "NCT03191149",
+            "NCT03831932",
+            "NCT04181060"
+          ]
+        },
+        {
+          "statement": "Bristol Myers Squibb (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:bristolmyerssquibb|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "source": "derived",
+          "source_record": "NCT06618287, NCT07680790",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "INDUSTRY",
+          "evidence_trials": 2,
+          "example_trials": [
+            "NCT06618287",
+            "NCT07680790"
+          ]
+        },
+        {
+          "statement": "Eli Lilly (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "source": "derived",
+          "source_record": "NCT02411448, NCT02789345",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "INDUSTRY",
+          "evidence_trials": 2,
+          "example_trials": [
+            "NCT02411448",
+            "NCT02789345"
+          ]
+        },
+        {
+          "statement": "M D Anderson Cancer Center (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "source": "derived",
+          "source_record": "NCT04479306, NCT05017025",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "OTHER",
+          "evidence_trials": 2,
+          "example_trials": [
+            "NCT04479306",
+            "NCT05017025"
+          ]
+        },
+        {
+          "statement": "Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:secondaffiliatedhospitalofnanchanguniversity|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "source": "derived",
+          "source_record": "NCT04425681, NCT06557096",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "OTHER",
+          "evidence_trials": 2,
+          "example_trials": [
+            "NCT04425681",
+            "NCT06557096"
+          ]
+        },
+        {
+          "statement": "Shanghai Jmt-bio (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:shanghaijmtbio|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "source": "derived",
+          "source_record": "NCT06391944, NCT06735391",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "INDUSTRY",
+          "evidence_trials": 2,
+          "example_trials": [
+            "NCT06391944",
+            "NCT06735391"
+          ]
+        },
+        {
+          "statement": "Sichuan Kelun-biotech (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:sichuankelunbiotech|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "source": "derived",
+          "source_record": "NCT06670196, NCT07622186",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "INDUSTRY",
+          "evidence_trials": 2,
+          "example_trials": [
+            "NCT06670196",
+            "NCT07622186"
+          ]
+        },
+        {
+          "statement": "Tianjin Medical University Cancer Institute And Hospital (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:tianjinmedicaluniversitycancerinstituteandhospital|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "source": "derived",
+          "source_record": "NCT04029350, NCT05507606",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "OTHER",
+          "evidence_trials": 2,
+          "example_trials": [
+            "NCT04029350",
+            "NCT05507606"
+          ]
+        },
+        {
+          "statement": "Tyk Medicines (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:tykmedicines|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "source": "derived",
+          "source_record": "NCT05382728, NCT05948813",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "INDUSTRY",
+          "evidence_trials": 2,
+          "example_trials": [
+            "NCT05382728",
+            "NCT05948813"
+          ]
+        },
+        {
+          "statement": "Abbisko (industry sponsor) is lead sponsor of 1 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "relation": "SPONSORS_TRIAL_OF",
+          "edge_id": "ORG:abbisko|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "source": "derived",
+          "source_record": "NCT07710612",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "derived_rule": "lead sponsor of trials evaluating this drug",
+          "sponsor_class": "INDUSTRY",
+          "evidence_trials": 1,
+          "example_trials": [
+            "NCT07710612"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "What targets does generic version of Paclitaxel conjugate with poly-l-glutamic acid act on?",
+    "current": {
+      "question": "What targets does generic version of Paclitaxel conjugate with poly-l-glutamic acid act on?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2108628",
+          "label": "PACLITAXEL POLIGLUMEX",
+          "matched_text": "Paclitaxel conjugate with poly-l-glutamic acid",
+          "matched_alias": "Paclitaxel conjugate with poly-l-glutamic acid"
+        }
+      ],
+      "answer": "Reported mechanism:\n  - PACLITAXEL POLIGLUMEX acts on TUBB4B (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBB1 (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBA3C (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBA4A (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBB3 (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBA1A (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBB4A (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBB8 (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBB (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBA1B (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBA1C (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBA3E (stabiliser) [CHEMBL2108628]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBB4B (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000188229|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBB1 (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000101162|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBA3C (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000198033|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBA4A (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000127824|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBB3 (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000258947|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBA1A (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000167552|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBB4A (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000104833|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBB8 (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000261456|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBB (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000196230|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBA1B (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000123416|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBA1C (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000167553|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBA3E (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000152086|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        }
+      ]
+    },
+    "previous": {
+      "question": "What targets does generic version of Paclitaxel conjugate with poly-l-glutamic acid act on?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "What targets does generic version",
+          "matched_text": "What targets does generic version",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL2108628",
+          "label": "PACLITAXEL POLIGLUMEX",
+          "matched_text": "Paclitaxel conjugate with poly-l-glutamic acid",
+          "matched_alias": "Paclitaxel conjugate with poly-l-glutamic acid"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL428647",
+          "label": "PACLITAXEL",
+          "matched_text": "Paclitaxel",
+          "matched_alias": "PACLITAXEL"
+        }
+      ],
+      "answer": "Reported mechanism:\n  - PACLITAXEL POLIGLUMEX acts on TUBB4B (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBB1 (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBA3C (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBA4A (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBB3 (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBA1A (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBB4A (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBB8 (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBB (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBA1B (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBA1C (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBA3E (stabiliser) [CHEMBL2108628]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBB4B (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000188229|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBB1 (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000101162|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBA3C (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000198033|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBA4A (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000127824|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBB3 (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000258947|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBA1A (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000167552|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBB4A (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000104833|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBB8 (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000261456|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBB (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000196230|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBA1B (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000123416|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBA1C (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000167553|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBA3E (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000152086|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        }
+      ]
+    }
+  },
+  {
+    "input": "Which trials evaluate generic version of Paclitaxel conjugate with poly-l-glutamic acid?",
+    "current": {
+      "question": "Which trials evaluate generic version of Paclitaxel conjugate with poly-l-glutamic acid?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2108628",
+          "label": "PACLITAXEL POLIGLUMEX",
+          "matched_text": "Paclitaxel conjugate with poly-l-glutamic acid",
+          "matched_alias": "Paclitaxel conjugate with poly-l-glutamic acid"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT00054184 (PHASE3, TERMINATED) evaluates PACLITAXEL POLIGLUMEX [NCT00054184]\n  - NCT00269828 (PHASE3, TERMINATED) evaluates PACLITAXEL POLIGLUMEX [NCT00269828]\n  - NCT00352690 (PHASE2, TERMINATED) evaluates PACLITAXEL POLIGLUMEX [NCT00352690]\n  - NCT00487669 (PHASE2, COMPLETED) evaluates PACLITAXEL POLIGLUMEX [NCT00487669]\n\nScope: 4 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 4,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT00054184 (PHASE3, TERMINATED) evaluates PACLITAXEL POLIGLUMEX",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00054184|EVALUATES|CHEMBL2108628|NCT00054184",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00054184",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00054184",
+          "stated_intervention": "paclitaxel poliglumex",
+          "title": "Polyglutamate Paclitaxel Compared With Docetaxel in Treating Patients With Progressive Non-Small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT00269828 (PHASE3, TERMINATED) evaluates PACLITAXEL POLIGLUMEX",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00269828|EVALUATES|CHEMBL2108628|NCT00269828",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00269828",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00269828",
+          "stated_intervention": "paclitaxel poliglumex",
+          "title": "A Survival Study for Women With Advanced Lung Cancer Who Have Not Previously Received Chemotherapy.",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT00352690 (PHASE2, TERMINATED) evaluates PACLITAXEL POLIGLUMEX",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00352690|EVALUATES|CHEMBL2108628|NCT00352690",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00352690",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00352690",
+          "stated_intervention": "Paclitaxel poliglumex",
+          "title": "A Phase II Study of Radiation Therapy, Paclitaxel Poliglumex, and Carboplatin in Stage III Non-Small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00487669 (PHASE2, COMPLETED) evaluates PACLITAXEL POLIGLUMEX",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00487669|EVALUATES|CHEMBL2108628|NCT00487669",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00487669",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00487669",
+          "stated_intervention": "paclitaxel poliglumex, pemetrexed",
+          "title": "Phase II Study of Combination of Paclitaxel Poliglumex and Alimta for Advanced Non-small Cell Lung Cancer (NSCLC)",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      ]
+    },
+    "previous": {
+      "question": "Which trials evaluate generic version of Paclitaxel conjugate with poly-l-glutamic acid?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate generic version",
+          "matched_text": "Which trials evaluate generic version",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL2108628",
+          "label": "PACLITAXEL POLIGLUMEX",
+          "matched_text": "Paclitaxel conjugate with poly-l-glutamic acid",
+          "matched_alias": "Paclitaxel conjugate with poly-l-glutamic acid"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL428647",
+          "label": "PACLITAXEL",
+          "matched_text": "Paclitaxel",
+          "matched_alias": "PACLITAXEL"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT00054184 (PHASE3, TERMINATED) evaluates PACLITAXEL POLIGLUMEX [NCT00054184]\n  - NCT00269828 (PHASE3, TERMINATED) evaluates PACLITAXEL POLIGLUMEX [NCT00269828]\n  - NCT00352690 (PHASE2, TERMINATED) evaluates PACLITAXEL POLIGLUMEX [NCT00352690]\n  - NCT00487669 (PHASE2, COMPLETED) evaluates PACLITAXEL POLIGLUMEX [NCT00487669]\n\nScope: 4 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 4,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT00054184 (PHASE3, TERMINATED) evaluates PACLITAXEL POLIGLUMEX",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00054184|EVALUATES|CHEMBL2108628|NCT00054184",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00054184",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00054184",
+          "stated_intervention": "paclitaxel poliglumex",
+          "title": "Polyglutamate Paclitaxel Compared With Docetaxel in Treating Patients With Progressive Non-Small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT00269828 (PHASE3, TERMINATED) evaluates PACLITAXEL POLIGLUMEX",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00269828|EVALUATES|CHEMBL2108628|NCT00269828",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00269828",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00269828",
+          "stated_intervention": "paclitaxel poliglumex",
+          "title": "A Survival Study for Women With Advanced Lung Cancer Who Have Not Previously Received Chemotherapy.",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT00352690 (PHASE2, TERMINATED) evaluates PACLITAXEL POLIGLUMEX",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00352690|EVALUATES|CHEMBL2108628|NCT00352690",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00352690",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00352690",
+          "stated_intervention": "Paclitaxel poliglumex",
+          "title": "A Phase II Study of Radiation Therapy, Paclitaxel Poliglumex, and Carboplatin in Stage III Non-Small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00487669 (PHASE2, COMPLETED) evaluates PACLITAXEL POLIGLUMEX",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00487669|EVALUATES|CHEMBL2108628|NCT00487669",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00487669",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00487669",
+          "stated_intervention": "paclitaxel poliglumex, pemetrexed",
+          "title": "Phase II Study of Combination of Paclitaxel Poliglumex and Alimta for Advanced Non-small Cell Lung Cancer (NSCLC)",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "generic version of Paclitaxel conjugate with poly-l-glutamic acid",
+    "current": {
+      "question": "generic version of Paclitaxel conjugate with poly-l-glutamic acid",
+      "intent": "drug_profile",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2108628",
+          "label": "PACLITAXEL POLIGLUMEX",
+          "matched_text": "Paclitaxel conjugate with poly-l-glutamic acid",
+          "matched_alias": "Paclitaxel conjugate with poly-l-glutamic acid"
+        }
+      ],
+      "answer": "Profile:\n  - PACLITAXEL POLIGLUMEX is a Small molecule, max clinical stage APPROVAL, appearing in 4 NSCLC trial(s) in this graph [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBB4B (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBB1 (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBA3C (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBA4A (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBB3 (stabiliser) [CHEMBL2108628]\n  - PACLITAXEL POLIGLUMEX acts on TUBA1A (stabiliser) [CHEMBL2108628]\n\nScope: 7 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 7,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "PACLITAXEL POLIGLUMEX is a Small molecule, max clinical stage APPROVAL, appearing in 4 NSCLC trial(s) in this graph",
+          "relation": "PROFILE",
+          "edge_id": "profile:CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "resolution_tier": null,
+          "url": null,
+          "aliases_known": 10,
+          "mechanisms": [
+            "Tubulin stabiliser"
+          ]
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBB4B (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000188229|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBB1 (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000101162|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBA3C (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000198033|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBA4A (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000127824|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBB3 (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000258947|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        },
+        {
+          "statement": "PACLITAXEL POLIGLUMEX acts on TUBA1A (stabiliser)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000167552|CHEMBL2108628",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2108628",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "STABILISER"
+        }
+      ]
+    },
+    "previous": {
+      "question": "generic version of Paclitaxel conjugate with poly-l-glutamic acid",
+      "intent": "unsupported",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "generic version of Paclitaxel conjugate",
+          "matched_text": "generic version of Paclitaxel conjugate",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "input": "What trials evaluate erlotinib hydrochloride and erlotinib?",
+    "current": {
+      "question": "What trials evaluate erlotinib hydrochloride and erlotinib?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1079742",
+          "label": "ERLOTINIB HYDROCHLORIDE",
+          "matched_text": "erlotinib hydrochloride",
+          "matched_alias": "ERLOTINIB HYDROCHLORIDE"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL553",
+          "label": "ERLOTINIB",
+          "matched_text": "erlotinib",
+          "matched_alias": "ERLOTINIB"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT00445848 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00445848]\n  - NCT00287989 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00287989]\n  - NCT00397384 (PHASE1, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00397384]\n  - NCT00976677 (PHASE2, TERMINATED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00976677]\n  - NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00101348]\n  - NCT00950365 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00950365]\n  - NCT00436332 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00436332]\n  - NCT01259089 (PHASE1, PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT01259089]\n  - NCT00801385 (PHASE2, UNKNOWN) evaluates ERLOTINIB HYDROCHLORIDE [NCT00801385]\n  - NCT00385398 (PHASE2, WITHDRAWN) evaluates ERLOTINIB HYDROCHLORIDE [NCT00385398]\n  - NCT00087412 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00087412]\n  - NCT00254384 (PHASE1, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00254384]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT00445848 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00445848|EVALUATES|CHEMBL1079742|NCT00445848",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00445848",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00445848",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "S0636: Erlotinib and Bevacizumab in Never-Smokers With Stage IIIB or Stage IV Primary Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00287989 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00287989|EVALUATES|CHEMBL1079742|NCT00287989",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00287989",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00287989",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Erlotinib, Paclitaxel, and Carboplatin in Treating Patients With Stage III, Stage IV, or Recurrent Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00397384 (PHASE1, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00397384|EVALUATES|CHEMBL1079742|NCT00397384",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00397384",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00397384",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Erlotinib Hydrochloride and Cetuximab in Treating Patients With Advanced Gastrointestinal Cancer, Head and Neck Cancer, Non-Small Cell Lung Cancer, or Colorectal Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT00976677 (PHASE2, TERMINATED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00976677|EVALUATES|CHEMBL1079742|NCT00976677",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00976677",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00976677",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Carboplatin, Paclitaxel, and Bevacizumab With or Without Erlotinib Hydrochloride in Treating Non-Smokers With Advanced Non-Small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00101348|EVALUATES|CHEMBL1079742|NCT00101348",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00101348",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00101348",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Erlotinib and Cetuximab With or Without Bevacizumab in Treating Patients With Metastatic or Unresectable Kidney, Colorectal, Head and Neck, Pancreatic, or Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00950365 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00950365|EVALUATES|CHEMBL1079742|NCT00950365",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00950365",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00950365",
+          "stated_intervention": "Erlotinib Hydrochloride",
+          "title": "Pemetrexed Disodium With or Without Erlotinib Hydrochloride in Treating Patients With Stage IIIB-IV or Recurrent Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00436332 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00436332|EVALUATES|CHEMBL1079742|NCT00436332",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00436332",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00436332",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "S0635: Erlotinib and Bevacizumab in Stage IIIB and IV Bronchioloalveolar Carcinoma",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT01259089 (PHASE1, PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01259089|EVALUATES|CHEMBL1079742|NCT01259089",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01259089",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01259089",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Hsp90 Inhibitor AUY922 and Erlotinib Hydrochloride in Treating Patients With Stage IIIB-IV Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00801385 (PHASE2, UNKNOWN) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00801385|EVALUATES|CHEMBL1079742|NCT00801385",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00801385",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00801385",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Sorafenib and Erlotinib in Treating Patients With Stage IIIB or Stage IV Non-Small Cell Lung Cancer That Has Not Responded to Chemotherapy",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00385398 (PHASE2, WITHDRAWN) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00385398|EVALUATES|CHEMBL1079742|NCT00385398",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00385398",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00385398",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "QOL-Stereotactic RadioSurgery, Temozolomide + Erlotinib-Rx of 1-3 Brain Metastases in NSCLC",
+          "status": "WITHDRAWN",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00087412 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00087412|EVALUATES|CHEMBL1079742|NCT00087412",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00087412",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00087412",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "S0341: Erlotinib in Treating Patients With Advanced Primary Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00254384 (PHASE1, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00254384|EVALUATES|CHEMBL1079742|NCT00254384",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00254384",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00254384",
+          "stated_intervention": "Erlotinib Hydrochloride",
+          "title": "Docetaxel, Cisplatin, and Erlotinib Hydrochloride in Treating Patients With Stage I-III Non-small Cell Lung Cancer Following Surgery",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      ]
+    },
+    "previous": {
+      "question": "What trials evaluate erlotinib hydrochloride and erlotinib?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1079742",
+          "label": "ERLOTINIB HYDROCHLORIDE",
+          "matched_text": "erlotinib hydrochloride",
+          "matched_alias": "ERLOTINIB HYDROCHLORIDE"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL553",
+          "label": "ERLOTINIB",
+          "matched_text": "erlotinib",
+          "matched_alias": "ERLOTINIB"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT00445848 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00445848]\n  - NCT00287989 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00287989]\n  - NCT00397384 (PHASE1, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00397384]\n  - NCT00976677 (PHASE2, TERMINATED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00976677]\n  - NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00101348]\n  - NCT00950365 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00950365]\n  - NCT00436332 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00436332]\n  - NCT01259089 (PHASE1, PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT01259089]\n  - NCT00801385 (PHASE2, UNKNOWN) evaluates ERLOTINIB HYDROCHLORIDE [NCT00801385]\n  - NCT00385398 (PHASE2, WITHDRAWN) evaluates ERLOTINIB HYDROCHLORIDE [NCT00385398]\n  - NCT00087412 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00087412]\n  - NCT00254384 (PHASE1, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00254384]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT00445848 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00445848|EVALUATES|CHEMBL1079742|NCT00445848",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00445848",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00445848",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "S0636: Erlotinib and Bevacizumab in Never-Smokers With Stage IIIB or Stage IV Primary Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00287989 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00287989|EVALUATES|CHEMBL1079742|NCT00287989",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00287989",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00287989",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Erlotinib, Paclitaxel, and Carboplatin in Treating Patients With Stage III, Stage IV, or Recurrent Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00397384 (PHASE1, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00397384|EVALUATES|CHEMBL1079742|NCT00397384",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00397384",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00397384",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Erlotinib Hydrochloride and Cetuximab in Treating Patients With Advanced Gastrointestinal Cancer, Head and Neck Cancer, Non-Small Cell Lung Cancer, or Colorectal Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT00976677 (PHASE2, TERMINATED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00976677|EVALUATES|CHEMBL1079742|NCT00976677",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00976677",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00976677",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Carboplatin, Paclitaxel, and Bevacizumab With or Without Erlotinib Hydrochloride in Treating Non-Smokers With Advanced Non-Small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00101348|EVALUATES|CHEMBL1079742|NCT00101348",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00101348",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00101348",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Erlotinib and Cetuximab With or Without Bevacizumab in Treating Patients With Metastatic or Unresectable Kidney, Colorectal, Head and Neck, Pancreatic, or Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00950365 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00950365|EVALUATES|CHEMBL1079742|NCT00950365",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00950365",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00950365",
+          "stated_intervention": "Erlotinib Hydrochloride",
+          "title": "Pemetrexed Disodium With or Without Erlotinib Hydrochloride in Treating Patients With Stage IIIB-IV or Recurrent Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00436332 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00436332|EVALUATES|CHEMBL1079742|NCT00436332",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00436332",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00436332",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "S0635: Erlotinib and Bevacizumab in Stage IIIB and IV Bronchioloalveolar Carcinoma",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT01259089 (PHASE1, PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01259089|EVALUATES|CHEMBL1079742|NCT01259089",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01259089",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01259089",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Hsp90 Inhibitor AUY922 and Erlotinib Hydrochloride in Treating Patients With Stage IIIB-IV Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00801385 (PHASE2, UNKNOWN) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00801385|EVALUATES|CHEMBL1079742|NCT00801385",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00801385",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00801385",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Sorafenib and Erlotinib in Treating Patients With Stage IIIB or Stage IV Non-Small Cell Lung Cancer That Has Not Responded to Chemotherapy",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00385398 (PHASE2, WITHDRAWN) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00385398|EVALUATES|CHEMBL1079742|NCT00385398",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00385398",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00385398",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "QOL-Stereotactic RadioSurgery, Temozolomide + Erlotinib-Rx of 1-3 Brain Metastases in NSCLC",
+          "status": "WITHDRAWN",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00087412 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00087412|EVALUATES|CHEMBL1079742|NCT00087412",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00087412",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00087412",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "S0341: Erlotinib in Treating Patients With Advanced Primary Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00254384 (PHASE1, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00254384|EVALUATES|CHEMBL1079742|NCT00254384",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00254384",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00254384",
+          "stated_intervention": "Erlotinib Hydrochloride",
+          "title": "Docetaxel, Cisplatin, and Erlotinib Hydrochloride in Treating Patients With Stage I-III Non-small Cell Lung Cancer Following Surgery",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "What trials evaluate erlotinib and erlotinib hydrochloride?",
+    "current": {
+      "question": "What trials evaluate erlotinib and erlotinib hydrochloride?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1079742",
+          "label": "ERLOTINIB HYDROCHLORIDE",
+          "matched_text": "erlotinib hydrochloride",
+          "matched_alias": "ERLOTINIB HYDROCHLORIDE"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL553",
+          "label": "ERLOTINIB",
+          "matched_text": "erlotinib",
+          "matched_alias": "ERLOTINIB"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT00445848 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00445848]\n  - NCT00287989 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00287989]\n  - NCT00397384 (PHASE1, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00397384]\n  - NCT00976677 (PHASE2, TERMINATED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00976677]\n  - NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00101348]\n  - NCT00950365 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00950365]\n  - NCT00436332 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00436332]\n  - NCT01259089 (PHASE1, PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT01259089]\n  - NCT00801385 (PHASE2, UNKNOWN) evaluates ERLOTINIB HYDROCHLORIDE [NCT00801385]\n  - NCT00385398 (PHASE2, WITHDRAWN) evaluates ERLOTINIB HYDROCHLORIDE [NCT00385398]\n  - NCT00087412 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00087412]\n  - NCT00254384 (PHASE1, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00254384]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT00445848 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00445848|EVALUATES|CHEMBL1079742|NCT00445848",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00445848",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00445848",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "S0636: Erlotinib and Bevacizumab in Never-Smokers With Stage IIIB or Stage IV Primary Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00287989 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00287989|EVALUATES|CHEMBL1079742|NCT00287989",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00287989",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00287989",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Erlotinib, Paclitaxel, and Carboplatin in Treating Patients With Stage III, Stage IV, or Recurrent Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00397384 (PHASE1, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00397384|EVALUATES|CHEMBL1079742|NCT00397384",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00397384",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00397384",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Erlotinib Hydrochloride and Cetuximab in Treating Patients With Advanced Gastrointestinal Cancer, Head and Neck Cancer, Non-Small Cell Lung Cancer, or Colorectal Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT00976677 (PHASE2, TERMINATED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00976677|EVALUATES|CHEMBL1079742|NCT00976677",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00976677",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00976677",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Carboplatin, Paclitaxel, and Bevacizumab With or Without Erlotinib Hydrochloride in Treating Non-Smokers With Advanced Non-Small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00101348|EVALUATES|CHEMBL1079742|NCT00101348",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00101348",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00101348",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Erlotinib and Cetuximab With or Without Bevacizumab in Treating Patients With Metastatic or Unresectable Kidney, Colorectal, Head and Neck, Pancreatic, or Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00950365 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00950365|EVALUATES|CHEMBL1079742|NCT00950365",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00950365",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00950365",
+          "stated_intervention": "Erlotinib Hydrochloride",
+          "title": "Pemetrexed Disodium With or Without Erlotinib Hydrochloride in Treating Patients With Stage IIIB-IV or Recurrent Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00436332 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00436332|EVALUATES|CHEMBL1079742|NCT00436332",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00436332",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00436332",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "S0635: Erlotinib and Bevacizumab in Stage IIIB and IV Bronchioloalveolar Carcinoma",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT01259089 (PHASE1, PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01259089|EVALUATES|CHEMBL1079742|NCT01259089",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01259089",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01259089",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Hsp90 Inhibitor AUY922 and Erlotinib Hydrochloride in Treating Patients With Stage IIIB-IV Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00801385 (PHASE2, UNKNOWN) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00801385|EVALUATES|CHEMBL1079742|NCT00801385",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00801385",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00801385",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Sorafenib and Erlotinib in Treating Patients With Stage IIIB or Stage IV Non-Small Cell Lung Cancer That Has Not Responded to Chemotherapy",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00385398 (PHASE2, WITHDRAWN) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00385398|EVALUATES|CHEMBL1079742|NCT00385398",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00385398",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00385398",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "QOL-Stereotactic RadioSurgery, Temozolomide + Erlotinib-Rx of 1-3 Brain Metastases in NSCLC",
+          "status": "WITHDRAWN",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00087412 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00087412|EVALUATES|CHEMBL1079742|NCT00087412",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00087412",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00087412",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "S0341: Erlotinib in Treating Patients With Advanced Primary Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00254384 (PHASE1, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00254384|EVALUATES|CHEMBL1079742|NCT00254384",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00254384",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00254384",
+          "stated_intervention": "Erlotinib Hydrochloride",
+          "title": "Docetaxel, Cisplatin, and Erlotinib Hydrochloride in Treating Patients With Stage I-III Non-small Cell Lung Cancer Following Surgery",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      ]
+    },
+    "previous": {
+      "question": "What trials evaluate erlotinib and erlotinib hydrochloride?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1079742",
+          "label": "ERLOTINIB HYDROCHLORIDE",
+          "matched_text": "erlotinib hydrochloride",
+          "matched_alias": "ERLOTINIB HYDROCHLORIDE"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL553",
+          "label": "ERLOTINIB",
+          "matched_text": "erlotinib",
+          "matched_alias": "ERLOTINIB"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT00445848 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00445848]\n  - NCT00287989 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00287989]\n  - NCT00397384 (PHASE1, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00397384]\n  - NCT00976677 (PHASE2, TERMINATED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00976677]\n  - NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00101348]\n  - NCT00950365 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00950365]\n  - NCT00436332 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00436332]\n  - NCT01259089 (PHASE1, PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT01259089]\n  - NCT00801385 (PHASE2, UNKNOWN) evaluates ERLOTINIB HYDROCHLORIDE [NCT00801385]\n  - NCT00385398 (PHASE2, WITHDRAWN) evaluates ERLOTINIB HYDROCHLORIDE [NCT00385398]\n  - NCT00087412 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00087412]\n  - NCT00254384 (PHASE1, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE [NCT00254384]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT00445848 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00445848|EVALUATES|CHEMBL1079742|NCT00445848",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00445848",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00445848",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "S0636: Erlotinib and Bevacizumab in Never-Smokers With Stage IIIB or Stage IV Primary Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00287989 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00287989|EVALUATES|CHEMBL1079742|NCT00287989",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00287989",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00287989",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Erlotinib, Paclitaxel, and Carboplatin in Treating Patients With Stage III, Stage IV, or Recurrent Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00397384 (PHASE1, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00397384|EVALUATES|CHEMBL1079742|NCT00397384",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00397384",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00397384",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Erlotinib Hydrochloride and Cetuximab in Treating Patients With Advanced Gastrointestinal Cancer, Head and Neck Cancer, Non-Small Cell Lung Cancer, or Colorectal Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT00976677 (PHASE2, TERMINATED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00976677|EVALUATES|CHEMBL1079742|NCT00976677",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00976677",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00976677",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Carboplatin, Paclitaxel, and Bevacizumab With or Without Erlotinib Hydrochloride in Treating Non-Smokers With Advanced Non-Small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00101348|EVALUATES|CHEMBL1079742|NCT00101348",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00101348",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00101348",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Erlotinib and Cetuximab With or Without Bevacizumab in Treating Patients With Metastatic or Unresectable Kidney, Colorectal, Head and Neck, Pancreatic, or Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00950365 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00950365|EVALUATES|CHEMBL1079742|NCT00950365",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00950365",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00950365",
+          "stated_intervention": "Erlotinib Hydrochloride",
+          "title": "Pemetrexed Disodium With or Without Erlotinib Hydrochloride in Treating Patients With Stage IIIB-IV or Recurrent Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00436332 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00436332|EVALUATES|CHEMBL1079742|NCT00436332",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00436332",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00436332",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "S0635: Erlotinib and Bevacizumab in Stage IIIB and IV Bronchioloalveolar Carcinoma",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT01259089 (PHASE1, PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01259089|EVALUATES|CHEMBL1079742|NCT01259089",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01259089",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01259089",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Hsp90 Inhibitor AUY922 and Erlotinib Hydrochloride in Treating Patients With Stage IIIB-IV Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00801385 (PHASE2, UNKNOWN) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00801385|EVALUATES|CHEMBL1079742|NCT00801385",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00801385",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00801385",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "Sorafenib and Erlotinib in Treating Patients With Stage IIIB or Stage IV Non-Small Cell Lung Cancer That Has Not Responded to Chemotherapy",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00385398 (PHASE2, WITHDRAWN) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00385398|EVALUATES|CHEMBL1079742|NCT00385398",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00385398",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00385398",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "QOL-Stereotactic RadioSurgery, Temozolomide + Erlotinib-Rx of 1-3 Brain Metastases in NSCLC",
+          "status": "WITHDRAWN",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00087412 (PHASE2, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00087412|EVALUATES|CHEMBL1079742|NCT00087412",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00087412",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00087412",
+          "stated_intervention": "erlotinib hydrochloride",
+          "title": "S0341: Erlotinib in Treating Patients With Advanced Primary Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00254384 (PHASE1, COMPLETED) evaluates ERLOTINIB HYDROCHLORIDE",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00254384|EVALUATES|CHEMBL1079742|NCT00254384",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00254384",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00254384",
+          "stated_intervention": "Erlotinib Hydrochloride",
+          "title": "Docetaxel, Cisplatin, and Erlotinib Hydrochloride in Treating Patients With Stage I-III Non-small Cell Lung Cancer Following Surgery",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      ]
+    }
+  }
+]

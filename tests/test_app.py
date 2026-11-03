@@ -136,9 +136,32 @@ def test_a_qualified_product_is_refused_with_its_drug_wherever_it_sits():
     a = e.kg.answer("What trials evaluate paclitaxel with albumin bound nanoparticles?",
                     use_llm=False)
     assert not a.evidence
-    for t in ("osimertinib with [89Zr] trastuzumab", "osimertinib, liposomal doxorubicin",
-              "osimertinib, biosimilar bevacizumab"):
+    for t in ("osimertinib, liposomal doxorubicin", "osimertinib, biosimilar bevacizumab",
+              "osimertinib; generic version of bevacizumab"):
         assert e.explore(t)["center"]["id"] == "CHEMBL3353410", t
+
+
+# Codex review m4: inside one list item the qualified drug is not guessed; all its drugs
+# are refused, however far the qualifier sits and however long the drug's name
+def test_a_list_item_with_a_qualifier_refuses_every_drug_in_it():
+    import app
+    e = app.Engine()
+    for t in ("osimertinib with generic version of bevacizumab",
+              "osimertinib with [89Zr] trastuzumab",
+              "generic version of Paclitaxel conjugate with poly-l-glutamic acid",
+              "generic version of the monoclonal antibody bevacizumab",
+              "biosimilar version of bevacizumab",
+              "liposomal formulation of doxorubicin",
+              "paclitaxel with albumin-bound nanoparticles",
+              "liposomal formulation of doxorubicin and biosimilar version of bevacizumab"):
+        assert e.explore(t).get("refused"), t
+    for q in ("Which trials evaluate osimertinib with generic version of bevacizumab?",
+              "Which trials evaluate generic version of the monoclonal antibody bevacizumab?",
+              "Which trials evaluate biosimilar version of bevacizumab?"):
+        a = e.kg.answer(q, use_llm=False)
+        assert all("CHEMBL1201583" not in ev.edge_id for ev in a.evidence), q
+    r = e.explore("EGFR biosimilar bevacizumab")
+    assert r["center"]["id"] == "ENSG00000146648"
 
 
 def test_words_of_a_longer_name_are_not_read_again():

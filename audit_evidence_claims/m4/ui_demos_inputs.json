@@ -1,0 +1,231 @@
+{
+  "EX1": [
+    [
+      "Tarceva",
+      "상품명"
+    ],
+    [
+      "OSI-774",
+      "개발 코드"
+    ],
+    [
+      "Gemicitabine",
+      "오타"
+    ],
+    [
+      "erlotinib hydrochloride 150 mg tablet",
+      "염·용량"
+    ],
+    [
+      "Cisplatin Docetaxel Gefitinib Pemetrexed",
+      "붙여 씀"
+    ],
+    [
+      "placebo plus docetaxel",
+      "위약+약"
+    ],
+    [
+      "Placebo to match pembrolizumab",
+      "위약"
+    ],
+    [
+      "Abraxane",
+      "개량 제형"
+    ],
+    [
+      "Mvasi",
+      "바이오시밀러"
+    ],
+    [
+      "pembrolizumab-free regimen",
+      "~없이"
+    ],
+    [
+      "MEDI4736",
+      "모호"
+    ],
+    [
+      "EGFR",
+      "표적"
+    ],
+    [
+      "propranolol",
+      "범위 밖"
+    ]
+  ],
+  "EX2": [
+    "What trials evaluate Tagrisso?",
+    "Which companies are developing osimertinib?",
+    "Which drugs act on ALK?",
+    "What does osimertinib target?",
+    "What is AstraZeneca running in NSCLC?",
+    "What trials evaluate Mvasi?",
+    "What is the capital of France?"
+  ],
+  "EX3": [
+    [
+      "근거대로 쓴 답",
+      "Which drugs act on ALK?",
+      "Alectinib and lorlatinib act on ALK."
+    ],
+    [
+      "지어낸 약 이름",
+      "Which drugs act on ALK?",
+      "Alectinib, lorlatinib and zorbatinib act on ALK."
+    ],
+    [
+      "틀린 관계",
+      "Which drugs act on ALK?",
+      "Alectinib acts on EGFR."
+    ],
+    [
+      "지어낸 숫자",
+      "What trials evaluate Tagrisso?",
+      "Osimertinib is evaluated in 4,812 NSCLC trials."
+    ],
+    [
+      "'중단했다'",
+      "Which companies are developing osimertinib?",
+      "AstraZeneca has discontinued osimertinib."
+    ],
+    [
+      "'개발한다'",
+      "Which companies are developing osimertinib?",
+      "AstraZeneca develops osimertinib."
+    ],
+    [
+      "'안전하다'",
+      "What does osimertinib target?",
+      "Osimertinib targets EGFR and is safe for all patients."
+    ],
+    [
+      "'~하지 않는다'",
+      "What does osimertinib target?",
+      "Osimertinib does not act on EGFR."
+    ],
+    [
+      "다른 시험의 단계",
+      "What trials evaluate Tagrisso?",
+      "NCT07680790 is a phase 2 trial evaluating osimertinib."
+    ]
+  ],
+  "EX4": [
+    [
+      "맞는 주장",
+      "What does osimertinib target?",
+      {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "inhibitor"
+          }
+        ]
+      }
+    ],
+    [
+      "방향 뒤집기",
+      "What does osimertinib target?",
+      {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "EGFR",
+            "object": "osimertinib",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+          }
+        ]
+      }
+    ],
+    [
+      "작용 종류 틀림",
+      "What does osimertinib target?",
+      {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "activator"
+          }
+        ]
+      }
+    ],
+    [
+      "자유 문장 끼워 넣기",
+      "What does osimertinib target?",
+      {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "note": "safe for all patients"
+          }
+        ]
+      }
+    ],
+    [
+      "시험 상태 맞음 + 틀림",
+      "What trials evaluate Tagrisso?",
+      {
+        "claims": [
+          {
+            "kind": "trial",
+            "trial": "NCT03909334",
+            "evidence": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+            "phase": [
+              "PHASE2"
+            ],
+            "status": "ACTIVE_NOT_RECRUITING"
+          },
+          {
+            "kind": "trial",
+            "trial": "NCT03909334",
+            "evidence": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+            "status": "RECRUITING"
+          }
+        ]
+      }
+    ],
+    [
+      "시험 수 틀림",
+      "What is AstraZeneca running in NSCLC?",
+      {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "AstraZeneca",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 10
+          }
+        ]
+      }
+    ],
+    [
+      "근거에 없는 id",
+      "What does osimertinib target?",
+      {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "ALK",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000171094|CHEMBL3353410"
+          }
+        ]
+      }
+    ]
+  ]
+}

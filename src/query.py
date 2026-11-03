@@ -88,9 +88,9 @@ class Answer:
 # --------------------------------------------------------------------------- #
 # engine
 # --------------------------------------------------------------------------- #
-# Words that list separately named things. A refused product never spans one; "with"
-# is not among them, because it also sits inside product descriptions ("paclitaxel with
-# albumin bound nanoparticles").
+# Words that list separately named things; a list item ends at one. "with" is not among
+# them, because it also sits inside product descriptions ("paclitaxel with albumin bound
+# nanoparticles").
 _JOINERS = {"and", "or", "plus", "versus", "vs", "vs.", "+", "&", "then", "followed",
             "or/and", "and/or"}
 
@@ -124,43 +124,52 @@ class OncoKG:
         found: list[dict] = []
         seen: set = set()
         tokens: list[str] = []
-        clause: list[int] = []          # which comma-separated piece each token is in
-        for ci, piece in enumerate(question.split(",")):
+        clause: list[int] = []          # which comma/semicolon-separated piece each token is in
+        for ci, piece in enumerate(re.split(r"[,;\uff0c\uff1b\u3001]", question)):
             for t in re.split(r"\s+", piece):
                 t = t.strip(" ?.,!;:")
                 if t:
                     tokens.append(t)
                     clause.append(ci)
 
-        # The resolver's refusals apply to questions too. Linking straight
-        # against the index let "Mvasi" or "liposomal doxorubicin" answer as
-        # the originator molecule. A token naming a distinct product is
-        # refused; a qualifier ("liposomal", "biosimilar") takes its
-        # neighbours with it.
-        def joins(k: int) -> bool:
-            return tokens[k].lower() in _JOINERS
-
-        refused: set[int] = set()
-        for i, tok in enumerate(tokens):
-            if T.is_distinct_product(tok) or T.is_radiotracer(tok):
-                refused.add(i)
-                if not T.canonical_key(tok) in self.dic["index"]:
-                    # the qualifier takes its neighbours, within the same list item
-                    refused.update(k for k in (i - 1, i + 1)
-                                   if 0 <= k < len(tokens) and clause[k] == clause[i]
-                                   and not joins(k))
-        refused |= self._qualified_drug_spans(tokens, clause, refused, joins)
-        run: list[int] = []
-        for i in sorted(refused) + [None]:
-            if run and (i is None or i != run[-1] + 1):
-                span = " ".join(tokens[run[0]:run[-1] + 1])
-                found.append({"type": "Refused", "id": None, "label": span,
-                              "matched_text": span,
-                              "why": "names a distinct product or tracer, not "
-                                     "the originator molecule"})
-                run = []
-            if i is not None:
-                run.append(i)
+        # The resolver's refusals apply to questions too: "Mvasi", "liposomal
+        # doxorubicin" or "generic version of bevacizumab" must never answer as the
+        # originator molecule. The text is cut into list items at commas, semicolons
+        # and listing words ("and", "or", "plus", ...). An item that names a distinct
+        # product or a tracer anywhere has every drug in it refused: which drug a
+        # qualifier describes is not guessed, so "osimertinib with generic version of
+        # bevacizumab" refuses both, while "osimertinib and generic version of
+        # bevacizumab" keeps osimertinib. Targets and companies in the item still link.
+        seg: list[int] = []
+        n = 0
+        for k, t in enumerate(tokens):
+            if t.lower() in _JOINERS:
+                n += 1
+                seg.append(-1)
+                continue
+            if k and clause[k] != clause[k - 1]:
+                n += 1
+            seg.append(n)
+        refused: set[int] = {k for k, t in enumerate(tokens)
+                             if T.is_distinct_product(t) or T.is_radiotracer(t)}
+        drugs = self._drug_spans(tokens, {k for k in range(len(tokens)) if seg[k] < 0})
+        for sid in sorted(set(seg) - {-1}):
+            idx = [k for k in range(len(tokens)) if seg[k] == sid]
+            text = " ".join(tokens[k] for k in idx)
+            # some patterns are anchored ("[89Zr] trastuzumab"), so every run of words
+            # in the item is tried, not only the whole item
+            if not any(T.is_distinct_product(w) or T.is_radiotracer(w)
+                       for w in (" ".join(tokens[x] for x in idx[i:j])
+                                 for i in range(len(idx)) for j in range(i + 1, len(idx) + 1))):
+                continue
+            hit = [k for a, b in drugs if seg[a] == sid for k in range(a, b)]
+            if not hit and not (refused & set(idx)):
+                continue                        # a qualifier with no drug: nothing to refuse
+            refused.update(hit)
+            found.append({"type": "Refused", "id": None, "label": text,
+                          "matched_text": text,
+                          "why": "names a distinct product or tracer, not "
+                                 "the originator molecule"})
 
         matched: set[int] = set()
         for size in range(min(5, len(tokens)), 0, -1):
@@ -237,46 +246,6 @@ class OncoKG:
                     spans.append((i, i + size))
                     taken.update(range(i, i + size))
         return spans
-
-    def _qualified_drug_spans(self, tokens, clause, refused, joins) -> set[int]:
-        """Tokens of a drug together with the words that make it a distinct product or a
-        tracer ("generic version of bevacizumab", "paclitaxel with albumin bound
-        nanoparticles", "[89Zr] trastuzumab").
-
-        A refusal is bound to the drug it qualifies: the span holds that drug and no
-        other, stays inside one list item (no comma, no joining word), and is the
-        shortest such span. Spans are taken shortest first, and words used by one are
-        not reused by another, so "osimertinib with [89Zr] trastuzumab" refuses only
-        trastuzumab."""
-        out: set[int] = set()
-        drugs = self._drug_spans(tokens, refused)
-        while True:
-            best = None
-            for a, b in drugs:
-                if out & set(range(a, b)):
-                    continue
-                for length in range(b - a, 7):
-                    for s in range(max(0, b - length), a + 1):
-                        e = s + length
-                        if e > len(tokens):
-                            continue
-                        span = set(range(s, e))
-                        if (span & out or span & refused or len({clause[k] for k in span}) > 1
-                                or any(joins(k) for k in span)
-                                or any((c, d) != (a, b) and set(range(c, d)) & span
-                                       for c, d in drugs)):
-                            continue
-                        text = " ".join(tokens[s:e])
-                        if T.is_distinct_product(text) or T.is_radiotracer(text):
-                            if best is None or length < best[1] - best[0]:
-                                best = (s, e)
-                            break
-                    else:
-                        continue
-                    break
-            if best is None:
-                return out
-            out.update(range(*best))
 
     def org_family(self, company_id: str) -> list[str]:
         """The organisation plus any companies a curated parent edge links to it."""

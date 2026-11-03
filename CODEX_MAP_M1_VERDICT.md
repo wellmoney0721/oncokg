@@ -40,3 +40,12 @@ Tests 323.
 | found while fixing | words of a longer name were read again ("erlotinib hydrochloride" also listed ERLOTINIB) | a matched span is not re-linked |
 
 Tests 325.
+
+## Round 4 (audit_evidence_claims/m4) — CHANGES REQUIRED
+
+Shortest-span binding kept failing (wrong drug on ties, a six-token reach, qualifiers already consumed by the token pass).
+Replaced by a fail-closed rule: text is cut into list items at , ; ， ； 、 and listing words; an item in which any run of
+words names a distinct product or tracer has every drug in it refused (which drug the qualifier describes is not guessed);
+drugs in other items, and targets/companies in the same item, still link. M4-B1 (both drugs now refused, never
+BEVACIZUMAB), M4-B2 (no distance cap), M4-B3 (one pass, no pre-consumed qualifier) and the EGFR/AstraZeneca over-refusal
+are covered by tests. Tests 326.
