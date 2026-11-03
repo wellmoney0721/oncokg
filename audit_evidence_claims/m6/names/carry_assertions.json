@@ -1,0 +1,195 @@
+{
+  "source": "focused_new.json",
+  "head": "b7a00f9c14e5ee0447601795d0c0f4535c2f0376",
+  "query_sha256": "dbebe9981200a453368426872d0c253d3aa0fd72cf420a78c712f3fb4058e3b6",
+  "checks": 9,
+  "passed": 9,
+  "assertions": [
+    {
+      "input": "(Mvasi) and bevacizumab",
+      "expectation": "current refuses separately named bevacizumab; exact M5 maps it",
+      "passed": true,
+      "current_map": {
+        "refused": "(Mvasi) ... bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "previous_center": {
+        "id": "CHEMBL1201583",
+        "type": "Drug",
+        "label": "BEVACIZUMAB",
+        "matched_text": "BEVACIZUMAB",
+        "trials": 122,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      }
+    },
+    {
+      "input": "[Mvasi] and bevacizumab",
+      "expectation": "current refuses separately named bevacizumab; exact M5 maps it",
+      "passed": true,
+      "current_map": {
+        "refused": "[Mvasi] ... bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "previous_center": {
+        "id": "CHEMBL1201583",
+        "type": "Drug",
+        "label": "BEVACIZUMAB",
+        "matched_text": "BEVACIZUMAB",
+        "trials": 122,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      }
+    },
+    {
+      "input": "\"Mvasi\" and bevacizumab",
+      "expectation": "current refuses separately named bevacizumab; exact M5 maps it",
+      "passed": true,
+      "current_map": {
+        "refused": "\"Mvasi\" ... bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "previous_center": {
+        "id": "CHEMBL1201583",
+        "type": "Drug",
+        "label": "BEVACIZUMAB",
+        "matched_text": "BEVACIZUMAB",
+        "trials": 122,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      }
+    },
+    {
+      "input": "liposomal, and doxorubicin",
+      "expectation": "current carry crosses hard boundary; exact M5 maps doxorubicin",
+      "passed": true,
+      "current_map": {
+        "refused": "liposomal ... doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "previous_center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      }
+    },
+    {
+      "input": "liposomal and; doxorubicin",
+      "expectation": "current carry crosses hard boundary; exact M5 maps doxorubicin",
+      "passed": true,
+      "current_map": {
+        "refused": "liposomal ... doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "previous_center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      }
+    },
+    {
+      "input": "liposomal and / doxorubicin",
+      "expectation": "current carry crosses hard boundary; exact M5 maps doxorubicin",
+      "passed": true,
+      "current_map": {
+        "refused": "liposomal ... doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "previous_center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      }
+    },
+    {
+      "input": "liposomal and | doxorubicin",
+      "expectation": "current carry crosses hard boundary; exact M5 maps doxorubicin",
+      "passed": true,
+      "current_map": {
+        "refused": "liposomal ... doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "previous_center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      }
+    },
+    {
+      "input": "Mvasi and bevacizumab",
+      "expectation": "control maps bevacizumab and discloses Mvasi refusal",
+      "passed": true,
+      "current_map": {
+        "center": {
+          "id": "CHEMBL1201583",
+          "type": "Drug",
+          "label": "BEVACIZUMAB",
+          "matched_text": "BEVACIZUMAB",
+          "trials": 122,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        },
+        "also": [
+          {
+            "refused": "Mvasi"
+          }
+        ]
+      }
+    },
+    {
+      "input": "Mvasi, bevacizumab",
+      "expectation": "control maps bevacizumab and discloses Mvasi refusal",
+      "passed": true,
+      "current_map": {
+        "center": {
+          "id": "CHEMBL1201583",
+          "type": "Drug",
+          "label": "BEVACIZUMAB",
+          "matched_text": "BEVACIZUMAB",
+          "trials": 122,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        },
+        "also": [
+          {
+            "refused": "Mvasi"
+          }
+        ]
+      }
+    }
+  ]
+}

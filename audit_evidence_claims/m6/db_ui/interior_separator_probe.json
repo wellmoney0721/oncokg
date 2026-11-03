@@ -1,0 +1,283 @@
+[
+  {
+    "text": "bevacizumab - awwb/osimertinib",
+    "hits": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "bevacizumab",
+        "matched_alias": "BEVACIZUMAB"
+      }
+    ],
+    "center": {
+      "id": "CHEMBL1201583",
+      "type": "Drug",
+      "label": "BEVACIZUMAB",
+      "matched_text": "BEVACIZUMAB",
+      "trials": 122,
+      "props": {
+        "max_phase_overall": "APPROVAL",
+        "drug_type": "Antibody"
+      }
+    },
+    "refused": null,
+    "resolve": {
+      "raw": "bevacizumab - awwb/osimertinib",
+      "components": [
+        {
+          "component": "bevacizumab - awwb",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "split_combination",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        },
+        {
+          "component": "osimertinib",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL3353410",
+          "score": null,
+          "rules": [
+            "split_combination"
+          ],
+          "matched_alias": "OSIMERTINIB",
+          "candidates": null,
+          "drug": {
+            "name": "OSIMERTINIB",
+            "drug_type": "Small molecule",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "APPROVAL",
+            "mechanisms": [
+              "Epidermal growth factor receptor erbB1 inhibitor"
+            ],
+            "trials": 79
+          }
+        }
+      ]
+    }
+  },
+  {
+    "text": "bevacizumab - awwb|osimertinib",
+    "hits": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "bevacizumab",
+        "matched_alias": "BEVACIZUMAB"
+      }
+    ],
+    "center": {
+      "id": "CHEMBL1201583",
+      "type": "Drug",
+      "label": "BEVACIZUMAB",
+      "matched_text": "BEVACIZUMAB",
+      "trials": 122,
+      "props": {
+        "max_phase_overall": "APPROVAL",
+        "drug_type": "Antibody"
+      }
+    },
+    "refused": null,
+    "resolve": {
+      "raw": "bevacizumab - awwb|osimertinib",
+      "components": [
+        {
+          "component": "bevacizumab -",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201583",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "BEVACIZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'bevacizumab - awwb|osimertinib'",
+          "drug": {
+            "name": "BEVACIZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "APPROVAL",
+            "mechanisms": [
+              "Vascular endothelial growth factor A inhibitor"
+            ],
+            "trials": 122
+          }
+        },
+        {
+          "component": "awwb|osimertinib",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    }
+  },
+  {
+    "text": "bevacizumab - awwb/foo",
+    "hits": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "bevacizumab",
+        "matched_alias": "BEVACIZUMAB"
+      }
+    ],
+    "center": {
+      "id": "CHEMBL1201583",
+      "type": "Drug",
+      "label": "BEVACIZUMAB",
+      "matched_text": "BEVACIZUMAB",
+      "trials": 122,
+      "props": {
+        "max_phase_overall": "APPROVAL",
+        "drug_type": "Antibody"
+      }
+    },
+    "refused": null,
+    "resolve": {
+      "raw": "bevacizumab - awwb/foo",
+      "components": [
+        {
+          "component": "bevacizumab - awwb",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "split_combination",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        },
+        {
+          "component": "foo",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "split_combination"
+          ],
+          "matched_alias": null,
+          "candidates": null
+        }
+      ]
+    }
+  },
+  {
+    "text": "bevacizumab - awwb/ osimertinib",
+    "hits": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab - awwb",
+        "matched_text": "bevacizumab - awwb",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "center": {
+      "id": "CHEMBL3353410",
+      "type": "Drug",
+      "label": "OSIMERTINIB",
+      "matched_text": "OSIMERTINIB",
+      "trials": 79,
+      "props": {
+        "max_phase_overall": "APPROVAL",
+        "drug_type": "Small molecule"
+      }
+    },
+    "refused": null,
+    "resolve": {
+      "raw": "bevacizumab - awwb/ osimertinib",
+      "components": [
+        {
+          "component": "bevacizumab - awwb",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "split_combination",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        },
+        {
+          "component": "osimertinib",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL3353410",
+          "score": null,
+          "rules": [
+            "split_combination"
+          ],
+          "matched_alias": "OSIMERTINIB",
+          "candidates": null,
+          "drug": {
+            "name": "OSIMERTINIB",
+            "drug_type": "Small molecule",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "APPROVAL",
+            "mechanisms": [
+              "Epidermal growth factor receptor erbB1 inhibitor"
+            ],
+            "trials": 79
+          }
+        }
+      ]
+    }
+  },
+  {
+    "text": "liposomal / and doxorubicin",
+    "hits": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "liposomal ... doxorubicin",
+        "matched_text": "liposomal ... doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "center": null,
+    "refused": "liposomal ... doxorubicin",
+    "resolve": {
+      "raw": "liposomal / and doxorubicin",
+      "components": [
+        {
+          "component": "/ and doxorubicin",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    }
+  }
+]

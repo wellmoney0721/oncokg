@@ -135,23 +135,98 @@ class OncoKG:
 
     # -- entity linking ---------------------------------------------------- #
     def link_entities(self, question: str) -> list[dict]:
+        blocked = self._resolver_blocked(question)
+        whole = self._whole_name(question, blocked)
+        if whole:
+            return [whole]
+        found = self._link(question)
+        if not blocked:
+            return found
+        # a drug the resolver refuses in this text is refused here too, whatever the
+        # splitting below made of it (the two must agree before anything is linked)
+        out = [e for e in found if not (e["type"] == "Drug" and e["id"] in blocked)]
+        for text in sorted({t for t in blocked.values()}):
+            if not any(e["type"] == "Refused" and (text in e["label"] or e["label"] in text)
+                       for e in out):
+                out.append({"type": "Refused", "id": None, "label": text, "matched_text": text,
+                            "why": "names a distinct product or tracer, not the "
+                                   "originator molecule"})
+        return out
+
+    def _resolver_blocked(self, text: str) -> dict:
+        """Drug ids inside the pieces the intervention resolver refuses as a distinct
+        product or a tracer, with the refused piece."""
+        comps = []
+        for piece in re.split(r"[,;，；、/|]", text):  # the list pieces used below
+            if not piece.strip():
+                continue
+            try:
+                comps += N.resolve_drug_string(piece, self.dic, self.index_keys)["components"]
+            except Exception:                               # never let a guard crash a lookup
+                continue
+        out: dict = {}
+        accepted = {c.get("drug_id") for c in comps
+                    if c.get("drug_id") and not str(c.get("tier", "")).startswith("BLOCKED")}
+        for c in comps:
+            piece = c.get("component") or ""
+            if not (c.get("tier") == "BLOCKED_DISTINCT_PRODUCT"
+                    or (str(c.get("tier", "")).startswith("BLOCKED") and T.is_radiotracer(piece))):
+                continue
+            words = [w for w in re.split(r"[\s/|,;]+", piece) if w]
+            words = [w.strip(" ?.!:()[]") or w for w in words]
+            for a, b in self._drug_spans(words, set(), [0] * len(words)):
+                key = T.canonical_key(" ".join(words[a:b]))
+                for h in self.dic["index"].get(key, []):
+                    # the same molecule named separately and accepted ("biosimilar
+                    # anastrozole, Arimidex") is left to the list-item rule below
+                    if h["drug_id"] not in accepted:
+                        out[h["drug_id"]] = piece
+        return out
+
+    def _whole_name(self, text: str, blocked: dict):
+        """The whole input is one stored drug name ("CP-358,774", "Rapamycin,
+        42-o-(2-hydroxyethyl)-"): read it whole, before list punctuation splits it."""
+        if re.search(r"[/|]", text) or any(w.lower() in _JOINERS for w in text.split()):
+            return None                              # a list, not one name
+        key = T.canonical_key(text.strip(" ?.!"))
+        hits = self.dic["index"].get(key) if key else None
+        if not hits or len({h["drug_id"] for h in hits}) != 1 or blocked:
+            return None
+        if T.is_distinct_product(text) or T.is_radiotracer(text):
+            return None
+        did = hits[0]["drug_id"]
+        return {"type": "Drug", "id": did, "label": self.dic["drugs"][did]["name"],
+                "matched_text": text.strip(), "matched_alias": hits[0]["alias"]}
+
+    def _link(self, question: str) -> list[dict]:
         found: list[dict] = []
         seen: set = set()
         tokens: list[str] = []
         clause: list[int] = []          # which list piece each token is in
-        ci = 0
+        inner: list[bool] = []          # token inside parentheses
+        ci, depth = 0, 0
         for piece in re.split(r"[,;\uff0c\uff1b\u3001]", question):
             for raw in re.split(r"\s+", piece):
-                # a slash or bar glued to a word ("bevacizumab-awwb/ osimertinib")
-                # ends the piece; it must not hide a product suffix from the guards
-                t = raw.strip(" ?.,!;:/|")
-                if t:
-                    tokens.append(t)
-                    clause.append(ci)
-                if raw.endswith(("/", "|")) or raw in ("/", "|"):
-                    ci += 1
-                elif raw.startswith(("/", "|")) and t:
-                    clause[-1] = ci = ci + 1
+                # a slash or bar, glued or free, ends the piece ("bevacizumab - awwb/
+                # osimertinib"); it must not hide a product suffix from the guards
+                for j, part in enumerate(re.split(r"[/|]", raw)):
+                    if j:
+                        ci += 1
+                    if not part:
+                        continue
+                    if re.search(r"\w", part):
+                        # edge punctuation off, as the resolver does ("bevacizumab-
+                        # awwb\u3002"); brackets stay, they mark isotopes ("[89Zr]")
+                        t = re.sub(r"^[^\w\[\(]+|[^\w\]\)]+$", "", part)
+                    elif part in ("-", "\u2013", "\u2014", "+", "&"):
+                        t = part            # "bevacizumab - awwb" needs its dash
+                    else:
+                        t = ""
+                    if t:
+                        tokens.append(t)
+                        clause.append(ci)
+                        inner.append(depth > 0 or t.startswith("("))
+                    depth = max(0, depth + part.count("(") - part.count(")"))
             ci += 1
 
         # The resolver's refusals apply to questions too: "Mvasi", "liposomal
@@ -165,7 +240,9 @@ class OncoKG:
         seg: list[int] = []
         n = 0
         for k, t in enumerate(tokens):
-            if t.lower() in _JOINERS:
+            # "and" inside parentheses describes one product ("doxorubicin
+            # (nanoparticle and liposomal formulation)"); it does not list two
+            if t.lower() in _JOINERS and not inner[k]:
                 n += 1
                 seg.append(-1)
                 continue

@@ -1,0 +1,2649 @@
+{
+  "baseline": "574097f exact method and _JOINERS",
+  "cases": [
+    {
+      "input": "osimertinib; generic version of bevacizumab",
+      "input_codepoints": [],
+      "resolver": {
+        "raw": "osimertinib; generic version of bevacizumab",
+        "components": [
+          {
+            "component": "osimertinib; generic version of bevacizumab",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      },
+      "current": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "generic version of bevacizumab",
+            "matched_text": "generic version of bevacizumab",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL3353410",
+            "label": "OSIMERTINIB",
+            "matched_text": "osimertinib",
+            "matched_alias": "OSIMERTINIB"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL3353410",
+            "type": "Drug",
+            "label": "OSIMERTINIB",
+            "matched_text": "OSIMERTINIB",
+            "trials": 79,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [
+            {
+              "refused": "generic version of bevacizumab"
+            }
+          ]
+        },
+        "answer": {
+          "question": "osimertinib; generic version of bevacizumab",
+          "intent": "drug_profile",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "generic version of bevacizumab",
+              "matched_text": "generic version of bevacizumab",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            },
+            {
+              "type": "Drug",
+              "id": "CHEMBL3353410",
+              "label": "OSIMERTINIB",
+              "matched_text": "osimertinib",
+              "matched_alias": "OSIMERTINIB"
+            }
+          ],
+          "answer": "Profile:\n  - OSIMERTINIB is a Small molecule, max clinical stage APPROVAL, appearing in 79 NSCLC trial(s) in this graph [CHEMBL3353410]\n  - OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410]\n\nScope: 2 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 2,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "OSIMERTINIB is a Small molecule, max clinical stage APPROVAL, appearing in 79 NSCLC trial(s) in this graph",
+              "relation": "PROFILE",
+              "edge_id": "profile:CHEMBL3353410",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL3353410",
+              "fetched_at": null,
+              "confidence": 1.0,
+              "resolution_tier": null,
+              "url": null,
+              "aliases_known": 9,
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor"
+              ]
+            },
+            {
+              "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL3353410",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            }
+          ]
+        }
+      },
+      "previous": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "osimertinib generic version of bevacizumab",
+            "matched_text": "osimertinib generic version of bevacizumab",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "map": {
+          "refused": "osimertinib generic version of bevacizumab",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        "answer": {
+          "question": "osimertinib; generic version of bevacizumab",
+          "intent": "unsupported",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "osimertinib generic version of bevacizumab",
+              "matched_text": "osimertinib generic version of bevacizumab",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            }
+          ],
+          "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+          "generated_by": "refusal (no supporting evidence)",
+          "checks": {
+            "grounded": true,
+            "unsupported_claims": [],
+            "note": "refusing is the correct output when evidence is absent"
+          },
+          "evidence": []
+        }
+      }
+    },
+    {
+      "input": "osimertinib， generic version of bevacizumab",
+      "input_codepoints": [
+        "U+FF0C"
+      ],
+      "resolver": {
+        "raw": "osimertinib， generic version of bevacizumab",
+        "components": [
+          {
+            "component": "osimertinib",
+            "tier": "EXACT",
+            "drug_id": "CHEMBL3353410",
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": "OSIMERTINIB",
+            "candidates": null,
+            "drug": {
+              "name": "OSIMERTINIB",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor"
+              ],
+              "trials": 79
+            }
+          },
+          {
+            "component": "generic version of bevacizumab",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      },
+      "current": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "generic version of bevacizumab",
+            "matched_text": "generic version of bevacizumab",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL3353410",
+            "label": "OSIMERTINIB",
+            "matched_text": "osimertinib",
+            "matched_alias": "OSIMERTINIB"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL3353410",
+            "type": "Drug",
+            "label": "OSIMERTINIB",
+            "matched_text": "OSIMERTINIB",
+            "trials": 79,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [
+            {
+              "refused": "generic version of bevacizumab"
+            }
+          ]
+        },
+        "answer": {
+          "question": "osimertinib， generic version of bevacizumab",
+          "intent": "drug_profile",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "generic version of bevacizumab",
+              "matched_text": "generic version of bevacizumab",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            },
+            {
+              "type": "Drug",
+              "id": "CHEMBL3353410",
+              "label": "OSIMERTINIB",
+              "matched_text": "osimertinib",
+              "matched_alias": "OSIMERTINIB"
+            }
+          ],
+          "answer": "Profile:\n  - OSIMERTINIB is a Small molecule, max clinical stage APPROVAL, appearing in 79 NSCLC trial(s) in this graph [CHEMBL3353410]\n  - OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410]\n\nScope: 2 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 2,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "OSIMERTINIB is a Small molecule, max clinical stage APPROVAL, appearing in 79 NSCLC trial(s) in this graph",
+              "relation": "PROFILE",
+              "edge_id": "profile:CHEMBL3353410",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL3353410",
+              "fetched_at": null,
+              "confidence": 1.0,
+              "resolution_tier": null,
+              "url": null,
+              "aliases_known": 9,
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor"
+              ]
+            },
+            {
+              "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL3353410",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            }
+          ]
+        }
+      },
+      "previous": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "osimertinib， generic version of bevacizumab",
+            "matched_text": "osimertinib， generic version of bevacizumab",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "map": {
+          "refused": "osimertinib， generic version of bevacizumab",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        "answer": {
+          "question": "osimertinib， generic version of bevacizumab",
+          "intent": "unsupported",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "osimertinib， generic version of bevacizumab",
+              "matched_text": "osimertinib， generic version of bevacizumab",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            }
+          ],
+          "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+          "generated_by": "refusal (no supporting evidence)",
+          "checks": {
+            "grounded": true,
+            "unsupported_claims": [],
+            "note": "refusing is the correct output when evidence is absent"
+          },
+          "evidence": []
+        }
+      }
+    },
+    {
+      "input": "osimertinib, generic version of bevacizumab",
+      "input_codepoints": [],
+      "resolver": {
+        "raw": "osimertinib, generic version of bevacizumab",
+        "components": [
+          {
+            "component": "osimertinib",
+            "tier": "EXACT",
+            "drug_id": "CHEMBL3353410",
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": "OSIMERTINIB",
+            "candidates": null,
+            "drug": {
+              "name": "OSIMERTINIB",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor"
+              ],
+              "trials": 79
+            }
+          },
+          {
+            "component": "generic version of bevacizumab",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      },
+      "current": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "generic version of bevacizumab",
+            "matched_text": "generic version of bevacizumab",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL3353410",
+            "label": "OSIMERTINIB",
+            "matched_text": "osimertinib",
+            "matched_alias": "OSIMERTINIB"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL3353410",
+            "type": "Drug",
+            "label": "OSIMERTINIB",
+            "matched_text": "OSIMERTINIB",
+            "trials": 79,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [
+            {
+              "refused": "generic version of bevacizumab"
+            }
+          ]
+        },
+        "answer": {
+          "question": "osimertinib, generic version of bevacizumab",
+          "intent": "drug_profile",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "generic version of bevacizumab",
+              "matched_text": "generic version of bevacizumab",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            },
+            {
+              "type": "Drug",
+              "id": "CHEMBL3353410",
+              "label": "OSIMERTINIB",
+              "matched_text": "osimertinib",
+              "matched_alias": "OSIMERTINIB"
+            }
+          ],
+          "answer": "Profile:\n  - OSIMERTINIB is a Small molecule, max clinical stage APPROVAL, appearing in 79 NSCLC trial(s) in this graph [CHEMBL3353410]\n  - OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410]\n\nScope: 2 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 2,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "OSIMERTINIB is a Small molecule, max clinical stage APPROVAL, appearing in 79 NSCLC trial(s) in this graph",
+              "relation": "PROFILE",
+              "edge_id": "profile:CHEMBL3353410",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL3353410",
+              "fetched_at": null,
+              "confidence": 1.0,
+              "resolution_tier": null,
+              "url": null,
+              "aliases_known": 9,
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor"
+              ]
+            },
+            {
+              "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL3353410",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            }
+          ]
+        }
+      },
+      "previous": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "generic version of bevacizumab",
+            "matched_text": "generic version of bevacizumab",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL3353410",
+            "label": "OSIMERTINIB",
+            "matched_text": "osimertinib",
+            "matched_alias": "OSIMERTINIB"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL3353410",
+            "type": "Drug",
+            "label": "OSIMERTINIB",
+            "matched_text": "OSIMERTINIB",
+            "trials": 79,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [
+            {
+              "refused": "generic version of bevacizumab"
+            }
+          ]
+        },
+        "answer": {
+          "question": "osimertinib, generic version of bevacizumab",
+          "intent": "drug_profile",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "generic version of bevacizumab",
+              "matched_text": "generic version of bevacizumab",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            },
+            {
+              "type": "Drug",
+              "id": "CHEMBL3353410",
+              "label": "OSIMERTINIB",
+              "matched_text": "osimertinib",
+              "matched_alias": "OSIMERTINIB"
+            }
+          ],
+          "answer": "Profile:\n  - OSIMERTINIB is a Small molecule, max clinical stage APPROVAL, appearing in 79 NSCLC trial(s) in this graph [CHEMBL3353410]\n  - OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410]\n\nScope: 2 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 2,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "OSIMERTINIB is a Small molecule, max clinical stage APPROVAL, appearing in 79 NSCLC trial(s) in this graph",
+              "relation": "PROFILE",
+              "edge_id": "profile:CHEMBL3353410",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL3353410",
+              "fetched_at": null,
+              "confidence": 1.0,
+              "resolution_tier": null,
+              "url": null,
+              "aliases_known": 9,
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor"
+              ]
+            },
+            {
+              "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL3353410",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": "paclitaxel with albumin-bound nanoparticles",
+      "input_codepoints": [],
+      "resolver": {
+        "raw": "paclitaxel with albumin-bound nanoparticles",
+        "components": [
+          {
+            "component": "paclitaxel with nanoparticles",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "strip_formulation",
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      },
+      "current": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "paclitaxel with albumin-bound nanoparticles",
+            "matched_text": "paclitaxel with albumin-bound nanoparticles",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "map": {
+          "refused": "paclitaxel with albumin-bound nanoparticles",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        "answer": {
+          "question": "paclitaxel with albumin-bound nanoparticles",
+          "intent": "unsupported",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "paclitaxel with albumin-bound nanoparticles",
+              "matched_text": "paclitaxel with albumin-bound nanoparticles",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            }
+          ],
+          "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+          "generated_by": "refusal (no supporting evidence)",
+          "checks": {
+            "grounded": true,
+            "unsupported_claims": [],
+            "note": "refusing is the correct output when evidence is absent"
+          },
+          "evidence": []
+        }
+      },
+      "previous": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "with albumin-bound nanoparticles",
+            "matched_text": "with albumin-bound nanoparticles",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL428647",
+            "label": "PACLITAXEL",
+            "matched_text": "paclitaxel",
+            "matched_alias": "PACLITAXEL"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL428647",
+            "type": "Drug",
+            "label": "PACLITAXEL",
+            "matched_text": "PACLITAXEL",
+            "trials": 234,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [
+            {
+              "refused": "with albumin-bound nanoparticles"
+            }
+          ]
+        },
+        "answer": {
+          "question": "paclitaxel with albumin-bound nanoparticles",
+          "intent": "drug_profile",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "with albumin-bound nanoparticles",
+              "matched_text": "with albumin-bound nanoparticles",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            },
+            {
+              "type": "Drug",
+              "id": "CHEMBL428647",
+              "label": "PACLITAXEL",
+              "matched_text": "paclitaxel",
+              "matched_alias": "PACLITAXEL"
+            }
+          ],
+          "answer": "Profile:\n  - PACLITAXEL is a Small molecule, max clinical stage APPROVAL, appearing in 234 NSCLC trial(s) in this graph [CHEMBL428647]\n  - PACLITAXEL acts on TUBB4B (inhibitor) [CHEMBL428647]\n  - PACLITAXEL acts on TUBB1 (inhibitor) [CHEMBL428647]\n  - PACLITAXEL acts on TUBA3C (inhibitor) [CHEMBL428647]\n  - PACLITAXEL acts on TUBA4A (inhibitor) [CHEMBL428647]\n  - PACLITAXEL acts on TUBB3 (inhibitor) [CHEMBL428647]\n  - PACLITAXEL acts on TUBA1A (inhibitor) [CHEMBL428647]\n\nScope: 7 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 7,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "PACLITAXEL is a Small molecule, max clinical stage APPROVAL, appearing in 234 NSCLC trial(s) in this graph",
+              "relation": "PROFILE",
+              "edge_id": "profile:CHEMBL428647",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL428647",
+              "fetched_at": null,
+              "confidence": 1.0,
+              "resolution_tier": null,
+              "url": null,
+              "aliases_known": 97,
+              "mechanisms": [
+                "Tubulin inhibitor"
+              ]
+            },
+            {
+              "statement": "PACLITAXEL acts on TUBB4B (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL428647|ACTS_ON|ENSG00000188229|CHEMBL428647",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL428647",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            },
+            {
+              "statement": "PACLITAXEL acts on TUBB1 (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL428647|ACTS_ON|ENSG00000101162|CHEMBL428647",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL428647",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            },
+            {
+              "statement": "PACLITAXEL acts on TUBA3C (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL428647|ACTS_ON|ENSG00000198033|CHEMBL428647",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL428647",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            },
+            {
+              "statement": "PACLITAXEL acts on TUBA4A (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL428647|ACTS_ON|ENSG00000127824|CHEMBL428647",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL428647",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            },
+            {
+              "statement": "PACLITAXEL acts on TUBB3 (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL428647|ACTS_ON|ENSG00000258947|CHEMBL428647",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL428647",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            },
+            {
+              "statement": "PACLITAXEL acts on TUBA1A (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL428647|ACTS_ON|ENSG00000167552|CHEMBL428647",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL428647",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": "bevacizumab with albumin-bound nanoparticles",
+      "input_codepoints": [],
+      "resolver": {
+        "raw": "bevacizumab with albumin-bound nanoparticles",
+        "components": [
+          {
+            "component": "bevacizumab with nanoparticles",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "strip_formulation",
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      },
+      "current": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "bevacizumab with albumin-bound nanoparticles",
+            "matched_text": "bevacizumab with albumin-bound nanoparticles",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "map": {
+          "refused": "bevacizumab with albumin-bound nanoparticles",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        "answer": {
+          "question": "bevacizumab with albumin-bound nanoparticles",
+          "intent": "unsupported",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "bevacizumab with albumin-bound nanoparticles",
+              "matched_text": "bevacizumab with albumin-bound nanoparticles",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            }
+          ],
+          "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+          "generated_by": "refusal (no supporting evidence)",
+          "checks": {
+            "grounded": true,
+            "unsupported_claims": [],
+            "note": "refusing is the correct output when evidence is absent"
+          },
+          "evidence": []
+        }
+      },
+      "previous": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "with albumin-bound nanoparticles",
+            "matched_text": "with albumin-bound nanoparticles",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL1201583",
+            "label": "BEVACIZUMAB",
+            "matched_text": "bevacizumab",
+            "matched_alias": "BEVACIZUMAB"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL1201583",
+            "type": "Drug",
+            "label": "BEVACIZUMAB",
+            "matched_text": "BEVACIZUMAB",
+            "trials": 122,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Antibody"
+            }
+          },
+          "also": [
+            {
+              "refused": "with albumin-bound nanoparticles"
+            }
+          ]
+        },
+        "answer": {
+          "question": "bevacizumab with albumin-bound nanoparticles",
+          "intent": "drug_profile",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "with albumin-bound nanoparticles",
+              "matched_text": "with albumin-bound nanoparticles",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            },
+            {
+              "type": "Drug",
+              "id": "CHEMBL1201583",
+              "label": "BEVACIZUMAB",
+              "matched_text": "bevacizumab",
+              "matched_alias": "BEVACIZUMAB"
+            }
+          ],
+          "answer": "Profile:\n  - BEVACIZUMAB is a Antibody, max clinical stage APPROVAL, appearing in 122 NSCLC trial(s) in this graph [CHEMBL1201583]\n  - BEVACIZUMAB acts on VEGFA (inhibitor) [CHEMBL1201583]\n\nScope: 2 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 2,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "BEVACIZUMAB is a Antibody, max clinical stage APPROVAL, appearing in 122 NSCLC trial(s) in this graph",
+              "relation": "PROFILE",
+              "edge_id": "profile:CHEMBL1201583",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL1201583",
+              "fetched_at": null,
+              "confidence": 1.0,
+              "resolution_tier": null,
+              "url": null,
+              "aliases_known": 67,
+              "mechanisms": [
+                "Vascular endothelial growth factor A inhibitor"
+              ]
+            },
+            {
+              "statement": "BEVACIZUMAB acts on VEGFA (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL1201583|ACTS_ON|ENSG00000112715|CHEMBL1201583",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL1201583",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": "paclitaxel with albumin bound nanoparticles",
+      "input_codepoints": [],
+      "resolver": {
+        "raw": "paclitaxel with albumin bound nanoparticles",
+        "components": [
+          {
+            "component": "paclitaxel with albumin bound nanoparticles",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      },
+      "current": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "paclitaxel with albumin bound nanoparticles",
+            "matched_text": "paclitaxel with albumin bound nanoparticles",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "map": {
+          "refused": "paclitaxel with albumin bound nanoparticles",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        "answer": {
+          "question": "paclitaxel with albumin bound nanoparticles",
+          "intent": "unsupported",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "paclitaxel with albumin bound nanoparticles",
+              "matched_text": "paclitaxel with albumin bound nanoparticles",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            }
+          ],
+          "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+          "generated_by": "refusal (no supporting evidence)",
+          "checks": {
+            "grounded": true,
+            "unsupported_claims": [],
+            "note": "refusing is the correct output when evidence is absent"
+          },
+          "evidence": []
+        }
+      },
+      "previous": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "albumin bound nanoparticles",
+            "matched_text": "albumin bound nanoparticles",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL428647",
+            "label": "PACLITAXEL",
+            "matched_text": "paclitaxel",
+            "matched_alias": "PACLITAXEL"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL428647",
+            "type": "Drug",
+            "label": "PACLITAXEL",
+            "matched_text": "PACLITAXEL",
+            "trials": 234,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [
+            {
+              "refused": "albumin bound nanoparticles"
+            }
+          ]
+        },
+        "answer": {
+          "question": "paclitaxel with albumin bound nanoparticles",
+          "intent": "drug_profile",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "albumin bound nanoparticles",
+              "matched_text": "albumin bound nanoparticles",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            },
+            {
+              "type": "Drug",
+              "id": "CHEMBL428647",
+              "label": "PACLITAXEL",
+              "matched_text": "paclitaxel",
+              "matched_alias": "PACLITAXEL"
+            }
+          ],
+          "answer": "Profile:\n  - PACLITAXEL is a Small molecule, max clinical stage APPROVAL, appearing in 234 NSCLC trial(s) in this graph [CHEMBL428647]\n  - PACLITAXEL acts on TUBB4B (inhibitor) [CHEMBL428647]\n  - PACLITAXEL acts on TUBB1 (inhibitor) [CHEMBL428647]\n  - PACLITAXEL acts on TUBA3C (inhibitor) [CHEMBL428647]\n  - PACLITAXEL acts on TUBA4A (inhibitor) [CHEMBL428647]\n  - PACLITAXEL acts on TUBB3 (inhibitor) [CHEMBL428647]\n  - PACLITAXEL acts on TUBA1A (inhibitor) [CHEMBL428647]\n\nScope: 7 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 7,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "PACLITAXEL is a Small molecule, max clinical stage APPROVAL, appearing in 234 NSCLC trial(s) in this graph",
+              "relation": "PROFILE",
+              "edge_id": "profile:CHEMBL428647",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL428647",
+              "fetched_at": null,
+              "confidence": 1.0,
+              "resolution_tier": null,
+              "url": null,
+              "aliases_known": 97,
+              "mechanisms": [
+                "Tubulin inhibitor"
+              ]
+            },
+            {
+              "statement": "PACLITAXEL acts on TUBB4B (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL428647|ACTS_ON|ENSG00000188229|CHEMBL428647",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL428647",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            },
+            {
+              "statement": "PACLITAXEL acts on TUBB1 (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL428647|ACTS_ON|ENSG00000101162|CHEMBL428647",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL428647",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            },
+            {
+              "statement": "PACLITAXEL acts on TUBA3C (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL428647|ACTS_ON|ENSG00000198033|CHEMBL428647",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL428647",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            },
+            {
+              "statement": "PACLITAXEL acts on TUBA4A (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL428647|ACTS_ON|ENSG00000127824|CHEMBL428647",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL428647",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            },
+            {
+              "statement": "PACLITAXEL acts on TUBB3 (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL428647|ACTS_ON|ENSG00000258947|CHEMBL428647",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL428647",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            },
+            {
+              "statement": "PACLITAXEL acts on TUBA1A (inhibitor)",
+              "relation": "ACTS_ON",
+              "edge_id": "CHEMBL428647|ACTS_ON|ENSG00000167552|CHEMBL428647",
+              "source": "Open Targets / ChEMBL",
+              "source_record": "CHEMBL428647",
+              "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+              "confidence": 0.95,
+              "resolution_tier": null,
+              "url": null,
+              "action_type": "INHIBITOR"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": "Which trials evaluate osimertinib; generic version of bevacizumab?",
+      "input_codepoints": [],
+      "resolver": {
+        "raw": "Which trials evaluate osimertinib; generic version of bevacizumab?",
+        "components": [
+          {
+            "component": "Which trials evaluate osimertinib; generic version of bevacizumab?",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      },
+      "current": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "generic version of bevacizumab",
+            "matched_text": "generic version of bevacizumab",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL3353410",
+            "label": "OSIMERTINIB",
+            "matched_text": "osimertinib",
+            "matched_alias": "OSIMERTINIB"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL3353410",
+            "type": "Drug",
+            "label": "OSIMERTINIB",
+            "matched_text": "OSIMERTINIB",
+            "trials": 79,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [
+            {
+              "refused": "generic version of bevacizumab"
+            }
+          ]
+        },
+        "answer": {
+          "question": "Which trials evaluate osimertinib; generic version of bevacizumab?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "generic version of bevacizumab",
+              "matched_text": "generic version of bevacizumab",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            },
+            {
+              "type": "Drug",
+              "id": "CHEMBL3353410",
+              "label": "OSIMERTINIB",
+              "matched_text": "osimertinib",
+              "matched_alias": "OSIMERTINIB"
+            }
+          ],
+          "answer": "Trials of this drug:\n  - NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT03909334]\n  - NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB [NCT07680790]\n  - NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT02411448]\n  - NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04285671]\n  - NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04141644]\n  - NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT03535363]\n  - NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04487080]\n  - NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB [NCT07738172]\n  - NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT04541407]\n  - NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB [NCT04772235]\n  - NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB [NCT05011487]\n  - NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT04479306]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 12,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT03909334",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT03909334",
+              "stated_intervention": "Osimertinib",
+              "title": "Study of Osimertinib With and Without Ramucirumab in Locally Advanced or Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT07680790",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT07680790",
+              "stated_intervention": "Osimertinib",
+              "title": "Study of Izalontamab Brengitecan (BMS-986507) in Combination With Osimertinib Versus Osimertinib Monotherapy or Osimertinib in Combination With Platinum-based Chemotherapy for EGFRmt Non-small Cell Lung Cancer (IZABRIGHT-Lung02)",
+              "status": "RECRUITING",
+              "phases": [
+                "PHASE3"
+              ]
+            },
+            {
+              "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT02411448",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT02411448",
+              "stated_intervention": "Osimertinib",
+              "title": "A Study of Ramucirumab (LY3009806) in Combination With Erlotinib in Previously Untreated Participants With EGFR Mutation-Positive Metastatic NSCLC (RELAY)",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE3"
+              ]
+            },
+            {
+              "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04285671",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04285671",
+              "stated_intervention": "Osimertinib",
+              "title": "Necitumumab and Trastuzumab in Combination With Osimertinib for the Treatment of Refractory Epidermal Growth Factor Receptor (EGFR)-Mutated Stage IV Non-small Cell Lung Cancer",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04141644",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04141644",
+              "stated_intervention": "Osimertinib",
+              "title": "Safety and Efficacy of Combination Osimertinib and Ipilimumab in Patients w EGFR Mutated NSCLC",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT03535363",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT03535363",
+              "stated_intervention": "Osimertinib",
+              "title": "Osimertinib With Stereotactic Radiosurgery (SRS) in Brain Metastases From EGFR Positive NSCLC",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04487080",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04487080",
+              "stated_intervention": "Osimertinib",
+              "title": "A Study of Amivantamab and Lazertinib Combination Therapy Versus Osimertinib in Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE3"
+              ]
+            },
+            {
+              "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT07738172",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT07738172",
+              "stated_intervention": "Osimertinib",
+              "title": "Osimertinib With or Without Primary Lung Tumor Resection for EGFR-Mutant Oligometastatic Non-Small Cell Lung Cancer",
+              "status": "RECRUITING",
+              "phases": [
+                "PHASE3"
+              ]
+            },
+            {
+              "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04541407",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04541407",
+              "stated_intervention": "Temozolomide plus Osimertinib",
+              "title": "Temodar Plus Tyrosine Kinase Inhibitors for Progressive CNS Disease",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04772235",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04772235",
+              "stated_intervention": "Osimertinib",
+              "title": "Phase I Study of Repotrectinib and Osimertinib in NSCLC Patients",
+              "status": "UNKNOWN",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT05011487",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT05011487",
+              "stated_intervention": "Osimertinib",
+              "title": "Neoadjuvant Osimertinib + Chemotherapy for EGFR-mutant Stage III NSCLC",
+              "status": "RECRUITING",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04479306",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04479306",
+              "stated_intervention": "Osimertinib",
+              "title": "Osimertinib in Combination With Alisertib or Sapanisertib for the Treatment of Osimertinib-Resistant EGFR Mutant Stage IIIB or IV Non-Small Cell Lung Cancer",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            }
+          ]
+        }
+      },
+      "previous": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "trials evaluate osimertinib generic version",
+            "matched_text": "trials evaluate osimertinib generic version",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL1201583",
+            "label": "BEVACIZUMAB",
+            "matched_text": "bevacizumab",
+            "matched_alias": "BEVACIZUMAB"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL1201583",
+            "type": "Drug",
+            "label": "BEVACIZUMAB",
+            "matched_text": "BEVACIZUMAB",
+            "trials": 122,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Antibody"
+            }
+          },
+          "also": [
+            {
+              "refused": "trials evaluate osimertinib generic version"
+            }
+          ]
+        },
+        "answer": {
+          "question": "Which trials evaluate osimertinib; generic version of bevacizumab?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "trials evaluate osimertinib generic version",
+              "matched_text": "trials evaluate osimertinib generic version",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            },
+            {
+              "type": "Drug",
+              "id": "CHEMBL1201583",
+              "label": "BEVACIZUMAB",
+              "matched_text": "bevacizumab",
+              "matched_alias": "BEVACIZUMAB"
+            }
+          ],
+          "answer": "Trials of this drug:\n  - NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00955305]\n  - NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00445848]\n  - NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB [NCT03616691]\n  - NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00531960]\n  - NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB [NCT03390686]\n  - NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT01057212]\n  - NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB [NCT06400472]\n  - NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00271505]\n  - NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00251524]\n  - NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00741195]\n  - NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00976677]\n  - NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00101348]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 12,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00955305|EVALUATES|CHEMBL1201583|NCT00955305",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00955305",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00955305",
+              "stated_intervention": "Bevacizumab",
+              "title": "Paclitaxel, Carboplatin, and Bevacizumab With or Without Cixutumumab in Treating Patients With Stage IV or Recurrent Non-small Cell Lung Cancer",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00445848|EVALUATES|CHEMBL1201583|NCT00445848",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00445848",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00445848",
+              "stated_intervention": "bevacizumab",
+              "title": "S0636: Erlotinib and Bevacizumab in Never-Smokers With Stage IIIB or Stage IV Primary Non-Small Cell Lung Cancer",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT03616691|EVALUATES|CHEMBL1201583|NCT03616691",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT03616691",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT03616691",
+              "stated_intervention": "Bevacizumab",
+              "title": "Atezolizumab Monotherapy and Consequent Therapy With Atezolizumab Plus Bevacizumab for NSCLC",
+              "status": "UNKNOWN",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00531960|EVALUATES|CHEMBL1201583|NCT00531960",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00531960",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00531960",
+              "stated_intervention": "Bevacizumab",
+              "title": "A Study of Tarceva (Erlotinib) in Combination With Avastin (Bevacizumab) in Patients With Advanced Non-Small Cell Lung Cancer.",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT03390686|EVALUATES|CHEMBL1201583|NCT03390686",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT03390686",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT03390686",
+              "stated_intervention": "Bevacizumab",
+              "title": "A Trial to Compare the Efficacy, Safety, Pharmacokinetics and Immunogenicity of HD204 to Avastin® in Advanced Non-squamous Non-small Cell Lung Cancer Patients",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE3"
+              ]
+            },
+            {
+              "statement": "NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT01057212|EVALUATES|CHEMBL1201583|NCT01057212",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT01057212",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT01057212",
+              "stated_intervention": "bevacizumab",
+              "title": "Trial of Bevacizumab and Ixabepilone for Advanced or Metastatic Non-small Cell Lung Cancer (NSCLC)",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT06400472|EVALUATES|CHEMBL1201583|NCT06400472",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT06400472",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT06400472",
+              "stated_intervention": "bevacizumab",
+              "title": "A Study of Sofe-M in Participants With Selected Advanced Solid Tumors",
+              "status": "RECRUITING",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00271505|EVALUATES|CHEMBL1201583|NCT00271505",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00271505",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00271505",
+              "stated_intervention": "Bevacizumab (Avastin)",
+              "title": "Avastin/Docetaxel/Carboplatin in Non-Small Cell Lung Cancer",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00251524|EVALUATES|CHEMBL1201583|NCT00251524",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00251524",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00251524",
+              "stated_intervention": "Bevacizumab, Oxaliplatin, Pemetrexed",
+              "title": "A Phase II Study of Eloxatin and Alimta in Combination With Bevacizumab in Advanced Non-Squamous NSCLC",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00741195|EVALUATES|CHEMBL1201583|NCT00741195",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00741195",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00741195",
+              "stated_intervention": "Bevacizumab",
+              "title": "Docetaxel Plus Bevacizumab in Metastatic Non Small Cell Lung Cancer",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00976677|EVALUATES|CHEMBL1201583|NCT00976677",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00976677",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00976677",
+              "stated_intervention": "bevacizumab",
+              "title": "Carboplatin, Paclitaxel, and Bevacizumab With or Without Erlotinib Hydrochloride in Treating Non-Smokers With Advanced Non-Small Cell Lung Cancer",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00101348|EVALUATES|CHEMBL1201583|NCT00101348",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00101348",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00101348",
+              "stated_intervention": "bevacizumab",
+              "title": "Erlotinib and Cetuximab With or Without Bevacizumab in Treating Patients With Metastatic or Unresectable Kidney, Colorectal, Head and Neck, Pancreatic, or Non-Small Cell Lung Cancer",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": "Which trials evaluate osimertinib， generic version of bevacizumab?",
+      "input_codepoints": [
+        "U+FF0C"
+      ],
+      "resolver": {
+        "raw": "Which trials evaluate osimertinib， generic version of bevacizumab?",
+        "components": [
+          {
+            "component": "osimertinib",
+            "tier": "CONTAINED_ALIAS",
+            "drug_id": "CHEMBL3353410",
+            "score": null,
+            "rules": [
+              "split_combination",
+              "segmented_from_phrase"
+            ],
+            "matched_alias": "OSIMERTINIB",
+            "candidates": null,
+            "note": "segmented out of 'Which trials evaluate osimertinib'",
+            "drug": {
+              "name": "OSIMERTINIB",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor"
+              ],
+              "trials": 79
+            }
+          },
+          {
+            "component": "Which trials evaluate",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "segmentation_residue"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+          },
+          {
+            "component": "generic version of bevacizumab?",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      },
+      "current": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "generic version of bevacizumab",
+            "matched_text": "generic version of bevacizumab",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL3353410",
+            "label": "OSIMERTINIB",
+            "matched_text": "osimertinib",
+            "matched_alias": "OSIMERTINIB"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL3353410",
+            "type": "Drug",
+            "label": "OSIMERTINIB",
+            "matched_text": "OSIMERTINIB",
+            "trials": 79,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [
+            {
+              "refused": "generic version of bevacizumab"
+            }
+          ]
+        },
+        "answer": {
+          "question": "Which trials evaluate osimertinib， generic version of bevacizumab?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "generic version of bevacizumab",
+              "matched_text": "generic version of bevacizumab",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            },
+            {
+              "type": "Drug",
+              "id": "CHEMBL3353410",
+              "label": "OSIMERTINIB",
+              "matched_text": "osimertinib",
+              "matched_alias": "OSIMERTINIB"
+            }
+          ],
+          "answer": "Trials of this drug:\n  - NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT03909334]\n  - NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB [NCT07680790]\n  - NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT02411448]\n  - NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04285671]\n  - NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04141644]\n  - NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT03535363]\n  - NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04487080]\n  - NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB [NCT07738172]\n  - NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT04541407]\n  - NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB [NCT04772235]\n  - NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB [NCT05011487]\n  - NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT04479306]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 12,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT03909334",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT03909334",
+              "stated_intervention": "Osimertinib",
+              "title": "Study of Osimertinib With and Without Ramucirumab in Locally Advanced or Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT07680790",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT07680790",
+              "stated_intervention": "Osimertinib",
+              "title": "Study of Izalontamab Brengitecan (BMS-986507) in Combination With Osimertinib Versus Osimertinib Monotherapy or Osimertinib in Combination With Platinum-based Chemotherapy for EGFRmt Non-small Cell Lung Cancer (IZABRIGHT-Lung02)",
+              "status": "RECRUITING",
+              "phases": [
+                "PHASE3"
+              ]
+            },
+            {
+              "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT02411448",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT02411448",
+              "stated_intervention": "Osimertinib",
+              "title": "A Study of Ramucirumab (LY3009806) in Combination With Erlotinib in Previously Untreated Participants With EGFR Mutation-Positive Metastatic NSCLC (RELAY)",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE3"
+              ]
+            },
+            {
+              "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04285671",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04285671",
+              "stated_intervention": "Osimertinib",
+              "title": "Necitumumab and Trastuzumab in Combination With Osimertinib for the Treatment of Refractory Epidermal Growth Factor Receptor (EGFR)-Mutated Stage IV Non-small Cell Lung Cancer",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04141644",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04141644",
+              "stated_intervention": "Osimertinib",
+              "title": "Safety and Efficacy of Combination Osimertinib and Ipilimumab in Patients w EGFR Mutated NSCLC",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT03535363",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT03535363",
+              "stated_intervention": "Osimertinib",
+              "title": "Osimertinib With Stereotactic Radiosurgery (SRS) in Brain Metastases From EGFR Positive NSCLC",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04487080",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04487080",
+              "stated_intervention": "Osimertinib",
+              "title": "A Study of Amivantamab and Lazertinib Combination Therapy Versus Osimertinib in Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE3"
+              ]
+            },
+            {
+              "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT07738172",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT07738172",
+              "stated_intervention": "Osimertinib",
+              "title": "Osimertinib With or Without Primary Lung Tumor Resection for EGFR-Mutant Oligometastatic Non-Small Cell Lung Cancer",
+              "status": "RECRUITING",
+              "phases": [
+                "PHASE3"
+              ]
+            },
+            {
+              "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04541407",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04541407",
+              "stated_intervention": "Temozolomide plus Osimertinib",
+              "title": "Temodar Plus Tyrosine Kinase Inhibitors for Progressive CNS Disease",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04772235",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04772235",
+              "stated_intervention": "Osimertinib",
+              "title": "Phase I Study of Repotrectinib and Osimertinib in NSCLC Patients",
+              "status": "UNKNOWN",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT05011487",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT05011487",
+              "stated_intervention": "Osimertinib",
+              "title": "Neoadjuvant Osimertinib + Chemotherapy for EGFR-mutant Stage III NSCLC",
+              "status": "RECRUITING",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04479306",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04479306",
+              "stated_intervention": "Osimertinib",
+              "title": "Osimertinib in Combination With Alisertib or Sapanisertib for the Treatment of Osimertinib-Resistant EGFR Mutant Stage IIIB or IV Non-Small Cell Lung Cancer",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            }
+          ]
+        }
+      },
+      "previous": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "trials evaluate osimertinib， generic version",
+            "matched_text": "trials evaluate osimertinib， generic version",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL1201583",
+            "label": "BEVACIZUMAB",
+            "matched_text": "bevacizumab",
+            "matched_alias": "BEVACIZUMAB"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL1201583",
+            "type": "Drug",
+            "label": "BEVACIZUMAB",
+            "matched_text": "BEVACIZUMAB",
+            "trials": 122,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Antibody"
+            }
+          },
+          "also": [
+            {
+              "refused": "trials evaluate osimertinib， generic version"
+            }
+          ]
+        },
+        "answer": {
+          "question": "Which trials evaluate osimertinib， generic version of bevacizumab?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "trials evaluate osimertinib， generic version",
+              "matched_text": "trials evaluate osimertinib， generic version",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            },
+            {
+              "type": "Drug",
+              "id": "CHEMBL1201583",
+              "label": "BEVACIZUMAB",
+              "matched_text": "bevacizumab",
+              "matched_alias": "BEVACIZUMAB"
+            }
+          ],
+          "answer": "Trials of this drug:\n  - NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00955305]\n  - NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00445848]\n  - NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB [NCT03616691]\n  - NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00531960]\n  - NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB [NCT03390686]\n  - NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT01057212]\n  - NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB [NCT06400472]\n  - NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00271505]\n  - NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00251524]\n  - NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00741195]\n  - NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00976677]\n  - NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00101348]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 12,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00955305|EVALUATES|CHEMBL1201583|NCT00955305",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00955305",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00955305",
+              "stated_intervention": "Bevacizumab",
+              "title": "Paclitaxel, Carboplatin, and Bevacizumab With or Without Cixutumumab in Treating Patients With Stage IV or Recurrent Non-small Cell Lung Cancer",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00445848|EVALUATES|CHEMBL1201583|NCT00445848",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00445848",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00445848",
+              "stated_intervention": "bevacizumab",
+              "title": "S0636: Erlotinib and Bevacizumab in Never-Smokers With Stage IIIB or Stage IV Primary Non-Small Cell Lung Cancer",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT03616691|EVALUATES|CHEMBL1201583|NCT03616691",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT03616691",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT03616691",
+              "stated_intervention": "Bevacizumab",
+              "title": "Atezolizumab Monotherapy and Consequent Therapy With Atezolizumab Plus Bevacizumab for NSCLC",
+              "status": "UNKNOWN",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00531960|EVALUATES|CHEMBL1201583|NCT00531960",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00531960",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00531960",
+              "stated_intervention": "Bevacizumab",
+              "title": "A Study of Tarceva (Erlotinib) in Combination With Avastin (Bevacizumab) in Patients With Advanced Non-Small Cell Lung Cancer.",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT03390686|EVALUATES|CHEMBL1201583|NCT03390686",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT03390686",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT03390686",
+              "stated_intervention": "Bevacizumab",
+              "title": "A Trial to Compare the Efficacy, Safety, Pharmacokinetics and Immunogenicity of HD204 to Avastin® in Advanced Non-squamous Non-small Cell Lung Cancer Patients",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE3"
+              ]
+            },
+            {
+              "statement": "NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT01057212|EVALUATES|CHEMBL1201583|NCT01057212",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT01057212",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT01057212",
+              "stated_intervention": "bevacizumab",
+              "title": "Trial of Bevacizumab and Ixabepilone for Advanced or Metastatic Non-small Cell Lung Cancer (NSCLC)",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT06400472|EVALUATES|CHEMBL1201583|NCT06400472",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT06400472",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT06400472",
+              "stated_intervention": "bevacizumab",
+              "title": "A Study of Sofe-M in Participants With Selected Advanced Solid Tumors",
+              "status": "RECRUITING",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00271505|EVALUATES|CHEMBL1201583|NCT00271505",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00271505",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00271505",
+              "stated_intervention": "Bevacizumab (Avastin)",
+              "title": "Avastin/Docetaxel/Carboplatin in Non-Small Cell Lung Cancer",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00251524|EVALUATES|CHEMBL1201583|NCT00251524",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00251524",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00251524",
+              "stated_intervention": "Bevacizumab, Oxaliplatin, Pemetrexed",
+              "title": "A Phase II Study of Eloxatin and Alimta in Combination With Bevacizumab in Advanced Non-Squamous NSCLC",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00741195|EVALUATES|CHEMBL1201583|NCT00741195",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00741195",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00741195",
+              "stated_intervention": "Bevacizumab",
+              "title": "Docetaxel Plus Bevacizumab in Metastatic Non Small Cell Lung Cancer",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00976677|EVALUATES|CHEMBL1201583|NCT00976677",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00976677",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00976677",
+              "stated_intervention": "bevacizumab",
+              "title": "Carboplatin, Paclitaxel, and Bevacizumab With or Without Erlotinib Hydrochloride in Treating Non-Smokers With Advanced Non-Small Cell Lung Cancer",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00101348|EVALUATES|CHEMBL1201583|NCT00101348",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00101348",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00101348",
+              "stated_intervention": "bevacizumab",
+              "title": "Erlotinib and Cetuximab With or Without Bevacizumab in Treating Patients With Metastatic or Unresectable Kidney, Colorectal, Head and Neck, Pancreatic, or Non-Small Cell Lung Cancer",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": "Which trials evaluate paclitaxel with albumin-bound nanoparticles?",
+      "input_codepoints": [],
+      "resolver": {
+        "raw": "Which trials evaluate paclitaxel with albumin-bound nanoparticles?",
+        "components": [
+          {
+            "component": "Which trials evaluate paclitaxel with nanoparticles?",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "strip_formulation",
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      },
+      "current": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "Which trials evaluate paclitaxel with albumin-bound nanoparticles",
+            "matched_text": "Which trials evaluate paclitaxel with albumin-bound nanoparticles",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "map": {
+          "refused": "Which trials evaluate paclitaxel with albumin-bound nanoparticles",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        "answer": {
+          "question": "Which trials evaluate paclitaxel with albumin-bound nanoparticles?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "Which trials evaluate paclitaxel with albumin-bound nanoparticles",
+              "matched_text": "Which trials evaluate paclitaxel with albumin-bound nanoparticles",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            }
+          ],
+          "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+          "generated_by": "refusal (no supporting evidence)",
+          "checks": {
+            "grounded": true,
+            "unsupported_claims": [],
+            "note": "refusing is the correct output when evidence is absent"
+          },
+          "evidence": []
+        }
+      },
+      "previous": {
+        "linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "with albumin-bound nanoparticles",
+            "matched_text": "with albumin-bound nanoparticles",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL428647",
+            "label": "PACLITAXEL",
+            "matched_text": "paclitaxel",
+            "matched_alias": "PACLITAXEL"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL428647",
+            "type": "Drug",
+            "label": "PACLITAXEL",
+            "matched_text": "PACLITAXEL",
+            "trials": 234,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [
+            {
+              "refused": "with albumin-bound nanoparticles"
+            }
+          ]
+        },
+        "answer": {
+          "question": "Which trials evaluate paclitaxel with albumin-bound nanoparticles?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "with albumin-bound nanoparticles",
+              "matched_text": "with albumin-bound nanoparticles",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            },
+            {
+              "type": "Drug",
+              "id": "CHEMBL428647",
+              "label": "PACLITAXEL",
+              "matched_text": "paclitaxel",
+              "matched_alias": "PACLITAXEL"
+            }
+          ],
+          "answer": "Trials of this drug:\n  - NCT00019019 (PHASE1, COMPLETED) evaluates PACLITAXEL [NCT00019019]\n  - NCT00832819 (PHASE1, COMPLETED) evaluates PACLITAXEL [NCT00832819]\n  - NCT07318883 (PHASE2, PHASE3, NOT_YET_RECRUITING) evaluates PACLITAXEL [NCT07318883]\n  - NCT00616031 (PHASE2, UNKNOWN) evaluates PACLITAXEL [NCT00616031]\n  - NCT04892953 (PHASE2, RECRUITING) evaluates PACLITAXEL [NCT04892953]\n  - NCT07063745 (PHASE2, PHASE3, RECRUITING) evaluates PACLITAXEL [NCT07063745]\n  - NCT06312137 (PHASE3, RECRUITING) evaluates PACLITAXEL [NCT06312137]\n  - NCT00955305 (PHASE2, TERMINATED) evaluates PACLITAXEL [NCT00955305]\n  - NCT00287989 (PHASE2, COMPLETED) evaluates PACLITAXEL [NCT00287989]\n  - NCT00291850 (PHASE2, TERMINATED) evaluates PACLITAXEL [NCT00291850]\n  - NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates PACLITAXEL [NCT03390686]\n  - NCT00273507 (PHASE3, TERMINATED) evaluates PACLITAXEL [NCT00273507]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 12,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "NCT00019019 (PHASE1, COMPLETED) evaluates PACLITAXEL",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00019019|EVALUATES|CHEMBL428647|NCT00019019",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00019019",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00019019",
+              "stated_intervention": "paclitaxel",
+              "title": "Carboxyamidotriazole and Paclitaxel in Treating Patients With Advanced Solid Tumors or Refractory Lymphomas",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00832819 (PHASE1, COMPLETED) evaluates PACLITAXEL",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00832819|EVALUATES|CHEMBL428647|NCT00832819",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00832819",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00832819",
+              "stated_intervention": "Paclitaxel",
+              "title": "E7080 in Combination With Carboplatin and Paclitaxel in Patients With Non-small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT07318883 (PHASE2, PHASE3, NOT_YET_RECRUITING) evaluates PACLITAXEL",
+              "relation": "EVALUATES",
+              "edge_id": "NCT07318883|EVALUATES|CHEMBL428647|NCT07318883",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT07318883",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT07318883",
+              "stated_intervention": "Paclitaxel or Nab-Paclitaxel",
+              "title": "A Phase II/III Clinical Study to Evaluate HLX07 in Combination With Serplulimab and Chemotherapy Versus Placebo in Combination With Serplulimab or Pembrolizumab and Chemotherapy as First-Line Treatment in Advanced Squamous Non-Small Cell Lung Cancer",
+              "status": "NOT_YET_RECRUITING",
+              "phases": [
+                "PHASE2",
+                "PHASE3"
+              ]
+            },
+            {
+              "statement": "NCT00616031 (PHASE2, UNKNOWN) evaluates PACLITAXEL",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00616031|EVALUATES|CHEMBL428647|NCT00616031",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00616031",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00616031",
+              "stated_intervention": "paclitaxel",
+              "title": "Paclitaxel and Carboplatin With or Without Nitroglycerin in Treating Patients With Previously Untreated Stage III or Stage IV Non-Small Cell Lung Cancer",
+              "status": "UNKNOWN",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT04892953 (PHASE2, RECRUITING) evaluates PACLITAXEL",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04892953|EVALUATES|CHEMBL428647|NCT04892953",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04892953",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04892953",
+              "stated_intervention": "Paclitaxel",
+              "title": "Local Consolidative Therapy and Durvalumab for Oligoprogressive and Polyprogressive Stage III NSCLC After Chemoradiation and Anti-PD-L1 Therapy",
+              "status": "RECRUITING",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT07063745 (PHASE2, PHASE3, RECRUITING) evaluates PACLITAXEL",
+              "relation": "EVALUATES",
+              "edge_id": "NCT07063745|EVALUATES|CHEMBL428647|NCT07063745",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT07063745",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT07063745",
+              "stated_intervention": "Paclitaxel",
+              "title": "A Study to Compare the Combination of Navlimetostat (BMS-986504) With Pembrolizumab and Chemotherapy Versus Placebo Plus Pembrolizumab and Chemotherapy in First-line Metastatic Non-small Cell Lung Cancer Participants With Homozygous MTAP Deletion",
+              "status": "RECRUITING",
+              "phases": [
+                "PHASE2",
+                "PHASE3"
+              ]
+            },
+            {
+              "statement": "NCT06312137 (PHASE3, RECRUITING) evaluates PACLITAXEL",
+              "relation": "EVALUATES",
+              "edge_id": "NCT06312137|EVALUATES|CHEMBL428647|NCT06312137",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT06312137",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT06312137",
+              "stated_intervention": "Paclitaxel",
+              "title": "A Study to Assess Efficacy and Safety of Pembrolizumab With or Without Sacituzumab Tirumotecan (MK- 2870) in Adult Participants With Resectable Non Small Cell Lung Cancer (NSCLC) Not Achieving Pathological Complete Response (pCR) (MK-2870-019)",
+              "status": "RECRUITING",
+              "phases": [
+                "PHASE3"
+              ]
+            },
+            {
+              "statement": "NCT00955305 (PHASE2, TERMINATED) evaluates PACLITAXEL",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00955305|EVALUATES|CHEMBL428647|NCT00955305",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00955305",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00955305",
+              "stated_intervention": "Paclitaxel",
+              "title": "Paclitaxel, Carboplatin, and Bevacizumab With or Without Cixutumumab in Treating Patients With Stage IV or Recurrent Non-small Cell Lung Cancer",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00287989 (PHASE2, COMPLETED) evaluates PACLITAXEL",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00287989|EVALUATES|CHEMBL428647|NCT00287989",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00287989",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00287989",
+              "stated_intervention": "Paclitaxel",
+              "title": "Erlotinib, Paclitaxel, and Carboplatin in Treating Patients With Stage III, Stage IV, or Recurrent Non-Small Cell Lung Cancer",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00291850 (PHASE2, TERMINATED) evaluates PACLITAXEL",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00291850|EVALUATES|CHEMBL428647|NCT00291850",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00291850",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00291850",
+              "stated_intervention": "Paclitaxel, Cisplatin, Pegfilgrastim",
+              "title": "Phase II Trial of Dose-dense Paclitaxel and Cisplatin as Neo-adjuvant Chemotherapy for Operable Stage II and IIA NSCLC",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates PACLITAXEL",
+              "relation": "EVALUATES",
+              "edge_id": "NCT03390686|EVALUATES|CHEMBL428647|NCT03390686",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT03390686",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT03390686",
+              "stated_intervention": "Paclitaxel",
+              "title": "A Trial to Compare the Efficacy, Safety, Pharmacokinetics and Immunogenicity of HD204 to Avastin® in Advanced Non-squamous Non-small Cell Lung Cancer Patients",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE3"
+              ]
+            },
+            {
+              "statement": "NCT00273507 (PHASE3, TERMINATED) evaluates PACLITAXEL",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00273507|EVALUATES|CHEMBL428647|NCT00273507",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00273507",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00273507",
+              "stated_intervention": "Carboplatin and Paclitaxel",
+              "title": "Neoadjuvant Chemotherapy in Non Small Cell Lung Cancer (NSCLC) Stages IB, IIA, IIB, and IIIA/T3",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE3"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

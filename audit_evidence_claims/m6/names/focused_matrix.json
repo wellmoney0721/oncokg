@@ -1,0 +1,1161 @@
+[
+  {
+    "finding": "M1-B1",
+    "input": "bevacizumab - awwb",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab - awwb",
+        "matched_text": "bevacizumab - awwb",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "bevacizumab - awwb",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M1-B1",
+    "input": "89Zr - trastuzumab",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "89Zr - trastuzumab",
+        "matched_text": "89Zr - trastuzumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "89Zr - trastuzumab",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M1-B1",
+    "input": "[89Zr] trastuzumab",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "[89Zr] trastuzumab",
+        "matched_text": "[89Zr] trastuzumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "[89Zr] trastuzumab",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M2b-R1",
+    "input": "osimertinib and generic version of bevacizumab",
+    "expected_center": "CHEMBL3353410",
+    "actual_center": "CHEMBL3353410",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "generic version of bevacizumab",
+        "matched_text": "generic version of bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL3353410",
+        "type": "Drug",
+        "label": "OSIMERTINIB",
+        "matched_text": "OSIMERTINIB",
+        "trials": 79,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "generic version of bevacizumab"
+        }
+      ]
+    }
+  },
+  {
+    "finding": "M2b-R1",
+    "input": "generic version of bevacizumab and osimertinib",
+    "expected_center": "CHEMBL3353410",
+    "actual_center": "CHEMBL3353410",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "generic version of bevacizumab",
+        "matched_text": "generic version of bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL3353410",
+        "type": "Drug",
+        "label": "OSIMERTINIB",
+        "matched_text": "OSIMERTINIB",
+        "trials": 79,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "generic version of bevacizumab"
+        }
+      ]
+    }
+  },
+  {
+    "finding": "M2b-R1",
+    "input": "[89Zr] trastuzumab and osimertinib",
+    "expected_center": "CHEMBL3353410",
+    "actual_center": "CHEMBL3353410",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "[89Zr] trastuzumab",
+        "matched_text": "[89Zr] trastuzumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL3353410",
+        "type": "Drug",
+        "label": "OSIMERTINIB",
+        "matched_text": "OSIMERTINIB",
+        "trials": 79,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "[89Zr] trastuzumab"
+        }
+      ]
+    }
+  },
+  {
+    "finding": "M2b-R1",
+    "input": "osimertinib and oral azacitidine",
+    "expected_center": "CHEMBL3353410",
+    "actual_center": "CHEMBL3353410",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "oral azacitidine",
+        "matched_text": "oral azacitidine",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL3353410",
+        "type": "Drug",
+        "label": "OSIMERTINIB",
+        "matched_text": "OSIMERTINIB",
+        "trials": 79,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "oral azacitidine"
+        }
+      ]
+    }
+  },
+  {
+    "finding": "M3-B1",
+    "input": "paclitaxel with albumin bound nanoparticles",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "paclitaxel with albumin bound nanoparticles",
+        "matched_text": "paclitaxel with albumin bound nanoparticles",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "paclitaxel with albumin bound nanoparticles",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M3-B1",
+    "input": "paclitaxel with nanoparticle albumin bound formulation",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "paclitaxel with nanoparticle albumin bound formulation",
+        "matched_text": "paclitaxel with nanoparticle albumin bound formulation",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "paclitaxel with nanoparticle albumin bound formulation",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M3-B1",
+    "input": "generic version with bevacizumab",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "generic version with bevacizumab",
+        "matched_text": "generic version with bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "generic version with bevacizumab",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M3-B2",
+    "input": "What is the generic version of bevacizumab?",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "What is the generic version of bevacizumab",
+        "matched_text": "What is the generic version of bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "What is the generic version of bevacizumab",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M3-S1",
+    "input": "osimertinib, liposomal doxorubicin",
+    "expected_center": "CHEMBL3353410",
+    "actual_center": "CHEMBL3353410",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "liposomal doxorubicin",
+        "matched_text": "liposomal doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL3353410",
+        "type": "Drug",
+        "label": "OSIMERTINIB",
+        "matched_text": "OSIMERTINIB",
+        "trials": 79,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "liposomal doxorubicin"
+        }
+      ]
+    }
+  },
+  {
+    "finding": "M3-S1",
+    "input": "biosimilar bevacizumab, osimertinib",
+    "expected_center": "CHEMBL3353410",
+    "actual_center": "CHEMBL3353410",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "biosimilar bevacizumab",
+        "matched_text": "biosimilar bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL3353410",
+        "type": "Drug",
+        "label": "OSIMERTINIB",
+        "matched_text": "OSIMERTINIB",
+        "trials": 79,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "biosimilar bevacizumab"
+        }
+      ]
+    }
+  },
+  {
+    "finding": "M3-long-name",
+    "input": "erlotinib hydrochloride",
+    "expected_center": "CHEMBL1079742",
+    "actual_center": "CHEMBL1079742",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1079742",
+        "label": "ERLOTINIB HYDROCHLORIDE",
+        "matched_text": "erlotinib hydrochloride",
+        "matched_alias": "ERLOTINIB HYDROCHLORIDE"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL1079742",
+        "type": "Drug",
+        "label": "ERLOTINIB HYDROCHLORIDE",
+        "matched_text": "ERLOTINIB HYDROCHLORIDE",
+        "trials": 31,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": []
+    }
+  },
+  {
+    "finding": "M3-long-name",
+    "input": "Paclitaxel conjugate with poly-l-glutamic acid",
+    "expected_center": "CHEMBL2108628",
+    "actual_center": "CHEMBL2108628",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL2108628",
+        "label": "PACLITAXEL POLIGLUMEX",
+        "matched_text": "Paclitaxel conjugate with poly-l-glutamic acid",
+        "matched_alias": "Paclitaxel conjugate with poly-l-glutamic acid"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL2108628",
+        "type": "Drug",
+        "label": "PACLITAXEL POLIGLUMEX",
+        "matched_text": "Paclitaxel conjugate with poly-l-glutamic acid",
+        "trials": 4,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": []
+    }
+  },
+  {
+    "finding": "M4-B1",
+    "input": "osimertinib with generic version of bevacizumab",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "osimertinib with generic version of bevacizumab",
+        "matched_text": "osimertinib with generic version of bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "osimertinib with generic version of bevacizumab",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M4-B1",
+    "input": "bevacizumab a generic version of osimertinib",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab a generic version of osimertinib",
+        "matched_text": "bevacizumab a generic version of osimertinib",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "bevacizumab a generic version of osimertinib",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M4-B1",
+    "input": "osimertinib; generic version of bevacizumab",
+    "expected_center": "CHEMBL3353410",
+    "actual_center": "CHEMBL3353410",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "generic version of bevacizumab",
+        "matched_text": "generic version of bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL3353410",
+        "type": "Drug",
+        "label": "OSIMERTINIB",
+        "matched_text": "OSIMERTINIB",
+        "trials": 79,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "generic version of bevacizumab"
+        }
+      ]
+    }
+  },
+  {
+    "finding": "M4-B1",
+    "input": "osimertinib， generic version of bevacizumab",
+    "expected_center": "CHEMBL3353410",
+    "actual_center": "CHEMBL3353410",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "generic version of bevacizumab",
+        "matched_text": "generic version of bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL3353410",
+        "type": "Drug",
+        "label": "OSIMERTINIB",
+        "matched_text": "OSIMERTINIB",
+        "trials": 79,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "generic version of bevacizumab"
+        }
+      ]
+    }
+  },
+  {
+    "finding": "M4-B2",
+    "input": "generic version of Paclitaxel conjugate with poly-l-glutamic acid",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "generic version of Paclitaxel conjugate with poly-l-glutamic acid",
+        "matched_text": "generic version of Paclitaxel conjugate with poly-l-glutamic acid",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "generic version of Paclitaxel conjugate with poly-l-glutamic acid",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M4-B2",
+    "input": "generic version of the monoclonal antibody bevacizumab",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "generic version of the monoclonal antibody bevacizumab",
+        "matched_text": "generic version of the monoclonal antibody bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "generic version of the monoclonal antibody bevacizumab",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M4-B3",
+    "input": "biosimilar version of bevacizumab",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "biosimilar version of bevacizumab",
+        "matched_text": "biosimilar version of bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "biosimilar version of bevacizumab",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M4-B3",
+    "input": "liposomal formulation of doxorubicin",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "liposomal formulation of doxorubicin",
+        "matched_text": "liposomal formulation of doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "liposomal formulation of doxorubicin",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M4-B3",
+    "input": "paclitaxel with albumin-bound nanoparticles",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "paclitaxel with albumin-bound nanoparticles",
+        "matched_text": "paclitaxel with albumin-bound nanoparticles",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "paclitaxel with albumin-bound nanoparticles",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M4-collateral",
+    "input": "EGFR biosimilar bevacizumab",
+    "expected_center": "ENSG00000146648",
+    "actual_center": "ENSG00000146648",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "EGFR biosimilar bevacizumab",
+        "matched_text": "EGFR biosimilar bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Target",
+        "id": "ENSG00000146648",
+        "label": "EGFR",
+        "matched_text": "EGFR"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "ENSG00000146648",
+        "type": "Target",
+        "label": "EGFR",
+        "matched_text": "EGFR",
+        "trials": null,
+        "props": {}
+      },
+      "also": [
+        {
+          "refused": "EGFR biosimilar bevacizumab"
+        }
+      ]
+    }
+  },
+  {
+    "finding": "M4-collateral",
+    "input": "AstraZeneca biosimilar bevacizumab",
+    "expected_center": "ORG:astrazeneca",
+    "actual_center": "ORG:astrazeneca",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "AstraZeneca biosimilar bevacizumab",
+        "matched_text": "AstraZeneca biosimilar bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Company",
+        "id": "ORG:astrazeneca",
+        "label": "Astrazeneca",
+        "matched_text": "AstraZeneca",
+        "also_matching_ids": []
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "ORG:astrazeneca",
+        "type": "Company",
+        "label": "Astrazeneca",
+        "matched_text": "AstraZeneca",
+        "trials": null,
+        "props": {}
+      },
+      "also": [
+        {
+          "refused": "AstraZeneca biosimilar bevacizumab"
+        }
+      ]
+    }
+  },
+  {
+    "finding": "M5-B1-reported",
+    "input": "bevacizumab-awwb/ osimertinib",
+    "expected_center": "CHEMBL3353410",
+    "actual_center": "CHEMBL3353410",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab-awwb",
+        "matched_text": "bevacizumab-awwb",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL3353410",
+        "type": "Drug",
+        "label": "OSIMERTINIB",
+        "matched_text": "OSIMERTINIB",
+        "trials": 79,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "bevacizumab-awwb"
+        }
+      ]
+    }
+  },
+  {
+    "finding": "M5-B1-reported",
+    "input": "bevacizumab - awwb/ osimertinib",
+    "expected_center": "CHEMBL3353410",
+    "actual_center": "CHEMBL3353410",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab - awwb",
+        "matched_text": "bevacizumab - awwb",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL3353410",
+        "type": "Drug",
+        "label": "OSIMERTINIB",
+        "matched_text": "OSIMERTINIB",
+        "trials": 79,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "bevacizumab - awwb"
+        }
+      ]
+    }
+  },
+  {
+    "finding": "M5-B1-reported",
+    "input": "bevacizumab-awwb| osimertinib",
+    "expected_center": "CHEMBL3353410",
+    "actual_center": "CHEMBL3353410",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab-awwb",
+        "matched_text": "bevacizumab-awwb",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL3353410",
+        "type": "Drug",
+        "label": "OSIMERTINIB",
+        "matched_text": "OSIMERTINIB",
+        "trials": 79,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "bevacizumab-awwb"
+        }
+      ]
+    }
+  },
+  {
+    "finding": "M5-B1-earlier-attack",
+    "input": "bevacizumab - awwb/osimertinib",
+    "expected_center": "CHEMBL3353410",
+    "actual_center": "CHEMBL1201583",
+    "matches_expectation": false,
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "bevacizumab",
+        "matched_alias": "BEVACIZUMAB"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL1201583",
+        "type": "Drug",
+        "label": "BEVACIZUMAB",
+        "matched_text": "BEVACIZUMAB",
+        "trials": 122,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": []
+    }
+  },
+  {
+    "finding": "M5-B1-earlier-attack",
+    "input": "bevacizumab - awwb|osimertinib",
+    "expected_center": "CHEMBL3353410",
+    "actual_center": "CHEMBL1201583",
+    "matches_expectation": false,
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "bevacizumab",
+        "matched_alias": "BEVACIZUMAB"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL1201583",
+        "type": "Drug",
+        "label": "BEVACIZUMAB",
+        "matched_text": "BEVACIZUMAB",
+        "trials": 122,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": []
+    }
+  },
+  {
+    "finding": "M5-B2",
+    "input": "liposomal and nanoparticle formulation of doxorubicin",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "liposomal ... nanoparticle formulation of doxorubicin",
+        "matched_text": "liposomal ... nanoparticle formulation of doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "liposomal ... nanoparticle formulation of doxorubicin",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M5-B2",
+    "input": "liposomal and nanoparticle formulations of doxorubicin",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "liposomal ... nanoparticle formulations of doxorubicin",
+        "matched_text": "liposomal ... nanoparticle formulations of doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "liposomal ... nanoparticle formulations of doxorubicin",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M5-B2",
+    "input": "liposomal and sustained release doxorubicin",
+    "expected_center": null,
+    "actual_center": null,
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "liposomal ... sustained release doxorubicin",
+        "matched_text": "liposomal ... sustained release doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "liposomal ... sustained release doxorubicin",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M5-S1",
+    "input": "biosimilar anastrozole, Arimidex",
+    "expected_center": "CHEMBL1399",
+    "actual_center": "CHEMBL1399",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "biosimilar anastrozole",
+        "matched_text": "biosimilar anastrozole",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL1399",
+        "label": "ANASTROZOLE",
+        "matched_text": "Arimidex",
+        "matched_alias": "Arimidex"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL1399",
+        "type": "Drug",
+        "label": "ANASTROZOLE",
+        "matched_text": "Arimidex",
+        "trials": 2,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "biosimilar anastrozole"
+        }
+      ]
+    }
+  },
+  {
+    "finding": "M5-S1",
+    "input": "biosimilar Prolia, xgeva",
+    "expected_center": "CHEMBL1237023",
+    "actual_center": "CHEMBL1237023",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "biosimilar Prolia",
+        "matched_text": "biosimilar Prolia",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL1237023",
+        "label": "DENOSUMAB",
+        "matched_text": "xgeva",
+        "matched_alias": "Xgeva"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL1237023",
+        "type": "Drug",
+        "label": "DENOSUMAB",
+        "matched_text": "Xgeva",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [
+        {
+          "refused": "biosimilar Prolia"
+        }
+      ]
+    }
+  },
+  {
+    "finding": "M5-S1",
+    "input": "Erlotinib, hydrochloride biosimilar bevacizumab",
+    "expected_center": "CHEMBL553",
+    "actual_center": "CHEMBL553",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "hydrochloride biosimilar bevacizumab",
+        "matched_text": "hydrochloride biosimilar bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL553",
+        "label": "ERLOTINIB",
+        "matched_text": "Erlotinib",
+        "matched_alias": "ERLOTINIB"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL553",
+        "type": "Drug",
+        "label": "ERLOTINIB",
+        "matched_text": "ERLOTINIB",
+        "trials": 118,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "hydrochloride biosimilar bevacizumab"
+        }
+      ]
+    }
+  },
+  {
+    "finding": "M5-S2-known",
+    "input": "Pegylated interferon alfa-2a",
+    "expected_center": "CHEMBL1201560",
+    "actual_center": null,
+    "matches_expectation": false,
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "Pegylated interferon alfa-2a",
+        "matched_text": "Pegylated interferon alfa-2a",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "Pegylated interferon alfa-2a",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "finding": "M5-S2-control",
+    "input": "PEGINTERFERON ALFA-2A",
+    "expected_center": "CHEMBL1201560",
+    "actual_center": "CHEMBL1201560",
+    "matches_expectation": true,
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201560",
+        "label": "PEGINTERFERON ALFA-2A",
+        "matched_text": "PEGINTERFERON ALFA-2A",
+        "matched_alias": "PEGINTERFERON ALFA-2A"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL1201560",
+        "type": "Drug",
+        "label": "PEGINTERFERON ALFA-2A",
+        "matched_text": "PEGINTERFERON ALFA-2A",
+        "trials": 0,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Protein"
+        }
+      },
+      "also": []
+    }
+  }
+]

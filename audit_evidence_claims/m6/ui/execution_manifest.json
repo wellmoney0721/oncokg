@@ -1,0 +1,116 @@
+[
+  {
+    "command": [
+      "python",
+      "-B",
+      "audit_evidence_claims\\m6\\ui\\ui_collect.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.9588
+  },
+  {
+    "command": [
+      "node",
+      "audit_evidence_claims\\m6\\ui\\ui_harness.js"
+    ],
+    "exit_code": 0,
+    "seconds": 0.1428
+  },
+  {
+    "command": [
+      "node",
+      "audit_evidence_claims\\m6\\ui\\ui_regressions.js"
+    ],
+    "exit_code": 0,
+    "seconds": 0.0981
+  },
+  {
+    "command": [
+      "node",
+      "audit_evidence_claims\\m6\\ui\\ui_demos.js",
+      "export"
+    ],
+    "exit_code": 0,
+    "seconds": 0.0931
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "audit_evidence_claims\\m6\\ui\\ui_demos_collect.py"
+    ],
+    "exit_code": 0,
+    "seconds": 1.4686
+  },
+  {
+    "command": [
+      "node",
+      "audit_evidence_claims\\m6\\ui\\ui_demos.js"
+    ],
+    "exit_code": 0,
+    "seconds": 0.0882
+  },
+  {
+    "command": [
+      "node",
+      "audit_evidence_claims\\m6\\ui\\ui_m3_checks.js"
+    ],
+    "exit_code": 0,
+    "seconds": 0.0954
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "audit_evidence_claims\\m6\\ui\\ui_demo_compare.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.125
+  },
+  {
+    "command": [
+      "node",
+      "audit_evidence_claims\\m6\\ui\\ui_missing_sponsor_count.js"
+    ],
+    "exit_code": 0,
+    "seconds": 0.126
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "audit_evidence_claims\\m6\\ui\\ui_boundary_probe.py"
+    ],
+    "exit_code": 0,
+    "seconds": 1.7581
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "audit_evidence_claims\\m6\\ui\\ui_assertions.py"
+    ],
+    "exit_code": 0,
+    "seconds": null,
+    "recorded_from": "tool completion; output artifacts retained"
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "audit_evidence_claims\\m6\\ui\\boundary_render_inputs.py"
+    ],
+    "exit_code": 0,
+    "seconds": null,
+    "recorded_from": "tool completion; output artifacts retained"
+  },
+  {
+    "command": [
+      "node",
+      "audit_evidence_claims\\m6\\ui\\boundary_render.js"
+    ],
+    "exit_code": 0,
+    "seconds": null,
+    "recorded_from": "tool completion; output artifacts retained"
+  }
+]

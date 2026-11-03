@@ -204,3 +204,31 @@ def test_the_refusal_scan_grows_linearly():
     t0 = time.time()
     kg.link_entities(" ".join(["x"] * 500))
     assert time.time() - t0 < 1.0
+
+
+# Codex review m6: the linker and the intervention resolver must agree before linking
+def test_glued_separators_edge_punctuation_and_parenthetical_qualifiers_refuse():
+    import app
+    e = app.Engine()
+    for t in ("bevacizumab - awwb/osimertinib", "bevacizumab - awwb|osimertinib"):
+        r = e.explore(t)
+        assert r["center"]["id"] == "CHEMBL3353410", t
+        assert all(x.get("id") != "CHEMBL1201583" for x in r["also"]), t
+    for t in ("bevacizumab-awwb。", "bevacizumab-awwb-", "-bevacizumab-awwb",
+              "doxorubicin (nanoparticle and liposomal formulation)",
+              "bevacizumab (investigational and biosimilar)"):
+        assert e.explore(t).get("refused"), t
+    for q in ("Which trials evaluate bevacizumab - awwb/osimertinib?",
+              "Which trials evaluate bevacizumab-awwb。?",
+              "Which trials evaluate doxorubicin (nanoparticle and liposomal formulation)?"):
+        a = e.kg.answer(q, use_llm=False)
+        assert all("CHEMBL1201583" not in ev.edge_id and "CHEMBL53463" not in ev.edge_id
+                   for ev in a.evidence), q
+
+
+def test_a_whole_input_that_is_one_stored_name_is_read_whole():
+    import app
+    e = app.Engine()
+    assert e.explore("CP-358,774")["center"]["id"] == "CHEMBL553"
+    assert e.explore("Rapamycin, 42-o-(2-hydroxyethyl)-")["center"]["id"] == "CHEMBL1908360"
+    assert e.explore("Erlotinib/hydrochloride")["center"]["id"] == "CHEMBL553"

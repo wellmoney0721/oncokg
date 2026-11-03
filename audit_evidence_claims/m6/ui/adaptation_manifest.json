@@ -1,0 +1,95 @@
+[
+  {
+    "file": "ui_collect.py",
+    "source": "audit_evidence_claims\\m5\\ui_collect.py",
+    "source_sha256": "91f91a33a58368961a92f772550bc00f59f14112447147ba4020c1ecd16dea6d",
+    "adapted_sha256": "c43479a29ab2e355b25506e0ff7204df0e867ba9363aafc6987d5517ab20a178",
+    "adaptations": [
+      "output paths m5 to m6/ui"
+    ]
+  },
+  {
+    "file": "ui_harness.js",
+    "source": "audit_evidence_claims\\m5\\ui_harness.js",
+    "source_sha256": "4d7c333e34b64ffa3d9d9d9a911bd3c31ffd146fab03efe41302722ab29ae913",
+    "adapted_sha256": "7ea03dd0d80604acd562e280d2bacd1c79ae7a791910f01094e70d0f6adc238e",
+    "adaptations": [
+      "output paths m5 to m6/ui"
+    ]
+  },
+  {
+    "file": "ui_regressions.js",
+    "source": "audit_evidence_claims\\m5\\ui_regressions.js",
+    "source_sha256": "5587a82613744af6b0454012857c7fdda775f55805690395da0f9c8ad4173a4a",
+    "adapted_sha256": "286cfef7c6bef04186e0519ce266cf5d0b6975c5f713c7f12867461dec1d34e6",
+    "adaptations": [
+      "output paths m5 to m6/ui"
+    ]
+  },
+  {
+    "file": "ui_missing_sponsor_count.js",
+    "source": "audit_evidence_claims\\m5\\ui_missing_sponsor_count.js",
+    "source_sha256": "6f4f921a00195b145162d68961d4b717998ab61576980a1a73120d360ace02d4",
+    "adapted_sha256": "108f5cbabe864afc716e8b3b62ae89e787e09574a56345a5364397de89a582f4",
+    "adaptations": [
+      "output paths m5 to m6/ui",
+      "fresh fixture read path m6/db"
+    ]
+  },
+  {
+    "file": "ui_demos.js",
+    "source": "audit_evidence_claims\\m5\\ui_demos.js",
+    "source_sha256": "dc99ec4ffbdf8d6f41cc738c1d604144dc5534aea118956a2dd64562935d244b",
+    "adapted_sha256": "5afbdc4ca2fdcf0b218f312b81004ad3dc686e254374769ff1e1b86c01f66f6d",
+    "adaptations": [
+      "output paths m5 to m6/ui"
+    ]
+  },
+  {
+    "file": "ui_demos_collect.py",
+    "source": "audit_evidence_claims\\m5\\ui_demos_collect.py",
+    "source_sha256": "71cf27cd12381c6a01abd6e4d08bedafc534d2ea4bbe78a3cef325dd1ce8e1d9",
+    "adapted_sha256": "ff3ac63524590d62097d1c49b62c617c15d58be7b2f51a20ba65c5176eea4268",
+    "adaptations": [
+      "output paths m5 to m6/ui"
+    ]
+  },
+  {
+    "file": "ui_m3_checks.js",
+    "source": "audit_evidence_claims\\m5\\ui_m3_checks.js",
+    "source_sha256": "7e06f5cdf7f6ea65098e43a660886628636ca9d02c3a81ea817de36253ae5d23",
+    "adapted_sha256": "1afa6218e3be028bf440275ab2e80738c038a3627afe6552802281633cd26b25",
+    "adaptations": [
+      "output paths m5 to m6/ui"
+    ]
+  },
+  {
+    "file": "ui_demo_compare.py",
+    "source": "audit_evidence_claims\\m5\\ui_demo_compare.py",
+    "source_sha256": "4c2c3c7435942eb763a6344fcf3befec2defec511b56ec34a5f9034270ec1bc3",
+    "adapted_sha256": "ef79b5d1c3c58d1842909bcd9ba0cc57d9ebf623c1e6c1cee91ffa2ff9baf3c8",
+    "adaptations": [
+      "output paths m5 to m6/ui",
+      "comparison baseline m5"
+    ]
+  },
+  {
+    "file": "ui_assertions.py",
+    "source": "audit_evidence_claims\\m5\\ui_assertions.py",
+    "source_sha256": "2ed3bf78dd85df9df91ccf366e1d1a8f060a4dcec7b69b530e65d076b223d279",
+    "adapted_sha256": "5d8d08e0fd08af8351a87b46b4eece9c2171e21d0f7a417a68f4c34b3f985ac9",
+    "adaptations": [
+      "output paths m5 to m6/ui",
+      "root fresh HTTP artifact paths"
+    ]
+  },
+  {
+    "file": "ui_boundary_probe.py",
+    "source": "audit_evidence_claims\\m5\\ui_boundary_probe.py",
+    "source_sha256": "b9fd1398d0e454b80de442f91aafe6c374907e007d3d207c40cae215380a3aa1",
+    "adapted_sha256": "c3ebab22eb49dc8a6e49f6d1ecd1ea42d6a1eb660c779b85c0e314fe3ba2f4e2",
+    "adaptations": [
+      "ROOT = OUT.parents[1] to ROOT = Path.cwd()"
+    ]
+  }
+]

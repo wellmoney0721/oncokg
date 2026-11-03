@@ -1,0 +1,62 @@
+[
+  {
+    "command": [
+      "C:\\Users\\geoum\\miniconda3\\python.exe",
+      "-B",
+      "audit_evidence_claims\\m6\\db_ui\\ui_collect.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "command": [
+      "node",
+      "audit_evidence_claims\\m6\\db_ui\\ui_harness.js"
+    ],
+    "returncode": 0
+  },
+  {
+    "command": [
+      "node",
+      "audit_evidence_claims\\m6\\db_ui\\ui_regressions.js"
+    ],
+    "returncode": 0
+  },
+  {
+    "command": [
+      "node",
+      "audit_evidence_claims\\m6\\db_ui\\ui_demos.js",
+      "export"
+    ],
+    "returncode": 0
+  },
+  {
+    "command": [
+      "C:\\Users\\geoum\\miniconda3\\python.exe",
+      "-B",
+      "audit_evidence_claims\\m6\\db_ui\\ui_demos_collect.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "command": [
+      "node",
+      "audit_evidence_claims\\m6\\db_ui\\ui_demos.js"
+    ],
+    "returncode": 0
+  },
+  {
+    "command": [
+      "node",
+      "audit_evidence_claims\\m6\\db_ui\\ui_m3_checks.js"
+    ],
+    "returncode": 0
+  },
+  {
+    "command": [
+      "C:\\Users\\geoum\\miniconda3\\python.exe",
+      "-B",
+      "audit_evidence_claims\\m6\\db_ui\\ui_demo_compare.py"
+    ],
+    "returncode": 0
+  }
+]

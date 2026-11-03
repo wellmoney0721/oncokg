@@ -1,0 +1,288 @@
+[
+  {
+    "input": "(bevacizumab-awwb)",
+    "links": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "(bevacizumab-awwb)",
+        "matched_alias": "Bevacizumab awwb"
+      }
+    ],
+    "center": "CHEMBL1201583",
+    "refused": null,
+    "resolver": [
+      {
+        "component": "(bevacizumab-awwb)",
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL1201583"
+      }
+    ]
+  },
+  {
+    "input": "[bevacizumab-awwb]",
+    "links": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "[bevacizumab-awwb]",
+        "matched_alias": "Bevacizumab awwb"
+      }
+    ],
+    "center": "CHEMBL1201583",
+    "refused": null,
+    "resolver": [
+      {
+        "component": "[bevacizumab-awwb]",
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL1201583"
+      }
+    ]
+  },
+  {
+    "input": "bevacizumab-awwb:",
+    "links": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab-awwb",
+        "matched_text": "bevacizumab-awwb",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "center": null,
+    "refused": "bevacizumab-awwb",
+    "resolver": [
+      {
+        "component": "bevacizumab-awwb",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null
+      }
+    ]
+  },
+  {
+    "input": "bevacizumab-awwb?",
+    "links": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab-awwb",
+        "matched_text": "bevacizumab-awwb",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "center": null,
+    "refused": "bevacizumab-awwb",
+    "resolver": [
+      {
+        "component": "bevacizumab-awwb?",
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL1201583"
+      }
+    ]
+  },
+  {
+    "input": "bevacizumab-awwb/ osimertinib",
+    "links": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab-awwb",
+        "matched_text": "bevacizumab-awwb",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "center": "CHEMBL3353410",
+    "refused": null,
+    "resolver": [
+      {
+        "component": "bevacizumab-awwb",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null
+      },
+      {
+        "component": "osimertinib",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL3353410"
+      }
+    ]
+  },
+  {
+    "input": "bevacizumab - awwb/osimertinib",
+    "links": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "bevacizumab",
+        "matched_alias": "BEVACIZUMAB"
+      }
+    ],
+    "center": "CHEMBL1201583",
+    "refused": null,
+    "resolver": [
+      {
+        "component": "bevacizumab - awwb",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null
+      },
+      {
+        "component": "osimertinib",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL3353410"
+      }
+    ]
+  },
+  {
+    "input": "bevacizumab - awwb|osimertinib",
+    "links": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "bevacizumab",
+        "matched_alias": "BEVACIZUMAB"
+      }
+    ],
+    "center": "CHEMBL1201583",
+    "refused": null,
+    "resolver": [
+      {
+        "component": "bevacizumab -",
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL1201583"
+      },
+      {
+        "component": "awwb|osimertinib",
+        "tier": "UNRESOLVED",
+        "drug_id": null
+      }
+    ]
+  },
+  {
+    "input": "liposomal and nanoparticle formulation of doxorubicin",
+    "links": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "liposomal ... nanoparticle formulation of doxorubicin",
+        "matched_text": "liposomal ... nanoparticle formulation of doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "center": null,
+    "refused": "liposomal ... nanoparticle formulation of doxorubicin",
+    "resolver": [
+      {
+        "component": "and formulation of doxorubicin",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null
+      }
+    ]
+  },
+  {
+    "input": "liposomal, and doxorubicin",
+    "links": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "liposomal ... doxorubicin",
+        "matched_text": "liposomal ... doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "center": null,
+    "refused": "liposomal ... doxorubicin",
+    "resolver": [
+      {
+        "component": "and doxorubicin",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null
+      }
+    ]
+  },
+  {
+    "input": "liposomal and, doxorubicin",
+    "links": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "liposomal ... doxorubicin",
+        "matched_text": "liposomal ... doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "center": null,
+    "refused": "liposomal ... doxorubicin",
+    "resolver": [
+      {
+        "component": "and, doxorubicin",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null
+      }
+    ]
+  },
+  {
+    "input": "liposomal; and doxorubicin",
+    "links": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "liposomal ... doxorubicin",
+        "matched_text": "liposomal ... doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "center": null,
+    "refused": "liposomal ... doxorubicin",
+    "resolver": [
+      {
+        "component": "and doxorubicin",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null
+      }
+    ]
+  },
+  {
+    "input": "liposomal and osimertinib, bevacizumab",
+    "links": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "liposomal ... osimertinib",
+        "matched_text": "liposomal ... osimertinib",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "bevacizumab",
+        "matched_alias": "BEVACIZUMAB"
+      }
+    ],
+    "center": "CHEMBL1201583",
+    "refused": null,
+    "resolver": [
+      {
+        "component": "osimertinib",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL3353410"
+      },
+      {
+        "component": "bevacizumab",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL1201583"
+      }
+    ]
+  }
+]

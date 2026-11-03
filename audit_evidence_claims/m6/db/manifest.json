@@ -1,0 +1,92 @@
+{
+  "reviewed_head": "b7a00f9c14e5ee0447601795d0c0f4535c2f0376",
+  "python_bytecode_disabled": true,
+  "fixture_storage": "SQLite :memory: only; production source connected mode=ro",
+  "script_adaptations": [
+    {
+      "source": "audit_evidence_claims\\m5\\db_recheck.py",
+      "destination": "db_recheck.py",
+      "source_sha256": "2e5b0759b3778da7b5f96c47d110e59b0110c26974ba11d8e2f2c3f247c46c11",
+      "adaptation": "Path(__file__).resolve().parents[2] -> parents[3] only"
+    },
+    {
+      "source": "audit_evidence_claims\\m5\\db_missing_sponsor_count.py",
+      "destination": "db_missing_sponsor_count.py",
+      "source_sha256": "a7f7b9eb2d5c259f60cccd5bf29d700e4ee355b3ca35e6c5bd914547dc18fec5",
+      "adaptation": "Path(__file__).resolve().parents[2] -> parents[3] only"
+    },
+    {
+      "source": "audit_evidence_claims\\m5\\db_role_fallback.py",
+      "destination": "db_role_fallback.py",
+      "source_sha256": "569f01ef8b1123beb277cc23670b79fc4898be91a4c78033d9d293ec70ba20b8",
+      "adaptation": "Path(__file__).resolve().parents[2] -> parents[3] only"
+    },
+    {
+      "source": "audit_evidence_claims\\m5\\db_score_fixture.py",
+      "destination": "db_score_fixture.py",
+      "source_sha256": "01cc2c4562d99a9a372bc4b2d45107634954145a2b5b5e5445fb422da4696d55",
+      "adaptation": "Path(__file__).resolve().parents[2] -> parents[3] only"
+    },
+    {
+      "source": "audit_evidence_claims\\m5\\db_numeric_fixture.py",
+      "destination": "db_numeric_fixture.py",
+      "source_sha256": "e274eb83f202d3898db8d4b37962f310c5a70bb5a9d808d907d443394f3dcb83",
+      "adaptation": "Path(__file__).resolve().parents[2] -> parents[3] only"
+    },
+    {
+      "source": "audit_evidence_claims\\m5\\db_snapshot.py",
+      "destination": "db_snapshot.py",
+      "source_sha256": "acc1ea24a30658dbc31c5adb9e66ca39a48c5443d2436f0cd5e86198c5856f99",
+      "adaptation": "Path(__file__).resolve().parents[2] -> parents[3] only"
+    },
+    {
+      "source": "audit_evidence_claims\\m5\\db_assertions.py",
+      "destination": "db_assertions.py",
+      "source_sha256": "4c51752c63e664afc872351a3fbe349e003ae29bb3037dbed9cb0edffaf2b6c6",
+      "adaptation": "none"
+    }
+  ],
+  "oracle_checks": 6469,
+  "oracle_errors": [],
+  "oracle_seconds": 226.24186439998448,
+  "assertion_passed": 19,
+  "assertion_total": 19,
+  "outputs": {
+    "db_validate.json": {
+      "bytes": 229895,
+      "sha256": "17a5b0d47f1b5dfc0a7e82fcd92dbad9510531383071af8744ca28c25f41dca5"
+    },
+    "db_retired_center.json": {
+      "bytes": 12711,
+      "sha256": "19c326dc1acb64986fbedc3b71d13aa4878ec23e78c3f66050977a9174a6bc88"
+    },
+    "db_fixtures.json": {
+      "bytes": 20467,
+      "sha256": "97027ece5454908aa9c93b6420f8ce4049053e7732eac93cc112f594c5e00466"
+    },
+    "db_missing_sponsor_count.json": {
+      "bytes": 127160,
+      "sha256": "bdad9ebc0dbb45880ff1eec79e03fd3d87e120be0e0272b4bf52f3e95c315811"
+    },
+    "db_role_fallback.json": {
+      "bytes": 30225,
+      "sha256": "022ccabb02983838e0eaa350f1a2bd30193b1de2c3a2e83ac7739d18104ef897"
+    },
+    "db_score_fixture.json": {
+      "bytes": 10913,
+      "sha256": "8d1cd7b1628712e5072c9f2980c7780819a00b379f667d7ed80372d991a2b051"
+    },
+    "db_numeric_fixture.json": {
+      "bytes": 17609,
+      "sha256": "d78ef6bc6c1d6509daaa32006c37af89d377874578bf3087153d15965f0bb250"
+    },
+    "db_snapshot_facts.json": {
+      "bytes": 540,
+      "sha256": "aba6b74c7867ea161c032ffd00f2ba01518aba14910bfa7d4492abcd60b35169"
+    },
+    "db_assertions.json": {
+      "bytes": 1551,
+      "sha256": "d340156de3531a3225074c40d24acfe01285a9ec07718c01f3023f566a159f37"
+    }
+  }
+}

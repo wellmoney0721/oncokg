@@ -1,0 +1,2852 @@
+[
+  {
+    "input": "doxorubicin in nanoparticle and liposomal formulations",
+    "resolver": {
+      "raw": "doxorubicin in nanoparticle and liposomal formulations",
+      "components": [
+        {
+          "component": "doxorubicin",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL53463",
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "split_combination",
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "DOXORUBICIN",
+          "candidates": null,
+          "note": "segmented out of 'doxorubicin in'",
+          "drug": {
+            "name": "DOXORUBICIN",
+            "drug_type": "Small molecule",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "DNA topoisomerase II alpha inhibitor"
+            ],
+            "trials": 3
+          }
+        },
+        {
+          "component": "formulations",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "split_combination",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL53463",
+        "label": "DOXORUBICIN",
+        "matched_text": "doxorubicin",
+        "matched_alias": "DOXORUBICIN"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "liposomal formulations"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate doxorubicin in nanoparticle and liposomal formulations?",
+    "qa": {
+      "question": "Which trials evaluate doxorubicin in nanoparticle and liposomal formulations?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL53463",
+          "label": "DOXORUBICIN",
+          "matched_text": "doxorubicin",
+          "matched_alias": "DOXORUBICIN"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT01970540 (PHASE1, COMPLETED) evaluates DOXORUBICIN [NCT01970540]\n  - NCT04224337 (PHASE2, COMPLETED) evaluates DOXORUBICIN [NCT04224337]\n  - NCT01640847 (PHASE2, WITHDRAWN) evaluates DOXORUBICIN [NCT01640847]\n\nScope: 3 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 3,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT01970540 (PHASE1, COMPLETED) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01970540|EVALUATES|CHEMBL53463|NCT01970540",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01970540",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01970540",
+          "stated_intervention": "Doxorubicin",
+          "title": "Study Escalating Doses of PM01183 in Combination With Fixed Doxorubicin in Patients With Specific Advanced Unresectable Solid Tumors",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT04224337 (PHASE2, COMPLETED) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04224337",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04224337",
+          "stated_intervention": "Durvalumab + doxorubicin + ifosfamide",
+          "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT01640847 (PHASE2, WITHDRAWN) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01640847|EVALUATES|CHEMBL53463|NCT01640847",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01640847",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 0.98,
+          "resolution_tier": "ALIAS",
+          "url": "https://clinicaltrials.gov/study/NCT01640847",
+          "stated_intervention": "High Intensity Focused Ultrasound (HIFU) in combination with ThermoDox",
+          "title": "MRI Guided High Intensity Focused Ultrasound (HIFU) and ThermoDox for Palliation of Painful Bone Metastases",
+          "status": "WITHDRAWN",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "doxorubicin in nanoparticle and liposomal",
+    "resolver": {
+      "raw": "doxorubicin in nanoparticle and liposomal",
+      "components": [
+        {
+          "component": "doxorubicin in and",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL53463",
+        "label": "DOXORUBICIN",
+        "matched_text": "doxorubicin",
+        "matched_alias": "DOXORUBICIN"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "liposomal"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate doxorubicin in nanoparticle and liposomal?",
+    "qa": {
+      "question": "Which trials evaluate doxorubicin in nanoparticle and liposomal?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL53463",
+          "label": "DOXORUBICIN",
+          "matched_text": "doxorubicin",
+          "matched_alias": "DOXORUBICIN"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT01970540 (PHASE1, COMPLETED) evaluates DOXORUBICIN [NCT01970540]\n  - NCT04224337 (PHASE2, COMPLETED) evaluates DOXORUBICIN [NCT04224337]\n  - NCT01640847 (PHASE2, WITHDRAWN) evaluates DOXORUBICIN [NCT01640847]\n\nScope: 3 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 3,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT01970540 (PHASE1, COMPLETED) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01970540|EVALUATES|CHEMBL53463|NCT01970540",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01970540",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01970540",
+          "stated_intervention": "Doxorubicin",
+          "title": "Study Escalating Doses of PM01183 in Combination With Fixed Doxorubicin in Patients With Specific Advanced Unresectable Solid Tumors",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT04224337 (PHASE2, COMPLETED) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04224337",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04224337",
+          "stated_intervention": "Durvalumab + doxorubicin + ifosfamide",
+          "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT01640847 (PHASE2, WITHDRAWN) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01640847|EVALUATES|CHEMBL53463|NCT01640847",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01640847",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 0.98,
+          "resolution_tier": "ALIAS",
+          "url": "https://clinicaltrials.gov/study/NCT01640847",
+          "stated_intervention": "High Intensity Focused Ultrasound (HIFU) in combination with ThermoDox",
+          "title": "MRI Guided High Intensity Focused Ultrasound (HIFU) and ThermoDox for Palliation of Painful Bone Metastases",
+          "status": "WITHDRAWN",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "doxorubicin (nanoparticle and liposomal formulation)",
+    "resolver": {
+      "raw": "doxorubicin (nanoparticle and liposomal formulation)",
+      "components": [
+        {
+          "component": "doxorubicin",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL53463",
+        "label": "DOXORUBICIN",
+        "matched_text": "doxorubicin",
+        "matched_alias": "DOXORUBICIN"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "liposomal formulation)"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate doxorubicin (nanoparticle and liposomal formulation)?",
+    "qa": {
+      "question": "Which trials evaluate doxorubicin (nanoparticle and liposomal formulation)?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL53463",
+          "label": "DOXORUBICIN",
+          "matched_text": "doxorubicin",
+          "matched_alias": "DOXORUBICIN"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT01970540 (PHASE1, COMPLETED) evaluates DOXORUBICIN [NCT01970540]\n  - NCT04224337 (PHASE2, COMPLETED) evaluates DOXORUBICIN [NCT04224337]\n  - NCT01640847 (PHASE2, WITHDRAWN) evaluates DOXORUBICIN [NCT01640847]\n\nScope: 3 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 3,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT01970540 (PHASE1, COMPLETED) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01970540|EVALUATES|CHEMBL53463|NCT01970540",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01970540",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01970540",
+          "stated_intervention": "Doxorubicin",
+          "title": "Study Escalating Doses of PM01183 in Combination With Fixed Doxorubicin in Patients With Specific Advanced Unresectable Solid Tumors",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT04224337 (PHASE2, COMPLETED) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04224337",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04224337",
+          "stated_intervention": "Durvalumab + doxorubicin + ifosfamide",
+          "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT01640847 (PHASE2, WITHDRAWN) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01640847|EVALUATES|CHEMBL53463|NCT01640847",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01640847",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 0.98,
+          "resolution_tier": "ALIAS",
+          "url": "https://clinicaltrials.gov/study/NCT01640847",
+          "stated_intervention": "High Intensity Focused Ultrasound (HIFU) in combination with ThermoDox",
+          "title": "MRI Guided High Intensity Focused Ultrasound (HIFU) and ThermoDox for Palliation of Painful Bone Metastases",
+          "status": "WITHDRAWN",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "doxorubicin (sustained-release and liposomal)",
+    "resolver": {
+      "raw": "doxorubicin (sustained-release and liposomal)",
+      "components": [
+        {
+          "component": "doxorubicin",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL53463",
+        "label": "DOXORUBICIN",
+        "matched_text": "doxorubicin",
+        "matched_alias": "DOXORUBICIN"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "liposomal)"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate doxorubicin (sustained-release and liposomal)?",
+    "qa": {
+      "question": "Which trials evaluate doxorubicin (sustained-release and liposomal)?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL53463",
+          "label": "DOXORUBICIN",
+          "matched_text": "doxorubicin",
+          "matched_alias": "DOXORUBICIN"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT01970540 (PHASE1, COMPLETED) evaluates DOXORUBICIN [NCT01970540]\n  - NCT04224337 (PHASE2, COMPLETED) evaluates DOXORUBICIN [NCT04224337]\n  - NCT01640847 (PHASE2, WITHDRAWN) evaluates DOXORUBICIN [NCT01640847]\n\nScope: 3 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 3,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT01970540 (PHASE1, COMPLETED) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01970540|EVALUATES|CHEMBL53463|NCT01970540",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01970540",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01970540",
+          "stated_intervention": "Doxorubicin",
+          "title": "Study Escalating Doses of PM01183 in Combination With Fixed Doxorubicin in Patients With Specific Advanced Unresectable Solid Tumors",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT04224337 (PHASE2, COMPLETED) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04224337",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04224337",
+          "stated_intervention": "Durvalumab + doxorubicin + ifosfamide",
+          "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT01640847 (PHASE2, WITHDRAWN) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01640847|EVALUATES|CHEMBL53463|NCT01640847",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01640847",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 0.98,
+          "resolution_tier": "ALIAS",
+          "url": "https://clinicaltrials.gov/study/NCT01640847",
+          "stated_intervention": "High Intensity Focused Ultrasound (HIFU) in combination with ThermoDox",
+          "title": "MRI Guided High Intensity Focused Ultrasound (HIFU) and ThermoDox for Palliation of Painful Bone Metastases",
+          "status": "WITHDRAWN",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "bevacizumab (investigational and biosimilar)",
+    "resolver": {
+      "raw": "bevacizumab (investigational and biosimilar)",
+      "components": [
+        {
+          "component": "bevacizumab",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "bevacizumab",
+        "matched_alias": "BEVACIZUMAB"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL1201583",
+        "type": "Drug",
+        "label": "BEVACIZUMAB",
+        "matched_text": "BEVACIZUMAB",
+        "trials": 122,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 122,
+          "items": [
+            {
+              "id": "NCT07420439",
+              "type": "Trial",
+              "label": "NCT07420439",
+              "edge_id": "NCT07420439|EVALUATES|CHEMBL1201583|NCT07420439",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "NOT_YET_RECRUITING",
+              "title": "Treatment in Patients With Advanced Non-Small Cell Lung Carcinoma and Interstitial Lung Disease",
+              "start_date": "2026-09-15",
+              "url": "https://clinicaltrials.gov/study/NCT07420439",
+              "weight": "2026-09-15"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 86,
+          "items": [
+            {
+              "id": "ORG:roche",
+              "type": "Company",
+              "label": "Roche",
+              "edge_id": "ORG:roche|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+              "evidence_trials": 8,
+              "weight": 8,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000112715",
+              "type": "Target",
+              "label": "VEGFA",
+              "edge_id": "CHEMBL1201583|ACTS_ON|ENSG00000112715|CHEMBL1201583",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL1201583",
+        "type": "Drug",
+        "label": "BEVACIZUMAB",
+        "matched_text": "BEVACIZUMAB",
+        "trials": 122,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [
+        {
+          "refused": "biosimilar)"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 122,
+          "items": [
+            {
+              "id": "NCT07420439",
+              "type": "Trial",
+              "label": "NCT07420439",
+              "edge_id": "NCT07420439|EVALUATES|CHEMBL1201583|NCT07420439",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "NOT_YET_RECRUITING",
+              "title": "Treatment in Patients With Advanced Non-Small Cell Lung Carcinoma and Interstitial Lung Disease",
+              "start_date": "2026-09-15",
+              "url": "https://clinicaltrials.gov/study/NCT07420439",
+              "weight": "2026-09-15"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 86,
+          "items": [
+            {
+              "id": "ORG:roche",
+              "type": "Company",
+              "label": "Roche",
+              "edge_id": "ORG:roche|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+              "evidence_trials": 8,
+              "weight": 8,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000112715",
+              "type": "Target",
+              "label": "VEGFA",
+              "edge_id": "CHEMBL1201583|ACTS_ON|ENSG00000112715|CHEMBL1201583",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate bevacizumab (investigational and biosimilar)?",
+    "qa": {
+      "question": "Which trials evaluate bevacizumab (investigational and biosimilar)?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "bevacizumab",
+          "matched_alias": "BEVACIZUMAB"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00955305]\n  - NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00445848]\n  - NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB [NCT03616691]\n  - NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00531960]\n  - NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB [NCT03390686]\n  - NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT01057212]\n  - NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB [NCT06400472]\n  - NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00271505]\n  - NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00251524]\n  - NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00741195]\n  - NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00976677]\n  - NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00101348]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00955305|EVALUATES|CHEMBL1201583|NCT00955305",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00955305",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00955305",
+          "stated_intervention": "Bevacizumab",
+          "title": "Paclitaxel, Carboplatin, and Bevacizumab With or Without Cixutumumab in Treating Patients With Stage IV or Recurrent Non-small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00445848|EVALUATES|CHEMBL1201583|NCT00445848",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00445848",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00445848",
+          "stated_intervention": "bevacizumab",
+          "title": "S0636: Erlotinib and Bevacizumab in Never-Smokers With Stage IIIB or Stage IV Primary Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT03616691|EVALUATES|CHEMBL1201583|NCT03616691",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03616691",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03616691",
+          "stated_intervention": "Bevacizumab",
+          "title": "Atezolizumab Monotherapy and Consequent Therapy With Atezolizumab Plus Bevacizumab for NSCLC",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00531960|EVALUATES|CHEMBL1201583|NCT00531960",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00531960",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00531960",
+          "stated_intervention": "Bevacizumab",
+          "title": "A Study of Tarceva (Erlotinib) in Combination With Avastin (Bevacizumab) in Patients With Advanced Non-Small Cell Lung Cancer.",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT03390686|EVALUATES|CHEMBL1201583|NCT03390686",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03390686",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03390686",
+          "stated_intervention": "Bevacizumab",
+          "title": "A Trial to Compare the Efficacy, Safety, Pharmacokinetics and Immunogenicity of HD204 to Avastin® in Advanced Non-squamous Non-small Cell Lung Cancer Patients",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01057212|EVALUATES|CHEMBL1201583|NCT01057212",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01057212",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01057212",
+          "stated_intervention": "bevacizumab",
+          "title": "Trial of Bevacizumab and Ixabepilone for Advanced or Metastatic Non-small Cell Lung Cancer (NSCLC)",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT06400472|EVALUATES|CHEMBL1201583|NCT06400472",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT06400472",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT06400472",
+          "stated_intervention": "bevacizumab",
+          "title": "A Study of Sofe-M in Participants With Selected Advanced Solid Tumors",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00271505|EVALUATES|CHEMBL1201583|NCT00271505",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00271505",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00271505",
+          "stated_intervention": "Bevacizumab (Avastin)",
+          "title": "Avastin/Docetaxel/Carboplatin in Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00251524|EVALUATES|CHEMBL1201583|NCT00251524",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00251524",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00251524",
+          "stated_intervention": "Bevacizumab, Oxaliplatin, Pemetrexed",
+          "title": "A Phase II Study of Eloxatin and Alimta in Combination With Bevacizumab in Advanced Non-Squamous NSCLC",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00741195|EVALUATES|CHEMBL1201583|NCT00741195",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00741195",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00741195",
+          "stated_intervention": "Bevacizumab",
+          "title": "Docetaxel Plus Bevacizumab in Metastatic Non Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00976677|EVALUATES|CHEMBL1201583|NCT00976677",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00976677",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00976677",
+          "stated_intervention": "bevacizumab",
+          "title": "Carboplatin, Paclitaxel, and Bevacizumab With or Without Erlotinib Hydrochloride in Treating Non-Smokers With Advanced Non-Small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00101348|EVALUATES|CHEMBL1201583|NCT00101348",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00101348",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00101348",
+          "stated_intervention": "bevacizumab",
+          "title": "Erlotinib and Cetuximab With or Without Bevacizumab in Treating Patients With Metastatic or Unresectable Kidney, Colorectal, Head and Neck, Pancreatic, or Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "bevacizumab (generic and biosimilar formulation)",
+    "resolver": {
+      "raw": "bevacizumab (generic and biosimilar formulation)",
+      "components": [
+        {
+          "component": "bevacizumab",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "bevacizumab",
+        "matched_alias": "BEVACIZUMAB"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL1201583",
+        "type": "Drug",
+        "label": "BEVACIZUMAB",
+        "matched_text": "BEVACIZUMAB",
+        "trials": 122,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 122,
+          "items": [
+            {
+              "id": "NCT07420439",
+              "type": "Trial",
+              "label": "NCT07420439",
+              "edge_id": "NCT07420439|EVALUATES|CHEMBL1201583|NCT07420439",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "NOT_YET_RECRUITING",
+              "title": "Treatment in Patients With Advanced Non-Small Cell Lung Carcinoma and Interstitial Lung Disease",
+              "start_date": "2026-09-15",
+              "url": "https://clinicaltrials.gov/study/NCT07420439",
+              "weight": "2026-09-15"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 86,
+          "items": [
+            {
+              "id": "ORG:roche",
+              "type": "Company",
+              "label": "Roche",
+              "edge_id": "ORG:roche|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+              "evidence_trials": 8,
+              "weight": 8,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000112715",
+              "type": "Target",
+              "label": "VEGFA",
+              "edge_id": "CHEMBL1201583|ACTS_ON|ENSG00000112715|CHEMBL1201583",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL1201583",
+        "type": "Drug",
+        "label": "BEVACIZUMAB",
+        "matched_text": "BEVACIZUMAB",
+        "trials": 122,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [
+        {
+          "refused": "biosimilar formulation)"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 122,
+          "items": [
+            {
+              "id": "NCT07420439",
+              "type": "Trial",
+              "label": "NCT07420439",
+              "edge_id": "NCT07420439|EVALUATES|CHEMBL1201583|NCT07420439",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "NOT_YET_RECRUITING",
+              "title": "Treatment in Patients With Advanced Non-Small Cell Lung Carcinoma and Interstitial Lung Disease",
+              "start_date": "2026-09-15",
+              "url": "https://clinicaltrials.gov/study/NCT07420439",
+              "weight": "2026-09-15"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 86,
+          "items": [
+            {
+              "id": "ORG:roche",
+              "type": "Company",
+              "label": "Roche",
+              "edge_id": "ORG:roche|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+              "evidence_trials": 8,
+              "weight": 8,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000112715",
+              "type": "Target",
+              "label": "VEGFA",
+              "edge_id": "CHEMBL1201583|ACTS_ON|ENSG00000112715|CHEMBL1201583",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate bevacizumab (generic and biosimilar formulation)?",
+    "qa": {
+      "question": "Which trials evaluate bevacizumab (generic and biosimilar formulation)?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "bevacizumab",
+          "matched_alias": "BEVACIZUMAB"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00955305]\n  - NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00445848]\n  - NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB [NCT03616691]\n  - NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00531960]\n  - NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB [NCT03390686]\n  - NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT01057212]\n  - NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB [NCT06400472]\n  - NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00271505]\n  - NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00251524]\n  - NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00741195]\n  - NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00976677]\n  - NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00101348]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00955305|EVALUATES|CHEMBL1201583|NCT00955305",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00955305",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00955305",
+          "stated_intervention": "Bevacizumab",
+          "title": "Paclitaxel, Carboplatin, and Bevacizumab With or Without Cixutumumab in Treating Patients With Stage IV or Recurrent Non-small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00445848|EVALUATES|CHEMBL1201583|NCT00445848",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00445848",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00445848",
+          "stated_intervention": "bevacizumab",
+          "title": "S0636: Erlotinib and Bevacizumab in Never-Smokers With Stage IIIB or Stage IV Primary Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT03616691|EVALUATES|CHEMBL1201583|NCT03616691",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03616691",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03616691",
+          "stated_intervention": "Bevacizumab",
+          "title": "Atezolizumab Monotherapy and Consequent Therapy With Atezolizumab Plus Bevacizumab for NSCLC",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00531960|EVALUATES|CHEMBL1201583|NCT00531960",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00531960",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00531960",
+          "stated_intervention": "Bevacizumab",
+          "title": "A Study of Tarceva (Erlotinib) in Combination With Avastin (Bevacizumab) in Patients With Advanced Non-Small Cell Lung Cancer.",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT03390686|EVALUATES|CHEMBL1201583|NCT03390686",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03390686",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03390686",
+          "stated_intervention": "Bevacizumab",
+          "title": "A Trial to Compare the Efficacy, Safety, Pharmacokinetics and Immunogenicity of HD204 to Avastin® in Advanced Non-squamous Non-small Cell Lung Cancer Patients",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01057212|EVALUATES|CHEMBL1201583|NCT01057212",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01057212",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01057212",
+          "stated_intervention": "bevacizumab",
+          "title": "Trial of Bevacizumab and Ixabepilone for Advanced or Metastatic Non-small Cell Lung Cancer (NSCLC)",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT06400472|EVALUATES|CHEMBL1201583|NCT06400472",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT06400472",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT06400472",
+          "stated_intervention": "bevacizumab",
+          "title": "A Study of Sofe-M in Participants With Selected Advanced Solid Tumors",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00271505|EVALUATES|CHEMBL1201583|NCT00271505",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00271505",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00271505",
+          "stated_intervention": "Bevacizumab (Avastin)",
+          "title": "Avastin/Docetaxel/Carboplatin in Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00251524|EVALUATES|CHEMBL1201583|NCT00251524",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00251524",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00251524",
+          "stated_intervention": "Bevacizumab, Oxaliplatin, Pemetrexed",
+          "title": "A Phase II Study of Eloxatin and Alimta in Combination With Bevacizumab in Advanced Non-Squamous NSCLC",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00741195|EVALUATES|CHEMBL1201583|NCT00741195",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00741195",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00741195",
+          "stated_intervention": "Bevacizumab",
+          "title": "Docetaxel Plus Bevacizumab in Metastatic Non Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00976677|EVALUATES|CHEMBL1201583|NCT00976677",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00976677",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00976677",
+          "stated_intervention": "bevacizumab",
+          "title": "Carboplatin, Paclitaxel, and Bevacizumab With or Without Erlotinib Hydrochloride in Treating Non-Smokers With Advanced Non-Small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00101348|EVALUATES|CHEMBL1201583|NCT00101348",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00101348",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00101348",
+          "stated_intervention": "bevacizumab",
+          "title": "Erlotinib and Cetuximab With or Without Bevacizumab in Treating Patients With Metastatic or Unresectable Kidney, Colorectal, Head and Neck, Pancreatic, or Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "paclitaxel (investigational and albumin-bound nanoparticle formulation)",
+    "resolver": {
+      "raw": "paclitaxel (investigational and albumin-bound nanoparticle formulation)",
+      "components": [
+        {
+          "component": "paclitaxel",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL428647",
+        "label": "PACLITAXEL",
+        "matched_text": "paclitaxel",
+        "matched_alias": "PACLITAXEL"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL428647",
+        "type": "Drug",
+        "label": "PACLITAXEL",
+        "matched_text": "PACLITAXEL",
+        "trials": 234,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 234,
+          "items": [
+            {
+              "id": "NCT07720167",
+              "type": "Trial",
+              "label": "NCT07720167",
+              "edge_id": "NCT07720167|EVALUATES|CHEMBL428647|NCT07720167",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "NOT_YET_RECRUITING",
+              "title": "Cemiplimab for Clinical Stage I, 2-3.9cm, Non-Small Cell Lung Cancer",
+              "start_date": "2026-11-01",
+              "url": "https://clinicaltrials.gov/study/NCT07720167",
+              "weight": "2026-11-01"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 149,
+          "items": [
+            {
+              "id": "ORG:nationalcancerinstitute",
+              "type": "Company",
+              "label": "National Cancer Institute",
+              "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL428647|",
+              "evidence_trials": 14,
+              "weight": 14,
+              "sponsor_class": "NIH"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 15,
+          "items": [
+            {
+              "id": "ENSG00000167552",
+              "type": "Target",
+              "label": "TUBA1A",
+              "edge_id": "CHEMBL428647|ACTS_ON|ENSG00000167552|CHEMBL428647",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Investigator",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ORG:juliakrotowmd",
+              "type": "Investigator",
+              "label": "Julia K Rotow Md",
+              "edge_id": "ORG:juliakrotowmd|SPONSORS_TRIAL_OF|CHEMBL428647|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "OTHER"
+            }
+          ]
+        }
+      ]
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL428647",
+        "type": "Drug",
+        "label": "PACLITAXEL",
+        "matched_text": "PACLITAXEL",
+        "trials": 234,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "albumin-bound nanoparticle formulation)"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 234,
+          "items": [
+            {
+              "id": "NCT07720167",
+              "type": "Trial",
+              "label": "NCT07720167",
+              "edge_id": "NCT07720167|EVALUATES|CHEMBL428647|NCT07720167",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "NOT_YET_RECRUITING",
+              "title": "Cemiplimab for Clinical Stage I, 2-3.9cm, Non-Small Cell Lung Cancer",
+              "start_date": "2026-11-01",
+              "url": "https://clinicaltrials.gov/study/NCT07720167",
+              "weight": "2026-11-01"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 149,
+          "items": [
+            {
+              "id": "ORG:nationalcancerinstitute",
+              "type": "Company",
+              "label": "National Cancer Institute",
+              "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL428647|",
+              "evidence_trials": 14,
+              "weight": 14,
+              "sponsor_class": "NIH"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 15,
+          "items": [
+            {
+              "id": "ENSG00000167552",
+              "type": "Target",
+              "label": "TUBA1A",
+              "edge_id": "CHEMBL428647|ACTS_ON|ENSG00000167552|CHEMBL428647",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Investigator",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ORG:juliakrotowmd",
+              "type": "Investigator",
+              "label": "Julia K Rotow Md",
+              "edge_id": "ORG:juliakrotowmd|SPONSORS_TRIAL_OF|CHEMBL428647|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "OTHER"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate paclitaxel (investigational and albumin-bound nanoparticle formulation)?",
+    "qa": {
+      "question": "Which trials evaluate paclitaxel (investigational and albumin-bound nanoparticle formulation)?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL428647",
+          "label": "PACLITAXEL",
+          "matched_text": "paclitaxel",
+          "matched_alias": "PACLITAXEL"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT00019019 (PHASE1, COMPLETED) evaluates PACLITAXEL [NCT00019019]\n  - NCT00832819 (PHASE1, COMPLETED) evaluates PACLITAXEL [NCT00832819]\n  - NCT07318883 (PHASE2, PHASE3, NOT_YET_RECRUITING) evaluates PACLITAXEL [NCT07318883]\n  - NCT00616031 (PHASE2, UNKNOWN) evaluates PACLITAXEL [NCT00616031]\n  - NCT04892953 (PHASE2, RECRUITING) evaluates PACLITAXEL [NCT04892953]\n  - NCT07063745 (PHASE2, PHASE3, RECRUITING) evaluates PACLITAXEL [NCT07063745]\n  - NCT06312137 (PHASE3, RECRUITING) evaluates PACLITAXEL [NCT06312137]\n  - NCT00955305 (PHASE2, TERMINATED) evaluates PACLITAXEL [NCT00955305]\n  - NCT00287989 (PHASE2, COMPLETED) evaluates PACLITAXEL [NCT00287989]\n  - NCT00291850 (PHASE2, TERMINATED) evaluates PACLITAXEL [NCT00291850]\n  - NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates PACLITAXEL [NCT03390686]\n  - NCT00273507 (PHASE3, TERMINATED) evaluates PACLITAXEL [NCT00273507]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT00019019 (PHASE1, COMPLETED) evaluates PACLITAXEL",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00019019|EVALUATES|CHEMBL428647|NCT00019019",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00019019",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00019019",
+          "stated_intervention": "paclitaxel",
+          "title": "Carboxyamidotriazole and Paclitaxel in Treating Patients With Advanced Solid Tumors or Refractory Lymphomas",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT00832819 (PHASE1, COMPLETED) evaluates PACLITAXEL",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00832819|EVALUATES|CHEMBL428647|NCT00832819",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00832819",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00832819",
+          "stated_intervention": "Paclitaxel",
+          "title": "E7080 in Combination With Carboplatin and Paclitaxel in Patients With Non-small Cell Lung Cancer (NSCLC)",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT07318883 (PHASE2, PHASE3, NOT_YET_RECRUITING) evaluates PACLITAXEL",
+          "relation": "EVALUATES",
+          "edge_id": "NCT07318883|EVALUATES|CHEMBL428647|NCT07318883",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT07318883",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT07318883",
+          "stated_intervention": "Paclitaxel or Nab-Paclitaxel",
+          "title": "A Phase II/III Clinical Study to Evaluate HLX07 in Combination With Serplulimab and Chemotherapy Versus Placebo in Combination With Serplulimab or Pembrolizumab and Chemotherapy as First-Line Treatment in Advanced Squamous Non-Small Cell Lung Cancer",
+          "status": "NOT_YET_RECRUITING",
+          "phases": [
+            "PHASE2",
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT00616031 (PHASE2, UNKNOWN) evaluates PACLITAXEL",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00616031|EVALUATES|CHEMBL428647|NCT00616031",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00616031",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00616031",
+          "stated_intervention": "paclitaxel",
+          "title": "Paclitaxel and Carboplatin With or Without Nitroglycerin in Treating Patients With Previously Untreated Stage III or Stage IV Non-Small Cell Lung Cancer",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT04892953 (PHASE2, RECRUITING) evaluates PACLITAXEL",
+          "relation": "EVALUATES",
+          "edge_id": "NCT04892953|EVALUATES|CHEMBL428647|NCT04892953",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04892953",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04892953",
+          "stated_intervention": "Paclitaxel",
+          "title": "Local Consolidative Therapy and Durvalumab for Oligoprogressive and Polyprogressive Stage III NSCLC After Chemoradiation and Anti-PD-L1 Therapy",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT07063745 (PHASE2, PHASE3, RECRUITING) evaluates PACLITAXEL",
+          "relation": "EVALUATES",
+          "edge_id": "NCT07063745|EVALUATES|CHEMBL428647|NCT07063745",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT07063745",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT07063745",
+          "stated_intervention": "Paclitaxel",
+          "title": "A Study to Compare the Combination of Navlimetostat (BMS-986504) With Pembrolizumab and Chemotherapy Versus Placebo Plus Pembrolizumab and Chemotherapy in First-line Metastatic Non-small Cell Lung Cancer Participants With Homozygous MTAP Deletion",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE2",
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT06312137 (PHASE3, RECRUITING) evaluates PACLITAXEL",
+          "relation": "EVALUATES",
+          "edge_id": "NCT06312137|EVALUATES|CHEMBL428647|NCT06312137",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT06312137",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT06312137",
+          "stated_intervention": "Paclitaxel",
+          "title": "A Study to Assess Efficacy and Safety of Pembrolizumab With or Without Sacituzumab Tirumotecan (MK- 2870) in Adult Participants With Resectable Non Small Cell Lung Cancer (NSCLC) Not Achieving Pathological Complete Response (pCR) (MK-2870-019)",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT00955305 (PHASE2, TERMINATED) evaluates PACLITAXEL",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00955305|EVALUATES|CHEMBL428647|NCT00955305",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00955305",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00955305",
+          "stated_intervention": "Paclitaxel",
+          "title": "Paclitaxel, Carboplatin, and Bevacizumab With or Without Cixutumumab in Treating Patients With Stage IV or Recurrent Non-small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00287989 (PHASE2, COMPLETED) evaluates PACLITAXEL",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00287989|EVALUATES|CHEMBL428647|NCT00287989",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00287989",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00287989",
+          "stated_intervention": "Paclitaxel",
+          "title": "Erlotinib, Paclitaxel, and Carboplatin in Treating Patients With Stage III, Stage IV, or Recurrent Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00291850 (PHASE2, TERMINATED) evaluates PACLITAXEL",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00291850|EVALUATES|CHEMBL428647|NCT00291850",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00291850",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00291850",
+          "stated_intervention": "Paclitaxel, Cisplatin, Pegfilgrastim",
+          "title": "Phase II Trial of Dose-dense Paclitaxel and Cisplatin as Neo-adjuvant Chemotherapy for Operable Stage II and IIA NSCLC",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates PACLITAXEL",
+          "relation": "EVALUATES",
+          "edge_id": "NCT03390686|EVALUATES|CHEMBL428647|NCT03390686",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03390686",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03390686",
+          "stated_intervention": "Paclitaxel",
+          "title": "A Trial to Compare the Efficacy, Safety, Pharmacokinetics and Immunogenicity of HD204 to Avastin® in Advanced Non-squamous Non-small Cell Lung Cancer Patients",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT00273507 (PHASE3, TERMINATED) evaluates PACLITAXEL",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00273507|EVALUATES|CHEMBL428647|NCT00273507",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00273507",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00273507",
+          "stated_intervention": "Carboplatin and Paclitaxel",
+          "title": "Neoadjuvant Chemotherapy in Non Small Cell Lung Cancer (NSCLC) Stages IB, IIA, IIB, and IIIA/T3",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "doxorubicin formulated as sustained-release and liposomal",
+    "resolver": {
+      "raw": "doxorubicin formulated as sustained-release and liposomal",
+      "components": [
+        {
+          "component": "doxorubicin formulated as sustained-release and",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL53463",
+        "label": "DOXORUBICIN",
+        "matched_text": "doxorubicin",
+        "matched_alias": "DOXORUBICIN"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "liposomal"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate doxorubicin formulated as sustained-release and liposomal?",
+    "qa": {
+      "question": "Which trials evaluate doxorubicin formulated as sustained-release and liposomal?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL53463",
+          "label": "DOXORUBICIN",
+          "matched_text": "doxorubicin",
+          "matched_alias": "DOXORUBICIN"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT01970540 (PHASE1, COMPLETED) evaluates DOXORUBICIN [NCT01970540]\n  - NCT04224337 (PHASE2, COMPLETED) evaluates DOXORUBICIN [NCT04224337]\n  - NCT01640847 (PHASE2, WITHDRAWN) evaluates DOXORUBICIN [NCT01640847]\n\nScope: 3 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 3,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT01970540 (PHASE1, COMPLETED) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01970540|EVALUATES|CHEMBL53463|NCT01970540",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01970540",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01970540",
+          "stated_intervention": "Doxorubicin",
+          "title": "Study Escalating Doses of PM01183 in Combination With Fixed Doxorubicin in Patients With Specific Advanced Unresectable Solid Tumors",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT04224337 (PHASE2, COMPLETED) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04224337",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04224337",
+          "stated_intervention": "Durvalumab + doxorubicin + ifosfamide",
+          "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT01640847 (PHASE2, WITHDRAWN) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01640847|EVALUATES|CHEMBL53463|NCT01640847",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01640847",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 0.98,
+          "resolution_tier": "ALIAS",
+          "url": "https://clinicaltrials.gov/study/NCT01640847",
+          "stated_intervention": "High Intensity Focused Ultrasound (HIFU) in combination with ThermoDox",
+          "title": "MRI Guided High Intensity Focused Ultrasound (HIFU) and ThermoDox for Palliation of Painful Bone Metastases",
+          "status": "WITHDRAWN",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "doxorubicin (nanoparticle liposomal formulation)",
+    "resolver": {
+      "raw": "doxorubicin (nanoparticle liposomal formulation)",
+      "components": [
+        {
+          "component": "doxorubicin",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "doxorubicin (nanoparticle liposomal formulation)",
+        "matched_text": "doxorubicin (nanoparticle liposomal formulation)",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "doxorubicin (nanoparticle liposomal formulation)",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "previous_514929c": {
+      "refused": "doxorubicin (nanoparticle liposomal formulation)",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "qa_input": "Which trials evaluate doxorubicin (nanoparticle liposomal formulation)?",
+    "qa": {
+      "question": "Which trials evaluate doxorubicin (nanoparticle liposomal formulation)?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate doxorubicin (nanoparticle liposomal formulation)",
+          "matched_text": "Which trials evaluate doxorubicin (nanoparticle liposomal formulation)",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "input": "bevacizumab (investigational biosimilar)",
+    "resolver": {
+      "raw": "bevacizumab (investigational biosimilar)",
+      "components": [
+        {
+          "component": "bevacizumab",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab (investigational biosimilar)",
+        "matched_text": "bevacizumab (investigational biosimilar)",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "bevacizumab (investigational biosimilar)",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "previous_514929c": {
+      "refused": "bevacizumab (investigational biosimilar)",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "qa_input": "Which trials evaluate bevacizumab (investigational biosimilar)?",
+    "qa": {
+      "question": "Which trials evaluate bevacizumab (investigational biosimilar)?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate bevacizumab (investigational biosimilar)",
+          "matched_text": "Which trials evaluate bevacizumab (investigational biosimilar)",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "input": "liposomal and nanoparticle formulation of doxorubicin",
+    "resolver": {
+      "raw": "liposomal and nanoparticle formulation of doxorubicin",
+      "components": [
+        {
+          "component": "and formulation of doxorubicin",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "liposomal ... nanoparticle formulation of doxorubicin",
+        "matched_text": "liposomal ... nanoparticle formulation of doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "liposomal ... nanoparticle formulation of doxorubicin",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "liposomal"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate liposomal and nanoparticle formulation of doxorubicin?",
+    "qa": {
+      "question": "Which trials evaluate liposomal and nanoparticle formulation of doxorubicin?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate liposomal ... nanoparticle formulation of doxorubicin",
+          "matched_text": "Which trials evaluate liposomal ... nanoparticle formulation of doxorubicin",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  }
+]

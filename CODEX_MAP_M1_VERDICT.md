@@ -61,3 +61,15 @@ are covered by tests. Tests 326.
 | M5-S2 | "Pegylated interferon alfa-2a" (a stored alias of the pegylated drug itself) is refused | not changed: the resolver refuses it too, and exempting known aliases from the product guards would reopen M5-B1 (recorded as a known over-refusal) |
 
 Tests 329.
+
+## Round 6 (audit_evidence_claims/m6) — CHANGES REQUIRED
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M6-B1 | an interior "/" or "|" ("bevacizumab - awwb/osimertinib") hid the suffix | "/" and "|" split a word wherever they are and end the list item |
+| M6-B2 | edge punctuation the guards kept but the alias key dropped ("bevacizumab-awwb。", trailing hyphen) | edge punctuation is stripped before the guards (brackets kept for isotopes) |
+| M6-B3 | "and" inside a parenthetical description detached its qualifier from the preceding drug | listing words inside parentheses do not split |
+| all | the linker kept re-implementing the resolver's refusals | the intervention resolver now runs on each list piece; a drug inside a piece it refuses as a distinct product or tracer is never linked (unless the same molecule is also accepted in another piece, which the list-item rule then governs) |
+| M6-S1 | complete stored names with list punctuation picked another drug | an input that is exactly one stored name (and not refused) is read whole |
+
+Tests 331.

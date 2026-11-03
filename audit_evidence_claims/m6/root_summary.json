@@ -1,0 +1,154 @@
+{
+  "http_replays": [
+    {
+      "script": "run_http.py",
+      "exit_code": 0,
+      "seconds": 8.27875389996916
+    },
+    {
+      "script": "supplemental_http.py",
+      "exit_code": 0,
+      "seconds": 5.31085029989481
+    },
+    {
+      "script": "attack_http.py",
+      "exit_code": 0,
+      "seconds": 5.215108799980953
+    },
+    {
+      "script": "m5_http.py",
+      "exit_code": 0,
+      "seconds": 6.5962884000036865
+    },
+    {
+      "script": "cross_item_http.py",
+      "exit_code": 0,
+      "seconds": 5.237448999891058
+    },
+    {
+      "script": "perf_check_http.py",
+      "exit_code": 0,
+      "seconds": 6.148178000003099
+    }
+  ],
+  "performance": {
+    "sequential": [
+      {
+        "path": "/api/explore",
+        "characters": 4,
+        "status": 200,
+        "seconds": 0.042199699906632304
+      },
+      {
+        "path": "/api/explore",
+        "characters": 499,
+        "status": 200,
+        "seconds": 0.04171549994498491
+      },
+      {
+        "path": "/api/ask",
+        "characters": 499,
+        "status": 200,
+        "seconds": 0.02903019986115396
+      },
+      {
+        "path": "/api/explore",
+        "characters": 499,
+        "status": 200,
+        "seconds": 0.037605399964377284
+      },
+      {
+        "path": "/api/explore",
+        "characters": 501,
+        "status": 400,
+        "seconds": 0.02475879993289709
+      }
+    ],
+    "concurrent_wall_seconds": 0.08539650007151067,
+    "concurrent_seconds": [
+      0.01606240007095039,
+      0.04018170014023781,
+      0.0748081998899579,
+      0.05804830021224916
+    ],
+    "normal_follower_seconds": 0.036900600185617805,
+    "check_999_chars": {
+      "status": 200,
+      "seconds": 0.2084209001623094
+    },
+    "extended": [
+      {
+        "kind": "plain",
+        "status": 200,
+        "seconds": 0.5425539000425488
+      },
+      {
+        "kind": "split",
+        "status": 200,
+        "seconds": 0.5078127000015229
+      },
+      {
+        "kind": "drug",
+        "status": 200,
+        "seconds": 0.23644650005735457
+      },
+      {
+        "kind": "normal_after",
+        "status": 200,
+        "seconds": 0.034857100108638406
+      }
+    ]
+  },
+  "demos": [
+    {
+      "question": "What trials evaluate Tagrisso?",
+      "status": 200,
+      "evidence": 12,
+      "same_as_original": true
+    },
+    {
+      "question": "Which companies are developing osimertinib?",
+      "status": 200,
+      "evidence": 12,
+      "same_as_original": true
+    },
+    {
+      "question": "Which drugs act on ALK?",
+      "status": 200,
+      "evidence": 11,
+      "same_as_original": true
+    },
+    {
+      "question": "What does osimertinib target?",
+      "status": 200,
+      "evidence": 1,
+      "same_as_original": true
+    },
+    {
+      "question": "What is AstraZeneca running in NSCLC?",
+      "status": 200,
+      "evidence": 12,
+      "same_as_original": true
+    },
+    {
+      "question": "What trials evaluate Mvasi?",
+      "status": 200,
+      "evidence": 0,
+      "same_as_original": false
+    },
+    {
+      "question": "What is the capital of France?",
+      "status": 200,
+      "evidence": 0,
+      "same_as_original": true
+    }
+  ],
+  "http_top_keys": [
+    "get",
+    "cases",
+    "concurrency",
+    "db_sha256_before",
+    "db_sha256_after",
+    "db_unchanged"
+  ]
+}
