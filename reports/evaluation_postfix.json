@@ -11,15 +11,15 @@
   ],
   "per_tier": {
     "ALIAS": {
-      "sampled": 10,
-      "correct": 10,
+      "sampled": 8,
+      "correct": 8,
       "rate": 1.0,
       "ci95": [
-        0.7225,
+        0.6756,
         1.0
       ],
-      "population_unique": 523,
-      "population_occurrences": 698,
+      "population_unique": 517,
+      "population_occurrences": 692,
       "source": "postfix sample"
     },
     "BLOCKED_CLASS_TERM": {
@@ -30,8 +30,8 @@
         0.6097,
         1.0
       ],
-      "population_unique": 210,
-      "population_occurrences": 273,
+      "population_unique": 206,
+      "population_occurrences": 268,
       "source": "postfix sample"
     },
     "BLOCKED_PLACEBO": {
@@ -54,8 +54,8 @@
         0.7018,
         0.9881
       ],
-      "population_unique": 207,
-      "population_occurrences": 217,
+      "population_unique": 208,
+      "population_occurrences": 218,
       "source": "postfix sample"
     },
     "EXACT": {
@@ -66,8 +66,8 @@
         0.7225,
         1.0
       ],
-      "population_unique": 1410,
-      "population_occurrences": 3997,
+      "population_unique": 1408,
+      "population_occurrences": 3995,
       "source": "postfix sample"
     },
     "PARENTHETICAL": {
@@ -78,32 +78,32 @@
         0.4385,
         1.0
       ],
-      "population_unique": 23,
-      "population_occurrences": 31,
+      "population_unique": 13,
+      "population_occurrences": 14,
       "source": "postfix sample"
     },
     "UNRESOLVED": {
-      "sampled": 10,
-      "correct": 10,
+      "sampled": 8,
+      "correct": 8,
       "rate": 1.0,
       "ci95": [
-        0.7225,
+        0.6756,
         1.0
       ],
-      "population_unique": 1106,
-      "population_occurrences": 1226,
+      "population_unique": 1128,
+      "population_occurrences": 1248,
       "source": "postfix sample"
     },
     "AMBIGUOUS": {
-      "sampled": 12,
-      "correct": 12,
+      "sampled": 11,
+      "correct": 11,
       "rate": 1.0,
       "ci95": [
-        0.7575,
+        0.7412,
         1.0
       ],
-      "population_unique": 46,
-      "population_occurrences": 66,
+      "population_unique": 42,
+      "population_occurrences": 62,
       "source": "development sample (no independent test rows available)"
     },
     "BLOCKED_TARGET_TERM": {
@@ -131,27 +131,27 @@
       "source": "development sample (no independent test rows available)"
     },
     "FUZZY_AUTO": {
-      "sampled": 16,
+      "sampled": 13,
       "correct": 11,
-      "rate": 0.6875,
+      "rate": 0.8461538461538461,
       "ci95": [
-        0.444,
-        0.8584
+        0.5776,
+        0.9567
       ],
-      "population_unique": 16,
-      "population_occurrences": 16,
+      "population_unique": 13,
+      "population_occurrences": 13,
       "source": "development sample (no independent test rows available)"
     },
     "FUZZY_REVIEW": {
-      "sampled": 16,
-      "correct": 6,
-      "rate": 0.375,
+      "sampled": 9,
+      "correct": 4,
+      "rate": 0.4444444444444444,
       "ci95": [
-        0.1848,
-        0.6136
+        0.1888,
+        0.7334
       ],
-      "population_unique": 14,
-      "population_occurrences": 16,
+      "population_unique": 13,
+      "population_occurrences": 15,
       "source": "development sample (no independent test rows available)"
     },
     "SALT_STRIPPED": {
@@ -168,10 +168,10 @@
     }
   },
   "accepted_precision": {
-    "estimate": 0.9914,
+    "estimate": 0.9927,
     "ci95": [
-      0.7149,
-      0.9978
+      0.7061,
+      0.9986
     ],
     "method": "stratified estimate weighted by distinct resolutions per tier; interval propagated from per-tier Wilson bounds, not a normal approximation",
     "weighted_over_tiers": [
@@ -183,27 +183,83 @@
       "CONTAINED_ALIAS",
       "FUZZY_AUTO"
     ],
-    "caveat": "the sample is drawn by a disproportionate per-tier quota, so this reweighting is required; it is also what makes the figure higher than the raw rows, so read it next to raw_sample_precision below"
+    "caveat": "the sample is drawn by a disproportionate per-tier quota, so this reweighting is required; it is also what makes the figure higher than the raw rows, so read it next to raw_sample_precision below. The interval is a weighted sum of per-tier Wilson bounds: conservative, but not a calibrated 95% interval",
+    "bootstrap_ci95": [
+      0.9794,
+      1.0
+    ],
+    "bootstrap_note": "stratified bootstrap over the sampled rows, 20,000 resamples. Narrower, and blind to errors in tiers that scored 100% in the sample",
+    "carried_tiers_weight_share": 0.0088,
+    "estimate_without_carried_tiers": 0.9935
+  },
+  "as_labelled_raw_precision": {
+    "accepted_rows_scored": 38,
+    "accepted_rows_correct": 36,
+    "rate": 0.9474,
+    "ci95": [
+      0.8271,
+      0.9854
+    ],
+    "note": "every labelled accepted row, scored on the resolution it had when labelled. On the held-out test sample this is the frozen measurement of the pipeline before the audit repairs; it does not describe the current pipeline"
+  },
+  "held_out_status": "not a held-out sample",
+  "stale_labels": {
+    "count": 4,
+    "note": "rows whose resolution has changed since they were labelled; excluded from every figure above and listed for re-labelling",
+    "rows": [
+      {
+        "id": "1",
+        "raw": "ABI-007 (Abraxane) and Carboplatin",
+        "component": "ABI-007",
+        "labelled_tier": "ALIAS",
+        "labelled_drug_id": "CHEMBL428647",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "8",
+        "raw": "Nab-paclitaxel",
+        "component": "Nab-paclitaxel",
+        "labelled_tier": "ALIAS",
+        "labelled_drug_id": "CHEMBL428647",
+        "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "55",
+        "raw": "ORIENT-31 regimen",
+        "component": "ORIENT-31",
+        "labelled_tier": "UNRESOLVED",
+        "labelled_drug_id": "",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "56",
+        "raw": "Platinum chemotherapy (cisplatin or carboplatin)",
+        "component": "Platinum chemotherapy",
+        "labelled_tier": "UNRESOLVED",
+        "labelled_drug_id": "",
+        "labelled_verdict": "correct"
+      }
+    ]
   },
   "raw_sample_precision": {
-    "accepted_rows_scored": 38,
-    "accepted_rows_correct": 37,
-    "rate": 0.9737,
+    "accepted_rows_scored": 36,
+    "accepted_rows_correct": 35,
+    "rate": 0.9722,
     "ci95": [
-      0.865,
-      0.9953
+      0.8583,
+      0.9951
     ],
-    "note": "the unweighted result over the rows a human actually read. 38 of the 58 rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 58, the precision denominator is 38 -- these are different numbers and quoting the first as the second overstates the evidence"
+    "note": "the unweighted result over the rows a human actually read. 36 of the 54 current rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 58 (4 stale), the precision denominator is 36 -- these are different numbers and quoting the first as the second overstates the evidence"
   },
   "coverage": {
-    "component_occurrences_total": 6788,
-    "component_occurrences_excluding_blocked": 6351,
-    "accepted_occurrences": 4969,
-    "resolved_rate_of_substance_like": 0.7824,
-    "resolved_rate_of_all": 0.732
+    "component_occurrences_total": 6789,
+    "component_occurrences_excluding_blocked": 6355,
+    "accepted_occurrences": 4942,
+    "resolved_rate_of_substance_like": 0.7777,
+    "resolved_rate_of_all": 0.7279
   },
   "withheld_tier_quality": {
-    "FUZZY_REVIEW_would_have_been_correct": 0.375,
+    "FUZZY_REVIEW_would_have_been_correct": 0.4444444444444444,
     "reading": "most proposals held for review are wrong, which is the evidence that the automatic threshold is not set too low"
   },
   "limitations": [

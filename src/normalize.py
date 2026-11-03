@@ -65,6 +65,7 @@ TIER_BLOCKED_PLACEBO = "BLOCKED_PLACEBO"
 TIER_BLOCKED_CLASS = "BLOCKED_CLASS_TERM"
 TIER_BLOCKED_TARGET = "BLOCKED_TARGET_TERM"
 TIER_BLOCKED_DISTINCT_PRODUCT = "BLOCKED_DISTINCT_PRODUCT"
+TIER_BLOCKED_NEGATED = "BLOCKED_NEGATED"   # "No pembrolizumab": an absence, not an exposure
 TIER_UNRESOLVED = "UNRESOLVED"
 
 ACCEPTED_TIERS = {TIER_EXACT, TIER_ALIAS, TIER_CLEANED, TIER_SALT,
@@ -125,7 +126,7 @@ def build_drug_dictionary(drug_rows: list[dict]) -> dict:
 
         seen_alias = set()
 
-        def add(label: str, alias_type: str):
+        def add(label: str, alias_type: str, source: str | None = None):
             if not label:
                 return
             if T.canonical_key(label) in DISTINCT_PRODUCT_ALIASES:
@@ -155,14 +156,15 @@ def build_drug_dictionary(drug_rows: list[dict]) -> dict:
             if not key or (key, alias_type) in seen_alias:
                 return
             seen_alias.add((key, alias_type))
-            drugs[did]["aliases"].append({"alias": label, "type": alias_type})
+            drugs[did]["aliases"].append({"alias": label, "type": alias_type,
+                                          "source": source})
             if not any(e["drug_id"] == did for e in index[key]):
                 index[key].append({"drug_id": did, "alias": label,
-                                   "alias_type": alias_type})
+                                   "alias_type": alias_type, "source": source})
 
         add(d.get("name"), "preferred_name")
         for s in (d.get("synonyms") or []):
-            add(s.get("label"), "synonym")
+            add(s.get("label"), "synonym", s.get("source"))
         for t in (d.get("tradeNames") or []):
             add(t.get("label"), "trade_name")
 
@@ -211,6 +213,59 @@ def curate_dictionary(dic: dict) -> list[dict]:
                 "why": "a mechanism or class descriptor cannot identify a product, "
                        "even when only one record lists it",
             })
+            del index[key]
+
+    # (0b) Synonyms whose source is AACT are not curated identifiers. They are
+    # intervention strings from trial records that were linked to a molecule,
+    # so they carry whatever else the arm contained: TOBRAMYCIN is listed under
+    # DEXAMETHASONE (from the eye-drop combination), CARBOPLATIN under
+    # CISPLATIN, DOCETAXEL under PACLITAXEL, CHOP under PREDNISONE, and the
+    # bare word "mab" under PEMBROLIZUMAB. Three kinds are removed:
+    #   - a different active ingredient: the alias is shaped like an INN and
+    #     shares no stem with the molecule's own name
+    #   - a regimen acronym ("chop", "gemcis", "ac", "ep"), or a short
+    #     abbreviation that does not single out one molecule ("lv", "fa", "ici").
+    #     A three-letter abbreviation bound to one molecule ("ptx") is kept.
+    #   - a distinct product (biosimilar, liposomal or albumin-bound form)
+    # ChEMBL-sourced synonyms are left alone.
+    for key in list(index.keys()):
+        entries = index[key]
+        keep = []
+        for e in entries:
+            if e.get("source") != "AACT" or e["alias_type"] == "preferred_name":
+                keep.append(e)
+                continue
+            reason = _foreign_registry_alias(e["alias"], drugs[e["drug_id"]])
+            if (reason is None and len(key) <= 3 and not T.is_dev_code(e["alias"])
+                    and _ambiguous_short_alias(e["alias"], index)):
+                reason = "abbreviation"
+            if reason is None:
+                keep.append(e)
+                continue
+            findings.append({
+                "type": "registry_alias_removed",
+                "severity": "high" if reason == "different_ingredient" else "medium",
+                "alias": e["alias"],
+                "reason": reason,
+                "affected_drugs": [e["drug_id"]],
+                "affected_drug_name": drugs[e["drug_id"]]["name"],
+                "action": "alias removed from lookup index",
+                "why": {"different_ingredient":
+                            "the alias names another active ingredient, so "
+                            "matching on it records an exposure to the wrong drug",
+                        "abbreviation":
+                            "an abbreviation of two letters, or three letters "
+                            "shared by several molecules, cannot identify one",
+                        "regimen":
+                            "a regimen acronym names several drugs; listed "
+                            "under one of them it records only that one",
+                        "distinct_product":
+                            "a biosimilar or reformulated product is not the "
+                            "originator molecule"}[reason],
+            })
+        if keep:
+            index[key] = keep
+        else:
             del index[key]
 
     for key in list(index.keys()):
@@ -284,6 +339,70 @@ def curate_dictionary(dic: dict) -> list[dict]:
         })
 
     return findings
+
+
+RE_INN_SHAPE = re.compile(
+    r"^[a-z]{4,}(?:mab|cept|nib|tinib|parib|ciclib|lisib|platin|taxel|rubicin|"
+    r"mycin|micin|cycline|fosfamide|trexate|citabine|abine|tecan|zomib|degib|"
+    r"rafenib|limus|mustine|olone|asone|isone|semide|prazole|"
+    r"setron|pitant|ronate|grastim)$")
+
+
+# Regimen acronyms name several drugs at once. Listed under one member they
+# turn "CHOP" into prednisone and "GemCis" into cisplatin.
+REGIMEN_ACRONYMS = {
+    "chop", "rchop", "chope", "cvp", "folfox", "folfiri", "folfirinox",
+    "xelox", "capox", "gemcis", "gemcarbo", "gemox", "abvd", "beacopp", "mvac",
+    "ddmvac", "pfregimen", "tcbh", "tcb", "ecf", "eox", "flot", "icecure",
+    "vac", "vip", "pcv", "tpf", "dcf", "gp", "gc", "tc", "cp", "pc", "ep",
+    "ac", "ec", "fec", "cmf", "rd", "vrd", "vd", "mp", "dm",
+}
+
+
+def _ambiguous_short_alias(alias: str, index: dict) -> bool:
+    """A short registry alias is kept only when it is a three-letter
+    abbreviation that the whole index binds to one molecule ("ptx", "doc").
+    Two letters or fewer never identify a substance."""
+    key = T.canonical_key(alias)
+    if len(key) <= 2:
+        return True
+    return len({e["drug_id"] for e in index.get(key, [])}) != 1
+
+
+def _foreign_registry_alias(alias: str, drug: dict) -> str | None:
+    """Why a registry-derived synonym cannot stand for this molecule, or None.
+
+    The ingredient test is deliberately narrow. A first version flagged every
+    INN-shaped word that did not share a stem with the molecule's name, and so
+    removed former names and misspellings that are correct: apatinib under
+    RIVOCERANIB (the same molecule renamed), hydroxydaunomycin under
+    DOXORUBICIN, interleukin-2 under ALDESLEUKIN, "triplizumab" under
+    TORIPALIMAB. A word is kept when the molecule's own curated (ChEMBL)
+    synonyms contain it, or when it is a near-spelling of the molecule's name.
+    """
+    if T.is_distinct_product(alias) or T.canonical_key(alias) in DISTINCT_PRODUCT_ALIASES:
+        return "distinct_product"
+    if T.canonical_key(alias) in REGIMEN_ACRONYMS:
+        return "regimen"
+    name_key = T.canonical_key(drug["name"])
+    curated_text = " ".join(a["alias"].lower() for a in drug["aliases"]
+                            if a.get("source") != "AACT")
+    curated_words = set(re.findall(r"[a-z]{5,}", curated_text)) | {name_key}
+    words = re.findall(r"[a-z]+", alias.lower())
+    # a multi-word name that contains the molecule's own name is that
+    # molecule's full name ("nogapendekin alfa inbakicept"), not a foreign one
+    if any(w[:5] in name_key for w in words if len(w) >= 5):
+        return None
+    for w in words:
+        if not RE_INN_SHAPE.match(w):
+            continue
+        if name_key[:5] in w or w in curated_text:
+            continue
+        # a misspelling of the name or of a curated synonym ("anrotinib")
+        if max(fuzz.ratio(w, c) for c in curated_words) >= 80:
+            continue
+        return "different_ingredient"
+    return None
 
 
 def detect_duplicate_entities(dic: dict) -> list[dict]:
@@ -458,6 +577,22 @@ def segment_aliases(index: dict, text: str):
     return found, leftover
 
 
+def _raw_parts_by_cleaned(raw: str, parts: list[str]) -> dict[str, str]:
+    """Map each cleaned combination part back to the raw text it came from."""
+    if len(parts) <= 1:
+        return {}
+    raw_parts = T.split_combination(raw)
+    out: dict[str, str] = {}
+    for rp in raw_parts:
+        cleaned = T.clean_surface(rp)["cleaned"] or rp
+        for cp in T.split_combination(cleaned):
+            ck = T.canonical_key(cp)
+            for p in parts:
+                if p not in out and T.canonical_key(p) == ck:
+                    out[p] = rp
+    return out
+
+
 def resolve_drug_string(raw: str, dic: dict, index_keys: list[str],
                         target_keys: set | None = None) -> dict:
     """Resolve one intervention string into one or more component resolutions."""
@@ -487,6 +622,13 @@ def resolve_drug_string(raw: str, dic: dict, index_keys: list[str],
             return out
         cleaned_doc["rules"].append("placebo_co_administration_split")
 
+    # Each cleaned part is paired with the uncleaned text it came from. Cleaning
+    # removes "liposomal" as a formulation word, so the distinct-product guard
+    # on a cleaned part could not see it: "liposomal doxorubicin" was blocked
+    # alone and accepted as plain doxorubicin once "and cisplatin" was added.
+    # The same pairing keeps a bracketed code attached to its own component.
+    raw_of = _raw_parts_by_cleaned(raw, parts)
+
     for part in parts:
         if T.is_placebo(part):
             out["components"].append({
@@ -506,7 +648,13 @@ def resolve_drug_string(raw: str, dic: dict, index_keys: list[str],
         # "Radiation therapy" arrives here as "Radiation" and could never reach
         # its own guard. An adversarial review found three CLASS_TERMS entries
         # that were dead code for exactly this reason.
-        raw_part = part if len(parts) > 1 else raw
+        raw_part = raw_of.get(part, part) if len(parts) > 1 else raw
+        if T.is_negated(raw_part) or T.is_negated(part):
+            res["tier"] = TIER_BLOCKED_NEGATED
+            res["rules"].append("negation_guard")
+            res["note"] = "negated substance: the arm records its absence"
+            out["components"].append(res)
+            continue
         if (T.is_class_term(part) or T.is_class_term(raw_part)
                 or T.is_class_like(part) or T.is_class_like(raw_part)):
             res["tier"] = TIER_BLOCKED_CLASS
@@ -558,7 +706,9 @@ def resolve_drug_string(raw: str, dic: dict, index_keys: list[str],
 
         # 2. parenthetical code names, e.g. "ZD6474 (ZACTIMA)"
         if not hits:
-            for p in cleaned_doc["parentheticals"]:
+            own_parens = (cleaned_doc["parentheticals"] if len(parts) == 1
+                          else T.clean_surface(raw_part)["parentheticals"])
+            for p in own_parens:
                 if T.is_isotope_label(p):
                     rules.append("isotope_label_skipped")
                     continue
@@ -578,6 +728,15 @@ def resolve_drug_string(raw: str, dic: dict, index_keys: list[str],
                     tier = TIER_SALT
                     rules.append("match_after_salt_strip")
 
+        # 3b. an originator's FDA suffix ("cemiplimab-rwlc")
+        if not hits:
+            inn = T.strip_fda_suffix(part)
+            if inn:
+                hits = _lookup(index, inn)
+                if hits:
+                    tier = TIER_CLEANED
+                    rules.append("strip_fda_suffix")
+
         # 4. development code with a trailing lot/format number
         if not hits:
             core = T.dev_code_core(part)
@@ -586,6 +745,16 @@ def resolve_drug_string(raw: str, dic: dict, index_keys: list[str],
                 if hits:
                     tier = TIER_CLEANED
                     rules.append("strip_dev_code_suffix")
+
+        # 4b. a phosphate or succinate ester is its own molecule; without a
+        # vocabulary entry for it the honest answer is unresolved, not the
+        # parent steroid that segmentation or fuzzy matching would find
+        if not hits and T.RE_ESTER_FORM.search(part):
+            res["rules"].append("ester_form_not_salt")
+            res["note"] = ("covalent ester (prodrug) form; not stripped as a "
+                           "salt and not in this vocabulary as written")
+            out["components"].append(res)
+            continue
 
         # 5. dictionary-driven segmentation of an unseparated phrase
         if not hits:

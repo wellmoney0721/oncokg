@@ -6,32 +6,33 @@
   "trials": "2026-11-03T02:31:37.196527+00:00"
  },
  "totals": {
-  "findings": 1428,
+  "findings": 1669,
   "by_severity": {
-   "high": 243,
-   "medium": 696,
-   "low": 489
+   "high": 253,
+   "medium": 944,
+   "low": 472
   },
   "by_family": {
    "dictionary": {
-    "class_term_as_synonym": 134,
-    "cross_drug_synonym": 80,
+    "class_term_as_synonym": 117,
+    "cross_drug_synonym": 57,
     "distinct_product_alias": 7,
     "placebo_string_in_synonym_list": 6,
-    "genuinely_ambiguous_alias": 124,
+    "registry_alias_removed": 318,
+    "genuinely_ambiguous_alias": 98,
     "suspected_duplicate_entity": 47,
-    "parent_child_collapse": 78
+    "parent_child_collapse": 60
    },
    "record": {
     "incomplete_intervention_parse": 16,
-    "no_substance_resolved": 435,
-    "recurrent_unresolved_surface": 55,
+    "no_substance_resolved": 439,
+    "recurrent_unresolved_surface": 58,
     "missing_structural_field": 169,
     "out_of_scope_trial": 226
    },
    "graph": {
-    "stage_disagrees_with_reference": 35,
-    "company_names_merged": 16
+    "stage_disagrees_with_reference": 34,
+    "company_names_merged": 17
    }
   }
  },
@@ -491,6 +492,69 @@
   {
    "type": "class_term_as_synonym",
    "severity": "high",
+   "alias": "corticosteroid",
+   "affected_drugs": [
+    "CHEMBL1200762",
+    "CHEMBL131",
+    "CHEMBL1451",
+    "CHEMBL384467",
+    "CHEMBL632",
+    "CHEMBL635",
+    "CHEMBL650"
+   ],
+   "action": "alias removed from lookup index; treated as a class term",
+   "why": "a mechanism or class descriptor cannot identify a product, even when only one record lists it",
+   "family": "dictionary"
+  },
+  {
+   "type": "class_term_as_synonym",
+   "severity": "high",
+   "alias": "corticosteroids",
+   "affected_drugs": [
+    "CHEMBL1200762",
+    "CHEMBL131",
+    "CHEMBL1451",
+    "CHEMBL384467",
+    "CHEMBL389621",
+    "CHEMBL632",
+    "CHEMBL635",
+    "CHEMBL650"
+   ],
+   "action": "alias removed from lookup index; treated as a class term",
+   "why": "a mechanism or class descriptor cannot identify a product, even when only one record lists it",
+   "family": "dictionary"
+  },
+  {
+   "type": "class_term_as_synonym",
+   "severity": "high",
+   "alias": "glucocorticoid",
+   "affected_drugs": [
+    "CHEMBL131",
+    "CHEMBL384467",
+    "CHEMBL389621",
+    "CHEMBL635",
+    "CHEMBL650"
+   ],
+   "action": "alias removed from lookup index; treated as a class term",
+   "why": "a mechanism or class descriptor cannot identify a product, even when only one record lists it",
+   "family": "dictionary"
+  },
+  {
+   "type": "class_term_as_synonym",
+   "severity": "high",
+   "alias": "glucocorticoids",
+   "affected_drugs": [
+    "CHEMBL131",
+    "CHEMBL635",
+    "CHEMBL650"
+   ],
+   "action": "alias removed from lookup index; treated as a class term",
+   "why": "a mechanism or class descriptor cannot identify a product, even when only one record lists it",
+   "family": "dictionary"
+  },
+  {
+   "type": "class_term_as_synonym",
+   "severity": "high",
    "alias": "anti-vegf",
    "affected_drugs": [
     "CHEMBL1201583",
@@ -683,6 +747,17 @@
    "alias": "PAN-RAF INHIBITOR LXH254",
    "affected_drugs": [
     "CHEMBL4583691"
+   ],
+   "action": "alias removed from lookup index; treated as a class term",
+   "why": "a mechanism or class descriptor cannot identify a product, even when only one record lists it",
+   "family": "dictionary"
+  },
+  {
+   "type": "class_term_as_synonym",
+   "severity": "high",
+   "alias": "hypomethylating agent",
+   "affected_drugs": [
+    "CHEMBL1489"
    ],
    "action": "alias removed from lookup index; treated as a class term",
    "why": "a mechanism or class descriptor cannot identify a product, even when only one record lists it",
@@ -944,6 +1019,18 @@
   {
    "type": "class_term_as_synonym",
    "severity": "high",
+   "alias": "oral corticosteroids",
+   "affected_drugs": [
+    "CHEMBL131",
+    "CHEMBL635"
+   ],
+   "action": "alias removed from lookup index; treated as a class term",
+   "why": "a mechanism or class descriptor cannot identify a product, even when only one record lists it",
+   "family": "dictionary"
+  },
+  {
+   "type": "class_term_as_synonym",
+   "severity": "high",
    "alias": "Fgfr inhibitor incb054828",
    "affected_drugs": [
     "CHEMBL4297522"
@@ -958,6 +1045,17 @@
    "alias": "Anti-ox40 antibody bms-986178",
    "affected_drugs": [
     "CHEMBL4297705"
+   ],
+   "action": "alias removed from lookup index; treated as a class term",
+   "why": "a mechanism or class descriptor cannot identify a product, even when only one record lists it",
+   "family": "dictionary"
+  },
+  {
+   "type": "class_term_as_synonym",
+   "severity": "high",
+   "alias": "oral corticosteroid",
+   "affected_drugs": [
+    "CHEMBL635"
    ],
    "action": "alias removed from lookup index; treated as a class term",
    "why": "a mechanism or class descriptor cannot identify a product, even when only one record lists it",
@@ -1021,34 +1119,6 @@
   {
    "type": "class_term_as_synonym",
    "severity": "high",
-   "alias": "lv",
-   "affected_drugs": [
-    "CHEMBL1201138",
-    "CHEMBL1232801",
-    "CHEMBL1679",
-    "CHEMBL4298101"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "ici",
-   "affected_drugs": [
-    "CHEMBL2108738",
-    "CHEMBL3137343",
-    "CHEMBL3301587",
-    "CHEMBL3707227"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
    "alias": "lmwh",
    "affected_drugs": [
     "CHEMBL1201414",
@@ -1096,48 +1166,6 @@
     "CHEMBL4112930",
     "CHEMBL506871",
     "CHEMBL521686"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "fa",
-   "affected_drugs": [
-    "CHEMBL1232801",
-    "CHEMBL1568",
-    "CHEMBL1622",
-    "CHEMBL1679"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "folfiri",
-   "affected_drugs": [
-    "CHEMBL1232801",
-    "CHEMBL1679",
-    "CHEMBL185",
-    "CHEMBL481"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "folfirinox",
-   "affected_drugs": [
-    "CHEMBL1679",
-    "CHEMBL185",
-    "CHEMBL414804",
-    "CHEMBL481"
    ],
    "action": "alias removed from lookup index; treated as a class term",
    "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
@@ -1230,109 +1258,12 @@
   {
    "type": "class_term_as_synonym",
    "severity": "high",
-   "alias": "pof",
-   "affected_drugs": [
-    "CHEMBL1679",
-    "CHEMBL185",
-    "CHEMBL414804",
-    "CHEMBL428647"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "ai",
-   "affected_drugs": [
-    "CHEMBL1200374",
-    "CHEMBL1358",
-    "CHEMBL1399",
-    "CHEMBL1444"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "ifn",
-   "affected_drugs": [
-    "CHEMBL1201558",
-    "CHEMBL2108494",
-    "CHEMBL2108506"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
    "alias": "interferon alpha",
    "affected_drugs": [
     "CHEMBL1201558",
     "CHEMBL1201560",
     "CHEMBL2108494",
     "CHEMBL2108506"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "peg-ifn",
-   "affected_drugs": [
-    "CHEMBL1201558",
-    "CHEMBL1201560",
-    "CHEMBL2108494",
-    "CHEMBL2108506"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "pegintron",
-   "affected_drugs": [
-    "CHEMBL1201558",
-    "CHEMBL1201560",
-    "CHEMBL2108506"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "gc",
-   "affected_drugs": [
-    "CHEMBL11359",
-    "CHEMBL1351",
-    "CHEMBL635",
-    "CHEMBL650",
-    "CHEMBL888"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "pd-1",
-   "affected_drugs": [
-    "CHEMBL4297715",
-    "CHEMBL4297829",
-    "CHEMBL4297840",
-    "CHEMBL4297843"
    ],
    "action": "alias removed from lookup index; treated as a class term",
    "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
@@ -1355,37 +1286,11 @@
   {
    "type": "class_term_as_synonym",
    "severity": "high",
-   "alias": "abvd",
-   "affected_drugs": [
-    "CHEMBL159",
-    "CHEMBL359744",
-    "CHEMBL53463"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
    "alias": "third-generation egfr-tki",
    "affected_drugs": [
     "CHEMBL3353410",
     "CHEMBL4297258",
     "CHEMBL4761468"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "hc",
-   "affected_drugs": [
-    "CHEMBL1535",
-    "CHEMBL389621",
-    "CHEMBL467"
    ],
    "action": "alias removed from lookup index; treated as a class term",
    "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
@@ -1459,117 +1364,11 @@
   {
    "type": "class_term_as_synonym",
    "severity": "high",
-   "alias": "g-p",
-   "affected_drugs": [
-    "CHEMBL11359",
-    "CHEMBL1201027",
-    "CHEMBL1201335",
-    "CHEMBL3545123",
-    "CHEMBL3545363",
-    "CHEMBL888",
-    "CHEMBL940"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "pegylated interferon",
-   "affected_drugs": [
-    "CHEMBL1201558",
-    "CHEMBL1201560",
-    "CHEMBL2108494"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
    "alias": "capeox",
    "affected_drugs": [
     "CHEMBL1773",
     "CHEMBL185",
     "CHEMBL414804"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "corticosteroid",
-   "affected_drugs": [
-    "CHEMBL1200762",
-    "CHEMBL131",
-    "CHEMBL1451",
-    "CHEMBL384467",
-    "CHEMBL632",
-    "CHEMBL635",
-    "CHEMBL650"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "corticosteroids",
-   "affected_drugs": [
-    "CHEMBL1200762",
-    "CHEMBL131",
-    "CHEMBL1451",
-    "CHEMBL384467",
-    "CHEMBL389621",
-    "CHEMBL632",
-    "CHEMBL635",
-    "CHEMBL650"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "glucocorticoid",
-   "affected_drugs": [
-    "CHEMBL131",
-    "CHEMBL384467",
-    "CHEMBL389621",
-    "CHEMBL635",
-    "CHEMBL650"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "glucocorticoids",
-   "affected_drugs": [
-    "CHEMBL131",
-    "CHEMBL635",
-    "CHEMBL650"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "epo",
-   "affected_drugs": [
-    "CHEMBL1201565",
-    "CHEMBL1201566",
-    "CHEMBL2109092"
    ],
    "action": "alias removed from lookup index; treated as a class term",
    "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
@@ -1617,46 +1416,6 @@
   {
    "type": "class_term_as_synonym",
    "severity": "high",
-   "alias": "vrd",
-   "affected_drugs": [
-    "CHEMBL325041",
-    "CHEMBL384467",
-    "CHEMBL848"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "chop",
-   "affected_drugs": [
-    "CHEMBL1200796",
-    "CHEMBL131",
-    "CHEMBL53463",
-    "CHEMBL635"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
-   "alias": "r-chop",
-   "affected_drugs": [
-    "CHEMBL1200796",
-    "CHEMBL53463",
-    "CHEMBL635"
-   ],
-   "action": "alias removed from lookup index; treated as a class term",
-   "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "class_term_as_synonym",
-   "severity": "high",
    "alias": "folfoxiri",
    "affected_drugs": [
     "CHEMBL185",
@@ -1665,74 +1424,6 @@
    ],
    "action": "alias removed from lookup index; treated as a class term",
    "why": "a class descriptor cannot identify a single molecule, so matching on it would fabricate a specific exposure",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "ATEZOLIZUMAB",
-   "resolved_to": "CHEMBL3707227",
-   "resolved_to_name": "ATEZOLIZUMAB",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL3301587",
-     "name": "DURVALUMAB"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "adebrelimab",
-   "resolved_to": "CHEMBL4297828",
-   "resolved_to_name": "ADEBRELIMAB",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL3707227",
-     "name": "ATEZOLIZUMAB"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "avelumab",
-   "resolved_to": "CHEMBL3833373",
-   "resolved_to_name": "AVELUMAB",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL3707227",
-     "name": "ATEZOLIZUMAB"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "durvalumab",
-   "resolved_to": "CHEMBL3301587",
-   "resolved_to_name": "DURVALUMAB",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL3707227",
-     "name": "ATEZOLIZUMAB"
-    },
-    {
-     "drug_id": "CHEMBL4297843",
-     "name": "TORIPALIMAB"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
    "family": "dictionary"
   },
   {
@@ -2006,22 +1697,6 @@
   {
    "type": "cross_drug_synonym",
    "severity": "high",
-   "alias": "ENVAFOLIMAB",
-   "resolved_to": "CHEMBL4298006",
-   "resolved_to_name": "ENVAFOLIMAB",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL6068451",
-     "name": "IVONESCIMAB"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
    "alias": "metformin",
    "resolved_to": "CHEMBL1431",
    "resolved_to_name": "METFORMIN",
@@ -2042,10 +1717,6 @@
    "resolved_to": "CHEMBL1351",
    "resolved_to_name": "CARBOPLATIN",
    "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL11359",
-     "name": "CISPLATIN"
-    },
     {
      "drug_id": "CHEMBL1235478",
      "name": "PLATINUM"
@@ -2130,150 +1801,6 @@
   {
    "type": "cross_drug_synonym",
    "severity": "high",
-   "alias": "TORIPALIMAB",
-   "resolved_to": "CHEMBL4297843",
-   "resolved_to_name": "TORIPALIMAB",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL3301587",
-     "name": "DURVALUMAB"
-    },
-    {
-     "drug_id": "CHEMBL4297840",
-     "name": "TISLELIZUMAB"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "nivolumab",
-   "resolved_to": "CHEMBL2108738",
-   "resolved_to_name": "NIVOLUMAB",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL3137343",
-     "name": "PEMBROLIZUMAB"
-    },
-    {
-     "drug_id": "CHEMBL4297843",
-     "name": "TORIPALIMAB"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "pembrolizumab",
-   "resolved_to": "CHEMBL3137343",
-   "resolved_to_name": "PEMBROLIZUMAB",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL2108738",
-     "name": "NIVOLUMAB"
-    },
-    {
-     "drug_id": "CHEMBL4297843",
-     "name": "TORIPALIMAB"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "tislelizumab",
-   "resolved_to": "CHEMBL4297840",
-   "resolved_to_name": "TISLELIZUMAB",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL4297829",
-     "name": "SINTILIMAB"
-    },
-    {
-     "drug_id": "CHEMBL4297843",
-     "name": "TORIPALIMAB"
-    },
-    {
-     "drug_id": "CHEMBL4594550",
-     "name": "SERPLULIMAB"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "ERLOTINIB",
-   "resolved_to": "CHEMBL553",
-   "resolved_to_name": "ERLOTINIB",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL2087361",
-     "name": "ICOTINIB"
-    },
-    {
-     "drug_id": "CHEMBL939",
-     "name": "GEFITINIB"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "gefitinib",
-   "resolved_to": "CHEMBL939",
-   "resolved_to_name": "GEFITINIB",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL2087361",
-     "name": "ICOTINIB"
-    },
-    {
-     "drug_id": "CHEMBL553",
-     "name": "ERLOTINIB"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "icotinib",
-   "resolved_to": "CHEMBL2087361",
-   "resolved_to_name": "ICOTINIB",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL553",
-     "name": "ERLOTINIB"
-    },
-    {
-     "drug_id": "CHEMBL939",
-     "name": "GEFITINIB"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
    "alias": "molgramostim",
    "resolved_to": "CHEMBL2109134",
    "resolved_to_name": "MOLGRAMOSTIM",
@@ -2306,30 +1833,10 @@
   {
    "type": "cross_drug_synonym",
    "severity": "high",
-   "alias": "DISITAMAB VEDOTIN",
-   "resolved_to": "CHEMBL5095273",
-   "resolved_to_name": "DISITAMAB VEDOTIN",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL1018",
-     "name": "DIENESTROL"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
    "alias": "paclitaxel",
    "resolved_to": "CHEMBL428647",
    "resolved_to_name": "PACLITAXEL",
    "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL3545252",
-     "name": "DOCETAXEL"
-    },
     {
      "drug_id": "CHEMBL4297441",
      "name": "PACLITAXEL DOCOSAHEXAENOIC ACID"
@@ -2385,22 +1892,6 @@
     {
      "drug_id": "CHEMBL3707405",
      "name": "SACITUZUMAB"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "S1?",
-   "resolved_to": "CHEMBL4525128",
-   "resolved_to_name": "S1?",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL20883",
-     "name": "TEGAFUR"
     }
    ],
    "action": "alias bound to the molecule whose preferred name it is",
@@ -2514,38 +2005,6 @@
   {
    "type": "cross_drug_synonym",
    "severity": "high",
-   "alias": "SIROLIMUS",
-   "resolved_to": "CHEMBL413",
-   "resolved_to_name": "SIROLIMUS",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL1908360",
-     "name": "EVEROLIMUS"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "everolimus",
-   "resolved_to": "CHEMBL1908360",
-   "resolved_to_name": "EVEROLIMUS",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL413",
-     "name": "SIROLIMUS"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
    "alias": "ALECTINIB HYDROCHLORIDE",
    "resolved_to": "CHEMBL3707320",
    "resolved_to_name": "ALECTINIB HYDROCHLORIDE",
@@ -2585,54 +2044,6 @@
     {
      "drug_id": "CHEMBL1201568",
      "name": "PEGFILGRASTIM"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "CAPECITABINE",
-   "resolved_to": "CHEMBL1773",
-   "resolved_to_name": "CAPECITABINE",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL185",
-     "name": "FLUOROURACIL"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "TRASTUZUMAB",
-   "resolved_to": "CHEMBL1201585",
-   "resolved_to_name": "TRASTUZUMAB",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL2007641",
-     "name": "PERTUZUMAB"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "pertuzumab",
-   "resolved_to": "CHEMBL2007641",
-   "resolved_to_name": "PERTUZUMAB",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL1201585",
-     "name": "TRASTUZUMAB"
     }
    ],
    "action": "alias bound to the molecule whose preferred name it is",
@@ -2727,10 +2138,6 @@
      "name": "PREDNISOLONE"
     },
     {
-     "drug_id": "CHEMBL384467",
-     "name": "DEXAMETHASONE"
-    },
-    {
      "drug_id": "CHEMBL650",
      "name": "METHYLPREDNISOLONE"
     }
@@ -2790,26 +2197,6 @@
   {
    "type": "cross_drug_synonym",
    "severity": "high",
-   "alias": "DEXAMETHASONE",
-   "resolved_to": "CHEMBL384467",
-   "resolved_to_name": "DEXAMETHASONE",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL131",
-     "name": "PREDNISOLONE"
-    },
-    {
-     "drug_id": "CHEMBL635",
-     "name": "PREDNISONE"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
    "alias": "GLYCEROL PHENYLBUTYRATE",
    "resolved_to": "CHEMBL2105745",
    "resolved_to_name": "GLYCEROL PHENYLBUTYRATE",
@@ -2849,26 +2236,6 @@
     {
      "drug_id": "CHEMBL1173655",
      "name": "AFATINIB"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "SINTILIMAB",
-   "resolved_to": "CHEMBL4297829",
-   "resolved_to_name": "SINTILIMAB",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL4297715",
-     "name": "CAMRELIZUMAB"
-    },
-    {
-     "drug_id": "CHEMBL4297840",
-     "name": "TISLELIZUMAB"
     }
    ],
    "action": "alias bound to the molecule whose preferred name it is",
@@ -2990,22 +2357,6 @@
   {
    "type": "cross_drug_synonym",
    "severity": "high",
-   "alias": "DOCETAXEL",
-   "resolved_to": "CHEMBL3545252",
-   "resolved_to_name": "DOCETAXEL",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL428647",
-     "name": "PACLITAXEL"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
    "alias": "BETAMETHASONE SODIUM PHOSPHATE",
    "resolved_to": "CHEMBL1200762",
    "resolved_to_name": "BETAMETHASONE SODIUM PHOSPHATE",
@@ -3045,22 +2396,6 @@
     {
      "drug_id": "CHEMBL2109092",
      "name": "EPOETIN BETA"
-    }
-   ],
-   "action": "alias bound to the molecule whose preferred name it is",
-   "why": "a preferred name outranks a synonym; the other records carry a suspected upstream curation error",
-   "family": "dictionary"
-  },
-  {
-   "type": "cross_drug_synonym",
-   "severity": "high",
-   "alias": "serplulimab",
-   "resolved_to": "CHEMBL4594550",
-   "resolved_to_name": "SERPLULIMAB",
-   "wrongly_listing_drugs": [
-    {
-     "drug_id": "CHEMBL4297840",
-     "name": "TISLELIZUMAB"
     }
    ],
    "action": "alias bound to the molecule whose preferred name it is",
@@ -3461,6 +2796,656 @@
    "family": "dictionary"
   },
   {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "atezolizumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL3301587"
+   ],
+   "affected_drug_name": "DURVALUMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "adebrelimab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL3707227"
+   ],
+   "affected_drug_name": "ATEZOLIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "avelumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL3707227"
+   ],
+   "affected_drug_name": "ATEZOLIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "durvalumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL3707227"
+   ],
+   "affected_drug_name": "ATEZOLIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "durvalumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL4297843"
+   ],
+   "affected_drug_name": "TORIPALIMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "envafolimab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL6068451"
+   ],
+   "affected_drug_name": "IVONESCIMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "carboplatin",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL11359"
+   ],
+   "affected_drug_name": "CISPLATIN",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "toripalimab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL3301587"
+   ],
+   "affected_drug_name": "DURVALUMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "toripalimab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL4297840"
+   ],
+   "affected_drug_name": "TISLELIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "nivolumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL4297843"
+   ],
+   "affected_drug_name": "TORIPALIMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "nivolumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL3137343"
+   ],
+   "affected_drug_name": "PEMBROLIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "pembrolizumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL4297843"
+   ],
+   "affected_drug_name": "TORIPALIMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "pembrolizumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL2108738"
+   ],
+   "affected_drug_name": "NIVOLUMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "tislelizumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL4297843"
+   ],
+   "affected_drug_name": "TORIPALIMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "tislelizumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL4297829"
+   ],
+   "affected_drug_name": "SINTILIMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "tislelizumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL4594550"
+   ],
+   "affected_drug_name": "SERPLULIMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "erlotinib",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL939"
+   ],
+   "affected_drug_name": "GEFITINIB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "erlotinib",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL2087361"
+   ],
+   "affected_drug_name": "ICOTINIB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "gefitinib",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL553"
+   ],
+   "affected_drug_name": "ERLOTINIB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "gefitinib",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL2087361"
+   ],
+   "affected_drug_name": "ICOTINIB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "icotinib",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL553"
+   ],
+   "affected_drug_name": "ERLOTINIB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "icotinib",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL939"
+   ],
+   "affected_drug_name": "GEFITINIB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "disitamab vedotin",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL1018"
+   ],
+   "affected_drug_name": "DIENESTROL",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "vediximab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL5095273"
+   ],
+   "affected_drug_name": "DISITAMAB VEDOTIN",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "vedixizumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL5095273"
+   ],
+   "affected_drug_name": "DISITAMAB VEDOTIN",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "vidicizumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL5095273"
+   ],
+   "affected_drug_name": "DISITAMAB VEDOTIN",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "vidiximab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL5095273"
+   ],
+   "affected_drug_name": "DISITAMAB VEDOTIN",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "paclitaxel",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL3545252"
+   ],
+   "affected_drug_name": "DOCETAXEL",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "sirolimus",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL1908360"
+   ],
+   "affected_drug_name": "EVEROLIMUS",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "everolimus",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL413"
+   ],
+   "affected_drug_name": "SIROLIMUS",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "capecitabine",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL185"
+   ],
+   "affected_drug_name": "FLUOROURACIL",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "trastuzumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL2007641"
+   ],
+   "affected_drug_name": "PERTUZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "pertuzumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "adalimumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "etanercept",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "golimumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "prednisone",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL384467"
+   ],
+   "affected_drug_name": "DEXAMETHASONE",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "limertinib",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL6068536"
+   ],
+   "affected_drug_name": "ASK-120067",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "dexamethasone",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL131"
+   ],
+   "affected_drug_name": "PREDNISOLONE",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "dexamethasone",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL635"
+   ],
+   "affected_drug_name": "PREDNISONE",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "tobramycin",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL384467"
+   ],
+   "affected_drug_name": "DEXAMETHASONE",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "sintilimab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL4297840"
+   ],
+   "affected_drug_name": "TISLELIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "sintilimab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL4297715"
+   ],
+   "affected_drug_name": "CAMRELIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "pankomab-gex",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL4297560"
+   ],
+   "affected_drug_name": "GATIPOTUZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "docetaxel",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "daunorubicin",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL1201129"
+   ],
+   "affected_drug_name": "DECITABINE",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "lenograstim",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL1201567"
+   ],
+   "affected_drug_name": "FILGRASTIM",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "serplulimab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL4297840"
+   ],
+   "affected_drug_name": "TISLELIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "terelizumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL4297840"
+   ],
+   "affected_drug_name": "TISLELIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "high",
+   "alias": "slulimumab",
+   "reason": "different_ingredient",
+   "affected_drugs": [
+    "CHEMBL4594550"
+   ],
+   "affected_drug_name": "SERPLULIMAB",
+   "action": "alias removed from lookup index",
+   "why": "the alias names another active ingredient, so matching on it records an exposure to the wrong drug",
+   "family": "dictionary"
+  },
+  {
    "type": "genuinely_ambiguous_alias",
    "severity": "medium",
    "alias": "medi4736",
@@ -3607,24 +3592,6 @@
   {
    "type": "genuinely_ambiguous_alias",
    "severity": "medium",
-   "alias": "fol",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL1232801",
-     "name": "FOLINIC ACID"
-    },
-    {
-     "drug_id": "CHEMBL1679",
-     "name": "LEUCOVORIN"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
    "alias": "l-folinic acid",
    "candidates": [
     {
@@ -3652,42 +3619,6 @@
     {
      "drug_id": "CHEMBL185",
      "name": "FLUOROURACIL"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
-   "alias": "ais",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL1399",
-     "name": "ANASTROZOLE"
-    },
-    {
-     "drug_id": "CHEMBL1444",
-     "name": "LETROZOLE"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
-   "alias": "ana",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL1201570",
-     "name": "ANAKINRA"
-    },
-    {
-     "drug_id": "CHEMBL1399",
-     "name": "ANASTROZOLE"
     }
    ],
    "action": "kept ambiguous; records matching it are routed to review",
@@ -3769,42 +3700,6 @@
   {
    "type": "genuinely_ambiguous_alias",
    "severity": "medium",
-   "alias": "pegylated interferon alfa 2a",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL1201560",
-     "name": "PEGINTERFERON ALFA-2A"
-    },
-    {
-     "drug_id": "CHEMBL2108506",
-     "name": "INTERFERON ALFA"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
-   "alias": "pegylated interferon alfa 2b",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL1201558",
-     "name": "INTERFERON ALFA-2B"
-    },
-    {
-     "drug_id": "CHEMBL2108506",
-     "name": "INTERFERON ALFA"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
    "alias": "recombinant interferon alfa",
    "candidates": [
     {
@@ -3814,24 +3709,6 @@
     {
      "drug_id": "CHEMBL2108506",
      "name": "INTERFERON ALFA"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
-   "alias": "flu",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL1096882",
-     "name": "FLUDARABINE PHOSPHATE"
-    },
-    {
-     "drug_id": "CHEMBL1568",
-     "name": "FLUDARABINE"
     }
    ],
    "action": "kept ambiguous; records matching it are routed to review",
@@ -3913,24 +3790,6 @@
   {
    "type": "genuinely_ambiguous_alias",
    "severity": "medium",
-   "alias": "tzd",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL121",
-     "name": "ROSIGLITAZONE"
-    },
-    {
-     "drug_id": "CHEMBL595",
-     "name": "PIOGLITAZONE"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
    "alias": "tzds",
    "candidates": [
     {
@@ -3958,24 +3817,6 @@
     {
      "drug_id": "CHEMBL3707348",
      "name": "ACALABRUTINIB"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
-   "alias": "oad",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL1431",
-     "name": "METFORMIN"
-    },
-    {
-     "drug_id": "CHEMBL595",
-     "name": "PIOGLITAZONE"
     }
    ],
    "action": "kept ambiguous; records matching it are routed to review",
@@ -4165,24 +4006,6 @@
   {
    "type": "genuinely_ambiguous_alias",
    "severity": "medium",
-   "alias": "dv",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL1018",
-     "name": "DIENESTROL"
-    },
-    {
-     "drug_id": "CHEMBL5095273",
-     "name": "DISITAMAB VEDOTIN"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
    "alias": "rc48-adc",
    "candidates": [
     {
@@ -4246,24 +4069,6 @@
     {
      "drug_id": "CHEMBL4297715",
      "name": "CAMRELIZUMAB"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
-   "alias": "pem",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL225072",
-     "name": "PEMETREXED"
-    },
-    {
-     "drug_id": "CHEMBL3137343",
-     "name": "PEMBROLIZUMAB"
     }
    ],
    "action": "kept ambiguous; records matching it are routed to review",
@@ -4597,24 +4402,6 @@
   {
    "type": "genuinely_ambiguous_alias",
    "severity": "medium",
-   "alias": "len",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL1289601",
-     "name": "LENVATINIB"
-    },
-    {
-     "drug_id": "CHEMBL848",
-     "name": "LENALIDOMIDE"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
    "alias": "g-csf",
    "candidates": [
     {
@@ -4669,24 +4456,6 @@
   {
    "type": "genuinely_ambiguous_alias",
    "severity": "medium",
-   "alias": "pegylated filgrastim",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL1201567",
-     "name": "FILGRASTIM"
-    },
-    {
-     "drug_id": "CHEMBL1201568",
-     "name": "PEGFILGRASTIM"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
    "alias": "Neulasta",
    "candidates": [
     {
@@ -4714,42 +4483,6 @@
     {
      "drug_id": "CHEMBL185",
      "name": "FLUOROURACIL"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
-   "alias": "5-fu",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL1773",
-     "name": "CAPECITABINE"
-    },
-    {
-     "drug_id": "CHEMBL185",
-     "name": "FLUOROURACIL"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
-   "alias": "capox",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL1773",
-     "name": "CAPECITABINE"
-    },
-    {
-     "drug_id": "CHEMBL414804",
-     "name": "OXALIPLATIN"
     }
    ],
    "action": "kept ambiguous; records matching it are routed to review",
@@ -4903,24 +4636,6 @@
   {
    "type": "genuinely_ambiguous_alias",
    "severity": "medium",
-   "alias": "hp",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL1201585",
-     "name": "TRASTUZUMAB"
-    },
-    {
-     "drug_id": "CHEMBL2007641",
-     "name": "PERTUZUMAB"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
    "alias": "t-dm1",
    "candidates": [
     {
@@ -4966,24 +4681,6 @@
     {
      "drug_id": "CHEMBL1743082",
      "name": "TRASTUZUMAB EMTANSINE"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
-   "alias": "cs",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL635",
-     "name": "PREDNISONE"
-    },
-    {
-     "drug_id": "CHEMBL650",
-     "name": "METHYLPREDNISOLONE"
     }
    ],
    "action": "kept ambiguous; records matching it are routed to review",
@@ -5119,42 +4816,6 @@
   {
    "type": "genuinely_ambiguous_alias",
    "severity": "medium",
-   "alias": "rd",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL384467",
-     "name": "DEXAMETHASONE"
-    },
-    {
-     "drug_id": "CHEMBL848",
-     "name": "LENALIDOMIDE"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
-   "alias": "gpb",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL1201027",
-     "name": "GLYCOPYRRONIUM BROMIDE"
-    },
-    {
-     "drug_id": "CHEMBL2105745",
-     "name": "GLYCEROL PHENYLBUTYRATE"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
    "alias": "phenylbutyrate",
    "candidates": [
     {
@@ -5164,42 +4825,6 @@
     {
      "drug_id": "CHEMBL2105745",
      "name": "GLYCEROL PHENYLBUTYRATE"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
-   "alias": "tp",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL2135460",
-     "name": "TERLIPRESSIN"
-    },
-    {
-     "drug_id": "CHEMBL525610",
-     "name": "TERIPARATIDE"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
-   "alias": "aa",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL196",
-     "name": "ASCORBIC ACID"
-    },
-    {
-     "drug_id": "CHEMBL271227",
-     "name": "ABIRATERONE ACETATE"
     }
    ],
    "action": "kept ambiguous; records matching it are routed to review",
@@ -5317,24 +4942,6 @@
   {
    "type": "genuinely_ambiguous_alias",
    "severity": "medium",
-   "alias": "ctx",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL1200796",
-     "name": "CYCLOPHOSPHAMIDE"
-    },
-    {
-     "drug_id": "CHEMBL1201577",
-     "name": "CETUXIMAB"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
    "alias": "BP 1.02",
    "candidates": [
     {
@@ -5389,83 +4996,11 @@
   {
    "type": "genuinely_ambiguous_alias",
    "severity": "medium",
-   "alias": "uft",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL20883",
-     "name": "TEGAFUR"
-    },
-    {
-     "drug_id": "CHEMBL566",
-     "name": "URACIL"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
-   "alias": "gemox",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL414804",
-     "name": "OXALIPLATIN"
-    },
-    {
-     "drug_id": "CHEMBL888",
-     "name": "GEMCITABINE"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
    "alias": "gemox regimen",
    "candidates": [
     {
      "drug_id": "CHEMBL414804",
      "name": "OXALIPLATIN"
-    },
-    {
-     "drug_id": "CHEMBL888",
-     "name": "GEMCITABINE"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
-   "alias": "cis",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL11359",
-     "name": "CISPLATIN"
-    },
-    {
-     "drug_id": "CHEMBL4582651",
-     "name": "PRALSETINIB"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
-   "alias": "gemcis",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL11359",
-     "name": "CISPLATIN"
     },
     {
      "drug_id": "CHEMBL888",
@@ -5596,24 +5131,6 @@
     {
      "drug_id": "CHEMBL2109092",
      "name": "EPOETIN BETA"
-    }
-   ],
-   "action": "kept ambiguous; records matching it are routed to review",
-   "why": "no rule can separate these without evidence outside the record",
-   "family": "dictionary"
-  },
-  {
-   "type": "genuinely_ambiguous_alias",
-   "severity": "medium",
-   "alias": "oral corticosteroids",
-   "candidates": [
-    {
-     "drug_id": "CHEMBL131",
-     "name": "PREDNISOLONE"
-    },
-    {
-     "drug_id": "CHEMBL635",
-     "name": "PREDNISONE"
     }
    ],
    "action": "kept ambiguous; records matching it are routed to review",
@@ -5833,20 +5350,6 @@
    "nct_id": "NCT00024063",
    "surfaces": [
     "orantinib"
-   ],
-   "why": "the trial has drug arms but none could be tied to a known molecule, so it is invisible to any drug-centred question"
-  },
-  {
-   "family": "record",
-   "type": "no_substance_resolved",
-   "severity": "medium",
-   "nct_id": "NCT06621563",
-   "surfaces": [
-    "HS-20117 combined HS-20093",
-    "HS-20117 combined Platinum-containing chemotherapy",
-    "HS-20117 combined HS-20093 and 5-FU",
-    "HS-20117+CAPEOX",
-    "HS-20117+FOLFIRI"
    ],
    "why": "the trial has drug arms but none could be tied to a known molecule, so it is invisible to any drug-centred question"
   },
@@ -6569,6 +6072,16 @@
    "family": "record",
    "type": "no_substance_resolved",
    "severity": "medium",
+   "nct_id": "NCT07413952",
+   "surfaces": [
+    "Limertinib Plus Radiotherapy"
+   ],
+   "why": "the trial has drug arms but none could be tied to a known molecule, so it is invisible to any drug-centred question"
+  },
+  {
+   "family": "record",
+   "type": "no_substance_resolved",
+   "severity": "medium",
    "nct_id": "NCT00503568",
    "surfaces": [
     "Ad100-gp96Ig-HLA A1"
@@ -6947,6 +6460,17 @@
    "nct_id": "NCT00034957",
    "surfaces": [
     "Investigational drug"
+   ],
+   "why": "the trial has drug arms but none could be tied to a known molecule, so it is invisible to any drug-centred question"
+  },
+  {
+   "family": "record",
+   "type": "no_substance_resolved",
+   "severity": "medium",
+   "nct_id": "NCT01023347",
+   "surfaces": [
+    "Paclitaxel (Genexol®)",
+    "Paclitaxel loaded polymeric micelle (Genexol-PM®)"
    ],
    "why": "the trial has drug arms but none could be tied to a known molecule, so it is invisible to any drug-centred question"
   },
@@ -7433,6 +6957,16 @@
    "family": "record",
    "type": "no_substance_resolved",
    "severity": "medium",
+   "nct_id": "NCT04314895",
+   "surfaces": [
+    "NanoPac (sterile nanoparticulate paclitaxel) Powder for Suspension"
+   ],
+   "why": "the trial has drug arms but none could be tied to a known molecule, so it is invisible to any drug-centred question"
+  },
+  {
+   "family": "record",
+   "type": "no_substance_resolved",
+   "severity": "medium",
    "nct_id": "NCT00115206",
    "surfaces": [
     "Neulasta® (pegfilgrastim)"
@@ -7892,6 +7426,16 @@
    "family": "record",
    "type": "no_substance_resolved",
    "severity": "medium",
+   "nct_id": "NCT01211002",
+   "surfaces": [
+    "radiotherapy / EP combined with recombinant human endostatin"
+   ],
+   "why": "the trial has drug arms but none could be tied to a known molecule, so it is invisible to any drug-centred question"
+  },
+  {
+   "family": "record",
+   "type": "no_substance_resolved",
+   "severity": "medium",
    "nct_id": "NCT05867303",
    "surfaces": [
     "RC198 Injection"
@@ -8155,16 +7699,6 @@
    "nct_id": "NCT00030771",
    "surfaces": [
     "Chemotherapy"
-   ],
-   "why": "the trial has drug arms but none could be tied to a known molecule, so it is invisible to any drug-centred question"
-  },
-  {
-   "family": "record",
-   "type": "no_substance_resolved",
-   "severity": "medium",
-   "nct_id": "NCT03856411",
-   "surfaces": [
-    "TORIPALIMAB INJECTION (JS001 ) combine with chemotherapy"
    ],
    "why": "the trial has drug arms but none could be tied to a known molecule, so it is invisible to any drug-centred question"
   },
@@ -9804,6 +9338,20 @@
    "family": "record",
    "type": "no_substance_resolved",
    "severity": "medium",
+   "nct_id": "NCT04908111",
+   "surfaces": [
+    "ChAdOx1-MAGEA3-NYESO (Route = IM injection, Dose = 5×10^10 vp)",
+    "MVA-MAGEA3 (Route = IM injection, Dose = 1.3×10^8 pfu)",
+    "MVA-NYESO (Route = IM injection, Dose = 1.5×10^8 pfu)",
+    "Biological/Vaccine: ChAdOx1-MAGEA3-NYESO (Route = IM injection, Dose = 5×10^10 vp)",
+    "Biological/Vaccine: MVA-MAGEA3 (Route = IM injection, Dose = 1.3×10^8 pfu)"
+   ],
+   "why": "the trial has drug arms but none could be tied to a known molecule, so it is invisible to any drug-centred question"
+  },
+  {
+   "family": "record",
+   "type": "no_substance_resolved",
+   "severity": "medium",
    "nct_id": "NCT07887971",
    "surfaces": [
     "[225Ac]Ac-AKY-2519 (therapeutic)",
@@ -9976,6 +9524,19 @@
    "nct_id": "NCT06031558",
    "surfaces": [
     "SY-5007"
+   ],
+   "why": "the trial has drug arms but none could be tied to a known molecule, so it is invisible to any drug-centred question"
+  },
+  {
+   "family": "record",
+   "type": "no_substance_resolved",
+   "severity": "medium",
+   "nct_id": "NCT02005458",
+   "surfaces": [
+    "YPEG-rhG-CSF, 20μg/kg, single s.c. at 48hrs after chemotherapy for each experimental cycle",
+    "YPEG-rhG-CSF, 30μg/kg, single s.c. at 48hrs after chemotherapy for each experimental cycle",
+    "YPEG-rhG-CSF, 45μg/kg, single s.c. at 48hrs after chemotherapy for each experimental cycle",
+    "PEG-rhG-CSF, 100μg/kg, single s.c. at 48hrs after chemotherapy for each experimental cycle"
    ],
    "why": "the trial has drug arms but none could be tied to a known molecule, so it is invisible to any drug-centred question"
   },
@@ -10209,17 +9770,8 @@
    "type": "recurrent_unresolved_surface",
    "severity": "medium",
    "surface": "Phase",
-   "occurrences": 10,
+   "occurrences": 11,
    "example_nct": "NCT04074967",
-   "why": "a string this frequent is a missing dictionary entry, and is the highest-value place to extend coverage"
-  },
-  {
-   "family": "record",
-   "type": "recurrent_unresolved_surface",
-   "severity": "medium",
-   "surface": "Abraxane",
-   "occurrences": 8,
-   "example_nct": "NCT02303977",
    "why": "a string this frequent is a missing dictionary entry, and is the highest-value place to extend coverage"
   },
   {
@@ -10229,6 +9781,15 @@
    "surface": "SHR-A2009",
    "occurrences": 8,
    "example_nct": "NCT07863167",
+   "why": "a string this frequent is a missing dictionary entry, and is the highest-value place to extend coverage"
+  },
+  {
+   "family": "record",
+   "type": "recurrent_unresolved_surface",
+   "severity": "medium",
+   "surface": "NGM707",
+   "occurrences": 8,
+   "example_nct": "NCT04913337",
    "why": "a string this frequent is a missing dictionary entry, and is the highest-value place to extend coverage"
   },
   {
@@ -10301,6 +9862,24 @@
    "surface": "QL1706",
    "occurrences": 6,
    "example_nct": "NCT07416058",
+   "why": "a string this frequent is a missing dictionary entry, and is the highest-value place to extend coverage"
+  },
+  {
+   "family": "record",
+   "type": "recurrent_unresolved_surface",
+   "severity": "medium",
+   "surface": "AZD8205",
+   "occurrences": 6,
+   "example_nct": "NCT05123482",
+   "why": "a string this frequent is a missing dictionary entry, and is the highest-value place to extend coverage"
+  },
+  {
+   "family": "record",
+   "type": "recurrent_unresolved_surface",
+   "severity": "medium",
+   "surface": "Biological",
+   "occurrences": 6,
+   "example_nct": "NCT04158440",
    "why": "a string this frequent is a missing dictionary entry, and is the highest-value place to extend coverage"
   },
   {
@@ -10397,9 +9976,9 @@
    "family": "record",
    "type": "recurrent_unresolved_surface",
    "severity": "medium",
-   "surface": "Biological",
+   "surface": "GV20-0251",
    "occurrences": 5,
-   "example_nct": "NCT04158440",
+   "example_nct": "NCT05669430",
    "why": "a string this frequent is a missing dictionary entry, and is the highest-value place to extend coverage"
   },
   {
@@ -10445,15 +10024,6 @@
    "surface": "TPST-1120",
    "occurrences": 4,
    "example_nct": "NCT03829436",
-   "why": "a string this frequent is a missing dictionary entry, and is the highest-value place to extend coverage"
-  },
-  {
-   "family": "record",
-   "type": "recurrent_unresolved_surface",
-   "severity": "medium",
-   "surface": "NGM707",
-   "occurrences": 4,
-   "example_nct": "NCT04913337",
    "why": "a string this frequent is a missing dictionary entry, and is the highest-value place to extend coverage"
   },
   {
@@ -10532,9 +10102,9 @@
    "family": "record",
    "type": "recurrent_unresolved_surface",
    "severity": "medium",
-   "surface": "GV20-0251",
+   "surface": "Limertinib",
    "occurrences": 3,
-   "example_nct": "NCT05669430",
+   "example_nct": "NCT07413952",
    "why": "a string this frequent is a missing dictionary entry, and is the highest-value place to extend coverage"
   },
   {
@@ -10571,6 +10141,15 @@
    "surface": "RC148",
    "occurrences": 3,
    "example_nct": "NCT07416474",
+   "why": "a string this frequent is a missing dictionary entry, and is the highest-value place to extend coverage"
+  },
+  {
+   "family": "record",
+   "type": "recurrent_unresolved_surface",
+   "severity": "medium",
+   "surface": "NGM831",
+   "occurrences": 3,
+   "example_nct": "NCT05215574",
    "why": "a string this frequent is a missing dictionary entry, and is the highest-value place to extend coverage"
   },
   {
@@ -10700,6 +10279,3499 @@
    "why": "a string this frequent is a missing dictionary entry, and is the highest-value place to extend coverage"
   },
   {
+   "family": "record",
+   "type": "recurrent_unresolved_surface",
+   "severity": "medium",
+   "surface": "YPEG-rhG-CSF",
+   "occurrences": 3,
+   "example_nct": "NCT02005458",
+   "why": "a string this frequent is a missing dictionary entry, and is the highest-value place to extend coverage"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "lv",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL4298101"
+   ],
+   "affected_drug_name": "LADIRATUZUMAB VEDOTIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "lv",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201138"
+   ],
+   "affected_drug_name": "LEUCOVORIN CALCIUM",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "lv",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1679"
+   ],
+   "affected_drug_name": "LEUCOVORIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "lv",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1232801"
+   ],
+   "affected_drug_name": "FOLINIC ACID",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg il-2",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201438"
+   ],
+   "affected_drug_name": "ALDESLEUKIN",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ici",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL3707227"
+   ],
+   "affected_drug_name": "ATEZOLIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ici",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL3137343"
+   ],
+   "affected_drug_name": "PEMBROLIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ici",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL2108738"
+   ],
+   "affected_drug_name": "NIVOLUMAB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ici",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL3301587"
+   ],
+   "affected_drug_name": "DURVALUMAB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "cf",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201138"
+   ],
+   "affected_drug_name": "LEUCOVORIN CALCIUM",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "cf",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1679"
+   ],
+   "affected_drug_name": "LEUCOVORIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "lcv",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201138"
+   ],
+   "affected_drug_name": "LEUCOVORIN CALCIUM",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "lcv",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1679"
+   ],
+   "affected_drug_name": "LEUCOVORIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "as",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL361497"
+   ],
+   "affected_drug_name": "ARTESUNATE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "im",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1642"
+   ],
+   "affected_drug_name": "IMATINIB MESYLATE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "im",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL941"
+   ],
+   "affected_drug_name": "IMATINIB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "fa",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1679"
+   ],
+   "affected_drug_name": "LEUCOVORIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "fa",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1568"
+   ],
+   "affected_drug_name": "FLUDARABINE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "fa",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1622"
+   ],
+   "affected_drug_name": "FOLIC ACID",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "fa",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1232801"
+   ],
+   "affected_drug_name": "FOLINIC ACID",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "fol",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1679"
+   ],
+   "affected_drug_name": "LEUCOVORIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "fol",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1232801"
+   ],
+   "affected_drug_name": "FOLINIC ACID",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "folfiri",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL1679"
+   ],
+   "affected_drug_name": "LEUCOVORIN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "folfiri",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL481"
+   ],
+   "affected_drug_name": "IRINOTECAN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "folfiri",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL1232801"
+   ],
+   "affected_drug_name": "FOLINIC ACID",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "folfiri",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL185"
+   ],
+   "affected_drug_name": "FLUOROURACIL",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "folfirinox",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL1679"
+   ],
+   "affected_drug_name": "LEUCOVORIN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "folfirinox",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL414804"
+   ],
+   "affected_drug_name": "OXALIPLATIN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "folfirinox",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL481"
+   ],
+   "affected_drug_name": "IRINOTECAN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "folfirinox",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL185"
+   ],
+   "affected_drug_name": "FLUOROURACIL",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pof",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1679"
+   ],
+   "affected_drug_name": "LEUCOVORIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pof",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL414804"
+   ],
+   "affected_drug_name": "OXALIPLATIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pof",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pof",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL185"
+   ],
+   "affected_drug_name": "FLUOROURACIL",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ai",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1399"
+   ],
+   "affected_drug_name": "ANASTROZOLE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ai",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1358"
+   ],
+   "affected_drug_name": "FULVESTRANT",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ai",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1444"
+   ],
+   "affected_drug_name": "LETROZOLE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ai",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1200374"
+   ],
+   "affected_drug_name": "EXEMESTANE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ais",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1399"
+   ],
+   "affected_drug_name": "ANASTROZOLE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ais",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1444"
+   ],
+   "affected_drug_name": "LETROZOLE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ana",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1399"
+   ],
+   "affected_drug_name": "ANASTROZOLE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ana",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201570"
+   ],
+   "affected_drug_name": "ANAKINRA",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ifn",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL2108506"
+   ],
+   "affected_drug_name": "INTERFERON ALFA",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ifn",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL2108494"
+   ],
+   "affected_drug_name": "INTERFERON",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ifn",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201558"
+   ],
+   "affected_drug_name": "INTERFERON ALFA-2B",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg-ifn",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL2108506"
+   ],
+   "affected_drug_name": "INTERFERON ALFA",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg-ifn",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201560"
+   ],
+   "affected_drug_name": "PEGINTERFERON ALFA-2A",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg-ifn",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL2108494"
+   ],
+   "affected_drug_name": "INTERFERON",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg-ifn",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201558"
+   ],
+   "affected_drug_name": "INTERFERON ALFA-2B",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg-intron",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201560"
+   ],
+   "affected_drug_name": "PEGINTERFERON ALFA-2A",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg intron",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201558"
+   ],
+   "affected_drug_name": "INTERFERON ALFA-2B",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated interferon alfa",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL2108506"
+   ],
+   "affected_drug_name": "INTERFERON ALFA",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated interferon alfa 2a",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL2108506"
+   ],
+   "affected_drug_name": "INTERFERON ALFA",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated interferon alfa 2b",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL2108506"
+   ],
+   "affected_drug_name": "INTERFERON ALFA",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated interferon alfa-2b",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201558"
+   ],
+   "affected_drug_name": "INTERFERON ALFA-2B",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "flu",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1568"
+   ],
+   "affected_drug_name": "FLUDARABINE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "flu",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1096882"
+   ],
+   "affected_drug_name": "FLUDARABINE PHOSPHATE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "sv",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL109"
+   ],
+   "affected_drug_name": "VALPROIC ACID",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "va",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL109"
+   ],
+   "affected_drug_name": "VALPROIC ACID",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "tzd",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL121"
+   ],
+   "affected_drug_name": "ROSIGLITAZONE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "tzd",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL595"
+   ],
+   "affected_drug_name": "PIOGLITAZONE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated recombinant human hyaluronidase",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL3989976"
+   ],
+   "affected_drug_name": "PEGVORHYALURONIDASE ALFA",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "cb",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1351"
+   ],
+   "affected_drug_name": "CARBOPLATIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gc",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL1351"
+   ],
+   "affected_drug_name": "CARBOPLATIN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gc",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL650"
+   ],
+   "affected_drug_name": "METHYLPREDNISOLONE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gc",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL11359"
+   ],
+   "affected_drug_name": "CISPLATIN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gc",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL888"
+   ],
+   "affected_drug_name": "GEMCITABINE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gc",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL635"
+   ],
+   "affected_drug_name": "PREDNISONE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "mf",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1431"
+   ],
+   "affected_drug_name": "METFORMIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "oad",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1431"
+   ],
+   "affected_drug_name": "METFORMIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "oad",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL595"
+   ],
+   "affected_drug_name": "PIOGLITAZONE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pd-1",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL4297843"
+   ],
+   "affected_drug_name": "TORIPALIMAB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pd1",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL4297829"
+   ],
+   "affected_drug_name": "SINTILIMAB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pd-1",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL4297840"
+   ],
+   "affected_drug_name": "TISLELIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pd-1",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL4297715"
+   ],
+   "affected_drug_name": "CAMRELIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "abvd",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "abvd",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL159"
+   ],
+   "affected_drug_name": "VINBLASTINE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "abvd",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "dox",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "dox",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "lipodox",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "liposomal doxorubicin",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "liposomal doxorubicin",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "non-pegylated liposomal doxorubicin",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "non-pegylated liposomal doxorubicin",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated doxorubicin hcl liposome",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated liposomal doxorubicin",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated liposomal doxorubicin",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated liposomal doxorubicin hydrochloride",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated liposomal doxorubicin hydrochloride",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated liposomal doxorubicine",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated liposomal doxorubicine",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pld",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pld",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "stealth liposomal doxorubicin hydrochloride",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL359744"
+   ],
+   "affected_drug_name": "DOXORUBICIN HYDROCHLORIDE",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "nfv",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1205"
+   ],
+   "affected_drug_name": "NELFINAVIR MESYLATE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "nfv",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL584"
+   ],
+   "affected_drug_name": "NELFINAVIR",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "hc",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL467"
+   ],
+   "affected_drug_name": "HYDROXYUREA",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "hc",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1535"
+   ],
+   "affected_drug_name": "HYDROXYCHLOROQUINE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "hc",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL389621"
+   ],
+   "affected_drug_name": "HYDROCORTISONE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "hu",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL467"
+   ],
+   "affected_drug_name": "HYDROXYUREA",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "dv",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL5095273"
+   ],
+   "affected_drug_name": "DISITAMAB VEDOTIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pem",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL3137343"
+   ],
+   "affected_drug_name": "PEMBROLIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pem",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL225072"
+   ],
+   "affected_drug_name": "PEMETREXED",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "dl",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1172"
+   ],
+   "affected_drug_name": "DESLORATADINE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "tpt",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1607"
+   ],
+   "affected_drug_name": "TOPOTECAN HYDROCHLORIDE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "tpt",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL84"
+   ],
+   "affected_drug_name": "TOPOTECAN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "g9",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL6068359"
+   ],
+   "affected_drug_name": "HUMAN PAPILLOMAVIRUS, L1 PROTEIN VIRUS LIKE PARTICLES",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "s1",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL20883"
+   ],
+   "affected_drug_name": "TEGAFUR",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "dd",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201550"
+   ],
+   "affected_drug_name": "DENILEUKIN DIFTITOX",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "g-p",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL3545123"
+   ],
+   "affected_drug_name": "PIBRENTASVIR",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gp",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL940"
+   ],
+   "affected_drug_name": "GABAPENTIN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "g-p",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL3545363"
+   ],
+   "affected_drug_name": "GLECAPREVIR",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gp",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL11359"
+   ],
+   "affected_drug_name": "CISPLATIN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gp",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL888"
+   ],
+   "affected_drug_name": "GEMCITABINE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gp",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL1201335"
+   ],
+   "affected_drug_name": "GLYCOPYRRONIUM",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gp",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL1201027"
+   ],
+   "affected_drug_name": "GLYCOPYRRONIUM BROMIDE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "liposomal curcumin",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL140"
+   ],
+   "affected_drug_name": "CURCUMIN",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg-ifn alfa-2a",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201560"
+   ],
+   "affected_drug_name": "PEGINTERFERON ALFA-2A",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg-ifn alpha",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201560"
+   ],
+   "affected_drug_name": "PEGINTERFERON ALFA-2A",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg-ifn alpha 2a",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201560"
+   ],
+   "affected_drug_name": "PEGINTERFERON ALFA-2A",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg-ifn α-2a",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201560"
+   ],
+   "affected_drug_name": "PEGINTERFERON ALFA-2A",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg-ifna 2a",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201560"
+   ],
+   "affected_drug_name": "PEGINTERFERON ALFA-2A",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg-inf",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201560"
+   ],
+   "affected_drug_name": "PEGINTERFERON ALFA-2A",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated interferon",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201560"
+   ],
+   "affected_drug_name": "PEGINTERFERON ALFA-2A",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated interferon",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL2108494"
+   ],
+   "affected_drug_name": "INTERFERON",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated interferon",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201558"
+   ],
+   "affected_drug_name": "INTERFERON ALFA-2B",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated interferon (peg-ifn) alfa-2a",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201560"
+   ],
+   "affected_drug_name": "PEGINTERFERON ALFA-2A",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated interferon alpha",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201560"
+   ],
+   "affected_drug_name": "PEGINTERFERON ALFA-2A",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated interferon α-2a",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201560"
+   ],
+   "affected_drug_name": "PEGINTERFERON ALFA-2A",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "vo",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL4650271"
+   ],
+   "affected_drug_name": "VUSOLIMOGENE ODERPAREPVEC",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "len",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1289601"
+   ],
+   "affected_drug_name": "LENVATINIB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "len",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL848"
+   ],
+   "affected_drug_name": "LENALIDOMIDE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "nab-rapamycin",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL413"
+   ],
+   "affected_drug_name": "SIROLIMUS",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "nab-sirolimus",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL413"
+   ],
+   "affected_drug_name": "SIROLIMUS",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "sirolimus for injection (albumin-bound)",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL413"
+   ],
+   "affected_drug_name": "SIROLIMUS",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg-g-csf",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201568"
+   ],
+   "affected_drug_name": "PEGFILGRASTIM",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg-rhg-csf",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201568"
+   ],
+   "affected_drug_name": "PEGFILGRASTIM",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated filgrastim",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201568"
+   ],
+   "affected_drug_name": "PEGFILGRASTIM",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated filgrastim",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201567"
+   ],
+   "affected_drug_name": "FILGRASTIM",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated g-csf",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201568"
+   ],
+   "affected_drug_name": "PEGFILGRASTIM",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "5-fu",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1773"
+   ],
+   "affected_drug_name": "CAPECITABINE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "capox",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL1773"
+   ],
+   "affected_drug_name": "CAPECITABINE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "capox",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL414804"
+   ],
+   "affected_drug_name": "OXALIPLATIN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "xp",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1773"
+   ],
+   "affected_drug_name": "CAPECITABINE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "hp",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "hp",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL2007641"
+   ],
+   "affected_drug_name": "PERTUZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "proposed trastuzumab biosimilar",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "trastuzumab biosimilar",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "trastuzumab-eu",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "trastuzumab-us",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201585"
+   ],
+   "affected_drug_name": "TRASTUZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ev",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL3301589"
+   ],
+   "affected_drug_name": "ENFORTUMAB VEDOTIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "biosimilar ct-p13",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "biosimilar infliximab",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "infliximab biosimilar",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "infliximab biosimilar 3",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "rp",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201581"
+   ],
+   "affected_drug_name": "INFLIXIMAB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "cs",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL650"
+   ],
+   "affected_drug_name": "METHYLPREDNISOLONE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "cs",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL635"
+   ],
+   "affected_drug_name": "PREDNISONE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "mp",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL650"
+   ],
+   "affected_drug_name": "METHYLPREDNISOLONE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "da",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201566"
+   ],
+   "affected_drug_name": "DARBEPOETIN ALFA",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "epo",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201566"
+   ],
+   "affected_drug_name": "DARBEPOETIN ALFA",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "epo",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201565"
+   ],
+   "affected_drug_name": "EPOETIN ALFA",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "epo",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL2109092"
+   ],
+   "affected_drug_name": "EPOETIN BETA",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "za",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL4303669"
+   ],
+   "affected_drug_name": "ZOLEDRONIC ACID",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ta",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1451"
+   ],
+   "affected_drug_name": "TRIAMCINOLONE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "mg",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201230"
+   ],
+   "affected_drug_name": "MAGNESIUM",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "dm",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL384467"
+   ],
+   "affected_drug_name": "DEXAMETHASONE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "rd",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL384467"
+   ],
+   "affected_drug_name": "DEXAMETHASONE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "rd",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL848"
+   ],
+   "affected_drug_name": "LENALIDOMIDE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "vrd",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL384467"
+   ],
+   "affected_drug_name": "DEXAMETHASONE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "vrd",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL848"
+   ],
+   "affected_drug_name": "LENALIDOMIDE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "vrd",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL325041"
+   ],
+   "affected_drug_name": "BORTEZOMIB",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "liposomal tretinoin",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL38"
+   ],
+   "affected_drug_name": "TRETINOIN",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ra",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL38"
+   ],
+   "affected_drug_name": "TRETINOIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gpb",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL2105745"
+   ],
+   "affected_drug_name": "GLYCEROL PHENYLBUTYRATE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gpb",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201027"
+   ],
+   "affected_drug_name": "GLYCOPYRRONIUM BROMIDE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "tp",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL525610"
+   ],
+   "affected_drug_name": "TERIPARATIDE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "tp",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL2135460"
+   ],
+   "affected_drug_name": "TERLIPRESSIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "sg",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL3545262"
+   ],
+   "affected_drug_name": "SACITUZUMAB GOVITECAN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "aa",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL271227"
+   ],
+   "affected_drug_name": "ABIRATERONE ACETATE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "aa",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL196"
+   ],
+   "affected_drug_name": "ASCORBIC ACID",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ba",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL4298024"
+   ],
+   "affected_drug_name": "BINTRAFUSP ALFA",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "le",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1444"
+   ],
+   "affected_drug_name": "LETROZOLE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "lz",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1444"
+   ],
+   "affected_drug_name": "LETROZOLE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "hq",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1535"
+   ],
+   "affected_drug_name": "HYDROXYCHLOROQUINE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "chop",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL1200796"
+   ],
+   "affected_drug_name": "CYCLOPHOSPHAMIDE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "chop",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "chop",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL131"
+   ],
+   "affected_drug_name": "PREDNISOLONE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "chop",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL635"
+   ],
+   "affected_drug_name": "PREDNISONE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "cp",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL1200796"
+   ],
+   "affected_drug_name": "CYCLOPHOSPHAMIDE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ctx",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1200796"
+   ],
+   "affected_drug_name": "CYCLOPHOSPHAMIDE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ctx",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201577"
+   ],
+   "affected_drug_name": "CETUXIMAB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "cvp",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL1200796"
+   ],
+   "affected_drug_name": "CYCLOPHOSPHAMIDE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "cy",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1200796"
+   ],
+   "affected_drug_name": "CYCLOPHOSPHAMIDE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ec",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL1200796"
+   ],
+   "affected_drug_name": "CYCLOPHOSPHAMIDE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "r-chop",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL1200796"
+   ],
+   "affected_drug_name": "CYCLOPHOSPHAMIDE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "r-chop",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "r-chop",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL635"
+   ],
+   "affected_drug_name": "PREDNISONE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "uft",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL20883"
+   ],
+   "affected_drug_name": "TEGAFUR",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "uft",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL566"
+   ],
+   "affected_drug_name": "URACIL",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gemox",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL414804"
+   ],
+   "affected_drug_name": "OXALIPLATIN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gemox",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL888"
+   ],
+   "affected_drug_name": "GEMCITABINE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ox",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL414804"
+   ],
+   "affected_drug_name": "OXALIPLATIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "iri",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL481"
+   ],
+   "affected_drug_name": "IRINOTECAN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "iri",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL3989514"
+   ],
+   "affected_drug_name": "IRINOTECAN HYDROCHLORIDE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "liposomal irinotecan",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL481"
+   ],
+   "affected_drug_name": "IRINOTECAN",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "liposomal irinotecan",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL3989514"
+   ],
+   "affected_drug_name": "IRINOTECAN HYDROCHLORIDE",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "liposomal irinotecan (ii)",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL481"
+   ],
+   "affected_drug_name": "IRINOTECAN",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "cc-486",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1489"
+   ],
+   "affected_drug_name": "AZACITIDINE",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "oral azacitidine",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1489"
+   ],
+   "affected_drug_name": "AZACITIDINE",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "cis",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL11359"
+   ],
+   "affected_drug_name": "CISPLATIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gemcis",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL11359"
+   ],
+   "affected_drug_name": "CISPLATIN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gemcis",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL888"
+   ],
+   "affected_drug_name": "GEMCITABINE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pf regimen",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL11359"
+   ],
+   "affected_drug_name": "CISPLATIN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ep",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL44657"
+   ],
+   "affected_drug_name": "ETOPOSIDE",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "et",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL44657"
+   ],
+   "affected_drug_name": "ETOPOSIDE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "a bevacizumab biosimilar",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "bevacizumab biosimilar",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "bevacizumab biosimilar ibi305",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "bevacizumab-eu",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "bv",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201583"
+   ],
+   "affected_drug_name": "BEVACIZUMAB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ma",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201139"
+   ],
+   "affected_drug_name": "MEGESTROL ACETATE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "fc",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL601719"
+   ],
+   "affected_drug_name": "CRIZOTINIB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "cq",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL58510"
+   ],
+   "affected_drug_name": "CHLOROQUINE PHOSPHATE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "arginine deiminase pegylated",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL3137346"
+   ],
+   "affected_drug_name": "PEGARGIMINASE",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ac",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "lyso-thermosensitive liposomal doxorubicin",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL53463"
+   ],
+   "affected_drug_name": "DOXORUBICIN",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "albumin-bound docetaxel",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL3545252"
+   ],
+   "affected_drug_name": "DOCETAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "docetaxel for injection (albumin-bound)",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL3545252"
+   ],
+   "affected_drug_name": "DOCETAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "mm",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL105"
+   ],
+   "affected_drug_name": "MITOMYCIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "albumin bound paclitaxel",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "liporaxel",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "liposomal paclitaxel",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "lipusu",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "nab-p",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "nab-pac",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "nab-ptx",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "nanopac",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "nanoparticle albumin-bound paclitaxel",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "nanoparticle paclitaxel",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "nanoparticulate paclitaxel",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "paclitaxel (albumin bound)",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "paclitaxel (albumin-bound type)",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "paclitaxel albumin-bound particles",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "paclitaxel for injection (albumin bound)",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "sterile nanoparticulate paclitaxel",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "tc",
+   "reason": "regimen",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "a regimen acronym names several drugs; listed under one of them it records only that one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "wp",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL428647"
+   ],
+   "affected_drug_name": "PACLITAXEL",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ce",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL118"
+   ],
+   "affected_drug_name": "CELECOXIB",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gem",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1637"
+   ],
+   "affected_drug_name": "GEMCITABINE HYDROCHLORIDE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gem",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL888"
+   ],
+   "affected_drug_name": "GEMCITABINE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg plus ascorbic acid",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL196"
+   ],
+   "affected_drug_name": "ASCORBIC ACID",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg-asc",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL196"
+   ],
+   "affected_drug_name": "ASCORBIC ACID",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "biosimilar epoetin alfa",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201565"
+   ],
+   "affected_drug_name": "EPOETIN ALFA",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pb",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1746"
+   ],
+   "affected_drug_name": "SODIUM PHENYLBUTYRATE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "tα1",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL2103979"
+   ],
+   "affected_drug_name": "THYMALFASIN",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "biosimilar filgrastim",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201567"
+   ],
+   "affected_drug_name": "FILGRASTIM",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "ag",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL888"
+   ],
+   "affected_drug_name": "GEMCITABINE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "fl",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL185"
+   ],
+   "affected_drug_name": "FLUOROURACIL",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "fu",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL185"
+   ],
+   "affected_drug_name": "FLUOROURACIL",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "peg-ifn alfa-2b",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201558"
+   ],
+   "affected_drug_name": "INTERFERON ALFA-2B",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "pegylated interferon α-2b",
+   "reason": "distinct_product",
+   "affected_drugs": [
+    "CHEMBL1201558"
+   ],
+   "affected_drug_name": "INTERFERON ALFA-2B",
+   "action": "alias removed from lookup index",
+   "why": "a biosimilar or reformulated product is not the originator molecule",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gb",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201335"
+   ],
+   "affected_drug_name": "GLYCOPYRRONIUM",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gb",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201027"
+   ],
+   "affected_drug_name": "GLYCOPYRRONIUM BROMIDE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gly",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201335"
+   ],
+   "affected_drug_name": "GLYCOPYRRONIUM",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gly",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201027"
+   ],
+   "affected_drug_name": "GLYCOPYRRONIUM BROMIDE",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
+   "type": "registry_alias_removed",
+   "severity": "medium",
+   "alias": "gt",
+   "reason": "abbreviation",
+   "affected_drugs": [
+    "CHEMBL1201335"
+   ],
+   "affected_drug_name": "GLYCOPYRRONIUM",
+   "action": "alias removed from lookup index",
+   "why": "an abbreviation of two letters, or three letters shared by several molecules, cannot identify one",
+   "family": "dictionary"
+  },
+  {
    "family": "graph",
    "type": "stage_disagrees_with_reference",
    "severity": "medium",
@@ -10752,17 +13824,6 @@
    "trial_phase": 2,
    "reference_phase_in_nsclc": "PHASE_1",
    "evidence_nct": "NCT01737502",
-   "why": "the registry shows a later phase than the curated reference; either the reference lags or the trial was mis-resolved"
-  },
-  {
-   "family": "graph",
-   "type": "stage_disagrees_with_reference",
-   "severity": "medium",
-   "drug_id": "CHEMBL44657",
-   "drug_name": "ETOPOSIDE",
-   "trial_phase": 4,
-   "reference_phase_in_nsclc": "PHASE_3",
-   "evidence_nct": "NCT01211002",
    "why": "the registry shows a later phase than the curated reference; either the reference lags or the trial was mis-resolved"
   },
   {
@@ -12156,6 +15217,18 @@
    "family": "graph",
    "type": "company_names_merged",
    "severity": "low",
+   "canonical_key": "roche",
+   "merged_names": [
+    "Hoffmann-La Roche",
+    "Roche Pharma AG",
+    "Roche SpA"
+   ],
+   "why": "reported so a reviewer can confirm these are one organisation; legal-suffix stripping cannot tell a subsidiary from a namesake"
+  },
+  {
+   "family": "graph",
+   "type": "company_names_merged",
+   "severity": "low",
    "canonical_key": "eisai",
    "merged_names": [
     "Eisai Co., Ltd.",
@@ -12222,17 +15295,6 @@
    "family": "graph",
    "type": "company_names_merged",
    "severity": "low",
-   "canonical_key": "roche",
-   "merged_names": [
-    "Roche Pharma AG",
-    "Roche SpA"
-   ],
-   "why": "reported so a reviewer can confirm these are one organisation; legal-suffix stripping cannot tell a subsidiary from a namesake"
-  },
-  {
-   "family": "graph",
-   "type": "company_names_merged",
-   "severity": "low",
    "canonical_key": "advenchen",
    "merged_names": [
     "Advenchen Laboratories, LLC",
@@ -12248,6 +15310,17 @@
    "merged_names": [
     "NovoCure GmbH",
     "NovoCure Ltd."
+   ],
+   "why": "reported so a reviewer can confirm these are one organisation; legal-suffix stripping cannot tell a subsidiary from a namesake"
+  },
+  {
+   "family": "graph",
+   "type": "company_names_merged",
+   "severity": "low",
+   "canonical_key": "beonemedicines",
+   "merged_names": [
+    "BeOne Medicines",
+    "BeiGene"
    ],
    "why": "reported so a reviewer can confirm these are one organisation; legal-suffix stripping cannot tell a subsidiary from a namesake"
   },
@@ -16421,33 +19494,7 @@
   {
    "type": "parent_child_collapse",
    "severity": "low",
-   "alias": "cf",
-   "resolved_to": "CHEMBL1679",
-   "resolved_to_name": "LEUCOVORIN",
-   "collapsed": [
-    "CHEMBL1201138"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
    "alias": "citrovorum factor",
-   "resolved_to": "CHEMBL1679",
-   "resolved_to_name": "LEUCOVORIN",
-   "collapsed": [
-    "CHEMBL1201138"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
-   "alias": "lcv",
    "resolved_to": "CHEMBL1679",
    "resolved_to_name": "LEUCOVORIN",
    "collapsed": [
@@ -16552,19 +19599,6 @@
    "type": "parent_child_collapse",
    "severity": "low",
    "alias": "csti571",
-   "resolved_to": "CHEMBL941",
-   "resolved_to_name": "IMATINIB",
-   "collapsed": [
-    "CHEMBL1642"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
-   "alias": "im",
    "resolved_to": "CHEMBL941",
    "resolved_to_name": "IMATINIB",
    "collapsed": [
@@ -16785,19 +19819,6 @@
   {
    "type": "parent_child_collapse",
    "severity": "low",
-   "alias": "dox",
-   "resolved_to": "CHEMBL53463",
-   "resolved_to_name": "DOXORUBICIN",
-   "collapsed": [
-    "CHEMBL359744"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
    "alias": "doxorubicin hcl liposome",
    "resolved_to": "CHEMBL53463",
    "resolved_to_name": "DOXORUBICIN",
@@ -16837,115 +19858,11 @@
   {
    "type": "parent_child_collapse",
    "severity": "low",
-   "alias": "lipodox",
-   "resolved_to": "CHEMBL53463",
-   "resolved_to_name": "DOXORUBICIN",
-   "collapsed": [
-    "CHEMBL359744"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
-   "alias": "liposomal doxorubicin",
-   "resolved_to": "CHEMBL53463",
-   "resolved_to_name": "DOXORUBICIN",
-   "collapsed": [
-    "CHEMBL359744"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
-   "alias": "non-pegylated liposomal doxorubicin",
-   "resolved_to": "CHEMBL53463",
-   "resolved_to_name": "DOXORUBICIN",
-   "collapsed": [
-    "CHEMBL359744"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
    "alias": "npld",
    "resolved_to": "CHEMBL53463",
    "resolved_to_name": "DOXORUBICIN",
    "collapsed": [
     "CHEMBL359744"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
-   "alias": "pegylated liposomal doxorubicin",
-   "resolved_to": "CHEMBL53463",
-   "resolved_to_name": "DOXORUBICIN",
-   "collapsed": [
-    "CHEMBL359744"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
-   "alias": "pegylated liposomal doxorubicin hydrochloride",
-   "resolved_to": "CHEMBL53463",
-   "resolved_to_name": "DOXORUBICIN",
-   "collapsed": [
-    "CHEMBL359744"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
-   "alias": "pegylated liposomal doxorubicine",
-   "resolved_to": "CHEMBL53463",
-   "resolved_to_name": "DOXORUBICIN",
-   "collapsed": [
-    "CHEMBL359744"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
-   "alias": "pld",
-   "resolved_to": "CHEMBL53463",
-   "resolved_to_name": "DOXORUBICIN",
-   "collapsed": [
-    "CHEMBL359744"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
-   "alias": "nfv",
-   "resolved_to": "CHEMBL584",
-   "resolved_to_name": "NELFINAVIR",
-   "collapsed": [
-    "CHEMBL1205"
    ],
    "action": "alias bound to the parent molecule",
    "why": "salt and child forms of one substance are not distinct entities here",
@@ -16981,19 +19898,6 @@
    "type": "parent_child_collapse",
    "severity": "low",
    "alias": "topo",
-   "resolved_to": "CHEMBL84",
-   "resolved_to_name": "TOPOTECAN",
-   "collapsed": [
-    "CHEMBL1607"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
-   "alias": "tpt",
    "resolved_to": "CHEMBL84",
    "resolved_to_name": "TOPOTECAN",
    "collapsed": [
@@ -17253,32 +20157,6 @@
   {
    "type": "parent_child_collapse",
    "severity": "low",
-   "alias": "iri",
-   "resolved_to": "CHEMBL481",
-   "resolved_to_name": "IRINOTECAN",
-   "collapsed": [
-    "CHEMBL3989514"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
-   "alias": "liposomal irinotecan",
-   "resolved_to": "CHEMBL481",
-   "resolved_to_name": "IRINOTECAN",
-   "collapsed": [
-    "CHEMBL3989514"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
    "alias": "nal-iri",
    "resolved_to": "CHEMBL481",
    "resolved_to_name": "IRINOTECAN",
@@ -17344,19 +20222,6 @@
   {
    "type": "parent_child_collapse",
    "severity": "low",
-   "alias": "gem",
-   "resolved_to": "CHEMBL888",
-   "resolved_to_name": "GEMCITABINE",
-   "collapsed": [
-    "CHEMBL1637"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
    "alias": "Gemzar",
    "resolved_to": "CHEMBL888",
    "resolved_to_name": "GEMCITABINE",
@@ -17383,33 +20248,7 @@
   {
    "type": "parent_child_collapse",
    "severity": "low",
-   "alias": "gb",
-   "resolved_to": "CHEMBL1201335",
-   "resolved_to_name": "GLYCOPYRRONIUM",
-   "collapsed": [
-    "CHEMBL1201027"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
    "alias": "gff mdi",
-   "resolved_to": "CHEMBL1201335",
-   "resolved_to_name": "GLYCOPYRRONIUM",
-   "collapsed": [
-    "CHEMBL1201027"
-   ],
-   "action": "alias bound to the parent molecule",
-   "why": "salt and child forms of one substance are not distinct entities here",
-   "family": "dictionary"
-  },
-  {
-   "type": "parent_child_collapse",
-   "severity": "low",
-   "alias": "gly",
    "resolved_to": "CHEMBL1201335",
    "resolved_to_name": "GLYCOPYRRONIUM",
    "collapsed": [

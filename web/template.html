@@ -317,7 +317,7 @@ footer{padding-block:34px;border-top:1px solid var(--line);color:var(--ink-3);fo
   /* ---- 01 evaluation table ---- */
   const ACC = new Set(["EXACT","ALIAS","CLEANED","SALT_STRIPPED","PARENTHETICAL","CONTAINED_ALIAS","FUZZY_AUTO"]);
   const order = ["EXACT","ALIAS","CONTAINED_ALIAS","PARENTHETICAL","SALT_STRIPPED","CLEANED","FUZZY_AUTO",
-                 "FUZZY_REVIEW","AMBIGUOUS","BLOCKED_PLACEBO","BLOCKED_CLASS_TERM","BLOCKED_TARGET_TERM","UNRESOLVED"];
+                 "FUZZY_REVIEW","AMBIGUOUS","BLOCKED_PLACEBO","BLOCKED_CLASS_TERM","BLOCKED_TARGET_TERM","BLOCKED_NEGATED","BLOCKED_DISTINCT_PRODUCT","UNRESOLVED"];
   const E = D.evaluation;
   const cell = (s,t) => {
     const r = (E[s].per_tier||{})[t];

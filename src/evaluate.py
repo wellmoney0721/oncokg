@@ -14,6 +14,7 @@ from __future__ import annotations
 import csv
 import json
 import math
+import random
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -25,7 +26,8 @@ import normalize as N
 ACCEPTING = ["EXACT", "ALIAS", "CLEANED", "SALT_STRIPPED",
              "PARENTHETICAL", "CONTAINED_ALIAS", "FUZZY_AUTO"]
 WITHHOLDING = ["FUZZY_REVIEW", "AMBIGUOUS", "BLOCKED_PLACEBO",
-               "BLOCKED_CLASS_TERM", "BLOCKED_TARGET_TERM", "UNRESOLVED"]
+               "BLOCKED_CLASS_TERM", "BLOCKED_TARGET_TERM", "BLOCKED_NEGATED",
+               "BLOCKED_DISTINCT_PRODUCT", "UNRESOLVED"]
 
 
 def wilson(k: int, n: int, z: float = 1.96):
@@ -51,25 +53,39 @@ def main() -> None:
     # cannot be re-sampled independently; their rate is carried over and marked.
     fallback: dict[str, list] = defaultdict(list)
     dev_path = C.REPORTS / "gold_dev.csv"
-    if which in ("test", "postfix") and dev_path.exists():
-        for r in csv.DictReader(dev_path.open(encoding="utf-8")):
-            if r["verdict"]:
-                fallback[r["tier"]].append(r["verdict"] == "correct")
+    dev_rows = (list(csv.DictReader(dev_path.open(encoding="utf-8")))
+                if which in ("test", "postfix") and dev_path.exists() else [])
 
     # population: distinct (surface, component, resolution) triples per tier
     population: dict[str, set] = defaultdict(set)
     occurrences: dict[str, int] = defaultdict(int)
+    current: set[tuple] = set()
     for t in resolved["trials"]:
         for iv in t["interventions"]:
             for c in iv["components"]:
                 population[c["tier"]].add((iv["raw"], c["component"], c.get("drug_id")))
                 occurrences[c["tier"]] += 1
+                current.add((iv["raw"], c["component"], c.get("drug_id") or "", c["tier"]))
     population = {k: len(v) for k, v in population.items()}
 
+    # A label scores the resolution that existed when it was assigned. If the
+    # pipeline has since changed that row's resolution, the label no longer
+    # describes anything the pipeline does, and combining it with today's tier
+    # populations mixes two pipelines into one number. Such rows are set aside
+    # as stale and listed for re-labelling; no verdict is invented for them.
+    def is_current(r: dict) -> bool:
+        return (r["raw"], r["component"], r["drug_id"] or "", r["tier"]) in current
+
+    stale = [r for r in rows if not is_current(r)]
+    live_rows = [r for r in rows if is_current(r)]
+
     sampled: dict[str, list] = defaultdict(list)
-    for r in rows:
+    for r in live_rows:
         sampled[r["tier"]].append(r["verdict"] == "correct")
 
+    for r in dev_rows:
+        if r["verdict"] and is_current(r):
+            fallback[r["tier"]].append(r["verdict"] == "correct")
     carried = []
     for tier, verdicts in fallback.items():
         if tier not in sampled:
@@ -119,17 +135,56 @@ def main() -> None:
     precision_lo = lo_num / den if den else 0.0
     precision_hi = hi_num / den if den else 0.0
 
+    # How much of the estimate rests on tiers carried over from the dev sample,
+    # and what it is without them.
+    carried_weight = sum(per_tier[t]["population_unique"] for t in carried
+                         if t in ACCEPTING and t in per_tier)
+    own = [t for t in ACCEPTING if t in per_tier and t not in carried
+           and per_tier[t]["population_unique"]]
+    own_den = sum(per_tier[t]["population_unique"] for t in own)
+    own_est = (sum(per_tier[t]["population_unique"] * per_tier[t]["rate"] for t in own)
+               / own_den if own_den else None)
+
+    # A stratified bootstrap over the sampled rows, as a second interval. It is
+    # narrower than the Wilson-bound propagation and is NOT a replacement for
+    # it: a tier that scored 100% resamples to 100% every time, so the
+    # bootstrap cannot represent an error rate it never observed. Both are
+    # reported so the reader can see the spread between them.
+    rng = random.Random(20261103)
+    boot = []
+    tiers_w = [(t, per_tier[t]["population_unique"], sampled[t]) for t in ACCEPTING
+               if t in per_tier and per_tier[t]["population_unique"]]
+    for _ in range(20000):
+        bn = bd = 0.0
+        for _t, w, verdicts in tiers_w:
+            draw = [verdicts[rng.randrange(len(verdicts))] for _ in verdicts]
+            bn += w * sum(draw) / len(draw)
+            bd += w
+        boot.append(bn / bd)
+    boot.sort()
+    boot_ci = (boot[int(0.025 * len(boot))], boot[int(0.975 * len(boot)) - 1])
+
     # the unweighted truth about the rows a human actually read
-    acc_rows = [r for r in rows if r["tier"] in ACCEPTING]
+    acc_rows = [r for r in live_rows if r["tier"] in ACCEPTING]
     acc_k = sum(1 for r in acc_rows if r["verdict"] == "correct")
     acc_n = len(acc_rows)
     raw_lo, raw_hi = wilson(acc_k, acc_n)
+
+    # The same rows scored as labelled -- every row, stale or not, judged on the
+    # resolution it had when it was labelled. For the test sample this is the
+    # last genuinely held-out measurement: it scores the pipeline that existed
+    # before anyone looked at these rows. The current-pipeline figures above
+    # are computed on rows that audit rounds have since been used to repair, so
+    # they are no longer a held-out estimate.
+    asl_rows = [r for r in rows if r["tier"] in ACCEPTING]
+    asl_k = sum(1 for r in asl_rows if r["verdict"] == "correct")
+    asl_lo, asl_hi = wilson(asl_k, len(asl_rows))
 
     accepted_occ = sum(occurrences.get(t, 0) for t in ACCEPTING)
     total_occ = sum(occurrences.values())
     substance_occ = total_occ - sum(occurrences.get(t, 0) for t in
                                     ("BLOCKED_PLACEBO", "BLOCKED_CLASS_TERM",
-                                     "BLOCKED_TARGET_TERM"))
+                                     "BLOCKED_TARGET_TERM", "BLOCKED_NEGATED"))
 
     report = {
         "evaluated_on": primary.name,
@@ -147,7 +202,40 @@ def main() -> None:
             "caveat": ("the sample is drawn by a disproportionate per-tier "
                        "quota, so this reweighting is required; it is also "
                        "what makes the figure higher than the raw rows, so "
-                       "read it next to raw_sample_precision below"),
+                       "read it next to raw_sample_precision below. The "
+                       "interval is a weighted sum of per-tier Wilson bounds: "
+                       "conservative, but not a calibrated 95% interval"),
+            "bootstrap_ci95": [round(boot_ci[0], 4), round(boot_ci[1], 4)],
+            "bootstrap_note": ("stratified bootstrap over the sampled rows, "
+                               "20,000 resamples. Narrower, and blind to errors "
+                               "in tiers that scored 100% in the sample"),
+            "carried_tiers_weight_share": round(carried_weight / den, 4) if den else None,
+            "estimate_without_carried_tiers": round(own_est, 4) if own_est is not None else None,
+        },
+        "as_labelled_raw_precision": {
+            "accepted_rows_scored": len(asl_rows),
+            "accepted_rows_correct": asl_k,
+            "rate": round(asl_k / len(asl_rows), 4) if asl_rows else None,
+            "ci95": [round(asl_lo, 4), round(asl_hi, 4)],
+            "note": ("every labelled accepted row, scored on the resolution it "
+                     "had when labelled. On the held-out test sample this is "
+                     "the frozen measurement of the pipeline before the audit "
+                     "repairs; it does not describe the current pipeline"),
+        },
+        "held_out_status": (
+            "the test sample has been used to motivate repairs in two audit "
+            "rounds; figures for the current pipeline on it are not a held-out "
+            "estimate. Measuring the repaired pipeline needs a new sample"
+            if which == "test" else
+            "not a held-out sample"),
+        "stale_labels": {
+            "count": len(stale),
+            "note": ("rows whose resolution has changed since they were "
+                     "labelled; excluded from every figure above and listed "
+                     "for re-labelling"),
+            "rows": [{"id": r["id"], "raw": r["raw"], "component": r["component"],
+                      "labelled_tier": r["tier"], "labelled_drug_id": r["drug_id"],
+                      "labelled_verdict": r["verdict"]} for r in stale],
         },
         "raw_sample_precision": {
             "accepted_rows_scored": acc_n,
@@ -155,10 +243,11 @@ def main() -> None:
             "rate": round(acc_k / acc_n, 4) if acc_n else None,
             "ci95": [round(raw_lo, 4), round(raw_hi, 4)],
             "note": ("the unweighted result over the rows a human actually "
-                     f"read. {acc_n} of the {len(rows)} rows in this sample "
-                     "sit in an accepting tier; the rest are refusals and "
-                     "are scored separately. The sample size is "
-                     f"{len(rows)}, the precision denominator is {acc_n} -- "
+                     f"read. {acc_n} of the {len(live_rows)} current rows in "
+                     "this sample sit in an accepting tier; the rest are "
+                     "refusals and are scored separately. The sample size is "
+                     f"{len(rows)} ({len(stale)} stale), the precision "
+                     f"denominator is {acc_n} -- "
                      "these are different numbers and quoting the first as "
                      "the second overstates the evidence"),
         },
@@ -207,7 +296,16 @@ def main() -> None:
     ap = report["accepted_precision"]
     cv = report["coverage"]
     print(f"\naccepted-match precision : {ap['estimate']*100:.1f}% "
-          f"(95% CI {ap['ci95'][0]*100:.1f}-{ap['ci95'][1]*100:.1f}%)")
+          f"(Wilson-bound CI {ap['ci95'][0]*100:.1f}-{ap['ci95'][1]*100:.1f}%, "
+          f"bootstrap {ap['bootstrap_ci95'][0]*100:.1f}-{ap['bootstrap_ci95'][1]*100:.1f}%)")
+    rp = report["raw_sample_precision"]
+    print(f"raw accepted rows        : {rp['accepted_rows_correct']}/"
+          f"{rp['accepted_rows_scored']} = {(rp['rate'] or 0)*100:.1f}%")
+    print(f"stale labels set aside   : {len(stale)}")
+    al = report["as_labelled_raw_precision"]
+    print(f"as labelled (all rows)   : {al['accepted_rows_correct']}/"
+          f"{al['accepted_rows_scored']} = {(al['rate'] or 0)*100:.1f}% "
+          f"(Wilson {al['ci95'][0]*100:.1f}-{al['ci95'][1]*100:.1f}%)")
     print(f"coverage of substance-like strings: "
           f"{cv['resolved_rate_of_substance_like']*100:.1f}% "
           f"({cv['accepted_occurrences']}/{cv['component_occurrences_excluding_blocked']})")

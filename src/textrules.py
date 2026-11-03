@@ -89,6 +89,12 @@ CLASS_TERMS = {
     "stereotactic body radiotherapy", "sbrt", "radiation", "irradiation",
     "thoracic radiotherapy", "best available therapy", "physician's choice",
     "investigator's choice", "standard", "targeted",
+    # added in audit round 2: "corticosteroid" auto-resolved to PREDNISONE
+    "corticosteroid", "corticosteroids", "steroid", "steroids",
+    "glucocorticoid", "glucocorticoids", "oral corticosteroid",
+    "oral corticosteroids", "antiemetic", "antiemetics", "premedication",
+    "analgesic", "analgesics", "antihistamine", "antihistamines",
+    "hypomethylating agent", "anti-vegf agent",
 }
 
 # A category pattern, rather than an exact category string. A head noun like
@@ -104,9 +110,13 @@ RE_CLASS_PATTERN = re.compile(
 )
 
 # Words that make the pattern above a *product* rather than a class: a named
-# molecule qualified by a form word is still that molecule.
+# molecule qualified by a form word is still that molecule. The stem has to
+# end a word *with a real prefix in front of it*. Written as a whole-word
+# match on the stem itself, this exempted only the literal word "mab": it let
+# "mab inhibitor" through as a product and blocked "pembrolizumab antibody"
+# as a class.
 RE_CLASS_PATTERN_EXEMPT = re.compile(
-    r"\b(?:mab|nib|tinib|ciclib|parib|zomib|sertib|degib|rafenib)\b", re.I)
+    r"\b[a-z]{3,}(?:mab|nib|tinib|ciclib|parib|zomib|sertib|degib|rafenib)\b", re.I)
 
 
 def is_class_like(text: str) -> bool:
@@ -127,16 +137,54 @@ RE_DISTINCT_PRODUCT = re.compile(
     r"|\bnab[\s\-]"
     r"|\bnanoparticle\s+albumin[\s\-]?bound\b"
     r"|\balbumin[\s\-]?bound\b"
+    r"|\bnano[\s\-]?particulat\w*\b|\bnanoparticle\s+paclitaxel\b"
+    r"|\boral\s+azacitidine\b"
     r"|\bliposomal\b|\bpegylated\b|\bpeg(?:ylated)?[\s\-]r?h?[a-z]{1,6}\b"
     r"|\bgeneric\s+version\b"
     r"|\b(?:injection|solution|product)\s+of\s+[a-z]+mab\b",
     re.I,
 )
 
-# "Bevacizumab-Pfizer", "Trastuzumab-dkst": a hyphenated sponsor or FDA
-# four-letter biosimilar suffix on an INN stem.
+# "Bevacizumab-Pfizer", "Trastuzumab-dkst": a hyphenated sponsor name or an
+# FDA four-letter suffix on an INN stem.
 RE_BIOSIMILAR_SUFFIX = re.compile(
-    r"^[A-Za-z]{6,}(?:mab|cept|tinib|ase)\s*[\-–]\s*[A-Za-z]{2,12}$", re.I)
+    r"^[A-Za-z]{6,}(?:mab|cept|tinib|ase)\s*[\-–]\s*(?P<suffix>[A-Za-z]{2,12})$", re.I)
+
+# Since 2017 the FDA gives a four-letter suffix to *originator* biologics as
+# well (cemiplimab-rwlc, dostarlimab-gxly, tislelizumab-jsgr), so a suffix on
+# its own does not mark a biosimilar. Treating every suffix as one blocked the
+# originators. A four-letter lowercase suffix is a biosimilar only when it is a
+# known biosimilar suffix; a longer or capitalised suffix is a sponsor name.
+BIOSIMILAR_FDA_SUFFIXES = {
+    # bevacizumab
+    "awwb", "bvzr", "maly", "adcd", "tnjn", "nwgd",
+    # trastuzumab
+    "dkst", "pkrb", "dttb", "qyyp", "anns", "strf",
+    # rituximab
+    "abbs", "pvvr", "arrx",
+    # pegfilgrastim / filgrastim
+    "jmdb", "cbqv", "bmez", "apgf", "fpgk", "pbbk", "sndz", "aafi", "ayow",
+    # denosumab
+    "bbdz", "bmwo", "bnht", "dssb", "kyqq", "nxxp",
+}
+
+# Biosimilar brand names. A brand is not caught by any pattern; these were
+# found resolving to their originators (Mvasi, Alymsys, Zirabev -> bevacizumab).
+BIOSIMILAR_BRANDS = {
+    "mvasi", "zirabev", "alymsys", "vegzelma", "avzivi", "jobevne", "aybintio",
+    "onbevzi", "oyavas", "abevmy", "byooviz", "kanjinti", "ogivri", "herzuma",
+    "ontruzant", "trazimera", "hercessi", "zercepac", "truxima", "ruxience",
+    "riabni", "rixathon", "udenyca", "fulphila", "ziextenzo", "nyvepria",
+    "fylnetra", "stimufend", "zarxio", "nivestym", "releuko",
+}
+
+
+# Reformulated products sold under their own name or code. Checked on the
+# words of the string, so a brand in brackets ("Paclitaxel (Abraxane)") is seen.
+REFORMULATION_NAMES = {
+    "abraxane", "abraxis", "doxil", "caelyx", "lipodox", "onivyde", "depocyt",
+    "nanopac", "liporaxel", "lipusu", "genexol", "onureg", "cc486",
+}
 
 
 def is_distinct_product(text: str) -> bool:
@@ -146,7 +194,39 @@ def is_distinct_product(text: str) -> bool:
         return False
     if RE_DISTINCT_PRODUCT.search(t):
         return True
-    return bool(RE_BIOSIMILAR_SUFFIX.match(t))
+    words = set(re.findall(r"[a-z]+", t.lower()))
+    words |= {canonical_key(w) for w in re.findall(r"[A-Za-z]+[\s\-]?\d+", t)}
+    if words & (BIOSIMILAR_BRANDS | REFORMULATION_NAMES):
+        return True
+    m = RE_BIOSIMILAR_SUFFIX.match(t)
+    if not m:
+        return False
+    suffix = m.group("suffix")
+    if len(suffix) == 4 and suffix.islower():
+        return suffix in BIOSIMILAR_FDA_SUFFIXES
+    return True
+
+
+# An originator's FDA suffix carries no information about the molecule, so it
+# is removed before lookup: "cemiplimab-rwlc" -> "cemiplimab".
+RE_FDA_SUFFIX = re.compile(r"^(?P<inn>[A-Za-z]{6,}(?:mab|cept|ase))\s*-\s*[a-z]{4}$")
+
+
+def strip_fda_suffix(text: str) -> str | None:
+    m = RE_FDA_SUFFIX.match((text or "").strip())
+    return m.group("inn") if m else None
+
+
+# "No pembrolizumab", "without bevacizumab": a negated substance is the
+# absence of an exposure. Accepting it as CONTAINED_ALIAS recorded the
+# opposite of what the arm says.
+RE_NEGATED = re.compile(
+    r"^\s*(?:no|not|without|none\s+of|absence\s+of|omit(?:ting|ted)?|"
+    r"withdrawal\s+of|discontinu(?:e|ed|ation\s+of))\b[\s\-]*", re.I)
+
+
+def is_negated(text: str) -> bool:
+    return bool(RE_NEGATED.match(text or ""))
 
 # A placebo arm must never create a "this company administered this drug" edge.
 RE_PLACEBO = re.compile(r"\bplacebo\b|\bsham\b|\bvehicle\s+control\b", re.I)
@@ -274,7 +354,20 @@ def clean_surface(raw: str) -> dict:
     return {"cleaned": text, "parentheticals": parentheticals, "rules": rules}
 
 
+# A phosphate or succinate on a corticosteroid, etoposide or fludarabine is a
+# covalent ester -- a prodrug with its own record -- not a counter-ion, so
+# stripping it as a salt changed the molecule ("prednisolone phosphate" ->
+# PREDNISOLONE). These forms are left whole and resolve only if the
+# vocabulary lists them as written.
+RE_ESTER_FORM = re.compile(
+    r"\b(?:prednisolone|methylprednisolone|hydrocortisone|dexamethasone|"
+    r"betamethasone|triamcinolone|etoposide|fludarabine)\b"
+    r"(?:\s+sodium)?\s+(?:phosphate|succinate|acetate)\b", re.I)
+
+
 def strip_salt(text: str) -> tuple[str, bool]:
+    if RE_ESTER_FORM.search(text or ""):
+        return text, False
     out, fired = _strip_words(text, SALTS)
     out = RE_PUNCT_EDGE.sub("", RE_MULTISPACE.sub(" ", out))
     return out, fired
