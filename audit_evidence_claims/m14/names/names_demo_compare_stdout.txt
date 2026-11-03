@@ -1,0 +1,100 @@
+{
+  "page_questions": 7,
+  "unique_page_and_cli_questions": 7,
+  "identical": 6,
+  "differences": [
+    "What trials evaluate Mvasi?"
+  ],
+  "rows": [
+    {
+      "input": "What trials evaluate Tagrisso?",
+      "intent": "trials_for_entity",
+      "entities": [
+        [
+          "Drug",
+          "OSIMERTINIB"
+        ]
+      ],
+      "evidence_count": 12,
+      "generated_by": "deterministic template (no language model)",
+      "identical": true
+    },
+    {
+      "input": "Which companies are developing osimertinib?",
+      "intent": "companies_for_drug",
+      "entities": [
+        [
+          "Drug",
+          "OSIMERTINIB"
+        ]
+      ],
+      "evidence_count": 12,
+      "generated_by": "deterministic template (no language model)",
+      "identical": true
+    },
+    {
+      "input": "Which drugs act on ALK?",
+      "intent": "drugs_for_target",
+      "entities": [
+        [
+          "Target",
+          "ALK"
+        ]
+      ],
+      "evidence_count": 11,
+      "generated_by": "deterministic template (no language model)",
+      "identical": true
+    },
+    {
+      "input": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        [
+          "Drug",
+          "OSIMERTINIB"
+        ]
+      ],
+      "evidence_count": 1,
+      "generated_by": "deterministic template (no language model)",
+      "identical": true
+    },
+    {
+      "input": "What is AstraZeneca running in NSCLC?",
+      "intent": "company_portfolio",
+      "entities": [
+        [
+          "Company",
+          "Astrazeneca"
+        ],
+        [
+          "Disease",
+          "non-small cell lung carcinoma"
+        ]
+      ],
+      "evidence_count": 12,
+      "generated_by": "deterministic template (no language model)",
+      "identical": true
+    },
+    {
+      "input": "What trials evaluate Mvasi?",
+      "intent": "trials_for_entity",
+      "entities": [
+        [
+          "Refused",
+          "What trials evaluate Mvasi"
+        ]
+      ],
+      "evidence_count": 0,
+      "generated_by": "refusal (no supporting evidence)",
+      "identical": false
+    },
+    {
+      "input": "What is the capital of France?",
+      "intent": "unsupported",
+      "entities": [],
+      "evidence_count": 0,
+      "generated_by": "refusal (no supporting evidence)",
+      "identical": true
+    }
+  ]
+}

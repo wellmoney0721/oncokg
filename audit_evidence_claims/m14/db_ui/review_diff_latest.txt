@@ -1,0 +1,105 @@
+diff --git a/src/query.py b/src/query.py
+index 92055c1..0b03ae8 100644
+--- a/src/query.py
++++ b/src/query.py
+@@ -116,6 +116,27 @@ def _alnum_words(text: str) -> list[str]:
+ def _fold(text: str) -> str:
+     return re.sub(_DASHES, "-", unicodedata.normalize("NFKC", text or ""))
+ 
++
++def _isotope_edge(word: str) -> bool:
++    """An isotope label fused to the start or the end of one word ("89ZrDFO", "DFO89Zr").
++
++    A one-letter element counts only where the case marks the boundary ("89FDFO"), so
++    dose text such as "2cycles" or "5in" is not read as carbon or indium."""
++    for i in range(2, min(6, len(word)) + 1):
++        for lab, rest in ((word[:i], word[i:]), (word[-i:], word[:-i])):
++            # the label must meet letters, not run on into more digits ("89Zr" is whole)
++            if not rest or not T.is_isotope_label(lab):
++                continue
++            if not (rest[:1] if lab == word[:i] else rest[-1:]).isalpha():
++                continue
++            elem = re.sub(r"^[\d\s\-\[\]m]*", "", lab)
++            if len(elem) == 2 and elem[0].isupper() and elem[1].islower():
++                return True                      # "Zr", "Ga", "Lu"
++            if len(elem) == 1 and elem.isupper() and (rest[:1].isupper() if lab == word[:i]
++                                                      else rest[-1:].isupper()):
++                return True                      # "89FDFO"-like, case-marked
++    return False
++
+ def _qualified(words: list[str]) -> bool:
+     """Does any part of this list item name a distinct product or a tracer?
+ 
+@@ -231,6 +252,15 @@ class OncoKG:
+                         out[h["drug_id"]] = piece
+         return out
+ 
++    def _keys_of(self, did: str) -> set:
++        """Every lookup key that names this drug."""
++        if not hasattr(self, "_drug_keys"):
++            self._drug_keys: dict = {}
++            for k, hits in self.dic["index"].items():
++                for h in hits:
++                    self._drug_keys.setdefault(h["drug_id"], set()).add(k)
++        return self._drug_keys.get(did, set())
++
+     def _marked(self, key: str, did: str, tokens, seg, a: int, b: int):
+         """The text that makes this drug name a distinct product or a tracer, if any.
+ 
+@@ -284,15 +314,29 @@ class OncoKG:
+                 return f"({' '.join(prev_all[-n:])}) {name}"
+             if len(glued) > 6:
+                 break
++        # a label fused to a neighbouring word, such as a chelator ("DFO89Zr", "89ZrDFO")
++        for w in nxt_all[:2] + prev_all[-2:]:
++            if _isotope_edge(w):
++                return f"{name} ({w})"
+         for ws in inside + [prev[-1:], prev, nxt[:1], nxt]:
+             if ws and T.is_isotope_label(" ".join(ws)):
+                 return name if ws in inside else f"{name} ({' '.join(ws)})"
+         # an isotope glued to the name itself ("89zr-trastuzumab" read through "[89Z.r]")
+-        for i in range(2, min(6, len(key))):
+-            for iso, rest in ((key[:i], key[i:]), (key[-i:], key[:-i])):
+-                if rest and T.is_isotope_label(iso) and any(
+-                        h["drug_id"] == did for h in self.dic["index"].get(rest, [])):
+-                    return name
++        # anything may sit between them (a chelator: "89ZrDFO-daratumumab"), so the rest
++        # needs only to end, or start, with a name of the same drug
++        # A one-letter element is left to the case-marked word check above: lower-case
++        # chemistry ("13-cis retinoic acid") is not carbon-13.
++        names = [k for k in self._keys_of(did) if len(k) >= 5]
++        for i in range(3, min(6, len(key))):
++            head, tail = key[:i], key[i:]
++            if (tail and T.is_isotope_label(head) and head[-2:].isalpha()
++                    and any(tail.endswith(k) for k in names)):
++                return name
++            head, tail = key[-i:], key[:-i]
++            if (tail and T.is_isotope_label(head) and head[-2:].isalpha()
++                    and any(tail.startswith(k) for k in names)):
++                return name
++
+         return None
+ 
+     def _whole_name(self, text: str, blocked: dict, found: list):
+diff --git a/tests/test_app.py b/tests/test_app.py
+index b950571..75ea944 100644
+--- a/tests/test_app.py
++++ b/tests/test_app.py
+@@ -353,3 +353,17 @@ def test_a_split_isotope_inside_a_stored_tracer_alias_refuses():
+     assert e.explore("[89Z.r]-DFO-daratumumab, osimertinib")["center"]["id"] == "CHEMBL3353410"
+     assert not e.kg.answer("Which trials evaluate [89Z.r]-DFO-daratumumab?", use_llm=False).evidence
+     assert e.explore("daratumumab")["center"]["id"] == "CHEMBL1743007"
++
++
++# Codex review m13: an isotope fused to a chelator, inside the name or beside it
++def test_an_isotope_fused_to_a_chelator_refuses():
++    import app
++    e = app.Engine()
++    for t in ("89ZrDFO-daratumumab", "89zrdfo-daratumumab", "89ZrDFOdaratumumab",
++              "daratumumab DFO89Zr", "89ZrDFO daratumumab"):
++        assert e.explore(t).get("refused"), t
++    assert not e.kg.answer("Which trials evaluate 89ZrDFO-daratumumab?", use_llm=False).evidence
++    for t, did in (("13-cis retinoic acid", "CHEMBL38"), ("BKM-120NX", "CHEMBL2017974"),
++                   ("paclitaxel 2 cycles", "CHEMBL428647")):
++        r = e.explore(t)
++        assert r.get("center", {}).get("id") == did, (t, r.get("center"))

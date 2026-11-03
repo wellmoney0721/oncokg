@@ -367,3 +367,17 @@ def test_an_isotope_fused_to_a_chelator_refuses():
                    ("paclitaxel 2 cycles", "CHEMBL428647")):
         r = e.explore(t)
         assert r.get("center", {}).get("id") == did, (t, r.get("center"))
+
+
+# Codex review m14
+def test_upper_case_one_letter_isotopes_and_trailing_markers_refuse():
+    import app
+    e = app.Engine()
+    for t in ("3HVINBLASTINE", "3H-vinblastine", "89Zrpanitumumab-PET-CT", "A33124I"):
+        assert e.explore(t).get("refused"), t
+    for t, did in (("vinblastine", "CHEMBL159"), ("panitumumab", "CHEMBL1201827"),
+                   ("NSC-118218H", None), ("DX-8951F", None), ("13-cis retinoic acid", "CHEMBL38")):
+        r = e.explore(t)
+        assert r.get("center"), t
+        if did:
+            assert r["center"]["id"] == did, t

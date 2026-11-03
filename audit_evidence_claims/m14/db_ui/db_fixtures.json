@@ -1,0 +1,809 @@
+{
+  "setup": "Isolated in-memory DB only",
+  "retired_trial_rows": [
+    {
+      "id": "D",
+      "type": "Drug",
+      "label": "Fixture drug",
+      "props": "{}",
+      "retired_at": null
+    },
+    {
+      "id": "T",
+      "type": "Trial",
+      "label": "Retired trial",
+      "props": "{}",
+      "retired_at": "2026-01-01"
+    },
+    {
+      "id": "X",
+      "type": "Target",
+      "label": "Fixture target",
+      "props": "{}",
+      "retired_at": null
+    }
+  ],
+  "retired_trial_edges": [
+    {
+      "id": "E",
+      "src": "T",
+      "dst": "D",
+      "rel": "EVALUATES",
+      "props": "{}",
+      "retired_at": null
+    },
+    {
+      "id": "A",
+      "src": "D",
+      "dst": "X",
+      "rel": "ACTS_ON",
+      "props": "{}",
+      "retired_at": null
+    }
+  ],
+  "retired_trial": [
+    {
+      "input": "D",
+      "status": 200,
+      "response": {
+        "center": {
+          "id": "D",
+          "type": "Drug",
+          "label": "Fixture drug",
+          "matched_text": null,
+          "trials": 0,
+          "props": {}
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "X",
+                "type": "Target",
+                "label": "Fixture target",
+                "edge_id": "A",
+                "weight": 0,
+                "action": null
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": "X",
+      "status": 200,
+      "response": {
+        "center": {
+          "id": "X",
+          "type": "Target",
+          "label": "Fixture target",
+          "matched_text": null,
+          "trials": null,
+          "props": {}
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "ACTS_ON",
+            "dir": "in",
+            "type": "Drug",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "D",
+                "type": "Drug",
+                "label": "Fixture drug",
+                "edge_id": "A",
+                "trials": 0,
+                "max_phase": null,
+                "weight": 0,
+                "action": null
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "malformed": [
+    {
+      "table": "node",
+      "id": "D",
+      "props": "null",
+      "requests": [
+        {
+          "input": "D",
+          "status": 200,
+          "response": {
+            "center": {
+              "id": "D",
+              "type": "Drug",
+              "label": "Fixture drug",
+              "matched_text": null,
+              "trials": 0,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ACTS_ON",
+                "dir": "out",
+                "type": "Target",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "X",
+                    "type": "Target",
+                    "label": "Fixture target",
+                    "edge_id": "A",
+                    "weight": 0,
+                    "action": null
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "X",
+          "status": 200,
+          "response": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ACTS_ON",
+                "dir": "in",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "D",
+                    "type": "Drug",
+                    "label": "Fixture drug",
+                    "edge_id": "A",
+                    "trials": 0,
+                    "max_phase": null,
+                    "weight": 0,
+                    "action": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "after_restore": {
+        "input": "X",
+        "status": 200,
+        "response": {
+          "center": {
+            "id": "X",
+            "type": "Target",
+            "label": "Fixture target",
+            "matched_text": null,
+            "trials": null,
+            "props": {}
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "ACTS_ON",
+              "dir": "in",
+              "type": "Drug",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "D",
+                  "type": "Drug",
+                  "label": "Fixture drug",
+                  "edge_id": "A",
+                  "trials": 0,
+                  "max_phase": null,
+                  "weight": 0,
+                  "action": null
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "table": "node",
+      "id": "D",
+      "props": "[]",
+      "requests": [
+        {
+          "input": "D",
+          "status": 200,
+          "response": {
+            "center": {
+              "id": "D",
+              "type": "Drug",
+              "label": "Fixture drug",
+              "matched_text": null,
+              "trials": 0,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ACTS_ON",
+                "dir": "out",
+                "type": "Target",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "X",
+                    "type": "Target",
+                    "label": "Fixture target",
+                    "edge_id": "A",
+                    "weight": 0,
+                    "action": null
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "X",
+          "status": 200,
+          "response": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ACTS_ON",
+                "dir": "in",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "D",
+                    "type": "Drug",
+                    "label": "Fixture drug",
+                    "edge_id": "A",
+                    "trials": 0,
+                    "max_phase": null,
+                    "weight": 0,
+                    "action": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "after_restore": {
+        "input": "X",
+        "status": 200,
+        "response": {
+          "center": {
+            "id": "X",
+            "type": "Target",
+            "label": "Fixture target",
+            "matched_text": null,
+            "trials": null,
+            "props": {}
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "ACTS_ON",
+              "dir": "in",
+              "type": "Drug",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "D",
+                  "type": "Drug",
+                  "label": "Fixture drug",
+                  "edge_id": "A",
+                  "trials": 0,
+                  "max_phase": null,
+                  "weight": 0,
+                  "action": null
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "table": "node",
+      "id": "D",
+      "props": "{broken",
+      "requests": [
+        {
+          "input": "D",
+          "status": 200,
+          "response": {
+            "center": {
+              "id": "D",
+              "type": "Drug",
+              "label": "Fixture drug",
+              "matched_text": null,
+              "trials": 0,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ACTS_ON",
+                "dir": "out",
+                "type": "Target",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "X",
+                    "type": "Target",
+                    "label": "Fixture target",
+                    "edge_id": "A",
+                    "weight": 0,
+                    "action": null
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "X",
+          "status": 200,
+          "response": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ACTS_ON",
+                "dir": "in",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "D",
+                    "type": "Drug",
+                    "label": "Fixture drug",
+                    "edge_id": "A",
+                    "trials": 0,
+                    "max_phase": null,
+                    "weight": 0,
+                    "action": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "after_restore": {
+        "input": "X",
+        "status": 200,
+        "response": {
+          "center": {
+            "id": "X",
+            "type": "Target",
+            "label": "Fixture target",
+            "matched_text": null,
+            "trials": null,
+            "props": {}
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "ACTS_ON",
+              "dir": "in",
+              "type": "Drug",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "D",
+                  "type": "Drug",
+                  "label": "Fixture drug",
+                  "edge_id": "A",
+                  "trials": 0,
+                  "max_phase": null,
+                  "weight": 0,
+                  "action": null
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "table": "edge",
+      "id": "A",
+      "props": "null",
+      "requests": [
+        {
+          "input": "D",
+          "status": 200,
+          "response": {
+            "center": {
+              "id": "D",
+              "type": "Drug",
+              "label": "Fixture drug",
+              "matched_text": null,
+              "trials": 0,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ACTS_ON",
+                "dir": "out",
+                "type": "Target",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "X",
+                    "type": "Target",
+                    "label": "Fixture target",
+                    "edge_id": "A",
+                    "weight": 0,
+                    "action": null
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "X",
+          "status": 200,
+          "response": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ACTS_ON",
+                "dir": "in",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "D",
+                    "type": "Drug",
+                    "label": "Fixture drug",
+                    "edge_id": "A",
+                    "trials": 0,
+                    "max_phase": null,
+                    "weight": 0,
+                    "action": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "after_restore": {
+        "input": "X",
+        "status": 200,
+        "response": {
+          "center": {
+            "id": "X",
+            "type": "Target",
+            "label": "Fixture target",
+            "matched_text": null,
+            "trials": null,
+            "props": {}
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "ACTS_ON",
+              "dir": "in",
+              "type": "Drug",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "D",
+                  "type": "Drug",
+                  "label": "Fixture drug",
+                  "edge_id": "A",
+                  "trials": 0,
+                  "max_phase": null,
+                  "weight": 0,
+                  "action": null
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "table": "edge",
+      "id": "A",
+      "props": "[]",
+      "requests": [
+        {
+          "input": "D",
+          "status": 200,
+          "response": {
+            "center": {
+              "id": "D",
+              "type": "Drug",
+              "label": "Fixture drug",
+              "matched_text": null,
+              "trials": 0,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ACTS_ON",
+                "dir": "out",
+                "type": "Target",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "X",
+                    "type": "Target",
+                    "label": "Fixture target",
+                    "edge_id": "A",
+                    "weight": 0,
+                    "action": null
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "X",
+          "status": 200,
+          "response": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ACTS_ON",
+                "dir": "in",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "D",
+                    "type": "Drug",
+                    "label": "Fixture drug",
+                    "edge_id": "A",
+                    "trials": 0,
+                    "max_phase": null,
+                    "weight": 0,
+                    "action": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "after_restore": {
+        "input": "X",
+        "status": 200,
+        "response": {
+          "center": {
+            "id": "X",
+            "type": "Target",
+            "label": "Fixture target",
+            "matched_text": null,
+            "trials": null,
+            "props": {}
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "ACTS_ON",
+              "dir": "in",
+              "type": "Drug",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "D",
+                  "type": "Drug",
+                  "label": "Fixture drug",
+                  "edge_id": "A",
+                  "trials": 0,
+                  "max_phase": null,
+                  "weight": 0,
+                  "action": null
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "table": "edge",
+      "id": "A",
+      "props": "{broken",
+      "requests": [
+        {
+          "input": "D",
+          "status": 200,
+          "response": {
+            "center": {
+              "id": "D",
+              "type": "Drug",
+              "label": "Fixture drug",
+              "matched_text": null,
+              "trials": 0,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ACTS_ON",
+                "dir": "out",
+                "type": "Target",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "X",
+                    "type": "Target",
+                    "label": "Fixture target",
+                    "edge_id": "A",
+                    "weight": 0,
+                    "action": null
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "X",
+          "status": 200,
+          "response": {
+            "center": {
+              "id": "X",
+              "type": "Target",
+              "label": "Fixture target",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "ACTS_ON",
+                "dir": "in",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "D",
+                    "type": "Drug",
+                    "label": "Fixture drug",
+                    "edge_id": "A",
+                    "trials": 0,
+                    "max_phase": null,
+                    "weight": 0,
+                    "action": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "after_restore": {
+        "input": "X",
+        "status": 200,
+        "response": {
+          "center": {
+            "id": "X",
+            "type": "Target",
+            "label": "Fixture target",
+            "matched_text": null,
+            "trials": null,
+            "props": {}
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "ACTS_ON",
+              "dir": "in",
+              "type": "Drug",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "D",
+                  "type": "Drug",
+                  "label": "Fixture drug",
+                  "edge_id": "A",
+                  "trials": 0,
+                  "max_phase": null,
+                  "weight": 0,
+                  "action": null
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chunking": {
+    "input": "X",
+    "per_group": 2000,
+    "expected_drugs": 1001,
+    "total": 1001,
+    "returned": 1001,
+    "weight_histogram": {
+      "1": 1001
+    },
+    "trials_histogram": {
+      "1": 1001
+    }
+  }
+}

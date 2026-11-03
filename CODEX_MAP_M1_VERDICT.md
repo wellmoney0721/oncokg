@@ -150,3 +150,15 @@ A sweep of every unambiguous stored alias run alone (before and after this chang
 | M13-B1 | "89ZrDFO-daratumumab": no separator between the isotope and the chelator | a name's key that starts (ends) with a two-letter-element isotope label and whose rest ends (starts) with any key of the same drug is refused, whatever lies between; a neighbouring word with a label fused to its start or end ("DFO89Zr") also refuses, one-letter elements only where case marks the boundary |
 
 Kept narrow on purpose: lower-case chemistry and dose text are not read as isotopes ("13-cis retinoic acid", "paclitaxel 2 cycles", "BKM-120NX"). The stored-alias sweep shows no newly refused names (one formerly refused name, `rad001c`, now resolves). Tests 341.
+
+## Round 14 (audit_evidence_claims/m14) — CHANGES REQUIRED
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M14-B1 | "3HVINBLASTINE": a one-letter element in an all-capitals name escaped the case rule (regression of round 13) | in the name's own key a one-letter element counts wherever it is written upper-case |
+| M14-B2 | "89Zrpanitumumab-PET-CT": a trailing marker kept the drug's key from ending the rest | the same drug's name may sit anywhere after (before) the label |
+| M13 residual | "A33124I" | a label closing a stored name of the drug counts when its mass is one used in medicine (I-124); development codes ending in a salt letter ("NSC-118218H", "DX-8951F", "GW572016F") are not labels |
+
+Stored-alias sweep: no newly refused names. Tests 342.
+
+Known data limitation found while fixing, not changed here: ChEMBL lists bevacizumab biosimilar development codes as synonyms of bevacizumab (HLX04, HLX-04, HLX04-O, BAT1706, SB8, MB02, FKB238, BI 695502), so these draw BEVACIZUMAB. Fixing it belongs in the dictionary curation step (resolver and graph), with a re-measurement, not in the map.
