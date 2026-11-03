@@ -1,0 +1,1797 @@
+{
+  "previous_ref": "ec4eede",
+  "previous_query_sha256": "3ec4ca516490ff00843e8482041f8389d67e3cd01f130919a3fcc038d28714a6",
+  "comparison_scope": "exact previous query module; app/rules/data current",
+  "cases": [
+    {
+      "input": "Trastuzumab--vcmmae conjugate",
+      "stored_aliases": [
+        {
+          "drug_id": "CHEMBL5315030",
+          "alias": "Trastuzumab--vcmmae conjugate",
+          "alias_type": "synonym",
+          "source": "ChEMBL"
+        }
+      ],
+      "resolver": {
+        "raw": "Trastuzumab--vcmmae conjugate",
+        "components": [
+          {
+            "component": "Trastuzumab--vcmmae conjugate",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL5315030",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Trastuzumab--vcmmae conjugate",
+            "candidates": null,
+            "drug": {
+              "name": "TRASTUZUMAB VEDOTIN",
+              "drug_type": "Antibody drug conjugate",
+              "max_phase_overall": "PHASE_3",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [],
+              "trials": 0
+            }
+          }
+        ]
+      },
+      "resolver_blocked": {},
+      "item_linker": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Trastuzumab--vcmmae conjugate",
+          "matched_text": "Trastuzumab--vcmmae conjugate",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "whole_name": null,
+      "guards": {
+        "distinct": false,
+        "radiotracer": false,
+        "qualified": true,
+        "words": [
+          "Trastuzumab--vcmmae",
+          "conjugate"
+        ],
+        "isotope_pairs": []
+      },
+      "current": {
+        "refused": "Trastuzumab--vcmmae conjugate",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "m8_exact": {
+        "center": {
+          "id": "CHEMBL5315030",
+          "type": "Drug",
+          "label": "TRASTUZUMAB VEDOTIN",
+          "matched_text": "Trastuzumab--vcmmae conjugate",
+          "trials": 0,
+          "props": {
+            "max_phase_overall": "PHASE_3",
+            "drug_type": "Antibody drug conjugate"
+          }
+        },
+        "also": []
+      }
+    },
+    {
+      "input": "Theophylline in dextrose 5% in plastic container",
+      "stored_aliases": [
+        {
+          "drug_id": "CHEMBL1355736",
+          "alias": "Theophylline in dextrose 5% in plastic container",
+          "alias_type": "trade_name",
+          "source": null
+        }
+      ],
+      "resolver": {
+        "raw": "Theophylline in dextrose 5% in plastic container",
+        "components": [
+          {
+            "component": "Theophylline",
+            "tier": "CONTAINED_ALIAS",
+            "drug_id": "CHEMBL1355736",
+            "score": null,
+            "rules": [
+              "strip_percent",
+              "segmented_from_phrase"
+            ],
+            "matched_alias": "THEOPHYLLINE",
+            "candidates": null,
+            "note": "segmented out of 'Theophylline in dextrose in plastic container'",
+            "drug": {
+              "name": "THEOPHYLLINE",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1",
+              "mechanisms": [
+                "Phosphodiesterase 4 inhibitor",
+                "Phosphodiesterase 3 inhibitor",
+                "Adenosine receptor antagonist"
+              ],
+              "trials": 1
+            }
+          },
+          {
+            "component": "dextrose plastic container",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "strip_percent",
+              "segmentation_residue"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+          }
+        ]
+      },
+      "resolver_blocked": {},
+      "item_linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1355736",
+          "label": "THEOPHYLLINE",
+          "matched_text": "Theophylline",
+          "matched_alias": "THEOPHYLLINE"
+        }
+      ],
+      "whole_name": {
+        "type": "Drug",
+        "id": "CHEMBL1355736",
+        "label": "THEOPHYLLINE",
+        "matched_text": "Theophylline in dextrose 5% in plastic container",
+        "matched_alias": "Theophylline in dextrose 5% in plastic container"
+      },
+      "guards": {
+        "distinct": false,
+        "radiotracer": false,
+        "qualified": false,
+        "words": [
+          "Theophylline",
+          "in",
+          "dextrose",
+          "5",
+          "in",
+          "plastic",
+          "container"
+        ],
+        "isotope_pairs": [
+          "5 in"
+        ]
+      },
+      "current": {
+        "center": {
+          "id": "CHEMBL1355736",
+          "type": "Drug",
+          "label": "THEOPHYLLINE",
+          "matched_text": "Theophylline in dextrose 5% in plastic container",
+          "trials": 1,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Protein"
+          }
+        },
+        "also": []
+      },
+      "m8_exact": {
+        "center": {
+          "id": "CHEMBL1355736",
+          "type": "Drug",
+          "label": "THEOPHYLLINE",
+          "matched_text": "Theophylline in dextrose 5% in plastic container",
+          "trials": 1,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Protein"
+          }
+        },
+        "also": []
+      }
+    },
+    {
+      "input": "40-o-(2-hydroxyethyl)-rapamycin",
+      "stored_aliases": [
+        {
+          "drug_id": "CHEMBL1908360",
+          "alias": "40-o-(2-hydroxyethyl)-rapamycin",
+          "alias_type": "synonym",
+          "source": "ChEMBL"
+        }
+      ],
+      "resolver": {
+        "raw": "40-o-(2-hydroxyethyl)-rapamycin",
+        "components": [
+          {
+            "component": "-rapamycin",
+            "tier": "CONTAINED_ALIAS",
+            "drug_id": "CHEMBL413",
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "segmented_from_phrase"
+            ],
+            "matched_alias": "(-)-RAPAMYCIN",
+            "candidates": null,
+            "note": "segmented out of '40-o- -rapamycin'",
+            "drug": {
+              "name": "SIROLIMUS",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1_2",
+              "mechanisms": [
+                "FK506-binding protein 1A inhibitor"
+              ],
+              "trials": 5
+            }
+          }
+        ]
+      },
+      "resolver_blocked": {},
+      "item_linker": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "40-o-(2-hydroxyethyl)-rapamycin",
+          "matched_text": "40-o-(2-hydroxyethyl)-rapamycin",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "whole_name": null,
+      "guards": {
+        "distinct": false,
+        "radiotracer": false,
+        "qualified": true,
+        "words": [
+          "40-o-(2-hydroxyethyl)-rapamycin"
+        ],
+        "isotope_pairs": []
+      },
+      "current": {
+        "refused": "40-o-(2-hydroxyethyl)-rapamycin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "m8_exact": {
+        "center": {
+          "id": "CHEMBL1908360",
+          "type": "Drug",
+          "label": "EVEROLIMUS",
+          "matched_text": "40-o-(2-hydroxyethyl)-rapamycin",
+          "trials": 9,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": []
+      }
+    },
+    {
+      "input": "42-o-(2-hydroxyethyl)rapamycin",
+      "stored_aliases": [
+        {
+          "drug_id": "CHEMBL1908360",
+          "alias": "42-o-(2-hydroxyethyl)rapamycin",
+          "alias_type": "synonym",
+          "source": "ChEMBL"
+        }
+      ],
+      "resolver": {
+        "raw": "42-o-(2-hydroxyethyl)rapamycin",
+        "components": [
+          {
+            "component": "42-o- rapamycin",
+            "tier": "BLOCKED_CLASS_TERM",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "radiotracer_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+          }
+        ]
+      },
+      "resolver_blocked": {
+        "CHEMBL413": "42-o- rapamycin"
+      },
+      "item_linker": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "42-o-(2-hydroxyethyl)rapamycin",
+          "matched_text": "42-o-(2-hydroxyethyl)rapamycin",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "whole_name": null,
+      "guards": {
+        "distinct": false,
+        "radiotracer": false,
+        "qualified": true,
+        "words": [
+          "42-o-(2-hydroxyethyl)rapamycin"
+        ],
+        "isotope_pairs": []
+      },
+      "current": {
+        "refused": "42-o-(2-hydroxyethyl)rapamycin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "m8_exact": {
+        "center": {
+          "id": "CHEMBL1908360",
+          "type": "Drug",
+          "label": "EVEROLIMUS",
+          "matched_text": "42-o-(2-hydroxyethyl)rapamycin",
+          "trials": 9,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": [
+          {
+            "refused": "42-o- rapamycin"
+          }
+        ]
+      }
+    },
+    {
+      "input": "TRASTUZUMAB VEDOTIN",
+      "stored_aliases": [
+        {
+          "drug_id": "CHEMBL5315030",
+          "alias": "TRASTUZUMAB VEDOTIN",
+          "alias_type": "preferred_name",
+          "source": null
+        }
+      ],
+      "resolver": {
+        "raw": "TRASTUZUMAB VEDOTIN",
+        "components": [
+          {
+            "component": "TRASTUZUMAB VEDOTIN",
+            "tier": "EXACT",
+            "drug_id": "CHEMBL5315030",
+            "score": null,
+            "rules": [],
+            "matched_alias": "TRASTUZUMAB VEDOTIN",
+            "candidates": null,
+            "drug": {
+              "name": "TRASTUZUMAB VEDOTIN",
+              "drug_type": "Antibody drug conjugate",
+              "max_phase_overall": "PHASE_3",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [],
+              "trials": 0
+            }
+          }
+        ]
+      },
+      "resolver_blocked": {},
+      "item_linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL5315030",
+          "label": "TRASTUZUMAB VEDOTIN",
+          "matched_text": "TRASTUZUMAB VEDOTIN",
+          "matched_alias": "TRASTUZUMAB VEDOTIN"
+        }
+      ],
+      "whole_name": {
+        "type": "Drug",
+        "id": "CHEMBL5315030",
+        "label": "TRASTUZUMAB VEDOTIN",
+        "matched_text": "TRASTUZUMAB VEDOTIN",
+        "matched_alias": "TRASTUZUMAB VEDOTIN"
+      },
+      "guards": {
+        "distinct": false,
+        "radiotracer": false,
+        "qualified": false,
+        "words": [
+          "TRASTUZUMAB",
+          "VEDOTIN"
+        ],
+        "isotope_pairs": []
+      },
+      "current": {
+        "center": {
+          "id": "CHEMBL5315030",
+          "type": "Drug",
+          "label": "TRASTUZUMAB VEDOTIN",
+          "matched_text": "TRASTUZUMAB VEDOTIN",
+          "trials": 0,
+          "props": {
+            "max_phase_overall": "PHASE_3",
+            "drug_type": "Antibody drug conjugate"
+          }
+        },
+        "also": []
+      },
+      "m8_exact": {
+        "center": {
+          "id": "CHEMBL5315030",
+          "type": "Drug",
+          "label": "TRASTUZUMAB VEDOTIN",
+          "matched_text": "TRASTUZUMAB VEDOTIN",
+          "trials": 0,
+          "props": {
+            "max_phase_overall": "PHASE_3",
+            "drug_type": "Antibody drug conjugate"
+          }
+        },
+        "also": []
+      }
+    },
+    {
+      "input": "THEOPHYLLINE",
+      "stored_aliases": [
+        {
+          "drug_id": "CHEMBL1355736",
+          "alias": "THEOPHYLLINE",
+          "alias_type": "preferred_name",
+          "source": null
+        }
+      ],
+      "resolver": {
+        "raw": "THEOPHYLLINE",
+        "components": [
+          {
+            "component": "THEOPHYLLINE",
+            "tier": "EXACT",
+            "drug_id": "CHEMBL1355736",
+            "score": null,
+            "rules": [],
+            "matched_alias": "THEOPHYLLINE",
+            "candidates": null,
+            "drug": {
+              "name": "THEOPHYLLINE",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1",
+              "mechanisms": [
+                "Phosphodiesterase 4 inhibitor",
+                "Phosphodiesterase 3 inhibitor",
+                "Adenosine receptor antagonist"
+              ],
+              "trials": 1
+            }
+          }
+        ]
+      },
+      "resolver_blocked": {},
+      "item_linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1355736",
+          "label": "THEOPHYLLINE",
+          "matched_text": "THEOPHYLLINE",
+          "matched_alias": "THEOPHYLLINE"
+        }
+      ],
+      "whole_name": {
+        "type": "Drug",
+        "id": "CHEMBL1355736",
+        "label": "THEOPHYLLINE",
+        "matched_text": "THEOPHYLLINE",
+        "matched_alias": "THEOPHYLLINE"
+      },
+      "guards": {
+        "distinct": false,
+        "radiotracer": false,
+        "qualified": false,
+        "words": [
+          "THEOPHYLLINE"
+        ],
+        "isotope_pairs": []
+      },
+      "current": {
+        "center": {
+          "id": "CHEMBL1355736",
+          "type": "Drug",
+          "label": "THEOPHYLLINE",
+          "matched_text": "THEOPHYLLINE",
+          "trials": 1,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Protein"
+          }
+        },
+        "also": []
+      },
+      "m8_exact": {
+        "center": {
+          "id": "CHEMBL1355736",
+          "type": "Drug",
+          "label": "THEOPHYLLINE",
+          "matched_text": "THEOPHYLLINE",
+          "trials": 1,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Protein"
+          }
+        },
+        "also": []
+      }
+    },
+    {
+      "input": "EVEROLIMUS",
+      "stored_aliases": [
+        {
+          "drug_id": "CHEMBL1908360",
+          "alias": "EVEROLIMUS",
+          "alias_type": "preferred_name",
+          "source": null
+        }
+      ],
+      "resolver": {
+        "raw": "EVEROLIMUS",
+        "components": [
+          {
+            "component": "EVEROLIMUS",
+            "tier": "EXACT",
+            "drug_id": "CHEMBL1908360",
+            "score": null,
+            "rules": [],
+            "matched_alias": "EVEROLIMUS",
+            "candidates": null,
+            "drug": {
+              "name": "EVEROLIMUS",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "FK506-binding protein 1A inhibitor"
+              ],
+              "trials": 9
+            }
+          }
+        ]
+      },
+      "resolver_blocked": {},
+      "item_linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1908360",
+          "label": "EVEROLIMUS",
+          "matched_text": "EVEROLIMUS",
+          "matched_alias": "EVEROLIMUS"
+        }
+      ],
+      "whole_name": {
+        "type": "Drug",
+        "id": "CHEMBL1908360",
+        "label": "EVEROLIMUS",
+        "matched_text": "EVEROLIMUS",
+        "matched_alias": "EVEROLIMUS"
+      },
+      "guards": {
+        "distinct": false,
+        "radiotracer": false,
+        "qualified": false,
+        "words": [
+          "EVEROLIMUS"
+        ],
+        "isotope_pairs": []
+      },
+      "current": {
+        "center": {
+          "id": "CHEMBL1908360",
+          "type": "Drug",
+          "label": "EVEROLIMUS",
+          "matched_text": "EVEROLIMUS",
+          "trials": 9,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": []
+      },
+      "m8_exact": {
+        "center": {
+          "id": "CHEMBL1908360",
+          "type": "Drug",
+          "label": "EVEROLIMUS",
+          "matched_text": "EVEROLIMUS",
+          "trials": 9,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": []
+      }
+    },
+    {
+      "input": "CHEMBL5315030",
+      "stored_aliases": [],
+      "resolver": {
+        "raw": "CHEMBL5315030",
+        "components": [
+          {
+            "component": "CHEMBL5315030",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      },
+      "resolver_blocked": {},
+      "item_linker": [],
+      "whole_name": null,
+      "guards": {
+        "distinct": false,
+        "radiotracer": false,
+        "qualified": false,
+        "words": [
+          "CHEMBL5315030"
+        ],
+        "isotope_pairs": []
+      },
+      "current": {
+        "center": {
+          "id": "CHEMBL5315030",
+          "type": "Drug",
+          "label": "TRASTUZUMAB VEDOTIN",
+          "matched_text": null,
+          "trials": 0,
+          "props": {
+            "max_phase_overall": "PHASE_3",
+            "drug_type": "Antibody drug conjugate"
+          }
+        },
+        "also": []
+      },
+      "m8_exact": {
+        "center": {
+          "id": "CHEMBL5315030",
+          "type": "Drug",
+          "label": "TRASTUZUMAB VEDOTIN",
+          "matched_text": null,
+          "trials": 0,
+          "props": {
+            "max_phase_overall": "PHASE_3",
+            "drug_type": "Antibody drug conjugate"
+          }
+        },
+        "also": []
+      }
+    },
+    {
+      "input": "CHEMBL1355736",
+      "stored_aliases": [],
+      "resolver": {
+        "raw": "CHEMBL1355736",
+        "components": [
+          {
+            "component": "CHEMBL1355736",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      },
+      "resolver_blocked": {},
+      "item_linker": [],
+      "whole_name": null,
+      "guards": {
+        "distinct": false,
+        "radiotracer": false,
+        "qualified": false,
+        "words": [
+          "CHEMBL1355736"
+        ],
+        "isotope_pairs": []
+      },
+      "current": {
+        "center": {
+          "id": "CHEMBL1355736",
+          "type": "Drug",
+          "label": "THEOPHYLLINE",
+          "matched_text": null,
+          "trials": 1,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Protein"
+          }
+        },
+        "also": []
+      },
+      "m8_exact": {
+        "center": {
+          "id": "CHEMBL1355736",
+          "type": "Drug",
+          "label": "THEOPHYLLINE",
+          "matched_text": null,
+          "trials": 1,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Protein"
+          }
+        },
+        "also": []
+      }
+    },
+    {
+      "input": "CHEMBL1908360",
+      "stored_aliases": [],
+      "resolver": {
+        "raw": "CHEMBL1908360",
+        "components": [
+          {
+            "component": "CHEMBL1908360",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      },
+      "resolver_blocked": {},
+      "item_linker": [],
+      "whole_name": null,
+      "guards": {
+        "distinct": false,
+        "radiotracer": false,
+        "qualified": false,
+        "words": [
+          "CHEMBL1908360"
+        ],
+        "isotope_pairs": []
+      },
+      "current": {
+        "center": {
+          "id": "CHEMBL1908360",
+          "type": "Drug",
+          "label": "EVEROLIMUS",
+          "matched_text": null,
+          "trials": 9,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": []
+      },
+      "m8_exact": {
+        "center": {
+          "id": "CHEMBL1908360",
+          "type": "Drug",
+          "label": "EVEROLIMUS",
+          "matched_text": null,
+          "trials": 9,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": []
+      }
+    }
+  ],
+  "http": [
+    {
+      "input": "Trastuzumab--vcmmae conjugate",
+      "status": 200,
+      "response": {
+        "refused": "Trastuzumab--vcmmae conjugate",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    },
+    {
+      "input": "Theophylline in dextrose 5% in plastic container",
+      "status": 200,
+      "response": {
+        "center": {
+          "id": "CHEMBL1355736",
+          "type": "Drug",
+          "label": "THEOPHYLLINE",
+          "matched_text": "Theophylline in dextrose 5% in plastic container",
+          "trials": 1,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Protein"
+          }
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 10,
+            "items": [
+              {
+                "id": "ENSG00000163485",
+                "type": "Target",
+                "label": "ADORA1",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000163485|CHEMBL1355736",
+                "weight": 0,
+                "action": "ANTAGONIST"
+              },
+              {
+                "id": "ENSG00000128271",
+                "type": "Target",
+                "label": "ADORA2A",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000128271|CHEMBL1355736",
+                "weight": 0,
+                "action": "ANTAGONIST"
+              },
+              {
+                "id": "ENSG00000170425",
+                "type": "Target",
+                "label": "ADORA2B",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000170425|CHEMBL1355736",
+                "weight": 0,
+                "action": "ANTAGONIST"
+              },
+              {
+                "id": "ENSG00000282608",
+                "type": "Target",
+                "label": "ADORA3",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000282608|CHEMBL1355736",
+                "weight": 0,
+                "action": "ANTAGONIST"
+              },
+              {
+                "id": "ENSG00000172572",
+                "type": "Target",
+                "label": "PDE3A",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000172572|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "ENSG00000152270",
+                "type": "Target",
+                "label": "PDE3B",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000152270|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "ENSG00000065989",
+                "type": "Target",
+                "label": "PDE4A",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000065989|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "ENSG00000184588",
+                "type": "Target",
+                "label": "PDE4B",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000184588|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "ENSG00000105650",
+                "type": "Target",
+                "label": "PDE4C",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000105650|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "ENSG00000113448",
+                "type": "Target",
+                "label": "PDE4D",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000113448|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          },
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "NCT02080078",
+                "type": "Trial",
+                "label": "NCT02080078",
+                "edge_id": "NCT02080078|EVALUATES|CHEMBL1355736|NCT02080078",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "A Phase I Dose Escalation Study of Erlotinib in Combination With Theophylline",
+                "start_date": "2014-09",
+                "url": "https://clinicaltrials.gov/study/NCT02080078",
+                "weight": "2014-09"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ORG:ahscancercontrolalberta",
+                "type": "Company",
+                "label": "Ahs Cancer Control Alberta",
+                "edge_id": "ORG:ahscancercontrolalberta|SPONSORS_TRIAL_OF|CHEMBL1355736|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": "40-o-(2-hydroxyethyl)-rapamycin",
+      "status": 200,
+      "response": {
+        "refused": "40-o-(2-hydroxyethyl)-rapamycin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    },
+    {
+      "input": "42-o-(2-hydroxyethyl)rapamycin",
+      "status": 200,
+      "response": {
+        "refused": "42-o-(2-hydroxyethyl)rapamycin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    },
+    {
+      "input": "TRASTUZUMAB VEDOTIN",
+      "status": 200,
+      "response": {
+        "center": {
+          "id": "CHEMBL5315030",
+          "type": "Drug",
+          "label": "TRASTUZUMAB VEDOTIN",
+          "matched_text": "TRASTUZUMAB VEDOTIN",
+          "trials": 0,
+          "props": {
+            "max_phase_overall": "PHASE_3",
+            "drug_type": "Antibody drug conjugate"
+          }
+        },
+        "also": [],
+        "groups": []
+      }
+    },
+    {
+      "input": "THEOPHYLLINE",
+      "status": 200,
+      "response": {
+        "center": {
+          "id": "CHEMBL1355736",
+          "type": "Drug",
+          "label": "THEOPHYLLINE",
+          "matched_text": "THEOPHYLLINE",
+          "trials": 1,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Protein"
+          }
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 10,
+            "items": [
+              {
+                "id": "ENSG00000163485",
+                "type": "Target",
+                "label": "ADORA1",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000163485|CHEMBL1355736",
+                "weight": 0,
+                "action": "ANTAGONIST"
+              },
+              {
+                "id": "ENSG00000128271",
+                "type": "Target",
+                "label": "ADORA2A",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000128271|CHEMBL1355736",
+                "weight": 0,
+                "action": "ANTAGONIST"
+              },
+              {
+                "id": "ENSG00000170425",
+                "type": "Target",
+                "label": "ADORA2B",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000170425|CHEMBL1355736",
+                "weight": 0,
+                "action": "ANTAGONIST"
+              },
+              {
+                "id": "ENSG00000282608",
+                "type": "Target",
+                "label": "ADORA3",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000282608|CHEMBL1355736",
+                "weight": 0,
+                "action": "ANTAGONIST"
+              },
+              {
+                "id": "ENSG00000172572",
+                "type": "Target",
+                "label": "PDE3A",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000172572|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "ENSG00000152270",
+                "type": "Target",
+                "label": "PDE3B",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000152270|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "ENSG00000065989",
+                "type": "Target",
+                "label": "PDE4A",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000065989|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "ENSG00000184588",
+                "type": "Target",
+                "label": "PDE4B",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000184588|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "ENSG00000105650",
+                "type": "Target",
+                "label": "PDE4C",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000105650|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "ENSG00000113448",
+                "type": "Target",
+                "label": "PDE4D",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000113448|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          },
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "NCT02080078",
+                "type": "Trial",
+                "label": "NCT02080078",
+                "edge_id": "NCT02080078|EVALUATES|CHEMBL1355736|NCT02080078",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "A Phase I Dose Escalation Study of Erlotinib in Combination With Theophylline",
+                "start_date": "2014-09",
+                "url": "https://clinicaltrials.gov/study/NCT02080078",
+                "weight": "2014-09"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ORG:ahscancercontrolalberta",
+                "type": "Company",
+                "label": "Ahs Cancer Control Alberta",
+                "edge_id": "ORG:ahscancercontrolalberta|SPONSORS_TRIAL_OF|CHEMBL1355736|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": "EVEROLIMUS",
+      "status": 200,
+      "response": {
+        "center": {
+          "id": "CHEMBL1908360",
+          "type": "Drug",
+          "label": "EVEROLIMUS",
+          "matched_text": "EVEROLIMUS",
+          "trials": 9,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 9,
+            "items": [
+              {
+                "id": "NCT04591431",
+                "type": "Trial",
+                "label": "NCT04591431",
+                "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+                "start_date": "2020-10-07",
+                "url": "https://clinicaltrials.gov/study/NCT04591431",
+                "weight": "2020-10-07"
+              },
+              {
+                "id": "NCT02321501",
+                "type": "Trial",
+                "label": "NCT02321501",
+                "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+                "start_date": "2016-06-22",
+                "url": "https://clinicaltrials.gov/study/NCT02321501",
+                "weight": "2016-06-22"
+              },
+              {
+                "id": "NCT01063478",
+                "type": "Trial",
+                "label": "NCT01063478",
+                "edge_id": "NCT01063478|EVALUATES|CHEMBL1908360|NCT01063478",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "Dose Escalation Study of RAD001 in Combination w/Chemotherapy & Radiation in Patients With NSCLC",
+                "start_date": "2010-02",
+                "url": "https://clinicaltrials.gov/study/NCT01063478",
+                "weight": "2010-02"
+              },
+              {
+                "id": "NCT00933777",
+                "type": "Trial",
+                "label": "NCT00933777",
+                "edge_id": "NCT00933777|EVALUATES|CHEMBL1908360|NCT00933777",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "SORAVE - Sorafenib and Everolimus in Solid Tumors",
+                "start_date": "2009-07",
+                "url": "https://clinicaltrials.gov/study/NCT00933777",
+                "weight": "2009-07"
+              },
+              {
+                "id": "NCT00457119",
+                "type": "Trial",
+                "label": "NCT00457119",
+                "edge_id": "NCT00457119|EVALUATES|CHEMBL1908360|NCT00457119",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "Combination of RAD001 With Carboplatin, Paclitaxel and Bevacizumab in Non-small-cell Lung Cancer (NSCLC) Patients",
+                "start_date": "2007-02",
+                "url": "https://clinicaltrials.gov/study/NCT00457119",
+                "weight": "2007-02"
+              },
+              {
+                "id": "NCT00401778",
+                "type": "Trial",
+                "label": "NCT00401778",
+                "edge_id": "NCT00401778|EVALUATES|CHEMBL1908360|NCT00401778",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "Trial of RAD001 in Patients With Operable Non-Small Cell Lung Cancer (NSCLC)",
+                "start_date": "2006-11",
+                "url": "https://clinicaltrials.gov/study/NCT00401778",
+                "weight": "2006-11"
+              },
+              {
+                "id": "NCT00406276",
+                "type": "Trial",
+                "label": "NCT00406276",
+                "edge_id": "NCT00406276|EVALUATES|CHEMBL1908360|NCT00406276",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "Phase I/II Trial of RAD001 Plus Docetaxel in Patients With Metastatic or Recurrent Non-Small Cell Lung Cancer",
+                "start_date": "2006-11",
+                "url": "https://clinicaltrials.gov/study/NCT00406276",
+                "weight": "2006-11"
+              },
+              {
+                "id": "NCT00124280",
+                "type": "Trial",
+                "label": "NCT00124280",
+                "edge_id": "NCT00124280|EVALUATES|CHEMBL1908360|NCT00124280",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Study Investigating the Effect of Everolimus Monotherapy in Patients With Advanced Non-small Cell Lung Cancer (NSCLC)",
+                "start_date": "2005-07",
+                "url": "https://clinicaltrials.gov/study/NCT00124280",
+                "weight": "2005-07"
+              },
+              {
+                "id": "NCT00655655",
+                "type": "Trial",
+                "label": "NCT00655655",
+                "edge_id": "NCT00655655|EVALUATES|CHEMBL1908360|NCT00655655",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "Everolimus and Vatalanib in Treating Patients With Advanced Solid Tumors",
+                "start_date": "2004-12",
+                "url": "https://clinicaltrials.gov/study/NCT00655655",
+                "weight": "2004-12"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 7,
+            "items": [
+              {
+                "id": "ORG:emoryuniversity",
+                "type": "Company",
+                "label": "Emory University",
+                "edge_id": "ORG:emoryuniversity|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:novartis",
+                "type": "Company",
+                "label": "Novartis",
+                "edge_id": "ORG:novartis|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:fondazioneperlamedicinapersonalizzata",
+                "type": "Company",
+                "label": "Fondazione Per La Medicina Personalizzata",
+                "edge_id": "ORG:fondazioneperlamedicinapersonalizzata|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:mdandersoncancercenter",
+                "type": "Company",
+                "label": "M D Anderson Cancer Center",
+                "edge_id": "ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:mayoclinic",
+                "type": "Company",
+                "label": "Mayo Clinic",
+                "edge_id": "ORG:mayoclinic|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:universityofchicago",
+                "type": "Company",
+                "label": "University Of Chicago",
+                "edge_id": "ORG:universityofchicago|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:universityofcologne",
+                "type": "Company",
+                "label": "University Of Cologne",
+                "edge_id": "ORG:universityofcologne|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          },
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ENSG00000088832",
+                "type": "Target",
+                "label": "FKBP1A",
+                "edge_id": "CHEMBL1908360|ACTS_ON|ENSG00000088832|CHEMBL1908360",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": "CHEMBL5315030",
+      "status": 200,
+      "response": {
+        "center": {
+          "id": "CHEMBL5315030",
+          "type": "Drug",
+          "label": "TRASTUZUMAB VEDOTIN",
+          "matched_text": null,
+          "trials": 0,
+          "props": {
+            "max_phase_overall": "PHASE_3",
+            "drug_type": "Antibody drug conjugate"
+          }
+        },
+        "also": [],
+        "groups": []
+      }
+    },
+    {
+      "input": "CHEMBL1355736",
+      "status": 200,
+      "response": {
+        "center": {
+          "id": "CHEMBL1355736",
+          "type": "Drug",
+          "label": "THEOPHYLLINE",
+          "matched_text": null,
+          "trials": 1,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Protein"
+          }
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 10,
+            "items": [
+              {
+                "id": "ENSG00000163485",
+                "type": "Target",
+                "label": "ADORA1",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000163485|CHEMBL1355736",
+                "weight": 0,
+                "action": "ANTAGONIST"
+              },
+              {
+                "id": "ENSG00000128271",
+                "type": "Target",
+                "label": "ADORA2A",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000128271|CHEMBL1355736",
+                "weight": 0,
+                "action": "ANTAGONIST"
+              },
+              {
+                "id": "ENSG00000170425",
+                "type": "Target",
+                "label": "ADORA2B",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000170425|CHEMBL1355736",
+                "weight": 0,
+                "action": "ANTAGONIST"
+              },
+              {
+                "id": "ENSG00000282608",
+                "type": "Target",
+                "label": "ADORA3",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000282608|CHEMBL1355736",
+                "weight": 0,
+                "action": "ANTAGONIST"
+              },
+              {
+                "id": "ENSG00000172572",
+                "type": "Target",
+                "label": "PDE3A",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000172572|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "ENSG00000152270",
+                "type": "Target",
+                "label": "PDE3B",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000152270|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "ENSG00000065989",
+                "type": "Target",
+                "label": "PDE4A",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000065989|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "ENSG00000184588",
+                "type": "Target",
+                "label": "PDE4B",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000184588|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "ENSG00000105650",
+                "type": "Target",
+                "label": "PDE4C",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000105650|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "ENSG00000113448",
+                "type": "Target",
+                "label": "PDE4D",
+                "edge_id": "CHEMBL1355736|ACTS_ON|ENSG00000113448|CHEMBL1355736",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          },
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "NCT02080078",
+                "type": "Trial",
+                "label": "NCT02080078",
+                "edge_id": "NCT02080078|EVALUATES|CHEMBL1355736|NCT02080078",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "A Phase I Dose Escalation Study of Erlotinib in Combination With Theophylline",
+                "start_date": "2014-09",
+                "url": "https://clinicaltrials.gov/study/NCT02080078",
+                "weight": "2014-09"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ORG:ahscancercontrolalberta",
+                "type": "Company",
+                "label": "Ahs Cancer Control Alberta",
+                "edge_id": "ORG:ahscancercontrolalberta|SPONSORS_TRIAL_OF|CHEMBL1355736|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": "CHEMBL1908360",
+      "status": 200,
+      "response": {
+        "center": {
+          "id": "CHEMBL1908360",
+          "type": "Drug",
+          "label": "EVEROLIMUS",
+          "matched_text": null,
+          "trials": 9,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 9,
+            "items": [
+              {
+                "id": "NCT04591431",
+                "type": "Trial",
+                "label": "NCT04591431",
+                "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+                "start_date": "2020-10-07",
+                "url": "https://clinicaltrials.gov/study/NCT04591431",
+                "weight": "2020-10-07"
+              },
+              {
+                "id": "NCT02321501",
+                "type": "Trial",
+                "label": "NCT02321501",
+                "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+                "start_date": "2016-06-22",
+                "url": "https://clinicaltrials.gov/study/NCT02321501",
+                "weight": "2016-06-22"
+              },
+              {
+                "id": "NCT01063478",
+                "type": "Trial",
+                "label": "NCT01063478",
+                "edge_id": "NCT01063478|EVALUATES|CHEMBL1908360|NCT01063478",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "Dose Escalation Study of RAD001 in Combination w/Chemotherapy & Radiation in Patients With NSCLC",
+                "start_date": "2010-02",
+                "url": "https://clinicaltrials.gov/study/NCT01063478",
+                "weight": "2010-02"
+              },
+              {
+                "id": "NCT00933777",
+                "type": "Trial",
+                "label": "NCT00933777",
+                "edge_id": "NCT00933777|EVALUATES|CHEMBL1908360|NCT00933777",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "SORAVE - Sorafenib and Everolimus in Solid Tumors",
+                "start_date": "2009-07",
+                "url": "https://clinicaltrials.gov/study/NCT00933777",
+                "weight": "2009-07"
+              },
+              {
+                "id": "NCT00457119",
+                "type": "Trial",
+                "label": "NCT00457119",
+                "edge_id": "NCT00457119|EVALUATES|CHEMBL1908360|NCT00457119",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "Combination of RAD001 With Carboplatin, Paclitaxel and Bevacizumab in Non-small-cell Lung Cancer (NSCLC) Patients",
+                "start_date": "2007-02",
+                "url": "https://clinicaltrials.gov/study/NCT00457119",
+                "weight": "2007-02"
+              },
+              {
+                "id": "NCT00401778",
+                "type": "Trial",
+                "label": "NCT00401778",
+                "edge_id": "NCT00401778|EVALUATES|CHEMBL1908360|NCT00401778",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "Trial of RAD001 in Patients With Operable Non-Small Cell Lung Cancer (NSCLC)",
+                "start_date": "2006-11",
+                "url": "https://clinicaltrials.gov/study/NCT00401778",
+                "weight": "2006-11"
+              },
+              {
+                "id": "NCT00406276",
+                "type": "Trial",
+                "label": "NCT00406276",
+                "edge_id": "NCT00406276|EVALUATES|CHEMBL1908360|NCT00406276",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "Phase I/II Trial of RAD001 Plus Docetaxel in Patients With Metastatic or Recurrent Non-Small Cell Lung Cancer",
+                "start_date": "2006-11",
+                "url": "https://clinicaltrials.gov/study/NCT00406276",
+                "weight": "2006-11"
+              },
+              {
+                "id": "NCT00124280",
+                "type": "Trial",
+                "label": "NCT00124280",
+                "edge_id": "NCT00124280|EVALUATES|CHEMBL1908360|NCT00124280",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Study Investigating the Effect of Everolimus Monotherapy in Patients With Advanced Non-small Cell Lung Cancer (NSCLC)",
+                "start_date": "2005-07",
+                "url": "https://clinicaltrials.gov/study/NCT00124280",
+                "weight": "2005-07"
+              },
+              {
+                "id": "NCT00655655",
+                "type": "Trial",
+                "label": "NCT00655655",
+                "edge_id": "NCT00655655|EVALUATES|CHEMBL1908360|NCT00655655",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "Everolimus and Vatalanib in Treating Patients With Advanced Solid Tumors",
+                "start_date": "2004-12",
+                "url": "https://clinicaltrials.gov/study/NCT00655655",
+                "weight": "2004-12"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 7,
+            "items": [
+              {
+                "id": "ORG:emoryuniversity",
+                "type": "Company",
+                "label": "Emory University",
+                "edge_id": "ORG:emoryuniversity|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:novartis",
+                "type": "Company",
+                "label": "Novartis",
+                "edge_id": "ORG:novartis|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:fondazioneperlamedicinapersonalizzata",
+                "type": "Company",
+                "label": "Fondazione Per La Medicina Personalizzata",
+                "edge_id": "ORG:fondazioneperlamedicinapersonalizzata|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:mdandersoncancercenter",
+                "type": "Company",
+                "label": "M D Anderson Cancer Center",
+                "edge_id": "ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:mayoclinic",
+                "type": "Company",
+                "label": "Mayo Clinic",
+                "edge_id": "ORG:mayoclinic|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:universityofchicago",
+                "type": "Company",
+                "label": "University Of Chicago",
+                "edge_id": "ORG:universityofchicago|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:universityofcologne",
+                "type": "Company",
+                "label": "University Of Cologne",
+                "edge_id": "ORG:universityofcologne|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          },
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ENSG00000088832",
+                "type": "Target",
+                "label": "FKBP1A",
+                "edge_id": "CHEMBL1908360|ACTS_ON|ENSG00000088832|CHEMBL1908360",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "lifecycle": {
+    "pid": 13188,
+    "port": 8892,
+    "port_closed": true,
+    "served_html_equals_worktree": true
+  }
+}

@@ -1,0 +1,1735 @@
+{
+  "cases": 113,
+  "aliases_checked": 7511,
+  "alias_anomalies": 282,
+  "cache_errors": [],
+  "new_lone_alias_refusals": [
+    {
+      "input": "(177)lu-dotatate",
+      "stored": {
+        "drug_id": "CHEMBL4297545",
+        "alias": "(177)lu-dotatate",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "177)lu-dotatate",
+          "matched_text": "177)lu-dotatate",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL4297545",
+          "label": "LUTETIUM OXODOTREOTIDE LU-177",
+          "matched_text": "(177)lu-dotatate",
+          "matched_alias": "(177)lu-dotatate"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL4297545"
+      ],
+      "resolver": {
+        "raw": "(177)lu-dotatate",
+        "components": [
+          {
+            "component": "lu-dotatate",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "(124I)-CLR1404",
+      "stored": {
+        "drug_id": "CHEMBL4297390",
+        "alias": "(124I)-CLR1404",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "124I)-CLR1404",
+          "matched_text": "124I)-CLR1404",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL4297390",
+          "label": "NM-404 I-124",
+          "matched_text": "(124I)-CLR1404",
+          "matched_alias": "(124I)-CLR1404"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL4297390"
+      ],
+      "resolver": {
+        "raw": "(124I)-CLR1404",
+        "components": [
+          {
+            "component": "CLR1404",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped",
+              "dev_code_no_fuzzy"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "alphanumeric development code: approximate matching disabled to avoid binding to a neighbouring code"
+          }
+        ]
+      }
+    },
+    {
+      "input": "Trastuzumab--vcmmae conjugate",
+      "stored": {
+        "drug_id": "CHEMBL5315030",
+        "alias": "Trastuzumab--vcmmae conjugate",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Trastuzumab--vcmmae conjugate",
+          "matched_text": "Trastuzumab--vcmmae conjugate",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL5315030",
+          "label": "TRASTUZUMAB VEDOTIN",
+          "matched_text": "Trastuzumab--vcmmae conjugate",
+          "matched_alias": "Trastuzumab--vcmmae conjugate"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL5315030"
+      ],
+      "resolver": {
+        "raw": "Trastuzumab--vcmmae conjugate",
+        "components": [
+          {
+            "component": "Trastuzumab--vcmmae conjugate",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL5315030",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Trastuzumab--vcmmae conjugate",
+            "candidates": null,
+            "drug": {
+              "name": "TRASTUZUMAB VEDOTIN",
+              "drug_type": "Antibody drug conjugate",
+              "max_phase_overall": "PHASE_3",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Pegylated interferon alfa-2a",
+      "stored": {
+        "drug_id": "CHEMBL1201560",
+        "alias": "Pegylated interferon alfa-2a",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Pegylated interferon alfa-2a",
+          "matched_text": "Pegylated interferon alfa-2a",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Pegylated interferon",
+          "matched_text": "Pegylated interferon",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201560",
+          "label": "PEGINTERFERON ALFA-2A",
+          "matched_text": "alfa-2a",
+          "matched_alias": "alfa-2a"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201560"
+      ],
+      "resolver": {
+        "raw": "Pegylated interferon alfa-2a",
+        "components": [
+          {
+            "component": "Pegylated interferon alfa-2a",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      }
+    },
+    {
+      "input": "Pegfilgrastim apgf",
+      "stored": {
+        "drug_id": "CHEMBL1201568",
+        "alias": "Pegfilgrastim apgf",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Pegfilgrastim apgf",
+          "matched_text": "Pegfilgrastim apgf",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201568",
+          "label": "PEGFILGRASTIM",
+          "matched_text": "Pegfilgrastim apgf",
+          "matched_alias": "Pegfilgrastim apgf"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201568"
+      ],
+      "resolver": {
+        "raw": "Pegfilgrastim apgf",
+        "components": [
+          {
+            "component": "Pegfilgrastim apgf",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201568",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Pegfilgrastim apgf",
+            "candidates": null,
+            "drug": {
+              "name": "PEGFILGRASTIM",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Granulocyte colony stimulating factor receptor agonist"
+              ],
+              "trials": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Pegfilgrastim bmez",
+      "stored": {
+        "drug_id": "CHEMBL1201568",
+        "alias": "Pegfilgrastim bmez",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Pegfilgrastim bmez",
+          "matched_text": "Pegfilgrastim bmez",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201568",
+          "label": "PEGFILGRASTIM",
+          "matched_text": "Pegfilgrastim bmez",
+          "matched_alias": "Pegfilgrastim bmez"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201568"
+      ],
+      "resolver": {
+        "raw": "Pegfilgrastim bmez",
+        "components": [
+          {
+            "component": "Pegfilgrastim bmez",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201568",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Pegfilgrastim bmez",
+            "candidates": null,
+            "drug": {
+              "name": "PEGFILGRASTIM",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Granulocyte colony stimulating factor receptor agonist"
+              ],
+              "trials": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Pegfilgrastim cbqv",
+      "stored": {
+        "drug_id": "CHEMBL1201568",
+        "alias": "Pegfilgrastim cbqv",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Pegfilgrastim cbqv",
+          "matched_text": "Pegfilgrastim cbqv",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201568",
+          "label": "PEGFILGRASTIM",
+          "matched_text": "Pegfilgrastim cbqv",
+          "matched_alias": "Pegfilgrastim cbqv"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201568"
+      ],
+      "resolver": {
+        "raw": "Pegfilgrastim cbqv",
+        "components": [
+          {
+            "component": "Pegfilgrastim cbqv",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201568",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Pegfilgrastim cbqv",
+            "candidates": null,
+            "drug": {
+              "name": "PEGFILGRASTIM",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Granulocyte colony stimulating factor receptor agonist"
+              ],
+              "trials": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Pegfilgrastim fpgk",
+      "stored": {
+        "drug_id": "CHEMBL1201568",
+        "alias": "Pegfilgrastim fpgk",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Pegfilgrastim fpgk",
+          "matched_text": "Pegfilgrastim fpgk",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201568",
+          "label": "PEGFILGRASTIM",
+          "matched_text": "Pegfilgrastim fpgk",
+          "matched_alias": "Pegfilgrastim fpgk"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201568"
+      ],
+      "resolver": {
+        "raw": "Pegfilgrastim fpgk",
+        "components": [
+          {
+            "component": "Pegfilgrastim fpgk",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201568",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Pegfilgrastim fpgk",
+            "candidates": null,
+            "drug": {
+              "name": "PEGFILGRASTIM",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Granulocyte colony stimulating factor receptor agonist"
+              ],
+              "trials": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Pegfilgrastim jmdb",
+      "stored": {
+        "drug_id": "CHEMBL1201568",
+        "alias": "Pegfilgrastim jmdb",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Pegfilgrastim jmdb",
+          "matched_text": "Pegfilgrastim jmdb",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201568",
+          "label": "PEGFILGRASTIM",
+          "matched_text": "Pegfilgrastim jmdb",
+          "matched_alias": "Pegfilgrastim jmdb"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201568"
+      ],
+      "resolver": {
+        "raw": "Pegfilgrastim jmdb",
+        "components": [
+          {
+            "component": "Pegfilgrastim jmdb",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201568",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Pegfilgrastim jmdb",
+            "candidates": null,
+            "drug": {
+              "name": "PEGFILGRASTIM",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Granulocyte colony stimulating factor receptor agonist"
+              ],
+              "trials": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Pegfilgrastim pbbk",
+      "stored": {
+        "drug_id": "CHEMBL1201568",
+        "alias": "Pegfilgrastim pbbk",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Pegfilgrastim pbbk",
+          "matched_text": "Pegfilgrastim pbbk",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201568",
+          "label": "PEGFILGRASTIM",
+          "matched_text": "Pegfilgrastim pbbk",
+          "matched_alias": "Pegfilgrastim pbbk"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201568"
+      ],
+      "resolver": {
+        "raw": "Pegfilgrastim pbbk",
+        "components": [
+          {
+            "component": "Pegfilgrastim pbbk",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201568",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Pegfilgrastim pbbk",
+            "candidates": null,
+            "drug": {
+              "name": "PEGFILGRASTIM",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Granulocyte colony stimulating factor receptor agonist"
+              ],
+              "trials": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Trastuzumab anns",
+      "stored": {
+        "drug_id": "CHEMBL1201585",
+        "alias": "Trastuzumab anns",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Trastuzumab anns",
+          "matched_text": "Trastuzumab anns",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201585",
+          "label": "TRASTUZUMAB",
+          "matched_text": "Trastuzumab anns",
+          "matched_alias": "Trastuzumab anns"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201585"
+      ],
+      "resolver": {
+        "raw": "Trastuzumab anns",
+        "components": [
+          {
+            "component": "Trastuzumab anns",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201585",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Trastuzumab anns",
+            "candidates": null,
+            "drug": {
+              "name": "TRASTUZUMAB",
+              "drug_type": "Antibody",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+              ],
+              "trials": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Trastuzumab dkst",
+      "stored": {
+        "drug_id": "CHEMBL1201585",
+        "alias": "Trastuzumab dkst",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Trastuzumab dkst",
+          "matched_text": "Trastuzumab dkst",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201585",
+          "label": "TRASTUZUMAB",
+          "matched_text": "Trastuzumab dkst",
+          "matched_alias": "Trastuzumab dkst"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201585"
+      ],
+      "resolver": {
+        "raw": "Trastuzumab dkst",
+        "components": [
+          {
+            "component": "Trastuzumab dkst",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201585",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Trastuzumab dkst",
+            "candidates": null,
+            "drug": {
+              "name": "TRASTUZUMAB",
+              "drug_type": "Antibody",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+              ],
+              "trials": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Trastuzumab dttb",
+      "stored": {
+        "drug_id": "CHEMBL1201585",
+        "alias": "Trastuzumab dttb",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Trastuzumab dttb",
+          "matched_text": "Trastuzumab dttb",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201585",
+          "label": "TRASTUZUMAB",
+          "matched_text": "Trastuzumab dttb",
+          "matched_alias": "Trastuzumab dttb"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201585"
+      ],
+      "resolver": {
+        "raw": "Trastuzumab dttb",
+        "components": [
+          {
+            "component": "Trastuzumab dttb",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201585",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Trastuzumab dttb",
+            "candidates": null,
+            "drug": {
+              "name": "TRASTUZUMAB",
+              "drug_type": "Antibody",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+              ],
+              "trials": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Trastuzumab pkrb",
+      "stored": {
+        "drug_id": "CHEMBL1201585",
+        "alias": "Trastuzumab pkrb",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Trastuzumab pkrb",
+          "matched_text": "Trastuzumab pkrb",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201585",
+          "label": "TRASTUZUMAB",
+          "matched_text": "Trastuzumab pkrb",
+          "matched_alias": "Trastuzumab pkrb"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201585"
+      ],
+      "resolver": {
+        "raw": "Trastuzumab pkrb",
+        "components": [
+          {
+            "component": "Trastuzumab pkrb",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201585",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Trastuzumab pkrb",
+            "candidates": null,
+            "drug": {
+              "name": "TRASTUZUMAB",
+              "drug_type": "Antibody",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+              ],
+              "trials": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Trastuzumab qyyp",
+      "stored": {
+        "drug_id": "CHEMBL1201585",
+        "alias": "Trastuzumab qyyp",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Trastuzumab qyyp",
+          "matched_text": "Trastuzumab qyyp",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201585",
+          "label": "TRASTUZUMAB",
+          "matched_text": "Trastuzumab qyyp",
+          "matched_alias": "Trastuzumab qyyp"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201585"
+      ],
+      "resolver": {
+        "raw": "Trastuzumab qyyp",
+        "components": [
+          {
+            "component": "Trastuzumab qyyp",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201585",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Trastuzumab qyyp",
+            "candidates": null,
+            "drug": {
+              "name": "TRASTUZUMAB",
+              "drug_type": "Antibody",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+              ],
+              "trials": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "(68ga)hbed-psma",
+      "stored": {
+        "drug_id": "CHEMBL5095039",
+        "alias": "(68ga)hbed-psma",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "68ga)hbed-psma",
+          "matched_text": "68ga)hbed-psma",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL5095039",
+          "label": "GALLIUM GA 68 GOZETOTIDE",
+          "matched_text": "(68ga)hbed-psma",
+          "matched_alias": "(68ga)hbed-psma"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL5095039"
+      ],
+      "resolver": {
+        "raw": "(68ga)hbed-psma",
+        "components": [
+          {
+            "component": "hbed-psma",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "(68ga)psma-hbed-cc",
+      "stored": {
+        "drug_id": "CHEMBL5095039",
+        "alias": "(68ga)psma-hbed-cc",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "68ga)psma-hbed-cc",
+          "matched_text": "68ga)psma-hbed-cc",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL5095039",
+          "label": "GALLIUM GA 68 GOZETOTIDE",
+          "matched_text": "(68ga)psma-hbed-cc",
+          "matched_alias": "(68ga)psma-hbed-cc"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL5095039"
+      ],
+      "resolver": {
+        "raw": "(68ga)psma-hbed-cc",
+        "components": [
+          {
+            "component": "psma-hbed-cc",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "68-ga psma11",
+      "stored": {
+        "drug_id": "CHEMBL5095039",
+        "alias": "68-ga psma11",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "68-ga psma11",
+          "matched_text": "68-ga psma11",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL5095039",
+          "label": "GALLIUM GA 68 GOZETOTIDE",
+          "matched_text": "68-ga psma11",
+          "matched_alias": "68-ga psma11"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL5095039"
+      ],
+      "resolver": {
+        "raw": "68-ga psma11",
+        "components": [
+          {
+            "component": "68-ga psma11",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL5095039",
+            "score": null,
+            "rules": [],
+            "matched_alias": "68-ga psma11",
+            "candidates": null,
+            "drug": {
+              "name": "GALLIUM GA 68 GOZETOTIDE",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1",
+              "mechanisms": [],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "89zr panitumumab",
+      "stored": {
+        "drug_id": "CHEMBL1201827",
+        "alias": "89zr panitumumab",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "89zr panitumumab",
+          "matched_text": "89zr panitumumab",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201827",
+          "label": "PANITUMUMAB",
+          "matched_text": "89zr panitumumab",
+          "matched_alias": "89zr panitumumab"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201827"
+      ],
+      "resolver": {
+        "raw": "89zr panitumumab",
+        "components": [
+          {
+            "component": "89zr panitumumab",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201827",
+            "score": null,
+            "rules": [],
+            "matched_alias": "89zr panitumumab",
+            "candidates": null,
+            "drug": {
+              "name": "PANITUMUMAB",
+              "drug_type": "Antibody",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor"
+              ],
+              "trials": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "40-o-(2-hydroxyethyl)-rapamycin",
+      "stored": {
+        "drug_id": "CHEMBL1908360",
+        "alias": "40-o-(2-hydroxyethyl)-rapamycin",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "40-o-(2-hydroxyethyl)-rapamycin",
+          "matched_text": "40-o-(2-hydroxyethyl)-rapamycin",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1908360",
+          "label": "EVEROLIMUS",
+          "matched_text": "40-o-(2-hydroxyethyl)-rapamycin",
+          "matched_alias": "40-o-(2-hydroxyethyl)-rapamycin"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1908360"
+      ],
+      "resolver": {
+        "raw": "40-o-(2-hydroxyethyl)-rapamycin",
+        "components": [
+          {
+            "component": "-rapamycin",
+            "tier": "CONTAINED_ALIAS",
+            "drug_id": "CHEMBL413",
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "segmented_from_phrase"
+            ],
+            "matched_alias": "(-)-RAPAMYCIN",
+            "candidates": null,
+            "note": "segmented out of '40-o- -rapamycin'",
+            "drug": {
+              "name": "SIROLIMUS",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1_2",
+              "mechanisms": [
+                "FK506-binding protein 1A inhibitor"
+              ],
+              "trials": 5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "42-o-(2-hydroxyethyl)rapamycin",
+      "stored": {
+        "drug_id": "CHEMBL1908360",
+        "alias": "42-o-(2-hydroxyethyl)rapamycin",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "42-o-(2-hydroxyethyl)rapamycin",
+          "matched_text": "42-o-(2-hydroxyethyl)rapamycin",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "42-o- rapamycin",
+          "matched_text": "42-o- rapamycin",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1908360",
+          "label": "EVEROLIMUS",
+          "matched_text": "42-o-(2-hydroxyethyl)rapamycin",
+          "matched_alias": "42-o-(2-hydroxyethyl)rapamycin"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1908360"
+      ],
+      "resolver": {
+        "raw": "42-o-(2-hydroxyethyl)rapamycin",
+        "components": [
+          {
+            "component": "42-o- rapamycin",
+            "tier": "BLOCKED_CLASS_TERM",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "radiotracer_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+          }
+        ]
+      }
+    },
+    {
+      "input": "Bevacizumab adcd",
+      "stored": {
+        "drug_id": "CHEMBL1201583",
+        "alias": "Bevacizumab adcd",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Bevacizumab adcd",
+          "matched_text": "Bevacizumab adcd",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "Bevacizumab adcd",
+          "matched_alias": "Bevacizumab adcd"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201583"
+      ],
+      "resolver": {
+        "raw": "Bevacizumab adcd",
+        "components": [
+          {
+            "component": "Bevacizumab adcd",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201583",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Bevacizumab adcd",
+            "candidates": null,
+            "drug": {
+              "name": "BEVACIZUMAB",
+              "drug_type": "Antibody",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Vascular endothelial growth factor A inhibitor"
+              ],
+              "trials": 122
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Bevacizumab awwb",
+      "stored": {
+        "drug_id": "CHEMBL1201583",
+        "alias": "Bevacizumab awwb",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Bevacizumab awwb",
+          "matched_text": "Bevacizumab awwb",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "Bevacizumab awwb",
+          "matched_alias": "Bevacizumab awwb"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201583"
+      ],
+      "resolver": {
+        "raw": "Bevacizumab awwb",
+        "components": [
+          {
+            "component": "Bevacizumab awwb",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201583",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Bevacizumab awwb",
+            "candidates": null,
+            "drug": {
+              "name": "BEVACIZUMAB",
+              "drug_type": "Antibody",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Vascular endothelial growth factor A inhibitor"
+              ],
+              "trials": 122
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Bevacizumab bvzr",
+      "stored": {
+        "drug_id": "CHEMBL1201583",
+        "alias": "Bevacizumab bvzr",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Bevacizumab bvzr",
+          "matched_text": "Bevacizumab bvzr",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "Bevacizumab bvzr",
+          "matched_alias": "Bevacizumab bvzr"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201583"
+      ],
+      "resolver": {
+        "raw": "Bevacizumab bvzr",
+        "components": [
+          {
+            "component": "Bevacizumab bvzr",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201583",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Bevacizumab bvzr",
+            "candidates": null,
+            "drug": {
+              "name": "BEVACIZUMAB",
+              "drug_type": "Antibody",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Vascular endothelial growth factor A inhibitor"
+              ],
+              "trials": 122
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Bevacizumab maly",
+      "stored": {
+        "drug_id": "CHEMBL1201583",
+        "alias": "Bevacizumab maly",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Bevacizumab maly",
+          "matched_text": "Bevacizumab maly",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "Bevacizumab maly",
+          "matched_alias": "Bevacizumab maly"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201583"
+      ],
+      "resolver": {
+        "raw": "Bevacizumab maly",
+        "components": [
+          {
+            "component": "Bevacizumab maly",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201583",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Bevacizumab maly",
+            "candidates": null,
+            "drug": {
+              "name": "BEVACIZUMAB",
+              "drug_type": "Antibody",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Vascular endothelial growth factor A inhibitor"
+              ],
+              "trials": 122
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "(18f)-fdg",
+      "stored": {
+        "drug_id": "CHEMBL2030434",
+        "alias": "(18f)-fdg",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "18f)-fdg",
+          "matched_text": "18f)-fdg",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2030434",
+          "label": "FLUDEOXYGLUCOSE F 18",
+          "matched_text": "(18f)-fdg",
+          "matched_alias": "(18f)-fdg"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL2030434"
+      ],
+      "resolver": {
+        "raw": "(18f)-fdg",
+        "components": [
+          {
+            "component": "fdg",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL2030434",
+            "score": null,
+            "rules": [
+              "extract_parenthetical"
+            ],
+            "matched_alias": "fdg",
+            "candidates": null,
+            "drug": {
+              "name": "FLUDEOXYGLUCOSE F 18",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [],
+              "trials": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "(18f)-fluorodeoxyglucose",
+      "stored": {
+        "drug_id": "CHEMBL2030434",
+        "alias": "(18f)-fluorodeoxyglucose",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "18f)-fluorodeoxyglucose",
+          "matched_text": "18f)-fluorodeoxyglucose",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2030434",
+          "label": "FLUDEOXYGLUCOSE F 18",
+          "matched_text": "(18f)-fluorodeoxyglucose",
+          "matched_alias": "(18f)-fluorodeoxyglucose"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL2030434"
+      ],
+      "resolver": {
+        "raw": "(18f)-fluorodeoxyglucose",
+        "components": [
+          {
+            "component": "fluorodeoxyglucose",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL2030434",
+            "score": null,
+            "rules": [
+              "extract_parenthetical"
+            ],
+            "matched_alias": "fluorodeoxyglucose",
+            "candidates": null,
+            "drug": {
+              "name": "FLUDEOXYGLUCOSE F 18",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [],
+              "trials": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "(18f)fluoro-2-deoxyglucose",
+      "stored": {
+        "drug_id": "CHEMBL2030434",
+        "alias": "(18f)fluoro-2-deoxyglucose",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "18f)fluoro-2-deoxyglucose",
+          "matched_text": "18f)fluoro-2-deoxyglucose",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2030434",
+          "label": "FLUDEOXYGLUCOSE F 18",
+          "matched_text": "(18f)fluoro-2-deoxyglucose",
+          "matched_alias": "(18f)fluoro-2-deoxyglucose"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL2030434"
+      ],
+      "resolver": {
+        "raw": "(18f)fluoro-2-deoxyglucose",
+        "components": [
+          {
+            "component": "fluoro-2-deoxyglucose",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "extract_parenthetical",
+              "isotope_label_skipped"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "lipo-dox",
+      "stored": {
+        "drug_id": "CHEMBL53463",
+        "alias": "lipo-dox",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "lipo-dox",
+          "matched_text": "lipo-dox",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL53463",
+          "label": "DOXORUBICIN",
+          "matched_text": "lipo-dox",
+          "matched_alias": "lipo-dox"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL53463"
+      ],
+      "resolver": {
+        "raw": "lipo-dox",
+        "components": [
+          {
+            "component": "lipo-dox",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL53463",
+            "score": null,
+            "rules": [],
+            "matched_alias": "lipo-dox",
+            "candidates": null,
+            "drug": {
+              "name": "DOXORUBICIN",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "DNA topoisomerase II alpha inhibitor"
+              ],
+              "trials": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Filgrastim aafi",
+      "stored": {
+        "drug_id": "CHEMBL1201567",
+        "alias": "Filgrastim aafi",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Filgrastim aafi",
+          "matched_text": "Filgrastim aafi",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201567",
+          "label": "FILGRASTIM",
+          "matched_text": "Filgrastim aafi",
+          "matched_alias": "Filgrastim aafi"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201567"
+      ],
+      "resolver": {
+        "raw": "Filgrastim aafi",
+        "components": [
+          {
+            "component": "Filgrastim aafi",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201567",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Filgrastim aafi",
+            "candidates": null,
+            "drug": {
+              "name": "FILGRASTIM",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Granulocyte colony stimulating factor receptor agonist"
+              ],
+              "trials": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Filgrastim ayow",
+      "stored": {
+        "drug_id": "CHEMBL1201567",
+        "alias": "Filgrastim ayow",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Filgrastim ayow",
+          "matched_text": "Filgrastim ayow",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201567",
+          "label": "FILGRASTIM",
+          "matched_text": "Filgrastim ayow",
+          "matched_alias": "Filgrastim ayow"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201567"
+      ],
+      "resolver": {
+        "raw": "Filgrastim ayow",
+        "components": [
+          {
+            "component": "Filgrastim ayow",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201567",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Filgrastim ayow",
+            "candidates": null,
+            "drug": {
+              "name": "FILGRASTIM",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Granulocyte colony stimulating factor receptor agonist"
+              ],
+              "trials": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "Filgrastim sndz",
+      "stored": {
+        "drug_id": "CHEMBL1201567",
+        "alias": "Filgrastim sndz",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Filgrastim sndz",
+          "matched_text": "Filgrastim sndz",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201567",
+          "label": "FILGRASTIM",
+          "matched_text": "Filgrastim sndz",
+          "matched_alias": "Filgrastim sndz"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201567"
+      ],
+      "resolver": {
+        "raw": "Filgrastim sndz",
+        "components": [
+          {
+            "component": "Filgrastim sndz",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201567",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Filgrastim sndz",
+            "candidates": null,
+            "drug": {
+              "name": "FILGRASTIM",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Granulocyte colony stimulating factor receptor agonist"
+              ],
+              "trials": 4
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

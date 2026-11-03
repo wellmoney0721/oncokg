@@ -127,8 +127,11 @@ def _qualified(words: list[str]) -> bool:
         # see the text with those folded ("bevacizumab-(awwb)", "bevacizumab_awwb",
         # "bevácizumab-awwb")
         plain = _plain(text)
+        # and with every separator (punctuation, underscore, spaces) read as one space,
+        # so "generic-version of", "albumin - bound" meet the multiword patterns
         return any(T.is_distinct_product(v) or T.is_radiotracer(v)
-                   for v in {text, plain, re.sub(r"(?:[^\w\s]|_)+", "-", plain).strip("-")})
+                   for v in {text, plain, re.sub(r"(?:[^\w\s]|_)+", "-", plain).strip("-"),
+                             " ".join(_alnum_words(plain))})
 
     if hit(" ".join(words)):
         return True
@@ -241,18 +244,26 @@ class OncoKG:
                     h["drug_id"] == did for h in self.dic["index"].get(stem, [])):
                 return " ".join(tokens[a:b])
         same = [k for k in range(len(tokens)) if seg[k] == seg[a]]
-        before = [k for k in same if k < a][-2:]
-        after = [k for k in same if k >= b][:2]
-        if after and T.canonical_key(tokens[after[0]]) in T.BIOSIMILAR_FDA_SUFFIXES:
-            return " ".join(tokens[a:after[0] + 1])
-        own = _alnum_words(" ".join(tokens[a:b]))
+        before = [k for k in same if k < a]
+        after = [k for k in same if k >= b]
+        # words counted after normalisation, so punctuation never uses up the budget
         prev = _alnum_words(" ".join(tokens[k] for k in before))[-2:]
         nxt = _alnum_words(" ".join(tokens[k] for k in after))[:2]
-        for ws in (prev[-1:], prev, own[:1], own[:2], nxt[:1], nxt):
-            if ws and len(ws) <= 2 and T.is_isotope_label(" ".join(ws)) and ws != own:
-                lo = before[0] if (ws is prev or ws == prev[-1:]) and before else a
-                hi = after[-1] + 1 if (ws is nxt or ws == nxt[:1]) and after else b
-                return " ".join(tokens[lo:hi])
+        own = _alnum_words(" ".join(tokens[a:b]))
+        lone = not before and not after      # the name is the whole list item
+        # an isotope label anywhere in the name ("A33 124i"), or just before or after it
+        # ("[89.Zr] trastuzumab", "trastuzumab 89 - Zr"); an isotope-shaped name counts
+        # as a name only when it stands alone ("566C", "18f"), never as the substance
+        # of a longer phrase ("18F fluorothymidine")
+        inside = [own[i:j] for i in range(len(own)) for j in (i + 1, i + 2) if j <= len(own)]
+        if lone and T.is_isotope_label(" ".join(own)):
+            inside = []                      # the whole item is one isotope-shaped name
+        name = " ".join(tokens[a:b])
+        if nxt and nxt[0].lower() in T.BIOSIMILAR_FDA_SUFFIXES:
+            return f"{name} {nxt[0]}"
+        for ws in inside + [prev[-1:], prev, nxt[:1], nxt]:
+            if ws and T.is_isotope_label(" ".join(ws)):
+                return name if ws in inside else f"{name} ({' '.join(ws)})"
         return None
 
     def _whole_name(self, text: str, blocked: dict, found: list):

@@ -308,3 +308,21 @@ def test_underscores_accents_spaced_suffixes_and_punctuated_isotopes_refuse():
     assert e.explore("bevacizumab_awwb, osimertinib")["center"]["id"] == "CHEMBL3353410"
     assert e.explore("Theophylline in dextrose 5% in plastic container")["center"]["id"] == "CHEMBL1355736"
     assert e.explore("cemiplimab-rwlc")["center"]["label"] == "CEMIPLIMAB"
+
+
+# Codex review m10
+def test_isotopes_inside_beside_or_instead_of_a_name_and_respelt_qualifiers_refuse():
+    import app
+    e = app.Engine()
+    for t in ("A33 124i", "A33 124 i", "A33 [124i]", "A33 124-I", "A33-124i",
+              "18F fluorothymidine", "18F nonexistingdrug", "[18F] fluorothymidine",
+              "trastuzumab 89 - Zr", "trastuzumab [89 - Zr]", "trastuzumab 89_Zr",
+              "generic-version of bevacizumab", "albumin - bound paclitaxel",
+              "generic_version of bevacizumab", "follow-on-biologic bevacizumab"):
+        assert e.explore(t).get("refused"), t
+    for q in ("Which trials evaluate 18F fluorothymidine?", "Which trials evaluate trastuzumab 89 - Zr?",
+              "Which trials evaluate generic-version of bevacizumab?"):
+        assert not e.kg.answer(q, use_llm=False).evidence, q
+    for name, did in (("18f", "CHEMBL2030434"), ("9-ac", "CHEMBL274070"), ("ADAKITUG", "CHEMBL5314551")):
+        assert e.explore(name)["center"]["id"] == did, name
+    assert e.explore("trastuzumab 89 - Zr, osimertinib")["center"]["id"] == "CHEMBL3353410"

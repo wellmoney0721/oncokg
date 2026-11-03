@@ -113,3 +113,14 @@ The positive lookup key (letters and digits only) was broader than every refusal
 | M9-S1 | four lone stored names refused | "Theophylline in dextrose 5% in plastic container" fixed (the item-wide isotope rule is gone; isotopes count only beside a name). Still refused, recorded as known over-refusal: `40-o-(2-hydroxyethyl)-rapamycin`, `42-o-(2-hydroxyethyl)rapamycin` (the chemical locant reads as an isotope) and `Trastuzumab--vcmmae conjugate` (an ADC, a different drug). An exact-stored-name exception was not added: 71 stored aliases carry an isotope without a hyphen ("89zr panitumumab", "Lutetium (177lu) dotatate"), and the exception would draw them as the originator. EVEROLIMUS and TRASTUZUMAB VEDOTIN remain reachable by their names and ids. |
 
 Side effect: "osimertinib with [89Zr] trastuzumab" now refuses only trastuzumab (the isotope binds to its neighbour) instead of both. Tests 337.
+
+## Round 10 (audit_evidence_claims/m10) — CHANGES REQUIRED
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M10-B1 | a stored alias ending in an isotope ("A33 124i") was accepted | every one- or two-word run inside the matched name is checked for an isotope label |
+| M10-B2 | an isotope token stood in for the substance ("18F fluorothymidine" drew FDG) | an isotope-shaped name is accepted only when it is the whole list item ("18f", "566C", "9-ac") |
+| M10-B3 | a punctuation-only token used up the two-word budget ("trastuzumab 89 - Zr") | neighbour words are counted after normalisation to letters and digits |
+| M10-B4 | respelt qualifiers ("generic-version of", "albumin - bound", "follow-on-biologic") | item guards also see the item with every separator read as one space |
+
+Tests 338.
