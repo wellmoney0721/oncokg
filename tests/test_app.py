@@ -561,3 +561,18 @@ def test_hyphenated_payload_codes_named_dyes_and_focus_words():
               "trastuzumab not merely conjugated to DM1 but also purified"):
         assert e.explore(t).get("refused"), t
     assert e.explore("trastuzumab not directly conjugated to DM1")["center"]["label"] == "TRASTUZUMAB"
+
+
+# Codex review m28
+def test_focus_words_in_label_guard_dye_codes_and_extra_modification_of_an_adc():
+    import app
+    e = app.Engine()
+    for t in ("trastuzumab not only radiolabelled but also purified",
+              "trastuzumab not simply tagged with biotin but also purified",
+              "trastuzumab linked to Cy3", "trastuzumab linked to TAMRA",
+              "trastuzumab emtansine linked to Alexa Fluor 488",
+              "trastuzumab emtansine conjugated to polyethylene glycol"):
+        assert e.explore(t).get("refused"), t
+    for t, label in (("trastuzumab not radiolabelled", "TRASTUZUMAB"),
+                     ("trastuzumab deruxtecan antibody-drug conjugate", "TRASTUZUMAB DERUXTECAN")):
+        assert e.explore(t)["center"]["label"] == label, t

@@ -242,6 +242,9 @@ _PAYLOAD_CODES = {"dm1", "dm4", "mmae", "mmaf", "sn38", "dxd", "pbd", "peg", "do
                   "emtansine", "mertansine", "deruxtecan", "vedotin", "biotin", "hrp", "gfp"}
 # "not only", "not merely": a focus, not a negation ("not only conjugated ... but also purified")
 _FOCUS = {"only", "merely", "solely", "exclusively", "just", "simply", "purely"}
+# Named dye families ("Alexa Fluor 488", "TAMRA", "BODIPY", "DyLight 650", "Texas Red")
+_DYE_STEMS = ("irdye", "alexa", "dylight", "bodipy", "tamra", "tritc", "texasred", "fluorescein",
+              "phycoerythrin", "allophycocyanin", "sulfocy", "quantumdot", "qdot")
 # Prefix pieces a negation carries through ("non-radio-immuno-conjugated")
 _PIECES = {"radio", "immuno", "bio", "chemo", "photo", "nano"}
 # Nouns that name what a drug is joined to ("linked to polyethylene glycol")
@@ -249,6 +252,19 @@ _REAGENTS = ("polyethylene", "glycol", "peg", "payload", "toxin", "dye", "fluoro
              "chelat", "polymer", "rhodamin", "cyanin", "nanoparticle", "liposom", "albumin", "biotin", "maytansin",
              "auristatin", "peptide", "linker", "cytotox",
              "radionuclid", "isotop", "dextran", "dendrimer", "micelle", "lipid")
+
+
+def _names_reagent(flat: list) -> bool:
+    """Does the text name a payload, dye, carrier or chelator? Each word, and each
+    neighbouring pair glued, so a hyphenated code counts ("SN-38", "DM-1", "Texas Red")."""
+    pieces = flat + [a + b for a, b in zip(flat, flat[1:])]
+    return any(x.startswith(_REAGENTS) or x in _PAYLOAD_CODES or x.startswith(_DYE_STEMS)
+               or re.fullmatch(r"(cy|atto|dy|af)\d{1,4}", x) for x in pieces)
+
+
+@functools.lru_cache(maxsize=4096)
+def _item_reagent(words: tuple) -> bool:
+    return _names_reagent([x.lower() for x in _alnum_words(" ".join(words))])
 
 
 @functools.lru_cache(maxsize=4096)
@@ -260,9 +276,7 @@ def _item_joined(words: tuple) -> bool:
     # what the drug would be joined to, anywhere in the item and in either order
     # ("linked to a derivative of the toxin DM1", "polyethylene glycol linked to irinotecan")
     # each word, and each neighbouring pair glued, so a hyphenated code counts ("SN-38", "DM-1")
-    pieces = flat + [a + b for a, b in zip(flat, flat[1:])]
-    reagent = any(x.startswith(_REAGENTS) or x in _PAYLOAD_CODES or x.startswith(("irdye", "alexa"))
-                  for x in pieces)
+    reagent = _names_reagent(flat)
     for i, x in enumerate(flat):
         if i and flat[i - 1] in _NOT_WORDS and x not in _FOCUS:
             # "not only / merely / solely ... but also" affirms; otherwise the negation covers the one word it negates, carried on through an adverb
@@ -299,7 +313,7 @@ def _item_has_isotope(words: tuple) -> bool:
     # "radio-immuno-conjugate"), unless a negation stands just before ("non-radio-labelled")
     negated: set = set()                     # the up-to-three words a negation governs
     for i in range(len(flat)):
-        if i and flat[i - 1] in _NOT_WORDS:
+        if i and flat[i - 1] in _NOT_WORDS and flat[i] not in _FOCUS:
             negated.update(range(i, _negated_end(flat, i)))
         if i in negated:
             continue
@@ -587,8 +601,12 @@ class OncoKG:
             return name
         # a joining word inside the matched name is the conjugate's own name
         # ("cbr96 - doxorubicin immunoconjugate"), so only the rest of the item counts
-        if (_item_joined(tuple(tokens[k] for k in same if not a <= k < b))
-                and not _payload_name(self.dic["drugs"][did]["name"])):
+        # a drug whose own name is the conjugate (TRASTUZUMAB EMTANSINE) keeps "antibody-drug
+        # conjugate", but not a further dye or carrier named beside it ("... linked to Alexa
+        # Fluor 488", "... conjugated to polyethylene glycol")
+        rest = tuple(tokens[k] for k in same if not a <= k < b)
+        if _item_joined(rest) and (not _payload_name(self.dic["drugs"][did]["name"])
+                                   or _item_reagent(rest)):
             return name
         # A one-letter element is left to the case-marked word check above: lower-case
         # chemistry ("13-cis retinoic acid") is not carbon-13.

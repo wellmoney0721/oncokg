@@ -289,3 +289,13 @@ Stored-alias sweep: no change. Tests 354.
 | M27-B2 | "trastuzumab not merely / solely / exclusively conjugated to DM1 but also purified" | focus words after "not" (only, merely, solely, exclusively, just, simply, purely) do not start a negation |
 
 "not directly conjugated to DM1" still draws trastuzumab. Stored-alias sweep: no change. Tests 355.
+
+## Round 28 (audit_evidence_claims/m28) — CHANGES REQUIRED (three blockers)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M28-B1 | "trastuzumab not only radiolabelled but also purified" (and labelled/tagged/radioactive): the focus-word repair was only in the joining guard | the label guard also does not start a negation at a focus word |
+| M28-B2 | "trastuzumab linked to Cy3", "TAMRA", "BODIPY" | dye codes cy/atto/dy/af + number, and dye families TAMRA, BODIPY, TRITC, Texas Red, DyLight, fluorescein, phycoerythrin, quantum dots |
+| M28-B3 | "trastuzumab emtansine linked to Alexa Fluor 488", "... conjugated to polyethylene glycol": the conjugate's own name exempted any further modification | a drug whose name is the conjugate keeps "antibody-drug conjugate", but a dye or carrier named outside its name refuses it |
+
+Known over-refusal (recorded): a conjugate named with its own payload spelled out beside it ("trastuzumab emtansine antibody drug conjugate with DM1 payload"). Stored-alias sweep: no change. Tests 356.
