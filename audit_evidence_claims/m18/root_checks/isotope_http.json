@@ -1,0 +1,951 @@
+[
+  {
+    "endpoint": "resolve",
+    "input": "18F fluorothymidine",
+    "status": 200,
+    "seconds": 0.02998279989697039,
+    "response": {
+      "raw": "18F fluorothymidine",
+      "components": [
+        {
+          "component": "18F fluorothymidine",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [],
+          "matched_alias": null,
+          "candidates": null
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "explore",
+    "input": "18F fluorothymidine",
+    "status": 200,
+    "seconds": 0.03153549996204674,
+    "response": {
+      "refused": "18F",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "endpoint": "ask",
+    "input": "Which trials evaluate 18F fluorothymidine?",
+    "status": 200,
+    "seconds": 0.015493900049477816,
+    "response": {
+      "question": "Which trials evaluate 18F fluorothymidine?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "18F",
+          "matched_text": "18F",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "endpoint": "resolve",
+    "input": "18-F fluorothymidine",
+    "status": 200,
+    "seconds": 0.027238500071689487,
+    "response": {
+      "raw": "18-F fluorothymidine",
+      "components": [
+        {
+          "component": "18-F fluorothymidine",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [],
+          "matched_alias": null,
+          "candidates": null
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "explore",
+    "input": "18-F fluorothymidine",
+    "status": 200,
+    "seconds": 0.030745600117370486,
+    "response": {
+      "refused": "18-F",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "endpoint": "ask",
+    "input": "Which trials evaluate 18-F fluorothymidine?",
+    "status": 200,
+    "seconds": 0.010526300175115466,
+    "response": {
+      "question": "Which trials evaluate 18-F fluorothymidine?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "18-F",
+          "matched_text": "18-F",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "endpoint": "resolve",
+    "input": "[18F] fluorothymidine",
+    "status": 200,
+    "seconds": 0.013634699862450361,
+    "response": {
+      "raw": "[18F] fluorothymidine",
+      "components": [
+        {
+          "component": "fluorothymidine",
+          "tier": "BLOCKED_CLASS_TERM",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "radiotracer_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "explore",
+    "input": "[18F] fluorothymidine",
+    "status": 200,
+    "seconds": 0.003550299908965826,
+    "response": {
+      "refused": "18F",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "endpoint": "ask",
+    "input": "Which trials evaluate [18F] fluorothymidine?",
+    "status": 200,
+    "seconds": 0.03428040002472699,
+    "response": {
+      "question": "Which trials evaluate [18F] fluorothymidine?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "18F",
+          "matched_text": "18F",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "endpoint": "resolve",
+    "input": "18F nonexistingdrug",
+    "status": 200,
+    "seconds": 0.01195800001733005,
+    "response": {
+      "raw": "18F nonexistingdrug",
+      "components": [
+        {
+          "component": "18F nonexistingdrug",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [],
+          "matched_alias": null,
+          "candidates": null
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "explore",
+    "input": "18F nonexistingdrug",
+    "status": 200,
+    "seconds": 0.03456009994260967,
+    "response": {
+      "refused": "18F",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "endpoint": "ask",
+    "input": "Which trials evaluate 18F nonexistingdrug?",
+    "status": 200,
+    "seconds": 0.013735299929976463,
+    "response": {
+      "question": "Which trials evaluate 18F nonexistingdrug?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "18F",
+          "matched_text": "18F",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "endpoint": "resolve",
+    "input": "18F",
+    "status": 200,
+    "seconds": 0.0035042997915297747,
+    "response": {
+      "raw": "18F",
+      "components": [
+        {
+          "component": "18F",
+          "tier": "BLOCKED_CLASS_TERM",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "radiotracer_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "explore",
+    "input": "18F",
+    "status": 200,
+    "seconds": 0.03771600010804832,
+    "response": {
+      "center": {
+        "id": "CHEMBL2030434",
+        "type": "Drug",
+        "label": "FLUDEOXYGLUCOSE F 18",
+        "matched_text": "18f",
+        "trials": 1,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "NCT00923273",
+              "type": "Trial",
+              "label": "NCT00923273",
+              "edge_id": "NCT00923273|EVALUATES|CHEMBL2030434|NCT00923273",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ],
+              "status": "TERMINATED",
+              "title": "Sirolimus and Pemetrexed to Treat Non-Small Cell Lung Cancer",
+              "start_date": "2008-02-29",
+              "url": "https://clinicaltrials.gov/study/NCT00923273",
+              "weight": "2008-02-29"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ORG:nationalcancerinstitute",
+              "type": "Company",
+              "label": "National Cancer Institute",
+              "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL2030434|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "NIH"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "ask",
+    "input": "Which trials evaluate 18F?",
+    "status": 200,
+    "seconds": 0.012243399862200022,
+    "response": {
+      "question": "Which trials evaluate 18F?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "18F",
+          "matched_text": "18F",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "endpoint": "resolve",
+    "input": "fluorothymidine",
+    "status": 200,
+    "seconds": 0.00868359999731183,
+    "response": {
+      "raw": "fluorothymidine",
+      "components": [
+        {
+          "component": "fluorothymidine",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [],
+          "matched_alias": null,
+          "candidates": null
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "explore",
+    "input": "fluorothymidine",
+    "status": 200,
+    "seconds": 0.0033114999532699585,
+    "response": {
+      "not_found": "fluorothymidine"
+    }
+  },
+  {
+    "endpoint": "ask",
+    "input": "Which trials evaluate fluorothymidine?",
+    "status": 200,
+    "seconds": 0.003750799922272563,
+    "response": {
+      "question": "Which trials evaluate fluorothymidine?",
+      "intent": "trials_for_entity",
+      "entities": [],
+      "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "endpoint": "resolve",
+    "input": "[18F]nonexistingdrug",
+    "status": 200,
+    "seconds": 0.004062799969688058,
+    "response": {
+      "raw": "[18F]nonexistingdrug",
+      "components": [
+        {
+          "component": "nonexistingdrug",
+          "tier": "BLOCKED_CLASS_TERM",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "radiotracer_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "explore",
+    "input": "[18F]nonexistingdrug",
+    "status": 200,
+    "seconds": 0.005653899861499667,
+    "response": {
+      "not_found": "[18F]nonexistingdrug"
+    }
+  },
+  {
+    "endpoint": "ask",
+    "input": "Which trials evaluate [18F]nonexistingdrug?",
+    "status": 200,
+    "seconds": 0.011597099946811795,
+    "response": {
+      "question": "Which trials evaluate [18F]nonexistingdrug?",
+      "intent": "trials_for_entity",
+      "entities": [],
+      "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "endpoint": "resolve",
+    "input": "18F trastuzumab",
+    "status": 200,
+    "seconds": 0.01008390006609261,
+    "response": {
+      "raw": "18F trastuzumab",
+      "components": [
+        {
+          "component": "18F trastuzumab",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [],
+          "matched_alias": null,
+          "candidates": null
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "explore",
+    "input": "18F trastuzumab",
+    "status": 200,
+    "seconds": 0.010375599842518568,
+    "response": {
+      "refused": "18F",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "endpoint": "ask",
+    "input": "Which trials evaluate 18F trastuzumab?",
+    "status": 200,
+    "seconds": 0.013773600105196238,
+    "response": {
+      "question": "Which trials evaluate 18F trastuzumab?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "18F",
+          "matched_text": "18F",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "(18F) trastuzumab",
+          "matched_text": "(18F) trastuzumab",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "endpoint": "resolve",
+    "input": "fluorodeoxyglucose f18",
+    "status": 200,
+    "seconds": 0.028184300055727363,
+    "response": {
+      "raw": "fluorodeoxyglucose f18",
+      "components": [
+        {
+          "component": "fluorodeoxyglucose f18",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL2030434",
+          "score": null,
+          "rules": [],
+          "matched_alias": "Fluorodeoxyglucose f 18",
+          "candidates": null,
+          "drug": {
+            "name": "FLUDEOXYGLUCOSE F 18",
+            "drug_type": "Small molecule",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [],
+            "trials": 1
+          }
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "explore",
+    "input": "fluorodeoxyglucose f18",
+    "status": 200,
+    "seconds": 0.031795599963516,
+    "response": {
+      "center": {
+        "id": "CHEMBL2030434",
+        "type": "Drug",
+        "label": "FLUDEOXYGLUCOSE F 18",
+        "matched_text": "Fluorodeoxyglucose f 18",
+        "trials": 1,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "NCT00923273",
+              "type": "Trial",
+              "label": "NCT00923273",
+              "edge_id": "NCT00923273|EVALUATES|CHEMBL2030434|NCT00923273",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ],
+              "status": "TERMINATED",
+              "title": "Sirolimus and Pemetrexed to Treat Non-Small Cell Lung Cancer",
+              "start_date": "2008-02-29",
+              "url": "https://clinicaltrials.gov/study/NCT00923273",
+              "weight": "2008-02-29"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ORG:nationalcancerinstitute",
+              "type": "Company",
+              "label": "National Cancer Institute",
+              "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL2030434|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "NIH"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "ask",
+    "input": "Which trials evaluate fluorodeoxyglucose f18?",
+    "status": 200,
+    "seconds": 0.014700400177389383,
+    "response": {
+      "question": "Which trials evaluate fluorodeoxyglucose f18?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2030434",
+          "label": "FLUDEOXYGLUCOSE F 18",
+          "matched_text": "fluorodeoxyglucose f18",
+          "matched_alias": "Fluorodeoxyglucose f 18"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT00923273 (PHASE1, PHASE2, TERMINATED) evaluates FLUDEOXYGLUCOSE F 18 [NCT00923273]\n\nScope: 1 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT00923273 (PHASE1, PHASE2, TERMINATED) evaluates FLUDEOXYGLUCOSE F 18",
+          "relation": "EVALUATES",
+          "edge_id": "NCT00923273|EVALUATES|CHEMBL2030434|NCT00923273",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00923273",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 0.98,
+          "resolution_tier": "ALIAS",
+          "url": "https://clinicaltrials.gov/study/NCT00923273",
+          "stated_intervention": "FDG-PET",
+          "title": "Sirolimus and Pemetrexed to Treat Non-Small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "resolve",
+    "input": "CHEMBL2030434",
+    "status": 200,
+    "seconds": 0.027341699926182628,
+    "response": {
+      "raw": "CHEMBL2030434",
+      "components": [
+        {
+          "component": "CHEMBL2030434",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [],
+          "matched_alias": null,
+          "candidates": null
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "explore",
+    "input": "CHEMBL2030434",
+    "status": 200,
+    "seconds": 0.0504016000777483,
+    "response": {
+      "center": {
+        "id": "CHEMBL2030434",
+        "type": "Drug",
+        "label": "FLUDEOXYGLUCOSE F 18",
+        "matched_text": null,
+        "trials": 1,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "NCT00923273",
+              "type": "Trial",
+              "label": "NCT00923273",
+              "edge_id": "NCT00923273|EVALUATES|CHEMBL2030434|NCT00923273",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ],
+              "status": "TERMINATED",
+              "title": "Sirolimus and Pemetrexed to Treat Non-Small Cell Lung Cancer",
+              "start_date": "2008-02-29",
+              "url": "https://clinicaltrials.gov/study/NCT00923273",
+              "weight": "2008-02-29"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ORG:nationalcancerinstitute",
+              "type": "Company",
+              "label": "National Cancer Institute",
+              "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL2030434|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "NIH"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "resolve",
+    "input": "124I-A33",
+    "status": 200,
+    "seconds": 0.0030683998484164476,
+    "response": {
+      "raw": "124I-A33",
+      "components": [
+        {
+          "component": "124I-A33",
+          "tier": "BLOCKED_CLASS_TERM",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "radiotracer_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "explore",
+    "input": "124I-A33",
+    "status": 200,
+    "seconds": 0.002326600020751357,
+    "response": {
+      "not_found": "124I-A33"
+    }
+  },
+  {
+    "endpoint": "ask",
+    "input": "Which trials evaluate 124I-A33?",
+    "status": 200,
+    "seconds": 0.0030660999473184347,
+    "response": {
+      "question": "Which trials evaluate 124I-A33?",
+      "intent": "trials_for_entity",
+      "entities": [],
+      "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "endpoint": "resolve",
+    "input": "A33 124i",
+    "status": 200,
+    "seconds": 0.03450229996815324,
+    "response": {
+      "raw": "A33 124i",
+      "components": [
+        {
+          "component": "A33 124i",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL5314551",
+          "score": null,
+          "rules": [],
+          "matched_alias": "A33 124i",
+          "candidates": null,
+          "drug": {
+            "name": "ADAKITUG",
+            "drug_type": "Antibody",
+            "max_phase_overall": "PHASE_2",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Interleukin-8 inhibitor"
+            ],
+            "trials": 0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "explore",
+    "input": "A33 124i",
+    "status": 200,
+    "seconds": 0.003959200112149119,
+    "response": {
+      "refused": "A33 124i",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    }
+  },
+  {
+    "endpoint": "ask",
+    "input": "Which trials evaluate A33 124i?",
+    "status": 200,
+    "seconds": 0.004149100044742227,
+    "response": {
+      "question": "Which trials evaluate A33 124i?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "A33 124i",
+          "matched_text": "A33 124i",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "endpoint": "resolve",
+    "input": "ADAKITUG",
+    "status": 200,
+    "seconds": 0.02510989992879331,
+    "response": {
+      "raw": "ADAKITUG",
+      "components": [
+        {
+          "component": "ADAKITUG",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL5314551",
+          "score": null,
+          "rules": [],
+          "matched_alias": "ADAKITUG",
+          "candidates": null,
+          "drug": {
+            "name": "ADAKITUG",
+            "drug_type": "Antibody",
+            "max_phase_overall": "PHASE_2",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Interleukin-8 inhibitor"
+            ],
+            "trials": 0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "explore",
+    "input": "ADAKITUG",
+    "status": 200,
+    "seconds": 0.037312000058591366,
+    "response": {
+      "center": {
+        "id": "CHEMBL5314551",
+        "type": "Drug",
+        "label": "ADAKITUG",
+        "matched_text": "ADAKITUG",
+        "trials": 0,
+        "props": {
+          "max_phase_overall": "PHASE_2",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000169429",
+              "type": "Target",
+              "label": "CXCL8",
+              "edge_id": "CHEMBL5314551|ACTS_ON|ENSG00000169429|CHEMBL5314551",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "ask",
+    "input": "Which trials evaluate ADAKITUG?",
+    "status": 200,
+    "seconds": 0.03907459997572005,
+    "response": {
+      "question": "Which trials evaluate ADAKITUG?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL5314551",
+          "label": "ADAKITUG",
+          "matched_text": "ADAKITUG",
+          "matched_alias": "ADAKITUG"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  }
+]

@@ -422,3 +422,18 @@ def test_a_punctuated_element_first_isotope_refuses():
         r = e.explore(t)
         assert r.get("refused") or r.get("not_found"), t
     assert not e.kg.answer("Which trials evaluate trastuzumab labelled-I-124?", use_llm=False).evidence
+
+
+# Codex review m18: element names written out, and words that say "radiolabelled"
+def test_written_out_isotopes_and_labelling_words_refuse():
+    import app
+    e = app.Engine()
+    for t in ("trastuzumab radiolabelled with iodine-124", "iodine-124 trastuzumab",
+              "trastuzumab labeled with zirconium 89", "tritiated vinblastine",
+              "trastuzumab radiotracer"):
+        assert e.explore(t).get("refused"), t
+    assert not e.kg.answer("Which trials evaluate trastuzumab radiolabelled with iodine-124?",
+                           use_llm=False).evidence
+    for t, label in (("fluorine-18 fluorodeoxyglucose", "FLUDEOXYGLUCOSE F 18"),
+                     ("lead compound osimertinib", "OSIMERTINIB")):
+        assert e.explore(t)["center"]["label"] == label, t

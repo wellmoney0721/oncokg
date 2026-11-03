@@ -151,6 +151,20 @@ def _medical_isotope_in(key: str, one_letter: bool = True) -> bool:
 
 
 
+
+# Element names written out, mapped to the symbols the mass table uses.
+_ELEMENT_NAMES = {"hydrogen": "h", "tritium": "h", "carbon": "c", "nitrogen": "n", "oxygen": "o",
+                  "fluorine": "f", "phosphorus": "p", "sulfur": "s", "sulphur": "s",
+                  "copper": "cu", "gallium": "ga", "bromine": "br", "rubidium": "rb",
+                  "strontium": "sr", "yttrium": "y", "zirconium": "zr", "technetium": "tc",
+                  "indium": "in", "iodine": "i", "samarium": "sm", "lutetium": "lu",
+                  "lutecium": "lu", "rhenium": "re", "lead": "pb", "astatine": "at",
+                  "radium": "ra", "actinium": "ac"}
+# Words that say the substance carries a radioactive label.
+_LABEL_WORDS = {"tritiated", "tritium", "radiotracer", "radiotracers", "radioligand", "radionuclide",
+                "radioconjugate", "radioimmunoconjugate", "radiopharmaceutical", "radioactive",
+                "radiolabelled", "radiolabeled", "radiolabel"}
+
 @functools.lru_cache(maxsize=4096)
 def _item_has_isotope(words: tuple) -> bool:
     """Is a medical isotope written anywhere in this list item? Worked out once per item.
@@ -160,6 +174,17 @@ def _item_has_isotope(words: tuple) -> bool:
     so "13 NSCLC" is not N-13 and "BKM120" is not M-120."""
     if _medical_isotope_in(T.canonical_key(" ".join(words)), one_letter=False):
         return True
+    flat = [x.lower() for x in _alnum_words(" ".join(words))]
+    if any(x in _LABEL_WORDS or x.startswith(("radiolabel", "radioiod")) for x in flat):
+        return True                          # "radiolabelled", "tritiated", "radiotracer"
+    # element names written out ("iodine-124", "124-iodine", "fluorine 18")
+    for a, b in zip(flat, flat[1:]):
+        for name, num in ((a, b), (b, a)):
+            el = _ELEMENT_NAMES.get(name)
+            if el and num.isdigit() and int(num[:3]) in _MEDICAL_MASS.get(el, set()):
+                return True
+        if a == "technetium" and b in ("99m", "99"):
+            return True
     for w in words:
         # the word as written, and its punctuation-separated pieces with each neighbouring
         # pair glued, so a boundary the punctuation marks is kept ("labelled-I-124")

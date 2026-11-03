@@ -194,3 +194,11 @@ Stored-alias sweep: no change. Tests 344.
 | M17-B1 | "trastuzumab labelled-I-124": punctuation was removed before the letter-boundary check, gluing the I to "labelled" | each word is also checked as its punctuation-separated pieces and every neighbouring pair glued ("I"+"124") |
 
 Stored-alias sweep: no change. Tests 345.
+
+## Round 18 (audit_evidence_claims/m18) — CHANGES REQUIRED (one blocker)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M18-B1 | "trastuzumab radiolabelled with iodine-124": element names written out | element names (iodine, fluorine, zirconium, lutetium, gallium, technetium-99m, ...) beside a medical mass, in either order, count as the isotope; words that say the substance is labelled ("radiolabelled", "tritiated", "radiotracer", "radioligand", "radiopharmaceutical", ...) refuse an unlabelled drug in the item |
+
+A drug whose own name carries the label is still allowed ("fluorine-18 fluorodeoxyglucose"). Stored-alias sweep: no change. Tests 346.
