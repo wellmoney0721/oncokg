@@ -1,0 +1,1316 @@
+{
+  "cases": [
+    {
+      "case": "refused_liposomal",
+      "question": "What does osimertinib target?",
+      "answer": "osimertinib is liposomal.",
+      "linked": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "is liposomal",
+          "matched_text": "is liposomal",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "tokens": [
+        [
+          "ENT",
+          0
+        ],
+        [
+          "ENT",
+          1
+        ]
+      ],
+      "token_entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        },
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "is liposomal",
+          "matched_text": "is liposomal",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "distinct_product",
+            "value": "is liposomal",
+            "sentence": "osimertinib is liposomal.",
+            "why": "names a distinct product (biosimilar, other formulation, tracer) the graph does not hold"
+          }
+        ],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    {
+      "case": "refused_biosimilar",
+      "question": "What does osimertinib target?",
+      "answer": "osimertinib is a biosimilar.",
+      "linked": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "a biosimilar",
+          "matched_text": "a biosimilar",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "tokens": [
+        [
+          "ENT",
+          0
+        ],
+        [
+          "W",
+          "is"
+        ],
+        [
+          "ENT",
+          1
+        ]
+      ],
+      "token_entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        },
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "a biosimilar",
+          "matched_text": "a biosimilar",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "identity",
+            "value": "OSIMERTINIB",
+            "sentence": "osimertinib is a biosimilar.",
+            "why": "two different entities joined by a verb the graph has no edge for"
+          },
+          {
+            "kind": "distinct_product",
+            "value": "a biosimilar",
+            "sentence": "osimertinib is a biosimilar.",
+            "why": "names a distinct product (biosimilar, other formulation, tracer) the graph does not hold"
+          }
+        ],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    {
+      "case": "refused_negation",
+      "question": "What does osimertinib target?",
+      "answer": "Osimertinib is not liposomal.",
+      "linked": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "not liposomal",
+          "matched_text": "not liposomal",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "tokens": [
+        [
+          "ENT",
+          0
+        ],
+        [
+          "W",
+          "is"
+        ],
+        [
+          "ENT",
+          1
+        ]
+      ],
+      "token_entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        },
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "not liposomal",
+          "matched_text": "not liposomal",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "identity",
+            "value": "OSIMERTINIB",
+            "sentence": "Osimertinib is not liposomal.",
+            "why": "two different entities joined by a verb the graph has no edge for"
+          },
+          {
+            "kind": "distinct_product",
+            "value": "not liposomal",
+            "sentence": "Osimertinib is not liposomal.",
+            "why": "names a distinct product (biosimilar, other formulation, tracer) the graph does not hold"
+          }
+        ],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    {
+      "case": "refused_alias",
+      "question": "What does osimertinib target?",
+      "answer": "liposomal Tagrisso.",
+      "linked": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "liposomal Tagrisso",
+          "matched_text": "liposomal Tagrisso",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "tokens": [
+        [
+          "ENT",
+          0
+        ]
+      ],
+      "token_entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "liposomal Tagrisso",
+          "matched_text": "liposomal Tagrisso",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "distinct_product",
+            "value": "liposomal Tagrisso",
+            "sentence": "liposomal Tagrisso.",
+            "why": "names a distinct product (biosimilar, other formulation, tracer) the graph does not hold"
+          }
+        ],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    {
+      "case": "refused_non",
+      "question": "What does osimertinib target?",
+      "answer": "Osimertinib is non-liposomal.",
+      "linked": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "is non-liposomal",
+          "matched_text": "is non-liposomal",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "tokens": [
+        [
+          "ENT",
+          0
+        ],
+        [
+          "ENT",
+          1
+        ]
+      ],
+      "token_entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        },
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "is non-liposomal",
+          "matched_text": "is non-liposomal",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "distinct_product",
+            "value": "is non-liposomal",
+            "sentence": "Osimertinib is non-liposomal.",
+            "why": "names a distinct product (biosimilar, other formulation, tracer) the graph does not hold"
+          }
+        ],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    {
+      "case": "control_ordinary",
+      "question": "What does osimertinib target?",
+      "answer": "Osimertinib is safe.",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "tokens": [
+        [
+          "ENT",
+          0
+        ],
+        [
+          "W",
+          "is"
+        ],
+        [
+          "W",
+          "safe"
+        ]
+      ],
+      "token_entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "wording",
+            "value": "safe",
+            "sentence": "Osimertinib is safe.",
+            "why": "this word makes a claim no evidence statement about these entities supports"
+          }
+        ],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    {
+      "case": "control_alias",
+      "question": "What does osimertinib target?",
+      "answer": "Tagrisso acts on EGFR.",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Tagrisso",
+          "matched_alias": "Tagrisso"
+        },
+        {
+          "type": "Target",
+          "id": "ENSG00000146648",
+          "label": "EGFR",
+          "matched_text": "EGFR"
+        }
+      ],
+      "tokens": [
+        [
+          "ENT",
+          0
+        ],
+        [
+          "W",
+          "acts"
+        ],
+        [
+          "W",
+          "on"
+        ],
+        [
+          "ENT",
+          1
+        ]
+      ],
+      "token_entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Tagrisso",
+          "matched_alias": "Tagrisso"
+        },
+        {
+          "type": "Target",
+          "id": "ENSG00000146648",
+          "label": "EGFR",
+          "matched_text": "EGFR"
+        }
+      ],
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    {
+      "case": "alias_parentheses",
+      "question": "What does osimertinib target?",
+      "answer": "Osimertinib (Tagrisso) acts on EGFR.",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        },
+        {
+          "type": "Target",
+          "id": "ENSG00000146648",
+          "label": "EGFR",
+          "matched_text": "EGFR"
+        }
+      ],
+      "tokens": [
+        [
+          "ENT",
+          0
+        ],
+        [
+          "ENT",
+          1
+        ],
+        [
+          "W",
+          "acts"
+        ],
+        [
+          "W",
+          "on"
+        ],
+        [
+          "ENT",
+          2
+        ]
+      ],
+      "token_entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Tagrisso",
+          "matched_alias": "Tagrisso"
+        },
+        {
+          "type": "Target",
+          "id": "ENSG00000146648",
+          "label": "EGFR",
+          "matched_text": "EGFR"
+        }
+      ],
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    {
+      "case": "alias_spaced_code",
+      "question": "What does osimertinib target?",
+      "answer": "AZD 9291 acts on EGFR.",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "AZD 9291",
+          "matched_alias": "AZD-9291"
+        },
+        {
+          "type": "Target",
+          "id": "ENSG00000146648",
+          "label": "EGFR",
+          "matched_text": "EGFR"
+        }
+      ],
+      "tokens": [
+        [
+          "ENT",
+          0
+        ],
+        [
+          "W",
+          "acts"
+        ],
+        [
+          "W",
+          "on"
+        ],
+        [
+          "ENT",
+          1
+        ]
+      ],
+      "token_entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "AZD 9291",
+          "matched_alias": "AZD-9291"
+        },
+        {
+          "type": "Target",
+          "id": "ENSG00000146648",
+          "label": "EGFR",
+          "matched_text": "EGFR"
+        }
+      ],
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    {
+      "case": "alias_unspaced_code",
+      "question": "What does osimertinib target?",
+      "answer": "AZD9291 acts on EGFR.",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "AZD9291",
+          "matched_alias": "AZD-9291"
+        },
+        {
+          "type": "Target",
+          "id": "ENSG00000146648",
+          "label": "EGFR",
+          "matched_text": "EGFR"
+        }
+      ],
+      "tokens": [
+        [
+          "ENT",
+          0
+        ],
+        [
+          "W",
+          "acts"
+        ],
+        [
+          "W",
+          "on"
+        ],
+        [
+          "ENT",
+          1
+        ]
+      ],
+      "token_entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "AZD9291",
+          "matched_alias": "AZD-9291"
+        },
+        {
+          "type": "Target",
+          "id": "ENSG00000146648",
+          "label": "EGFR",
+          "matched_text": "EGFR"
+        }
+      ],
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    {
+      "case": "punctuation_claim",
+      "question": "What does osimertinib target?",
+      "answer": "Osimertinib acts on EGFR!",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        },
+        {
+          "type": "Target",
+          "id": "ENSG00000146648",
+          "label": "EGFR",
+          "matched_text": "EGFR"
+        }
+      ],
+      "tokens": [
+        [
+          "ENT",
+          0
+        ],
+        [
+          "W",
+          "acts"
+        ],
+        [
+          "W",
+          "on"
+        ],
+        [
+          "ENT",
+          1
+        ]
+      ],
+      "token_entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        },
+        {
+          "type": "Target",
+          "id": "ENSG00000146648",
+          "label": "EGFR",
+          "matched_text": "EGFR"
+        }
+      ],
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "source_record": "CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "url": null
+        }
+      ],
+      "evidence_count": 1
+    },
+    {
+      "case": "refusal",
+      "question": "What is the capital of France?",
+      "answer": "This graph cannot answer that question.",
+      "linked": [],
+      "tokens": [
+        [
+          "W",
+          "this"
+        ],
+        [
+          "W",
+          "graph"
+        ],
+        [
+          "W",
+          "cannot"
+        ],
+        [
+          "W",
+          "answer"
+        ],
+        [
+          "W",
+          "that"
+        ],
+        [
+          "W",
+          "question"
+        ]
+      ],
+      "token_entities": [],
+      "intent": "unsupported",
+      "entities": [],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 0,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [],
+      "evidence_count": 0
+    },
+    {
+      "case": "verbatim_exception",
+      "question": "Which companies are developing osimertinib?",
+      "answer": "Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+      "linked": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "Astrazeneca",
+          "also_matching_ids": []
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "OSIMERTINIB",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "tokens": [
+        [
+          "ENT",
+          0
+        ],
+        [
+          "W",
+          "industry"
+        ],
+        [
+          "W",
+          "sponsor"
+        ],
+        [
+          "W",
+          "is"
+        ],
+        [
+          "W",
+          "lead"
+        ],
+        [
+          "W",
+          "sponsor"
+        ],
+        [
+          "W",
+          "of"
+        ],
+        [
+          "N",
+          "14"
+        ],
+        [
+          "W",
+          "trials"
+        ],
+        [
+          "W",
+          "evaluating"
+        ],
+        [
+          "ENT",
+          1
+        ],
+        [
+          "W",
+          "a"
+        ],
+        [
+          "W",
+          "sponsorship"
+        ],
+        [
+          "P",
+          ","
+        ],
+        [
+          "W",
+          "not"
+        ],
+        [
+          "W",
+          "evidence"
+        ],
+        [
+          "W",
+          "of"
+        ],
+        [
+          "W",
+          "developing"
+        ],
+        [
+          "ENT",
+          2
+        ]
+      ],
+      "token_entities": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "Astrazeneca",
+          "also_matching_ids": []
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "OSIMERTINIB",
+          "matched_alias": "OSIMERTINIB"
+        },
+        {
+          "type": "Pronoun",
+          "label": "the drug",
+          "want": "Drug"
+        }
+      ],
+      "intent": "companies_for_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+      },
+      "evidence": [
+        {
+          "statement": "Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT01802632, NCT02143466, NCT02224053",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT03810807, NCT06741085, NCT07535437",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "National Cancer Institute (nih sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT03191149, NCT03831932, NCT04181060",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Bristol Myers Squibb (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT06618287, NCT07680790",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Eli Lilly (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT02411448, NCT02789345",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "M D Anderson Cancer Center (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT04479306, NCT05017025",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT04425681, NCT06557096",
+          "source": "derived",
+          "url": null
+        },
+        {
+          "statement": "Shanghai Jmt-bio (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "source_record": "NCT06391944, NCT06735391",
+          "source": "derived",
+          "url": null
+        }
+      ],
+      "evidence_count": 12
+    }
+  ],
+  "punctuation_questions": [
+    {
+      "question": "Which drugs act on ALK?",
+      "intent": "drugs_for_target",
+      "entities": [
+        {
+          "type": "Target",
+          "id": "ENSG00000171094",
+          "label": "ALK",
+          "matched_text": "ALK"
+        }
+      ],
+      "answer": "Agents for this target:\n  - PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) [CHEMBL4650298]\n  - CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph) [CHEMBL3899477]\n  - ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) [CHEMBL3545360]\n  - ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph) [CHEMBL3707320]\n  - LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph) [CHEMBL3286830]\n  - ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph) [CHEMBL4113131]\n  - ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph) [CHEMBL1983268]\n  - BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) [CHEMBL3545311]\n  - CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) [CHEMBL2403108]\n  - CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph) [CHEMBL601719]\n  - ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph) [CHEMBL1738797]\n\nScope: 11 edge(s) from this graph; non-small cell lung cancer only.",
+      "evidence_count": 11
+    },
+    {
+      "question": "Which drugs act on ALK!",
+      "intent": "drugs_for_target",
+      "entities": [
+        {
+          "type": "Target",
+          "id": "ENSG00000171094",
+          "label": "ALK",
+          "matched_text": "ALK"
+        }
+      ],
+      "answer": "Agents for this target:\n  - PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) [CHEMBL4650298]\n  - CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph) [CHEMBL3899477]\n  - ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) [CHEMBL3545360]\n  - ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph) [CHEMBL3707320]\n  - LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph) [CHEMBL3286830]\n  - ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph) [CHEMBL4113131]\n  - ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph) [CHEMBL1983268]\n  - BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) [CHEMBL3545311]\n  - CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) [CHEMBL2403108]\n  - CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph) [CHEMBL601719]\n  - ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph) [CHEMBL1738797]\n\nScope: 11 edge(s) from this graph; non-small cell lung cancer only.",
+      "evidence_count": 11
+    },
+    {
+      "question": "Which drugs act on ALK:",
+      "intent": "drugs_for_target",
+      "entities": [
+        {
+          "type": "Target",
+          "id": "ENSG00000171094",
+          "label": "ALK",
+          "matched_text": "ALK"
+        }
+      ],
+      "answer": "Agents for this target:\n  - PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) [CHEMBL4650298]\n  - CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph) [CHEMBL3899477]\n  - ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) [CHEMBL3545360]\n  - ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph) [CHEMBL3707320]\n  - LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph) [CHEMBL3286830]\n  - ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph) [CHEMBL4113131]\n  - ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph) [CHEMBL1983268]\n  - BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) [CHEMBL3545311]\n  - CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) [CHEMBL2403108]\n  - CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph) [CHEMBL601719]\n  - ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph) [CHEMBL1738797]\n\nScope: 11 edge(s) from this graph; non-small cell lung cancer only.",
+      "evidence_count": 11
+    },
+    {
+      "question": "Which drugs act on ALK;",
+      "intent": "drugs_for_target",
+      "entities": [
+        {
+          "type": "Target",
+          "id": "ENSG00000171094",
+          "label": "ALK",
+          "matched_text": "ALK"
+        }
+      ],
+      "answer": "Agents for this target:\n  - PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) [CHEMBL4650298]\n  - CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph) [CHEMBL3899477]\n  - ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) [CHEMBL3545360]\n  - ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph) [CHEMBL3707320]\n  - LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph) [CHEMBL3286830]\n  - ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph) [CHEMBL4113131]\n  - ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph) [CHEMBL1983268]\n  - BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) [CHEMBL3545311]\n  - CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) [CHEMBL2403108]\n  - CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph) [CHEMBL601719]\n  - ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph) [CHEMBL1738797]\n\nScope: 11 edge(s) from this graph; non-small cell lung cancer only.",
+      "evidence_count": 11
+    },
+    {
+      "question": "Which drugs act on ALK,",
+      "intent": "drugs_for_target",
+      "entities": [
+        {
+          "type": "Target",
+          "id": "ENSG00000171094",
+          "label": "ALK",
+          "matched_text": "ALK"
+        }
+      ],
+      "answer": "Agents for this target:\n  - PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) [CHEMBL4650298]\n  - CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph) [CHEMBL3899477]\n  - ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) [CHEMBL3545360]\n  - ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph) [CHEMBL3707320]\n  - LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph) [CHEMBL3286830]\n  - ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph) [CHEMBL4113131]\n  - ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph) [CHEMBL1983268]\n  - BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) [CHEMBL3545311]\n  - CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) [CHEMBL2403108]\n  - CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph) [CHEMBL601719]\n  - ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph) [CHEMBL1738797]\n\nScope: 11 edge(s) from this graph; non-small cell lung cancer only.",
+      "evidence_count": 11
+    },
+    {
+      "question": "Which drugs act on ALK.",
+      "intent": "drugs_for_target",
+      "entities": [
+        {
+          "type": "Target",
+          "id": "ENSG00000171094",
+          "label": "ALK",
+          "matched_text": "ALK"
+        }
+      ],
+      "answer": "Agents for this target:\n  - PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) [CHEMBL4650298]\n  - CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph) [CHEMBL3899477]\n  - ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) [CHEMBL3545360]\n  - ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph) [CHEMBL3707320]\n  - LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph) [CHEMBL3286830]\n  - ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph) [CHEMBL4113131]\n  - ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph) [CHEMBL1983268]\n  - BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) [CHEMBL3545311]\n  - CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) [CHEMBL2403108]\n  - CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph) [CHEMBL601719]\n  - ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph) [CHEMBL1738797]\n\nScope: 11 edge(s) from this graph; non-small cell lung cancer only.",
+      "evidence_count": 11
+    }
+  ],
+  "alias_tokenisation": {
+    "unique_multiword_aliases": 2634,
+    "intended_linked_aliases": 2566,
+    "lost_intended_links": [
+      {
+        "alias": "500 mg metformin hydrochloride extended release tablets by purepac pharmaceutical co.",
+        "linked": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1431",
+            "label": "METFORMIN",
+            "matched_text": "metformin hydrochloride extended release tablets",
+            "matched_alias": "metformin hydrochloride extended-release tablets"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL1703",
+            "label": "METFORMIN HYDROCHLORIDE",
+            "matched_text": "metformin hydrochloride",
+            "matched_alias": "METFORMIN HYDROCHLORIDE"
+          }
+        ],
+        "token_entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1431",
+            "label": "METFORMIN",
+            "matched_text": "metformin hydrochloride extended release tablets",
+            "matched_alias": "metformin hydrochloride extended-release tablets"
+          }
+        ]
+      },
+      {
+        "alias": "N-(3-HYDROXY-7-MERCAPTO-1-OXO-4-HEPTENYL)VALYL- CYSTEINYL-2,3-DIDEHYDRO-2- AMINOBUTANOYL-,.XI.-LACTONE",
+        "linked": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL343448",
+            "label": "ROMIDEPSIN",
+            "matched_text": "N-(3-HYDROXY-7-MERCAPTO-1-OXO-4-HEPTENYL)VALYL- CYSTEINYL-2 3-DIDEHYDRO-2- AMINOBUTANOYL- XI.-LACTONE",
+            "matched_alias": "N-(3-HYDROXY-7-MERCAPTO-1-OXO-4-HEPTENYL)VALYL- CYSTEINYL-2,3-DIDEHYDRO-2- AMINOBUTANOYL-,.XI.-LACTONE"
+          }
+        ],
+        "token_entities": []
+      },
+      {
+        "alias": "THIOUREA, N-(5-BROMO-2-PYRIDINYL)-N'-(2-(2-CHLORO-3-ETHOXY-6-FLUOROPHENYL)ETHYL)-",
+        "linked": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL398891",
+            "label": "THIOUREA, N-(5-BROMO-2-PYRIDINYL)-N'-(2-(2-CHLORO-3-ETHOXY-6-FLUOROPHENYL)ETHYL)-",
+            "matched_text": "THIOUREA N-(5-BROMO-2-PYRIDINYL)-N'-(2-(2-CHLORO-3-ETHOXY-6-FLUOROPHENYL)ETHYL)-",
+            "matched_alias": "THIOUREA, N-(5-BROMO-2-PYRIDINYL)-N'-(2-(2-CHLORO-3-ETHOXY-6-FLUOROPHENYL)ETHYL)-"
+          }
+        ],
+        "token_entities": []
+      },
+      {
+        "alias": "actos tablets 1 × 45 mg",
+        "linked": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL595",
+            "label": "PIOGLITAZONE",
+            "matched_text": "actos tablets",
+            "matched_alias": "actos tablets"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL1715",
+            "label": "PIOGLITAZONE HYDROCHLORIDE",
+            "matched_text": "actos",
+            "matched_alias": "Actos"
+          }
+        ],
+        "token_entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL595",
+            "label": "PIOGLITAZONE",
+            "matched_text": "actos tablets",
+            "matched_alias": "actos tablets"
+          }
+        ]
+      },
+      {
+        "alias": "metformin hydrochloride extended-release tablets usp 750 mg",
+        "linked": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1431",
+            "label": "METFORMIN",
+            "matched_text": "metformin hydrochloride extended-release tablets",
+            "matched_alias": "metformin hydrochloride extended-release tablets"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL1703",
+            "label": "METFORMIN HYDROCHLORIDE",
+            "matched_text": "metformin hydrochloride",
+            "matched_alias": "METFORMIN HYDROCHLORIDE"
+          }
+        ],
+        "token_entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1431",
+            "label": "METFORMIN",
+            "matched_text": "metformin hydrochloride extended-release tablets",
+            "matched_alias": "metformin hydrochloride extended-release tablets"
+          }
+        ]
+      }
+    ]
+  }
+}

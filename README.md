@@ -509,13 +509,14 @@ fixed now, and its number has been reused.
     clause by clause into subject, relation and object (`src/claims.py`, rules in
     its docstring) and compared with the retrieved evidence for those entities. It
     is a set of patterns, so it is only as good as the sentence shapes it was
-    written for. Four adversarial rounds found 33, about 40, about 25 and then
-    about 20 shapes that got through (reversed nouns, clefts, a second object after "and
+    written for. Five adversarial rounds found 33, about 40, about 25, about 20 and
+    then about 15 shapes that got through (reversed nouns, clefts, a second object after "and
     on", pronouns read too early, plural pronouns, a count borrowed from a phase or
     shared by two drugs, `agonist` inside `antagonist`, headings, bracketed text,
     refused product names, words like "clinical trials" or "drug" treated as
     grammar, "approved in NSCLC", "the following safe drugs", a phase or status
-    shared by two trials, letters spelled out one by one). Each is now a regression
+    shared by two trials, letters spelled out one by one, a kind word in a heading or
+    a relative clause, "10 such trials"). Each is now a regression
     test, but a shape
     nobody has tried yet can still be misread. Known to get through: a clause whose
     words, entities and figures all come from one evidence statement about those
@@ -554,7 +555,7 @@ pip install -r requirements.txt
 python src/run_all.py              # fetch, resolve, check, build, score, render
 python src/run_all.py --offline    # rebuild from the snapshots in data/raw
 
-python -m pytest tests -q                    # 240 tests
+python -m pytest tests -q                    # 275 tests
 python src/app.py                            # try-it page: http://localhost:8765
 python src/curation_effect.py                # resolve twice, with and without curation
 python src/apply_label_corrections.py --check

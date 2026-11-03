@@ -1,0 +1,1955 @@
+[
+  {
+    "id": "heading_wrong_kind_companies",
+    "question": "What does osimertinib target?",
+    "answer": "The following companies inhibit EGFR:\n- Osimertinib",
+    "intent": "targets_of_drug",
+    "entities": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "companies",
+          "sentence": "Osimertinib companies inhibit EGFR",
+          "why": "calls something a drug or company that the evidence does not"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 1
+  },
+  {
+    "id": "heading_wrong_kind_trials",
+    "question": "What does osimertinib target?",
+    "answer": "These trials:\n- Osimertinib",
+    "intent": "targets_of_drug",
+    "entities": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "trials",
+          "sentence": "Osimertinib trials",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 1
+  },
+  {
+    "id": "heading_wrong_kind_drug",
+    "question": "What does osimertinib target?",
+    "answer": "These drugs:\n- EGFR",
+    "intent": "targets_of_drug",
+    "entities": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "drugs",
+          "sentence": "EGFR drugs",
+          "why": "calls something a drug or company that the evidence does not"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 1
+  },
+  {
+    "id": "heading_wrong_kind_org",
+    "question": "What does osimertinib target?",
+    "answer": "These organisations inhibit EGFR:\n- Osimertinib",
+    "intent": "targets_of_drug",
+    "entities": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "organisations",
+          "sentence": "Osimertinib organisations inhibit EGFR",
+          "why": "calls something a drug or company that the evidence does not"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 1
+  },
+  {
+    "id": "heading_wrong_kind_bare",
+    "question": "What does osimertinib target?",
+    "answer": "Companies inhibiting EGFR:\n- Osimertinib",
+    "intent": "targets_of_drug",
+    "entities": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "entity",
+          "value": "Companies",
+          "why": "named in the answer but not in the evidence"
+        },
+        {
+          "kind": "wording",
+          "value": "companies",
+          "sentence": "Osimertinib — Companies inhibiting EGFR",
+          "why": "calls something a drug or company that the evidence does not"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 1
+  },
+  {
+    "id": "heading_right_kind",
+    "question": "What does osimertinib target?",
+    "answer": "The following drugs inhibit EGFR:\n- Osimertinib",
+    "intent": "targets_of_drug",
+    "entities": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "checks": {
+      "grounded": true,
+      "applicable": true,
+      "unsupported_claims": [],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 1
+  },
+  {
+    "id": "heading_nsclc_rel",
+    "question": "What does osimertinib target?",
+    "answer": "The following NSCLC drugs inhibit EGFR:\n- Osimertinib",
+    "intent": "targets_of_drug",
+    "entities": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "indication",
+          "value": "lung cancer",
+          "sentence": "Osimertinib NSCLC drugs inhibit EGFR",
+          "why": "a claim about the disease itself (what a drug is for or is); the graph holds trials, not indications"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 1
+  },
+  {
+    "id": "heading_nsclc_trial",
+    "question": "What does osimertinib target?",
+    "answer": "These NSCLC trials:\n- Osimertinib",
+    "intent": "targets_of_drug",
+    "entities": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "indication",
+          "value": "lung cancer",
+          "sentence": "Osimertinib NSCLC trials",
+          "why": "a claim about the disease itself (what a drug is for or is); the graph holds trials, not indications"
+        },
+        {
+          "kind": "wording",
+          "value": "trials",
+          "sentence": "Osimertinib NSCLC trials",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 1
+  },
+  {
+    "id": "heading_safe",
+    "question": "What does osimertinib target?",
+    "answer": "The following safe drugs inhibit EGFR:\n- Osimertinib",
+    "intent": "targets_of_drug",
+    "entities": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "safe",
+          "sentence": "Osimertinib safe drugs inhibit EGFR",
+          "why": "this word makes a claim no evidence statement about these entities supports"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 1
+  },
+  {
+    "id": "heading_safe_company",
+    "question": "What does osimertinib target?",
+    "answer": "These safe companies inhibit EGFR:\n- Osimertinib",
+    "intent": "targets_of_drug",
+    "entities": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "companies",
+          "sentence": "Osimertinib safe companies inhibit EGFR",
+          "why": "calls something a drug or company that the evidence does not"
+        },
+        {
+          "kind": "wording",
+          "value": "safe",
+          "sentence": "Osimertinib safe companies inhibit EGFR",
+          "why": "this word makes a claim no evidence statement about these entities supports"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 1
+  },
+  {
+    "id": "kind_relative",
+    "question": "What does osimertinib target?",
+    "answer": "EGFR, which is inhibited by osimertinib, is a drug.",
+    "intent": "targets_of_drug",
+    "entities": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "drug",
+          "sentence": "EGFR, which is inhibited by osimertinib, is a drug.",
+          "why": "calls something a drug or company that the evidence does not"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 1
+  },
+  {
+    "id": "kind_relative_that",
+    "question": "What does osimertinib target?",
+    "answer": "EGFR that is inhibited by osimertinib is a drug.",
+    "intent": "targets_of_drug",
+    "entities": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "drug",
+          "sentence": "EGFR that is inhibited by osimertinib is a drug.",
+          "why": "calls something a drug or company that the evidence does not"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 1
+  },
+  {
+    "id": "kind_relative_drug_faithful",
+    "question": "What does osimertinib target?",
+    "answer": "Osimertinib, which inhibits EGFR, is a drug.",
+    "intent": "targets_of_drug",
+    "entities": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "checks": {
+      "grounded": true,
+      "applicable": true,
+      "unsupported_claims": [],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 1
+  },
+  {
+    "id": "kind_before_noun_faithful",
+    "question": "What does osimertinib target?",
+    "answer": "The drug osimertinib inhibits EGFR.",
+    "intent": "targets_of_drug",
+    "entities": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "checks": {
+      "grounded": true,
+      "applicable": true,
+      "unsupported_claims": [],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 1
+  },
+  {
+    "id": "kind_before_noun_wrong",
+    "question": "What does osimertinib target?",
+    "answer": "The company osimertinib inhibits EGFR.",
+    "intent": "targets_of_drug",
+    "entities": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "company",
+          "sentence": "The company osimertinib inhibits EGFR.",
+          "why": "calls something a drug or company that the evidence does not"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 1
+  },
+  {
+    "id": "group_shared_clinical",
+    "question": "Which drugs act on ALK?",
+    "answer": "LORLATINIB and PLB1003 are in clinical trials.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "clinical",
+          "sentence": "LORLATINIB and PLB1003 are in clinical trials.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        },
+        {
+          "kind": "wording",
+          "value": "trials",
+          "sentence": "LORLATINIB and PLB1003 are in clinical trials.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  },
+  {
+    "id": "group_shared_trials",
+    "question": "Which drugs act on ALK?",
+    "answer": "LORLATINIB and PLB1003 have clinical trials in this graph.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "clinical",
+          "sentence": "LORLATINIB and PLB1003 have clinical trials in this graph.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        },
+        {
+          "kind": "wording",
+          "value": "trials",
+          "sentence": "LORLATINIB and PLB1003 have clinical trials in this graph.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  },
+  {
+    "id": "group_shared_nsclc",
+    "question": "Which drugs act on ALK?",
+    "answer": "LORLATINIB and PLB1003 have NSCLC trials.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "indication",
+          "value": "lung cancer",
+          "sentence": "LORLATINIB and PLB1003 have NSCLC trials.",
+          "why": "a claim about the disease itself (what a drug is for or is); the graph holds trials, not indications"
+        },
+        {
+          "kind": "wording",
+          "value": "trials",
+          "sentence": "LORLATINIB and PLB1003 have NSCLC trials.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  },
+  {
+    "id": "group_shared_nsclc_reverse",
+    "question": "Which drugs act on ALK?",
+    "answer": "PLB1003 and LORLATINIB have NSCLC trials.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "indication",
+          "value": "lung cancer",
+          "sentence": "PLB1003 and LORLATINIB have NSCLC trials.",
+          "why": "a claim about the disease itself (what a drug is for or is); the graph holds trials, not indications"
+        },
+        {
+          "kind": "wording",
+          "value": "trials",
+          "sentence": "PLB1003 and LORLATINIB have NSCLC trials.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  },
+  {
+    "id": "group_shared_clinical_pron_survive",
+    "question": "Which drugs act on ALK?",
+    "answer": "LORLATINIB and PLB1003 inhibit ALK. They inhibit ALK. They have clinical trials.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "clinical",
+          "sentence": "They have clinical trials.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        },
+        {
+          "kind": "wording",
+          "value": "trials",
+          "sentence": "They have clinical trials.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  },
+  {
+    "id": "group_shared_clinical_elided",
+    "question": "Which drugs act on ALK?",
+    "answer": "LORLATINIB and PLB1003 inhibit ALK and have clinical trials.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "clinical",
+          "sentence": "LORLATINIB and PLB1003 inhibit ALK and have clinical trials.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        },
+        {
+          "kind": "wording",
+          "value": "trials",
+          "sentence": "LORLATINIB and PLB1003 inhibit ALK and have clinical trials.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  },
+  {
+    "id": "group_shared_clinical_subjectless_after_passive",
+    "question": "Which drugs act on ALK?",
+    "answer": "ALK is targeted by LORLATINIB and PLB1003 and is approved.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "approved",
+          "sentence": "ALK is targeted by LORLATINIB and PLB1003 and is approved.",
+          "why": "this word makes a claim no evidence statement about these entities supports"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  },
+  {
+    "id": "passive_it_drug_kind",
+    "question": "Which drugs act on ALK?",
+    "answer": "ALK is targeted by LORLATINIB and PLB1003. It is a drug.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": true,
+      "applicable": true,
+      "unsupported_claims": [],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  },
+  {
+    "id": "passive_they_drug_kind",
+    "question": "Which drugs act on ALK?",
+    "answer": "ALK is targeted by LORLATINIB and PLB1003. They are drugs.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": true,
+      "applicable": true,
+      "unsupported_claims": [],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  },
+  {
+    "id": "passive_they_clinical",
+    "question": "Which drugs act on ALK?",
+    "answer": "ALK is targeted by LORLATINIB and PLB1003. They have clinical trials.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "clinical",
+          "sentence": "They have clinical trials.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        },
+        {
+          "kind": "wording",
+          "value": "trials",
+          "sentence": "They have clinical trials.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  },
+  {
+    "id": "passive_it_clinical",
+    "question": "Which drugs act on ALK?",
+    "answer": "ALK is targeted by LORLATINIB and PLB1003. It has clinical trials.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "clinical",
+          "sentence": "It has clinical trials.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        },
+        {
+          "kind": "wording",
+          "value": "trials",
+          "sentence": "It has clinical trials.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  },
+  {
+    "id": "passive_it_clinical_reverse",
+    "question": "Which drugs act on ALK?",
+    "answer": "ALK is targeted by PLB1003 and LORLATINIB. It has clinical trials.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "clinical",
+          "sentence": "It has clinical trials.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        },
+        {
+          "kind": "wording",
+          "value": "trials",
+          "sentence": "It has clinical trials.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  },
+  {
+    "id": "object_them_faithful",
+    "question": "Which drugs act on ALK?",
+    "answer": "LORLATINIB and CRIZOTINIB inhibit ALK. ALK is targeted by them.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": true,
+      "applicable": true,
+      "unsupported_claims": [],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  },
+  {
+    "id": "object_them_wrong",
+    "question": "Which drugs act on ALK?",
+    "answer": "LORLATINIB and PLB1003 inhibit ALK. EGFR is targeted by them.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "entity",
+          "value": "EGFR",
+          "why": "named in the answer but not in the evidence"
+        },
+        {
+          "kind": "relation",
+          "value": "LORLATINIB — targeted — EGFR",
+          "sentence": "EGFR is targeted by them.",
+          "why": "no retrieved edge links these two entities this way"
+        },
+        {
+          "kind": "relation",
+          "value": "PLB1003 — targeted — EGFR",
+          "sentence": "EGFR is targeted by them.",
+          "why": "no retrieved edge links these two entities this way"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  },
+  {
+    "id": "object_them_borrow",
+    "question": "Which drugs act on ALK?",
+    "answer": "LORLATINIB and PLB1003 inhibit ALK. They are approved and ALK is targeted by them.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "approved",
+          "sentence": "They are approved and ALK is targeted by them.",
+          "why": "this word makes a claim no evidence statement about these entities supports"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  },
+  {
+    "id": "object_them_then_approval",
+    "question": "Which drugs act on ALK?",
+    "answer": "LORLATINIB and PLB1003 inhibit ALK. ALK is targeted by them. They are approved.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "approved",
+          "sentence": "They are approved.",
+          "why": "this word makes a claim no evidence statement about these entities supports"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  },
+  {
+    "id": "object_them_then_it",
+    "question": "Which drugs act on ALK?",
+    "answer": "LORLATINIB and PLB1003 inhibit ALK. ALK is targeted by them. It is approved.",
+    "intent": "drugs_for_target",
+    "entities": [
+      {
+        "type": "Target",
+        "id": "ENSG00000171094",
+        "label": "ALK",
+        "matched_text": "ALK"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "approved",
+          "sentence": "It is approved.",
+          "why": "this word makes a claim no evidence statement about these entities supports"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311",
+        "source": "Open Targets / ChEMBL",
+        "url": null
+      }
+    ],
+    "evidence_count": 11
+  }
+]

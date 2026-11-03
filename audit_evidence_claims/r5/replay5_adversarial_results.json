@@ -1,0 +1,2420 @@
+[
+  {
+    "id": "reversed_target",
+    "question": "What does osimertinib target?",
+    "answer": "EGFR acts on osimertinib.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "relation_direction",
+        "value": "EGFR acts OSIMERTINIB",
+        "sentence": "EGFR acts on osimertinib.",
+        "why": "this relation runs from a drug to a target; the sentence has it the other way or between the wrong kinds"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "relation_direction",
+          "value": "EGFR acts OSIMERTINIB",
+          "sentence": "EGFR acts on osimertinib.",
+          "why": "this relation runs from a drug to a target; the sentence has it the other way or between the wrong kinds"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "ACTS_ON",
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410"
+      }
+    ]
+  },
+  {
+    "id": "reversed_inhibition",
+    "question": "What does osimertinib target?",
+    "answer": "EGFR inhibits osimertinib.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "relation_direction",
+        "value": "EGFR inhibits OSIMERTINIB",
+        "sentence": "EGFR inhibits osimertinib.",
+        "why": "this relation runs from a drug to a target; the sentence has it the other way or between the wrong kinds"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "relation_direction",
+          "value": "EGFR inhibits OSIMERTINIB",
+          "sentence": "EGFR inhibits osimertinib.",
+          "why": "this relation runs from a drug to a target; the sentence has it the other way or between the wrong kinds"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "ACTS_ON",
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410"
+      }
+    ]
+  },
+  {
+    "id": "reversed_trial",
+    "question": "What trials evaluate Tagrisso?",
+    "answer": "osimertinib evaluates NCT03909334.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "relation_direction",
+        "value": "OSIMERTINIB evaluates NCT03909334",
+        "sentence": "osimertinib evaluates NCT03909334.",
+        "why": "this relation runs from a trial to a drug; the sentence has it the other way or between the wrong kinds"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "relation_direction",
+          "value": "OSIMERTINIB evaluates NCT03909334",
+          "sentence": "osimertinib evaluates NCT03909334.",
+          "why": "this relation runs from a trial to a drug; the sentence has it the other way or between the wrong kinds"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT03909334"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07680790"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT02411448"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04285671"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04141644"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT03535363"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04487080"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07738172"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04541407"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+        "source_record": "NCT04772235"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT05011487"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04479306"
+      }
+    ]
+  },
+  {
+    "id": "reversed_sponsor",
+    "question": "What is AstraZeneca running in NSCLC?",
+    "answer": "osimertinib sponsors AstraZeneca.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "relation_direction",
+        "value": "OSIMERTINIB sponsors Astrazeneca",
+        "sentence": "osimertinib sponsors AstraZeneca.",
+        "why": "this relation runs from a company to a drug; the sentence has it the other way or between the wrong kinds"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "relation_direction",
+          "value": "OSIMERTINIB sponsors Astrazeneca",
+          "sentence": "osimertinib sponsors AstraZeneca.",
+          "why": "this relation runs from a company to a drug; the sentence has it the other way or between the wrong kinds"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+        "source_record": "NCT00372788, NCT01605916, NCT01933932"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+        "source_record": "NCT06357533, NCT06627647, NCT06692738"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+        "source_record": "NCT00478049, NCT01933932, NCT02740985"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+        "source_record": "NCT06357533, NCT07098338, NCT07291037"
+      }
+    ]
+  },
+  {
+    "id": "wrong_target",
+    "question": "What does osimertinib target?",
+    "answer": "osimertinib inhibits ALK.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "relation",
+        "value": "OSIMERTINIB — inhibits — ALK",
+        "sentence": "osimertinib inhibits ALK.",
+        "why": "no retrieved edge links these two entities this way"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "relation",
+          "value": "OSIMERTINIB — inhibits — ALK",
+          "sentence": "osimertinib inhibits ALK.",
+          "why": "no retrieved edge links these two entities this way"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "ACTS_ON",
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410"
+      }
+    ]
+  },
+  {
+    "id": "pronoun_target_same_line",
+    "question": "What does osimertinib target?",
+    "answer": "osimertinib acts on EGFR. It inhibits ALK.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "relation",
+        "value": "OSIMERTINIB — inhibits — ALK",
+        "sentence": "It inhibits ALK.",
+        "why": "no retrieved edge links these two entities this way"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "relation",
+          "value": "OSIMERTINIB — inhibits — ALK",
+          "sentence": "It inhibits ALK.",
+          "why": "no retrieved edge links these two entities this way"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "ACTS_ON",
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410"
+      }
+    ]
+  },
+  {
+    "id": "pronoun_target_newline",
+    "question": "What does osimertinib target?",
+    "answer": "osimertinib acts on EGFR.\nIt inhibits ALK.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "relation",
+        "value": "OSIMERTINIB — inhibits — ALK",
+        "sentence": "It inhibits ALK.",
+        "why": "no retrieved edge links these two entities this way"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "relation",
+          "value": "OSIMERTINIB — inhibits — ALK",
+          "sentence": "It inhibits ALK.",
+          "why": "no retrieved edge links these two entities this way"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "ACTS_ON",
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410"
+      }
+    ]
+  },
+  {
+    "id": "pronoun_this_drug",
+    "question": "What does osimertinib target?",
+    "answer": "osimertinib acts on EGFR. This drug inhibits ALK.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "relation",
+        "value": "OSIMERTINIB — inhibits — ALK",
+        "sentence": "This drug inhibits ALK.",
+        "why": "no retrieved edge links these two entities this way"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "relation",
+          "value": "OSIMERTINIB — inhibits — ALK",
+          "sentence": "This drug inhibits ALK.",
+          "why": "no retrieved edge links these two entities this way"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "ACTS_ON",
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410"
+      }
+    ]
+  },
+  {
+    "id": "noun_inhibitor",
+    "question": "What does osimertinib target?",
+    "answer": "osimertinib is an ALK inhibitor.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "relation",
+        "value": "OSIMERTINIB — inhibitor — ALK",
+        "sentence": "osimertinib is an ALK inhibitor.",
+        "why": "no retrieved edge links these two entities this way"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "relation",
+          "value": "OSIMERTINIB — inhibitor — ALK",
+          "sentence": "osimertinib is an ALK inhibitor.",
+          "why": "no retrieved edge links these two entities this way"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "ACTS_ON",
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410"
+      }
+    ]
+  },
+  {
+    "id": "noun_egfr_inhibitor",
+    "question": "What does osimertinib target?",
+    "answer": "osimertinib is an EGFR inhibitor.",
+    "grounded": true,
+    "unsupported_claims": [],
+    "checks": {
+      "grounded": true,
+      "applicable": true,
+      "unsupported_claims": [],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "ACTS_ON",
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410"
+      }
+    ]
+  },
+  {
+    "id": "possessive",
+    "question": "What is AstraZeneca running in NSCLC?",
+    "answer": "AstraZeneca's osimertinib.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "wording",
+        "value": "astrazeneca's",
+        "sentence": "AstraZeneca's osimertinib.",
+        "why": "this word makes a claim no evidence statement about these entities supports"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "astrazeneca's",
+          "sentence": "AstraZeneca's osimertinib.",
+          "why": "this word makes a claim no evidence statement about these entities supports"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+        "source_record": "NCT00372788, NCT01605916, NCT01933932"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+        "source_record": "NCT06357533, NCT06627647, NCT06692738"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+        "source_record": "NCT00478049, NCT01933932, NCT02740985"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+        "source_record": "NCT06357533, NCT07098338, NCT07291037"
+      }
+    ]
+  },
+  {
+    "id": "possessive_relation",
+    "question": "What is AstraZeneca running in NSCLC?",
+    "answer": "AstraZeneca's osimertinib targets NSCLC.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "wording",
+        "value": "astrazeneca's",
+        "sentence": "AstraZeneca's osimertinib targets NSCLC.",
+        "why": "this word makes a claim no evidence statement about these entities supports"
+      },
+      {
+        "kind": "indication",
+        "value": "lung cancer",
+        "sentence": "AstraZeneca's osimertinib targets NSCLC.",
+        "why": "a claim about the disease itself (what a drug is for or is); the graph holds trials, not indications"
+      },
+      {
+        "kind": "relation_incomplete",
+        "value": "targets",
+        "sentence": "AstraZeneca's osimertinib targets NSCLC.",
+        "why": "a relation whose two sides could not both be identified in the sentence"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "astrazeneca's",
+          "sentence": "AstraZeneca's osimertinib targets NSCLC.",
+          "why": "this word makes a claim no evidence statement about these entities supports"
+        },
+        {
+          "kind": "indication",
+          "value": "lung cancer",
+          "sentence": "AstraZeneca's osimertinib targets NSCLC.",
+          "why": "a claim about the disease itself (what a drug is for or is); the graph holds trials, not indications"
+        },
+        {
+          "kind": "relation_incomplete",
+          "value": "targets",
+          "sentence": "AstraZeneca's osimertinib targets NSCLC.",
+          "why": "a relation whose two sides could not both be identified in the sentence"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+        "source_record": "NCT00372788, NCT01605916, NCT01933932"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+        "source_record": "NCT06357533, NCT06627647, NCT06692738"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+        "source_record": "NCT00478049, NCT01933932, NCT02740985"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+        "source_record": "NCT06357533, NCT07098338, NCT07291037"
+      }
+    ]
+  },
+  {
+    "id": "wrong_trial_phase",
+    "question": "What trials evaluate Tagrisso?",
+    "answer": "NCT03909334 is phase 3.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "phase",
+        "value": "phase 3",
+        "sentence": "NCT03909334 is phase 3.",
+        "why": "no evidence statement about these entities gives that phase"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "phase",
+          "value": "phase 3",
+          "sentence": "NCT03909334 is phase 3.",
+          "why": "no evidence statement about these entities gives that phase"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT03909334"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07680790"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT02411448"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04285671"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04141644"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT03535363"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04487080"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07738172"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04541407"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+        "source_record": "NCT04772235"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT05011487"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04479306"
+      }
+    ]
+  },
+  {
+    "id": "swapped_trial_phases",
+    "question": "What trials evaluate Tagrisso?",
+    "answer": "NCT03909334 is phase 3 and NCT07680790 is phase 2.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "phase",
+        "value": "phase 2",
+        "sentence": "NCT03909334 is phase 3 and NCT07680790 is phase 2.",
+        "why": "no evidence statement about these entities gives that phase"
+      },
+      {
+        "kind": "phase",
+        "value": "phase 3",
+        "sentence": "NCT03909334 is phase 3 and NCT07680790 is phase 2.",
+        "why": "no evidence statement about these entities gives that phase"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "phase",
+          "value": "phase 2",
+          "sentence": "NCT03909334 is phase 3 and NCT07680790 is phase 2.",
+          "why": "no evidence statement about these entities gives that phase"
+        },
+        {
+          "kind": "phase",
+          "value": "phase 3",
+          "sentence": "NCT03909334 is phase 3 and NCT07680790 is phase 2.",
+          "why": "no evidence statement about these entities gives that phase"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT03909334"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07680790"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT02411448"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04285671"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04141644"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT03535363"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04487080"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07738172"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04541407"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+        "source_record": "NCT04772235"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT05011487"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04479306"
+      }
+    ]
+  },
+  {
+    "id": "swapped_trial_phases_split",
+    "question": "What trials evaluate Tagrisso?",
+    "answer": "NCT03909334 is phase 3; NCT07680790 is phase 2.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "phase",
+        "value": "phase 2",
+        "sentence": "NCT07680790 is phase 2.",
+        "why": "no evidence statement about these entities gives that phase"
+      },
+      {
+        "kind": "phase",
+        "value": "phase 3",
+        "sentence": "NCT03909334 is phase 3;",
+        "why": "no evidence statement about these entities gives that phase"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "phase",
+          "value": "phase 2",
+          "sentence": "NCT07680790 is phase 2.",
+          "why": "no evidence statement about these entities gives that phase"
+        },
+        {
+          "kind": "phase",
+          "value": "phase 3",
+          "sentence": "NCT03909334 is phase 3;",
+          "why": "no evidence statement about these entities gives that phase"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT03909334"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07680790"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT02411448"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04285671"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04141644"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT03535363"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04487080"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07738172"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04541407"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+        "source_record": "NCT04772235"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT05011487"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04479306"
+      }
+    ]
+  },
+  {
+    "id": "wrong_trial_status",
+    "question": "What trials evaluate Tagrisso?",
+    "answer": "NCT03909334 is recruiting.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "status",
+        "value": "recruiting",
+        "sentence": "NCT03909334 is recruiting.",
+        "why": "no evidence statement about that entity gives that status"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "status",
+          "value": "recruiting",
+          "sentence": "NCT03909334 is recruiting.",
+          "why": "no evidence statement about that entity gives that status"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT03909334"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07680790"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT02411448"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04285671"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04141644"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT03535363"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04487080"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07738172"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04541407"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+        "source_record": "NCT04772235"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT05011487"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04479306"
+      }
+    ]
+  },
+  {
+    "id": "pooled_trial_status",
+    "question": "What trials evaluate Tagrisso?",
+    "answer": "NCT03909334 is recruiting and NCT03535363 is completed.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "status",
+        "value": "recruiting",
+        "sentence": "NCT03909334 is recruiting and NCT03535363 is completed.",
+        "why": "no evidence statement about that entity gives that status"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "status",
+          "value": "recruiting",
+          "sentence": "NCT03909334 is recruiting and NCT03535363 is completed.",
+          "why": "no evidence statement about that entity gives that status"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT03909334"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07680790"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT02411448"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04285671"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04141644"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT03535363"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04487080"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07738172"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04541407"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+        "source_record": "NCT04772235"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT05011487"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04479306"
+      }
+    ]
+  },
+  {
+    "id": "pooled_trial_status2",
+    "question": "What trials evaluate Tagrisso?",
+    "answer": "NCT03909334 and NCT07680790 are recruiting.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "status",
+        "value": "recruiting",
+        "sentence": "NCT03909334 and NCT07680790 are recruiting.",
+        "why": "no evidence statement about that entity gives that status"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "status",
+          "value": "recruiting",
+          "sentence": "NCT03909334 and NCT07680790 are recruiting.",
+          "why": "no evidence statement about that entity gives that status"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT03909334"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07680790"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT02411448"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04285671"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04141644"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT03535363"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04487080"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07738172"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04541407"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+        "source_record": "NCT04772235"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT05011487"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04479306"
+      }
+    ]
+  },
+  {
+    "id": "wrong_drug_count",
+    "question": "Which drugs act on ALK?",
+    "answer": "PLB1003 has 13 NSCLC trials.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "number",
+        "value": "13",
+        "sentence": "PLB1003 has 13 NSCLC trials.",
+        "why": "no evidence statement about these entities gives that figure"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "number",
+          "value": "13",
+          "sentence": "PLB1003 has 13 NSCLC trials.",
+          "why": "no evidence statement about these entities gives that figure"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "ACTS_ON",
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL2403108"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL601719"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1738797"
+      }
+    ]
+  },
+  {
+    "id": "wrong_drug_count_target",
+    "question": "Which drugs act on ALK?",
+    "answer": "PLB1003 acts on ALK with 13 NSCLC trials.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "number",
+        "value": "13",
+        "sentence": "PLB1003 acts on ALK with 13 NSCLC trials.",
+        "why": "no evidence statement about these entities gives that figure"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "number",
+          "value": "13",
+          "sentence": "PLB1003 acts on ALK with 13 NSCLC trials.",
+          "why": "no evidence statement about these entities gives that figure"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "ACTS_ON",
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL2403108"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL601719"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1738797"
+      }
+    ]
+  },
+  {
+    "id": "swapped_drug_counts",
+    "question": "Which drugs act on ALK?",
+    "answer": "PLB1003 has 13 NSCLC trials and lorlatinib has 0 NSCLC trials.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "number",
+        "value": "0",
+        "sentence": "PLB1003 has 13 NSCLC trials and lorlatinib has 0 NSCLC trials.",
+        "why": "no evidence statement about these entities gives that figure"
+      },
+      {
+        "kind": "number",
+        "value": "13",
+        "sentence": "PLB1003 has 13 NSCLC trials and lorlatinib has 0 NSCLC trials.",
+        "why": "no evidence statement about these entities gives that figure"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "number",
+          "value": "0",
+          "sentence": "PLB1003 has 13 NSCLC trials and lorlatinib has 0 NSCLC trials.",
+          "why": "no evidence statement about these entities gives that figure"
+        },
+        {
+          "kind": "number",
+          "value": "13",
+          "sentence": "PLB1003 has 13 NSCLC trials and lorlatinib has 0 NSCLC trials.",
+          "why": "no evidence statement about these entities gives that figure"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "ACTS_ON",
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL2403108"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL601719"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1738797"
+      }
+    ]
+  },
+  {
+    "id": "swapped_sponsor_counts",
+    "question": "What is AstraZeneca running in NSCLC?",
+    "answer": "AstraZeneca sponsors 10 NSCLC trials evaluating osimertinib and 14 NSCLC trials evaluating carboplatin.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "number",
+        "value": "10",
+        "sentence": "AstraZeneca sponsors 10 NSCLC trials evaluating osimertinib and 14 NSCLC trials evaluating carboplatin.",
+        "why": "no evidence statement about these entities gives that figure"
+      },
+      {
+        "kind": "number",
+        "value": "14",
+        "sentence": "AstraZeneca sponsors 10 NSCLC trials evaluating osimertinib and 14 NSCLC trials evaluating carboplatin.",
+        "why": "no evidence statement about these entities gives that figure"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "number",
+          "value": "10",
+          "sentence": "AstraZeneca sponsors 10 NSCLC trials evaluating osimertinib and 14 NSCLC trials evaluating carboplatin.",
+          "why": "no evidence statement about these entities gives that figure"
+        },
+        {
+          "kind": "number",
+          "value": "14",
+          "sentence": "AstraZeneca sponsors 10 NSCLC trials evaluating osimertinib and 14 NSCLC trials evaluating carboplatin.",
+          "why": "no evidence statement about these entities gives that figure"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+        "source_record": "NCT00372788, NCT01605916, NCT01933932"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+        "source_record": "NCT06357533, NCT06627647, NCT06692738"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+        "source_record": "NCT00478049, NCT01933932, NCT02740985"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+        "source_record": "NCT06357533, NCT07098338, NCT07291037"
+      }
+    ]
+  },
+  {
+    "id": "wrong_sponsor_count",
+    "question": "What is AstraZeneca running in NSCLC?",
+    "answer": "AstraZeneca sponsors 10 NSCLC trials evaluating osimertinib.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "number",
+        "value": "10",
+        "sentence": "AstraZeneca sponsors 10 NSCLC trials evaluating osimertinib.",
+        "why": "no evidence statement about these entities gives that figure"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "number",
+          "value": "10",
+          "sentence": "AstraZeneca sponsors 10 NSCLC trials evaluating osimertinib.",
+          "why": "no evidence statement about these entities gives that figure"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+        "source_record": "NCT00372788, NCT01605916, NCT01933932"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+        "source_record": "NCT06357533, NCT06627647, NCT06692738"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+        "source_record": "NCT00478049, NCT01933932, NCT02740985"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+        "source_record": "NCT06357533, NCT07098338, NCT07291037"
+      }
+    ]
+  },
+  {
+    "id": "wrong_trial_status_list",
+    "question": "What trials evaluate Tagrisso?",
+    "answer": "- NCT03909334: recruiting\n- NCT07680790: recruiting",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "status",
+        "value": "recruiting",
+        "sentence": "NCT03909334: recruiting",
+        "why": "no evidence statement about that entity gives that status"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "status",
+          "value": "recruiting",
+          "sentence": "NCT03909334: recruiting",
+          "why": "no evidence statement about that entity gives that status"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT03909334"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07680790"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT02411448"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04285671"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04141644"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT03535363"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04487080"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07738172"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04541407"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+        "source_record": "NCT04772235"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT05011487"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04479306"
+      }
+    ]
+  },
+  {
+    "id": "clinical_grammar_only",
+    "question": "What does osimertinib target?",
+    "answer": "osimertinib is the therapy for all lung cancer.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "wording",
+        "value": "all",
+        "sentence": "osimertinib is the therapy for all lung cancer.",
+        "why": "this word makes a claim no evidence statement about these entities supports"
+      },
+      {
+        "kind": "indication",
+        "value": "lung cancer",
+        "sentence": "osimertinib is the therapy for all lung cancer.",
+        "why": "a claim about the disease itself (what a drug is for or is); the graph holds trials, not indications"
+      },
+      {
+        "kind": "wording",
+        "value": "therapy",
+        "sentence": "osimertinib is the therapy for all lung cancer.",
+        "why": "this word makes a claim no evidence statement about these entities supports"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "all",
+          "sentence": "osimertinib is the therapy for all lung cancer.",
+          "why": "this word makes a claim no evidence statement about these entities supports"
+        },
+        {
+          "kind": "indication",
+          "value": "lung cancer",
+          "sentence": "osimertinib is the therapy for all lung cancer.",
+          "why": "a claim about the disease itself (what a drug is for or is); the graph holds trials, not indications"
+        },
+        {
+          "kind": "wording",
+          "value": "therapy",
+          "sentence": "osimertinib is the therapy for all lung cancer.",
+          "why": "this word makes a claim no evidence statement about these entities supports"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "ACTS_ON",
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410"
+      }
+    ]
+  },
+  {
+    "id": "clinical_word_reuse",
+    "question": "Profile of osimertinib",
+    "answer": "osimertinib is a clinical inhibitor for all cancer.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "wording",
+        "value": "all",
+        "sentence": "osimertinib is a clinical inhibitor for all cancer.",
+        "why": "this word makes a claim no evidence statement about these entities supports"
+      },
+      {
+        "kind": "wording",
+        "value": "cancer",
+        "sentence": "osimertinib is a clinical inhibitor for all cancer.",
+        "why": "this word makes a claim no evidence statement about these entities supports"
+      },
+      {
+        "kind": "relation_incomplete",
+        "value": "inhibitor",
+        "sentence": "osimertinib is a clinical inhibitor for all cancer.",
+        "why": "a relation whose two sides could not both be identified in the sentence"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "all",
+          "sentence": "osimertinib is a clinical inhibitor for all cancer.",
+          "why": "this word makes a claim no evidence statement about these entities supports"
+        },
+        {
+          "kind": "wording",
+          "value": "cancer",
+          "sentence": "osimertinib is a clinical inhibitor for all cancer.",
+          "why": "this word makes a claim no evidence statement about these entities supports"
+        },
+        {
+          "kind": "relation_incomplete",
+          "value": "inhibitor",
+          "sentence": "osimertinib is a clinical inhibitor for all cancer.",
+          "why": "a relation whose two sides could not both be identified in the sentence"
+        }
+      ],
+      "evidence_count": 2,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "PROFILE",
+        "statement": "OSIMERTINIB is a Small molecule, max clinical stage APPROVAL, appearing in 79 NSCLC trial(s) in this graph",
+        "source_record": "CHEMBL3353410"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410"
+      }
+    ]
+  },
+  {
+    "id": "empty_endpoint",
+    "question": "What does osimertinib target?",
+    "answer": "EGFR is a drug inhibitor.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "wording",
+        "value": "drug",
+        "sentence": "EGFR is a drug inhibitor.",
+        "why": "calls something a drug or company that the evidence does not"
+      },
+      {
+        "kind": "relation_incomplete",
+        "value": "inhibitor",
+        "sentence": "EGFR is a drug inhibitor.",
+        "why": "a relation whose two sides could not both be identified in the sentence"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "drug",
+          "sentence": "EGFR is a drug inhibitor.",
+          "why": "calls something a drug or company that the evidence does not"
+        },
+        {
+          "kind": "relation_incomplete",
+          "value": "inhibitor",
+          "sentence": "EGFR is a drug inhibitor.",
+          "why": "a relation whose two sides could not both be identified in the sentence"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "ACTS_ON",
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410"
+      }
+    ]
+  },
+  {
+    "id": "targetless_relation",
+    "question": "What does osimertinib target?",
+    "answer": "osimertinib sponsors trials.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "relation_incomplete",
+        "value": "sponsors",
+        "sentence": "osimertinib sponsors trials.",
+        "why": "a relation whose two sides could not both be identified in the sentence"
+      },
+      {
+        "kind": "wording",
+        "value": "trials",
+        "sentence": "osimertinib sponsors trials.",
+        "why": "calls something a drug, company or trial that the evidence does not"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "relation_incomplete",
+          "value": "sponsors",
+          "sentence": "osimertinib sponsors trials.",
+          "why": "a relation whose two sides could not both be identified in the sentence"
+        },
+        {
+          "kind": "wording",
+          "value": "trials",
+          "sentence": "osimertinib sponsors trials.",
+          "why": "calls something a drug, company or trial that the evidence does not"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "ACTS_ON",
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410"
+      }
+    ]
+  },
+  {
+    "id": "missing_all_endpoints",
+    "question": "What does osimertinib target?",
+    "answer": "This drug targets all cancer.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "wording",
+        "value": "all",
+        "sentence": "This drug targets all cancer.",
+        "why": "this word makes a claim no evidence statement about these entities supports"
+      },
+      {
+        "kind": "wording",
+        "value": "cancer",
+        "sentence": "This drug targets all cancer.",
+        "why": "this word makes a claim no evidence statement about these entities supports"
+      },
+      {
+        "kind": "relation_incomplete",
+        "value": "targets",
+        "sentence": "This drug targets all cancer.",
+        "why": "a relation whose two sides could not both be identified in the sentence"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "wording",
+          "value": "all",
+          "sentence": "This drug targets all cancer.",
+          "why": "this word makes a claim no evidence statement about these entities supports"
+        },
+        {
+          "kind": "wording",
+          "value": "cancer",
+          "sentence": "This drug targets all cancer.",
+          "why": "this word makes a claim no evidence statement about these entities supports"
+        },
+        {
+          "kind": "relation_incomplete",
+          "value": "targets",
+          "sentence": "This drug targets all cancer.",
+          "why": "a relation whose two sides could not both be identified in the sentence"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "ACTS_ON",
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "source_record": "CHEMBL3353410"
+      }
+    ]
+  },
+  {
+    "id": "count_long_unit",
+    "question": "Which drugs act on ALK?",
+    "answer": "PLB1003 has 13 non small cell lung cancer trials.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "number",
+        "value": "13",
+        "sentence": "PLB1003 has 13 non small cell lung cancer trials.",
+        "why": "no evidence statement about these entities gives that figure"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "number",
+          "value": "13",
+          "sentence": "PLB1003 has 13 non small cell lung cancer trials.",
+          "why": "no evidence statement about these entities gives that figure"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "ACTS_ON",
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4650298"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3899477"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545360"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3707320"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3286830"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL4113131"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1983268"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL3545311"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL2403108"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL601719"
+      },
+      {
+        "relation": "ACTS_ON",
+        "statement": "ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph)",
+        "source_record": "CHEMBL1738797"
+      }
+    ]
+  },
+  {
+    "id": "trial_pronoun_reset",
+    "question": "What trials evaluate Tagrisso?",
+    "answer": "NCT03909334 evaluates osimertinib. It evaluates osimertinib and is phase 3.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "phase",
+        "value": "phase 3",
+        "sentence": "It evaluates osimertinib and is phase 3.",
+        "why": "no evidence statement about these entities gives that phase"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "phase",
+          "value": "phase 3",
+          "sentence": "It evaluates osimertinib and is phase 3.",
+          "why": "no evidence statement about these entities gives that phase"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT03909334"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07680790"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT02411448"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04285671"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04141644"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT03535363"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04487080"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07738172"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04541407"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+        "source_record": "NCT04772235"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT05011487"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04479306"
+      }
+    ]
+  },
+  {
+    "id": "trial_pronoun_control",
+    "question": "What trials evaluate Tagrisso?",
+    "answer": "NCT03909334 evaluates osimertinib. It is phase 3.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "phase",
+        "value": "phase 3",
+        "sentence": "It is phase 3.",
+        "why": "no evidence statement about these entities gives that phase"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "phase",
+          "value": "phase 3",
+          "sentence": "It is phase 3.",
+          "why": "no evidence statement about these entities gives that phase"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT03909334"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07680790"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT02411448"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04285671"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04141644"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT03535363"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT04487080"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT07738172"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04541407"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+        "source_record": "NCT04772235"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+        "source_record": "NCT05011487"
+      },
+      {
+        "relation": "EVALUATES",
+        "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "source_record": "NCT04479306"
+      }
+    ]
+  },
+  {
+    "id": "wrong_relation_type",
+    "question": "What is AstraZeneca running in NSCLC?",
+    "answer": "osimertinib evaluates AstraZeneca.",
+    "grounded": false,
+    "unsupported_claims": [
+      {
+        "kind": "unrelated_entity",
+        "value": "Astrazeneca",
+        "sentence": "osimertinib evaluates AstraZeneca.",
+        "why": "named in a clause that states a relation, but not part of any relation that was checked"
+      },
+      {
+        "kind": "unrelated_entity",
+        "value": "OSIMERTINIB",
+        "sentence": "osimertinib evaluates AstraZeneca.",
+        "why": "named in a clause that states a relation, but not part of any relation that was checked"
+      },
+      {
+        "kind": "relation_direction",
+        "value": "OSIMERTINIB evaluates",
+        "sentence": "osimertinib evaluates AstraZeneca.",
+        "why": "trials evaluate drugs; this sentence has something else evaluating"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "unrelated_entity",
+          "value": "Astrazeneca",
+          "sentence": "osimertinib evaluates AstraZeneca.",
+          "why": "named in a clause that states a relation, but not part of any relation that was checked"
+        },
+        {
+          "kind": "unrelated_entity",
+          "value": "OSIMERTINIB",
+          "sentence": "osimertinib evaluates AstraZeneca.",
+          "why": "named in a clause that states a relation, but not part of any relation that was checked"
+        },
+        {
+          "kind": "relation_direction",
+          "value": "OSIMERTINIB evaluates",
+          "sentence": "osimertinib evaluates AstraZeneca.",
+          "why": "trials evaluate drugs; this sentence has something else evaluating"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+        "source_record": "NCT00372788, NCT01605916, NCT01933932"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+        "source_record": "NCT06357533, NCT06627647, NCT06692738"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+        "source_record": "NCT00478049, NCT01933932, NCT02740985"
+      },
+      {
+        "relation": "SPONSORS_TRIAL_OF",
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+        "source_record": "NCT06357533, NCT07098338, NCT07291037"
+      }
+    ]
+  }
+]

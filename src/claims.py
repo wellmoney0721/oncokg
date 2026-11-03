@@ -26,13 +26,17 @@ see the last paragraph):
   * A status belongs to the trial named before it. Words naming a kind of thing
     ("drug", "company", "trial") need an entity of that kind or evidence about its
     trials; "NSCLC" may only qualify trials the evidence calls NSCLC trials, never an
-    approval. A word naming a kind belongs to the entity just before it ("EGFR is a
-    drug" is reported). A trial count in a clause naming several drugs needs a count
-    per drug. Two different entities on either side of a verb that is no relation
-    ("X is Y") are reported. A plural pronoun, an elided subject after a group, and an
+    approval; what a named group of subjects is said to be must hold for every member.
+    A word naming a kind belongs to the entity right after it ("the drug X"), to the
+    clause's subject after "is a", or else to the entity just before it. A trial count in a clause naming several drugs needs a count
+    per drug, and a count after "trials" or referring back ("10 such trials") counts
+    as a trial count. Two different entities on either side of a form of "be" that is
+    no relation ("X is Y") are reported. A status or phase after the verb is about
+    every trial in the subject. A plural pronoun, an elided subject after a group, and an
     "it" after a group are checked once for every entity they stand for. Letters
     spelled out one by one are reported. A heading's determiner ("these", "the
-    following") is replaced by the item, but adjectives in it stay and are checked.
+    following") is replaced by the item; every noun and adjective after it stays and is
+    checked.
   * Every other content word must appear in evidence naming every entity of the
     clause.
   * Negations, comparisons, hedges and modal verbs, and claims of developing,
@@ -123,6 +127,7 @@ such following listed list here namely include includes including included
 phase phases stage stages max maximum
 sponsorship graph evidence record records recorded data according source sources
 retrieved known reported shown show shows mechanism mechanisms profile findings
+action actions
 scope edge edges among lists
 """.split())
 # a clause with no entity, no figure, and only these words is a statement about the
@@ -151,7 +156,9 @@ PASSIVE_GAP = {"being", "been", "also", "still", "currently", "now", "already",
 GROUP_GLUE = {("P", ","), ("W", "and"), ("W", "or"), ("W", "as"), ("W", "well"),
               ("W", "on"), ("W", "of"), ("W", "to"), ("W", "also"), ("W", "both"),
               ("W", "either")}
-PREDICATE = BE | {"has", "have", "had", "does", "do", "did"} | set(RELATION)
+PREDICATE = BE | {"has", "have", "had", "does", "do", "did", "records", "record",
+                  "recorded", "lists", "listed", "shows", "show", "includes", "include",
+                  "contains"} | set(RELATION)
 PLURAL = {"they", "them", "their"}
 PRONOUN = {"it": None, "its": None, "they": None, "them": None, "their": None,
            "this drug": "Drug", "the drug": "Drug", "this agent": "Drug",
@@ -177,7 +184,7 @@ RE_CITE = re.compile(r"\[\s*(?:(?:NCT\d{8}|CHEMBL\d+|ENSG\d+|PMID:?\s*\d+|ORG:[A
                      r"\s*[,;]?\s*)+\]", re.I)
 RE_MDLINK = re.compile(r"\[([^\]]*)\]\([^)]*\)")
 ROMAN = {"i": "1", "ii": "2", "iii": "3", "iv": "4"}
-RE_TOKEN = re.compile(r"\x00(\d+)\x00|\d+[a-z]+\b|\d+(?:,\d{3})*(?:\.\d+)?%?"
+RE_TOKEN = re.compile(r"\x00(\d+)\x00|\d+[a-z]+\b|\d+(?:,\d{3})*(?:\.\d+)?(?:\s*%)?"
                       r"|[a-z]+(?:_[a-z]+)*(?:'[a-z]+)?|n't|[,;:]")
 
 
@@ -255,11 +262,9 @@ def _units(text: str) -> list[dict]:
 def _join(item: str, heading: str) -> str:
     if not item:
         return heading
-    # the slot is a determiner and its plain noun ("these NSCLC drugs"); an adjective
-    # ("the following safe drugs") is a claim and stays in the sentence
-    slot = re.search(r"\b(?:these|the following|following)(?:\s+(?:NSCLC\s+)?(?:drugs|agents|trials|"
-                     r"companies|sponsors|targets|molecules|compounds|organisations|"
-                     r"organizations|items|ones|records|entries)\b)?", heading, re.I)
+    # only the determiner gives way to the item; the nouns and adjectives after it
+    # ("these NSCLC drugs", "the following safe drugs") are claims about the item
+    slot = re.search(r"\b(?:these|the following|following)\b", heading, re.I)
     if slot:
         return heading[:slot.start()] + item + heading[slot.end():]
     return f"{item} — {heading}"
@@ -357,6 +362,8 @@ def _check_unit(unit, statements, linker, st, flag, lenient=False, joined=False)
                 verb = next((x[1] for x in reversed(back) if x[1] in RELATION), None)
                 if verb:
                     want = ROLES[RELATION[verb][0]][1]
+                elif back[-1][1] == "of" and len(back) > 1 and back[-2][1] in TRIAL_NOUNS:
+                    want = "Drug"                     # "2 trials of it"
             if want is None:
                 # "they" (or an "it" that could be either) after a clause naming several
                 # entities of one kind stands for all of them: the subject group, or
@@ -366,7 +373,7 @@ def _check_unit(unit, statements, linker, st, flag, lenient=False, joined=False)
                     kinds_last.setdefault(e.get("type"), []).append(e)
                 biggest = max(kinds_last.values(), key=len, default=[])
                 members = (list(st.group) if len(st.group) > 1 else
-                           biggest if p["label"] in PLURAL and len(biggest) > 1 else [])
+                           biggest if len(biggest) > 1 else [])
             else:
                 members = ([e for e in st.last if e.get("type") == want]
                            if p["label"] in PLURAL else [])
@@ -439,11 +446,17 @@ def _check_clause(clause, ents, statements, st, flag, lenient=False, joined=Fals
             return
         labels = [e["label"].lower() for e in subjects]
         support = [(r, s) for r, s in statements if all(_has(l, s) for l in labels)]
-        covered = _check_relations(clause, ents, implicit, statements, flag, lenient)
+        if subjects[0]["type"] == "Target":
+            # "LORLATINIB acts on ALK (…; max stage APPROVAL)": the bracket is about the
+            # drug, so it says nothing about ALK itself
+            support = [(r, re.sub(r"\([^)]*\)", " ", s)) for r, s in support]
+        covered = _check_relations(clause, ents, implicit, statements, flag, lenient,
+                                   before=st.last)
         left_e = {ents[t[1]]["label"].lower() for t in clause[:pred] if t[0] == "ENT"} or (
             {implicit["label"].lower()} if implicit else set())
         right_e = {ents[t[1]]["label"].lower() for t in clause[pred:] if t[0] == "ENT"}
-        if covered is None and pred < len(clause) and left_e and right_e and (
+        copula = pred < len(clause) and clause[pred][1] in BE
+        if covered is None and copula and left_e and right_e and (
                 left_e != right_e or len(left_e) > 1):
             # "PLB1003 is LORLATINIB": two entities joined by a verb that is no relation
             flag("identity", " = ".join(e["label"] for e in c_ents),
@@ -456,6 +469,10 @@ def _check_clause(clause, ents, statements, st, flag, lenient=False, joined=Fals
                 not joined or own):
             kinds = {e["type"] for e in c_ents}
             first = next((t for t in clause if t[0] != "P"), None)
+            entry = any(clause[x] == ("P", ":") and x + 1 < len(clause)
+                        and clause[x + 1][0] == "N" for x in range(len(clause)))
+            if entry:
+                kinds = {"entry"}
             if len(kinds) > 1 or (first and first[0] == "W" and first[1] in
                                   ("on", "of", "to", "in", "with", "for", "against", "by")):
                 flag("fragment", " ".join(e["label"] for e in c_ents) or first[1],
@@ -466,7 +483,8 @@ def _check_clause(clause, ents, statements, st, flag, lenient=False, joined=Fals
                     flag("unrelated_entity", ents[t[1]]["label"],
                          "named in a clause that states a relation, but not part of any "
                          "relation that was checked")
-        _check_attributes(clause, ents, subjects, support, statements, flag)
+        prev_drugs = [e for e in st.last if e.get("type") == "Drug"]
+        _check_attributes(clause, ents, subjects, support, statements, flag, prev_drugs)
         group = [ents[t[1]] for t in clause[:pred] if t[0] == "ENT"]
         st.note(c_ents, group)
 
@@ -477,6 +495,7 @@ def _tokenise(unit, linker):
     for pat in SCOPE_PHRASES:
         s = re.sub(pat, " nsclc ", s, flags=re.I)
     s = s.replace("(s)", "s").replace("’", "'")
+    s = re.sub(r"\bactive,?\s+but\s+not\s+recruiting\b", "active not recruiting", s, flags=re.I)
     s = re.sub(r"[()\[\]{}\"*—–]", " ", s)
     ents: list[dict] = []
     spans = []
@@ -532,7 +551,7 @@ def _tokenise(unit, linker):
         elif m.group(0) in ",;:":
             toks.append(("P", m.group(0)))
         elif m.group(0)[0].isdigit() and not re.fullmatch(r"\d+[a-z]+", m.group(0)):
-            toks.append(("N", m.group(0).replace(",", "")))
+            toks.append(("N", re.sub(r"[,\s]", "", m.group(0))))
         else:
             toks.append(("W", m.group(0)))
     return toks, ents
@@ -585,6 +604,19 @@ def _group(clause, k, step, skip=()):
     return grp
 
 
+def _after_group(clause, k):
+    """Index just past the entity run that follows position k, or None."""
+    i = k + 1
+    while i < len(clause) and clause[i][0] != "ENT":
+        i += 1
+    if i >= len(clause):
+        return None
+    while i < len(clause) and (clause[i][0] == "ENT" or clause[i] in (
+            ("P", ","), ("W", "and"), ("W", "or"))):
+        i += 1
+    return i
+
+
 def _is_passive(clause, k):
     """A participle right after a form of "be" (adverbs allowed), or before "by"."""
     if k + 1 < len(clause) and clause[k + 1] == ("W", "by"):
@@ -595,7 +627,8 @@ def _is_passive(clause, k):
     return i >= 0 and clause[i][0] == "W" and clause[i][1] in BE
 
 
-def _check_relations(clause, ents, implicit, statements, flag, lenient):
+def _check_relations(clause, ents, implicit, statements, flag, lenient, before=()):
+    earlier = list(before)              # entities of the clause before this one
     """Check every relation in the clause; return the clause positions it covered,
     or None when the clause states no relation."""
     covered: set[int] = set()
@@ -644,9 +677,19 @@ def _check_relations(clause, ents, implicit, statements, flag, lenient):
                     (before and before[0] == "W" and before[1] in ARTICLES)
                     or ents[prev[1]]["type"] == obj_t):
                 obj, subj = [k - 1], _group(clause, k - 1, -1)
+            elif prev and prev[0] == "W" and prev[1] in ("a", "an") and before == ("W", "as"):
+                # "osimertinib acting on EGFR as an inhibitor": the clause's own pair
+                subj = [i for i, x in enumerate(clause) if x[0] == "ENT"
+                        and ents[x[1]]["type"] == subj_t]
+                obj = [i for i, x in enumerate(clause) if x[0] == "ENT"
+                       and ents[x[1]]["type"] == obj_t]
             else:
                 obj = _group(clause, k, +1) if nxt == ("W", "of") else []
                 subj = _group(clause, k, -1)
+                if obj:
+                    j = _after_group(clause, k)
+                    if j is not None and j < len(clause) and clause[j] == ("W", "by"):
+                        subj = _group(clause, j, +1)        # "inhibition of EGFR by X"
             noun = True
         elif t[1] in ("target", "targets") and nxt == ("W", "of"):
             # "EGFR is the target of osimertinib" / "the target of osimertinib is EGFR"
@@ -680,18 +723,34 @@ def _check_relations(clause, ents, implicit, statements, flag, lenient):
         right = [ents[clause[i][1]] for i in obj]
         if not left and implicit:
             left = [implicit]
+        if t[1] in ("sponsor", "sponsors") + tuple(AGENT_NOUNS) and not subj and obj:
+            # "Sponsors of osimertinib trials include AstraZeneca and BMS"
+            j = _after_group(clause, k)
+            while j is not None and j < len(clause) and clause[j][0] == "W" and \
+                    clause[j][1] in TRIAL_NOUNS:
+                j += 1
+            if j is not None and j < len(clause) and clause[j][0] == "W" and clause[j][1] in (
+                    "include", "includes", "including", "are", "were"):
+                subj = _group(clause, j, +1)
+                left = [ents[clause[i][1]] for i in subj]
         if noun and left and not right:
             # "AstraZeneca is a trial sponsor" (of the drug named in the clause)
             pool = [i for i, x in enumerate(clause) if x[0] == "ENT" and i not in subj
                     and ents[x[1]]["type"] == obj_t]
             obj, right = pool, [ents[clause[i][1]] for i in pool]
+            if not right:
+                # "acts on EGFR; its recorded action is inhibition": the one target of
+                # the clause before
+                carried = [e for e in earlier if e.get("type") == obj_t]
+                if len(carried) == 1:
+                    right = carried
         here = {clause[i][1] for i in subj + obj}
 
         if rel == "EVALUATES" and not any(e["type"] == "Trial" for e in left + right):
             # no named trial: the subject must be the word "trials" ("trials
             # evaluating X") or the drug the grammatical object ("X is tested in")
             passive = voice == "passive" and _is_passive(clause, k)
-            trial_subject = any(x[0] == "W" and x[1] in TRIAL_NOUNS
+            trial_subject = any((x[0] == "W" and x[1] in TRIAL_NOUNS) or x[0] == "N"
                                 for x in clause[max(0, k - 3):k])
             if not (passive or trial_subject):
                 flag("relation_direction", f"{'/'.join(e['label'] for e in left)} {t[1]}",
@@ -767,8 +826,15 @@ def _owner(clause, ents, i, prefer, kinds=("Drug", "Target", "Company", "Trial")
     return None
 
 
-def _check_attributes(clause, ents, subjects, support, statements, flag):
+def _check_attributes(clause, ents, subjects, support, statements, flag, prev_drugs=()):
     subject = subjects[0]
+    pred = next((i for i, t in enumerate(clause)
+                 if t[0] == "W" and t[1] in PREDICATE), len(clause))
+    # a named group before the verb ("LORLATINIB and PLB1003 are ...") is the subject,
+    # and what the clause says of it must hold for every member
+    head = [ents[t[1]] for t in clause[:pred] if t[0] == "ENT"
+            and ents[t[1]]["type"] == subject["type"]]
+    members = head if len(head) > 1 else [subject]
     present = {e["type"] for e in subjects} | {
         ents[t[1]]["type"] for t in clause if t[0] == "ENT"}
     has_company = "Company" in present
@@ -779,11 +845,21 @@ def _check_attributes(clause, ents, subjects, support, statements, flag):
         carried over) and the value's own entity. A count of trials in a sponsorship
         statement belongs to the sponsor-drug pair, so it does not count for a clause
         that names no company."""
+        if count:
+            kinds = ("Drug", "Company", "Trial")        # targets have no trial counts
         own = _owner(clause, ents, i, prefer, kinds) or subject
-        # a trial's phase is its own; any other value is about the clause's subject too
-        names = ({own["label"].lower()} if own["type"] == "Trial" else
-                 {own["label"].lower(), subject["label"].lower()} | {
-                     c["label"].lower() for c in companies})
+        # a trial's phase is its own; a count belongs to its drug (and the company that
+        # sponsors it); any other value is about the clause's subject too
+        if own["type"] == "Trial":
+            names = {own["label"].lower()}
+        elif count:
+            names = {own["label"].lower()} | {c["label"].lower() for c in companies}
+            if own["type"] == "Company" and len(prev_drugs) == 1 and not any(
+                    t[0] == "ENT" and ents[t[1]]["type"] == "Drug" for t in clause):
+                names.add(prev_drugs[0]["label"].lower())   # "10 such trials"
+        else:
+            names = {own["label"].lower(), subject["label"].lower()} | {
+                c["label"].lower() for c in companies}
         rows = [s for r, s in statements if all(_has(n, s) for n in names)
                 and not (count and r == "SPONSORS_TRIAL_OF" and not has_company)]
         return own, rows
@@ -798,24 +874,48 @@ def _check_attributes(clause, ents, subjects, support, statements, flag):
     others = {e["label"].lower() for e in subjects[1:]} | {
         ents[t[1]]["label"].lower() for t in clause if t[0] == "ENT"}
     others.discard(subject["label"].lower())
-    # trials and NSCLC are about the clause's subject, not any entity it mentions
-    wide = [(r, s) for r, s in statements if _has(subject["label"], s)]
-    counted = any(t[0] == "N" and any(x[0] == "W" and x[1] in TRIAL_NOUNS
-                                      for x in clause[k + 1:k + 4])
-                  for k, t in enumerate(clause))
-    # a stated count of trials is itself checked as a number; otherwise the evidence
-    # must show trials for these entities (a count of zero shows none)
-    about_trials = any(r in ("EVALUATES", "SPONSORS_TRIAL_OF")
-                       or re.search(r"(?<![\d.])[1-9]\d*\s+(?:\S+\s+)?trial", s)
-                       or (counted and "trial" in s)
-                       for r, s in wide)
-    wide_tokens = {w for _, s in wide for w in re.findall(r"[a-z]+", s)}
+    def is_count(k):
+        """A figure counting trials: a trial word within four tokens after it, or an
+        earlier trial word with no entity between ("trials in this graph: 10"), or an
+        elided repeat ("14 trials of A and 6 of B")."""
+        if clause[k][0] != "N":
+            return False
+        if any(x[0] == "W" and x[1] in TRIAL_NOUNS for x in clause[k + 1:k + 5]):
+            return True
+        j = k - 1
+        while j >= 0 and clause[j][0] != "ENT":
+            if clause[j][0] == "W" and clause[j][1] in TRIAL_NOUNS:
+                return True
+            j -= 1
+        return (k + 2 < len(clause) and clause[k + 1] == ("W", "of")
+                and clause[k + 2][0] == "ENT"
+                and any(is_count(j) for j in range(k) if clause[j][0] == "N"))
+
+    counted = any(is_count(k) for k in range(len(clause)))
+
+    # trials and NSCLC are about the clause's subject group, not any entity it mentions
+    def trials_for(m):
+        rows = [(r, x) for r, x in statements if _has(m["label"], x)]
+        # a stated count of trials is itself checked as a number; otherwise the evidence
+        # must show trials for this entity (a count of zero shows none)
+        return any(r in ("EVALUATES", "SPONSORS_TRIAL_OF")
+                   or re.search(r"(?<![\d.])[1-9]\d*\s+(?:\S+\s+)?trial", x)
+                   or (counted and "trial" in x) for r, x in rows), rows
+
+    per = [trials_for(m) for m in members]
+    about_trials = all(ok for ok, _ in per)
+    wide_tokens = set.intersection(*[{w for _, x in rows for w in re.findall(r"[a-z]+", x)}
+                                     for _, rows in per]) if per else set()
 
     def trial_run(at):
         """The trials a value at `at` is about: the run of trials (joined by and/or/
         commas) just before it, or else the first run after it."""
         before = [k for k, t in enumerate(clause[:at]) if t[0] == "ENT"
                   and ents[t[1]]["type"] == "Trial"]
+        head_trials = [k for k in before if k < pred]
+        if at > pred and len(head_trials) > 1:
+            # "NCT1 (phase 2) and NCT2 (phase 3) are recruiting": both are the subject
+            return [ents[clause[k][1]]["label"] for k in head_trials]
         if before:
             run = _group(clause, before[-1] + 1, -1)
         else:
@@ -876,9 +976,7 @@ def _check_attributes(clause, ents, subjects, support, statements, flag):
         if t[0] == "N":
             n = t[1]
             ahead = [x[1] for x in clause[i + 1:i + 4] if x[0] == "W"]
-            behind = [x[1] for x in clause[max(0, i - 3):i] if x[0] == "W"]
-            counting = any(w in TRIAL_NOUNS for w in ahead) or (
-                bool(behind) and behind[-1] in TRIAL_NOUNS)        # "trials: 13"
+            counting = is_count(i)
             own = " ".join(_flat(s) for s in scoped(i, "after", counting)[1]).replace(",", "")
             if counting:
                 # a count of trials must be stated as a count of trials, not a phase
@@ -902,9 +1000,10 @@ def _check_attributes(clause, ents, subjects, support, statements, flag):
                 ents[t[1]]["label"] not in seen_labels:
             drugs.append(k)
             seen_labels.add(ents[t[1]]["label"])
-    counts = [k for k, t in enumerate(clause) if t[0] == "N" and (
-        any(x[0] == "W" and x[1] in TRIAL_NOUNS for x in clause[k + 1:k + 4])
-        or any(x[0] == "W" and x[1] in TRIAL_NOUNS for x in clause[max(0, k - 2):k]))]
+    counts = [k for k in range(len(clause)) if is_count(k)]
+    if counts and not drugs and len(prev_drugs) > 1 and has_company:
+        flag("count_ambiguous", " / ".join(d["label"] for d in prev_drugs),
+             "a trial count that refers back to several drugs at once")
     if counts and len(drugs) > 1:
         owned = set()
         for k in counts:
@@ -961,7 +1060,8 @@ def _check_attributes(clause, ents, subjects, support, statements, flag):
                 "EVALUATES", "SPONSORS_TRIAL_OF")) for x in toks_w)
             approval = any(x in ("approved", "approval", "approve", "approves",
                                  "indicated", "indication", "licensed") for x in toks_w)
-            if approval or not ((nxt in TRIAL_NOUNS or (prv == "in" and trial_clause))
+            if approval or not ((nxt in TRIAL_NOUNS or (prv == "in" and trial_clause)
+                                 or (nxt in ("drug", "drugs", "agents") and trial_clause))
                                 and "nsclc" in wide_tokens and about_trials):
                 flag("indication", "lung cancer", "a claim about the disease itself (what a "
                      "drug is for or is); the graph holds trials, not indications")
@@ -973,6 +1073,8 @@ def _check_attributes(clause, ents, subjects, support, statements, flag):
         if t[0] == "W" and len(t[1]) == 1 and t[1] not in ("a", "i"):
             run += 1
             continue
+        if t == ("P", ",") and run:
+            continue                                   # "N, O, T"
         if run >= 2:
             flag("unreadable", "spelled-out letters", "letters written one by one cannot "
                                                       "be read as a word and checked")
@@ -980,12 +1082,31 @@ def _check_attributes(clause, ents, subjects, support, statements, flag):
 
     # a word naming a kind belongs to the entity just before it ("EGFR is a drug"),
     # or, with none before, to an entity of that kind in the clause
+    first_e = next((ents[x[1]] for x in clause if x[0] == "ENT"), subject)
     for k, t in enumerate(clause):
-        if t[0] != "W" or t[1] not in KIND_WORDS or KIND_WORDS[t[1]] == "trials":
+        if t[0] != "W" or t[1] not in KIND_WORDS:
             continue
         kind = KIND_WORDS[t[1]]
-        prev_e = [ents[x[1]] for x in clause[:k] if x[0] == "ENT"]
-        ok = prev_e[-1]["type"] == kind if prev_e else kind in present
+        after = clause[k + 1] if k + 1 < len(clause) else None
+        j = k - 1
+        while j >= 0 and clause[j][0] == "W" and (clause[j][1] in ARTICLES or (
+                clause[j][1] not in BE and clause[j][1] not in FUNCTION
+                and clause[j][1] not in RELATION and k - j <= 3)):
+            j -= 1
+        copula = j >= 0 and clause[j][0] == "W" and clause[j][1] in BE
+        if kind == "trials":
+            # "X is a (clinical) trial" says X is a trial; "X is in trials" does not
+            if copula and t[1] in ("trial", "clinical") and first_e["type"] != "Trial":
+                flag("wording", t[1], "calls something a trial that is not one")
+            continue
+        if after and after[0] == "ENT":
+            owner = ents[after[1]]                      # "the drug osimertinib"
+        elif copula:
+            owner = first_e                             # "X, which …, is a drug"
+        else:
+            prev_e = [ents[x[1]] for x in clause[:k] if x[0] == "ENT"]
+            owner = prev_e[-1] if prev_e else None
+        ok = owner["type"] == kind if owner else kind in present
         if not ok:
             flag("wording", t[1], "calls something a drug or company that the evidence "
                                   "does not")

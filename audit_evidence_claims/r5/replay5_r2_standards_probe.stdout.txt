@@ -1,0 +1,239 @@
+{
+  "cases": [
+    {
+      "case": "refused_liposomal",
+      "grounded": false,
+      "findings": [
+        {
+          "kind": "distinct_product",
+          "value": "is liposomal",
+          "sentence": "osimertinib is liposomal.",
+          "why": "names a distinct product (biosimilar, other formulation, tracer) the graph does not hold"
+        }
+      ]
+    },
+    {
+      "case": "refused_biosimilar",
+      "grounded": false,
+      "findings": [
+        {
+          "kind": "identity",
+          "value": "OSIMERTINIB",
+          "sentence": "osimertinib is a biosimilar.",
+          "why": "two different entities joined by a verb the graph has no edge for"
+        },
+        {
+          "kind": "distinct_product",
+          "value": "a biosimilar",
+          "sentence": "osimertinib is a biosimilar.",
+          "why": "names a distinct product (biosimilar, other formulation, tracer) the graph does not hold"
+        }
+      ]
+    },
+    {
+      "case": "refused_negation",
+      "grounded": false,
+      "findings": [
+        {
+          "kind": "identity",
+          "value": "OSIMERTINIB",
+          "sentence": "Osimertinib is not liposomal.",
+          "why": "two different entities joined by a verb the graph has no edge for"
+        },
+        {
+          "kind": "distinct_product",
+          "value": "not liposomal",
+          "sentence": "Osimertinib is not liposomal.",
+          "why": "names a distinct product (biosimilar, other formulation, tracer) the graph does not hold"
+        }
+      ]
+    },
+    {
+      "case": "refused_alias",
+      "grounded": false,
+      "findings": [
+        {
+          "kind": "distinct_product",
+          "value": "liposomal Tagrisso",
+          "sentence": "liposomal Tagrisso.",
+          "why": "names a distinct product (biosimilar, other formulation, tracer) the graph does not hold"
+        }
+      ]
+    },
+    {
+      "case": "refused_non",
+      "grounded": false,
+      "findings": [
+        {
+          "kind": "distinct_product",
+          "value": "is non-liposomal",
+          "sentence": "Osimertinib is non-liposomal.",
+          "why": "names a distinct product (biosimilar, other formulation, tracer) the graph does not hold"
+        }
+      ]
+    },
+    {
+      "case": "control_ordinary",
+      "grounded": false,
+      "findings": [
+        {
+          "kind": "wording",
+          "value": "safe",
+          "sentence": "Osimertinib is safe.",
+          "why": "this word makes a claim no evidence statement about these entities supports"
+        }
+      ]
+    },
+    {
+      "case": "control_alias",
+      "grounded": true,
+      "findings": []
+    },
+    {
+      "case": "alias_parentheses",
+      "grounded": true,
+      "findings": []
+    },
+    {
+      "case": "alias_spaced_code",
+      "grounded": true,
+      "findings": []
+    },
+    {
+      "case": "alias_unspaced_code",
+      "grounded": true,
+      "findings": []
+    },
+    {
+      "case": "punctuation_claim",
+      "grounded": true,
+      "findings": []
+    },
+    {
+      "case": "refusal",
+      "grounded": true,
+      "findings": []
+    },
+    {
+      "case": "verbatim_exception",
+      "grounded": true,
+      "findings": []
+    }
+  ],
+  "alias_tokenisation": {
+    "unique_multiword_aliases": 2634,
+    "intended_linked_aliases": 2566,
+    "lost_intended_links": [
+      {
+        "alias": "500 mg metformin hydrochloride extended release tablets by purepac pharmaceutical co.",
+        "linked": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1431",
+            "label": "METFORMIN",
+            "matched_text": "metformin hydrochloride extended release tablets",
+            "matched_alias": "metformin hydrochloride extended-release tablets"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL1703",
+            "label": "METFORMIN HYDROCHLORIDE",
+            "matched_text": "metformin hydrochloride",
+            "matched_alias": "METFORMIN HYDROCHLORIDE"
+          }
+        ],
+        "token_entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1431",
+            "label": "METFORMIN",
+            "matched_text": "metformin hydrochloride extended release tablets",
+            "matched_alias": "metformin hydrochloride extended-release tablets"
+          }
+        ]
+      },
+      {
+        "alias": "N-(3-HYDROXY-7-MERCAPTO-1-OXO-4-HEPTENYL)VALYL- CYSTEINYL-2,3-DIDEHYDRO-2- AMINOBUTANOYL-,.XI.-LACTONE",
+        "linked": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL343448",
+            "label": "ROMIDEPSIN",
+            "matched_text": "N-(3-HYDROXY-7-MERCAPTO-1-OXO-4-HEPTENYL)VALYL- CYSTEINYL-2 3-DIDEHYDRO-2- AMINOBUTANOYL- XI.-LACTONE",
+            "matched_alias": "N-(3-HYDROXY-7-MERCAPTO-1-OXO-4-HEPTENYL)VALYL- CYSTEINYL-2,3-DIDEHYDRO-2- AMINOBUTANOYL-,.XI.-LACTONE"
+          }
+        ],
+        "token_entities": []
+      },
+      {
+        "alias": "THIOUREA, N-(5-BROMO-2-PYRIDINYL)-N'-(2-(2-CHLORO-3-ETHOXY-6-FLUOROPHENYL)ETHYL)-",
+        "linked": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL398891",
+            "label": "THIOUREA, N-(5-BROMO-2-PYRIDINYL)-N'-(2-(2-CHLORO-3-ETHOXY-6-FLUOROPHENYL)ETHYL)-",
+            "matched_text": "THIOUREA N-(5-BROMO-2-PYRIDINYL)-N'-(2-(2-CHLORO-3-ETHOXY-6-FLUOROPHENYL)ETHYL)-",
+            "matched_alias": "THIOUREA, N-(5-BROMO-2-PYRIDINYL)-N'-(2-(2-CHLORO-3-ETHOXY-6-FLUOROPHENYL)ETHYL)-"
+          }
+        ],
+        "token_entities": []
+      },
+      {
+        "alias": "actos tablets 1 × 45 mg",
+        "linked": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL595",
+            "label": "PIOGLITAZONE",
+            "matched_text": "actos tablets",
+            "matched_alias": "actos tablets"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL1715",
+            "label": "PIOGLITAZONE HYDROCHLORIDE",
+            "matched_text": "actos",
+            "matched_alias": "Actos"
+          }
+        ],
+        "token_entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL595",
+            "label": "PIOGLITAZONE",
+            "matched_text": "actos tablets",
+            "matched_alias": "actos tablets"
+          }
+        ]
+      },
+      {
+        "alias": "metformin hydrochloride extended-release tablets usp 750 mg",
+        "linked": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1431",
+            "label": "METFORMIN",
+            "matched_text": "metformin hydrochloride extended-release tablets",
+            "matched_alias": "metformin hydrochloride extended-release tablets"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL1703",
+            "label": "METFORMIN HYDROCHLORIDE",
+            "matched_text": "metformin hydrochloride",
+            "matched_alias": "METFORMIN HYDROCHLORIDE"
+          }
+        ],
+        "token_entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1431",
+            "label": "METFORMIN",
+            "matched_text": "metformin hydrochloride extended-release tablets",
+            "matched_alias": "metformin hydrochloride extended-release tablets"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -371,3 +371,74 @@ FAITHFUL4 = [
 def test_round4_faithful_forms_pass(q, a):
     grounded, found = kinds(q, a)
     assert grounded is True, found
+
+
+# Codex round 5: each of these passed the fifth version
+ROUND5 = [
+    ("What does osimertinib target?", "The following companies inhibit EGFR:\n- Osimertinib"),
+    ("What does osimertinib target?", "These drugs:\n- EGFR"),
+    ("What does osimertinib target?", "These NSCLC drugs:\n- Osimertinib"),
+    ("Which drugs act on ALK?", "LORLATINIB and PLB1003 are in clinical trials."),
+    ("Which drugs act on ALK?", "LORLATINIB and PLB1003 have clinical trials in this graph."),
+    ("Which drugs act on ALK?", "LORLATINIB and PLB1003 inhibit ALK in clinical trials."),
+    ("Which drugs act on ALK?", "ALK is targeted by LORLATINIB and PLB1003. It is approved."),
+    ("Which drugs act on ALK?", "ALK is targeted by LORLATINIB and PLB1003 and is approved."),
+    ("What trials evaluate Tagrisso?",
+     "NCT03909334 (phase 2) and NCT07680790 (phase 3) are recruiting."),
+    ("What trials evaluate Tagrisso?",
+     "NCT03909334 (active, not recruiting) and NCT07680790 are phase 3."),
+    ("What is AstraZeneca running in NSCLC?",
+     "AstraZeneca sponsors osimertinib and carboplatin in trials in this graph: 10."),
+    ("What is AstraZeneca running in NSCLC?",
+     "AstraZeneca sponsors osimertinib and carboplatin in trials recorded: 10."),
+    ("What is AstraZeneca running in NSCLC?",
+     "AstraZeneca sponsors trials of Tagrisso. There are 10 such trials in this graph."),
+    ("What does osimertinib target?", "EGFR, which is inhibited by osimertinib, is a drug."),
+    ("What does osimertinib target?", "EGFR that is inhibited by osimertinib is a drug."),
+    ("What does osimertinib target?", "The drug EGFR is inhibited by osimertinib."),
+    ("What trials evaluate Tagrisso?", "Osimertinib is a clinical trial."),
+    ("What does osimertinib target?", "Osimertinib does N, O, T inhibit EGFR."),
+    ("Which drugs act on ALK?", "LORLATINIB has 13 % NSCLC trials."),
+]
+
+
+@pytest.mark.parametrize("q,a", ROUND5)
+def test_round5_attacks_are_caught(q, a):
+    grounded, found = kinds(q, a)
+    assert grounded is False, a
+
+
+FAITHFUL5 = [
+    ("What does osimertinib target?", "The following drugs inhibit EGFR:\n- Osimertinib"),
+    ("What does osimertinib target?", "EGFR is inhibited by the drug osimertinib."),
+    ("What does osimertinib target?", "Osimertinib, which inhibits EGFR, is a drug."),
+    ("Which drugs act on ALK?", "LORLATINIB and CRIZOTINIB inhibit ALK in clinical trials."),
+    ("What is AstraZeneca running in NSCLC?",
+     "AstraZeneca sponsors trials of Tagrisso. There are 14 such trials in this graph."),
+    ("Which companies are developing osimertinib?",
+     "AstraZeneca sponsors 14 trials of osimertinib. Bristol Myers Squibb sponsors 2 trials of it."),
+    ("Which companies are developing osimertinib?",
+     "The graph records sponsorship of osimertinib trials by AstraZeneca."),
+    ("Which companies are developing osimertinib?",
+     "Sponsors of osimertinib trials include AstraZeneca and Bristol Myers Squibb."),
+    ("What trials evaluate Tagrisso?",
+     "NCT07680790 is recruiting. NCT03909334 is active but not recruiting."),
+    ("What does osimertinib target?", "The graph records osimertinib acting on EGFR as an inhibitor."),
+    ("What does osimertinib target?", "Reported mechanism: inhibition of EGFR by osimertinib."),
+    ("What does osimertinib target?", "Osimertinib acts on EGFR; its recorded action is inhibition."),
+    ("Which drugs act on ALK?",
+     "The graph records 13 NSCLC trials of lorlatinib and 15 NSCLC trials of crizotinib."),
+    ("What is AstraZeneca running in NSCLC?",
+     "AstraZeneca runs 6 NSCLC trials of pemetrexed and 6 of cisplatin."),
+    ("What is AstraZeneca running in NSCLC?",
+     "AstraZeneca sponsors 7 NSCLC trials evaluating durvalumab and 8 evaluating gefitinib."),
+    ("What is AstraZeneca running in NSCLC?",
+     "Reported sponsorship:\n- AstraZeneca: 14 NSCLC trials of osimertinib.\n"
+     "- AstraZeneca: 10 NSCLC trials of carboplatin."),
+]
+
+
+@pytest.mark.parametrize("q,a", FAITHFUL5)
+def test_round5_faithful_forms_pass(q, a):
+    grounded, found = kinds(q, a)
+    assert grounded is True, found
