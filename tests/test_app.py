@@ -39,3 +39,15 @@ def test_check_flags_invented_name_and_number_not_relation():
     rel = ENGINE.check("Which companies are developing osimertinib?",
                        "AstraZeneca has discontinued osimertinib.")
     assert rel["checks"]["grounded"] is False
+
+
+def test_explore_draws_a_drug_and_refuses_a_biosimilar():
+    import app
+    e = app.Engine()
+    r = e.explore("osimertinib")
+    assert r["center"]["id"] == "CHEMBL3353410"
+    rels = {(g["rel"], g["dir"]) for g in r["groups"]}
+    assert ("ACTS_ON", "out") in rels and ("SPONSORS_TRIAL_OF", "in") in rels
+    assert all(len(g["items"]) <= 30 for g in r["groups"])
+    assert e.explore("Mvasi").get("refused")
+    assert e.explore("no such thing zz").get("not_found")

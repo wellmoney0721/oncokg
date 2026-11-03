@@ -50,6 +50,17 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;font:12.5px var(--mono);backgrou
   결과를 보고 바이오 지식으로 맞는지 판단해 보세요.</p>
 
   <section>
+    <h2>0. 관계 지도</h2>
+    <p class="sub">약·표적·회사 이름(또는 NCT 번호)을 넣으면 그래프에서 그것과 이어진 것을 모두 그립니다.
+    동그라미를 누르면 그쪽으로 옮겨 갑니다. 예를 들어 약 &rarr; 그 약의 임상을 주관한 회사 &rarr; 그 회사가 주관한 다른 약 순서로 따라가며,
+    관계가 바이오 지식으로 말이 되는지 확인해 보세요. 선이 있다는 것은 &lsquo;근거가 된 기록이 있다&rsquo;는 뜻이고, 임상을 주관했다는 것은 그 약을 개발했다는 뜻이 아닙니다.</p>
+    <form class="row" id="f0"><input id="t0" placeholder="예: osimertinib, EGFR, AstraZeneca, NCT00200395" autocomplete="off" aria-label="찾을 이름"><button>그리기</button></form>
+    <div class="exs" id="ex0"></div>
+    <div class="row" id="trail0" style="margin-top:10px;font-size:13px;color:var(--ink-3)"></div>
+    <div class="out" id="o0" aria-live="polite"></div>
+  </section>
+
+  <section>
     <h2>1. 약 이름 넣어 보기</h2>
     <p class="sub">상품명, 개발 코드, 오타, 여러 약을 붙여 쓴 것, 위약이 섞인 것 모두 넣어 볼 수 있습니다.</p>
     <form class="row" id="f1"><input id="t1" placeholder="예: Tarceva, placebo plus docetaxel" autocomplete="off" aria-label="약 이름"><button>읽어 보기</button></form>
@@ -122,6 +133,77 @@ function chips(id, list, input, form){
     document.getElementById(input).value=b.dataset.t; document.getElementById(form).requestSubmit();});
 }
 chips("ex1",EX1,"t1","f1"); chips("ex2",EX2,"t2","f2");
+
+// 0. relation map
+const TCOL = {Drug:"var(--accent)", Target:"var(--ok)", Company:"var(--warn)", Investigator:"var(--warn)",
+  Trial:"var(--gray)", Disease:"var(--no)"};
+const TKO = {Drug:"약", Target:"표적", Company:"기관", Investigator:"연구자", Trial:"임상시험", Disease:"질환"};
+const GKO = {"EVALUATES|in":"이 약을 시험하는 임상", "EVALUATES|out":"이 임상이 시험하는 약",
+  "SPONSORS_TRIAL_OF|in":"이 약의 임상을 주관한 곳 (주관 ≠ 개발)", "SPONSORS_TRIAL_OF|out":"이곳이 임상을 주관한 약",
+  "ACTS_ON|out":"이 약이 작용하는 표적", "ACTS_ON|in":"이 표적에 작용하는 약",
+  "SPONSORS|out":"이곳이 주관한 임상", "SPONSORS|in":"이 임상의 주관 기관",
+  "PARENT_OF|out":"자회사", "PARENT_OF|in":"모회사",
+  "ASSOCIATED_WITH|out":"관련 질환", "ASSOCIATED_WITH|in":"이 질환과 관련된 표적",
+  "STUDIES|out":"대상 질환", "STUDIES|in":"이 질환의 임상"};
+const PH = p => (p||[]).map(x=>({PHASE1:"1상",PHASE2:"2상",PHASE3:"3상",PHASE4:"4상",EARLY_PHASE1:"초기 1상"}[x]||x)).join("/");
+const ACT = {INHIBITOR:"억제", ANTAGONIST:"길항", AGONIST:"작용", BINDING_AGENT:"결합", BLOCKER:"차단",
+  MODULATOR:"조절", ANTIBODY_DRUG_CONJUGATE:"항체-약물 접합"};
+function itemDetail(it, rel){
+  if(it.type==="Trial") return [PH(it.phases), it.status, it.start_date, it.title].filter(Boolean).join(" · ");
+  if(rel==="SPONSORS_TRIAL_OF") return `주관한 임상 ${it.weight}건`+(it.sponsor_class?` · ${it.sponsor_class==="INDUSTRY"?"제약사":"비산업(병원·학계·정부 등)"}`:"");
+  if(it.type==="Drug") return [`임상 ${it.weight}건`, it.max_phase?(PHASE[it.max_phase]||it.max_phase)+"까지":"", it.action?"작용: "+(ACT[it.action]||it.action):""].filter(Boolean).join(" · ");
+  if(it.action) return "작용: "+(ACT[it.action]||it.action);
+  return "";
+}
+const trail = [];
+function drawMap(r){
+  const W=900, H=560, cx=W/2, cy=H/2, MAX=40;
+  // trials are many and named by number only, so they get a small share of the ring
+  const wt = g => g.items.length*(g.type==="Trial"?0.3:1);
+  const total = r.groups.reduce((a,g)=>a+wt(g),0);
+  const shown = r.groups.map(g=>g.items.slice(0, Math.max(3, Math.round(MAX*wt(g)/Math.max(total,1)))));
+  const n = shown.reduce((a,s)=>a+s.length,0); let k=0, s="", labels="";
+  shown.forEach((list,gi)=>list.forEach(it=>{
+    const a = (k++/n)*Math.PI*2 - Math.PI/2, rr = (k%2? 1 : 0.8);
+    const x = cx+Math.cos(a)*330*rr, y = cy+Math.sin(a)*215*rr;
+    s += `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="var(--line)" stroke-width="1.2"/>`;
+    const lab = (it.type==="Trial"? it.label : (it.label||"").slice(0,20));
+    labels += `<g class="nd" data-id="${esc(it.id)}" style="cursor:pointer"><title>${esc(TKO[it.type]+": "+it.label+" — "+itemDetail(it, r.groups[gi].rel))}</title>`+
+      `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="7" fill="${TCOL[it.type]||"var(--gray)"}" stroke="var(--surface)" stroke-width="2"/>`+
+      `<text x="${x.toFixed(1)}" y="${(y+(Math.sin(a)<0?-11:19)).toFixed(1)}" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-2)">${esc(lab)}</text></g>`;
+  }));
+  const c=r.center;
+  return `<div style="overflow-x:auto"><svg viewBox="0 0 ${W} ${H}" width="100%" style="min-width:640px;height:auto" role="img" aria-label="${esc(c.label)}의 관계 지도">${s}${labels}`+
+    `<circle cx="${cx}" cy="${cy}" r="30" fill="${TCOL[c.type]||"var(--gray)"}" stroke="var(--surface)" stroke-width="3"/>`+
+    `<text x="${cx}" y="${cy+50}" text-anchor="middle" font-size="14" font-weight="600" fill="var(--ink)">${esc(c.label)}</text></svg></div>`+
+    `<div class="exs">${Object.keys(TKO).filter(t=>t===c.type||r.groups.some(g=>g.type===t)).map(t=>`<span class="chip"><span style="color:${TCOL[t]}">●</span> ${TKO[t]}</span>`).join("")}</div>`;
+}
+async function explore(text, push=true){
+  const o=document.getElementById("o0"); o.innerHTML="<p class='note'>그리는 중…</p>";
+  let r; try{ r = await call("/api/explore",text); }catch(e){ o.innerHTML=`<p class="err">${esc(e.message)}</p>`; return; }
+  if(r.refused){ o.innerHTML=`<div class="comp no"><div class="top"><span class="verdict">연결하지 않음</span><span class="s">${esc(r.refused)}</span></div><div class="detail">바이오시밀러·개량 제형·추적자처럼 원래 약과 다른 제품이라, 원래 약의 관계로 그리지 않습니다.</div></div>`; return; }
+  if(r.not_found){ o.innerHTML=`<p class="err">그래프에서 찾지 못했습니다: ${esc(r.not_found)} (이 그래프는 비소세포폐암 임상시험 3,000건 범위입니다)</p>`; return; }
+  const c=r.center;
+  if(push){ trail.push([c.id,c.label]); }
+  document.getElementById("trail0").innerHTML = trail.length>1 ? "따라온 길: "+trail.map((t,i)=>`<button type="button" class="ex" data-back="${i}">${esc(t[1])}</button>`).join(" → ") : "";
+  const cp=c.props||{};
+  const head = `<div class="comp ok"><div class="top"><span class="verdict">${esc(TKO[c.type]||c.type)}</span><span class="s">${esc(c.label)}</span><span class="code">${esc(c.id)}</span></div>`+
+    `<div class="detail">${[c.trials!=null?`이 그래프 안 임상 ${c.trials}건`:"", cp.max_phase_overall?`최고 개발 단계 ${PHASE[cp.max_phase_overall]||cp.max_phase_overall}`:"", cp.drug_type||"",
+      cp.phases?PH(cp.phases):"", cp.status||"", cp.title||""].filter(Boolean).map(esc).join(" · ")}`+
+    `${cp.url?` · <a href="${esc(cp.url)}" target="_blank" rel="noopener">ClinicalTrials.gov</a>`:""}</div></div>`;
+  const lists = r.groups.map(g=>`<details ${g.total<=12?"open":""}><summary style="cursor:pointer;margin-top:6px"><b>${esc(GKO[g.rel+"|"+g.dir]||g.rel)}</b> <span class="chip">${g.total}</span>${g.total>g.items.length?` <span class="note">근거가 많은 ${g.items.length}개만</span>`:""}</summary>`+
+    `<div class="ev">${g.items.map(it=>`<div><button type="button" class="ex" data-id="${esc(it.id)}">${esc(it.label)}</button> ${esc(itemDetail(it,g.rel))}`+
+      `${it.url?` <a href="${esc(it.url)}" target="_blank" rel="noopener">↗</a>`:""} <span class="code">${esc(it.edge_id)}</span></div>`).join("")}</div></details>`).join("");
+  o.innerHTML = head + drawMap(r) + lists;
+}
+document.getElementById("f0").addEventListener("submit",e=>{e.preventDefault(); const v=document.getElementById("t0").value.trim(); if(v){trail.length=0; explore(v);}});
+document.getElementById("o0").addEventListener("click",e=>{const b=e.target.closest("[data-id]"); if(b){ explore(b.dataset.id); }});
+document.getElementById("trail0").addEventListener("click",e=>{const b=e.target.closest("[data-back]"); if(!b) return;
+  const i=+b.dataset.back; const id=trail[i][0]; trail.length=i+1; explore(id,false);});
+document.getElementById("ex0").innerHTML = [["osimertinib","약"],["EGFR","표적"],["KRAS","표적"],["AstraZeneca","회사"],["NCT00200395","임상"],["Mvasi","바이오시밀러"]]
+  .map(([t,h])=>`<button type="button" class="ex" data-t="${esc(t)}">${esc(t)} <small>${esc(h)}</small></button>`).join("");
+document.getElementById("ex0").addEventListener("click",e=>{const b=e.target.closest(".ex"); if(!b) return;
+  document.getElementById("t0").value=b.dataset.t; trail.length=0; explore(b.dataset.t);});
 const EX3 = [
   ["근거대로 쓴 답","Which drugs act on ALK?","Alectinib and lorlatinib act on ALK."],
   ["지어낸 약 이름","Which drugs act on ALK?","Alectinib, lorlatinib and zorbatinib act on ALK."],

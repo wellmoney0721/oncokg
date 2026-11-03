@@ -2,7 +2,8 @@
 
     python src/app.py            then open http://localhost:8765
 
-Four boxes: type an intervention string the way a registry would write it and see
+A relation map (a node and everything a live edge ties it to, click to move on),
+then four boxes: type an intervention string the way a registry would write it and see
 how the resolver reads it, or ask a question and see the grounded answer with its
 evidence, give a structured answer (claims citing evidence edges) and see which
 claims the graph supports and the answer written from them, or paste free prose and
@@ -65,6 +66,73 @@ class Engine:
                     (self.dic["drugs"].get(x) or {}).get("name", x) for x in c["candidates"]]
         return out
 
+    def explore(self, text: str, per_group: int = 30) -> dict:
+        """One node and everything a live edge ties it to, grouped by relation.
+
+        `text` is a node id or a name the question linker reads as one entity; a name
+        the linker refuses (a biosimilar, a tracer) is reported, not mapped to the
+        originator. Neighbours are ordered by how much evidence stands behind them."""
+        conn = self.kg.conn
+        row = conn.execute("SELECT id FROM node WHERE id=? AND retired_at IS NULL",
+                           (text,)).fetchone()
+        if row:
+            nid = row["id"]
+        else:
+            ents = self.kg.link_entities(text)
+            hits = [e for e in ents if e.get("id") and e["type"] != "Refused"]
+            if not hits:
+                refused = [e for e in ents if e["type"] == "Refused"]
+                if refused:
+                    return {"refused": refused[0]["label"], "why": refused[0]["why"]}
+                return {"not_found": text}
+            nid = hits[0]["id"]
+        node = conn.execute("SELECT id, type, label, props FROM node WHERE id=?", (nid,)).fetchone()
+        rows = conn.execute(
+            "SELECT e.id AS eid, e.rel, e.src, e.props AS eprops, n.id, n.type, n.label, "
+            "n.props AS nprops FROM edge e JOIN node n "
+            "ON n.id = CASE WHEN e.src=? THEN e.dst ELSE e.src END "
+            "WHERE (e.src=? OR e.dst=?) AND e.retired_at IS NULL AND n.retired_at IS NULL",
+            (nid, nid, nid)).fetchall()
+        drug_ids = list({r["id"] for r in rows if r["type"] == "Drug"} | {nid})
+        trials = {}
+        for i in range(0, len(drug_ids), 500):
+            chunk = drug_ids[i:i + 500]
+            trials.update(conn.execute(
+                "SELECT dst, COUNT(*) FROM edge WHERE rel='EVALUATES' AND retired_at IS NULL "
+                f"AND dst IN ({','.join('?' * len(chunk))}) GROUP BY dst", chunk).fetchall())
+        groups: dict = {}
+        for r in rows:
+            ep, np_ = json.loads(r["eprops"] or "{}"), json.loads(r["nprops"] or "{}")
+            item = {"id": r["id"], "type": r["type"], "label": r["label"], "edge_id": r["eid"]}
+            if r["rel"] == "SPONSORS_TRIAL_OF":
+                item["weight"] = ep.get("evidence_trials") or 0
+                item["sponsor_class"] = ep.get("sponsor_class")
+            elif r["type"] == "Trial":
+                item.update({k: np_.get(k) for k in ("phases", "status", "title", "start_date", "url")})
+                item["weight"] = np_.get("start_date") or ""
+            elif r["type"] == "Drug":
+                item["weight"] = trials.get(r["id"], 0)
+                item["max_phase"] = np_.get("max_phase_overall")
+            else:
+                item["weight"] = 0
+            if r["rel"] == "ACTS_ON":
+                item["action"] = ep.get("action_type")
+            key = (r["rel"], "out" if r["src"] == nid else "in", r["type"])
+            groups.setdefault(key, []).append(item)
+        out = []
+        for (rel, direction, ntype), items in groups.items():
+            items.sort(key=lambda x: (x["weight"], x["label"] or ""), reverse=True)
+            out.append({"rel": rel, "dir": direction, "type": ntype, "total": len(items),
+                        "items": items[:per_group]})
+        out.sort(key=lambda g: -g["total"])
+        props = json.loads(node["props"] or "{}")
+        return {"center": {"id": node["id"], "type": node["type"], "label": node["label"],
+                           "trials": trials.get(node["id"]) if node["type"] == "Drug" else None,
+                           "props": {k: props.get(k) for k in
+                                     ("max_phase_overall", "drug_type", "phases", "status",
+                                      "title", "url", "start_date") if props.get(k) is not None}},
+                "groups": out}
+
     def ask(self, question: str) -> dict:
         return self.kg.answer(question, use_llm=False).to_dict()
 
@@ -115,10 +183,12 @@ def make_handler(engine: Engine):
                 if not text:
                     raise ValueError("empty input")
                 if self.path not in ("/api/resolve", "/api/ask", "/api/check",
-                                     "/api/structured"):
+                                     "/api/structured", "/api/explore"):
                     return self._send(404, b"{}", "application/json")
                 with engine.lock:
-                    if self.path == "/api/resolve":
+                    if self.path == "/api/explore":
+                        res = engine.explore(text)
+                    elif self.path == "/api/resolve":
                         res = engine.resolve(text)
                     elif self.path == "/api/ask":
                         res = engine.ask(text)
