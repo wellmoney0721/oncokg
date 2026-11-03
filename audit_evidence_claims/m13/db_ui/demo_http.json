@@ -1,0 +1,2601 @@
+{
+  "total": 36,
+  "http_200": 36,
+  "equal": 36,
+  "served_equals_worktree": true,
+  "rows": [
+    {
+      "kind": "EX1",
+      "index": 0,
+      "input": {
+        "text": "Tarceva"
+      },
+      "status": 200,
+      "seconds": 0.047309699933975935,
+      "equals_direct_engine": true,
+      "body": {
+        "raw": "Tarceva",
+        "components": [
+          {
+            "component": "Tarceva",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1079742",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Tarceva",
+            "candidates": null,
+            "drug": {
+              "name": "ERLOTINIB HYDROCHLORIDE",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor"
+              ],
+              "trials": 31,
+              "parent": {
+                "name": "ERLOTINIB",
+                "trials": 118
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX1",
+      "index": 1,
+      "input": {
+        "text": "OSI-774"
+      },
+      "status": 200,
+      "seconds": 0.033611000049859285,
+      "equals_direct_engine": true,
+      "body": {
+        "raw": "OSI-774",
+        "components": [
+          {
+            "component": "OSI-774",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL553",
+            "score": null,
+            "rules": [],
+            "matched_alias": "osi 774",
+            "candidates": null,
+            "drug": {
+              "name": "ERLOTINIB",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor"
+              ],
+              "trials": 118
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX1",
+      "index": 2,
+      "input": {
+        "text": "Gemicitabine"
+      },
+      "status": 200,
+      "seconds": 0.03718029987066984,
+      "equals_direct_engine": true,
+      "body": {
+        "raw": "Gemicitabine",
+        "components": [
+          {
+            "component": "Gemicitabine",
+            "tier": "FUZZY_AUTO",
+            "drug_id": "CHEMBL888",
+            "score": 95.7,
+            "rules": [
+              "fuzzy_match"
+            ],
+            "matched_alias": "GEMCITABINE",
+            "candidates": null,
+            "drug": {
+              "name": "GEMCITABINE",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Ribonucleoside-diphosphate reductase RR1 inhibitor",
+                "DNA polymerase (alpha/delta/epsilon) inhibitor"
+              ],
+              "trials": 144
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX1",
+      "index": 3,
+      "input": {
+        "text": "erlotinib hydrochloride 150 mg tablet"
+      },
+      "status": 200,
+      "seconds": 0.01848739990964532,
+      "equals_direct_engine": true,
+      "body": {
+        "raw": "erlotinib hydrochloride 150 mg tablet",
+        "components": [
+          {
+            "component": "erlotinib hydrochloride",
+            "tier": "EXACT",
+            "drug_id": "CHEMBL1079742",
+            "score": null,
+            "rules": [
+              "strip_dose",
+              "strip_formulation"
+            ],
+            "matched_alias": "ERLOTINIB HYDROCHLORIDE",
+            "candidates": null,
+            "drug": {
+              "name": "ERLOTINIB HYDROCHLORIDE",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor"
+              ],
+              "trials": 31,
+              "parent": {
+                "name": "ERLOTINIB",
+                "trials": 118
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX1",
+      "index": 4,
+      "input": {
+        "text": "Cisplatin Docetaxel Gefitinib Pemetrexed"
+      },
+      "status": 200,
+      "seconds": 0.046470999950543046,
+      "equals_direct_engine": true,
+      "body": {
+        "raw": "Cisplatin Docetaxel Gefitinib Pemetrexed",
+        "components": [
+          {
+            "component": "Cisplatin",
+            "tier": "CONTAINED_ALIAS",
+            "drug_id": "CHEMBL11359",
+            "score": null,
+            "rules": [
+              "segmented_from_phrase"
+            ],
+            "matched_alias": "CISPLATIN",
+            "candidates": null,
+            "note": "segmented out of 'Cisplatin Docetaxel Gefitinib Pemetrexed'",
+            "drug": {
+              "name": "CISPLATIN",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_3",
+              "mechanisms": [],
+              "trials": 259
+            }
+          },
+          {
+            "component": "Docetaxel",
+            "tier": "CONTAINED_ALIAS",
+            "drug_id": "CHEMBL3545252",
+            "score": null,
+            "rules": [
+              "segmented_from_phrase"
+            ],
+            "matched_alias": "DOCETAXEL",
+            "candidates": null,
+            "note": "segmented out of 'Cisplatin Docetaxel Gefitinib Pemetrexed'",
+            "drug": {
+              "name": "DOCETAXEL",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Tubulin inhibitor"
+              ],
+              "trials": 203
+            }
+          },
+          {
+            "component": "Gefitinib",
+            "tier": "CONTAINED_ALIAS",
+            "drug_id": "CHEMBL939",
+            "score": null,
+            "rules": [
+              "segmented_from_phrase"
+            ],
+            "matched_alias": "GEFITINIB",
+            "candidates": null,
+            "note": "segmented out of 'Cisplatin Docetaxel Gefitinib Pemetrexed'",
+            "drug": {
+              "name": "GEFITINIB",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor"
+              ],
+              "trials": 62
+            }
+          },
+          {
+            "component": "Pemetrexed",
+            "tier": "CONTAINED_ALIAS",
+            "drug_id": "CHEMBL225072",
+            "score": null,
+            "rules": [
+              "segmented_from_phrase"
+            ],
+            "matched_alias": "PEMETREXED",
+            "candidates": null,
+            "note": "segmented out of 'Cisplatin Docetaxel Gefitinib Pemetrexed'",
+            "drug": {
+              "name": "PEMETREXED",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Thymidylate synthase inhibitor",
+                "Dihydrofolate reductase inhibitor",
+                "GAR transformylase inhibitor"
+              ],
+              "trials": 290
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX1",
+      "index": 5,
+      "input": {
+        "text": "placebo plus docetaxel"
+      },
+      "status": 200,
+      "seconds": 0.022654299857094884,
+      "equals_direct_engine": true,
+      "body": {
+        "raw": "placebo plus docetaxel",
+        "components": [
+          {
+            "component": "placebo",
+            "tier": "BLOCKED_PLACEBO",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "placebo_co_administration_split",
+              "placebo_guard"
+            ],
+            "note": "placebo component of a combination arm"
+          },
+          {
+            "component": "docetaxel",
+            "tier": "EXACT",
+            "drug_id": "CHEMBL3545252",
+            "score": null,
+            "rules": [
+              "split_combination",
+              "placebo_co_administration_split"
+            ],
+            "matched_alias": "DOCETAXEL",
+            "candidates": null,
+            "drug": {
+              "name": "DOCETAXEL",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Tubulin inhibitor"
+              ],
+              "trials": 203
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX1",
+      "index": 6,
+      "input": {
+        "text": "Placebo to match pembrolizumab"
+      },
+      "status": 200,
+      "seconds": 0.0019435000140219927,
+      "equals_direct_engine": true,
+      "body": {
+        "raw": "Placebo to match pembrolizumab",
+        "components": [
+          {
+            "component": "Placebo to match pembrolizumab",
+            "tier": "BLOCKED_PLACEBO",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "placebo_guard",
+              "placebo_reference_arm"
+            ],
+            "note": "placebo arm naming its reference drug - no exposure"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX1",
+      "index": 7,
+      "input": {
+        "text": "Abraxane"
+      },
+      "status": 200,
+      "seconds": 0.02039630012586713,
+      "equals_direct_engine": true,
+      "body": {
+        "raw": "Abraxane",
+        "components": [
+          {
+            "component": "Abraxane",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX1",
+      "index": 8,
+      "input": {
+        "text": "Mvasi"
+      },
+      "status": 200,
+      "seconds": 0.0027216000016778708,
+      "equals_direct_engine": true,
+      "body": {
+        "raw": "Mvasi",
+        "components": [
+          {
+            "component": "Mvasi",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX1",
+      "index": 9,
+      "input": {
+        "text": "pembrolizumab-free regimen"
+      },
+      "status": 200,
+      "seconds": 0.012535399990156293,
+      "equals_direct_engine": true,
+      "body": {
+        "raw": "pembrolizumab-free regimen",
+        "components": [
+          {
+            "component": "pembrolizumab-free",
+            "tier": "BLOCKED_NEGATED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "strip_regimen_word",
+              "negation_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "negated substance: the arm records its absence"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX1",
+      "index": 10,
+      "input": {
+        "text": "MEDI4736"
+      },
+      "status": 200,
+      "seconds": 0.0167970999609679,
+      "equals_direct_engine": true,
+      "body": {
+        "raw": "MEDI4736",
+        "components": [
+          {
+            "component": "MEDI4736",
+            "tier": "AMBIGUOUS",
+            "drug_id": null,
+            "score": null,
+            "rules": [],
+            "matched_alias": null,
+            "candidates": [
+              "CHEMBL3301587",
+              "CHEMBL3707227"
+            ],
+            "note": "surface form maps to 2 molecules",
+            "candidate_names": [
+              "DURVALUMAB",
+              "ATEZOLIZUMAB"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX1",
+      "index": 11,
+      "input": {
+        "text": "EGFR"
+      },
+      "status": 200,
+      "seconds": 0.01569309993647039,
+      "equals_direct_engine": true,
+      "body": {
+        "raw": "EGFR",
+        "components": [
+          {
+            "component": "EGFR",
+            "tier": "BLOCKED_TARGET_TERM",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "target_symbol_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "a target or gene symbol, not an administered substance"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX1",
+      "index": 12,
+      "input": {
+        "text": "propranolol"
+      },
+      "status": 200,
+      "seconds": 0.020632999949157238,
+      "equals_direct_engine": true,
+      "body": {
+        "raw": "propranolol",
+        "components": [
+          {
+            "component": "propranolol",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX2",
+      "index": 0,
+      "input": {
+        "text": "What trials evaluate Tagrisso?"
+      },
+      "status": 200,
+      "seconds": 0.03741330001503229,
+      "equals_direct_engine": true,
+      "body": {
+        "question": "What trials evaluate Tagrisso?",
+        "intent": "trials_for_entity",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL3353410",
+            "label": "OSIMERTINIB",
+            "matched_text": "Tagrisso",
+            "matched_alias": "Tagrisso"
+          }
+        ],
+        "answer": "Trials of this drug:\n  - NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT03909334]\n  - NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB [NCT07680790]\n  - NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT02411448]\n  - NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04285671]\n  - NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04141644]\n  - NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT03535363]\n  - NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04487080]\n  - NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB [NCT07738172]\n  - NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT04541407]\n  - NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB [NCT04772235]\n  - NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB [NCT05011487]\n  - NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT04479306]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+        "generated_by": "deterministic template (no language model)",
+        "checks": {
+          "grounded": null,
+          "applicable": false,
+          "unsupported_claims": [],
+          "evidence_count": 12,
+          "method": "not applicable",
+          "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+        },
+        "evidence": [
+          {
+            "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT03909334",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT03909334",
+            "stated_intervention": "Osimertinib",
+            "title": "Study of Osimertinib With and Without Ramucirumab in Locally Advanced or Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+            "status": "ACTIVE_NOT_RECRUITING",
+            "phases": [
+              "PHASE2"
+            ]
+          },
+          {
+            "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT07680790",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT07680790",
+            "stated_intervention": "Osimertinib",
+            "title": "Study of Izalontamab Brengitecan (BMS-986507) in Combination With Osimertinib Versus Osimertinib Monotherapy or Osimertinib in Combination With Platinum-based Chemotherapy for EGFRmt Non-small Cell Lung Cancer (IZABRIGHT-Lung02)",
+            "status": "RECRUITING",
+            "phases": [
+              "PHASE3"
+            ]
+          },
+          {
+            "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT02411448",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT02411448",
+            "stated_intervention": "Osimertinib",
+            "title": "A Study of Ramucirumab (LY3009806) in Combination With Erlotinib in Previously Untreated Participants With EGFR Mutation-Positive Metastatic NSCLC (RELAY)",
+            "status": "ACTIVE_NOT_RECRUITING",
+            "phases": [
+              "PHASE3"
+            ]
+          },
+          {
+            "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT04285671",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT04285671",
+            "stated_intervention": "Osimertinib",
+            "title": "Necitumumab and Trastuzumab in Combination With Osimertinib for the Treatment of Refractory Epidermal Growth Factor Receptor (EGFR)-Mutated Stage IV Non-small Cell Lung Cancer",
+            "status": "ACTIVE_NOT_RECRUITING",
+            "phases": [
+              "PHASE1",
+              "PHASE2"
+            ]
+          },
+          {
+            "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT04141644",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT04141644",
+            "stated_intervention": "Osimertinib",
+            "title": "Safety and Efficacy of Combination Osimertinib and Ipilimumab in Patients w EGFR Mutated NSCLC",
+            "status": "ACTIVE_NOT_RECRUITING",
+            "phases": [
+              "PHASE1"
+            ]
+          },
+          {
+            "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT03535363",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT03535363",
+            "stated_intervention": "Osimertinib",
+            "title": "Osimertinib With Stereotactic Radiosurgery (SRS) in Brain Metastases From EGFR Positive NSCLC",
+            "status": "COMPLETED",
+            "phases": [
+              "PHASE1"
+            ]
+          },
+          {
+            "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT04487080",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT04487080",
+            "stated_intervention": "Osimertinib",
+            "title": "A Study of Amivantamab and Lazertinib Combination Therapy Versus Osimertinib in Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
+            "status": "ACTIVE_NOT_RECRUITING",
+            "phases": [
+              "PHASE3"
+            ]
+          },
+          {
+            "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT07738172",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT07738172",
+            "stated_intervention": "Osimertinib",
+            "title": "Osimertinib With or Without Primary Lung Tumor Resection for EGFR-Mutant Oligometastatic Non-Small Cell Lung Cancer",
+            "status": "RECRUITING",
+            "phases": [
+              "PHASE3"
+            ]
+          },
+          {
+            "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT04541407",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT04541407",
+            "stated_intervention": "Temozolomide plus Osimertinib",
+            "title": "Temodar Plus Tyrosine Kinase Inhibitors for Progressive CNS Disease",
+            "status": "COMPLETED",
+            "phases": [
+              "PHASE1"
+            ]
+          },
+          {
+            "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT04772235",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT04772235",
+            "stated_intervention": "Osimertinib",
+            "title": "Phase I Study of Repotrectinib and Osimertinib in NSCLC Patients",
+            "status": "UNKNOWN",
+            "phases": [
+              "PHASE1"
+            ]
+          },
+          {
+            "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT05011487",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT05011487",
+            "stated_intervention": "Osimertinib",
+            "title": "Neoadjuvant Osimertinib + Chemotherapy for EGFR-mutant Stage III NSCLC",
+            "status": "RECRUITING",
+            "phases": [
+              "PHASE2"
+            ]
+          },
+          {
+            "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT04479306",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT04479306",
+            "stated_intervention": "Osimertinib",
+            "title": "Osimertinib in Combination With Alisertib or Sapanisertib for the Treatment of Osimertinib-Resistant EGFR Mutant Stage IIIB or IV Non-Small Cell Lung Cancer",
+            "status": "COMPLETED",
+            "phases": [
+              "PHASE1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX2",
+      "index": 1,
+      "input": {
+        "text": "Which companies are developing osimertinib?"
+      },
+      "status": 200,
+      "seconds": 0.027329400181770325,
+      "equals_direct_engine": true,
+      "body": {
+        "question": "Which companies are developing osimertinib?",
+        "intent": "companies_for_drug",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL3353410",
+            "label": "OSIMERTINIB",
+            "matched_text": "osimertinib",
+            "matched_alias": "OSIMERTINIB"
+          }
+        ],
+        "answer": "Lead sponsorship of trials of this drug:\n  - Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT01802632, NCT02143466, NCT02224053]\n  - Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT03810807, NCT06741085, NCT07535437]\n  - National Cancer Institute (nih sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT03191149, NCT03831932, NCT04181060]\n  - Bristol Myers Squibb (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT06618287, NCT07680790]\n  - Eli Lilly (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT02411448, NCT02789345]\n  - M D Anderson Cancer Center (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT04479306, NCT05017025]\n  - Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT04425681, NCT06557096]\n  - Shanghai Jmt-bio (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT06391944, NCT06735391]\n  - Sichuan Kelun-biotech (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT06670196, NCT07622186]\n  - Tianjin Medical University Cancer Institute And Hospital (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT04029350, NCT05507606]\n  - Tyk Medicines (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT05382728, NCT05948813]\n  - Abbisko (industry sponsor) is lead sponsor of 1 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT07710612]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+        "generated_by": "deterministic template (no language model)",
+        "checks": {
+          "grounded": null,
+          "applicable": false,
+          "unsupported_claims": [],
+          "evidence_count": 12,
+          "method": "not applicable",
+          "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+        },
+        "evidence": [
+          {
+            "statement": "Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "source": "derived",
+            "source_record": "NCT01802632, NCT02143466, NCT02224053",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 14,
+            "example_trials": [
+              "NCT01802632",
+              "NCT02143466",
+              "NCT02224053"
+            ]
+          },
+          {
+            "statement": "Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "source": "derived",
+            "source_record": "NCT03810807, NCT06741085, NCT07535437",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 3,
+            "example_trials": [
+              "NCT03810807",
+              "NCT06741085",
+              "NCT07535437"
+            ]
+          },
+          {
+            "statement": "National Cancer Institute (nih sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "source": "derived",
+            "source_record": "NCT03191149, NCT03831932, NCT04181060",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "NIH",
+            "evidence_trials": 3,
+            "example_trials": [
+              "NCT03191149",
+              "NCT03831932",
+              "NCT04181060"
+            ]
+          },
+          {
+            "statement": "Bristol Myers Squibb (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:bristolmyerssquibb|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "source": "derived",
+            "source_record": "NCT06618287, NCT07680790",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT06618287",
+              "NCT07680790"
+            ]
+          },
+          {
+            "statement": "Eli Lilly (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "source": "derived",
+            "source_record": "NCT02411448, NCT02789345",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT02411448",
+              "NCT02789345"
+            ]
+          },
+          {
+            "statement": "M D Anderson Cancer Center (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "source": "derived",
+            "source_record": "NCT04479306, NCT05017025",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT04479306",
+              "NCT05017025"
+            ]
+          },
+          {
+            "statement": "Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:secondaffiliatedhospitalofnanchanguniversity|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "source": "derived",
+            "source_record": "NCT04425681, NCT06557096",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT04425681",
+              "NCT06557096"
+            ]
+          },
+          {
+            "statement": "Shanghai Jmt-bio (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:shanghaijmtbio|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "source": "derived",
+            "source_record": "NCT06391944, NCT06735391",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT06391944",
+              "NCT06735391"
+            ]
+          },
+          {
+            "statement": "Sichuan Kelun-biotech (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:sichuankelunbiotech|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "source": "derived",
+            "source_record": "NCT06670196, NCT07622186",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT06670196",
+              "NCT07622186"
+            ]
+          },
+          {
+            "statement": "Tianjin Medical University Cancer Institute And Hospital (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:tianjinmedicaluniversitycancerinstituteandhospital|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "source": "derived",
+            "source_record": "NCT04029350, NCT05507606",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT04029350",
+              "NCT05507606"
+            ]
+          },
+          {
+            "statement": "Tyk Medicines (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:tykmedicines|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "source": "derived",
+            "source_record": "NCT05382728, NCT05948813",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT05382728",
+              "NCT05948813"
+            ]
+          },
+          {
+            "statement": "Abbisko (industry sponsor) is lead sponsor of 1 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:abbisko|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "source": "derived",
+            "source_record": "NCT07710612",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 1,
+            "example_trials": [
+              "NCT07710612"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX2",
+      "index": 2,
+      "input": {
+        "text": "Which drugs act on ALK?"
+      },
+      "status": 200,
+      "seconds": 0.11486570001579821,
+      "equals_direct_engine": true,
+      "body": {
+        "question": "Which drugs act on ALK?",
+        "intent": "drugs_for_target",
+        "entities": [
+          {
+            "type": "Target",
+            "id": "ENSG00000171094",
+            "label": "ALK",
+            "matched_text": "ALK"
+          }
+        ],
+        "answer": "Agents for this target:\n  - PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) [CHEMBL4650298]\n  - CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph) [CHEMBL3899477]\n  - ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph) [CHEMBL3545360]\n  - ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph) [CHEMBL3707320]\n  - LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph) [CHEMBL3286830]\n  - ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph) [CHEMBL4113131]\n  - ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph) [CHEMBL1983268]\n  - BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) [CHEMBL3545311]\n  - CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph) [CHEMBL2403108]\n  - CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph) [CHEMBL601719]\n  - ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph) [CHEMBL1738797]\n\nScope: 11 edge(s) from this graph; non-small cell lung cancer only.",
+        "generated_by": "deterministic template (no language model)",
+        "checks": {
+          "grounded": null,
+          "applicable": false,
+          "unsupported_claims": [],
+          "evidence_count": 11,
+          "method": "not applicable",
+          "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+        },
+        "evidence": [
+          {
+            "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+            "relation": "ACTS_ON",
+            "edge_id": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+            "source": "Open Targets / ChEMBL",
+            "source_record": "CHEMBL4650298",
+            "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+            "confidence": 0.95,
+            "resolution_tier": null,
+            "url": null,
+            "drug_id": "CHEMBL4650298",
+            "trials_in_graph": 0,
+            "max_phase_overall": "PHASE_1"
+          },
+          {
+            "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+            "relation": "ACTS_ON",
+            "edge_id": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+            "source": "Open Targets / ChEMBL",
+            "source_record": "CHEMBL3899477",
+            "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+            "confidence": 0.95,
+            "resolution_tier": null,
+            "url": null,
+            "drug_id": "CHEMBL3899477",
+            "trials_in_graph": 0,
+            "max_phase_overall": "PHASE_1_2"
+          },
+          {
+            "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+            "relation": "ACTS_ON",
+            "edge_id": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+            "source": "Open Targets / ChEMBL",
+            "source_record": "CHEMBL3545360",
+            "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+            "confidence": 0.95,
+            "resolution_tier": null,
+            "url": null,
+            "drug_id": "CHEMBL3545360",
+            "trials_in_graph": 0,
+            "max_phase_overall": "PHASE_1"
+          },
+          {
+            "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+            "relation": "ACTS_ON",
+            "edge_id": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+            "source": "Open Targets / ChEMBL",
+            "source_record": "CHEMBL3707320",
+            "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+            "confidence": 0.95,
+            "resolution_tier": null,
+            "url": null,
+            "drug_id": "CHEMBL3707320",
+            "trials_in_graph": 1,
+            "max_phase_overall": "APPROVAL"
+          },
+          {
+            "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+            "relation": "ACTS_ON",
+            "edge_id": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+            "source": "Open Targets / ChEMBL",
+            "source_record": "CHEMBL3286830",
+            "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+            "confidence": 0.95,
+            "resolution_tier": null,
+            "url": null,
+            "drug_id": "CHEMBL3286830",
+            "trials_in_graph": 13,
+            "max_phase_overall": "APPROVAL"
+          },
+          {
+            "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+            "relation": "ACTS_ON",
+            "edge_id": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+            "source": "Open Targets / ChEMBL",
+            "source_record": "CHEMBL4113131",
+            "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+            "confidence": 0.95,
+            "resolution_tier": null,
+            "url": null,
+            "drug_id": "CHEMBL4113131",
+            "trials_in_graph": 10,
+            "max_phase_overall": "APPROVAL"
+          },
+          {
+            "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+            "relation": "ACTS_ON",
+            "edge_id": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+            "source": "Open Targets / ChEMBL",
+            "source_record": "CHEMBL1983268",
+            "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+            "confidence": 0.95,
+            "resolution_tier": null,
+            "url": null,
+            "drug_id": "CHEMBL1983268",
+            "trials_in_graph": 5,
+            "max_phase_overall": "APPROVAL"
+          },
+          {
+            "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+            "relation": "ACTS_ON",
+            "edge_id": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+            "source": "Open Targets / ChEMBL",
+            "source_record": "CHEMBL3545311",
+            "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+            "confidence": 0.95,
+            "resolution_tier": null,
+            "url": null,
+            "drug_id": "CHEMBL3545311",
+            "trials_in_graph": 9,
+            "max_phase_overall": "APPROVAL"
+          },
+          {
+            "statement": "CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+            "relation": "ACTS_ON",
+            "edge_id": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+            "source": "Open Targets / ChEMBL",
+            "source_record": "CHEMBL2403108",
+            "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+            "confidence": 0.95,
+            "resolution_tier": null,
+            "url": null,
+            "drug_id": "CHEMBL2403108",
+            "trials_in_graph": 9,
+            "max_phase_overall": "APPROVAL"
+          },
+          {
+            "statement": "CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph)",
+            "relation": "ACTS_ON",
+            "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+            "source": "Open Targets / ChEMBL",
+            "source_record": "CHEMBL601719",
+            "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+            "confidence": 0.95,
+            "resolution_tier": null,
+            "url": null,
+            "drug_id": "CHEMBL601719",
+            "trials_in_graph": 15,
+            "max_phase_overall": "APPROVAL"
+          },
+          {
+            "statement": "ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph)",
+            "relation": "ACTS_ON",
+            "edge_id": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+            "source": "Open Targets / ChEMBL",
+            "source_record": "CHEMBL1738797",
+            "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+            "confidence": 0.95,
+            "resolution_tier": null,
+            "url": null,
+            "drug_id": "CHEMBL1738797",
+            "trials_in_graph": 16,
+            "max_phase_overall": "APPROVAL"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX2",
+      "index": 3,
+      "input": {
+        "text": "What does osimertinib target?"
+      },
+      "status": 200,
+      "seconds": 0.0224566999822855,
+      "equals_direct_engine": true,
+      "body": {
+        "question": "What does osimertinib target?",
+        "intent": "targets_of_drug",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL3353410",
+            "label": "OSIMERTINIB",
+            "matched_text": "osimertinib",
+            "matched_alias": "OSIMERTINIB"
+          }
+        ],
+        "answer": "Reported mechanism:\n  - OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410]\n\nScope: 1 edge(s) from this graph; non-small cell lung cancer only.",
+        "generated_by": "deterministic template (no language model)",
+        "checks": {
+          "grounded": null,
+          "applicable": false,
+          "unsupported_claims": [],
+          "evidence_count": 1,
+          "method": "not applicable",
+          "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+        },
+        "evidence": [
+          {
+            "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+            "relation": "ACTS_ON",
+            "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "source": "Open Targets / ChEMBL",
+            "source_record": "CHEMBL3353410",
+            "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+            "confidence": 0.95,
+            "resolution_tier": null,
+            "url": null,
+            "action_type": "INHIBITOR"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX2",
+      "index": 4,
+      "input": {
+        "text": "What is AstraZeneca running in NSCLC?"
+      },
+      "status": 200,
+      "seconds": 0.019714499823749065,
+      "equals_direct_engine": true,
+      "body": {
+        "question": "What is AstraZeneca running in NSCLC?",
+        "intent": "company_portfolio",
+        "entities": [
+          {
+            "type": "Company",
+            "id": "ORG:astrazeneca",
+            "label": "Astrazeneca",
+            "matched_text": "AstraZeneca",
+            "also_matching_ids": []
+          },
+          {
+            "type": "Disease",
+            "id": "MONDO_0005233",
+            "label": "non-small cell lung carcinoma",
+            "matched_text": "NSCLC"
+          }
+        ],
+        "answer": "This organisation's NSCLC trials:\n  - Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB [NCT01802632, NCT02143466, NCT02224053]\n  - Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN [NCT00006049, NCT00322452, NCT01000896]\n  - Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB [NCT00006049, NCT00034879, NCT00234442]\n  - Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB [NCT02740985, NCT03164616, NCT03703297]\n  - Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN [NCT02453282, NCT03164616, NCT04035486]\n  - Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED [NCT00372788, NCT02453282, NCT03164616]\n  - Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL [NCT00006049, NCT00322452, NCT01000896]\n  - Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG [NCT05123482, NCT06357533, NCT06627647]\n  - Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB [NCT00372788, NCT01605916, NCT01933932]\n  - Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB [NCT06357533, NCT06627647, NCT06692738]\n  - Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL [NCT00478049, NCT01933932, NCT02740985]\n  - Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN [NCT06357533, NCT07098338, NCT07291037]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+        "generated_by": "deterministic template (no language model)",
+        "checks": {
+          "grounded": null,
+          "applicable": false,
+          "unsupported_claims": [],
+          "evidence_count": 12,
+          "method": "not applicable",
+          "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+        },
+        "evidence": [
+          {
+            "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "source": "derived",
+            "source_record": "NCT01802632, NCT02143466, NCT02224053",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "evidence_trials": 14,
+            "example_trials": [
+              "NCT01802632",
+              "NCT02143466",
+              "NCT02224053"
+            ]
+          },
+          {
+            "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+            "source": "derived",
+            "source_record": "NCT00006049, NCT00322452, NCT01000896",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "evidence_trials": 10,
+            "example_trials": [
+              "NCT00006049",
+              "NCT00322452",
+              "NCT01000896"
+            ]
+          },
+          {
+            "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+            "source": "derived",
+            "source_record": "NCT00006049, NCT00034879, NCT00234442",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "evidence_trials": 8,
+            "example_trials": [
+              "NCT00006049",
+              "NCT00034879",
+              "NCT00234442"
+            ]
+          },
+          {
+            "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+            "source": "derived",
+            "source_record": "NCT02740985, NCT03164616, NCT03703297",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "evidence_trials": 7,
+            "example_trials": [
+              "NCT02740985",
+              "NCT03164616",
+              "NCT03703297"
+            ]
+          },
+          {
+            "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+            "source": "derived",
+            "source_record": "NCT02453282, NCT03164616, NCT04035486",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "evidence_trials": 6,
+            "example_trials": [
+              "NCT02453282",
+              "NCT03164616",
+              "NCT04035486"
+            ]
+          },
+          {
+            "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+            "source": "derived",
+            "source_record": "NCT00372788, NCT02453282, NCT03164616",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "evidence_trials": 6,
+            "example_trials": [
+              "NCT00372788",
+              "NCT02453282",
+              "NCT03164616"
+            ]
+          },
+          {
+            "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+            "source": "derived",
+            "source_record": "NCT00006049, NCT00322452, NCT01000896",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "evidence_trials": 6,
+            "example_trials": [
+              "NCT00006049",
+              "NCT00322452",
+              "NCT01000896"
+            ]
+          },
+          {
+            "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+            "source": "derived",
+            "source_record": "NCT05123482, NCT06357533, NCT06627647",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "evidence_trials": 6,
+            "example_trials": [
+              "NCT05123482",
+              "NCT06357533",
+              "NCT06627647"
+            ]
+          },
+          {
+            "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+            "source": "derived",
+            "source_record": "NCT00372788, NCT01605916, NCT01933932",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "evidence_trials": 4,
+            "example_trials": [
+              "NCT00372788",
+              "NCT01605916",
+              "NCT01933932"
+            ]
+          },
+          {
+            "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+            "source": "derived",
+            "source_record": "NCT06357533, NCT06627647, NCT06692738",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "evidence_trials": 4,
+            "example_trials": [
+              "NCT06357533",
+              "NCT06627647",
+              "NCT06692738"
+            ]
+          },
+          {
+            "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+            "source": "derived",
+            "source_record": "NCT00478049, NCT01933932, NCT02740985",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "evidence_trials": 4,
+            "example_trials": [
+              "NCT00478049",
+              "NCT01933932",
+              "NCT02740985"
+            ]
+          },
+          {
+            "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+            "source": "derived",
+            "source_record": "NCT06357533, NCT07098338, NCT07291037",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "evidence_trials": 4,
+            "example_trials": [
+              "NCT06357533",
+              "NCT07098338",
+              "NCT07291037"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX2",
+      "index": 5,
+      "input": {
+        "text": "What trials evaluate Mvasi?"
+      },
+      "status": 200,
+      "seconds": 0.0020845001563429832,
+      "equals_direct_engine": true,
+      "body": {
+        "question": "What trials evaluate Mvasi?",
+        "intent": "trials_for_entity",
+        "entities": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "What trials evaluate Mvasi",
+            "matched_text": "What trials evaluate Mvasi",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+        "generated_by": "refusal (no supporting evidence)",
+        "checks": {
+          "grounded": true,
+          "unsupported_claims": [],
+          "note": "refusing is the correct output when evidence is absent"
+        },
+        "evidence": []
+      }
+    },
+    {
+      "kind": "EX2",
+      "index": 6,
+      "input": {
+        "text": "What is the capital of France?"
+      },
+      "status": 200,
+      "seconds": 0.021166499936953187,
+      "equals_direct_engine": true,
+      "body": {
+        "question": "What is the capital of France?",
+        "intent": "unsupported",
+        "entities": [],
+        "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+        "generated_by": "refusal (no supporting evidence)",
+        "checks": {
+          "grounded": true,
+          "unsupported_claims": [],
+          "note": "refusing is the correct output when evidence is absent"
+        },
+        "evidence": []
+      }
+    },
+    {
+      "kind": "EX3",
+      "index": 0,
+      "input": {
+        "text": "Which drugs act on ALK?",
+        "answer": "Alectinib and lorlatinib act on ALK."
+      },
+      "status": 200,
+      "seconds": 0.12835650006309152,
+      "equals_direct_engine": true,
+      "body": {
+        "intent": "drugs_for_target",
+        "entities": [
+          {
+            "type": "Target",
+            "id": "ENSG00000171094",
+            "label": "ALK",
+            "matched_text": "ALK"
+          }
+        ],
+        "checks": {
+          "grounded": true,
+          "applicable": true,
+          "unsupported_claims": [],
+          "evidence_count": 11,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        },
+        "evidence": [
+          {
+            "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL4650298",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL3899477",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL3545360",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL3707320",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL3286830",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL4113131",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL1983268",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL3545311",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          }
+        ],
+        "evidence_count": 11
+      }
+    },
+    {
+      "kind": "EX3",
+      "index": 1,
+      "input": {
+        "text": "Which drugs act on ALK?",
+        "answer": "Alectinib, lorlatinib and zorbatinib act on ALK."
+      },
+      "status": 200,
+      "seconds": 0.13367390003986657,
+      "equals_direct_engine": true,
+      "body": {
+        "intent": "drugs_for_target",
+        "entities": [
+          {
+            "type": "Target",
+            "id": "ENSG00000171094",
+            "label": "ALK",
+            "matched_text": "ALK"
+          }
+        ],
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "drug_like_name",
+              "value": "zorbatinib",
+              "why": "looks like a drug name or code but is not in the evidence"
+            },
+            {
+              "kind": "wording",
+              "value": "zorbatinib",
+              "sentence": "Alectinib, lorlatinib and zorbatinib act on ALK.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            }
+          ],
+          "evidence_count": 11,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        },
+        "evidence": [
+          {
+            "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL4650298",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL3899477",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL3545360",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL3707320",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL3286830",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL4113131",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL1983268",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL3545311",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          }
+        ],
+        "evidence_count": 11
+      }
+    },
+    {
+      "kind": "EX3",
+      "index": 2,
+      "input": {
+        "text": "Which drugs act on ALK?",
+        "answer": "Alectinib acts on EGFR."
+      },
+      "status": 200,
+      "seconds": 0.10498629999347031,
+      "equals_direct_engine": true,
+      "body": {
+        "intent": "drugs_for_target",
+        "entities": [
+          {
+            "type": "Target",
+            "id": "ENSG00000171094",
+            "label": "ALK",
+            "matched_text": "ALK"
+          }
+        ],
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "relation",
+              "value": "ALECTINIB — acts — EGFR",
+              "sentence": "Alectinib acts on EGFR.",
+              "why": "no retrieved edge links these two entities this way"
+            },
+            {
+              "kind": "entity",
+              "value": "EGFR",
+              "why": "named in the answer but not in the evidence"
+            }
+          ],
+          "evidence_count": 11,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        },
+        "evidence": [
+          {
+            "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL4650298",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL3899477",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL3545360",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL3707320",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL3286830",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL4113131",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL1983268",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          },
+          {
+            "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+            "source_record": "CHEMBL3545311",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          }
+        ],
+        "evidence_count": 11
+      }
+    },
+    {
+      "kind": "EX3",
+      "index": 3,
+      "input": {
+        "text": "What trials evaluate Tagrisso?",
+        "answer": "Osimertinib is evaluated in 4,812 NSCLC trials."
+      },
+      "status": 200,
+      "seconds": 0.03610550006851554,
+      "equals_direct_engine": true,
+      "body": {
+        "intent": "trials_for_entity",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL3353410",
+            "label": "OSIMERTINIB",
+            "matched_text": "Tagrisso",
+            "matched_alias": "Tagrisso"
+          }
+        ],
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "number",
+              "value": "4,812",
+              "why": "not present in the retrieved evidence"
+            },
+            {
+              "kind": "number",
+              "value": "4812",
+              "sentence": "Osimertinib is evaluated in 4,812 NSCLC trials.",
+              "why": "no evidence statement about these entities gives that figure"
+            },
+            {
+              "kind": "indication",
+              "value": "lung cancer",
+              "sentence": "Osimertinib is evaluated in 4,812 NSCLC trials.",
+              "why": "a claim about the disease itself (what a drug is for or is); the graph holds trials, not indications"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        },
+        "evidence": [
+          {
+            "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+            "source_record": "NCT03909334",
+            "source": "clinicaltrials.gov",
+            "url": "https://clinicaltrials.gov/study/NCT03909334"
+          },
+          {
+            "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+            "source_record": "NCT07680790",
+            "source": "clinicaltrials.gov",
+            "url": "https://clinicaltrials.gov/study/NCT07680790"
+          },
+          {
+            "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+            "source_record": "NCT02411448",
+            "source": "clinicaltrials.gov",
+            "url": "https://clinicaltrials.gov/study/NCT02411448"
+          },
+          {
+            "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+            "source_record": "NCT04285671",
+            "source": "clinicaltrials.gov",
+            "url": "https://clinicaltrials.gov/study/NCT04285671"
+          },
+          {
+            "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+            "source_record": "NCT04141644",
+            "source": "clinicaltrials.gov",
+            "url": "https://clinicaltrials.gov/study/NCT04141644"
+          },
+          {
+            "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+            "source_record": "NCT03535363",
+            "source": "clinicaltrials.gov",
+            "url": "https://clinicaltrials.gov/study/NCT03535363"
+          },
+          {
+            "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+            "source_record": "NCT04487080",
+            "source": "clinicaltrials.gov",
+            "url": "https://clinicaltrials.gov/study/NCT04487080"
+          },
+          {
+            "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+            "source_record": "NCT07738172",
+            "source": "clinicaltrials.gov",
+            "url": "https://clinicaltrials.gov/study/NCT07738172"
+          }
+        ],
+        "evidence_count": 12
+      }
+    },
+    {
+      "kind": "EX3",
+      "index": 4,
+      "input": {
+        "text": "Which companies are developing osimertinib?",
+        "answer": "AstraZeneca has discontinued osimertinib."
+      },
+      "status": 200,
+      "seconds": 0.0288247000426054,
+      "equals_direct_engine": true,
+      "body": {
+        "intent": "companies_for_drug",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL3353410",
+            "label": "OSIMERTINIB",
+            "matched_text": "osimertinib",
+            "matched_alias": "OSIMERTINIB"
+          }
+        ],
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "wording",
+              "value": "discontinued",
+              "sentence": "AstraZeneca has discontinued osimertinib.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        },
+        "evidence": [
+          {
+            "statement": "Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "source_record": "NCT01802632, NCT02143466, NCT02224053",
+            "source": "derived",
+            "url": null
+          },
+          {
+            "statement": "Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "source_record": "NCT03810807, NCT06741085, NCT07535437",
+            "source": "derived",
+            "url": null
+          },
+          {
+            "statement": "National Cancer Institute (nih sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "source_record": "NCT03191149, NCT03831932, NCT04181060",
+            "source": "derived",
+            "url": null
+          },
+          {
+            "statement": "Bristol Myers Squibb (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "source_record": "NCT06618287, NCT07680790",
+            "source": "derived",
+            "url": null
+          },
+          {
+            "statement": "Eli Lilly (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "source_record": "NCT02411448, NCT02789345",
+            "source": "derived",
+            "url": null
+          },
+          {
+            "statement": "M D Anderson Cancer Center (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "source_record": "NCT04479306, NCT05017025",
+            "source": "derived",
+            "url": null
+          },
+          {
+            "statement": "Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "source_record": "NCT04425681, NCT06557096",
+            "source": "derived",
+            "url": null
+          },
+          {
+            "statement": "Shanghai Jmt-bio (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "source_record": "NCT06391944, NCT06735391",
+            "source": "derived",
+            "url": null
+          }
+        ],
+        "evidence_count": 12
+      }
+    },
+    {
+      "kind": "EX3",
+      "index": 5,
+      "input": {
+        "text": "Which companies are developing osimertinib?",
+        "answer": "AstraZeneca develops osimertinib."
+      },
+      "status": 200,
+      "seconds": 0.028047600062564015,
+      "equals_direct_engine": true,
+      "body": {
+        "intent": "companies_for_drug",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL3353410",
+            "label": "OSIMERTINIB",
+            "matched_text": "osimertinib",
+            "matched_alias": "OSIMERTINIB"
+          }
+        ],
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "fragment",
+              "value": "Astrazeneca OSIMERTINIB",
+              "sentence": "AstraZeneca develops osimertinib.",
+              "why": "a clause with no verb: the relation it implies cannot be read"
+            },
+            {
+              "kind": "development_claim",
+              "value": "develops",
+              "sentence": "AstraZeneca develops osimertinib.",
+              "why": "the graph records trial sponsorship, which is not evidence of developing, owning or marketing a drug"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        },
+        "evidence": [
+          {
+            "statement": "Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "source_record": "NCT01802632, NCT02143466, NCT02224053",
+            "source": "derived",
+            "url": null
+          },
+          {
+            "statement": "Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "source_record": "NCT03810807, NCT06741085, NCT07535437",
+            "source": "derived",
+            "url": null
+          },
+          {
+            "statement": "National Cancer Institute (nih sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "source_record": "NCT03191149, NCT03831932, NCT04181060",
+            "source": "derived",
+            "url": null
+          },
+          {
+            "statement": "Bristol Myers Squibb (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "source_record": "NCT06618287, NCT07680790",
+            "source": "derived",
+            "url": null
+          },
+          {
+            "statement": "Eli Lilly (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "source_record": "NCT02411448, NCT02789345",
+            "source": "derived",
+            "url": null
+          },
+          {
+            "statement": "M D Anderson Cancer Center (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "source_record": "NCT04479306, NCT05017025",
+            "source": "derived",
+            "url": null
+          },
+          {
+            "statement": "Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "source_record": "NCT04425681, NCT06557096",
+            "source": "derived",
+            "url": null
+          },
+          {
+            "statement": "Shanghai Jmt-bio (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "source_record": "NCT06391944, NCT06735391",
+            "source": "derived",
+            "url": null
+          }
+        ],
+        "evidence_count": 12
+      }
+    },
+    {
+      "kind": "EX3",
+      "index": 6,
+      "input": {
+        "text": "What does osimertinib target?",
+        "answer": "Osimertinib targets EGFR and is safe for all patients."
+      },
+      "status": 200,
+      "seconds": 0.03387910011224449,
+      "equals_direct_engine": true,
+      "body": {
+        "intent": "targets_of_drug",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL3353410",
+            "label": "OSIMERTINIB",
+            "matched_text": "osimertinib",
+            "matched_alias": "OSIMERTINIB"
+          }
+        ],
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "wording",
+              "value": "all",
+              "sentence": "Osimertinib targets EGFR and is safe for all patients.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            },
+            {
+              "kind": "wording",
+              "value": "patients",
+              "sentence": "Osimertinib targets EGFR and is safe for all patients.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            },
+            {
+              "kind": "wording",
+              "value": "safe",
+              "sentence": "Osimertinib targets EGFR and is safe for all patients.",
+              "why": "this word makes a claim no evidence statement about these entities supports"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        },
+        "evidence": [
+          {
+            "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+            "source_record": "CHEMBL3353410",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          }
+        ],
+        "evidence_count": 1
+      }
+    },
+    {
+      "kind": "EX3",
+      "index": 7,
+      "input": {
+        "text": "What does osimertinib target?",
+        "answer": "Osimertinib does not act on EGFR."
+      },
+      "status": 200,
+      "seconds": 0.024148300057277083,
+      "equals_direct_engine": true,
+      "body": {
+        "intent": "targets_of_drug",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL3353410",
+            "label": "OSIMERTINIB",
+            "matched_text": "osimertinib",
+            "matched_alias": "OSIMERTINIB"
+          }
+        ],
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "negation",
+              "value": "not",
+              "sentence": "Osimertinib does not act on EGFR.",
+              "why": "the graph stores only relations that exist; it cannot confirm an absence or a failure"
+            }
+          ],
+          "evidence_count": 1,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        },
+        "evidence": [
+          {
+            "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+            "source_record": "CHEMBL3353410",
+            "source": "Open Targets / ChEMBL",
+            "url": null
+          }
+        ],
+        "evidence_count": 1
+      }
+    },
+    {
+      "kind": "EX3",
+      "index": 8,
+      "input": {
+        "text": "What trials evaluate Tagrisso?",
+        "answer": "NCT07680790 is a phase 2 trial evaluating osimertinib."
+      },
+      "status": 200,
+      "seconds": 0.043586699990555644,
+      "equals_direct_engine": true,
+      "body": {
+        "intent": "trials_for_entity",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL3353410",
+            "label": "OSIMERTINIB",
+            "matched_text": "Tagrisso",
+            "matched_alias": "Tagrisso"
+          }
+        ],
+        "checks": {
+          "grounded": false,
+          "applicable": true,
+          "unsupported_claims": [
+            {
+              "kind": "phase",
+              "value": "phase 2",
+              "sentence": "NCT07680790 is a phase 2 trial evaluating osimertinib.",
+              "why": "no evidence statement about these entities gives that phase"
+            }
+          ],
+          "evidence_count": 12,
+          "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+        },
+        "evidence": [
+          {
+            "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+            "source_record": "NCT03909334",
+            "source": "clinicaltrials.gov",
+            "url": "https://clinicaltrials.gov/study/NCT03909334"
+          },
+          {
+            "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+            "source_record": "NCT07680790",
+            "source": "clinicaltrials.gov",
+            "url": "https://clinicaltrials.gov/study/NCT07680790"
+          },
+          {
+            "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+            "source_record": "NCT02411448",
+            "source": "clinicaltrials.gov",
+            "url": "https://clinicaltrials.gov/study/NCT02411448"
+          },
+          {
+            "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+            "source_record": "NCT04285671",
+            "source": "clinicaltrials.gov",
+            "url": "https://clinicaltrials.gov/study/NCT04285671"
+          },
+          {
+            "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+            "source_record": "NCT04141644",
+            "source": "clinicaltrials.gov",
+            "url": "https://clinicaltrials.gov/study/NCT04141644"
+          },
+          {
+            "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+            "source_record": "NCT03535363",
+            "source": "clinicaltrials.gov",
+            "url": "https://clinicaltrials.gov/study/NCT03535363"
+          },
+          {
+            "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+            "source_record": "NCT04487080",
+            "source": "clinicaltrials.gov",
+            "url": "https://clinicaltrials.gov/study/NCT04487080"
+          },
+          {
+            "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+            "source_record": "NCT07738172",
+            "source": "clinicaltrials.gov",
+            "url": "https://clinicaltrials.gov/study/NCT07738172"
+          }
+        ],
+        "evidence_count": 12
+      }
+    },
+    {
+      "kind": "EX4",
+      "index": 0,
+      "input": {
+        "text": "What does osimertinib target?",
+        "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"inhibitor\"}]}"
+      },
+      "status": 200,
+      "seconds": 0.027710200054571033,
+      "equals_direct_engine": true,
+      "body": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "subject": "CHEMBL3353410",
+            "object": "ENSG00000146648",
+            "action": "INHIBITOR"
+          }
+        ],
+        "rejected": [],
+        "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]",
+        "evidence": [
+          {
+            "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "statement": "OSIMERTINIB acts on EGFR (inhibitor)"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX4",
+      "index": 1,
+      "input": {
+        "text": "What does osimertinib target?",
+        "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"EGFR\", \"object\": \"osimertinib\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\"}]}"
+      },
+      "status": 200,
+      "seconds": 0.024617299903184175,
+      "equals_direct_engine": true,
+      "body": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "EGFR",
+              "object": "osimertinib",
+              "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+            },
+            "why": "EGFR is a target, not a drug"
+          }
+        ],
+        "text": "",
+        "evidence": [
+          {
+            "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "statement": "OSIMERTINIB acts on EGFR (inhibitor)"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX4",
+      "index": 2,
+      "input": {
+        "text": "What does osimertinib target?",
+        "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"activator\"}]}"
+      },
+      "status": 200,
+      "seconds": 0.0329001999925822,
+      "equals_direct_engine": true,
+      "body": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "osimertinib",
+              "object": "EGFR",
+              "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+              "action": "activator"
+            },
+            "why": "the graph gives the action as INHIBITOR, not activator"
+          }
+        ],
+        "text": "",
+        "evidence": [
+          {
+            "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "statement": "OSIMERTINIB acts on EGFR (inhibitor)"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX4",
+      "index": 3,
+      "input": {
+        "text": "What does osimertinib target?",
+        "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"note\": \"safe for all patients\"}]}"
+      },
+      "status": 200,
+      "seconds": 0.024713800055906177,
+      "equals_direct_engine": true,
+      "body": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "osimertinib",
+              "object": "EGFR",
+              "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+              "note": "safe for all patients"
+            },
+            "why": "unknown keys ['note'] (no free text is accepted)"
+          }
+        ],
+        "text": "",
+        "evidence": [
+          {
+            "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "statement": "OSIMERTINIB acts on EGFR (inhibitor)"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX4",
+      "index": 4,
+      "input": {
+        "text": "What trials evaluate Tagrisso?",
+        "answer": "{\"claims\": [{\"kind\": \"trial\", \"trial\": \"NCT03909334\", \"evidence\": \"NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334\", \"phase\": [\"PHASE2\"], \"status\": \"ACTIVE_NOT_RECRUITING\"}, {\"kind\": \"trial\", \"trial\": \"NCT03909334\", \"evidence\": \"NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334\", \"status\": \"RECRUITING\"}]}"
+      },
+      "status": 200,
+      "seconds": 0.02304680016823113,
+      "equals_direct_engine": true,
+      "body": {
+        "verified": false,
+        "accepted": [
+          {
+            "kind": "trial",
+            "edge": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+            "trial": "NCT03909334",
+            "phase": [
+              "PHASE2"
+            ],
+            "status": "ACTIVE_NOT_RECRUITING"
+          }
+        ],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "trial",
+              "trial": "NCT03909334",
+              "evidence": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+              "status": "RECRUITING"
+            },
+            "why": "the graph gives the status as ACTIVE_NOT_RECRUITING, not RECRUITING"
+          }
+        ],
+        "text": "- NCT03909334: phase PHASE2; status ACTIVE_NOT_RECRUITING [NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334]",
+        "evidence": [
+          {
+            "edge_id": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+            "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB"
+          },
+          {
+            "edge_id": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790",
+            "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB"
+          },
+          {
+            "edge_id": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448",
+            "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB"
+          },
+          {
+            "edge_id": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671",
+            "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB"
+          },
+          {
+            "edge_id": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644",
+            "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB"
+          },
+          {
+            "edge_id": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363",
+            "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB"
+          },
+          {
+            "edge_id": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080",
+            "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB"
+          },
+          {
+            "edge_id": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172",
+            "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB"
+          },
+          {
+            "edge_id": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407",
+            "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB"
+          },
+          {
+            "edge_id": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235",
+            "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB"
+          },
+          {
+            "edge_id": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487",
+            "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB"
+          },
+          {
+            "edge_id": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306",
+            "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX4",
+      "index": 5,
+      "input": {
+        "text": "What is AstraZeneca running in NSCLC?",
+        "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"SPONSORS_TRIAL_OF\", \"subject\": \"AstraZeneca\", \"object\": \"osimertinib\", \"evidence\": \"ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|\", \"trial_count\": 10}]}"
+      },
+      "status": 200,
+      "seconds": 0.03492300002835691,
+      "equals_direct_engine": true,
+      "body": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "SPONSORS_TRIAL_OF",
+              "subject": "AstraZeneca",
+              "object": "osimertinib",
+              "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+              "trial_count": 10
+            },
+            "why": "the graph gives 14 trials, not 10"
+          }
+        ],
+        "text": "",
+        "evidence": [
+          {
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB"
+          },
+          {
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+            "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN"
+          },
+          {
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+            "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB"
+          },
+          {
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+            "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB"
+          },
+          {
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+            "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN"
+          },
+          {
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+            "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED"
+          },
+          {
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+            "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL"
+          },
+          {
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+            "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG"
+          },
+          {
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+            "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB"
+          },
+          {
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+            "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB"
+          },
+          {
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+            "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL"
+          },
+          {
+            "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+            "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "EX4",
+      "index": 6,
+      "input": {
+        "text": "What does osimertinib target?",
+        "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"ALK\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000171094|CHEMBL3353410\"}]}"
+      },
+      "status": 200,
+      "seconds": 0.02040879987180233,
+      "equals_direct_engine": true,
+      "body": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "osimertinib",
+              "object": "ALK",
+              "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000171094|CHEMBL3353410"
+            },
+            "why": "the cited evidence is not among the edges retrieved for this question"
+          }
+        ],
+        "text": "",
+        "evidence": [
+          {
+            "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "statement": "OSIMERTINIB acts on EGFR (inhibitor)"
+          }
+        ]
+      }
+    }
+  ]
+}

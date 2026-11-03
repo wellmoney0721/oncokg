@@ -1,0 +1,1120 @@
+{
+  "fixture": "Isolated in-memory nodes O:Company and T:Trial, live O-SPONSORS->T",
+  "cases": [
+    {
+      "stored_edge_props": "{\"role\":\"lead_sponsor\"}",
+      "baseline_bfcb83d": [
+        {
+          "input": "T",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "T",
+              "type": "Trial",
+              "label": "Fixture trial",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "in",
+                "type": "Company",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "O",
+                    "type": "Company",
+                    "label": "Fixture institution",
+                    "edge_id": "S",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture institution",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "T",
+                    "type": "Trial",
+                    "label": "Fixture trial",
+                    "edge_id": "S",
+                    "phases": null,
+                    "status": null,
+                    "title": null,
+                    "start_date": null,
+                    "url": null,
+                    "weight": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "repair_HEAD": [
+        {
+          "input": "T",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "T",
+              "type": "Trial",
+              "label": "Fixture trial",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "in",
+                "type": "Company",
+                "role": "lead_sponsor",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "O",
+                    "type": "Company",
+                    "label": "Fixture institution",
+                    "edge_id": "S",
+                    "weight": 0,
+                    "role": "lead_sponsor"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture institution",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "role": "lead_sponsor",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "T",
+                    "type": "Trial",
+                    "label": "Fixture trial",
+                    "edge_id": "S",
+                    "phases": null,
+                    "status": null,
+                    "title": null,
+                    "start_date": null,
+                    "url": null,
+                    "weight": "",
+                    "role": "lead_sponsor"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_edge_props": "{\"role\":\"collaborator\"}",
+      "baseline_bfcb83d": [
+        {
+          "input": "T",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "T",
+              "type": "Trial",
+              "label": "Fixture trial",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "in",
+                "type": "Company",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "O",
+                    "type": "Company",
+                    "label": "Fixture institution",
+                    "edge_id": "S",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture institution",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "T",
+                    "type": "Trial",
+                    "label": "Fixture trial",
+                    "edge_id": "S",
+                    "phases": null,
+                    "status": null,
+                    "title": null,
+                    "start_date": null,
+                    "url": null,
+                    "weight": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "repair_HEAD": [
+        {
+          "input": "T",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "T",
+              "type": "Trial",
+              "label": "Fixture trial",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "in",
+                "type": "Company",
+                "role": "collaborator",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "O",
+                    "type": "Company",
+                    "label": "Fixture institution",
+                    "edge_id": "S",
+                    "weight": 0,
+                    "role": "collaborator"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture institution",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "role": "collaborator",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "T",
+                    "type": "Trial",
+                    "label": "Fixture trial",
+                    "edge_id": "S",
+                    "phases": null,
+                    "status": null,
+                    "title": null,
+                    "start_date": null,
+                    "url": null,
+                    "weight": "",
+                    "role": "collaborator"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_edge_props": "null",
+      "baseline_bfcb83d": [
+        {
+          "input": "T",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "T",
+              "type": "Trial",
+              "label": "Fixture trial",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "in",
+                "type": "Company",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "O",
+                    "type": "Company",
+                    "label": "Fixture institution",
+                    "edge_id": "S",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture institution",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "T",
+                    "type": "Trial",
+                    "label": "Fixture trial",
+                    "edge_id": "S",
+                    "phases": null,
+                    "status": null,
+                    "title": null,
+                    "start_date": null,
+                    "url": null,
+                    "weight": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "repair_HEAD": [
+        {
+          "input": "T",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "T",
+              "type": "Trial",
+              "label": "Fixture trial",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "in",
+                "type": "Company",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "O",
+                    "type": "Company",
+                    "label": "Fixture institution",
+                    "edge_id": "S",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture institution",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "T",
+                    "type": "Trial",
+                    "label": "Fixture trial",
+                    "edge_id": "S",
+                    "phases": null,
+                    "status": null,
+                    "title": null,
+                    "start_date": null,
+                    "url": null,
+                    "weight": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_edge_props": "[]",
+      "baseline_bfcb83d": [
+        {
+          "input": "T",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "T",
+              "type": "Trial",
+              "label": "Fixture trial",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "in",
+                "type": "Company",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "O",
+                    "type": "Company",
+                    "label": "Fixture institution",
+                    "edge_id": "S",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture institution",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "T",
+                    "type": "Trial",
+                    "label": "Fixture trial",
+                    "edge_id": "S",
+                    "phases": null,
+                    "status": null,
+                    "title": null,
+                    "start_date": null,
+                    "url": null,
+                    "weight": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "repair_HEAD": [
+        {
+          "input": "T",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "T",
+              "type": "Trial",
+              "label": "Fixture trial",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "in",
+                "type": "Company",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "O",
+                    "type": "Company",
+                    "label": "Fixture institution",
+                    "edge_id": "S",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture institution",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "T",
+                    "type": "Trial",
+                    "label": "Fixture trial",
+                    "edge_id": "S",
+                    "phases": null,
+                    "status": null,
+                    "title": null,
+                    "start_date": null,
+                    "url": null,
+                    "weight": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_edge_props": "{broken",
+      "baseline_bfcb83d": [
+        {
+          "input": "T",
+          "status": 400,
+          "body": {
+            "error": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+          }
+        },
+        {
+          "input": "O",
+          "status": 400,
+          "body": {
+            "error": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+          }
+        }
+      ],
+      "repair_HEAD": [
+        {
+          "input": "T",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "T",
+              "type": "Trial",
+              "label": "Fixture trial",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "in",
+                "type": "Company",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "O",
+                    "type": "Company",
+                    "label": "Fixture institution",
+                    "edge_id": "S",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture institution",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "T",
+                    "type": "Trial",
+                    "label": "Fixture trial",
+                    "edge_id": "S",
+                    "phases": null,
+                    "status": null,
+                    "title": null,
+                    "start_date": null,
+                    "url": null,
+                    "weight": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_edge_props": "{}",
+      "baseline_bfcb83d": [
+        {
+          "input": "T",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "T",
+              "type": "Trial",
+              "label": "Fixture trial",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "in",
+                "type": "Company",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "O",
+                    "type": "Company",
+                    "label": "Fixture institution",
+                    "edge_id": "S",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture institution",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "T",
+                    "type": "Trial",
+                    "label": "Fixture trial",
+                    "edge_id": "S",
+                    "phases": null,
+                    "status": null,
+                    "title": null,
+                    "start_date": null,
+                    "url": null,
+                    "weight": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "repair_HEAD": [
+        {
+          "input": "T",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "T",
+              "type": "Trial",
+              "label": "Fixture trial",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "in",
+                "type": "Company",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "O",
+                    "type": "Company",
+                    "label": "Fixture institution",
+                    "edge_id": "S",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture institution",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "T",
+                    "type": "Trial",
+                    "label": "Fixture trial",
+                    "edge_id": "S",
+                    "phases": null,
+                    "status": null,
+                    "title": null,
+                    "start_date": null,
+                    "url": null,
+                    "weight": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_edge_props": "{\"role\":null}",
+      "baseline_bfcb83d": [
+        {
+          "input": "T",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "T",
+              "type": "Trial",
+              "label": "Fixture trial",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "in",
+                "type": "Company",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "O",
+                    "type": "Company",
+                    "label": "Fixture institution",
+                    "edge_id": "S",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture institution",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "T",
+                    "type": "Trial",
+                    "label": "Fixture trial",
+                    "edge_id": "S",
+                    "phases": null,
+                    "status": null,
+                    "title": null,
+                    "start_date": null,
+                    "url": null,
+                    "weight": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "repair_HEAD": [
+        {
+          "input": "T",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "T",
+              "type": "Trial",
+              "label": "Fixture trial",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "in",
+                "type": "Company",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "O",
+                    "type": "Company",
+                    "label": "Fixture institution",
+                    "edge_id": "S",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture institution",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "T",
+                    "type": "Trial",
+                    "label": "Fixture trial",
+                    "edge_id": "S",
+                    "phases": null,
+                    "status": null,
+                    "title": null,
+                    "start_date": null,
+                    "url": null,
+                    "weight": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_edge_props": "{\"role\":\"unknown_role\"}",
+      "baseline_bfcb83d": [
+        {
+          "input": "T",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "T",
+              "type": "Trial",
+              "label": "Fixture trial",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "in",
+                "type": "Company",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "O",
+                    "type": "Company",
+                    "label": "Fixture institution",
+                    "edge_id": "S",
+                    "weight": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture institution",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "T",
+                    "type": "Trial",
+                    "label": "Fixture trial",
+                    "edge_id": "S",
+                    "phases": null,
+                    "status": null,
+                    "title": null,
+                    "start_date": null,
+                    "url": null,
+                    "weight": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "repair_HEAD": [
+        {
+          "input": "T",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "T",
+              "type": "Trial",
+              "label": "Fixture trial",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "in",
+                "type": "Company",
+                "role": "unknown_role",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "O",
+                    "type": "Company",
+                    "label": "Fixture institution",
+                    "edge_id": "S",
+                    "weight": 0,
+                    "role": "unknown_role"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "O",
+          "status": 200,
+          "body": {
+            "center": {
+              "id": "O",
+              "type": "Company",
+              "label": "Fixture institution",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "role": "unknown_role",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "T",
+                    "type": "Trial",
+                    "label": "Fixture trial",
+                    "edge_id": "S",
+                    "phases": null,
+                    "status": null,
+                    "title": null,
+                    "start_date": null,
+                    "url": null,
+                    "weight": "",
+                    "role": "unknown_role"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "current_roles": [
+    [
+      "collaborator",
+      1652
+    ],
+    [
+      "lead_sponsor",
+      3000
+    ]
+  ],
+  "current_sponsor_count_types": [
+    [
+      "integer",
+      3176
+    ]
+  ]
+}

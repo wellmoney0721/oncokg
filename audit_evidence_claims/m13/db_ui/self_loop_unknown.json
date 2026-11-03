@@ -1,0 +1,93 @@
+{
+  "setup": "new isolated in-memory fixture, real HTTP handler",
+  "checks": {
+    "self_edge_once_out": true,
+    "unknown_type_and_relation_preserved": true,
+    "retired_edges_and_nodes_absent": true,
+    "unknown_reverse_preserved": true
+  },
+  "rows": [
+    {
+      "input": "X",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "X",
+          "type": "Company",
+          "label": "Self company",
+          "matched_text": null,
+          "trials": null,
+          "props": {}
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "PARENT_OF",
+            "dir": "out",
+            "type": "Company",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "X",
+                "type": "Company",
+                "label": "Self company",
+                "edge_id": "SELF",
+                "weight": 0
+              }
+            ]
+          },
+          {
+            "rel": "NEWREL",
+            "dir": "out",
+            "type": "Other",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "U",
+                "type": "Other",
+                "label": "Unknown type",
+                "edge_id": "UNKNOWN",
+                "weight": 0
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": "U",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "U",
+          "type": "Other",
+          "label": "Unknown type",
+          "matched_text": null,
+          "trials": null,
+          "props": {}
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "NEWREL",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "X",
+                "type": "Company",
+                "label": "Self company",
+                "edge_id": "UNKNOWN",
+                "weight": 0
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

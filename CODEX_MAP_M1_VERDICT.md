@@ -142,3 +142,11 @@ Dose and schedule text after a name is unaffected ("osimertinib 80 mg", "paclita
 | M12-B1 | "[89Z.r]-DFO-daratumumab": inside a consumed stored alias the split symbol was checked only as space-joined words, and the chelator kept the remainder from being a same-drug key | every run of the matched name's words is also glued (as the key glues them, up to a label's length) and compared with isotope labels |
 
 A sweep of every unambiguous stored alias run alone (before and after this change) shows no newly refused or changed names. Tests 340.
+
+## Round 13 (audit_evidence_claims/m13) — CHANGES REQUIRED (one blocker)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M13-B1 | "89ZrDFO-daratumumab": no separator between the isotope and the chelator | a name's key that starts (ends) with a two-letter-element isotope label and whose rest ends (starts) with any key of the same drug is refused, whatever lies between; a neighbouring word with a label fused to its start or end ("DFO89Zr") also refuses, one-letter elements only where case marks the boundary |
+
+Kept narrow on purpose: lower-case chemistry and dose text are not read as isotopes ("13-cis retinoic acid", "paclitaxel 2 cycles", "BKM-120NX"). The stored-alias sweep shows no newly refused names (one formerly refused name, `rad001c`, now resolves). Tests 341.

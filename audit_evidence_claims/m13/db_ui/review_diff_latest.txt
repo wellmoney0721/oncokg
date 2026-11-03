@@ -1,0 +1,49 @@
+commit 481100c584ec772cc2332960ba5d3b28ba36ae6f
+Author: 강금영 <geoumyoung@gmail.com>
+Date:   Wed Nov 4 00:04:46 2026 +0900
+
+    관계 지도 Codex 12차 수리: 이름 안에서 쪼개진 동위원소도 붙여 검사
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+diff --git a/src/query.py b/src/query.py
+index 7853f9c..92055c1 100644
+--- a/src/query.py
++++ b/src/query.py
+@@ -256,7 +256,16 @@ class OncoKG:
+         # as a name only when it stands alone ("566C", "18f"), never as the substance
+         # of a longer phrase ("18F fluorothymidine")
+         inside = [own[i:j] for i in range(len(own)) for j in (i + 1, i + 2) if j <= len(own)]
+-        if lone and T.is_isotope_label(" ".join(own)):
++        # and every run of the name's words glued as the key glues them, so a symbol
++        # split by punctuation inside a stored alias is still an isotope ("[89Z.r]-DFO-")
++        for i in range(len(own)):
++            for j in range(i + 1, len(own) + 1):
++                glued = "".join(own[i:j])
++                if len(glued) > 6:
++                    break
++                if j - i > 1:
++                    inside.append([glued])
++        if lone and T.is_isotope_label("".join(own)):
+             inside = []                      # the whole item is one isotope-shaped name
+         name = " ".join(tokens[a:b])
+         # the neighbours glued back together the way the lookup key glues them, so a
+diff --git a/tests/test_app.py b/tests/test_app.py
+index d5a6fe1..b950571 100644
+--- a/tests/test_app.py
++++ b/tests/test_app.py
+@@ -342,3 +342,14 @@ def test_split_isotopes_and_spelt_out_suffixes_refuse():
+     for t, did in (("osimertinib 80 mg", "CHEMBL3353410"), ("paclitaxel 2 cycles", "CHEMBL428647"),
+                    ("cisplatin 75 mg/m2 day 1", "CHEMBL11359")):
+         assert e.explore(t)["center"]["id"] == did, t
++
++
++# Codex review m12: an isotope split by punctuation inside a stored alias, with a chelator between
++def test_a_split_isotope_inside_a_stored_tracer_alias_refuses():
++    import app
++    e = app.Engine()
++    for t in ("[89Z.r]-DFO-daratumumab", "89Z_r-dfo-daratumumab"):
++        assert e.explore(t).get("refused"), t
++    assert e.explore("[89Z.r]-DFO-daratumumab, osimertinib")["center"]["id"] == "CHEMBL3353410"
++    assert not e.kg.answer("Which trials evaluate [89Z.r]-DFO-daratumumab?", use_llm=False).evidence
++    assert e.explore("daratumumab")["center"]["id"] == "CHEMBL1743007"

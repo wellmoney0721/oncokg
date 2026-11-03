@@ -353,3 +353,17 @@ def test_a_split_isotope_inside_a_stored_tracer_alias_refuses():
     assert e.explore("[89Z.r]-DFO-daratumumab, osimertinib")["center"]["id"] == "CHEMBL3353410"
     assert not e.kg.answer("Which trials evaluate [89Z.r]-DFO-daratumumab?", use_llm=False).evidence
     assert e.explore("daratumumab")["center"]["id"] == "CHEMBL1743007"
+
+
+# Codex review m13: an isotope fused to a chelator, inside the name or beside it
+def test_an_isotope_fused_to_a_chelator_refuses():
+    import app
+    e = app.Engine()
+    for t in ("89ZrDFO-daratumumab", "89zrdfo-daratumumab", "89ZrDFOdaratumumab",
+              "daratumumab DFO89Zr", "89ZrDFO daratumumab"):
+        assert e.explore(t).get("refused"), t
+    assert not e.kg.answer("Which trials evaluate 89ZrDFO-daratumumab?", use_llm=False).evidence
+    for t, did in (("13-cis retinoic acid", "CHEMBL38"), ("BKM-120NX", "CHEMBL2017974"),
+                   ("paclitaxel 2 cycles", "CHEMBL428647")):
+        r = e.explore(t)
+        assert r.get("center", {}).get("id") == did, (t, r.get("center"))
