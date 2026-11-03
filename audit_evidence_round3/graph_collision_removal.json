@@ -1,0 +1,119 @@
+{
+  "method": "Freeze graph.now to one timestamp; default build_id both times; two trials then one.",
+  "removed_nct": "NCT02303977",
+  "first": {
+    "build_id": "build-2026-11-03T06:00:00+00:00",
+    "nodes": 24,
+    "edges": 24,
+    "added": 24,
+    "changed": 0,
+    "retired": 0,
+    "restored": 0,
+    "nodes_by_type": {
+      "Company": 4,
+      "Disease": 1,
+      "Drug": 2,
+      "Target": 15,
+      "Trial": 2
+    },
+    "edges_by_rel": {
+      "ACTS_ON": 15,
+      "EVALUATES": 2,
+      "PARENT_OF": 1,
+      "SPONSORS": 3,
+      "SPONSORS_TRIAL_OF": 2,
+      "STUDIES": 1
+    }
+  },
+  "second": {
+    "build_id": "build-2026-11-03T06:00:00+00:00",
+    "nodes": 22,
+    "edges": 21,
+    "added": 0,
+    "changed": 0,
+    "retired": 3,
+    "restored": 0,
+    "nodes_by_type": {
+      "Company": 3,
+      "Disease": 1,
+      "Drug": 2,
+      "Target": 15,
+      "Trial": 1
+    },
+    "edges_by_rel": {
+      "ACTS_ON": 15,
+      "EVALUATES": 1,
+      "PARENT_OF": 1,
+      "SPONSORS": 2,
+      "SPONSORS_TRIAL_OF": 1,
+      "STUDIES": 1
+    }
+  },
+  "removed_trial_node": {
+    "id": "NCT02303977",
+    "type": "Trial",
+    "label": "NCT02303977",
+    "props": "{\"enrollment\": 37, \"phases\": [\"PHASE2\"], \"start_date\": \"2015-06-26\", \"status\": \"COMPLETED\", \"title\": \"Phase II Study of Abraxane and Gemicitabine in Patients With Advanced Adenocarcinoma Non-Small Cell Lung Cancer Progressing After First-Line Platinum-Based Chemotherapy\", \"url\": \"https://clinicaltrials.gov/study/NCT02303977\"}",
+    "first_seen": "2026-11-03T06:00:00+00:00",
+    "last_seen": "2026-11-03T06:00:00+00:00",
+    "retired_at": "2026-11-03T06:00:00+00:00"
+  },
+  "removed_trial_edges": [
+    {
+      "id": "NCT02303977|EVALUATES|CHEMBL888|NCT02303977",
+      "src": "NCT02303977",
+      "dst": "CHEMBL888",
+      "rel": "EVALUATES",
+      "props": "{\"intervention_type\": \"DRUG\", \"matched_alias\": \"GEMCITABINE\", \"matched_component\": \"Gemcitabine\", \"resolution_rules\": [], \"stated_intervention\": \"Gemcitabine\"}",
+      "confidence": 1.0,
+      "tier": "EXACT",
+      "source": "clinicaltrials.gov",
+      "source_record": "NCT02303977",
+      "source_fetched_at": "2026-11-03T02:31:37.196527+00:00",
+      "first_seen": "2026-11-03T06:00:00+00:00",
+      "last_seen": "2026-11-03T06:00:00+00:00",
+      "retired_at": "2026-11-03T06:00:00+00:00"
+    },
+    {
+      "id": "ORG:abramsoncancercenteratpennmedicine|SPONSORS|NCT02303977|NCT02303977",
+      "src": "ORG:abramsoncancercenteratpennmedicine",
+      "dst": "NCT02303977",
+      "rel": "SPONSORS",
+      "props": "{\"normalisation_rules\": [], \"role\": \"lead_sponsor\", \"sponsor_class\": \"OTHER\"}",
+      "confidence": 1.0,
+      "tier": null,
+      "source": "clinicaltrials.gov",
+      "source_record": "NCT02303977",
+      "source_fetched_at": "2026-11-03T02:31:37.196527+00:00",
+      "first_seen": "2026-11-03T06:00:00+00:00",
+      "last_seen": "2026-11-03T06:00:00+00:00",
+      "retired_at": "2026-11-03T06:00:00+00:00"
+    }
+  ],
+  "live_removed_trial_edges": 0,
+  "build_rows": [
+    {
+      "build_id": "build-2026-11-03T06:00:00+00:00",
+      "started_at": "2026-11-03T06:00:00+00:00",
+      "sources": "{\"disease\": \"2026-11-03T02:31:32.363607+00:00\", \"drugs\": \"2026-11-03T02:31:33.813487+00:00\", \"targets\": \"2026-11-03T02:31:34.663113+00:00\", \"trials\": \"2026-11-03T02:31:37.196527+00:00\"}",
+      "node_count": 22,
+      "edge_count": 21,
+      "added": 0,
+      "changed": 0,
+      "retired": 3,
+      "restored": 0
+    }
+  ],
+  "changes_by_build_and_type": [
+    {
+      "build_id": "build-2026-11-03T06:00:00+00:00",
+      "change_type": "added",
+      "n": 24
+    },
+    {
+      "build_id": "build-2026-11-03T06:00:00+00:00",
+      "change_type": "retired",
+      "n": 3
+    }
+  ]
+}

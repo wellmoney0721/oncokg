@@ -1,0 +1,480 @@
+{
+  "evaluated_on": "gold_dev.csv",
+  "gold_sample_size": 214,
+  "tiers_carried_from_dev": [],
+  "per_tier": {
+    "ALIAS": {
+      "sampled": 29,
+      "correct": 27,
+      "rate": 0.9310344827586207,
+      "ci95": [
+        0.7804,
+        0.9809
+      ],
+      "population_unique": 517,
+      "population_occurrences": 692,
+      "source": "dev sample"
+    },
+    "AMBIGUOUS": {
+      "sampled": 11,
+      "correct": 11,
+      "rate": 1.0,
+      "ci95": [
+        0.7412,
+        1.0
+      ],
+      "population_unique": 42,
+      "population_occurrences": 62,
+      "source": "dev sample"
+    },
+    "BLOCKED_CLASS_TERM": {
+      "sampled": 8,
+      "correct": 8,
+      "rate": 1.0,
+      "ci95": [
+        0.6756,
+        1.0
+      ],
+      "population_unique": 206,
+      "population_occurrences": 268,
+      "source": "dev sample"
+    },
+    "BLOCKED_PLACEBO": {
+      "sampled": 4,
+      "correct": 4,
+      "rate": 1.0,
+      "ci95": [
+        0.5101,
+        1.0
+      ],
+      "population_unique": 53,
+      "population_occurrences": 151,
+      "source": "dev sample"
+    },
+    "BLOCKED_TARGET_TERM": {
+      "sampled": 8,
+      "correct": 8,
+      "rate": 1.0,
+      "ci95": [
+        0.6756,
+        1.0
+      ],
+      "population_unique": 12,
+      "population_occurrences": 13,
+      "source": "dev sample"
+    },
+    "CLEANED": {
+      "sampled": 1,
+      "correct": 1,
+      "rate": 1.0,
+      "ci95": [
+        0.2065,
+        1.0
+      ],
+      "population_unique": 1,
+      "population_occurrences": 1,
+      "source": "dev sample"
+    },
+    "CONTAINED_ALIAS": {
+      "sampled": 26,
+      "correct": 25,
+      "rate": 0.9615384615384616,
+      "ci95": [
+        0.8111,
+        0.9932
+      ],
+      "population_unique": 208,
+      "population_occurrences": 218,
+      "source": "dev sample"
+    },
+    "EXACT": {
+      "sampled": 40,
+      "correct": 40,
+      "rate": 1.0,
+      "ci95": [
+        0.9124,
+        1.0
+      ],
+      "population_unique": 1408,
+      "population_occurrences": 3995,
+      "source": "dev sample"
+    },
+    "FUZZY_AUTO": {
+      "sampled": 13,
+      "correct": 11,
+      "rate": 0.8461538461538461,
+      "ci95": [
+        0.5776,
+        0.9567
+      ],
+      "population_unique": 13,
+      "population_occurrences": 13,
+      "source": "dev sample"
+    },
+    "FUZZY_REVIEW": {
+      "sampled": 9,
+      "correct": 4,
+      "rate": 0.4444444444444444,
+      "ci95": [
+        0.1888,
+        0.7334
+      ],
+      "population_unique": 13,
+      "population_occurrences": 15,
+      "source": "dev sample"
+    },
+    "PARENTHETICAL": {
+      "sampled": 4,
+      "correct": 4,
+      "rate": 1.0,
+      "ci95": [
+        0.5101,
+        1.0
+      ],
+      "population_unique": 13,
+      "population_occurrences": 14,
+      "source": "dev sample"
+    },
+    "SALT_STRIPPED": {
+      "sampled": 5,
+      "correct": 5,
+      "rate": 1.0,
+      "ci95": [
+        0.5655,
+        1.0
+      ],
+      "population_unique": 5,
+      "population_occurrences": 9,
+      "source": "dev sample"
+    },
+    "UNRESOLVED": {
+      "sampled": 25,
+      "correct": 24,
+      "rate": 0.96,
+      "ci95": [
+        0.8046,
+        0.9929
+      ],
+      "population_unique": 1128,
+      "population_occurrences": 1248,
+      "source": "dev sample"
+    }
+  },
+  "accepted_precision": {
+    "estimate": 0.9789,
+    "ci95": [
+      0.8656,
+      0.9945
+    ],
+    "method": "stratified estimate weighted by distinct resolutions per tier; interval propagated from per-tier Wilson bounds, not a normal approximation",
+    "weighted_over_tiers": [
+      "EXACT",
+      "ALIAS",
+      "CLEANED",
+      "SALT_STRIPPED",
+      "PARENTHETICAL",
+      "CONTAINED_ALIAS",
+      "FUZZY_AUTO"
+    ],
+    "caveat": "the sample is drawn by a disproportionate per-tier quota, so this reweighting is required; it is also what makes the figure higher than the raw rows, so read it next to raw_sample_precision below. The interval is a weighted sum of per-tier Wilson bounds: conservative, but not a calibrated 95% interval",
+    "bootstrap_ci95": [
+      0.9537,
+      0.9991
+    ],
+    "bootstrap_note": "stratified bootstrap over the sampled rows, 20,000 resamples. Narrower, and blind to errors in tiers that scored 100% in the sample",
+    "carried_tiers_weight_share": 0.0,
+    "estimate_without_carried_tiers": 0.9789
+  },
+  "as_labelled_raw_precision": {
+    "accepted_rows_scored": 137,
+    "accepted_rows_correct": 126,
+    "rate": 0.9197,
+    "ci95": [
+      0.8619,
+      0.9546
+    ],
+    "note": "every labelled accepted row, scored on the resolution it had when labelled. On the held-out test sample this is the frozen measurement of the pipeline before the audit repairs; it does not describe the current pipeline"
+  },
+  "held_out_status": "not a held-out sample",
+  "stale_labels": {
+    "count": 31,
+    "note": "rows whose resolution has changed since they were labelled; excluded from every figure above and listed for re-labelling",
+    "rows": [
+      {
+        "id": "22",
+        "raw": "Nab paclitaxel",
+        "component": "Nab paclitaxel",
+        "labelled_tier": "ALIAS",
+        "labelled_drug_id": "CHEMBL428647",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "33",
+        "raw": "HS-20117 combined HS-20093 and 5-FU",
+        "component": "5-FU",
+        "labelled_tier": "AMBIGUOUS",
+        "labelled_drug_id": "",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "51",
+        "raw": "AZD9291 80 mg/40 mg + placebo",
+        "component": "AZD9291 80 mg/40 mg + placebo",
+        "labelled_tier": "BLOCKED_PLACEBO",
+        "labelled_drug_id": "",
+        "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "53",
+        "raw": "Placebo and Paclitaxel-Carboplatin",
+        "component": "Placebo and Paclitaxel-Carboplatin",
+        "labelled_tier": "BLOCKED_PLACEBO",
+        "labelled_drug_id": "",
+        "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "56",
+        "raw": "Placebo plus chemotherapy",
+        "component": "Placebo plus chemotherapy",
+        "labelled_tier": "BLOCKED_PLACEBO",
+        "labelled_drug_id": "",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "57",
+        "raw": "placebo plus docetaxel",
+        "component": "placebo plus docetaxel",
+        "labelled_tier": "BLOCKED_PLACEBO",
+        "labelled_drug_id": "",
+        "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "72",
+        "raw": "Biological: Sintilimab Drug: Cisplatin Drug: Paclitaxel for Injection (Albumin Bound) Drug: Carboplatin",
+        "component": "Sintilimab",
+        "labelled_tier": "CONTAINED_ALIAS",
+        "labelled_drug_id": "CHEMBL4297829",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "73",
+        "raw": "Biological: Sintilimab Drug: Cisplatin Drug: Paclitaxel for Injection (Albumin Bound) Drug: Carboplatin",
+        "component": "Paclitaxel",
+        "labelled_tier": "CONTAINED_ALIAS",
+        "labelled_drug_id": "CHEMBL428647",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "88",
+        "raw": "Pemetrexed Chemotherapy",
+        "component": "Pemetrexed",
+        "labelled_tier": "CONTAINED_ALIAS",
+        "labelled_drug_id": "CHEMBL225072",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "94",
+        "raw": "Preoperative docetaxel-cisplatin combination chemotherapy",
+        "component": "cisplatin",
+        "labelled_tier": "CONTAINED_ALIAS",
+        "labelled_drug_id": "CHEMBL11359",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "151",
+        "raw": "YPEG-rhG-CSF, 20μg/kg, single s.c. at 48hrs after chemotherapy for each experimental cycle",
+        "component": "YPEG-rhG-CSF",
+        "labelled_tier": "FUZZY_AUTO",
+        "labelled_drug_id": "CHEMBL1201568",
+        "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "152",
+        "raw": "YPEG-rhG-CSF, 30μg/kg, single s.c. at 48hrs after chemotherapy for each experimental cycle",
+        "component": "YPEG-rhG-CSF",
+        "labelled_tier": "FUZZY_AUTO",
+        "labelled_drug_id": "CHEMBL1201568",
+        "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "153",
+        "raw": "YPEG-rhG-CSF, 45μg/kg, single s.c. at 48hrs after chemotherapy for each experimental cycle",
+        "component": "YPEG-rhG-CSF",
+        "labelled_tier": "FUZZY_AUTO",
+        "labelled_drug_id": "CHEMBL1201568",
+        "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "156",
+        "raw": "Adjuvant Treatment Phase",
+        "component": "Phase",
+        "labelled_tier": "FUZZY_REVIEW",
+        "labelled_drug_id": "CHEMBL361497",
+        "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "158",
+        "raw": "CB-Erl",
+        "component": "CB-Erl",
+        "labelled_tier": "FUZZY_REVIEW",
+        "labelled_drug_id": "CHEMBL1351",
+        "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "160",
+        "raw": "DCVAC and immune enhancers add on to SOC",
+        "component": "DCVAC",
+        "labelled_tier": "FUZZY_REVIEW",
+        "labelled_drug_id": "CHEMBL109",
+        "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "164",
+        "raw": "Pac-CB",
+        "component": "Pac-CB",
+        "labelled_tier": "FUZZY_REVIEW",
+        "labelled_drug_id": "CHEMBL1351",
+        "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "165",
+        "raw": "Pegylated rhG-CSF: 100µg/kg",
+        "component": "Pegylated rhG-CSF",
+        "labelled_tier": "FUZZY_REVIEW",
+        "labelled_drug_id": "CHEMBL1201568",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "166",
+        "raw": "Pegylated rhG-CSF: 6mg",
+        "component": "Pegylated rhG-CSF",
+        "labelled_tier": "FUZZY_REVIEW",
+        "labelled_drug_id": "CHEMBL1201568",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "167",
+        "raw": "Pitavastatin 1 mg daily or 4 mg daily",
+        "component": "daily",
+        "labelled_tier": "FUZZY_REVIEW",
+        "labelled_drug_id": "CHEMBL1201566",
+        "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "170",
+        "raw": "[18F]DK222 radiotracer",
+        "component": "18F",
+        "labelled_tier": "PARENTHETICAL",
+        "labelled_drug_id": "CHEMBL2030434",
+        "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "171",
+        "raw": "Atezolizumab (MPDL3280A), an engineered anti-PD-L1 antibody",
+        "component": "MPDL3280A",
+        "labelled_tier": "PARENTHETICAL",
+        "labelled_drug_id": "CHEMBL3707227",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "172",
+        "raw": "AZD8205 and AZD2936 (Rilvegostomig)",
+        "component": "Rilvegostomig",
+        "labelled_tier": "PARENTHETICAL",
+        "labelled_drug_id": "CHEMBL5314706",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "173",
+        "raw": "AZD8205 and AZD5305 (saruparib)",
+        "component": "saruparib",
+        "labelled_tier": "PARENTHETICAL",
+        "labelled_drug_id": "CHEMBL5095220",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "174",
+        "raw": "AZD8205 and AZD5305 (saruparib) and AZD2936 (rilvegostomig)",
+        "component": "saruparib",
+        "labelled_tier": "PARENTHETICAL",
+        "labelled_drug_id": "CHEMBL5095220",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "175",
+        "raw": "AZD8205 in combination with AZD9574 plus rilvegostomig (AZD2936)",
+        "component": "AZD2936",
+        "labelled_tier": "PARENTHETICAL",
+        "labelled_drug_id": "CHEMBL5314706",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "176",
+        "raw": "Biological/Vaccine: ChAdOx1-MAGEA3-NYESO (Route = intramuscular (IM) injection, Dose = 5×10^10 vp)",
+        "component": "IM",
+        "labelled_tier": "PARENTHETICAL",
+        "labelled_drug_id": "CHEMBL941",
+        "labelled_verdict": "incorrect"
+      },
+      {
+        "id": "179",
+        "raw": "NGM831 plus pembrolizumab (KEYTRUDA®)",
+        "component": "KEYTRUDA®",
+        "labelled_tier": "PARENTHETICAL",
+        "labelled_drug_id": "CHEMBL3137343",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "180",
+        "raw": "Paclitaxel loaded polymeric micelle (Genexol-PM®)",
+        "component": "Genexol-PM®",
+        "labelled_tier": "PARENTHETICAL",
+        "labelled_drug_id": "CHEMBL428647",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "181",
+        "raw": "Pegylated liposomal doxorubicin (PLD)",
+        "component": "PLD",
+        "labelled_tier": "PARENTHETICAL",
+        "labelled_drug_id": "CHEMBL53463",
+        "labelled_verdict": "correct"
+      },
+      {
+        "id": "183",
+        "raw": "radiopharmaceutical (Flotegatide (18F) or RGD (68Ga)",
+        "component": "18F",
+        "labelled_tier": "PARENTHETICAL",
+        "labelled_drug_id": "CHEMBL2030434",
+        "labelled_verdict": "incorrect"
+      }
+    ]
+  },
+  "raw_sample_precision": {
+    "accepted_rows_scored": 118,
+    "accepted_rows_correct": 113,
+    "rate": 0.9576,
+    "ci95": [
+      0.9046,
+      0.9818
+    ],
+    "note": "the unweighted result over the rows a human actually read. 118 of the 183 current rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 214 (31 stale), the precision denominator is 118 -- these are different numbers and quoting the first as the second overstates the evidence"
+  },
+  "coverage": {
+    "component_occurrences_total": 6789,
+    "component_occurrences_excluding_blocked": 6355,
+    "accepted_occurrences": 4942,
+    "resolved_rate_of_substance_like": 0.7777,
+    "resolved_rate_of_all": 0.7279
+  },
+  "withheld_tier_quality": {
+    "FUZZY_REVIEW_would_have_been_correct": 0.4444444444444444,
+    "reading": "most proposals held for review are wrong, which is the evidence that the automatic threshold is not set too low"
+  },
+  "limitations": [
+    "labels assigned by one reviewer (the pipeline author); no second annotator",
+    "FUZZY_AUTO, SALT_STRIPPED and CLEANED have so few distinct values that the development sample consumed all of them; their rates are carried over and are therefore optimistic, since the rules were tuned on exactly those rows",
+    "reference vocabulary is scoped to NSCLC drug candidates, so a correct refusal to resolve an out-of-scope drug counts as missing coverage, not as an error",
+    "sampling is stratified by tier, so tier-level rates are far more precise than the rare tiers' raw counts suggest, but tiers with very few distinct values still carry wide intervals"
+  ]
+}

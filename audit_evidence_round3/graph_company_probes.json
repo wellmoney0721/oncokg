@@ -1,0 +1,318 @@
+[
+  {
+    "name": "GSK",
+    "normalized": {
+      "raw": "GSK",
+      "key": "glaxosmithkline",
+      "display": "Gsk",
+      "parent": "GSK",
+      "rules": [
+        "curated_same_entity",
+        "curated_parent_map"
+      ]
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "GlaxoSmithKline",
+    "normalized": {
+      "raw": "GlaxoSmithKline",
+      "key": "glaxosmithkline",
+      "display": "Glaxosmithkline",
+      "parent": "GSK",
+      "rules": [
+        "curated_parent_map"
+      ]
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "GlaxoSmithKline plc",
+    "normalized": {
+      "raw": "GlaxoSmithKline plc",
+      "key": "glaxosmithkline",
+      "display": "Glaxosmithkline",
+      "parent": "GSK",
+      "rules": [
+        "strip_legal_suffix",
+        "curated_parent_map"
+      ]
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "Daiichi Jitsugyo Co., Ltd.",
+    "normalized": {
+      "raw": "Daiichi Jitsugyo Co., Ltd.",
+      "key": "daiichijitsugyo",
+      "display": "Daiichi Jitsugyo",
+      "parent": "Daiichi Sankyo",
+      "rules": [
+        "strip_legal_suffix",
+        "curated_parent_map"
+      ]
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "Daiichi Sankyo",
+    "normalized": {
+      "raw": "Daiichi Sankyo",
+      "key": "daiichisankyo",
+      "display": "Daiichi Sankyo",
+      "parent": null,
+      "rules": []
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "Daiichi Pharmaceutical",
+    "normalized": {
+      "raw": "Daiichi Pharmaceutical",
+      "key": "daiichi",
+      "display": "Daiichi",
+      "parent": "Daiichi Sankyo",
+      "rules": [
+        "strip_sector_suffix",
+        "curated_parent_map"
+      ]
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "Millennium Management",
+    "normalized": {
+      "raw": "Millennium Management",
+      "key": "millenniummanagement",
+      "display": "Millennium Management",
+      "parent": "Takeda",
+      "rules": [
+        "curated_parent_map"
+      ]
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "Bayerische Motoren Werke AG",
+    "normalized": {
+      "raw": "Bayerische Motoren Werke AG",
+      "key": "bayerischemotorenwerke",
+      "display": "Bayerische Motoren Werke",
+      "parent": "Bayer",
+      "rules": [
+        "strip_legal_suffix",
+        "curated_parent_map"
+      ]
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "GSK Biologicals",
+    "normalized": {
+      "raw": "GSK Biologicals",
+      "key": "gskbiologicals",
+      "display": "Gsk Biologicals",
+      "parent": null,
+      "rules": []
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "GlaxoSmithKline Biologicals",
+    "normalized": {
+      "raw": "GlaxoSmithKline Biologicals",
+      "key": "glaxosmithklinebiologicals",
+      "display": "Glaxosmithkline Biologicals",
+      "parent": "GSK",
+      "rules": [
+        "curated_parent_map"
+      ]
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "Hoffmann-La Roche",
+    "normalized": {
+      "raw": "Hoffmann-La Roche",
+      "key": "roche",
+      "display": "Hoffmann-la Roche",
+      "parent": null,
+      "rules": [
+        "curated_same_entity"
+      ]
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "F. Hoffmann-La Roche Ltd.",
+    "normalized": {
+      "raw": "F. Hoffmann-La Roche Ltd.",
+      "key": "fhoffmannlaroche",
+      "display": "F Hoffmann-la Roche",
+      "parent": null,
+      "rules": [
+        "strip_legal_suffix"
+      ]
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "Merck & Co., Inc.",
+    "normalized": {
+      "raw": "Merck & Co., Inc.",
+      "key": "merck",
+      "display": "Merck",
+      "parent": null,
+      "rules": [
+        "strip_legal_suffix"
+      ]
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "Merck KGaA",
+    "normalized": {
+      "raw": "Merck KGaA",
+      "key": "merckkgaa",
+      "display": "Merck Kgaa",
+      "parent": null,
+      "rules": []
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "Juno Therapeutics",
+    "normalized": {
+      "raw": "Juno Therapeutics",
+      "key": "juno",
+      "display": "Juno",
+      "parent": "Bristol Myers Squibb",
+      "rules": [
+        "strip_sector_suffix",
+        "curated_parent_map"
+      ]
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "Loxo Oncology",
+    "normalized": {
+      "raw": "Loxo Oncology",
+      "key": "loxo",
+      "display": "Loxo",
+      "parent": "Eli Lilly",
+      "rules": [
+        "strip_sector_suffix",
+        "curated_parent_map"
+      ]
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "Array BioPharma",
+    "normalized": {
+      "raw": "Array BioPharma",
+      "key": "array",
+      "display": "Array",
+      "parent": "Pfizer",
+      "rules": [
+        "strip_sector_suffix",
+        "curated_parent_map"
+      ]
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "BeOne Medicines",
+    "normalized": {
+      "raw": "BeOne Medicines",
+      "key": "beonemedicines",
+      "display": "Beone Medicines",
+      "parent": null,
+      "rules": []
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "BeiGene",
+    "normalized": {
+      "raw": "BeiGene",
+      "key": "beonemedicines",
+      "display": "Beigene",
+      "parent": null,
+      "rules": [
+        "curated_same_entity"
+      ]
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "Hengrui Medicine",
+    "normalized": {
+      "raw": "Hengrui Medicine",
+      "key": "jiangsuhengruimedicine",
+      "display": "Hengrui Medicine",
+      "parent": "Jiangsu Hengrui",
+      "rules": [
+        "curated_same_entity",
+        "curated_parent_map"
+      ]
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "Xiuning Le",
+    "normalized": {
+      "raw": "Xiuning Le",
+      "key": "xiuningle",
+      "display": "Xiuning Le",
+      "parent": null,
+      "rules": []
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "Dr Xiuning Le",
+    "normalized": {
+      "raw": "Dr Xiuning Le",
+      "key": "drxiuningle",
+      "display": "Dr Xiuning Le",
+      "parent": null,
+      "rules": []
+    },
+    "looks_like_person": false
+  },
+  {
+    "name": "Charles MD",
+    "normalized": {
+      "raw": "Charles MD",
+      "key": "charlesmd",
+      "display": "Charles Md",
+      "parent": null,
+      "rules": []
+    },
+    "looks_like_person": true
+  },
+  {
+    "name": "Hospital Dr",
+    "normalized": {
+      "raw": "Hospital Dr",
+      "key": "hospitaldr",
+      "display": "Hospital Dr",
+      "parent": null,
+      "rules": []
+    },
+    "looks_like_person": true
+  },
+  {
+    "name": "MD Anderson Cancer Center",
+    "normalized": {
+      "raw": "MD Anderson Cancer Center",
+      "key": "mdandersoncancercenter",
+      "display": "Md Anderson Cancer Center",
+      "parent": null,
+      "rules": []
+    },
+    "looks_like_person": false
+  }
+]

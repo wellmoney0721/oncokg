@@ -1,0 +1,332 @@
+[
+  {
+    "command": [
+      "C:\\Users\\geoum\\miniconda3\\python.exe",
+      "-B",
+      "src/query.py",
+      "Which companies are developing osimertinib?"
+    ],
+    "cwd": "audit_evidence_round3\\query_cli",
+    "exit_code": 0,
+    "answer_json": [
+      {
+        "question": "Which companies are developing osimertinib?",
+        "intent": "companies_for_drug",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL3353410",
+            "label": "OSIMERTINIB",
+            "matched_text": "osimertinib",
+            "matched_alias": "OSIMERTINIB"
+          }
+        ],
+        "answer": "Organisations sponsoring trials of this drug:\n  - Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT01802632, NCT02143466, NCT02224053]\n  - Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT03810807, NCT06741085, NCT07535437]\n  - National Cancer Institute (nih sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT03191149, NCT03831932, NCT04181060]\n  - Bristol Myers Squibb (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT06618287, NCT07680790]\n  - Eli Lilly (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT02411448, NCT02789345]\n  - M D Anderson Cancer Center (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT04479306, NCT05017025]\n  - Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT04425681, NCT06557096]\n  - Shanghai Jmt-bio (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT06391944, NCT06735391]\n  - Sichuan Kelun-biotech (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT06670196, NCT07622186]\n  - Tianjin Medical University Cancer Institute And Hospital (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT04029350, NCT05507606]\n  - Tyk Medicines (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT05382728, NCT05948813]\n  - Abbisko (industry sponsor) is lead sponsor of 1 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [NCT07710612]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+        "generated_by": "deterministic template (no language model)",
+        "checks": {
+          "grounded": null,
+          "applicable": false,
+          "unsupported_claims": [],
+          "evidence_count": 12,
+          "method": "not applicable",
+          "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+        },
+        "evidence": [
+          {
+            "statement": "Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "source": "derived",
+            "source_record": "NCT01802632, NCT02143466, NCT02224053",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 14,
+            "example_trials": [
+              "NCT01802632",
+              "NCT02143466",
+              "NCT02224053"
+            ]
+          },
+          {
+            "statement": "Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "source": "derived",
+            "source_record": "NCT03810807, NCT06741085, NCT07535437",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 3,
+            "example_trials": [
+              "NCT03810807",
+              "NCT06741085",
+              "NCT07535437"
+            ]
+          },
+          {
+            "statement": "National Cancer Institute (nih sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "source": "derived",
+            "source_record": "NCT03191149, NCT03831932, NCT04181060",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "NIH",
+            "evidence_trials": 3,
+            "example_trials": [
+              "NCT03191149",
+              "NCT03831932",
+              "NCT04181060"
+            ]
+          },
+          {
+            "statement": "Bristol Myers Squibb (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "source": "derived",
+            "source_record": "NCT06618287, NCT07680790",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT06618287",
+              "NCT07680790"
+            ]
+          },
+          {
+            "statement": "Eli Lilly (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "source": "derived",
+            "source_record": "NCT02411448, NCT02789345",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT02411448",
+              "NCT02789345"
+            ]
+          },
+          {
+            "statement": "M D Anderson Cancer Center (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "source": "derived",
+            "source_record": "NCT04479306, NCT05017025",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT04479306",
+              "NCT05017025"
+            ]
+          },
+          {
+            "statement": "Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "source": "derived",
+            "source_record": "NCT04425681, NCT06557096",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT04425681",
+              "NCT06557096"
+            ]
+          },
+          {
+            "statement": "Shanghai Jmt-bio (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "source": "derived",
+            "source_record": "NCT06391944, NCT06735391",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT06391944",
+              "NCT06735391"
+            ]
+          },
+          {
+            "statement": "Sichuan Kelun-biotech (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "source": "derived",
+            "source_record": "NCT06670196, NCT07622186",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT06670196",
+              "NCT07622186"
+            ]
+          },
+          {
+            "statement": "Tianjin Medical University Cancer Institute And Hospital (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "source": "derived",
+            "source_record": "NCT04029350, NCT05507606",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT04029350",
+              "NCT05507606"
+            ]
+          },
+          {
+            "statement": "Tyk Medicines (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "source": "derived",
+            "source_record": "NCT05382728, NCT05948813",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT05382728",
+              "NCT05948813"
+            ]
+          },
+          {
+            "statement": "Abbisko (industry sponsor) is lead sponsor of 1 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+            "relation": "SPONSORS_TRIAL_OF",
+            "source": "derived",
+            "source_record": "NCT07710612",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 1,
+            "example_trials": [
+              "NCT07710612"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "command": [
+      "C:\\Users\\geoum\\miniconda3\\python.exe",
+      "-B",
+      "src/query.py",
+      "Is pembrolizumab safe in patients with autoimmune disease?"
+    ],
+    "cwd": "audit_evidence_round3\\query_cli",
+    "exit_code": 0,
+    "answer_json": [
+      {
+        "question": "Is pembrolizumab safe in patients with autoimmune disease?",
+        "intent": "drug_profile",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL3137343",
+            "label": "PEMBROLIZUMAB",
+            "matched_text": "pembrolizumab",
+            "matched_alias": "PEMBROLIZUMAB"
+          }
+        ],
+        "answer": "Profile:\n  - PEMBROLIZUMAB is a Antibody, max clinical stage APPROVAL, appearing in 217 NSCLC trial(s) in this graph [CHEMBL3137343]\n  - PEMBROLIZUMAB acts on PDCD1 (inhibitor) [CHEMBL3137343]\n\nScope: 2 edge(s) from this graph; non-small cell lung cancer only.",
+        "generated_by": "deterministic template (no language model)",
+        "checks": {
+          "grounded": null,
+          "applicable": false,
+          "unsupported_claims": [],
+          "evidence_count": 2,
+          "method": "not applicable",
+          "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+        },
+        "evidence": [
+          {
+            "statement": "PEMBROLIZUMAB is a Antibody, max clinical stage APPROVAL, appearing in 217 NSCLC trial(s) in this graph",
+            "relation": "PROFILE",
+            "source": "Open Targets / ChEMBL",
+            "source_record": "CHEMBL3137343",
+            "fetched_at": null,
+            "confidence": 1.0,
+            "resolution_tier": null,
+            "url": null,
+            "aliases_known": 35,
+            "mechanisms": [
+              "Programmed cell death protein 1 inhibitor"
+            ]
+          },
+          {
+            "statement": "PEMBROLIZUMAB acts on PDCD1 (inhibitor)",
+            "relation": "ACTS_ON",
+            "source": "Open Targets / ChEMBL",
+            "source_record": "CHEMBL3137343",
+            "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+            "confidence": 0.95,
+            "resolution_tier": null,
+            "url": null,
+            "action_type": "INHIBITOR"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "command": [
+      "C:\\Users\\geoum\\miniconda3\\python.exe",
+      "-B",
+      "src/query.py",
+      "What is the capital of France?"
+    ],
+    "cwd": "audit_evidence_round3\\query_cli",
+    "exit_code": 0,
+    "answer_json": [
+      {
+        "question": "What is the capital of France?",
+        "intent": "unsupported",
+        "entities": [],
+        "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+        "generated_by": "refusal (no supporting evidence)",
+        "checks": {
+          "grounded": true,
+          "unsupported_claims": [],
+          "note": "refusing is the correct output when evidence is absent"
+        },
+        "evidence": []
+      }
+    ]
+  }
+]

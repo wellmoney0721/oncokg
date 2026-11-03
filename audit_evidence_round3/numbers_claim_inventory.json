@@ -1,0 +1,871 @@
+[
+  {
+    "README.md_lines": "26-28",
+    "README.ko.md_lines": "16-17",
+    "claim": "3000 trials; 2742 distinct drug strings; approximately 1000 molecules; 2175 conditions",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "stats_numbers_results.json.snapshot_counts",
+    "observed": {
+      "trials": 3000,
+      "distinct_drug_biological_strings": 2742,
+      "distinct_conditions": 2175,
+      "molecules": 1066,
+      "synonyms": 9316,
+      "AACT_synonyms": 2595,
+      "stored_aliases": 9750,
+      "curated_index_keys": 7693,
+      "curated_index_drug_entries": 7791,
+      "stored_alias_associations_missing_from_curated_index": 670
+    },
+    "note": "Drug strings means DRUG or BIOLOGICAL interventions; count does not establish 2175 synonyms for one disease."
+  },
+  {
+    "README.md_lines": "47",
+    "README.ko.md_lines": "34",
+    "claim": "three disjoint samples",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "stats_numbers_results.json.sample_intersections",
+    "observed": {
+      "dev_test": 0,
+      "dev_postfix": 0,
+      "test_postfix": 0
+    },
+    "note": ""
+  },
+  {
+    "README.md_lines": "57",
+    "README.ko.md_lines": "44",
+    "claim": "dev: gold_sample_size",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_dev.json.gold_sample_size",
+    "observed": 214,
+    "note": "Arithmetic verified independently; population interpretation is separate."
+  },
+  {
+    "README.md_lines": "57",
+    "README.ko.md_lines": "44",
+    "claim": "dev: as_labelled_raw_precision",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_dev.json.as_labelled_raw_precision",
+    "observed": {
+      "accepted_rows_scored": 137,
+      "accepted_rows_correct": 126,
+      "rate": 0.9197,
+      "ci95": [
+        0.8619,
+        0.9546
+      ],
+      "note": "every labelled accepted row, scored on the resolution it had when labelled. On the held-out test sample this is the frozen measurement of the pipeline before the audit repairs; it does not describe the current pipeline"
+    },
+    "note": "Arithmetic verified independently; population interpretation is separate."
+  },
+  {
+    "README.md_lines": "57",
+    "README.ko.md_lines": "44",
+    "claim": "dev: raw_sample_precision",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_dev.json.raw_sample_precision",
+    "observed": {
+      "accepted_rows_scored": 118,
+      "accepted_rows_correct": 113,
+      "rate": 0.9576,
+      "ci95": [
+        0.9046,
+        0.9818
+      ],
+      "note": "the unweighted result over the rows a human actually read. 118 of the 183 current rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 214 (31 stale), the precision denominator is 118 -- these are different numbers and quoting the first as the second overstates the evidence"
+    },
+    "note": "Arithmetic verified independently; population interpretation is separate."
+  },
+  {
+    "README.md_lines": "57",
+    "README.ko.md_lines": "44",
+    "claim": "dev: accepted_precision",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_dev.json.accepted_precision",
+    "observed": {
+      "estimate": 0.9789,
+      "ci95": [
+        0.8656,
+        0.9945
+      ],
+      "method": "stratified estimate weighted by distinct resolutions per tier; interval propagated from per-tier Wilson bounds, not a normal approximation",
+      "weighted_over_tiers": [
+        "EXACT",
+        "ALIAS",
+        "CLEANED",
+        "SALT_STRIPPED",
+        "PARENTHETICAL",
+        "CONTAINED_ALIAS",
+        "FUZZY_AUTO"
+      ],
+      "caveat": "the sample is drawn by a disproportionate per-tier quota, so this reweighting is required; it is also what makes the figure higher than the raw rows, so read it next to raw_sample_precision below. The interval is a weighted sum of per-tier Wilson bounds: conservative, but not a calibrated 95% interval",
+      "bootstrap_ci95": [
+        0.9537,
+        0.9991
+      ],
+      "bootstrap_note": "stratified bootstrap over the sampled rows, 20,000 resamples. Narrower, and blind to errors in tiers that scored 100% in the sample",
+      "carried_tiers_weight_share": 0.0,
+      "estimate_without_carried_tiers": 0.9789
+    },
+    "note": "Arithmetic verified independently; population interpretation is separate."
+  },
+  {
+    "README.md_lines": "57",
+    "README.ko.md_lines": "44",
+    "claim": "dev: rows still current",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_dev.json.gold_sample_size - stale_labels.count",
+    "observed": 183,
+    "note": ""
+  },
+  {
+    "README.md_lines": "50-51,58",
+    "README.ko.md_lines": "37-38,45",
+    "claim": "test: gold_sample_size",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_frozen_test.json.gold_sample_size",
+    "observed": 172,
+    "note": "Arithmetic verified independently; population interpretation is separate."
+  },
+  {
+    "README.md_lines": "50-51,58",
+    "README.ko.md_lines": "37-38,45",
+    "claim": "test: as_labelled_raw_precision",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_frozen_test.json.as_labelled_raw_precision",
+    "observed": {
+      "accepted_rows_scored": 115,
+      "accepted_rows_correct": 103,
+      "rate": 0.8957,
+      "ci95": [
+        0.8264,
+        0.9393
+      ],
+      "note": "every labelled accepted row, scored on the resolution it had when labelled. On the held-out test sample this is the frozen measurement of the pipeline before the audit repairs; it does not describe the current pipeline"
+    },
+    "note": "Arithmetic verified independently; population interpretation is separate."
+  },
+  {
+    "README.md_lines": "50-51,58",
+    "README.ko.md_lines": "37-38,45",
+    "claim": "test: raw_sample_precision",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_frozen_test.json.raw_sample_precision",
+    "observed": {
+      "accepted_rows_scored": 99,
+      "accepted_rows_correct": 99,
+      "rate": 1.0,
+      "ci95": [
+        0.9626,
+        1.0
+      ],
+      "note": "the unweighted result over the rows a human actually read. 99 of the 147 current rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 172 (25 stale), the precision denominator is 99 -- these are different numbers and quoting the first as the second overstates the evidence"
+    },
+    "note": "Arithmetic verified independently; population interpretation is separate."
+  },
+  {
+    "README.md_lines": "50-51,58",
+    "README.ko.md_lines": "37-38,45",
+    "claim": "test: accepted_precision",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_frozen_test.json.accepted_precision",
+    "observed": {
+      "estimate": 0.9991,
+      "ci95": [
+        0.8947,
+        0.9997
+      ],
+      "method": "stratified estimate weighted by distinct resolutions per tier; interval propagated from per-tier Wilson bounds, not a normal approximation",
+      "weighted_over_tiers": [
+        "EXACT",
+        "ALIAS",
+        "CLEANED",
+        "SALT_STRIPPED",
+        "PARENTHETICAL",
+        "CONTAINED_ALIAS",
+        "FUZZY_AUTO"
+      ],
+      "caveat": "the sample is drawn by a disproportionate per-tier quota, so this reweighting is required; it is also what makes the figure higher than the raw rows, so read it next to raw_sample_precision below. The interval is a weighted sum of per-tier Wilson bounds: conservative, but not a calibrated 95% interval",
+      "bootstrap_ci95": [
+        0.9977,
+        1.0
+      ],
+      "bootstrap_note": "stratified bootstrap over the sampled rows, 20,000 resamples. Narrower, and blind to errors in tiers that scored 100% in the sample",
+      "carried_tiers_weight_share": 0.0088,
+      "estimate_without_carried_tiers": 1.0
+    },
+    "note": "Arithmetic verified independently; population interpretation is separate."
+  },
+  {
+    "README.md_lines": "50-51,58",
+    "README.ko.md_lines": "37-38,45",
+    "claim": "test: rows still current",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_frozen_test.json.gold_sample_size - stale_labels.count",
+    "observed": 147,
+    "note": ""
+  },
+  {
+    "README.md_lines": "59",
+    "README.ko.md_lines": "46",
+    "claim": "postfix: gold_sample_size",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_postfix.json.gold_sample_size",
+    "observed": 58,
+    "note": "Arithmetic verified independently; population interpretation is separate."
+  },
+  {
+    "README.md_lines": "59",
+    "README.ko.md_lines": "46",
+    "claim": "postfix: as_labelled_raw_precision",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_postfix.json.as_labelled_raw_precision",
+    "observed": {
+      "accepted_rows_scored": 38,
+      "accepted_rows_correct": 36,
+      "rate": 0.9474,
+      "ci95": [
+        0.8271,
+        0.9854
+      ],
+      "note": "every labelled accepted row, scored on the resolution it had when labelled. On the held-out test sample this is the frozen measurement of the pipeline before the audit repairs; it does not describe the current pipeline"
+    },
+    "note": "Arithmetic verified independently; population interpretation is separate."
+  },
+  {
+    "README.md_lines": "59",
+    "README.ko.md_lines": "46",
+    "claim": "postfix: raw_sample_precision",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_postfix.json.raw_sample_precision",
+    "observed": {
+      "accepted_rows_scored": 36,
+      "accepted_rows_correct": 35,
+      "rate": 0.9722,
+      "ci95": [
+        0.8583,
+        0.9951
+      ],
+      "note": "the unweighted result over the rows a human actually read. 36 of the 54 current rows in this sample sit in an accepting tier; the rest are refusals and are scored separately. The sample size is 58 (4 stale), the precision denominator is 36 -- these are different numbers and quoting the first as the second overstates the evidence"
+    },
+    "note": "Arithmetic verified independently; population interpretation is separate."
+  },
+  {
+    "README.md_lines": "59",
+    "README.ko.md_lines": "46",
+    "claim": "postfix: accepted_precision",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_postfix.json.accepted_precision",
+    "observed": {
+      "estimate": 0.9927,
+      "ci95": [
+        0.7061,
+        0.9986
+      ],
+      "method": "stratified estimate weighted by distinct resolutions per tier; interval propagated from per-tier Wilson bounds, not a normal approximation",
+      "weighted_over_tiers": [
+        "EXACT",
+        "ALIAS",
+        "CLEANED",
+        "SALT_STRIPPED",
+        "PARENTHETICAL",
+        "CONTAINED_ALIAS",
+        "FUZZY_AUTO"
+      ],
+      "caveat": "the sample is drawn by a disproportionate per-tier quota, so this reweighting is required; it is also what makes the figure higher than the raw rows, so read it next to raw_sample_precision below. The interval is a weighted sum of per-tier Wilson bounds: conservative, but not a calibrated 95% interval",
+      "bootstrap_ci95": [
+        0.9794,
+        1.0
+      ],
+      "bootstrap_note": "stratified bootstrap over the sampled rows, 20,000 resamples. Narrower, and blind to errors in tiers that scored 100% in the sample",
+      "carried_tiers_weight_share": 0.0088,
+      "estimate_without_carried_tiers": 0.9935
+    },
+    "note": "Arithmetic verified independently; population interpretation is separate."
+  },
+  {
+    "README.md_lines": "59",
+    "README.ko.md_lines": "46",
+    "claim": "postfix: rows still current",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_postfix.json.gold_sample_size - stale_labels.count",
+    "observed": 54,
+    "note": ""
+  },
+  {
+    "README.md_lines": "62-65,427-430",
+    "README.ko.md_lines": "48-51,300-302",
+    "claim": "31/25/4 stale dev/test/postfix rows",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_{dev,frozen_test,postfix}.json.stale_labels.count",
+    "observed": [
+      31,
+      25,
+      4
+    ],
+    "note": ""
+  },
+  {
+    "README.md_lines": "73-75",
+    "README.ko.md_lines": "56",
+    "claim": "115 accepted among 172 held-out rows",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "gold_test.csv tier in accepting set",
+    "observed": [
+      115,
+      172
+    ],
+    "note": ""
+  },
+  {
+    "README.md_lines": "87",
+    "README.ko.md_lines": "67",
+    "claim": "20000 stratified bootstrap resamples",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "src/evaluate.py:157",
+    "observed": 20000,
+    "note": "Independent audit uses 50000 and different seed; intervals agree to reporting precision apart from Monte Carlo variation."
+  },
+  {
+    "README.md_lines": "94",
+    "README.ko.md_lines": "72",
+    "claim": "77.8% coverage = 4942/6355",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_frozen_test.json.coverage",
+    "observed": {
+      "component_occurrences_total": 6789,
+      "component_occurrences_excluding_blocked": 6355,
+      "accepted_occurrences": 4942,
+      "resolved_rate_of_substance_like": 0.7777,
+      "resolved_rate_of_all": 0.7279
+    },
+    "note": "Denominator is component occurrences, not distinct strings."
+  },
+  {
+    "README.md_lines": "100-103",
+    "README.ko.md_lines": "78-80",
+    "claim": "FUZZY_REVIEW 4/9 =44.4%",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_frozen_test.json.per_tier.FUZZY_REVIEW",
+    "observed": {
+      "sampled": 9,
+      "correct": 4,
+      "rate": 0.4444444444444444,
+      "ci95": [
+        0.1888,
+        0.7334
+      ],
+      "population_unique": 13,
+      "population_occurrences": 15,
+      "source": "development sample (no independent test rows available)"
+    },
+    "note": "This is a carried dev rate; rate below 50% does not establish accepted threshold safety."
+  },
+  {
+    "README.md_lines": "104-105",
+    "README.ko.md_lines": "81-82",
+    "claim": "placebo 8/8; Wilson67.6-100",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/evaluation_frozen_test.json.per_tier.BLOCKED_PLACEBO",
+    "observed": {
+      "sampled": 8,
+      "correct": 8,
+      "rate": 1.0,
+      "ci95": [
+        0.6756,
+        1.0
+      ],
+      "population_unique": 53,
+      "population_occurrences": 151,
+      "source": "test sample"
+    },
+    "note": ""
+  },
+  {
+    "README.md_lines": "164-171",
+    "README.ko.md_lines": "128-133",
+    "claim": "2595 of9316 synonyms from AACT;318 removed",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "data/raw/drugs.json.data[*].drug.synonyms + quality_report.totals.by_family.dictionary.registry_alias_removed",
+    "observed": [
+      9316,
+      2595,
+      318
+    ],
+    "note": ""
+  },
+  {
+    "README.md_lines": "319",
+    "README.ko.md_lines": "243",
+    "claim": "registry_alias_removed",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/quality_report.json.totals.by_family.dictionary.registry_alias_removed",
+    "observed": 318,
+    "note": ""
+  },
+  {
+    "README.md_lines": "320",
+    "README.ko.md_lines": "244",
+    "claim": "class_term_as_synonym",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/quality_report.json.totals.by_family.dictionary.class_term_as_synonym",
+    "observed": 117,
+    "note": ""
+  },
+  {
+    "README.md_lines": "321",
+    "README.ko.md_lines": "245",
+    "claim": "genuinely_ambiguous_alias",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/quality_report.json.totals.by_family.dictionary.genuinely_ambiguous_alias",
+    "observed": 98,
+    "note": ""
+  },
+  {
+    "README.md_lines": "322",
+    "README.ko.md_lines": "246",
+    "claim": "parent_child_collapse",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/quality_report.json.totals.by_family.dictionary.parent_child_collapse",
+    "observed": 60,
+    "note": ""
+  },
+  {
+    "README.md_lines": "323",
+    "README.ko.md_lines": "247",
+    "claim": "cross_drug_synonym",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/quality_report.json.totals.by_family.dictionary.cross_drug_synonym",
+    "observed": 57,
+    "note": ""
+  },
+  {
+    "README.md_lines": "324",
+    "README.ko.md_lines": "248",
+    "claim": "suspected_duplicate_entity",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/quality_report.json.totals.by_family.dictionary.suspected_duplicate_entity",
+    "observed": 47,
+    "note": ""
+  },
+  {
+    "README.md_lines": "325",
+    "README.ko.md_lines": "249",
+    "claim": "distinct_product_alias",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/quality_report.json.totals.by_family.dictionary.distinct_product_alias",
+    "observed": 7,
+    "note": ""
+  },
+  {
+    "README.md_lines": "326",
+    "README.ko.md_lines": "250",
+    "claim": "placebo_string_in_synonym_list",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/quality_report.json.totals.by_family.dictionary.placebo_string_in_synonym_list",
+    "observed": 6,
+    "note": ""
+  },
+  {
+    "README.md_lines": "329",
+    "README.ko.md_lines": "252-253",
+    "claim": "ambiguity2189->65;exact1997->4054",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/curation_effect.json.headline",
+    "observed": {
+      "ambiguous_before": 2189,
+      "ambiguous_after": 65,
+      "exact_before": 1997,
+      "exact_after": 4054
+    },
+    "note": "Root reviewer separately reruns curation_effect.py."
+  },
+  {
+    "README.md_lines": "336",
+    "README.ko.md_lines": "259-260",
+    "claim": "6474 live nodes;17576 live edges",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/graph_stats.json.{nodes,edges}; SQL node/edge WHERE retired_at IS NULL",
+    "observed": [
+      6474,
+      17576
+    ],
+    "note": ""
+  },
+  {
+    "README.md_lines": "341",
+    "README.ko.md_lines": "264",
+    "claim": "SPONSORS edge count",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/graph_stats.json.edges_by_rel.SPONSORS",
+    "observed": 4652,
+    "note": ""
+  },
+  {
+    "README.md_lines": "342",
+    "README.ko.md_lines": "265",
+    "claim": "EVALUATES edge count",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/graph_stats.json.edges_by_rel.EVALUATES",
+    "observed": 4442,
+    "note": ""
+  },
+  {
+    "README.md_lines": "343",
+    "README.ko.md_lines": "266",
+    "claim": "SPONSORS_TRIAL_OF edge count",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/graph_stats.json.edges_by_rel.SPONSORS_TRIAL_OF",
+    "observed": 3181,
+    "note": ""
+  },
+  {
+    "README.md_lines": "344",
+    "README.ko.md_lines": "267",
+    "claim": "STUDIES edge count",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/graph_stats.json.edges_by_rel.STUDIES",
+    "observed": 2774,
+    "note": ""
+  },
+  {
+    "README.md_lines": "345",
+    "README.ko.md_lines": "268",
+    "claim": "ACTS_ON edge count",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/graph_stats.json.edges_by_rel.ACTS_ON",
+    "observed": 2186,
+    "note": ""
+  },
+  {
+    "README.md_lines": "346",
+    "README.ko.md_lines": "269",
+    "claim": "ASSOCIATED_WITH edge count",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/graph_stats.json.edges_by_rel.ASSOCIATED_WITH",
+    "observed": 300,
+    "note": ""
+  },
+  {
+    "README.md_lines": "347",
+    "README.ko.md_lines": "270",
+    "claim": "PARENT_OF edge count",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/graph_stats.json.edges_by_rel.PARENT_OF",
+    "observed": 41,
+    "note": ""
+  },
+  {
+    "README.md_lines": "352-355",
+    "README.ko.md_lines": "274-275",
+    "claim": "3181 empty source_record;10360 empty tier",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "SQL edge WHERE retired_at IS NULL and source_record/tier IS NULL",
+    "observed": [
+      3181,
+      10360
+    ],
+    "note": ""
+  },
+  {
+    "README.md_lines": "359-362",
+    "README.ko.md_lines": "279-281",
+    "claim": "3181 derived edges,41.3%industry58.7%nonindustry,confidence1.0",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "SQL edge rel=SPONSORS_TRIAL_OF properties.sponsor_class/confidence",
+    "observed": [
+      0.4127632819867966,
+      0.5872367180132034,
+      [
+        [
+          1.0,
+          3181
+        ]
+      ]
+    ],
+    "note": ""
+  },
+  {
+    "README.md_lines": "445",
+    "README.ko.md_lines": "311",
+    "claim": "carried tiers 0.9%of stratified weight",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "evaluation_frozen_test.json.accepted_precision.carried_tiers_weight_share",
+    "observed": 0.008775981524249422,
+    "note": "Three accepting tiers19/2165; fourth FUZZY_REVIEW contributes0 to precision."
+  },
+  {
+    "README.md_lines": "446",
+    "README.ko.md_lines": "312",
+    "claim": "postfix interval70.6-99.9",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "evaluation_postfix.json.accepted_precision.ci95",
+    "observed": [
+      0.7061,
+      0.9986
+    ],
+    "note": "The brief value71.5-99.8 is stale, not a current README mismatch."
+  },
+  {
+    "README.md_lines": "527",
+    "README.ko.md_lines": "343",
+    "claim": "test_pipeline.py tests",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "AST count of test_* functions",
+    "observed": 24,
+    "note": ""
+  },
+  {
+    "README.md_lines": "528",
+    "README.ko.md_lines": "343",
+    "claim": "test_audit_round2.py tests",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "AST count of test_* functions",
+    "observed": 20,
+    "note": ""
+  },
+  {
+    "README.md_lines": "486",
+    "README.ko.md_lines": "343",
+    "claim": "44 tests",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "AST tests/test_pipeline.py + tests/test_audit_round2.py",
+    "observed": 44,
+    "note": "Root reviewer records executed pytest result."
+  },
+  {
+    "README.md_lines": "457",
+    "README.ko.md_lines": "327",
+    "claim": "59 corporate-map keys",
+    "status": "MISMATCH",
+    "artifact_field_or_reproduction": "src/normalize.py.CURATED_PARENTS",
+    "observed": 57,
+    "note": "README claims59; current literal map has57. Count verifies no ownership truth."
+  },
+  {
+    "README.md_lines": "472-473",
+    "README.ko.md_lines": "320",
+    "claim": "36 Investigator nodes",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/graph_stats.json.nodes_by_type.Investigator",
+    "observed": 36,
+    "note": ""
+  },
+  {
+    "README.md_lines": "540-542",
+    "README.ko.md_lines": "359-360",
+    "claim": "first3000interventional trials;APIv2",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "data/raw/trials.json._record_count; protocolSection.designModule.studyType;src/config.py",
+    "observed": {
+      "records": 3000,
+      "study_types": {
+        "INTERVENTIONAL": 3000
+      }
+    },
+    "note": ""
+  },
+  {
+    "README.md_lines": "dashboard",
+    "README.ko.md_lines": "dashboard",
+    "claim": "headline held-out precision",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "web/data.json.headline.held_out_as_labelled",
+    "observed": {
+      "accepted_rows_scored": 115,
+      "accepted_rows_correct": 103,
+      "rate": 0.8957,
+      "ci95": [
+        0.8264,
+        0.9393
+      ],
+      "note": "every labelled accepted row, scored on the resolution it had when labelled. On the held-out test sample this is the frozen measurement of the pipeline before the audit repairs; it does not describe the current pipeline"
+    },
+    "note": ""
+  },
+  {
+    "README.md_lines": "dashboard",
+    "README.ko.md_lines": "dashboard",
+    "claim": "9750 aliases in reference vocabulary after curation",
+    "status": "MISMATCH",
+    "artifact_field_or_reproduction": "web/template.html:303;make_dashboard_data.py:121;resolved.dictionary.index",
+    "observed": {
+      "displayed": 9750,
+      "removed_associations_still_counted": 670,
+      "curated_index_keys": 7693,
+      "curated_index_drug_entries": 7791
+    },
+    "note": "Stored aliases retain rejected associations. Counts of keys, stored labels, and molecule associations are different units."
+  },
+  {
+    "README.md_lines": "52-53,130",
+    "README.ko.md_lines": "39,101",
+    "claim": "prior headline91.3%;three more labels fixed",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "src/apply_label_corrections.py CORRECTIONS;105/115",
+    "observed": 0.9130434782608695,
+    "note": "Three fixes overall but only two affect gold_test."
+  },
+  {
+    "README.md_lines": "453-454",
+    "README.ko.md_lines": "324-325",
+    "claim": "four disitamab vedotin name variants removed",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/quality_report.json.findings[type=registry_alias_removed,affected_drug_name=DISITAMAB VEDOTIN,reason=different_ingredient]",
+    "observed": [
+      "vediximab",
+      "vedixizumab",
+      "vidicizumab",
+      "vidiximab"
+    ],
+    "note": ""
+  },
+  {
+    "README.md_lines": "436-439",
+    "README.ko.md_lines": "306-307",
+    "claim": "round2 rescored58held-out rows and disagreed on3",
+    "status": "MISMATCH",
+    "artifact_field_or_reproduction": "audit_evidence_20261103/labels_rescore.json.summary.disagreement_ids / postfix_additional_disagreement; src/apply_label_corrections.py CORRECTIONS",
+    "observed": {
+      "new_test_disagreements": 2,
+      "new_postfix_disagreements": 1
+    },
+    "note": "Third correction is outside held-out sample; cannot be3outof58held-out."
+  },
+  {
+    "README.md_lines": "387-389",
+    "README.ko.md_lines": "",
+    "claim": "Tagrisso exampleNCT03909334 and12retrievededges",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/query_examples.json[question=What trials evaluate Tagrisso?].answer",
+    "observed": "Trials evaluating this drug:\n  - NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT03909334]\n  - NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB [NCT07680790]\n  - NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT02411448]\n  - NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04285671]\n  - NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04141644]\n  - NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT03535363]\n  - NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB [NCT04487080]\n  - NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB [NCT07738172]\n  - NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT04541407]\n  - NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB [NCT04772235]\n  - NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB [NCT05011487]\n  - NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB [NCT04479306]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+    "note": "12 is the retrieval cap, not all trial edges for osimertinib."
+  },
+  {
+    "README.md_lines": "367",
+    "README.ko.md_lines": "284",
+    "claim": "two identical snapshot rebuilds:0added/changed/retired",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "reports/graph_stats.json.{added,changed,retired}",
+    "observed": {
+      "added": 0,
+      "changed": 0,
+      "retired": 0
+    },
+    "note": "Committed values match; root reviewer separately checks repeated execution."
+  },
+  {
+    "README.md_lines": "91-92",
+    "README.ko.md_lines": "69",
+    "claim": "historical99.1%[98.4,99.8];88%weight",
+    "status": "UNVERIFIABLE",
+    "artifact_field_or_reproduction": "stats_historical_evidence.json.counterfactual_undo_first_five_corrections_using_earliest_retained_population; all_retained_commits",
+    "observed": {
+      "estimate": 0.9915026697177727,
+      "normal_interval": [
+        0.9847385980700203,
+        0.9982667413655251
+      ],
+      "weight_at_perfect_rate": 0.8874141876430206,
+      "note": "Not a reconstruction of the missing pre-round1 population or executable; does not verify exact99.1[98.4,99.8]."
+    },
+    "note": "Earliest retained evaluator already uses Wilson propagation. Undoing5labels with later populations gives99.1503[98.4739,99.8267],88.7414%weight, not an exact reconstruction of absent historical data/code. Thus exact old interval remains unverified."
+  },
+  {
+    "README.md_lines": "201-204",
+    "README.ko.md_lines": "154-156",
+    "claim": "historical58.8%nonindustry and36trials led by physicians",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "audit_evidence_20261103/statistics_results.json.independent_graph_counts.derived_sponsor_classes; direct raw-trial lead credential recount",
+    "observed": {
+      "nonindustry_fraction": 0.5880138060872293,
+      "credentialed_lead_trials": 36
+    },
+    "note": "58.8% reproduced from retained historical per-class edge counts;36 independently recomputed from original raw records."
+  },
+  {
+    "README.md_lines": "210-212",
+    "README.ko.md_lines": "161-163",
+    "claim": "historical artifact class_term_as_synonym134 and coverage78.2%",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "audit_evidence_20261103/original/reports/quality_report.json.totals.by_family.dictionary.class_term_as_synonym; evaluation_frozen_test.json.coverage",
+    "observed": {
+      "class_term_as_synonym": 134,
+      "coverage": {
+        "component_occurrences_total": 6788,
+        "component_occurrences_excluding_blocked": 6351,
+        "accepted_occurrences": 4969,
+        "resolved_rate_of_substance_like": 0.7824,
+        "resolved_rate_of_all": 0.732
+      }
+    },
+    "note": "Retained original artifacts independently support the stated artifact-side134/78.2."
+  },
+  {
+    "README.md_lines": "210-213",
+    "README.ko.md_lines": "161-165",
+    "claim": "pre-round1 claims6481/56/78.3/2008->66;pre-round1 artifact6475",
+    "status": "UNVERIFIABLE",
+    "artifact_field_or_reproduction": "9retained commits begin at e79049b; audit_evidence_20261103/original/reports/graph_stats.json.nodes=6476",
+    "observed": {
+      "earliest_retained_nodes": 6476
+    },
+    "note": "The allegedly printed wrong figures and6475 artifact belong before the earliest retained source state. Later README/HANDOFF repeat the story; no original pre-round1 README/output verifies it. This is missing historical evidence, not a mismatch with the later6476 snapshot."
+  },
+  {
+    "README.md_lines": "262-268",
+    "README.ko.md_lines": "201-205",
+    "claim": "historicfuzzy88.9and97.9scores",
+    "status": "VERIFIED",
+    "artifact_field_or_reproduction": "stats_historical_evidence.json.historical_fuzzy_scores_recomputed; earliest retained normalize/textrules dictionary; rapidfuzz.WRatio",
+    "observed": {
+      "BMS-986504": {
+        "best_key": "bms986507",
+        "score": 88.88888888888889,
+        "candidates": [
+          {
+            "drug_id": "CHEMBL5314841",
+            "alias": "bms-986507",
+            "alias_type": "synonym"
+          }
+        ]
+      },
+      "recombinant interleukin-12": {
+        "best_key": "recombinantinterleukin2",
+        "score": 97.87234042553192,
+        "candidates": [
+          {
+            "drug_id": "CHEMBL1201438",
+            "alias": "recombinant interleukin-2",
+            "alias_type": "synonym"
+          }
+        ]
+      }
+    },
+    "note": "Bypassed final guards to measure the candidate similarities;88.8889 and97.8723 round as claimed."
+  },
+  {
+    "README.md_lines": "298-299",
+    "README.ko.md_lines": "226",
+    "claim": "historicalplatinum confidence1in7trials",
+    "status": "UNVERIFIABLE",
+    "artifact_field_or_reproduction": "stats_historical_evidence.json.current_platinum_guard_rows; earliest retained original/src/textrules.py already blocks platinum",
+    "observed": {
+      "blocked_platinum_trials_in_current_snapshot": 7
+    },
+    "note": "Seven affected trials can be identified, but no retained pre-guard graph proves the historical confidence1edges. Count is corroborated; complete historical assertion remains unverified."
+  },
+  {
+    "README.md_lines": "436-437",
+    "README.ko.md_lines": "306",
+    "claim": "round1rescored62rowsand5disagreements",
+    "status": "UNVERIFIABLE",
+    "artifact_field_or_reproduction": "earliest retained original/src/apply_label_corrections.py:8 and five CORRECTIONS; no retained62-row round1re-score ledger",
+    "observed": {
+      "corrections_recorded": 5,
+      "independently_verifiable_reviewed_rows": null
+    },
+    "note": "Five correction records exist;62reviewed is repeated prose without row-level artifact. Round2has a58-row ledger; it cannot verify Round1coverage."
+  }
+]

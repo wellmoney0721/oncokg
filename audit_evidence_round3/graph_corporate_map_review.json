@@ -1,0 +1,537 @@
+{
+  "audited_on": "2026-11-03",
+  "scope": "Every key in current CURATED_PARENTS; historical acquisition support is separated from current legal persistence. Prefix matches over all possible company names are not verified by a correct exact-key mapping.",
+  "actual_key_count": 57,
+  "readme_claim": {
+    "file_line": "README.md:457",
+    "claimed": 59,
+    "actual": 57,
+    "status": "MISMATCH"
+  },
+  "entries": [
+    {
+      "key": "genentech",
+      "parent": "Roche",
+      "source_line": "src/normalize.py:929",
+      "status": "GROUP_AFFILIATION_SUPPORTED",
+      "evidence_url": "https://www.roche.com/our-websites",
+      "note": "Current group websites identify Genentech and Chugai as group members.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "hoffmannlaroche",
+      "parent": "Roche",
+      "source_line": "src/normalize.py:930",
+      "status": "GROUP_AFFILIATION_SUPPORTED",
+      "evidence_url": "https://www.roche.com/our-websites",
+      "note": "Current group websites identify Genentech and Chugai as group members.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "roche",
+      "parent": "Roche",
+      "source_line": "src/normalize.py:931",
+      "status": "GROUP_AFFILIATION_SUPPORTED",
+      "evidence_url": "https://www.roche.com/our-websites",
+      "note": "Current group websites identify Genentech and Chugai as group members.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "chugai",
+      "parent": "Roche",
+      "source_line": "src/normalize.py:932",
+      "status": "GROUP_AFFILIATION_SUPPORTED",
+      "evidence_url": "https://www.roche.com/our-websites",
+      "note": "Current group websites identify Genentech and Chugai as group members.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "merckshampdohme",
+      "parent": "Merck & Co",
+      "source_line": "src/normalize.py:939",
+      "status": "UNVERIFIED_MISSPELLED_ALIAS",
+      "evidence_url": null,
+      "note": "No corporate primary source found for this exact spelling; intended Merck Sharp & Dohme identity inferred from code only.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "merckshapdohme",
+      "parent": "Merck & Co",
+      "source_line": "src/normalize.py:940",
+      "status": "UNVERIFIED_MISSPELLED_ALIAS",
+      "evidence_url": null,
+      "note": "No corporate primary source found for this exact spelling; intended Merck Sharp & Dohme identity inferred from code only.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "merckshampdohmellc",
+      "parent": "Merck & Co",
+      "source_line": "src/normalize.py:941",
+      "status": "UNVERIFIED_MISSPELLED_ALIAS",
+      "evidence_url": null,
+      "note": "No corporate primary source found for this exact spelling; intended Merck Sharp & Dohme identity inferred from code only.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "msd",
+      "parent": "Merck & Co",
+      "source_line": "src/normalize.py:942",
+      "status": "TRADE_NAME_NOT_SEPARATE_ENTITY",
+      "evidence_url": "https://www.msd.com/news/msd-completes-acquisition-of-prometheus-biosciences-inc/",
+      "note": "MSD is explicitly the tradename of Merck & Co. A bare MSD parent-child edge asserts a legal distinction not supplied by this evidence.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "mercksharpdohme",
+      "parent": "Merck & Co",
+      "source_line": "src/normalize.py:943",
+      "status": "CURRENT_SUBSIDIARY_SUPPORTED",
+      "evidence_url": "https://www.merck.com/terms-of-use/",
+      "note": "Current terms revised March 2025 identify Merck Sharp & Dohme LLC as a subsidiary of Merck & Co.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "merckcoinc",
+      "parent": "Merck & Co",
+      "source_line": "src/normalize.py:944",
+      "status": "SAME_COMPANY_ALIAS_NOT_OWNERSHIP",
+      "evidence_url": "https://www.merck.com/terms-of-use/",
+      "note": "Name refers to Merck & Co itself; real input loses legal suffixes and produces key merck, so this map key is not reached for Merck & Co., Inc.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "scheringplough",
+      "parent": "Merck & Co",
+      "source_line": "src/normalize.py:947",
+      "status": "WRONG_RELATION_SURVIVING_ENTITY_RENAMED",
+      "evidence_url": "https://www.sec.gov/Archives/edgar/data/310158/000119312512084319/R10.htm",
+      "note": "SEC merger note says Schering-Plough was the surviving public company renamed Merck & Co in November 2009; old Merck became subsidiary MSD. PARENT_OF mistakes rename/history for current ownership.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "prometheusbiosciences",
+      "parent": "Merck & Co",
+      "source_line": "src/normalize.py:948",
+      "status": "AFFILIATION_SUPPORTED_LEGAL_IDENTITY_NOT_FULLY_VERIFIED",
+      "evidence_url": "https://www.msd.com/news/msd-completes-acquisition-of-prometheus-biosciences-inc/",
+      "note": "Prometheus acquisition closed June 2023. MSD is explicitly a tradename of Merck & Co, not necessarily a separate legal company.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "merckkgaa",
+      "parent": "Merck KGaA",
+      "source_line": "src/normalize.py:949",
+      "status": "GROUP_AFFILIATION_SUPPORTED",
+      "evidence_url": "https://www.reports.emdgroup.com/en/annualreport/2025/notes/scope-of-consolidation/list-of-shareholdings.html",
+      "note": "2025 shareholding list supports Merck Serono and EMD group affiliation; unqualified division/brand names do not identify one separate legal entity.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "emdserono",
+      "parent": "Merck KGaA",
+      "source_line": "src/normalize.py:950",
+      "status": "GROUP_AFFILIATION_SUPPORTED",
+      "evidence_url": "https://www.reports.emdgroup.com/en/annualreport/2025/notes/scope-of-consolidation/list-of-shareholdings.html",
+      "note": "2025 shareholding list supports Merck Serono and EMD group affiliation; unqualified division/brand names do not identify one separate legal entity.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "merckserono",
+      "parent": "Merck KGaA",
+      "source_line": "src/normalize.py:951",
+      "status": "GROUP_AFFILIATION_SUPPORTED",
+      "evidence_url": "https://www.reports.emdgroup.com/en/annualreport/2025/notes/scope-of-consolidation/list-of-shareholdings.html",
+      "note": "2025 shareholding list supports Merck Serono and EMD group affiliation; unqualified division/brand names do not identify one separate legal entity.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "merckhealthcarekgaa",
+      "parent": "Merck KGaA",
+      "source_line": "src/normalize.py:952",
+      "status": "GROUP_AFFILIATION_SUPPORTED_CURRENT_LEGAL_STATUS_NOT_FULLY_VERIFIED",
+      "evidence_url": "https://www.emdgroup.com/content/dam/web/corporate/non-images/company/responsibility/us/regulations-and-guidelines/Certificate-ISO-50001-2018-DE.pdf",
+      "note": "Official November 2025 group certificate names Merck Healthcare KGaA; separate legal persistence in November 2026 not independently checked.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "bristolmyerssquibb",
+      "parent": "Bristol Myers Squibb",
+      "source_line": "src/normalize.py:953",
+      "status": "ACQUISITIONS_SUPPORTED_CURRENT_LEGAL_EXISTENCE_NOT_ALL_VERIFIED",
+      "evidence_url": "https://www.bms.com/our-company/partnerships-and-business-development/existing-partners.html",
+      "note": "Current corporate history lists closing of Mirati and RayzeBio and Turning Point acquisition. Separate legal persistence is not established for every acquired name.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "celgene",
+      "parent": "Bristol Myers Squibb",
+      "source_line": "src/normalize.py:954",
+      "status": "CURRENT_GROUP_MEMBERSHIP_SUPPORTED",
+      "evidence_url": "https://www.dailymed.nlm.nih.gov/dailymed/getFile.cfm?setid=594bb413-af3b-4b97-afb3-bfe2b174f2ed",
+      "note": "December 2025 label names Celgene Corporation as a Bristol-Myers Squibb company.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "juno",
+      "parent": "Bristol Myers Squibb",
+      "source_line": "src/normalize.py:955",
+      "status": "CURRENT_GROUP_MEMBERSHIP_SUPPORTED",
+      "evidence_url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042800271.pdf",
+      "note": "2025 audited annual report states Juno wholly owned by Celgene, in turn wholly owned by BMS. PARENT_OF here skips an ownership level.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "mirati",
+      "parent": "Bristol Myers Squibb",
+      "source_line": "src/normalize.py:956",
+      "status": "CLOSING_VERIFIED_CURRENT_LEGAL_STATUS_UNVERIFIED",
+      "evidence_url": "https://investors.bms.com/iframes/press-releases/press-release-details/2024/Bristol-Myers-Squibb-Completes-Acquisition-of-Mirati-Therapeutics-Strengthening-and-Diversifying-Oncology-Portfolio/default.aspx",
+      "note": "Acquisition closed January 23 2024; release alone does not establish continuing separate legal entity in November 2026.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "turningpoint",
+      "parent": "Bristol Myers Squibb",
+      "source_line": "src/normalize.py:957",
+      "status": "CLOSING_VERIFIED_CURRENT_LEGAL_STATUS_UNVERIFIED",
+      "evidence_url": "https://news.bms.com/news/details/2022/Bristol-Myers-Squibb-Completes-Acquisition-of-Turning-Point-Therapeutics-Expanding-Precision-Oncology-Portfolio/default.aspx",
+      "note": "Acquisition closed August 17 2022; closing release alone does not establish November 2026 legal persistence.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "rayzebio",
+      "parent": "Bristol Myers Squibb",
+      "source_line": "src/normalize.py:958",
+      "status": "CLOSING_VERIFIED_CURRENT_LEGAL_STATUS_UNVERIFIED",
+      "evidence_url": "https://news.bms.com/news/details/2024/Bristol-Myers-Squibb-Completes-Acquisition-of-RayzeBio-Adding-Differentiated-Actinium-Based-Radiopharmaceutical-Platform/default.aspx",
+      "note": "Acquisition closed February 26 2024; release alone does not establish current separate legal entity.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "astrazeneca",
+      "parent": "AstraZeneca",
+      "source_line": "src/normalize.py:959",
+      "status": "ACQUISITIONS_SUPPORTED_CURRENT_LEGAL_EXISTENCE_NOT_ALL_VERIFIED",
+      "evidence_url": "https://www.astrazeneca.com/our-company/history.html",
+      "note": "Current corporate history supports MedImmune and Alexion acquisition. It does not establish separate current legal status for all named subsidiaries.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "medimmune",
+      "parent": "AstraZeneca",
+      "source_line": "src/normalize.py:960",
+      "status": "ACQUISITIONS_SUPPORTED_CURRENT_LEGAL_EXISTENCE_NOT_ALL_VERIFIED",
+      "evidence_url": "https://www.astrazeneca.com/our-company/history.html",
+      "note": "Current corporate history supports MedImmune and Alexion acquisition. It does not establish separate current legal status for all named subsidiaries.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "acerta",
+      "parent": "AstraZeneca",
+      "source_line": "src/normalize.py:961",
+      "status": "CURRENT_GROUP_MEMBERSHIP_AND_CLOSING_VERIFIED",
+      "evidence_url": "https://www.acerta-pharma.com/about.html",
+      "note": "Acerta current site says member of AstraZeneca Group, acquisition of remaining stake completed in 2021.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "alexion",
+      "parent": "AstraZeneca",
+      "source_line": "src/normalize.py:962",
+      "status": "CLOSING_VERIFIED_CURRENT_LEGAL_STATUS_UNVERIFIED",
+      "evidence_url": "https://www.astrazeneca.com/media-centre/press-releases/2021/acquisition-of-alexion-completed.html",
+      "note": "Acquisition closed July 2021; continued separate legal status not verified here.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "elilillyand",
+      "parent": "Eli Lilly",
+      "source_line": "src/normalize.py:963",
+      "status": "IDENTITY_OR_ACQUISITION_SUPPORTED",
+      "evidence_url": "https://investor.lilly.com/node/40671",
+      "note": "Loxo acquisition closed in February 2019; continued separate legal existence not established by closing release alone.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "elililly",
+      "parent": "Eli Lilly",
+      "source_line": "src/normalize.py:964",
+      "status": "IDENTITY_OR_ACQUISITION_SUPPORTED",
+      "evidence_url": "https://investor.lilly.com/node/40671",
+      "note": "Loxo acquisition closed in February 2019; continued separate legal existence not established by closing release alone.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "lilly",
+      "parent": "Eli Lilly",
+      "source_line": "src/normalize.py:965",
+      "status": "IDENTITY_OR_ACQUISITION_SUPPORTED",
+      "evidence_url": "https://investor.lilly.com/node/40671",
+      "note": "Loxo acquisition closed in February 2019; continued separate legal existence not established by closing release alone.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "loxo",
+      "parent": "Eli Lilly",
+      "source_line": "src/normalize.py:966",
+      "status": "IDENTITY_OR_ACQUISITION_SUPPORTED",
+      "evidence_url": "https://investor.lilly.com/node/40671",
+      "note": "Loxo acquisition closed in February 2019; continued separate legal existence not established by closing release alone.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "pfizer",
+      "parent": "Pfizer",
+      "source_line": "src/normalize.py:967",
+      "status": "ACQUISITIONS_SUPPORTED_CURRENT_LEGAL_EXISTENCE_NOT_ALL_VERIFIED",
+      "evidence_url": "https://www.pfizer.com/about/history",
+      "note": "Pfizer current corporate history and closing releases support Wyeth, Array and Seagen acquisition. Separate legal persistence not established for every acquired name.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "wyeth",
+      "parent": "Pfizer",
+      "source_line": "src/normalize.py:968",
+      "status": "CLOSING_VERIFIED_CURRENT_LEGAL_STATUS_UNVERIFIED",
+      "evidence_url": "https://cdn.pfizer.com/pfizercom/news/press_releases/2009/pfizer_wyeth_acquisition_101509.pdf",
+      "note": "Acquisition closed October 15 2009; current separate legal entity not established.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "array",
+      "parent": "Pfizer",
+      "source_line": "src/normalize.py:969",
+      "status": "CLOSING_VERIFIED_PREFIX_UNSAFE",
+      "evidence_url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizer_completes_acquisition_of_array_biopharma",
+      "note": "Array BioPharma acquisition closed July 30 2019. Source comment says exact match only but key length 5 permits prefix matching at normalize.py:1124.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "seagen",
+      "parent": "Pfizer",
+      "source_line": "src/normalize.py:970",
+      "status": "CLOSING_VERIFIED_CURRENT_LEGAL_STATUS_UNVERIFIED",
+      "evidence_url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-completes-acquisition-seagen",
+      "note": "Acquisition closed December 14 2023; legal persistence beyond closing not established.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "novartis",
+      "parent": "Novartis",
+      "source_line": "src/normalize.py:971",
+      "status": "CURRENT_IDENTITY_SUPPORTED",
+      "evidence_url": "https://www.novartis.com/about",
+      "note": "Exact key is a self-map, so no parent edge is created for the exact name.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "sanofi",
+      "parent": "Sanofi",
+      "source_line": "src/normalize.py:976",
+      "status": "ACQUISITIONS_SUPPORTED_CURRENT_LEGAL_EXISTENCE_NOT_ALL_VERIFIED",
+      "evidence_url": "https://www.sanofi.de/de/unternehmen/historie",
+      "note": "Corporate history supports Aventis and Genzyme acquisitions; continuing separate legal existence is not proven by acquisition history.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "aventis",
+      "parent": "Sanofi",
+      "source_line": "src/normalize.py:977",
+      "status": "ACQUISITIONS_SUPPORTED_CURRENT_LEGAL_EXISTENCE_NOT_ALL_VERIFIED",
+      "evidence_url": "https://www.sanofi.de/de/unternehmen/historie",
+      "note": "Corporate history supports Aventis and Genzyme acquisitions; continuing separate legal existence is not proven by acquisition history.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "genzyme",
+      "parent": "Sanofi",
+      "source_line": "src/normalize.py:978",
+      "status": "ACQUISITIONS_SUPPORTED_CURRENT_LEGAL_EXISTENCE_NOT_ALL_VERIFIED",
+      "evidence_url": "https://www.sanofi.de/de/unternehmen/historie",
+      "note": "Corporate history supports Aventis and Genzyme acquisitions; continuing separate legal existence is not proven by acquisition history.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "takeda",
+      "parent": "Takeda",
+      "source_line": "src/normalize.py:979",
+      "status": "ACQUISITIONS_SUPPORTED_CURRENT_LEGAL_EXISTENCE_NOT_ALL_VERIFIED",
+      "evidence_url": "https://www.takeda.com/about/our-company/history/",
+      "note": "Current history supports Millennium integration; ARIAD closing release confirms February 2017 acquisition, not current independent legal persistence.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "millennium",
+      "parent": "Takeda",
+      "source_line": "src/normalize.py:980",
+      "status": "ACQUISITIONS_SUPPORTED_CURRENT_LEGAL_EXISTENCE_NOT_ALL_VERIFIED",
+      "evidence_url": "https://www.takeda.com/about/our-company/history/",
+      "note": "Current history supports Millennium integration; ARIAD closing release confirms February 2017 acquisition, not current independent legal persistence.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "ariad",
+      "parent": "Takeda",
+      "source_line": "src/normalize.py:981",
+      "status": "CLOSING_VERIFIED_CURRENT_LEGAL_STATUS_UNVERIFIED",
+      "evidence_url": "https://www.takedaoncology.com/newsroom/news-releases/2017/ariad-acquisition-complete/",
+      "note": "Acquisition closed February 16 2017; current separate legal entity not established.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "boehringeringelheim",
+      "parent": "Boehringer Ingelheim",
+      "source_line": "src/normalize.py:982",
+      "status": "CURRENT_IDENTITY_SUPPORTED",
+      "evidence_url": "https://www.boehringer-ingelheim.com/science-innovation/human-health-innovation?page=8",
+      "note": "Current corporate material identifies the company as family owned. Exact key self-maps.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "johnsonjohnson",
+      "parent": "Johnson & Johnson",
+      "source_line": "src/normalize.py:983",
+      "status": "GROUP_AFFILIATION_SUPPORTED",
+      "evidence_url": "https://www.investor.jnj.com/investor-news/news-details/2023/Johnson--Johnson-Marks-New-Era-as-Global-Healthcare-Company-With-Updated-Visual-Identity/default.aspx",
+      "note": "Janssen is the pharmaceutical segment; rebranding to Johnson & Johnson Innovative Medicine announced September 2023. Bare Janssen is not proof of one specific extant legal entity.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "janssen",
+      "parent": "Johnson & Johnson",
+      "source_line": "src/normalize.py:984",
+      "status": "GROUP_AFFILIATION_SUPPORTED",
+      "evidence_url": "https://www.investor.jnj.com/investor-news/news-details/2023/Johnson--Johnson-Marks-New-Era-as-Global-Healthcare-Company-With-Updated-Visual-Identity/default.aspx",
+      "note": "Janssen is the pharmaceutical segment; rebranding to Johnson & Johnson Innovative Medicine announced September 2023. Bare Janssen is not proof of one specific extant legal entity.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "glaxosmithkline",
+      "parent": "GSK",
+      "source_line": "src/normalize.py:985",
+      "status": "WRONG_RELATION_RENAME_NOT_OWNERSHIP",
+      "evidence_url": "https://find-and-update.company-information.service.gov.uk/company/03888792/filing-history?page=12",
+      "note": "GlaxoSmithKline plc became GSK plc in May 2022. Code nevertheless creates live GSK PARENT_OF GlaxoSmithKline.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "gsk",
+      "parent": "GSK",
+      "source_line": "src/normalize.py:986",
+      "status": "WRONG_RELATION_RENAME_NOT_OWNERSHIP",
+      "evidence_url": "https://find-and-update.company-information.service.gov.uk/company/03888792/filing-history?page=12",
+      "note": "GlaxoSmithKline plc became GSK plc in May 2022. Code nevertheless creates live GSK PARENT_OF GlaxoSmithKline.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "amgen",
+      "parent": "Amgen",
+      "source_line": "src/normalize.py:987",
+      "status": "CURRENT_IDENTITY_SUPPORTED",
+      "evidence_url": "https://www.amgen.com/about",
+      "note": "Exact key self-maps; current company identity supported.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "bayer",
+      "parent": "Bayer",
+      "source_line": "src/normalize.py:988",
+      "status": "CURRENT_IDENTITY_SUPPORTED",
+      "evidence_url": "https://www.bayer.com/en",
+      "note": "Exact key self-maps; prefix application is unsafe, e.g. Bayerische Motoren Werke AG gets Bayer as parent.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "daiichisankyo",
+      "parent": "Daiichi Sankyo",
+      "source_line": "src/normalize.py:989",
+      "status": "CURRENT_IDENTITY_SUPPORTED",
+      "evidence_url": "https://www.daiichisankyo.com/about_us/mission-strength/history/index.html",
+      "note": "Daiichi Sankyo current identity supported; predecessor Daiichi Pharmaceutical separately assessed below.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "daiichi",
+      "parent": "Daiichi Sankyo",
+      "source_line": "src/normalize.py:990",
+      "status": "STALE_ENTITY_DISSOLVED",
+      "evidence_url": "https://www.daiichisankyo.com/files/news/pressrelease/pdf/005511/news2009_05_28_191_en.pdf",
+      "note": "Consolidated financial statements record Daiichi Pharmaceutical dissolved in merger April 1 2007. Live parent-child graph relation is not a current ownership relation.",
+      "exact_key_is_self_map": false
+    },
+    {
+      "key": "eisai",
+      "parent": "Eisai",
+      "source_line": "src/normalize.py:991",
+      "status": "CURRENT_LEGAL_STATUS_UNVERIFIED",
+      "evidence_url": "https://www.eisai.com/company/profile/index.html",
+      "note": "Official profile returned HTTP 403. Exact key self-maps. No current legal-status verification claimed.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "beonemedicines",
+      "parent": "BeOne Medicines",
+      "source_line": "src/normalize.py:992",
+      "status": "RENAME_VERIFIED",
+      "evidence_url": "https://sseir.beonemedicines.com/en/news/beone-medicines-launches-following-redomiciliation-to-switzerland-marking-a-new-chapter-in-global-oncology/3bf1505f-9411-4a38-b445-54544ad4c88e",
+      "note": "BeiGene name change and Swiss continuation took effect May 27 2025; same-entity treatment is supported.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "jiangsuhengrui",
+      "parent": "Jiangsu Hengrui",
+      "source_line": "src/normalize.py:993",
+      "status": "CURRENT_IDENTITY_SUPPORTED",
+      "evidence_url": "https://www.hengrui.com/en/media/detail-929.html",
+      "note": "Current official name is Jiangsu Hengrui Pharmaceuticals Co., Ltd.; adding Medicine after normalized key creates an artificial parent-child split in this snapshot.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "innovent",
+      "parent": "Innovent",
+      "source_line": "src/normalize.py:994",
+      "status": "CURRENT_IDENTITY_SUPPORTED",
+      "evidence_url": "https://en.innoventbio.com/InvestorsAndMedia/PressReleaseDetail?key=612",
+      "note": "Official August 2026 release calls Innovent Biologics, Inc. Innovent; graph nevertheless has Innovent PARENT_OF Innovent Biologics.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "junshi",
+      "parent": "Junshi",
+      "source_line": "src/normalize.py:995",
+      "status": "CURRENT_IDENTITY_SUPPORTED",
+      "evidence_url": "https://www.junshipharma.com/en/about-us/",
+      "note": "Current corporate about page supports Junshi Biosciences; exact key is a self-map.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "yuhan",
+      "parent": "Yuhan",
+      "source_line": "src/normalize.py:996",
+      "status": "CURRENT_IDENTITY_SUPPORTED",
+      "evidence_url": "https://www.yuhan.co.kr/Mobile/Invest/ControlStructure/ArticlesOfIncorporation2/",
+      "note": "March 2025 articles identify English legal name Yuhan Corporation; exact key self-maps.",
+      "exact_key_is_self_map": true
+    },
+    {
+      "key": "hanmi",
+      "parent": "Hanmi",
+      "source_line": "src/normalize.py:997",
+      "status": "CURRENT_IDENTITY_SUPPORTED",
+      "evidence_url": "https://englishdart.fss.or.kr/dsbc001/selectPopup.ax?selectKey=00828497",
+      "note": "Korean regulator issuer profile supports Hanmi Pharm.; bare Hanmi is ambiguous outside the pharma domain.",
+      "exact_key_is_self_map": true
+    }
+  ],
+  "negative_checks": [
+    {
+      "name": "Sandoz",
+      "code_status": "absent from parent map",
+      "status": "REPAIR_SUPPORTED",
+      "source": "https://ar.sandoz.com/Sandoz_2025_annual_report.pdf",
+      "evidence": "2025 report identifies second full year as independent public company."
+    }
+  ],
+  "probe_evidence": "graph_company_probes.json",
+  "live_edge_evidence": "graph_additional_snapshot_checks.json"
+}

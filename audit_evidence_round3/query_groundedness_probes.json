@@ -1,0 +1,223 @@
+{
+  "api_key_present": false,
+  "evidence": {
+    "statement": "OSIMERTINIB acts on EGFR (inhibitor). AstraZeneca sponsors 47 trials.",
+    "edge_id": "e1",
+    "relation": "ACTS_ON",
+    "source": "test",
+    "source_record": "NCT02303977",
+    "fetched_at": "2026-11-03",
+    "confidence": 1.0,
+    "tier": null,
+    "url": null,
+    "detail": {
+      "rate": "47.5%"
+    }
+  },
+  "probes": [
+    {
+      "text": "osimertinib cures cancer.",
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "osimertinib is safe in autoimmune disease.",
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "AstraZeneca has discontinued osimertinib.",
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "osimertinib has a 47.5% response rate.",
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "osimertinib has a 47% response rate.",
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "osimertinib causes death in 47.5% of patients.",
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "osimertinib has a 0.475 response rate.",
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "number",
+            "value": "0.475",
+            "why": "not present in the retrieved evidence"
+          }
+        ],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "osimertinib works in 47.5 percent of patients.",
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "number_in_words",
+            "value": "percent",
+            "why": "a figure written in words cannot be checked against the evidence"
+          }
+        ],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "osimertinib works in ⅔ of patients.",
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "osimertinib works in 1e6 patients.",
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "Osimertinib and aspirin cure cancer.",
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "aspirin is safe.",
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "xyzabumab cures cancer.",
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "drug_like_name",
+            "value": "xyzabumab",
+            "why": "looks like a drug name or code but is not in the evidence"
+          }
+        ],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "novelumab cures cancer.",
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "unsupported_claims": [
+          {
+            "kind": "drug_like_name",
+            "value": "novelumab",
+            "why": "looks like a drug name or code but is not in the evidence"
+          }
+        ],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "osimertinib was tested by astra.",
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "No EGFR activity was observed.",
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "osimertinib is first-line therapy.",
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    },
+    {
+      "text": "osimertinib has a -47.5% response rate.",
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "unsupported_claims": [],
+        "evidence_count": 1,
+        "method": "entity and tokenised-numeric overlap against the retrieved evidence; does not verify relations"
+      }
+    }
+  ]
+}

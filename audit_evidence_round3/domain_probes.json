@@ -1,0 +1,1908 @@
+[
+  {
+    "input": "VEGF blockers",
+    "cleaned": {
+      "cleaned": "VEGF blockers",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "VEGF blockers"
+    ],
+    "result": [
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "VEGF blockers",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "cytotoxic agents",
+    "cleaned": {
+      "cleaned": "cytotoxic agents",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "cytotoxic agents"
+    ],
+    "result": [
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "cytotoxic agents",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "DNA damaging agents",
+    "cleaned": {
+      "cleaned": "DNA damaging agents",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "DNA damaging agents"
+    ],
+    "result": [
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "DNA damaging agents",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "platinum salts",
+    "cleaned": {
+      "cleaned": "platinum salts",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "platinum salts"
+    ],
+    "result": [
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "platinum salts",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "small molecule kinase inhibitors",
+    "cleaned": {
+      "cleaned": "small molecule kinase inhibitors",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "small molecule kinase inhibitors"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_CLASS_TERM",
+        "drug_id": null,
+        "name": null,
+        "component": "small molecule kinase inhibitors",
+        "rules": [
+          "class_term_guard"
+        ],
+        "note": "category term, not an identifiable substance"
+      }
+    ]
+  },
+  {
+    "input": "TNF-alpha blockers",
+    "cleaned": {
+      "cleaned": "TNF-alpha blockers",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "TNF-alpha blockers"
+    ],
+    "result": [
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "TNF-alpha blockers",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "anti-cancer agents",
+    "cleaned": {
+      "cleaned": "anti-cancer agents",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "anti-cancer agents"
+    ],
+    "result": [
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "anti-cancer agents",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "immune checkpoint blockers",
+    "cleaned": {
+      "cleaned": "immune checkpoint blockers",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "immune checkpoint blockers"
+    ],
+    "result": [
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "immune checkpoint blockers",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "pembrolizumab-like antibodies",
+    "cleaned": {
+      "cleaned": "pembrolizumab-like antibodies",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "pembrolizumab-like antibodies"
+    ],
+    "result": [
+      {
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL3137343",
+        "name": "PEMBROLIZUMAB",
+        "component": "pembrolizumab",
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "note": "segmented out of 'pembrolizumab-like antibodies'"
+      },
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "antibodies",
+        "rules": [
+          "segmentation_residue"
+        ],
+        "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+      }
+    ]
+  },
+  {
+    "input": "pembrolizumab inhibitor",
+    "cleaned": {
+      "cleaned": "pembrolizumab inhibitor",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "pembrolizumab inhibitor"
+    ],
+    "result": [
+      {
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL3137343",
+        "name": "PEMBROLIZUMAB",
+        "component": "pembrolizumab",
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "note": "segmented out of 'pembrolizumab inhibitor'"
+      },
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "inhibitor",
+        "rules": [
+          "segmentation_residue"
+        ],
+        "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+      }
+    ]
+  },
+  {
+    "input": "paclitaxel chemotherapy",
+    "cleaned": {
+      "cleaned": "paclitaxel chemotherapy",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "paclitaxel chemotherapy"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_CLASS_TERM",
+        "drug_id": null,
+        "name": null,
+        "component": "paclitaxel chemotherapy",
+        "rules": [
+          "class_term_guard"
+        ],
+        "note": "category term, not an identifiable substance"
+      }
+    ]
+  },
+  {
+    "input": "osimertinib chemotherapy",
+    "cleaned": {
+      "cleaned": "osimertinib chemotherapy",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "osimertinib chemotherapy"
+    ],
+    "result": [
+      {
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL3353410",
+        "name": "OSIMERTINIB",
+        "component": "osimertinib",
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "note": "segmented out of 'osimertinib chemotherapy'"
+      }
+    ]
+  },
+  {
+    "input": "cisplatin chemotherapy",
+    "cleaned": {
+      "cleaned": "cisplatin chemotherapy",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "cisplatin chemotherapy"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_CLASS_TERM",
+        "drug_id": null,
+        "name": null,
+        "component": "cisplatin chemotherapy",
+        "rules": [
+          "class_term_guard"
+        ],
+        "note": "category term, not an identifiable substance"
+      }
+    ]
+  },
+  {
+    "input": "pembrolizumab-free regimen",
+    "cleaned": {
+      "cleaned": "pembrolizumab-free",
+      "parentheticals": [],
+      "rules": [
+        "strip_regimen_word"
+      ]
+    },
+    "parts": [
+      "pembrolizumab-free"
+    ],
+    "result": [
+      {
+        "tier": "CLEANED",
+        "drug_id": "CHEMBL3137343",
+        "name": "PEMBROLIZUMAB",
+        "component": "pembrolizumab-free",
+        "rules": [
+          "strip_regimen_word",
+          "strip_fda_suffix"
+        ],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "Arm A without pembrolizumab",
+    "cleaned": {
+      "cleaned": "without pembrolizumab",
+      "parentheticals": [],
+      "rules": [
+        "strip_cycle"
+      ]
+    },
+    "parts": [
+      "without pembrolizumab"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_NEGATED",
+        "drug_id": null,
+        "name": null,
+        "component": "without pembrolizumab",
+        "rules": [
+          "strip_cycle",
+          "negation_guard"
+        ],
+        "note": "negated substance: the arm records its absence"
+      }
+    ]
+  },
+  {
+    "input": "treatment without pembrolizumab",
+    "cleaned": {
+      "cleaned": "without pembrolizumab",
+      "parentheticals": [],
+      "rules": [
+        "strip_regimen_word"
+      ]
+    },
+    "parts": [
+      "without pembrolizumab"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_NEGATED",
+        "drug_id": null,
+        "name": null,
+        "component": "without pembrolizumab",
+        "rules": [
+          "strip_regimen_word",
+          "negation_guard"
+        ],
+        "note": "negated substance: the arm records its absence"
+      }
+    ]
+  },
+  {
+    "input": "No pembrolizumab or chemotherapy",
+    "cleaned": {
+      "cleaned": "No pembrolizumab or chemotherapy",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "No pembrolizumab",
+      "chemotherapy"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_NEGATED",
+        "drug_id": null,
+        "name": null,
+        "component": "No pembrolizumab",
+        "rules": [
+          "split_combination",
+          "negation_guard"
+        ],
+        "note": "negated substance: the arm records its absence"
+      },
+      {
+        "tier": "BLOCKED_CLASS_TERM",
+        "drug_id": null,
+        "name": null,
+        "component": "chemotherapy",
+        "rules": [
+          "split_combination",
+          "class_term_guard"
+        ],
+        "note": "category term, not an identifiable substance"
+      }
+    ]
+  },
+  {
+    "input": "pembrolizumab omitted",
+    "cleaned": {
+      "cleaned": "pembrolizumab omitted",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "pembrolizumab omitted"
+    ],
+    "result": [
+      {
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL3137343",
+        "name": "PEMBROLIZUMAB",
+        "component": "pembrolizumab",
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "note": "segmented out of 'pembrolizumab omitted'"
+      },
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "omitted",
+        "rules": [
+          "segmentation_residue"
+        ],
+        "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+      }
+    ]
+  },
+  {
+    "input": "pembrolizumab resistance assay",
+    "cleaned": {
+      "cleaned": "pembrolizumab resistance assay",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "pembrolizumab resistance assay"
+    ],
+    "result": [
+      {
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL3137343",
+        "name": "PEMBROLIZUMAB",
+        "component": "pembrolizumab",
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "note": "segmented out of 'pembrolizumab resistance assay'"
+      },
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "resistance assay",
+        "rules": [
+          "segmentation_residue"
+        ],
+        "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+      }
+    ]
+  },
+  {
+    "input": "cisplatin-resistant cell line",
+    "cleaned": {
+      "cleaned": "cisplatin-resistant cell line",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "cisplatin-resistant cell line"
+    ],
+    "result": [
+      {
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL11359",
+        "name": "CISPLATIN",
+        "component": "cisplatin",
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "note": "segmented out of 'cisplatin-resistant cell line'"
+      },
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "resistant",
+        "rules": [
+          "segmentation_residue"
+        ],
+        "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+      }
+    ]
+  },
+  {
+    "input": "pembrolizumab test kit",
+    "cleaned": {
+      "cleaned": "pembrolizumab test kit",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "pembrolizumab test kit"
+    ],
+    "result": [
+      {
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL3137343",
+        "name": "PEMBROLIZUMAB",
+        "component": "pembrolizumab",
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "note": "segmented out of 'pembrolizumab test kit'"
+      }
+    ]
+  },
+  {
+    "input": "paclitaxel allergy test",
+    "cleaned": {
+      "cleaned": "paclitaxel allergy test",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "paclitaxel allergy test"
+    ],
+    "result": [
+      {
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL428647",
+        "name": "PACLITAXEL",
+        "component": "paclitaxel",
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "note": "segmented out of 'paclitaxel allergy test'"
+      },
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "allergy",
+        "rules": [
+          "segmentation_residue"
+        ],
+        "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+      }
+    ]
+  },
+  {
+    "input": "pembrolizumab 100 mg/mL",
+    "cleaned": {
+      "cleaned": "pembrolizumab /mL",
+      "parentheticals": [],
+      "rules": [
+        "strip_dose"
+      ]
+    },
+    "parts": [
+      "pembrolizumab",
+      "mL"
+    ],
+    "result": [
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL3137343",
+        "name": "PEMBROLIZUMAB",
+        "component": "pembrolizumab",
+        "rules": [
+          "strip_dose",
+          "split_combination"
+        ],
+        "note": null
+      },
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "mL",
+        "rules": [
+          "strip_dose",
+          "split_combination"
+        ],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "pembrolizumab (MK-3475/MK3475)",
+    "cleaned": {
+      "cleaned": "pembrolizumab",
+      "parentheticals": [
+        "MK-3475/MK3475"
+      ],
+      "rules": [
+        "extract_parenthetical"
+      ]
+    },
+    "parts": [
+      "pembrolizumab"
+    ],
+    "result": [
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL3137343",
+        "name": "PEMBROLIZUMAB",
+        "component": "pembrolizumab",
+        "rules": [
+          "extract_parenthetical"
+        ],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "cisplatin and/or pemetrexed",
+    "cleaned": {
+      "cleaned": "cisplatin and/or pemetrexed",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "cisplatin",
+      "pemetrexed"
+    ],
+    "result": [
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL11359",
+        "name": "CISPLATIN",
+        "component": "cisplatin",
+        "rules": [
+          "split_combination"
+        ],
+        "note": null
+      },
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL225072",
+        "name": "PEMETREXED",
+        "component": "pemetrexed",
+        "rules": [
+          "split_combination"
+        ],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "pemetrexed and vitamin B12",
+    "cleaned": {
+      "cleaned": "pemetrexed and vitamin B12",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "pemetrexed",
+      "vitamin B12"
+    ],
+    "result": [
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL225072",
+        "name": "PEMETREXED",
+        "component": "pemetrexed",
+        "rules": [
+          "split_combination"
+        ],
+        "note": null
+      },
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "vitamin B12",
+        "rules": [
+          "split_combination"
+        ],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "paclitaxel/albumin",
+    "cleaned": {
+      "cleaned": "paclitaxel/albumin",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "paclitaxel",
+      "albumin"
+    ],
+    "result": [
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL428647",
+        "name": "PACLITAXEL",
+        "component": "paclitaxel",
+        "rules": [
+          "split_combination"
+        ],
+        "note": null
+      },
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "albumin",
+        "rules": [
+          "split_combination"
+        ],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "dexamethasone acetate",
+    "cleaned": {
+      "cleaned": "dexamethasone acetate",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "dexamethasone acetate"
+    ],
+    "result": [
+      {
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL384467",
+        "name": "DEXAMETHASONE",
+        "component": "dexamethasone acetate",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "prednisone acetate",
+    "cleaned": {
+      "cleaned": "prednisone acetate",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "prednisone acetate"
+    ],
+    "result": [
+      {
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL635",
+        "name": "PREDNISONE",
+        "component": "prednisone acetate",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "cortisone acetate",
+    "cleaned": {
+      "cleaned": "cortisone acetate",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "cortisone acetate"
+    ],
+    "result": [
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "cortisone acetate",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "megestrol acetate",
+    "cleaned": {
+      "cleaned": "megestrol acetate",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "megestrol acetate"
+    ],
+    "result": [
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL1201139",
+        "name": "MEGESTROL ACETATE",
+        "component": "megestrol acetate",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "abiraterone acetate",
+    "cleaned": {
+      "cleaned": "abiraterone acetate",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "abiraterone acetate"
+    ],
+    "result": [
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL271227",
+        "name": "ABIRATERONE ACETATE",
+        "component": "abiraterone acetate",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "hydrocortisone butyrate",
+    "cleaned": {
+      "cleaned": "hydrocortisone butyrate",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "hydrocortisone butyrate"
+    ],
+    "result": [
+      {
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL389621",
+        "name": "HYDROCORTISONE",
+        "component": "hydrocortisone",
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "note": "segmented out of 'hydrocortisone butyrate'"
+      },
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "butyrate",
+        "rules": [
+          "segmentation_residue"
+        ],
+        "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+      }
+    ]
+  },
+  {
+    "input": "prednisolone hemisuccinate",
+    "cleaned": {
+      "cleaned": "prednisolone hemisuccinate",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "prednisolone hemisuccinate"
+    ],
+    "result": [
+      {
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL131",
+        "name": "PREDNISOLONE",
+        "component": "prednisolone",
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "note": "segmented out of 'prednisolone hemisuccinate'"
+      },
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "hemisuccinate",
+        "rules": [
+          "segmentation_residue"
+        ],
+        "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+      }
+    ]
+  },
+  {
+    "input": "dexamethasone sodium phosphate",
+    "cleaned": {
+      "cleaned": "dexamethasone sodium phosphate",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "dexamethasone sodium phosphate"
+    ],
+    "result": [
+      {
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL384467",
+        "name": "DEXAMETHASONE",
+        "component": "dexamethasone sodium phosphate",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "dexamethasone phosphate",
+    "cleaned": {
+      "cleaned": "dexamethasone phosphate",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "dexamethasone phosphate"
+    ],
+    "result": [
+      {
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL384467",
+        "name": "DEXAMETHASONE",
+        "component": "dexamethasone phosphate",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "dexamethasone 21-phosphate",
+    "cleaned": {
+      "cleaned": "dexamethasone 21-phosphate",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "dexamethasone 21-phosphate"
+    ],
+    "result": [
+      {
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL384467",
+        "name": "DEXAMETHASONE",
+        "component": "dexamethasone 21-phosphate",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "etoposide phosphate",
+    "cleaned": {
+      "cleaned": "etoposide phosphate",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "etoposide phosphate"
+    ],
+    "result": [
+      {
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL44657",
+        "name": "ETOPOSIDE",
+        "component": "etoposide phosphate",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "fludarabine phosphate",
+    "cleaned": {
+      "cleaned": "fludarabine phosphate",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "fludarabine phosphate"
+    ],
+    "result": [
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL1096882",
+        "name": "FLUDARABINE PHOSPHATE",
+        "component": "fludarabine phosphate",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "erlotinib hydrochloride",
+    "cleaned": {
+      "cleaned": "erlotinib hydrochloride",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "erlotinib hydrochloride"
+    ],
+    "result": [
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL1079742",
+        "name": "ERLOTINIB HYDROCHLORIDE",
+        "component": "erlotinib hydrochloride",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "Tarceva",
+    "cleaned": {
+      "cleaned": "Tarceva",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "Tarceva"
+    ],
+    "result": [
+      {
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL1079742",
+        "name": "ERLOTINIB HYDROCHLORIDE",
+        "component": "Tarceva",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "erlotinib HCl",
+    "cleaned": {
+      "cleaned": "erlotinib HCl",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "erlotinib HCl"
+    ],
+    "result": [
+      {
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL1079742",
+        "name": "ERLOTINIB HYDROCHLORIDE",
+        "component": "erlotinib HCl",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "Cemiplimab-RWLC",
+    "cleaned": {
+      "cleaned": "Cemiplimab-RWLC",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "Cemiplimab-RWLC"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "name": null,
+        "component": "Cemiplimab-RWLC",
+        "rules": [
+          "distinct_product_guard"
+        ],
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "input": "cemiplimab-rwlc",
+    "cleaned": {
+      "cleaned": "cemiplimab-rwlc",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "cemiplimab-rwlc"
+    ],
+    "result": [
+      {
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL4297723",
+        "name": "CEMIPLIMAB",
+        "component": "cemiplimab-rwlc",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "pembrolizumab-qwert",
+    "cleaned": {
+      "cleaned": "pembrolizumab-qwert",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "pembrolizumab-qwert"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "name": null,
+        "component": "pembrolizumab-qwert",
+        "rules": [
+          "distinct_product_guard"
+        ],
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "input": "pembrolizumab-abcd",
+    "cleaned": {
+      "cleaned": "pembrolizumab-abcd",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "pembrolizumab-abcd"
+    ],
+    "result": [
+      {
+        "tier": "CLEANED",
+        "drug_id": "CHEMBL3137343",
+        "name": "PEMBROLIZUMAB",
+        "component": "pembrolizumab-abcd",
+        "rules": [
+          "strip_fda_suffix"
+        ],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "bevacizumab-bvzr 10 mg",
+    "cleaned": {
+      "cleaned": "bevacizumab-bvzr",
+      "parentheticals": [],
+      "rules": [
+        "strip_dose"
+      ]
+    },
+    "parts": [
+      "bevacizumab-bvzr"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "name": null,
+        "component": "bevacizumab-bvzr",
+        "rules": [
+          "strip_dose",
+          "distinct_product_guard"
+        ],
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "input": "bevacizumab-bvzr",
+    "cleaned": {
+      "cleaned": "bevacizumab-bvzr",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "bevacizumab-bvzr"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "name": null,
+        "component": "bevacizumab-bvzr",
+        "rules": [
+          "distinct_product_guard"
+        ],
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "input": "pegfilgrastim-jmdb",
+    "cleaned": {
+      "cleaned": "pegfilgrastim-jmdb",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "pegfilgrastim-jmdb"
+    ],
+    "result": [
+      {
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL1201568",
+        "name": "PEGFILGRASTIM",
+        "component": "pegfilgrastim-jmdb",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "bevacizumab biosimilars",
+    "cleaned": {
+      "cleaned": "bevacizumab biosimilars",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "bevacizumab biosimilars"
+    ],
+    "result": [
+      {
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL1201583",
+        "name": "BEVACIZUMAB",
+        "component": "bevacizumab",
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "note": "segmented out of 'bevacizumab biosimilars'"
+      },
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "biosimilars",
+        "rules": [
+          "segmentation_residue"
+        ],
+        "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+      }
+    ]
+  },
+  {
+    "input": "biosimilar of bevacizumab",
+    "cleaned": {
+      "cleaned": "biosimilar of bevacizumab",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "biosimilar of bevacizumab"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "name": null,
+        "component": "biosimilar of bevacizumab",
+        "rules": [
+          "distinct_product_guard"
+        ],
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "input": "injection of pembrolizumab",
+    "cleaned": {
+      "cleaned": "of pembrolizumab",
+      "parentheticals": [],
+      "rules": [
+        "strip_formulation"
+      ]
+    },
+    "parts": [
+      "of pembrolizumab"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "name": null,
+        "component": "of pembrolizumab",
+        "rules": [
+          "strip_formulation",
+          "distinct_product_guard"
+        ],
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "input": "Genexol",
+    "cleaned": {
+      "cleaned": "Genexol",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "Genexol"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "name": null,
+        "component": "Genexol",
+        "rules": [
+          "distinct_product_guard"
+        ],
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "input": "Genexol-PM",
+    "cleaned": {
+      "cleaned": "Genexol-PM",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "Genexol-PM"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "name": null,
+        "component": "Genexol-PM",
+        "rules": [
+          "distinct_product_guard"
+        ],
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "input": "Paclitaxel (Taxol) and Nab-paclitaxel (Abraxane)",
+    "cleaned": {
+      "cleaned": "Paclitaxel and Nab-paclitaxel",
+      "parentheticals": [
+        "Taxol",
+        "Abraxane"
+      ],
+      "rules": [
+        "extract_parenthetical"
+      ]
+    },
+    "parts": [
+      "Paclitaxel",
+      "Nab-paclitaxel"
+    ],
+    "result": [
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL428647",
+        "name": "PACLITAXEL",
+        "component": "Paclitaxel",
+        "rules": [
+          "extract_parenthetical",
+          "split_combination"
+        ],
+        "note": null
+      },
+      {
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "name": null,
+        "component": "Nab-paclitaxel",
+        "rules": [
+          "extract_parenthetical",
+          "split_combination",
+          "distinct_product_guard"
+        ],
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "input": "cisplatin + placebo to match pembrolizumab",
+    "cleaned": {
+      "cleaned": "cisplatin + placebo to match pembrolizumab",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "cisplatin",
+      "placebo to match pembrolizumab"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_PLACEBO",
+        "drug_id": null,
+        "name": null,
+        "component": "cisplatin + placebo to match pembrolizumab",
+        "rules": [
+          "placebo_guard",
+          "placebo_reference_arm"
+        ],
+        "note": "placebo arm naming its reference drug - no exposure"
+      }
+    ]
+  },
+  {
+    "input": "placebo to match pembrolizumab + cisplatin",
+    "cleaned": {
+      "cleaned": "placebo to match pembrolizumab + cisplatin",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "placebo to match pembrolizumab",
+      "cisplatin"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_PLACEBO",
+        "drug_id": null,
+        "name": null,
+        "component": "placebo to match pembrolizumab + cisplatin",
+        "rules": [
+          "placebo_guard",
+          "placebo_reference_arm"
+        ],
+        "note": "placebo arm naming its reference drug - no exposure"
+      }
+    ]
+  },
+  {
+    "input": "placebo + docetaxel",
+    "cleaned": {
+      "cleaned": "placebo + docetaxel",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "placebo",
+      "docetaxel"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_PLACEBO",
+        "drug_id": null,
+        "name": null,
+        "component": "placebo",
+        "rules": [
+          "split_combination",
+          "placebo_co_administration_split",
+          "placebo_guard"
+        ],
+        "note": "placebo component of a combination arm"
+      },
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL3545252",
+        "name": "DOCETAXEL",
+        "component": "docetaxel",
+        "rules": [
+          "split_combination",
+          "placebo_co_administration_split"
+        ],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "docetaxel (with or without pembrolizumab)",
+    "cleaned": {
+      "cleaned": "docetaxel",
+      "parentheticals": [
+        "with or without pembrolizumab"
+      ],
+      "rules": [
+        "extract_parenthetical"
+      ]
+    },
+    "parts": [
+      "docetaxel"
+    ],
+    "result": [
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL3545252",
+        "name": "DOCETAXEL",
+        "component": "docetaxel",
+        "rules": [
+          "extract_parenthetical"
+        ],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "limertinib",
+    "cleaned": {
+      "cleaned": "limertinib",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "limertinib"
+    ],
+    "result": [
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "limertinib",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "ASK-120067",
+    "cleaned": {
+      "cleaned": "ASK-120067",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "ASK-120067"
+    ],
+    "result": [
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL6068536",
+        "name": "ASK-120067",
+        "component": "ASK-120067",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "pankomab-gex",
+    "cleaned": {
+      "cleaned": "pankomab-gex",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "pankomab-gex"
+    ],
+    "result": [
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "pankomab-gex",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "gatipotuzumab",
+    "cleaned": {
+      "cleaned": "gatipotuzumab",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "gatipotuzumab"
+    ],
+    "result": [
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL4297560",
+        "name": "GATIPOTUZUMAB",
+        "component": "gatipotuzumab",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "pegylated filgrastim",
+    "cleaned": {
+      "cleaned": "pegylated filgrastim",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "pegylated filgrastim"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "name": null,
+        "component": "pegylated filgrastim",
+        "rules": [
+          "distinct_product_guard"
+        ],
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "input": "cyclophosphamide methotrexate fluorouracil",
+    "cleaned": {
+      "cleaned": "cyclophosphamide methotrexate fluorouracil",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "cyclophosphamide methotrexate fluorouracil"
+    ],
+    "result": [
+      {
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL1200796",
+        "name": "CYCLOPHOSPHAMIDE",
+        "component": "cyclophosphamide",
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "note": "segmented out of 'cyclophosphamide methotrexate fluorouracil'"
+      },
+      {
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL34259",
+        "name": "METHOTREXATE",
+        "component": "methotrexate",
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "note": "segmented out of 'cyclophosphamide methotrexate fluorouracil'"
+      },
+      {
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL185",
+        "name": "FLUOROURACIL",
+        "component": "fluorouracil",
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "note": "segmented out of 'cyclophosphamide methotrexate fluorouracil'"
+      }
+    ]
+  },
+  {
+    "input": "FOLFOX",
+    "cleaned": {
+      "cleaned": "FOLFOX",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "FOLFOX"
+    ],
+    "result": [
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "FOLFOX",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "CHOP",
+    "cleaned": {
+      "cleaned": "CHOP",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "CHOP"
+    ],
+    "result": [
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "CHOP",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "ICE",
+    "cleaned": {
+      "cleaned": "ICE",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "ICE"
+    ],
+    "result": [
+      {
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL1024",
+        "name": "IFOSFAMIDE",
+        "component": "ICE",
+        "rules": [],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "BMS-936558-99",
+    "cleaned": {
+      "cleaned": "BMS-936558-99",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "BMS-936558-99"
+    ],
+    "result": [
+      {
+        "tier": "CLEANED",
+        "drug_id": "CHEMBL2108738",
+        "name": "NIVOLUMAB",
+        "component": "BMS-936558-99",
+        "rules": [
+          "strip_dev_code_suffix"
+        ],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "AZD9291-123",
+    "cleaned": {
+      "cleaned": "AZD9291-123",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "AZD9291-123"
+    ],
+    "result": [
+      {
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "name": null,
+        "component": "AZD9291-123",
+        "rules": [
+          "dev_code_no_fuzzy"
+        ],
+        "note": "alphanumeric development code: approximate matching disabled to avoid binding to a neighbouring code"
+      }
+    ]
+  },
+  {
+    "input": "AZD9291-99",
+    "cleaned": {
+      "cleaned": "AZD9291-99",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "AZD9291-99"
+    ],
+    "result": [
+      {
+        "tier": "CLEANED",
+        "drug_id": "CHEMBL3353410",
+        "name": "OSIMERTINIB",
+        "component": "AZD9291-99",
+        "rules": [
+          "strip_dev_code_suffix"
+        ],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "MK-3475-99",
+    "cleaned": {
+      "cleaned": "MK-3475-99",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "MK-3475-99"
+    ],
+    "result": [
+      {
+        "tier": "CLEANED",
+        "drug_id": "CHEMBL3137343",
+        "name": "PEMBROLIZUMAB",
+        "component": "MK-3475-99",
+        "rules": [
+          "strip_dev_code_suffix"
+        ],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "[89Zr]pembrolizumab",
+    "cleaned": {
+      "cleaned": "pembrolizumab",
+      "parentheticals": [
+        "89Zr"
+      ],
+      "rules": [
+        "extract_parenthetical"
+      ]
+    },
+    "parts": [
+      "pembrolizumab"
+    ],
+    "result": [
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL3137343",
+        "name": "PEMBROLIZUMAB",
+        "component": "pembrolizumab",
+        "rules": [
+          "extract_parenthetical"
+        ],
+        "note": null
+      }
+    ]
+  },
+  {
+    "input": "89Zr-pembrolizumab",
+    "cleaned": {
+      "cleaned": "89Zr-pembrolizumab",
+      "parentheticals": [],
+      "rules": []
+    },
+    "parts": [
+      "89Zr-pembrolizumab"
+    ],
+    "result": [
+      {
+        "tier": "BLOCKED_CLASS_TERM",
+        "drug_id": null,
+        "name": null,
+        "component": "89Zr-pembrolizumab",
+        "rules": [
+          "radiotracer_guard"
+        ],
+        "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+      }
+    ]
+  },
+  {
+    "input": "[89Zr]-pembrolizumab",
+    "cleaned": {
+      "cleaned": "pembrolizumab",
+      "parentheticals": [
+        "89Zr"
+      ],
+      "rules": [
+        "extract_parenthetical"
+      ]
+    },
+    "parts": [
+      "pembrolizumab"
+    ],
+    "result": [
+      {
+        "tier": "EXACT",
+        "drug_id": "CHEMBL3137343",
+        "name": "PEMBROLIZUMAB",
+        "component": "pembrolizumab",
+        "rules": [
+          "extract_parenthetical"
+        ],
+        "note": null
+      }
+    ]
+  }
+]

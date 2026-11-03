@@ -1,0 +1,61 @@
+﻿Completed independently; no repairs made. **Every tracked file remains byte-for-byte unchanged.**
+
+[Full report and evidence index](<C:/Users/geoum/Dropbox/GY's Formal Workspace/2026 Job recruting/바이오리서치에이아이/oncokg/audit_evidence_round3/AUDIT_REPORT.md>)
+
+## BLOCKERS
+
+1. **The vaccine defect remains in the live graph.** `src/textrules.py:104` limits class qualifiers to 40 characters; longer strings reach segmentation at `src/normalize.py:761`. Consequently, `autologous dendritic cell-adenovirus CCL21 vaccine` resolves to TASADENOTUREV. Live edge: `NCT00601094|EVALUATES|CHEMBL3990045|NCT00601094`. Tasadenoturev is [Ad5-DNX-2401](https://www.cancer.gov/publications/dictionaries/cancer-drug/def/tasadenoturev), a different construct. The error also creates a derived sponsorship edge.
+
+2. **Queries bypass the repaired product guards.** `src/query.py:129-137` performs dictionary lookup without resolver safeguards. `Mvasi`, `Zirabev` and `bevacizumab-awwb` are blocked during ingestion, but questions about their trials return 12 BEVACIZUMAB trials. Liposomal doxorubicin returns three conventional-DOXORUBICIN trials. Evidence: `query_resolution_bypass.json`.
+
+3. **False ownership survives the rename repair.** `src/normalize.py:985,1011,1129` creates GSK→GlaxoSmithKline ownership despite a [legal name change](https://find-and-update.company-information.service.gov.uk/company/03888792/filing-history?page=12). Line 947 similarly places Schering-Plough under Merck, although the [SEC merger record](https://www.sec.gov/Archives/edgar/data/310158/000119312512084319/R10.htm) identifies it as the surviving company renamed Merck.
+
+4. **Published figures still contain mismatches.** `web/template.html:303` describes `web/data.json.headline.aliases=9750` as vocabulary “after curation,” but `src/make_dashboard_data.py:121` counts 670 removed alias associations. `README.md:457` / `README.ko.md:327` claim 59 corporate keys; code contains 57. The claimed three round-two held-out disagreements actually comprise **two held-out and one postfix** (`README.md:436-439`; Korean `:306-307`).
+
+## LABEL DISAGREEMENTS
+
+Independently re-scored **47 difficult held-out rows**. All rows below currently say `correct`; my verdict is `incorrect` under the repository’s product-identity criterion.
+
+| Exact row | Surface → labelled target | Evidence |
+|---|---|---|
+| `reports/gold_test.csv:140`, id139 | DN-101 (calcitriol) → CALCITRIOL | [Original pharmacokinetic study](https://pubmed.ncbi.nlm.nih.gov/16278401/) establishes a distinct investigational formulation. This loses product identity; it does not imply a different active molecule or separate approval. |
+| `reports/gold_dev.csv:181`, id180 | Genexol-PM → PACLITAXEL | `data/raw/trials.json.data[901].protocolSection.armsInterventionsModule` separates Genexol-PM and conventional Genexol arms. |
+| `reports/gold_dev.csv:182`, id181 | Pegylated liposomal doxorubicin → DOXORUBICIN | Source NCT04244552 identifies Doxil; its [FDA label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2016/050718s051lbl.pdf) prohibits substitution. |
+| `reports/gold_postfix.csv:2`, id1 | ABI-007 (Abraxane) → PACLITAXEL | Same product already corrected in postfix id8; [FDA identifies ABI-007](https://www.accessdata.fda.gov/drugsatfda_docs/nda/2005/21660_ABRAXANE_biopharmr.PDF). |
+
+Applying these judgments gives **test 102/115 = 88.7%, Wilson 81.6–93.3%**; dev **124/137 = 90.5%**; postfix **35/38 = 92.1%**. The purposive sample does not support extrapolating a disagreement rate.
+
+All eight existing corrections remain defensible. However, `src/apply_label_corrections.py:105` omits **component** from its identity guard: replacing id22’s Nab-Paclitaxel component with legitimate Paclitaxel still passes and flips the verdict incorrectly. Its obsolete trial-comparison rationale remains in `gold_test.csv:23.reviewer_note`.
+
+## DOMAIN ERRORS
+
+- **Negation becomes exposure:** `pembrolizumab-free regimen` resolves to PEMBROLIZUMAB because `src/textrules.py:212-217` treats `free` as an FDA suffix.
+- **Radiolabel identity disappears:** `[89Zr]pembrolizumab` becomes unlabeled PEMBROLIZUMAB because cleaning removes the isotope before `src/normalize.py:684` checks it.
+- **Biosimilar protection remains incomplete:** `filgrastim-sndz`, `pegfilgrastim-jmdb` and Pazenir collapse to reference molecules (`src/textrules.py:151,158`). [FDA](https://purplebooksearch.fda.gov/index.cfm?blaNo=125553&event=productdetails) and [MHRA](https://www.gov.uk/drug-safety-update/paclitaxel-formulations-conventional-and-nab-paclitaxel-caution-required-due-to-potential-for-medication-error) establish the product distinctions. Conversely, uppercase `Cemiplimab-RWLC` is blocked.
+- **Ester protection runs too late:** dexamethasone sodium phosphate and etoposide phosphate match aliases before the guard at `src/normalize.py:752`.
+- **Registry contamination remains:** `ICE` resolves to IFOSFAMIDE despite being a [multidrug regimen](https://www.cancer.gov/publications/dictionaries/cancer-drug/def/ice-regimen). Disabling only registry filtering changes accepted occurrences from **4,942 to 4,950**—ten lost, two gained.
+- **Groundedness still accepts invented content:** unsupported `aspirin`, `1e6 patients` and `⅔ of patients` pass (`src/query.py:503,511`). These were direct checker tests; no API key was available.
+
+## STATISTICAL OBJECTIONS
+
+Distinct-resolution weighting matches the sampling unit. **Survivor selection is the problem:** `src/evaluate.py:79-84,125-134` removes 16 accepted test rows containing **all 12 errors**, then weights survivor rates against the full current population. The README acknowledges lost held-out validity, but its “current pipeline” columns still overgeneralize.
+
+Independent 50,000-resample bootstrap: **99.7691–100%**, versus propagated Wilson bounds **89.4655–99.9740%**. Six already-labelled current errors elsewhere impose a finite-population maximum of **2159/2165 = 99.7229%**. The bootstrap excludes even that maximum.
+
+Carried accepting tiers contribute **19/2165 = 0.8776%**; excluding them yields **100%**. FUZZY_REVIEW contributes zero accepted weight. Weighted Wilson endpoints are not calibrated 95% coverage; bootstrap cannot discover errors in perfect sampled tiers. The actual postfix bound is **70.6–99.9**, not the brief’s older interval, and does not validate repairs.
+
+## OVERCLAIMS
+
+The evidence includes 25 bilingual quotation entries with counterexamples. Examples:
+
+- “The check catches invented names and invented figures” — `README.md:405`.
+- “사전 기반 최장일치 분절로 모든 성분을 추출하고, 잔여물은 명시적 미해결로 방출합니다.” — `README.ko.md:209`; short residues disappear.
+- “수정을 확인할 뿐 재측정은 아닙니다.” — `README.ko.md:313`; the interval confirms no repair.
+
+## WHAT SURVIVED
+
+Original and fresh-archive tests pass **44/44**, including before rebuilding the archive. Four offline builds and standalone curation exit **0**, with empty stderr. Both second builds report **0 added / 0 changed / 0 retired**. Artifact changes are timestamps only; fresh imports resolve inside the extracted repository.
+
+The original **103/115**, Wilson **82.6431–93.9295%**, coverage **4942/6355**, curation **2189→65 / 1997→4054**, graph **6474/17576**, relation counts and dashboard precision headline reproduce. Retirement/re-add works; all 3,181 derived edges contain complete trial lists. Template checks return `applicable:false`.
+
+Numerical inventory: **65 grouped bilingual claims—58 VERIFIED, 3 MISMATCH, 4 UNVERIFIABLE**. The four historical gaps identify missing pre-round-one evidence explicitly.

@@ -1,0 +1,91 @@
+[
+  {
+    "raw": "cisplatin and paclitaxel (Abraxane or Taxol)",
+    "components": [
+      {
+        "component": "cisplatin",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL11359",
+        "score": null,
+        "rules": [
+          "extract_parenthetical",
+          "split_combination"
+        ],
+        "matched_alias": "CISPLATIN",
+        "candidates": null
+      },
+      {
+        "component": "paclitaxel",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL428647",
+        "score": null,
+        "rules": [
+          "extract_parenthetical",
+          "split_combination"
+        ],
+        "matched_alias": "PACLITAXEL",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "raw": "cisplatin and paclitaxel (albumin-bound and nanoparticle)",
+    "components": [
+      {
+        "component": "cisplatin",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL11359",
+        "score": null,
+        "rules": [
+          "extract_parenthetical",
+          "split_combination"
+        ],
+        "matched_alias": "CISPLATIN",
+        "candidates": null
+      },
+      {
+        "component": "paclitaxel",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "extract_parenthetical",
+          "split_combination",
+          "distinct_product_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "raw": "cisplatin and paclitaxel (Abraxane, nab-paclitaxel)",
+    "components": [
+      {
+        "component": "cisplatin",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL11359",
+        "score": null,
+        "rules": [
+          "extract_parenthetical",
+          "split_combination"
+        ],
+        "matched_alias": "CISPLATIN",
+        "candidates": null
+      },
+      {
+        "component": "paclitaxel",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL428647",
+        "score": null,
+        "rules": [
+          "extract_parenthetical",
+          "split_combination"
+        ],
+        "matched_alias": "PACLITAXEL",
+        "candidates": null
+      }
+    ]
+  }
+]

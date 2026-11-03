@@ -1,0 +1,37 @@
+{
+  "edge": [
+    {
+      "id": "x|ACTS_ON|y|same-record",
+      "src": "x",
+      "dst": "y",
+      "rel": "ACTS_ON",
+      "props": "{}",
+      "confidence": 1.0,
+      "tier": null,
+      "source": "source A",
+      "source_record": "same-record",
+      "source_fetched_at": "2026-01-01",
+      "first_seen": "a",
+      "last_seen": "b",
+      "retired_at": null
+    }
+  ],
+  "changes": [
+    {
+      "change_id": 1,
+      "edge_id": "x|ACTS_ON|y|same-record",
+      "change_type": "added",
+      "field": null,
+      "old_value": null,
+      "new_value": "{\"rel\": \"ACTS_ON\", \"confidence\": 1.0, \"tier\": null}",
+      "changed_at": "a",
+      "build_id": "a"
+    }
+  ],
+  "last_build_stats": {
+    "added": 0,
+    "changed": 0,
+    "retired": 0,
+    "restored": 0
+  }
+}

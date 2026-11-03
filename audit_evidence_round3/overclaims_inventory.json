@@ -1,0 +1,202 @@
+[
+  {
+    "file": "README.md",
+    "line_start": 85,
+    "line_end": 92,
+    "verbatim": "**Two intervals, because neither is right on its own.** The first is a weighted\nsum of per-tier Wilson bounds: conservative, but not a calibrated 95% interval.\nThe second is a stratified bootstrap over the sampled rows (20,000 resamples):\nnarrower, and blind by construction to errors in a tier that scored 100%,\nbecause such a tier resamples to 100% every time. The spread between them is the\nhonest statement of what this sample size supports. An earlier version used a\nnormal approximation and published `99.1% [98.4, 99.8]`; with 88% of the weight\nin tiers that scored 100%, the variance term was zero and the interval collapsed.",
+    "objection": "Neither weighted Wilson bounds nor a degenerate empirical bootstrap establishes a calibrated uncertainty range; conservatism is not proved.",
+    "evidence": "stats_numbers_results.json"
+  },
+  {
+    "file": "README.ko.md",
+    "line_start": 65,
+    "line_end": 71,
+    "verbatim": "**구간을 두 개 적는 이유는 어느 쪽도 혼자서는 맞지 않기 때문입니다.** 첫째는 계층별 Wilson 경계의\n가중합으로, 보수적이지만 보정된 95% 구간은 아닙니다. 둘째는 표본 행에 대한 층화 부트스트랩\n(20,000회)으로, 더 좁지만 100%를 기록한 계층의 오류는 구조상 볼 수 없습니다(그 계층은 매번\n100%로 재표집됩니다). 둘 사이의 폭이 이 표본 크기가 지탱하는 정직한 범위입니다. 이전 판은\n정규근사로 `99.1% [98.4, 99.8]`을 공표했는데, 가중치의 88%가 100% 계층에 있어 분산 항이 0이 되어\n구간이 무너졌습니다.\n",
+    "objection": "Same interval claim; the observed spread is not a confidence statement.",
+    "evidence": "stats_numbers_results.json"
+  },
+  {
+    "file": "README.md",
+    "line_start": 141,
+    "line_end": 145,
+    "verbatim": "reverse test is gone. The same review found `BeiGene` recorded as a *subsidiary*\nof `BeOne Medicines` — a rename stored as ownership. Renames and plain short\nforms of one company now merge into one node before any parent lookup; only\ngenuinely distinct legal entities get `PARENT_OF`. The bare key `schering` also\ncaught Bayer's Schering AG and is now `scheringplough`.",
+    "objection": "GSK and GlaxoSmithKline still produce an ownership edge for a legal rename.",
+    "evidence": "graph_snapshot_checks.json; graph_company_probes.json"
+  },
+  {
+    "file": "README.ko.md",
+    "line_start": 110,
+    "line_end": 113,
+    "verbatim": "만들었습니다. 역방향 비교를 없앴습니다. 같은 검토가 `BeiGene`이 `BeOne Medicines`의 *자회사*로\n기록된 것도 찾았습니다 — 사명 변경을 소유 관계로 저장한 것입니다. 이제 사명 변경과 같은 회사의\n짧은 이름은 모회사를 찾기 전에 한 노드로 합치고, 실제로 다른 법인에만 `PARENT_OF`를 씁니다.\n수식어 없는 `schering` 키가 바이엘 소속 Schering AG까지 잡던 것도 `scheringplough`로 고쳤습니다.",
+    "objection": "Same rename/ownership contradiction.",
+    "evidence": "graph_company_probes.json"
+  },
+  {
+    "file": "README.md",
+    "line_start": 169,
+    "line_end": 172,
+    "verbatim": "A curation rule now removes registry synonyms that name another ingredient, a\nregimen, an abbreviation that does not single out one molecule, or a distinct\nproduct — 318 of them. It errs toward refusal, and the errors it makes are\nlisted under known defects.",
+    "objection": "The registry screen still accepts ICE as IFOSFAMIDE and removes a correct alias of PEGVORHYALURONIDASE ALFA beyond the stated known examples.",
+    "evidence": "domain_probes.json; pharma_late_probes.json"
+  },
+  {
+    "file": "README.ko.md",
+    "line_start": 131,
+    "line_end": 133,
+    "verbatim": "PREDNISONE 아래 `CHOP`, PEMBROLIZUMAB 아래 맨 단어 `mab` 같은 식입니다. 다른 성분·요법·여러 분자에\n걸리는 약어·별도 제품을 가리키는 등록부 동의어를 지우는 큐레이션 규칙을 추가했고 318개가\n제거됐습니다. 이 규칙은 거절 쪽으로 틀리며, 그 오류는 남은 결함에 적었습니다.",
+    "objection": "Same registry-screen generalization.",
+    "evidence": "domain_probes.json; pharma_late_probes.json"
+  },
+  {
+    "file": "README.md",
+    "line_start": 255,
+    "line_end": 260,
+    "verbatim": "**A placebo arm is not a drug-free arm, and it is not an exposure either.**\n`placebo plus docetaxel` really did administer docetaxel; `Placebo to Match\nZD6474` administered nothing. Blocking the whole string is safe for the second\nand silently destroys a true exposure in the first, so the two are separated: a\nplacebo joined by a combination separator means co-administration, a placebo\nnaming its reference drug does not.",
+    "objection": "A reference-placebo marker anywhere blocks active cisplatin in cisplatin + placebo to match pembrolizumab despite the combination separator.",
+    "evidence": "domain_probes.json"
+  },
+  {
+    "file": "README.md",
+    "line_start": 271,
+    "line_end": 276,
+    "verbatim": "**A partial parse is worse than no parse.** `Cisplatin Docetaxel Gefitinib\nPemetrexed Vinorelbine Gemcitabine` names six substances with no separator at\nall. Matching the first and discarding the rest produces a record that *looks*\ncomplete, which nothing downstream can detect. Greedy dictionary segmentation\nextracts every component, and whatever is left over is emitted as an explicit\nunresolved residue rather than dropped.",
+    "objection": "Residues shorter than five alphabetic characters and not a dev code disappear; pembrolizumab new XYZ loses both tokens.",
+    "evidence": "domain_supplementary_probes.json"
+  },
+  {
+    "file": "README.ko.md",
+    "line_start": 207,
+    "line_end": 209,
+    "verbatim": "**부분 파싱은 미파싱보다 나쁩니다.** 구분자 없이 6개 물질을 나열한 문자열에서 첫 번째만 잡고\n나머지를 버리면 **완전해 보이는 불완전한 레코드**가 생기고, 하류 어디서도 이를 탐지할 수\n없습니다. 사전 기반 최장일치 분절로 모든 성분을 추출하고, 잔여물은 명시적 미해결로 방출합니다.",
+    "objection": "Same all-components/all-residues claim.",
+    "evidence": "domain_supplementary_probes.json"
+  },
+  {
+    "file": "README.md",
+    "line_start": 282,
+    "line_end": 287,
+    "verbatim": "they are refused with a reason code. The same rule covers liposomal,\nalbumin-bound and nanoparticulate reformulations, biosimilar brands such as\n`Mvasi` and `Zirabev`, and FDA suffixes known to belong to biosimilars\n(`bevacizumab-awwb`) — while an originator's own suffix (`cemiplimab-rwlc`) is\nstripped and resolved. The check runs on the text before cleaning, so a\nreformulation named inside a combination or in brackets is still seen.",
+    "objection": "Known biosimilar FDA suffixes outside regex stems bypass blocking, uppercase originator suffix is blocked, nested conjunction prevents raw-part match.",
+    "evidence": "pharma_product_probes.json; domain_probes.json; domain_supplementary_probes.json; domain_nested_parentheses.json"
+  },
+  {
+    "file": "README.ko.md",
+    "line_start": 213,
+    "line_end": 217,
+    "verbatim": "제넨텍 분자 위에 올리고, 정작 연구 대상 자산은 사라집니다. 어휘에 식별자가 없으므로 사유\n코드와 함께 거절합니다. 리포솜·알부민결합·나노입자 재제형, `Mvasi`·`Zirabev` 같은 바이오시밀러\n상품명, 바이오시밀러에 붙는 것으로 알려진 FDA 접미사(`bevacizumab-awwb`)에도 같은 규칙이 적용되고,\n오리지널 자신의 접미사(`cemiplimab-rwlc`)는 떼고 해석합니다. 정리하기 전 원문으로 검사하므로\n병용 문자열이나 괄호 안에 적힌 재제형도 보입니다.",
+    "objection": "Same broad product-protection claim.",
+    "evidence": "pharma_product_probes.json; domain_supplementary_probes.json; domain_nested_parentheses.json"
+  },
+  {
+    "file": "README.md",
+    "line_start": 299,
+    "line_end": 301,
+    "verbatim": "the chemical element in seven trials. Exact membership in a blocklist can never\nbe complete, so a pattern rule now catches any gene or pathway qualifier in\nfront of a head noun like `inhibitor` or `blockade`.",
+    "objection": "Pattern qualifier is capped at40 characters, so longer real qualifiers are unguarded; INN-like tokens exempt classes such as pembrolizumab-like antibodies.",
+    "evidence": "domain_supplementary_probes.json; domain_probes.json"
+  },
+  {
+    "file": "README.ko.md",
+    "line_start": 227,
+    "line_end": 228,
+    "verbatim": "찾아냈습니다. 목록 완전성은 원리적으로 달성 불가능하므로, `inhibitor`·`blockade` 같은 핵어 앞에\n유전자나 경로 수식어가 붙은 패턴을 규칙으로 잡습니다.",
+    "objection": "Same qualifier-pattern scope limitation.",
+    "evidence": "domain_supplementary_probes.json"
+  },
+  {
+    "file": "README.md",
+    "line_start": 380,
+    "line_end": 381,
+    "verbatim": "Questions are linked against the same dictionary the pipeline uses, so a question\nnaming a trade name finds a graph that stores a ChEMBL id.",
+    "objection": "Query directly looks up aliases without resolver refusal rules; Mvasi and bare platinum bypass protections.",
+    "evidence": "query_resolution_bypass.json"
+  },
+  {
+    "file": "README.md",
+    "line_start": 404,
+    "line_end": 407,
+    "verbatim": "The model path is **not** guaranteed to state the same facts as the template.\nThe check catches invented names and invented figures; it cannot catch a\nrelation the evidence does not support, a negation, a comparison, a clinical\nclaim made of ordinary words (\"is safe\"), or two true figures paired wrongly.",
+    "objection": "Checker also misses names and figures: aspirin,1e6,and Unicode fraction all pass.",
+    "evidence": "query_groundedness_probes.json"
+  },
+  {
+    "file": "README.md",
+    "line_start": 414,
+    "line_end": 417,
+    "verbatim": "Left listed rather than quietly assumed away. One earlier item is gone because\nit no longer reproduces: `adenovirus` inside `dendritic cell-adenovirus CCL21\nvaccine` used to resolve to an oncolytic product and now falls to the class\nguard on `vaccine`. Its number has been reused.",
+    "objection": "The autologous-prefixed exact sample still creates a live TASADENOTUREV edge.",
+    "evidence": "graph_ccl21_edges.json; pharma_late_probes.json"
+  },
+  {
+    "file": "README.ko.md",
+    "line_start": 291,
+    "line_end": 293,
+    "verbatim": "조용히 덮는 대신 목록으로 남깁니다. 예전 3번 항목(`dendritic cell-adenovirus CCL21 vaccine`의\n`adenovirus`가 종양용해 제품으로 연결되던 것)은 더 재현되지 않아 뺐습니다 — 이제 `vaccine`\n계열어 가드에 걸립니다. 그 번호는 다른 항목에 다시 썼습니다.",
+    "objection": "Same live vaccine error falsely declared gone.",
+    "evidence": "graph_ccl21_edges.json"
+  },
+  {
+    "file": "README.md",
+    "line_start": 423,
+    "line_end": 426,
+    "verbatim": "2. **Regimen acronyms are not expanded.** Round 2 stopped them resolving to a\n   single member (`CHOP` no longer becomes prednisone), but `HS-20117+FOLFIRI`\n   and `+mFOLFOX6` still drop 5-FU, leucovorin, irinotecan, oxaliplatin and\n   capecitabine on the floor. They need a regimen expansion table.",
+    "objection": "ICE is still one member IFOSFAMIDE; additionally FOLFIRI/mFOLFOX6 do not include capecitabine.",
+    "evidence": "domain_probes.json"
+  },
+  {
+    "file": "README.ko.md",
+    "line_start": 297,
+    "line_end": 299,
+    "verbatim": "2. **요법 약어가 펼쳐지지 않습니다.** 2차에서 요법 약어가 구성 약 하나로 해석되는 것은 막았지만\n   (`CHOP`이 더는 prednisone이 되지 않음), `HS-20117+FOLFIRI`, `+mFOLFOX6`에서\n   5-FU·류코보린·이리노테칸·옥살리플라틴·카페시타빈은 여전히 버려집니다.",
+    "objection": "Same regimen generalization.",
+    "evidence": "domain_probes.json"
+  },
+  {
+    "file": "README.md",
+    "line_start": 446,
+    "line_end": 448,
+    "verbatim": "7. **The post-fix interval is uninformatively wide** (70.6–99.9). With so few\n   rows per tier, no stratified interval over that weight can be tight. It\n   confirms the repairs; it does not re-measure the pipeline.",
+    "objection": "The wide interval cannot confirm repairs; test coverage and independent relabeling are separate evidence.",
+    "evidence": "stats_numbers_results.json; pharma_rescore.json"
+  },
+  {
+    "file": "README.ko.md",
+    "line_start": 312,
+    "line_end": 313,
+    "verbatim": "7. **수정 후 샘플의 구간은 정보가 없을 만큼 넓습니다** (70.6–99.9). 계층당 행이 너무 적어 그\n   가중치 위의 어떤 층화 구간도 좁아질 수 없습니다. 수정을 확인할 뿐 재측정은 아닙니다.",
+    "objection": "Same inference that interval confirms repairs.",
+    "evidence": "stats_numbers_results.json; pharma_rescore.json"
+  },
+  {
+    "file": "README.md",
+    "line_start": 461,
+    "line_end": 464,
+    "verbatim": "13. **The groundedness check is a floor.** It catches invented names and\n    figures. It does not verify relations, negations, comparisons or clinical\n    claims made of ordinary words, and it counts any number word, including\n    \"one\", as an unverifiable figure.",
+    "objection": "The asserted name/number floor is breached by lowercase aspirin,scientific notation1e6,and Unicode fractions.",
+    "evidence": "query_groundedness_probes.json"
+  },
+  {
+    "file": "README.ko.md",
+    "line_start": 330,
+    "line_end": 331,
+    "verbatim": "13. **근거 검증은 바닥선입니다.** 지어낸 이름과 숫자는 잡지만 관계·부정·비교·평범한 단어로 된 임상\n    주장(\"안전하다\")은 검증하지 못하고, \"one\"을 포함한 모든 숫자 단어를 확인 불가 숫자로 셉니다.",
+    "objection": "Same name/number floor counterexamples.",
+    "evidence": "query_groundedness_probes.json"
+  },
+  {
+    "file": "README.md",
+    "line_start": 495,
+    "line_end": 498,
+    "verbatim": "Nothing is cached silently: `data/raw/*.json` are the fetched snapshots, each\nstamped with the query that produced it and the time it was fetched, and every\nlater stage reads only from those files. A changed result can always be traced to\neither the source changing or the logic changing, never both at once.",
+    "objection": "Later stages also read resolved.json,gold CSVs,and persistent SQLite; provenance stores fetched_at but no code revision, so concurrent source+logic changes are not disentangled.",
+    "evidence": "src/run_all.py:3; src/evaluate.py; src/graph.py"
+  },
+  {
+    "file": "README.ko.md",
+    "line_start": 349,
+    "line_end": 351,
+    "verbatim": "조용히 캐시되는 것은 없습니다. `data/raw/*.json`이 수집 스냅샷이고 각각 질의 내용과 수집 시각이\n찍혀 있으며, 이후 모든 단계는 그 파일만 읽습니다. 결과가 달라지면 원인이 **소스 변경인지 로직\n변경인지** 항상 구분할 수 있고, 둘이 뒤섞이지 않습니다.",
+    "objection": "Same source-versus-logic provenance guarantee.",
+    "evidence": "src/run_all.py; src/graph.py"
+  }
+]

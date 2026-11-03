@@ -1,0 +1,468 @@
+[
+  {
+    "raw": "Bevacizumab-awwb injection",
+    "components": [
+      {
+        "component": "Bevacizumab-awwb",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "strip_formulation",
+          "distinct_product_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "raw": "Bevacizumab-bvzr 5 mg/kg",
+    "components": [
+      {
+        "component": "Bevacizumab-bvzr",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "strip_dose",
+          "distinct_product_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "raw": "Pembrolizumab and hyaluronidase",
+    "components": [
+      {
+        "component": "Pembrolizumab",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL3137343",
+        "score": null,
+        "rules": [
+          "split_combination"
+        ],
+        "matched_alias": "PEMBROLIZUMAB",
+        "candidates": null
+      },
+      {
+        "component": "hyaluronidase",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL1201636",
+        "score": null,
+        "rules": [
+          "split_combination"
+        ],
+        "matched_alias": "HYALURONIDASE",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "raw": "Rituximab and hyaluronidase",
+    "components": [
+      {
+        "component": "Rituximab",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "split_combination"
+        ],
+        "matched_alias": null,
+        "candidates": null
+      },
+      {
+        "component": "hyaluronidase",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL1201636",
+        "score": null,
+        "rules": [
+          "split_combination"
+        ],
+        "matched_alias": "HYALURONIDASE",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "raw": "Cemiplimab-RWLC",
+    "components": [
+      {
+        "component": "Cemiplimab-RWLC",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "distinct_product_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "raw": "injection of pembrolizumab",
+    "components": [
+      {
+        "component": "of pembrolizumab",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "strip_formulation",
+          "distinct_product_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "raw": "Genexol",
+    "components": [
+      {
+        "component": "Genexol",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "distinct_product_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "raw": "Genexol-PM",
+    "components": [
+      {
+        "component": "Genexol-PM",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "distinct_product_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "raw": "cyclophosphamide inhibitor",
+    "components": [
+      {
+        "component": "cyclophosphamide inhibitor",
+        "tier": "BLOCKED_CLASS_TERM",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "class_term_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "category term, not an identifiable substance"
+      }
+    ]
+  },
+  {
+    "raw": "Paclitaxel resistance assay",
+    "components": [
+      {
+        "component": "Paclitaxel",
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL428647",
+        "score": null,
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "matched_alias": "PACLITAXEL",
+        "candidates": null,
+        "note": "segmented out of 'Paclitaxel resistance assay'"
+      },
+      {
+        "component": "resistance assay",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "segmentation_residue"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+      }
+    ]
+  },
+  {
+    "raw": "Patients previously treated with pembrolizumab",
+    "components": [
+      {
+        "component": "pembrolizumab",
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL3137343",
+        "score": null,
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "matched_alias": "PEMBROLIZUMAB",
+        "candidates": null,
+        "note": "segmented out of 'Patients previously treated with pembrolizumab'"
+      },
+      {
+        "component": "previously treated",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "segmentation_residue"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+      }
+    ]
+  },
+  {
+    "raw": "No pembrolizumab and cisplatin",
+    "components": [
+      {
+        "component": "No pembrolizumab",
+        "tier": "BLOCKED_NEGATED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "split_combination",
+          "negation_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "negated substance: the arm records its absence"
+      },
+      {
+        "component": "cisplatin",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL11359",
+        "score": null,
+        "rules": [
+          "split_combination"
+        ],
+        "matched_alias": "CISPLATIN",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "raw": "placebo for pembrolizumab plus carboplatin",
+    "components": [
+      {
+        "component": "placebo for pembrolizumab plus carboplatin",
+        "tier": "BLOCKED_PLACEBO",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "placebo_guard",
+          "placebo_reference_arm"
+        ],
+        "note": "placebo arm naming its reference drug - no exposure"
+      }
+    ]
+  },
+  {
+    "raw": "prednisone acetate",
+    "components": [
+      {
+        "component": "prednisone acetate",
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL635",
+        "score": null,
+        "rules": [],
+        "matched_alias": "prednisone acetate",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "raw": "abiraterone acetate",
+    "components": [
+      {
+        "component": "abiraterone acetate",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL271227",
+        "score": null,
+        "rules": [],
+        "matched_alias": "ABIRATERONE ACETATE",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "raw": "tocopherol acetate",
+    "components": [
+      {
+        "component": "tocopherol acetate",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [],
+        "matched_alias": null,
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "raw": "dexamethasone dipropionate",
+    "components": [
+      {
+        "component": "dexamethasone",
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL384467",
+        "score": null,
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "matched_alias": "DEXAMETHASONE",
+        "candidates": null,
+        "note": "segmented out of 'dexamethasone dipropionate'"
+      },
+      {
+        "component": "dipropionate",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "segmentation_residue"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+      }
+    ]
+  },
+  {
+    "raw": "dexamethasone sodium phosphate",
+    "components": [
+      {
+        "component": "dexamethasone sodium phosphate",
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL384467",
+        "score": null,
+        "rules": [],
+        "matched_alias": "dexamethasone sodium phosphate",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "raw": "non-steroidal anti-inflammatory drugs",
+    "components": [
+      {
+        "component": "non-steroidal anti-inflammatory drugs",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [],
+        "matched_alias": null,
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "raw": "T-cell checkpoint blockers",
+    "components": [
+      {
+        "component": "T-cell checkpoint blockers",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [],
+        "matched_alias": null,
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "raw": "pembrolizumab-like monoclonal antibodies",
+    "components": [
+      {
+        "component": "pembrolizumab",
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL3137343",
+        "score": null,
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "matched_alias": "PEMBROLIZUMAB",
+        "candidates": null,
+        "note": "segmented out of 'pembrolizumab-like monoclonal antibodies'"
+      },
+      {
+        "component": "monoclonal antibodies",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "segmentation_residue"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+      }
+    ]
+  },
+  {
+    "raw": "pembrolizumab (not administered)",
+    "components": [
+      {
+        "component": "pembrolizumab",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL3137343",
+        "score": null,
+        "rules": [
+          "extract_parenthetical"
+        ],
+        "matched_alias": "PEMBROLIZUMAB",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "raw": "CC-486 and azacitidine",
+    "components": [
+      {
+        "component": "CC-486",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "split_combination",
+          "distinct_product_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      },
+      {
+        "component": "azacitidine",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL1489",
+        "score": null,
+        "rules": [
+          "split_combination"
+        ],
+        "matched_alias": "AZACITIDINE",
+        "candidates": null
+      }
+    ]
+  }
+]

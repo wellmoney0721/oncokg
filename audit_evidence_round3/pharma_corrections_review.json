@@ -1,0 +1,122 @@
+{
+  "check_exit_code": 0,
+  "stdout": "pending 0, already applied 8\nall corrections are already in the labels\n",
+  "stderr": "",
+  "corrections_count": 8,
+  "correction_review": [
+    {
+      "sample": "test",
+      "id": "3",
+      "raw": "Abraxane (Maintenance)",
+      "resolved_id": "CHEMBL428647",
+      "old_verdict": "correct",
+      "new_verdict": "incorrect",
+      "audit_agrees_with_new_verdict": true,
+      "reason": "Correct under the repository product-identity criterion, supported by primary source.",
+      "sources": [
+        "https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/021660s047lbl.pdf"
+      ]
+    },
+    {
+      "sample": "test",
+      "id": "22",
+      "raw": "Paclitaxel or Nab-Paclitaxel",
+      "resolved_id": "CHEMBL428647",
+      "old_verdict": "correct",
+      "new_verdict": "incorrect",
+      "audit_agrees_with_new_verdict": true,
+      "reason": "Correct under the repository product-identity criterion, supported by primary source.",
+      "sources": [
+        "https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/021660s047lbl.pdf"
+      ]
+    },
+    {
+      "sample": "test",
+      "id": "67",
+      "raw": "Bevacizumab Biosimilar HLX04",
+      "resolved_id": "CHEMBL1201583",
+      "old_verdict": "correct",
+      "new_verdict": "incorrect",
+      "audit_agrees_with_new_verdict": true,
+      "reason": "Correct under the repository product-identity criterion, supported by primary source.",
+      "sources": [
+        "https://www.henlius.com/en/newsd/0/31147.html"
+      ]
+    },
+    {
+      "sample": "test",
+      "id": "68",
+      "raw": "Bevacizumab-Pfizer",
+      "resolved_id": "CHEMBL1201583",
+      "old_verdict": "correct",
+      "new_verdict": "incorrect",
+      "audit_agrees_with_new_verdict": true,
+      "reason": "Correct under the repository product-identity criterion, supported by primary source.",
+      "sources": [
+        "https://cdn.clinicaltrials.gov/large-docs/99/NCT02364999/Prot_001.pdf"
+      ]
+    },
+    {
+      "sample": "dev",
+      "id": "139",
+      "raw": "Cisplatin, Gemcitabine, Interferon-a",
+      "resolved_id": "CHEMBL2108494",
+      "old_verdict": "correct",
+      "new_verdict": "incorrect",
+      "audit_agrees_with_new_verdict": true,
+      "reason": "Correct under the repository rule that molecular identity alone is insufficient for a separately formulated product; generic interferon does not identify a unique substance.",
+      "sources": [
+        "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/recombinant-interferon-alfa"
+      ]
+    },
+    {
+      "sample": "test",
+      "id": "13",
+      "raw": "CC-486",
+      "resolved_id": "CHEMBL1489",
+      "old_verdict": "correct",
+      "new_verdict": "incorrect",
+      "audit_agrees_with_new_verdict": true,
+      "reason": "Correct under the repository product-identity criterion, supported by primary source.",
+      "sources": [
+        "https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=0e95e33f-8aba-4f19-b332-2416580d358b&type=display"
+      ]
+    },
+    {
+      "sample": "test",
+      "id": "141",
+      "raw": "NanoPac (sterile nanoparticulate paclitaxel) Powder for Suspension",
+      "resolved_id": "CHEMBL428647",
+      "old_verdict": "correct",
+      "new_verdict": "incorrect",
+      "audit_agrees_with_new_verdict": true,
+      "reason": "Correct under the repository product-identity criterion, supported by primary source.",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8421313/"
+      ]
+    },
+    {
+      "sample": "postfix",
+      "id": "8",
+      "raw": "Nab-paclitaxel",
+      "resolved_id": "CHEMBL428647",
+      "old_verdict": "correct",
+      "new_verdict": "incorrect",
+      "audit_agrees_with_new_verdict": true,
+      "reason": "Correct under the repository product-identity criterion, supported by primary source.",
+      "sources": [
+        "https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/021660s047lbl.pdf"
+      ]
+    }
+  ],
+  "guard_defect": {
+    "source": "src/apply_label_corrections.py:105",
+    "missing_identity_field": "component",
+    "demonstration": "pharma_correction_guard.json; a valid Paclitaxel component shares raw/drug_id with the incorrect Nab-Paclitaxel component. Reusing id22 with component Paclitaxel/tier EXACT passes and flips its label to incorrect."
+  },
+  "stale_note": {
+    "source": "reports/gold_test.csv:23 reviewer_note",
+    "claim": "trial whose whole point is the comparison between them",
+    "problem": "That note still says NCT07318883 compares the paclitaxel formulations; the correction source lines48-50 correctly identifies HLX07 vs placebo with taxane backbone. Lines109-111 skip already-corrected verdicts without refreshing their wrong rationale."
+  }
+}

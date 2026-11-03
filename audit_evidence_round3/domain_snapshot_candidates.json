@@ -1,0 +1,511 @@
+[
+  {
+    "nct": "NCT04543188",
+    "raw": "PF-07284890",
+    "components": [
+      {
+        "component": "PF-07284890",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "dev_code_no_fuzzy"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "alphanumeric development code: approximate matching disabled to avoid binding to a neighbouring code"
+      }
+    ]
+  },
+  {
+    "nct": "NCT06961188",
+    "raw": "Nano-crystalline Megestrol Acetate Oral Suspension",
+    "components": [
+      {
+        "component": "Nano-crystalline Megestrol Acetate",
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL1201139",
+        "score": null,
+        "rules": [
+          "strip_formulation"
+        ],
+        "matched_alias": "nano-crystalline megestrol acetate",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT00765687",
+    "raw": "bisphosphates",
+    "components": [
+      {
+        "component": "bisphosphates",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [],
+        "matched_alias": null,
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT06512207",
+    "raw": "Leuprorelin acetate + Sintilimab",
+    "components": [
+      {
+        "component": "Leuprorelin acetate",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "split_combination"
+        ],
+        "matched_alias": null,
+        "candidates": null
+      },
+      {
+        "component": "Sintilimab",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL4297829",
+        "score": null,
+        "rules": [
+          "split_combination"
+        ],
+        "matched_alias": "SINTILIMAB",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT00094835",
+    "raw": "Motesanib diphosphate",
+    "components": [
+      {
+        "component": "Motesanib diphosphate",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL2107357",
+        "score": null,
+        "rules": [],
+        "matched_alias": "MOTESANIB DIPHOSPHATE",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT02740985",
+    "raw": "Abiraterone Acetate",
+    "components": [
+      {
+        "component": "Abiraterone Acetate",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL271227",
+        "score": null,
+        "rules": [],
+        "matched_alias": "ABIRATERONE ACETATE",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT01005797",
+    "raw": "Panobinostat (LBH589), Sorafenib",
+    "components": [
+      {
+        "component": "Panobinostat",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL483254",
+        "score": null,
+        "rules": [
+          "extract_parenthetical",
+          "split_combination"
+        ],
+        "matched_alias": "PANOBINOSTAT",
+        "candidates": null
+      },
+      {
+        "component": "Sorafenib",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL1336",
+        "score": null,
+        "rules": [
+          "extract_parenthetical",
+          "split_combination"
+        ],
+        "matched_alias": "SORAFENIB",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT01023347",
+    "raw": "Paclitaxel (Genexol®)",
+    "components": [
+      {
+        "component": "Paclitaxel",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "extract_parenthetical",
+          "distinct_product_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "nct": "NCT01023347",
+    "raw": "Paclitaxel loaded polymeric micelle (Genexol-PM®)",
+    "components": [
+      {
+        "component": "Paclitaxel loaded polymeric micelle",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "extract_parenthetical",
+          "distinct_product_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "nct": "NCT06222489",
+    "raw": "89Zr-Patritumab deruxtecan",
+    "components": [
+      {
+        "component": "89Zr-Patritumab deruxtecan",
+        "tier": "BLOCKED_CLASS_TERM",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "radiotracer_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+      }
+    ]
+  },
+  {
+    "nct": "NCT04800822",
+    "raw": "PF-07284892",
+    "components": [
+      {
+        "component": "PF-07284892",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "dev_code_no_fuzzy"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "alphanumeric development code: approximate matching disabled to avoid binding to a neighbouring code"
+      }
+    ]
+  },
+  {
+    "nct": "NCT07477808",
+    "raw": "Nanocrystalline Megestrol Acetate Oral Suspension",
+    "components": [
+      {
+        "component": "Nanocrystalline Megestrol Acetate",
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL1201139",
+        "score": null,
+        "rules": [
+          "strip_formulation"
+        ],
+        "matched_alias": "nano-crystalline megestrol acetate",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT01770795",
+    "raw": "Genexol-PM/Gemcitabine",
+    "components": [
+      {
+        "component": "Genexol-PM",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "split_combination",
+          "distinct_product_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      },
+      {
+        "component": "Gemcitabine",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL888",
+        "score": null,
+        "rules": [
+          "split_combination"
+        ],
+        "matched_alias": "GEMCITABINE",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT06641609",
+    "raw": "Dose-Escalation (Phase Ia) CFT8919 capsule",
+    "components": [
+      {
+        "component": "Dose-Escalation CFT8919",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "extract_parenthetical",
+          "strip_formulation"
+        ],
+        "matched_alias": null,
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT06641609",
+    "raw": "Dose-Expansion (Phase Ib) CFT8919 capsule",
+    "components": [
+      {
+        "component": "Dose-Expansion CFT8919",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "extract_parenthetical",
+          "strip_formulation"
+        ],
+        "matched_alias": null,
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT06641609",
+    "raw": "Cohort-Expansion (Phase Ic) CFT8919 capsule",
+    "components": [
+      {
+        "component": "Cohort-Expansion CFT8919",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "extract_parenthetical",
+          "strip_formulation"
+        ],
+        "matched_alias": null,
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT04209465",
+    "raw": "BDTX-189",
+    "components": [
+      {
+        "component": "BDTX-189",
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL4650279",
+        "score": null,
+        "rules": [],
+        "matched_alias": "BDTX-189",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT00738751",
+    "raw": "Panobinostat (LBH589)",
+    "components": [
+      {
+        "component": "Panobinostat",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL483254",
+        "score": null,
+        "rules": [
+          "extract_parenthetical"
+        ],
+        "matched_alias": "PANOBINOSTAT",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT06946927",
+    "raw": "JMKX001899",
+    "components": [
+      {
+        "component": "JMKX001899",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "dev_code_no_fuzzy"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "alphanumeric development code: approximate matching disabled to avoid binding to a neighbouring code"
+      }
+    ]
+  },
+  {
+    "nct": "NCT06961201",
+    "raw": "Nano-crystalline Megestrol Acetate Oral Suspension",
+    "components": [
+      {
+        "component": "Nano-crystalline Megestrol Acetate",
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL1201139",
+        "score": null,
+        "rules": [
+          "strip_formulation"
+        ],
+        "matched_alias": "nano-crystalline megestrol acetate",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT04237805",
+    "raw": "SAF-189s",
+    "components": [
+      {
+        "component": "SAF-189s",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [],
+        "matched_alias": null,
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT01212887",
+    "raw": "fludarabine phosphate",
+    "components": [
+      {
+        "component": "fludarabine phosphate",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL1096882",
+        "score": null,
+        "rules": [],
+        "matched_alias": "FLUDARABINE PHOSPHATE",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT07242274",
+    "raw": "JMKX001899",
+    "components": [
+      {
+        "component": "JMKX001899",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "dev_code_no_fuzzy"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "alphanumeric development code: approximate matching disabled to avoid binding to a neighbouring code"
+      }
+    ]
+  },
+  {
+    "nct": "NCT03166631",
+    "raw": "BI 891065",
+    "components": [
+      {
+        "component": "BI 891065",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "dev_code_no_fuzzy"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "alphanumeric development code: approximate matching disabled to avoid binding to a neighbouring code"
+      }
+    ]
+  },
+  {
+    "nct": "NCT06457789",
+    "raw": "[89Zr]Zr-Df-Crefmirlimab PET imaging",
+    "components": [
+      {
+        "component": "Zr-Df-Crefmirlimab PET imaging",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "extract_parenthetical",
+          "isotope_label_skipped"
+        ],
+        "matched_alias": null,
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT05013099",
+    "raw": "zirconium Zr 89 crefmirlimab berdoxam",
+    "components": [
+      {
+        "component": "zirconium Zr 89 crefmirlimab berdoxam",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL5314651",
+        "score": null,
+        "rules": [],
+        "matched_alias": "ZIRCONIUM ZR 89 CREFMIRLIMAB BERDOXAM",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT00324597",
+    "raw": "motesanib diphosphate",
+    "components": [
+      {
+        "component": "motesanib diphosphate",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL2107357",
+        "score": null,
+        "rules": [],
+        "matched_alias": "MOTESANIB DIPHOSPHATE",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "nct": "NCT00907179",
+    "raw": "LBH 589",
+    "components": [
+      {
+        "component": "LBH 589",
+        "tier": "ALIAS",
+        "drug_id": "CHEMBL483254",
+        "score": null,
+        "rules": [],
+        "matched_alias": "LBH-589",
+        "candidates": null
+      }
+    ]
+  }
+]

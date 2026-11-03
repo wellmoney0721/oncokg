@@ -1,0 +1,32 @@
+{
+  "original": {
+    "id": "22",
+    "tier": "ALIAS",
+    "raw": "Paclitaxel or Nab-Paclitaxel",
+    "component": "Nab-Paclitaxel",
+    "drug_id": "CHEMBL428647",
+    "resolved_name": "PACLITAXEL",
+    "score": "",
+    "rules": "split_combination",
+    "note": "",
+    "example_nct": "NCT07318883",
+    "verdict": "incorrect",
+    "reviewer_note": "corrected after independent re-score: 'Paclitaxel or Nab-Paclitaxel' names two distinct products. Resolving the second to PACLITAXEL as well emits the same EVALUATES edge twice for a trial whose whole point is the comparison between them."
+  },
+  "mutation": "row 22 component changed to Paclitaxel and tier EXACT, matching the accepted component at row 118; raw/drug unchanged",
+  "stdout": "test#22: correct -> incorrect\n    'Paclitaxel or Nab-Paclitaxel' names two products the investigator may choose between (NCT07318883 is an HLX07-versus-placebo trial; the taxane is the backbone, not the comparison). Resolving the second to PACLITAXEL records nab-paclitaxel as solvent-based paclitaxel and duplicates the first component's edge.\n\napplied 1, already correct 7\n",
+  "after": {
+    "id": "22",
+    "tier": "EXACT",
+    "raw": "Paclitaxel or Nab-Paclitaxel",
+    "component": "Paclitaxel",
+    "drug_id": "CHEMBL428647",
+    "resolved_name": "PACLITAXEL",
+    "score": "",
+    "rules": "split_combination",
+    "note": "",
+    "example_nct": "NCT07318883",
+    "verdict": "incorrect",
+    "reviewer_note": "corrected after independent re-score: 'Paclitaxel or Nab-Paclitaxel' names two distinct products. Resolving the second to PACLITAXEL as well emits the same EVALUATES edge twice for a trial whose whole point is the comparison between them. | corrected after independent re-score: 'Paclitaxel or Nab-Paclitaxel' names two products the investigator may choose between (NCT07318883 is an HLX07-versus-placebo trial; the taxane is the backbone, not the comparison). Resolving the second to PACLITAXEL records nab-paclitaxel as solvent-based paclitaxel and duplicates the first component's edge."
+  }
+}

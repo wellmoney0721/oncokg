@@ -1,0 +1,982 @@
+{
+  "method": "Paired primary intervention surfaces with same code and snapshots; only _foreign_registry_alias and _ambiguous_short_alias disabled in counterfactual curation. Counts weighted by trial-intervention occurrence.",
+  "distinct_surfaces": 2742,
+  "occurrences": 5778,
+  "stats": {
+    "current_accepted": 4942,
+    "without_registry_rule_accepted": 4950,
+    "current_total_components": 6789,
+    "without_registry_rule_total_components": 6789,
+    "changed_distinct_surfaces": 21,
+    "changed_occurrences": 21,
+    "accepted_components_lost": 10,
+    "accepted_components_gained": 2
+  },
+  "changes": [
+    {
+      "raw": "HS-20117 combined HS-20093 and 5-FU",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "HS-20117 combined HS-20093",
+          "rules": [
+            "split_combination",
+            "dev_code_no_fuzzy"
+          ],
+          "note": "alphanumeric development code: approximate matching disabled to avoid binding to a neighbouring code"
+        },
+        {
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL185",
+          "name": "FLUOROURACIL",
+          "component": "5-FU",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "HS-20117 combined HS-20093",
+          "rules": [
+            "split_combination",
+            "dev_code_no_fuzzy"
+          ],
+          "note": "alphanumeric development code: approximate matching disabled to avoid binding to a neighbouring code"
+        },
+        {
+          "tier": "AMBIGUOUS",
+          "drug_id": null,
+          "name": null,
+          "component": "5-FU",
+          "rules": [
+            "split_combination"
+          ],
+          "note": "surface form maps to 2 molecules"
+        }
+      ]
+    },
+    {
+      "raw": "HS-20117+CAPEOX",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "HS-20117",
+          "rules": [
+            "split_combination",
+            "dev_code_no_fuzzy"
+          ],
+          "note": "alphanumeric development code: approximate matching disabled to avoid binding to a neighbouring code"
+        },
+        {
+          "tier": "FUZZY_REVIEW",
+          "drug_id": "CHEMBL1773",
+          "name": "CAPECITABINE",
+          "component": "CAPEOX",
+          "rules": [
+            "split_combination",
+            "fuzzy_match"
+          ],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "HS-20117",
+          "rules": [
+            "split_combination",
+            "dev_code_no_fuzzy"
+          ],
+          "note": "alphanumeric development code: approximate matching disabled to avoid binding to a neighbouring code"
+        },
+        {
+          "tier": "AMBIGUOUS",
+          "drug_id": null,
+          "name": null,
+          "component": "CAPEOX",
+          "rules": [
+            "split_combination",
+            "fuzzy_match"
+          ],
+          "note": "surface form maps to 2 molecules"
+        }
+      ]
+    },
+    {
+      "raw": "Pitavastatin 1 mg daily or 4 mg daily",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201753",
+          "name": "PITAVASTATIN",
+          "component": "Pitavastatin",
+          "rules": [
+            "strip_dose",
+            "split_combination",
+            "segmented_from_phrase"
+          ],
+          "note": "segmented out of 'Pitavastatin daily'"
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "daily",
+          "rules": [
+            "strip_dose",
+            "split_combination"
+          ],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201753",
+          "name": "PITAVASTATIN",
+          "component": "Pitavastatin",
+          "rules": [
+            "strip_dose",
+            "split_combination",
+            "segmented_from_phrase"
+          ],
+          "note": "segmented out of 'Pitavastatin daily'"
+        },
+        {
+          "tier": "FUZZY_REVIEW",
+          "drug_id": "CHEMBL1201566",
+          "name": "DARBEPOETIN ALFA",
+          "component": "daily",
+          "rules": [
+            "strip_dose",
+            "split_combination",
+            "fuzzy_match"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "raw": "Limertinib Plus Radiotherapy",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "Limertinib",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        },
+        {
+          "tier": "BLOCKED_CLASS_TERM",
+          "drug_id": null,
+          "name": null,
+          "component": "Radiotherapy",
+          "rules": [
+            "split_combination",
+            "class_term_guard"
+          ],
+          "note": "category term, not an identifiable substance"
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL6068536",
+          "name": "ASK-120067",
+          "component": "Limertinib",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        },
+        {
+          "tier": "BLOCKED_CLASS_TERM",
+          "drug_id": null,
+          "name": null,
+          "component": "Radiotherapy",
+          "rules": [
+            "split_combination",
+            "class_term_guard"
+          ],
+          "note": "category term, not an identifiable substance"
+        }
+      ]
+    },
+    {
+      "raw": "5-FU",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL185",
+          "name": "FLUOROURACIL",
+          "component": "5-FU",
+          "rules": [],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "AMBIGUOUS",
+          "drug_id": null,
+          "name": null,
+          "component": "5-FU",
+          "rules": [],
+          "note": "surface form maps to 2 molecules"
+        }
+      ]
+    },
+    {
+      "raw": "Pac-CB",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "FUZZY_REVIEW",
+          "drug_id": "CHEMBL428647",
+          "name": "PACLITAXEL",
+          "component": "Pac-CB",
+          "rules": [
+            "fuzzy_match"
+          ],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "FUZZY_REVIEW",
+          "drug_id": "CHEMBL1351",
+          "name": "CARBOPLATIN",
+          "component": "Pac-CB",
+          "rules": [
+            "fuzzy_match"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "raw": "CB-Erl",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "CB-Erl",
+          "rules": [],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "FUZZY_REVIEW",
+          "drug_id": "CHEMBL1351",
+          "name": "CARBOPLATIN",
+          "component": "CB-Erl",
+          "rules": [
+            "fuzzy_match"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "raw": "radiotherapy / EP combined with recombinant human endostatin",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "BLOCKED_CLASS_TERM",
+          "drug_id": null,
+          "name": null,
+          "component": "radiotherapy",
+          "rules": [
+            "split_combination",
+            "class_term_guard"
+          ],
+          "note": "category term, not an identifiable substance"
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "EP",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        },
+        {
+          "tier": "AMBIGUOUS",
+          "drug_id": null,
+          "name": null,
+          "component": "recombinant human endostatin",
+          "rules": [
+            "split_combination"
+          ],
+          "note": "surface form maps to 2 molecules"
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "BLOCKED_CLASS_TERM",
+          "drug_id": null,
+          "name": null,
+          "component": "radiotherapy",
+          "rules": [
+            "split_combination",
+            "class_term_guard"
+          ],
+          "note": "category term, not an identifiable substance"
+        },
+        {
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL44657",
+          "name": "ETOPOSIDE",
+          "component": "EP",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        },
+        {
+          "tier": "AMBIGUOUS",
+          "drug_id": null,
+          "name": null,
+          "component": "recombinant human endostatin",
+          "rules": [
+            "split_combination"
+          ],
+          "note": "surface form maps to 2 molecules"
+        }
+      ]
+    },
+    {
+      "raw": "UFT 250mg/m2, daily for 1 year",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "UFT",
+          "rules": [
+            "strip_dose",
+            "split_combination"
+          ],
+          "note": null
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "daily for 1 year",
+          "rules": [
+            "strip_dose",
+            "split_combination"
+          ],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "AMBIGUOUS",
+          "drug_id": null,
+          "name": null,
+          "component": "UFT",
+          "rules": [
+            "strip_dose",
+            "split_combination"
+          ],
+          "note": "surface form maps to 2 molecules"
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "daily for 1 year",
+          "rules": [
+            "strip_dose",
+            "split_combination"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "raw": "limertinib",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "limertinib",
+          "rules": [],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL6068536",
+          "name": "ASK-120067",
+          "component": "limertinib",
+          "rules": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "raw": "Oral Taxane",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "FUZZY_REVIEW",
+          "drug_id": "CHEMBL428647",
+          "name": "PACLITAXEL",
+          "component": "Taxane",
+          "rules": [
+            "strip_formulation",
+            "fuzzy_match"
+          ],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "Taxane",
+          "rules": [
+            "strip_formulation"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "raw": "AP or AC",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "AP",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "AC",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "AP",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        },
+        {
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL53463",
+          "name": "DOXORUBICIN",
+          "component": "AC",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "raw": "DCVAC and immune enhancers add on to SOC",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "DCVAC",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "immune enhancers add on to SOC",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "FUZZY_REVIEW",
+          "drug_id": "CHEMBL109",
+          "name": "VALPROIC ACID",
+          "component": "DCVAC",
+          "rules": [
+            "split_combination",
+            "fuzzy_match"
+          ],
+          "note": null
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "immune enhancers add on to SOC",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "raw": "Sacituzumab Tirumotecan and Limertinib",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "EXACT",
+          "drug_id": "CHEMBL5314875",
+          "name": "SACITUZUMAB TIRUMOTECAN",
+          "component": "Sacituzumab Tirumotecan",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "Limertinib",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "EXACT",
+          "drug_id": "CHEMBL5314875",
+          "name": "SACITUZUMAB TIRUMOTECAN",
+          "component": "Sacituzumab Tirumotecan",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        },
+        {
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL6068536",
+          "name": "ASK-120067",
+          "component": "Limertinib",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "raw": "MVA-MAGEA3 (Route = IM injection, Dose = 1.3×10^8 pfu)",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "FUZZY_REVIEW",
+          "drug_id": "CHEMBL2108705",
+          "name": "ASTUPROTIMUT-R",
+          "component": "MVA-MAGEA3",
+          "rules": [
+            "extract_parenthetical",
+            "fuzzy_match"
+          ],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "MVA-MAGEA3",
+          "rules": [
+            "extract_parenthetical"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "raw": "Biological/Vaccine: ChAdOx1-MAGEA3-NYESO (Route = intramuscular (IM) injection, Dose = 5×10^10 vp)",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "Biological",
+          "rules": [
+            "extract_parenthetical",
+            "strip_formulation",
+            "split_combination"
+          ],
+          "note": null
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "Vaccine: ChAdOx1-MAGEA3-NYESO (Route =",
+          "rules": [
+            "extract_parenthetical",
+            "strip_formulation",
+            "split_combination"
+          ],
+          "note": null
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "Dose = 5×10^10 vp)",
+          "rules": [
+            "extract_parenthetical",
+            "strip_formulation",
+            "split_combination"
+          ],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "Biological",
+          "rules": [
+            "extract_parenthetical",
+            "strip_formulation",
+            "split_combination"
+          ],
+          "note": null
+        },
+        {
+          "tier": "PARENTHETICAL",
+          "drug_id": "CHEMBL941",
+          "name": "IMATINIB",
+          "component": "IM",
+          "rules": [
+            "extract_parenthetical",
+            "strip_formulation",
+            "split_combination",
+            "match_on_parenthetical"
+          ],
+          "note": null
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "Dose = 5×10^10 vp)",
+          "rules": [
+            "extract_parenthetical",
+            "strip_formulation",
+            "split_combination"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "raw": "YPEG-rhG-CSF, 20μg/kg, single s.c. at 48hrs after chemotherapy for each experimental cycle",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "YPEG-rhG-CSF",
+          "rules": [
+            "strip_dose",
+            "strip_schedule",
+            "split_combination"
+          ],
+          "note": null
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "single . at 48hrs after chemotherapy for each experimental cycle",
+          "rules": [
+            "strip_dose",
+            "strip_schedule",
+            "split_combination"
+          ],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "FUZZY_AUTO",
+          "drug_id": "CHEMBL1201568",
+          "name": "PEGFILGRASTIM",
+          "component": "YPEG-rhG-CSF",
+          "rules": [
+            "strip_dose",
+            "strip_schedule",
+            "split_combination",
+            "fuzzy_match"
+          ],
+          "note": null
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "single . at 48hrs after chemotherapy for each experimental cycle",
+          "rules": [
+            "strip_dose",
+            "strip_schedule",
+            "split_combination"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "raw": "YPEG-rhG-CSF, 30μg/kg, single s.c. at 48hrs after chemotherapy for each experimental cycle",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "YPEG-rhG-CSF",
+          "rules": [
+            "strip_dose",
+            "strip_schedule",
+            "split_combination"
+          ],
+          "note": null
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "single . at 48hrs after chemotherapy for each experimental cycle",
+          "rules": [
+            "strip_dose",
+            "strip_schedule",
+            "split_combination"
+          ],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "FUZZY_AUTO",
+          "drug_id": "CHEMBL1201568",
+          "name": "PEGFILGRASTIM",
+          "component": "YPEG-rhG-CSF",
+          "rules": [
+            "strip_dose",
+            "strip_schedule",
+            "split_combination",
+            "fuzzy_match"
+          ],
+          "note": null
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "single . at 48hrs after chemotherapy for each experimental cycle",
+          "rules": [
+            "strip_dose",
+            "strip_schedule",
+            "split_combination"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "raw": "YPEG-rhG-CSF, 45μg/kg, single s.c. at 48hrs after chemotherapy for each experimental cycle",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "YPEG-rhG-CSF",
+          "rules": [
+            "strip_dose",
+            "strip_schedule",
+            "split_combination"
+          ],
+          "note": null
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "single . at 48hrs after chemotherapy for each experimental cycle",
+          "rules": [
+            "strip_dose",
+            "strip_schedule",
+            "split_combination"
+          ],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "FUZZY_AUTO",
+          "drug_id": "CHEMBL1201568",
+          "name": "PEGFILGRASTIM",
+          "component": "YPEG-rhG-CSF",
+          "rules": [
+            "strip_dose",
+            "strip_schedule",
+            "split_combination",
+            "fuzzy_match"
+          ],
+          "note": null
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "single . at 48hrs after chemotherapy for each experimental cycle",
+          "rules": [
+            "strip_dose",
+            "strip_schedule",
+            "split_combination"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "raw": "Adjuvant Treatment Phase",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "Phase",
+          "rules": [
+            "strip_regimen_word"
+          ],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "FUZZY_REVIEW",
+          "drug_id": "CHEMBL361497",
+          "name": "ARTESUNATE",
+          "component": "Phase",
+          "rules": [
+            "strip_regimen_word",
+            "fuzzy_match"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "raw": "ASKC202+ Limertinib",
+      "occurrences": 1,
+      "current": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "ASKC202",
+          "rules": [
+            "split_combination",
+            "dev_code_no_fuzzy"
+          ],
+          "note": "alphanumeric development code: approximate matching disabled to avoid binding to a neighbouring code"
+        },
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "Limertinib",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        }
+      ],
+      "without_registry_rule": [
+        {
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "name": null,
+          "component": "ASKC202",
+          "rules": [
+            "split_combination",
+            "dev_code_no_fuzzy"
+          ],
+          "note": "alphanumeric development code: approximate matching disabled to avoid binding to a neighbouring code"
+        },
+        {
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL6068536",
+          "name": "ASK-120067",
+          "component": "Limertinib",
+          "rules": [
+            "split_combination"
+          ],
+          "note": null
+        }
+      ]
+    }
+  ]
+}

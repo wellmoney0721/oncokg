@@ -1,0 +1,203 @@
+[
+  {
+    "input": "DCVAC/LuCa",
+    "split": [
+      "DCVAC",
+      "LuCa"
+    ],
+    "result": {
+      "raw": "DCVAC/LuCa",
+      "components": [
+        {
+          "component": "DCVAC",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "split_combination"
+          ],
+          "matched_alias": null,
+          "candidates": null
+        },
+        {
+          "component": "LuCa",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "split_combination"
+          ],
+          "matched_alias": null,
+          "candidates": null
+        }
+      ]
+    }
+  },
+  {
+    "input": "pembrolizumab new XYZ",
+    "split": [
+      "pembrolizumab new XYZ"
+    ],
+    "result": {
+      "raw": "pembrolizumab new XYZ",
+      "components": [
+        {
+          "component": "pembrolizumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "PEMBROLIZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'pembrolizumab new XYZ'"
+        }
+      ]
+    }
+  },
+  {
+    "input": "pembrolizumab and X",
+    "split": [
+      "pembrolizumab and X"
+    ],
+    "result": {
+      "raw": "pembrolizumab and X",
+      "components": [
+        {
+          "component": "pembrolizumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "PEMBROLIZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'pembrolizumab and X'"
+        }
+      ]
+    }
+  },
+  {
+    "input": "pegylated recombinant human hyaluronidase",
+    "split": [
+      "pegylated recombinant human hyaluronidase"
+    ],
+    "result": {
+      "raw": "pegylated recombinant human hyaluronidase",
+      "components": [
+        {
+          "component": "pegylated recombinant human hyaluronidase",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    }
+  },
+  {
+    "input": "paclitaxel and cisplatin (liposomal doxorubicin)",
+    "split": [
+      "paclitaxel",
+      "cisplatin (liposomal doxorubicin)"
+    ],
+    "result": {
+      "raw": "paclitaxel and cisplatin (liposomal doxorubicin)",
+      "components": [
+        {
+          "component": "paclitaxel",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL428647",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination"
+          ],
+          "matched_alias": "PACLITAXEL",
+          "candidates": null
+        },
+        {
+          "component": "cisplatin",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    }
+  },
+  {
+    "input": "paclitaxel (liposomal doxorubicin and cisplatin)",
+    "split": [
+      "paclitaxel (liposomal doxorubicin",
+      "cisplatin)"
+    ],
+    "result": {
+      "raw": "paclitaxel (liposomal doxorubicin and cisplatin)",
+      "components": [
+        {
+          "component": "paclitaxel",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    }
+  },
+  {
+    "input": "platelet derived growth factor receptor tyrosine kinase inhibitor",
+    "split": [
+      "platelet derived growth factor receptor tyrosine kinase inhibitor"
+    ],
+    "result": {
+      "raw": "platelet derived growth factor receptor tyrosine kinase inhibitor",
+      "components": [
+        {
+          "component": "tyrosine",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL925",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "TYROSINE",
+          "candidates": null,
+          "note": "segmented out of 'platelet derived growth factor receptor tyrosine kinase inhibitor'"
+        },
+        {
+          "component": "platelet derived growth factor receptor kinase inhibitor",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    }
+  }
+]

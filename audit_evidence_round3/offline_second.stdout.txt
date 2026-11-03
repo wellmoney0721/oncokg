@@ -1,0 +1,168 @@
+building drug dictionary ...
+  1066 molecules, 9750 aliases, 7992 lookup keys, 338 ambiguous before curation
+curating dictionary ...
+    318  registry_alias_removed
+    117  class_term_as_synonym
+     98  genuinely_ambiguous_alias
+     60  parent_child_collapse
+     57  cross_drug_synonym
+     47  suspected_duplicate_entity
+      7  distinct_product_alias
+      6  placebo_string_in_synonym_list
+  7693 lookup keys after curation, 98 still ambiguous
+  disease dictionary: 17 surface forms
+  target guard vocabulary: 4249 symbols
+resolving trial records ...
+  -> data\processed\resolved.json
+
+intervention component resolution tiers:
+    3995  EXACT
+    1248  UNRESOLVED
+     692  ALIAS
+     268  BLOCKED_CLASS_TERM
+     218  CONTAINED_ALIAS
+     151  BLOCKED_PLACEBO
+      88  BLOCKED_DISTINCT_PRODUCT
+      62  AMBIGUOUS
+      15  FUZZY_REVIEW
+      14  PARENTHETICAL
+      13  BLOCKED_TARGET_TERM
+      13  FUZZY_AUTO
+       9  SALT_STRIPPED
+       2  BLOCKED_NEGATED
+       1  CLEANED
+1669 findings -> reports\quality_report.json
+
+[dictionary]
+     318  registry_alias_removed
+     117  class_term_as_synonym
+      98  genuinely_ambiguous_alias
+      60  parent_child_collapse
+      57  cross_drug_synonym
+      47  suspected_duplicate_entity
+       7  distinct_product_alias
+       6  placebo_string_in_synonym_list
+
+[record]
+     439  no_substance_resolved
+     226  out_of_scope_trial
+     169  missing_structural_field
+      58  recurrent_unresolved_surface
+      16  incomplete_intervention_parse
+
+[graph]
+      34  stage_disagrees_with_reference
+      17  company_names_merged
+pass 1: raw dictionary, exactly as the reference data supplies it
+pass 2: curated dictionary
+
+  ambiguous resolutions : 2189 -> 65
+  exact resolutions     : 1997 -> 4054
+  ambiguous lookup keys : 338 -> 98
+
+-> reports\curation_effect.json
+graph -> data\processed\oncokg.sqlite
+  nodes 6474   edges 17576
+  added 0  changed 0  retired 0  restored 0
+  nodes by type: {'Company': 1568, 'Disease': 1, 'Drug': 1066, 'Investigator': 36, 'Target': 803, 'Trial': 3000}
+  edges by relation: {'ACTS_ON': 2186, 'ASSOCIATED_WITH': 300, 'EVALUATES': 4442, 'PARENT_OF': 41, 'SPONSORS': 4652, 'SPONSORS_TRIAL_OF': 3181, 'STUDIES': 2774}
+=== resolution quality ===
+tier                      n   ok    rate            95% CI   uniq    occ
+EXACT                    40   40  100.0%  [ 91.2%,100.0%]   1408   3995
+ALIAS                    27   27  100.0%  [ 87.5%,100.0%]    517    692
+CLEANED                   1    1  100.0%  [ 20.6%,100.0%]      1      1
+SALT_STRIPPED             5    5  100.0%  [ 56.5%,100.0%]      5      9
+PARENTHETICAL             6    6  100.0%  [ 61.0%,100.0%]     13     14
+CONTAINED_ALIAS          26   26  100.0%  [ 87.1%,100.0%]    208    218
+FUZZY_AUTO               13   11   84.6%  [ 57.8%, 95.7%]     13     13
+FUZZY_REVIEW              9    4   44.4%  [ 18.9%, 73.3%]     13     15
+AMBIGUOUS                11   11  100.0%  [ 74.1%,100.0%]     42     62
+BLOCKED_PLACEBO           8    8  100.0%  [ 67.6%,100.0%]     53    151
+BLOCKED_CLASS_TERM        8    8  100.0%  [ 67.6%,100.0%]    206    268
+BLOCKED_TARGET_TERM       4    4  100.0%  [ 51.0%,100.0%]     12     13
+UNRESOLVED               17   17  100.0%  [ 81.6%,100.0%]   1128   1248
+
+accepted-match precision : 99.9% (Wilson-bound CI 89.5-100.0%, bootstrap 99.8-100.0%)
+raw accepted rows        : 99/99 = 100.0%
+stale labels set aside   : 25
+as labelled (all rows)   : 103/115 = 89.6% (Wilson 82.6-93.9%)
+coverage of substance-like strings: 77.8% (4942/6355)
+
+-> reports\evaluation_frozen_test.json
+-> web\data.json  (72 KB)
+-> web\dashboard.html  (102 KB)
+-> web\index.html  (102 KB)
+=== resolution quality ===
+tier                      n   ok    rate            95% CI   uniq    occ
+EXACT                    40   40  100.0%  [ 91.2%,100.0%]   1408   3995
+ALIAS                    29   27   93.1%  [ 78.0%, 98.1%]    517    692
+CLEANED                   1    1  100.0%  [ 20.6%,100.0%]      1      1
+SALT_STRIPPED             5    5  100.0%  [ 56.5%,100.0%]      5      9
+PARENTHETICAL             4    4  100.0%  [ 51.0%,100.0%]     13     14
+CONTAINED_ALIAS          26   25   96.2%  [ 81.1%, 99.3%]    208    218
+FUZZY_AUTO               13   11   84.6%  [ 57.8%, 95.7%]     13     13
+FUZZY_REVIEW              9    4   44.4%  [ 18.9%, 73.3%]     13     15
+AMBIGUOUS                11   11  100.0%  [ 74.1%,100.0%]     42     62
+BLOCKED_PLACEBO           4    4  100.0%  [ 51.0%,100.0%]     53    151
+BLOCKED_CLASS_TERM        8    8  100.0%  [ 67.6%,100.0%]    206    268
+BLOCKED_TARGET_TERM       8    8  100.0%  [ 67.6%,100.0%]     12     13
+UNRESOLVED               25   24   96.0%  [ 80.5%, 99.3%]   1128   1248
+
+accepted-match precision : 97.9% (Wilson-bound CI 86.6-99.5%, bootstrap 95.4-99.9%)
+raw accepted rows        : 113/118 = 95.8%
+stale labels set aside   : 31
+as labelled (all rows)   : 126/137 = 92.0% (Wilson 86.2-95.5%)
+coverage of substance-like strings: 77.8% (4942/6355)
+
+-> reports\evaluation_dev.json
+=== resolution quality ===
+tier                      n   ok    rate            95% CI   uniq    occ
+EXACT                    10   10  100.0%  [ 72.2%,100.0%]   1408   3995
+ALIAS                     8    8  100.0%  [ 67.6%,100.0%]    517    692
+CLEANED                   1    1  100.0%  [ 20.6%,100.0%]      1      1
+SALT_STRIPPED             5    5  100.0%  [ 56.5%,100.0%]      5      9
+PARENTHETICAL             3    3  100.0%  [ 43.9%,100.0%]     13     14
+CONTAINED_ALIAS          15   14   93.3%  [ 70.2%, 98.8%]    208    218
+FUZZY_AUTO               13   11   84.6%  [ 57.8%, 95.7%]     13     13
+FUZZY_REVIEW              9    4   44.4%  [ 18.9%, 73.3%]     13     15
+AMBIGUOUS                11   11  100.0%  [ 74.1%,100.0%]     42     62
+BLOCKED_PLACEBO           4    3   75.0%  [ 30.1%, 95.4%]     53    151
+BLOCKED_CLASS_TERM        6    6  100.0%  [ 61.0%,100.0%]    206    268
+BLOCKED_TARGET_TERM       8    8  100.0%  [ 67.6%,100.0%]     12     13
+UNRESOLVED                8    8  100.0%  [ 67.6%,100.0%]   1128   1248
+
+accepted-match precision : 99.3% (Wilson-bound CI 70.6-99.9%, bootstrap 97.9-100.0%)
+raw accepted rows        : 35/36 = 97.2%
+stale labels set aside   : 4
+as labelled (all rows)   : 36/38 = 94.7% (Wilson 82.7-98.5%)
+coverage of substance-like strings: 77.8% (4942/6355)
+
+-> reports\evaluation_postfix.json
+== skipping ingest (offline): fetch public records and snapshot them
+
+== normalize: build the dictionary, curate it, resolve every record
+  [normalize finished in 22.8s]
+
+== qc: run the quality checks
+  [qc finished in 0.4s]
+
+== curation_effect: resolve twice, with and without curation
+  [curation_effect finished in 54.1s]
+
+== graph: build the knowledge graph with provenance
+  [graph finished in 1.3s]
+
+== evaluate: score the held-out sample
+  [evaluate finished in 1.5s]
+
+== make_dashboard_data: assemble the dashboard payload
+  [make_dashboard_data finished in 1.7s]
+
+== build_dashboard: render the dashboard
+  [build_dashboard finished in 0.2s]
+
+  [evaluate finished in 1.9s]
+
+  [evaluate finished in 1.2s]
+
+done. open web/index.html, or run: python -m pytest tests -q

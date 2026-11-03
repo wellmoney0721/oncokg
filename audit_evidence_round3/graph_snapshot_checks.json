@@ -1,0 +1,172 @@
+{
+  "live_nodes": [
+    {
+      "type": "Company",
+      "n": 1568
+    },
+    {
+      "type": "Disease",
+      "n": 1
+    },
+    {
+      "type": "Drug",
+      "n": 1066
+    },
+    {
+      "type": "Investigator",
+      "n": 36
+    },
+    {
+      "type": "Target",
+      "n": 803
+    },
+    {
+      "type": "Trial",
+      "n": 3000
+    }
+  ],
+  "live_edges": [
+    {
+      "rel": "ACTS_ON",
+      "n": 2186
+    },
+    {
+      "rel": "ASSOCIATED_WITH",
+      "n": 300
+    },
+    {
+      "rel": "EVALUATES",
+      "n": 4442
+    },
+    {
+      "rel": "PARENT_OF",
+      "n": 41
+    },
+    {
+      "rel": "SPONSORS",
+      "n": 4652
+    },
+    {
+      "rel": "SPONSORS_TRIAL_OF",
+      "n": 3181
+    },
+    {
+      "rel": "STUDIES",
+      "n": 2774
+    }
+  ],
+  "null_provenance": [
+    {
+      "rel": "ACTS_ON",
+      "n": 2186,
+      "null_records": 0,
+      "null_fetch_times": 0,
+      "null_tiers": 2186
+    },
+    {
+      "rel": "ASSOCIATED_WITH",
+      "n": 300,
+      "null_records": 0,
+      "null_fetch_times": 0,
+      "null_tiers": 300
+    },
+    {
+      "rel": "EVALUATES",
+      "n": 4442,
+      "null_records": 0,
+      "null_fetch_times": 0,
+      "null_tiers": 0
+    },
+    {
+      "rel": "PARENT_OF",
+      "n": 41,
+      "null_records": 0,
+      "null_fetch_times": 0,
+      "null_tiers": 41
+    },
+    {
+      "rel": "SPONSORS",
+      "n": 4652,
+      "null_records": 0,
+      "null_fetch_times": 0,
+      "null_tiers": 4652
+    },
+    {
+      "rel": "SPONSORS_TRIAL_OF",
+      "n": 3181,
+      "null_records": 3181,
+      "null_fetch_times": 0,
+      "null_tiers": 3181
+    },
+    {
+      "rel": "STUDIES",
+      "n": 2774,
+      "null_records": 0,
+      "null_fetch_times": 0,
+      "null_tiers": 0
+    }
+  ],
+  "gsk_nodes": [
+    {
+      "id": "ORG:glaxosmithkline",
+      "type": "Company",
+      "label": "Glaxosmithkline",
+      "props": "{\"class\": \"INDUSTRY\", \"parent\": \"GSK\", \"raw_names\": [\"GlaxoSmithKline\"]}",
+      "first_seen": "2026-11-03T04:16:39+00:00",
+      "last_seen": "2026-11-03T05:42:49+00:00",
+      "retired_at": null
+    },
+    {
+      "id": "ORG:gsk",
+      "type": "Company",
+      "label": "GSK",
+      "props": "{\"is_parent_group\": true}",
+      "first_seen": "2026-11-03T04:16:39+00:00",
+      "last_seen": "2026-11-03T05:42:49+00:00",
+      "retired_at": null
+    }
+  ],
+  "gsk_edges": [
+    {
+      "id": "ORG:gsk|PARENT_OF|ORG:glaxosmithkline|hand-curated corporate map",
+      "src": "ORG:gsk",
+      "dst": "ORG:glaxosmithkline",
+      "rel": "PARENT_OF",
+      "props": "{\"note\": \"hand-curated; no licensed ownership dataset was used\"}",
+      "confidence": 0.9,
+      "tier": null,
+      "source": "curated",
+      "source_record": "hand-curated corporate map",
+      "source_fetched_at": "2026-11-03T05:42:49+00:00",
+      "first_seen": "2026-11-03T04:16:39+00:00",
+      "last_seen": "2026-11-03T05:42:49+00:00",
+      "retired_at": null
+    }
+  ],
+  "live_edges_with_retired_endpoint": [
+    {
+      "n": 0
+    }
+  ],
+  "live_edges_missing_endpoint": [
+    {
+      "n": 0
+    }
+  ],
+  "derived_missing_evidence": [
+    {
+      "n": 0
+    }
+  ],
+  "target_props": [
+    {
+      "id": "ENSG00000146648",
+      "type": "Target",
+      "label": "EGFR",
+      "props": "{}",
+      "first_seen": "2026-11-03T04:16:39+00:00",
+      "last_seen": "2026-11-03T05:42:49+00:00",
+      "retired_at": null
+    }
+  ]
+}

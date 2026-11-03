@@ -1,0 +1,1008 @@
+{
+  "summary": {
+    "held_out_rows_rescored": 47,
+    "sampling": "purposive, enriched for codes, digits, parentheticals, combinations, isotopes, biosimilars, and all placebo rows; no extrapolation of disagreement frequency",
+    "tiers_absent_from_gold_test": [
+      "FUZZY_AUTO",
+      "SALT_STRIPPED",
+      "CLEANED",
+      "FUZZY_REVIEW"
+    ],
+    "held_out_disagreements": [
+      {
+        "file": "reports/gold_test.csv",
+        "line": 140,
+        "id": 139,
+        "tier": "PARENTHETICAL",
+        "surface": "DN-101 (calcitriol) - Drug",
+        "component": "calcitriol",
+        "resolved_id": "CHEMBL846",
+        "resolved_target": "CALCITRIOL",
+        "author_verdict": "correct",
+        "audit_verdict": "incorrect",
+        "disagreement": true,
+        "reason": "Under the repository criterion that distinct reformulations such as NanoPac must retain product identity, DN-101 is also a distinct proprietary oral formulation. Original human PK study documents different absorption characteristics from commercial calcitriol. This is a product-level disagreement, not a claim that its active molecule differs; DN-101 was investigational, not separately approved.",
+        "web_evidence": [
+          "https://pubmed.ncbi.nlm.nih.gov/16278401/",
+          "https://aacrjournals.org/clincancerres/article/11/21/7794/194150/Pharmacokinetics-and-Tolerability-of-a-Single-Dose"
+        ],
+        "source_trial_url": "https://clinicaltrials.gov/study/NCT00285675",
+        "snapshot_field": "data/raw/trials.json.data[605].protocolSection.armsInterventionsModule"
+      }
+    ],
+    "cross_sample_disagreements": [
+      {
+        "file": "reports/gold_dev.csv",
+        "line": 181,
+        "row": {
+          "id": "180",
+          "tier": "PARENTHETICAL",
+          "raw": "Paclitaxel loaded polymeric micelle (Genexol-PM®)",
+          "component": "Genexol-PM®",
+          "drug_id": "CHEMBL428647",
+          "resolved_name": "PACLITAXEL",
+          "score": "",
+          "rules": "extract_parenthetical|match_on_parenthetical",
+          "note": "",
+          "example_nct": "NCT01023347",
+          "verdict": "correct",
+          "reviewer_note": ""
+        },
+        "audit_verdict": "incorrect",
+        "reason": "Genexol-PM polymeric micelle is a different trial arm from conventional Genexol in the source trial.",
+        "evidence": [],
+        "source_trial_url": "https://clinicaltrials.gov/study/NCT01023347",
+        "snapshot_field": "data/raw/trials.json.data[901].protocolSection.armsInterventionsModule"
+      },
+      {
+        "file": "reports/gold_dev.csv",
+        "line": 182,
+        "row": {
+          "id": "181",
+          "tier": "PARENTHETICAL",
+          "raw": "Pegylated liposomal doxorubicin (PLD)",
+          "component": "PLD",
+          "drug_id": "CHEMBL53463",
+          "resolved_name": "DOXORUBICIN",
+          "score": "",
+          "rules": "extract_parenthetical|strip_formulation|match_on_parenthetical",
+          "note": "",
+          "example_nct": "NCT04244552",
+          "verdict": "correct",
+          "reviewer_note": ""
+        },
+        "audit_verdict": "incorrect",
+        "reason": "PLD is explicitly Doxil in source NCT04244552 and must not be substituted for conventional doxorubicin.",
+        "evidence": [
+          "https://www.accessdata.fda.gov/drugsatfda_docs/label/2016/050718s051lbl.pdf"
+        ],
+        "source_trial_url": "https://clinicaltrials.gov/study/NCT04244552",
+        "snapshot_field": "data/raw/trials.json.data[2795].protocolSection.armsInterventionsModule"
+      },
+      {
+        "file": "reports/gold_postfix.csv",
+        "line": 2,
+        "row": {
+          "id": "1",
+          "tier": "ALIAS",
+          "raw": "ABI-007 (Abraxane) and Carboplatin",
+          "component": "ABI-007",
+          "drug_id": "CHEMBL428647",
+          "resolved_name": "PACLITAXEL",
+          "score": "",
+          "rules": "extract_parenthetical|split_combination",
+          "note": "",
+          "example_nct": "NCT00274443",
+          "verdict": "correct",
+          "reviewer_note": ""
+        },
+        "audit_verdict": "incorrect",
+        "reason": "ABI-007 is Abraxane, already labelled incorrect for the same parent mapping in test and postfix id8.",
+        "evidence": [
+          "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2005/21660_ABRAXANE_biopharmr.PDF",
+          "https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/021660s047lbl.pdf"
+        ],
+        "source_trial_url": "https://clinicaltrials.gov/study/NCT00274443",
+        "snapshot_field": "data/raw/trials.json.data[1209].protocolSection.armsInterventionsModule"
+      }
+    ],
+    "corrected_as_labelled_raw": {
+      "test": {
+        "correct": 102,
+        "n": 115,
+        "precision": 0.8869565217391304,
+        "wilson95": [
+          0.8161609755177398,
+          0.9327359236214875
+        ]
+      },
+      "dev": {
+        "correct": 124,
+        "n": 137,
+        "precision": 0.9051094890510949
+      },
+      "postfix": {
+        "correct": 35,
+        "n": 38,
+        "precision": 0.9210526315789473
+      }
+    },
+    "criterion": "Use repository product-identity criterion already applied to Abraxane/CC486/NanoPac consistently, not a molecular-structure-only criterion."
+  },
+  "rows": [
+    {
+      "file": "reports/gold_test.csv",
+      "line": 2,
+      "id": 1,
+      "tier": "ALIAS",
+      "surface": "6-Thio-2'-Deoxyguanosine",
+      "component": "6-Thio-2'-Deoxyguanosine",
+      "resolved_id": "CHEMBL3250476",
+      "resolved_target": "ATEGANOSINE",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "FDA GSRS explicitly lists 6-Thio-2-deoxyguanosine as ateganosine synonym.",
+      "web_evidence": [
+        "https://precision.fda.gov/uniisearch/srs/unii/KR0RFB46DF"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT05208944",
+      "snapshot_field": "data/raw/trials.json.data[599].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 3,
+      "id": 2,
+      "tier": "ALIAS",
+      "surface": "AB122",
+      "component": "AB122",
+      "resolved_id": "CHEMBL4297856",
+      "resolved_target": "ZIMBERELIMAB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "AB122 is the development code of zimberelimab.",
+      "web_evidence": [
+        "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/zimberelimab"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT04999761",
+      "snapshot_field": "data/raw/trials.json.data[2535].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 4,
+      "id": 3,
+      "tier": "ALIAS",
+      "surface": "Abraxane (Maintenance)",
+      "component": "Abraxane",
+      "resolved_id": "CHEMBL428647",
+      "resolved_target": "PACLITAXEL",
+      "author_verdict": "incorrect",
+      "audit_verdict": "incorrect",
+      "disagreement": false,
+      "reason": "Albumin-bound paclitaxel is a distinct formulation; FDA says not to substitute for other paclitaxel products.",
+      "web_evidence": [
+        "https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/021660s047lbl.pdf"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT02027428",
+      "snapshot_field": "data/raw/trials.json.data[1691].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 5,
+      "id": 4,
+      "tier": "ALIAS",
+      "surface": "Almonertinib combined with SHR-1701",
+      "component": "SHR-1701",
+      "resolved_id": "CHEMBL5095383",
+      "resolved_target": "RETLIRAFUSP ALFA",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "SHR-1701 is retlirafusp alfa; only that component is scored.",
+      "web_evidence": [
+        "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/retlirafusp-alfa"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT05503888",
+      "snapshot_field": "data/raw/trials.json.data[1195].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 7,
+      "id": 6,
+      "tier": "ALIAS",
+      "surface": "anlotinib 12mg + AP/PC",
+      "component": "anlotinib",
+      "resolved_id": "CHEMBL4303201",
+      "resolved_target": "CATEQUENTINIB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Anlotinib is the former name of catequentinib; AP/PC is outside this scored component.",
+      "web_evidence": [
+        "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/catequentinib-hydrochloride"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT03706287",
+      "snapshot_field": "data/raw/trials.json.data[1138].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 8,
+      "id": 7,
+      "tier": "ALIAS",
+      "surface": "Anlotinib Combined With Osimertinib",
+      "component": "Anlotinib",
+      "resolved_id": "CHEMBL4303201",
+      "resolved_target": "CATEQUENTINIB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Anlotinib is catequentinib; the osimertinib component is not this row.",
+      "web_evidence": [
+        "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/catequentinib-hydrochloride"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT04029350",
+      "snapshot_field": "data/raw/trials.json.data[1345].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 9,
+      "id": 8,
+      "tier": "ALIAS",
+      "surface": "Anlotinib combined with paclitaxel and carboplatin, phase I",
+      "component": "Anlotinib",
+      "resolved_id": "CHEMBL4303201",
+      "resolved_target": "CATEQUENTINIB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Same former-name mapping; combination does not change anlotinib identity.",
+      "web_evidence": [
+        "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/catequentinib-hydrochloride"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT03636685",
+      "snapshot_field": "data/raw/trials.json.data[1389].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 13,
+      "id": 12,
+      "tier": "ALIAS",
+      "surface": "Carrelizumab + chemotherapy + apatinib",
+      "component": "apatinib",
+      "resolved_id": "CHEMBL3186534",
+      "resolved_target": "RIVOCERANIB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Apatinib is rivoceranib; camrelizumab misspelling elsewhere does not change this component.",
+      "web_evidence": [
+        "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/rivoceranib-mesylate"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT04950400",
+      "snapshot_field": "data/raw/trials.json.data[1514].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 14,
+      "id": 13,
+      "tier": "ALIAS",
+      "surface": "CC-486",
+      "component": "CC-486",
+      "resolved_id": "CHEMBL1489",
+      "resolved_target": "AZACITIDINE",
+      "author_verdict": "incorrect",
+      "audit_verdict": "incorrect",
+      "disagreement": false,
+      "reason": "CC-486 is oral azacitidine; label explicitly forbids substitution for IV/SC products.",
+      "web_evidence": [
+        "https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=0e95e33f-8aba-4f19-b332-2416580d358b&type=display"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT02223052",
+      "snapshot_field": "data/raw/trials.json.data[1153].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 17,
+      "id": 16,
+      "tier": "ALIAS",
+      "surface": "HLX10+chemo",
+      "component": "HLX10",
+      "resolved_id": "CHEMBL4594550",
+      "resolved_target": "SERPLULIMAB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "FDA GSRS lists HLX10 under serplulimab.",
+      "web_evidence": [
+        "https://precision.fda.gov/uniisearch/srs/unii/S3GQZ2K36V"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT04976647",
+      "snapshot_field": "data/raw/trials.json.data[1118].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 19,
+      "id": 18,
+      "tier": "ALIAS",
+      "surface": "IMC-A12 (cixutumumab)",
+      "component": "IMC-A12",
+      "resolved_id": "CHEMBL1743001",
+      "resolved_target": "CIXUTUMUMAB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "IMC-A12 and cixutumumab denote the same antibody.",
+      "web_evidence": [
+        "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/cixutumumab"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT00870870",
+      "snapshot_field": "data/raw/trials.json.data[2635].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 20,
+      "id": 19,
+      "tier": "ALIAS",
+      "surface": "M200 (Volociximab), Carboplatin, Paclitaxel, Bevacizumab",
+      "component": "M200",
+      "resolved_id": "CHEMBL2108061",
+      "resolved_target": "VOLOCIXIMAB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "NLM MeSH explicitly lists M200 under volociximab.",
+      "web_evidence": [
+        "https://www.ncbi.nlm.nih.gov/mesh/67516631"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT00666692",
+      "snapshot_field": "data/raw/trials.json.data[444].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 23,
+      "id": 22,
+      "tier": "ALIAS",
+      "surface": "Paclitaxel or Nab-Paclitaxel",
+      "component": "Nab-Paclitaxel",
+      "resolved_id": "CHEMBL428647",
+      "resolved_target": "PACLITAXEL",
+      "author_verdict": "incorrect",
+      "audit_verdict": "incorrect",
+      "disagreement": false,
+      "reason": "The scored Nab-Paclitaxel component loses its albumin-bound formulation; paclitaxel alternative is a separate row.",
+      "web_evidence": [
+        "https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/021660s047lbl.pdf"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT07318883",
+      "snapshot_field": "data/raw/trials.json.data[49].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 24,
+      "id": 23,
+      "tier": "ALIAS",
+      "surface": "Part A - AZD9291 in combination with MEDI4736",
+      "component": "AZD9291",
+      "resolved_id": "CHEMBL3353410",
+      "resolved_target": "OSIMERTINIB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "AZD9291 is osimertinib, not MEDI4736.",
+      "web_evidence": [
+        "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/osimertinib"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT02143466",
+      "snapshot_field": "data/raw/trials.json.data[1012].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 25,
+      "id": 24,
+      "tier": "ALIAS",
+      "surface": "PF-06647020 Q3W",
+      "component": "PF-06647020",
+      "resolved_id": "CHEMBL3989983",
+      "resolved_target": "COFETUZUMAB PELIDOTIN",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "PF-06647020 is the ADC cofetuzumab pelidotin; Q3W is a schedule.",
+      "web_evidence": [
+        "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/cofetuzumab-pelidotin"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT02222922",
+      "snapshot_field": "data/raw/trials.json.data[238].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 30,
+      "id": 29,
+      "tier": "ALIAS",
+      "surface": "TSR-022",
+      "component": "TSR-022",
+      "resolved_id": "CHEMBL4298123",
+      "resolved_target": "COBOLIMAB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "NCI trial names TSR-022 (cobolimab).",
+      "web_evidence": [
+        "https://www.cancer.gov/research/participate/clinical-trials-search/v?id=NCI-2022-02774"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT03307785",
+      "snapshot_field": "data/raw/trials.json.data[2879].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 31,
+      "id": 30,
+      "tier": "ALIAS",
+      "surface": "ZD6474, Vandetanib",
+      "component": "ZD6474",
+      "resolved_id": "CHEMBL24828",
+      "resolved_target": "VANDETANIB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Trial title and intervention identify ZD6474 as vandetanib.",
+      "web_evidence": [
+        "https://clinicaltrials.gov/study/NCT00445549"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT00753714",
+      "snapshot_field": "data/raw/trials.json.data[1198].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 52,
+      "id": 51,
+      "tier": "BLOCKED_PLACEBO",
+      "surface": "AZD9291 80 mg/40 mg + placebo",
+      "component": "placebo",
+      "resolved_id": "",
+      "resolved_target": "",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Scored component is the placebo/reference control, so withholding active-drug identity is correct. For coadministration strings this verdict applies only to placebo component, not the separately named active drug.",
+      "web_evidence": [],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT02296125",
+      "snapshot_field": "data/raw/trials.json.data[2888].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 53,
+      "id": 52,
+      "tier": "BLOCKED_PLACEBO",
+      "surface": "Camrelizumab + chemotherapy+placebo",
+      "component": "placebo",
+      "resolved_id": "",
+      "resolved_target": "",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Scored component is the placebo/reference control, so withholding active-drug identity is correct. For coadministration strings this verdict applies only to placebo component, not the separately named active drug.",
+      "web_evidence": [],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT06276933",
+      "snapshot_field": "data/raw/trials.json.data[2801].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 54,
+      "id": 53,
+      "tier": "BLOCKED_PLACEBO",
+      "surface": "Comparator: Blinded Placebo",
+      "component": "Comparator: Blinded Placebo",
+      "resolved_id": "",
+      "resolved_target": "",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Scored component is the placebo/reference control, so withholding active-drug identity is correct. For coadministration strings this verdict applies only to placebo component, not the separately named active drug.",
+      "web_evidence": [],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT00818675",
+      "snapshot_field": "data/raw/trials.json.data[1694].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 55,
+      "id": 54,
+      "tier": "BLOCKED_PLACEBO",
+      "surface": "Placebo and Erlotinib",
+      "component": "Placebo",
+      "resolved_id": "",
+      "resolved_target": "",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Scored component is the placebo/reference control, so withholding active-drug identity is correct. For coadministration strings this verdict applies only to placebo component, not the separately named active drug.",
+      "web_evidence": [],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT01377376",
+      "snapshot_field": "data/raw/trials.json.data[1340].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 56,
+      "id": 55,
+      "tier": "BLOCKED_PLACEBO",
+      "surface": "placebo and rhG-CSF 5ug/kg/d",
+      "component": "placebo",
+      "resolved_id": "",
+      "resolved_target": "",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Scored component is the placebo/reference control, so withholding active-drug identity is correct. For coadministration strings this verdict applies only to placebo component, not the separately named active drug.",
+      "web_evidence": [],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT01560195",
+      "snapshot_field": "data/raw/trials.json.data[895].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 57,
+      "id": 56,
+      "tier": "BLOCKED_PLACEBO",
+      "surface": "Placebo Erlotinib 150/100mg",
+      "component": "Placebo Erlotinib 150/100mg",
+      "resolved_id": "",
+      "resolved_target": "",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Scored component is the placebo/reference control, so withholding active-drug identity is correct. For coadministration strings this verdict applies only to placebo component, not the separately named active drug.",
+      "web_evidence": [],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT02296125",
+      "snapshot_field": "data/raw/trials.json.data[2888].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 58,
+      "id": 57,
+      "tier": "BLOCKED_PLACEBO",
+      "surface": "placebo plus docetaxel",
+      "component": "placebo",
+      "resolved_id": "",
+      "resolved_target": "",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Scored component is the placebo/reference control, so withholding active-drug identity is correct. For coadministration strings this verdict applies only to placebo component, not the separately named active drug.",
+      "web_evidence": [],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT00805194",
+      "snapshot_field": "data/raw/trials.json.data[1706].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 59,
+      "id": 58,
+      "tier": "BLOCKED_PLACEBO",
+      "surface": "Zipalertinib Matching-placebo",
+      "component": "Zipalertinib Matching-placebo",
+      "resolved_id": "",
+      "resolved_target": "",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Scored component is the placebo/reference control, so withholding active-drug identity is correct. For coadministration strings this verdict applies only to placebo component, not the separately named active drug.",
+      "web_evidence": [],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT07128199",
+      "snapshot_field": "data/raw/trials.json.data[180].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 67,
+      "id": 66,
+      "tier": "CONTAINED_ALIAS",
+      "surface": "Apatinib single agent arm",
+      "component": "Apatinib",
+      "resolved_id": "CHEMBL3186534",
+      "resolved_target": "RIVOCERANIB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Apatinib single-agent arm still names rivoceranib.",
+      "web_evidence": [
+        "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/rivoceranib-mesylate"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT02540824",
+      "snapshot_field": "data/raw/trials.json.data[638].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 68,
+      "id": 67,
+      "tier": "CONTAINED_ALIAS",
+      "surface": "Bevacizumab Biosimilar HLX04",
+      "component": "Bevacizumab Biosimilar",
+      "resolved_id": "CHEMBL1201583",
+      "resolved_target": "BEVACIZUMAB",
+      "author_verdict": "incorrect",
+      "audit_verdict": "incorrect",
+      "disagreement": false,
+      "reason": "Manufacturer identifies HLX04 as its own bevacizumab biosimilar, not originator product.",
+      "web_evidence": [
+        "https://www.henlius.com/en/newsd/0/31147.html"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT06334757",
+      "snapshot_field": "data/raw/trials.json.data[2194].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 69,
+      "id": 68,
+      "tier": "CONTAINED_ALIAS",
+      "surface": "Bevacizumab-Pfizer",
+      "component": "Bevacizumab",
+      "resolved_id": "CHEMBL1201583",
+      "resolved_target": "BEVACIZUMAB",
+      "author_verdict": "incorrect",
+      "audit_verdict": "incorrect",
+      "disagreement": false,
+      "reason": "Trial protocol identifies Bevacizumab-Pfizer as PF-06439535 biosimilar.",
+      "web_evidence": [
+        "https://cdn.clinicaltrials.gov/large-docs/99/NCT02364999/Prot_001.pdf"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT02364999",
+      "snapshot_field": "data/raw/trials.json.data[2027].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 86,
+      "id": 85,
+      "tier": "CONTAINED_ALIAS",
+      "surface": "Part C - AZD6094 monotherapy (Japan only)",
+      "component": "- AZD6094",
+      "resolved_id": "CHEMBL3334567",
+      "resolved_target": "SAVOLITINIB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "NCI gives AZD6094 as savolitinib; Japan qualifier does not change molecule.",
+      "web_evidence": [
+        "https://dctd.cancer.gov/drug-discovery-development/reagents-materials/formulary/about/agents/savolitinib"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT02143466",
+      "snapshot_field": "data/raw/trials.json.data[1012].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 91,
+      "id": 90,
+      "tier": "CONTAINED_ALIAS",
+      "surface": "Phase II ARRY-614 + nivolumab+ipilimumab (melanoma)",
+      "component": "ARRY-614",
+      "resolved_id": "CHEMBL3991932",
+      "resolved_target": "PEXMETINIB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Original pharmacology research identifies ARRY-614 as pexmetinib.",
+      "web_evidence": [
+        "https://aacrjournals.org/cancerres/article/76/16/4841/543854/Pexmetinib-A-Novel-Dual-Inhibitor-of-Tie2-and-p38"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT04074967",
+      "snapshot_field": "data/raw/trials.json.data[263].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 92,
+      "id": 91,
+      "tier": "CONTAINED_ALIAS",
+      "surface": "Phase II ARRY-614 + nivolumab+ipilimumab (RCC)",
+      "component": "ARRY-614",
+      "resolved_id": "CHEMBL3991932",
+      "resolved_target": "PEXMETINIB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Same ARRY-614 identity in RCC cohort; this is not the nivolumab/ipilimumab row.",
+      "web_evidence": [
+        "https://aacrjournals.org/cancerres/article/76/16/4841/543854/Pexmetinib-A-Novel-Dual-Inhibitor-of-Tie2-and-p38"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT04074967",
+      "snapshot_field": "data/raw/trials.json.data[263].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 93,
+      "id": 92,
+      "tier": "CONTAINED_ALIAS",
+      "surface": "Post-therapy 18F-thymidine (FLT) PET/CT to assess for pemetrexed induced tumor FLT \"flare\"",
+      "component": "thymidine",
+      "resolved_id": "CHEMBL52609",
+      "resolved_target": "DOXRIBTIMINE",
+      "author_verdict": "incorrect",
+      "audit_verdict": "incorrect",
+      "disagreement": false,
+      "reason": "18F-FLT is fluorothymidine tracer, not unlabelled thymidine/doxribtimine.",
+      "web_evidence": [
+        "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/fluorothymidine-f-18"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT02274038",
+      "snapshot_field": "data/raw/trials.json.data[746].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 134,
+      "id": 133,
+      "tier": "PARENTHETICAL",
+      "surface": "[18F]-αvβ6-BP",
+      "component": "18F",
+      "resolved_id": "CHEMBL2030434",
+      "resolved_target": "FLUDEOXYGLUCOSE F 18",
+      "author_verdict": "incorrect",
+      "audit_verdict": "incorrect",
+      "disagreement": false,
+      "reason": "Trial separately describes avb6-binding peptide and FDG imaging; sharing isotope does not make them identical.",
+      "web_evidence": [
+        "https://clinicaltrials.gov/study/NCT05452005"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT05452005",
+      "snapshot_field": "data/raw/trials.json.data[1547].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 135,
+      "id": 134,
+      "tier": "PARENTHETICAL",
+      "surface": "[18F]F-AraG Imaging",
+      "component": "18F",
+      "resolved_id": "CHEMBL2030434",
+      "resolved_target": "FLUDEOXYGLUCOSE F 18",
+      "author_verdict": "incorrect",
+      "audit_verdict": "incorrect",
+      "disagreement": false,
+      "reason": "F-AraG is a distinct radiotracer, not FDG.",
+      "web_evidence": [
+        "https://cdn.clinicaltrials.gov/large-docs/40/NCT04678440/Prot_SAP_000.pdf"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT04678440",
+      "snapshot_field": "data/raw/trials.json.data[961].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 136,
+      "id": 135,
+      "tier": "PARENTHETICAL",
+      "surface": "[18F]F-ARAG PET",
+      "component": "18F",
+      "resolved_id": "CHEMBL2030434",
+      "resolved_target": "FLUDEOXYGLUCOSE F 18",
+      "author_verdict": "incorrect",
+      "audit_verdict": "incorrect",
+      "disagreement": false,
+      "reason": "Capitalization does not change F-AraG identity.",
+      "web_evidence": [
+        "https://cdn.clinicaltrials.gov/large-docs/40/NCT04678440/Prot_SAP_000.pdf"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT06084806",
+      "snapshot_field": "data/raw/trials.json.data[913].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 137,
+      "id": 136,
+      "tier": "PARENTHETICAL",
+      "surface": "[18F]F-AraG PET imaging",
+      "component": "18F",
+      "resolved_id": "CHEMBL2030434",
+      "resolved_target": "FLUDEOXYGLUCOSE F 18",
+      "author_verdict": "incorrect",
+      "audit_verdict": "incorrect",
+      "disagreement": false,
+      "reason": "PET imaging qualifier does not make F-AraG FDG.",
+      "web_evidence": [
+        "https://cdn.clinicaltrials.gov/large-docs/40/NCT04678440/Prot_SAP_000.pdf"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT06457789",
+      "snapshot_field": "data/raw/trials.json.data[2646].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 138,
+      "id": 137,
+      "tier": "PARENTHETICAL",
+      "surface": "[18F]F-PDL1-3",
+      "component": "18F",
+      "resolved_id": "CHEMBL2030434",
+      "resolved_target": "FLUDEOXYGLUCOSE F 18",
+      "author_verdict": "incorrect",
+      "audit_verdict": "incorrect",
+      "disagreement": false,
+      "reason": "Snapshot NCT07848243 lists 18F-FDG and [18F]F-PDL1-3 as two distinct interventions; isotope-only match is wrong.",
+      "web_evidence": [],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT07848243",
+      "snapshot_field": "data/raw/trials.json.data[2803].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 139,
+      "id": 138,
+      "tier": "PARENTHETICAL",
+      "surface": "cisplatin (cis-diamminedichloroplatinum(II) (CDDP))",
+      "component": "CDDP",
+      "resolved_id": "CHEMBL11359",
+      "resolved_target": "CISPLATIN",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "CDDP is established abbreviation for cisplatin.",
+      "web_evidence": [
+        "https://www.bccancer.bc.ca/drug-database-site/Drug%20Index/Cisplatin_monograph.pdf"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT07495098",
+      "snapshot_field": "data/raw/trials.json.data[1938].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 140,
+      "id": 139,
+      "tier": "PARENTHETICAL",
+      "surface": "DN-101 (calcitriol) - Drug",
+      "component": "calcitriol",
+      "resolved_id": "CHEMBL846",
+      "resolved_target": "CALCITRIOL",
+      "author_verdict": "correct",
+      "audit_verdict": "incorrect",
+      "disagreement": true,
+      "reason": "Under the repository criterion that distinct reformulations such as NanoPac must retain product identity, DN-101 is also a distinct proprietary oral formulation. Original human PK study documents different absorption characteristics from commercial calcitriol. This is a product-level disagreement, not a claim that its active molecule differs; DN-101 was investigational, not separately approved.",
+      "web_evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/16278401/",
+        "https://aacrjournals.org/clincancerres/article/11/21/7794/194150/Pharmacokinetics-and-Tolerability-of-a-Single-Dose"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT00285675",
+      "snapshot_field": "data/raw/trials.json.data[605].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 141,
+      "id": 140,
+      "tier": "PARENTHETICAL",
+      "surface": "GV20-0251 and Pembrolizumab [KEYTRUDA®]",
+      "component": "KEYTRUDA®",
+      "resolved_id": "CHEMBL3137343",
+      "resolved_target": "PEMBROLIZUMAB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "KEYTRUDA names the pembrolizumab component, not GV20-0251.",
+      "web_evidence": [
+        "https://www.cancer.gov/about-cancer/treatment/drugs/pembrolizumab"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT05669430",
+      "snapshot_field": "data/raw/trials.json.data[522].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 142,
+      "id": 141,
+      "tier": "PARENTHETICAL",
+      "surface": "NanoPac (sterile nanoparticulate paclitaxel) Powder for Suspension",
+      "component": "sterile nanoparticulate paclitaxel",
+      "resolved_id": "CHEMBL428647",
+      "resolved_target": "PACLITAXEL",
+      "author_verdict": "incorrect",
+      "audit_verdict": "incorrect",
+      "disagreement": false,
+      "reason": "Intratumoral submicron paclitaxel formulation loses its product identity when mapped to conventional paclitaxel.",
+      "web_evidence": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8421313/"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT04314895",
+      "snapshot_field": "data/raw/trials.json.data[1189].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 143,
+      "id": 142,
+      "tier": "PARENTHETICAL",
+      "surface": "NGM707 plus pembrolizumab (KEYTRUDA®)",
+      "component": "KEYTRUDA®",
+      "resolved_id": "CHEMBL3137343",
+      "resolved_target": "PEMBROLIZUMAB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "KEYTRUDA names pembrolizumab; NGM707 is another component.",
+      "web_evidence": [
+        "https://www.cancer.gov/about-cancer/treatment/drugs/pembrolizumab"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT04913337",
+      "snapshot_field": "data/raw/trials.json.data[974].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 144,
+      "id": 143,
+      "tier": "PARENTHETICAL",
+      "surface": "NGM831 and NGM438 plus pembrolizumab (KEYTRUDA®)",
+      "component": "KEYTRUDA®",
+      "resolved_id": "CHEMBL3137343",
+      "resolved_target": "PEMBROLIZUMAB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "KEYTRUDA names pembrolizumab; NGM831 and NGM438 are other components.",
+      "web_evidence": [
+        "https://www.cancer.gov/about-cancer/treatment/drugs/pembrolizumab"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT05215574",
+      "snapshot_field": "data/raw/trials.json.data[963].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 145,
+      "id": 144,
+      "tier": "PARENTHETICAL",
+      "surface": "Steroid mouthwash (dexamethasone or equivalent)",
+      "component": "dexamethasone or equivalent",
+      "resolved_id": "CHEMBL384467",
+      "resolved_target": "DEXAMETHASONE",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Dexamethasone is explicitly one allowed steroid mouthwash in source trial. This verifies a possible named intervention, not proof every participant received it. Product granularity remains underspecified.",
+      "web_evidence": [],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT06788912",
+      "snapshot_field": "data/raw/trials.json.data[534].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 146,
+      "id": 145,
+      "tier": "PARENTHETICAL",
+      "surface": "TORIPALIMAB INJECTION (JS001 ) combine with chemotherapy",
+      "component": "JS001",
+      "resolved_id": "CHEMBL4297843",
+      "resolved_target": "TORIPALIMAB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "JS001 identifies toripalimab; injection and chemotherapy qualifiers do not change that component.",
+      "web_evidence": [
+        "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/toripalimab"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT06709274",
+      "snapshot_field": "data/raw/trials.json.data[951].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 147,
+      "id": 146,
+      "tier": "PARENTHETICAL",
+      "surface": "VELCADE TM (bortezomib) for Injection, or PS-341",
+      "component": "bortezomib",
+      "resolved_id": "CHEMBL325041",
+      "resolved_target": "BORTEZOMIB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Velcade and PS-341 are bortezomib names.",
+      "web_evidence": [
+        "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/bortezomib"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT00064636",
+      "snapshot_field": "data/raw/trials.json.data[2260].protocolSection.armsInterventionsModule"
+    },
+    {
+      "file": "reports/gold_test.csv",
+      "line": 148,
+      "id": 147,
+      "tier": "PARENTHETICAL",
+      "surface": "VELCADE™ (bortezomib) for Injection (formerly PS-341)",
+      "component": "bortezomib",
+      "resolved_id": "CHEMBL325041",
+      "resolved_target": "BORTEZOMIB",
+      "author_verdict": "correct",
+      "audit_verdict": "correct",
+      "disagreement": false,
+      "reason": "Former code PS-341 and brand Velcade identify bortezomib despite trademark characters.",
+      "web_evidence": [
+        "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/bortezomib"
+      ],
+      "source_trial_url": "https://clinicaltrials.gov/study/NCT00051974",
+      "snapshot_field": "data/raw/trials.json.data[1617].protocolSection.armsInterventionsModule"
+    }
+  ]
+}

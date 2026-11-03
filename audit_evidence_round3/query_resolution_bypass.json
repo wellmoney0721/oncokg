@@ -1,0 +1,1276 @@
+[
+  {
+    "surface": "Mvasi",
+    "pipeline_resolution": {
+      "raw": "Mvasi",
+      "components": [
+        {
+          "component": "Mvasi",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "query_link": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "Mvasi",
+        "matched_alias": "Mvasi"
+      }
+    ],
+    "query_answer": {
+      "question": "What trials evaluate Mvasi?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "Mvasi",
+          "matched_alias": "Mvasi"
+        }
+      ],
+      "answer": "Trials evaluating this drug:\n  - NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00955305]\n  - NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00445848]\n  - NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB [NCT03616691]\n  - NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00531960]\n  - NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB [NCT03390686]\n  - NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT01057212]\n  - NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB [NCT06400472]\n  - NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00271505]\n  - NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00251524]\n  - NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00741195]\n  - NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00976677]\n  - NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00101348]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00955305",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00955305",
+          "stated_intervention": "Bevacizumab",
+          "title": "Paclitaxel, Carboplatin, and Bevacizumab With or Without Cixutumumab in Treating Patients With Stage IV or Recurrent Non-small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00445848",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00445848",
+          "stated_intervention": "bevacizumab",
+          "title": "S0636: Erlotinib and Bevacizumab in Never-Smokers With Stage IIIB or Stage IV Primary Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03616691",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03616691",
+          "stated_intervention": "Bevacizumab",
+          "title": "Atezolizumab Monotherapy and Consequent Therapy With Atezolizumab Plus Bevacizumab for NSCLC",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00531960",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00531960",
+          "stated_intervention": "Bevacizumab",
+          "title": "A Study of Tarceva (Erlotinib) in Combination With Avastin (Bevacizumab) in Patients With Advanced Non-Small Cell Lung Cancer.",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03390686",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03390686",
+          "stated_intervention": "Bevacizumab",
+          "title": "A Trial to Compare the Efficacy, Safety, Pharmacokinetics and Immunogenicity of HD204 to Avastin® in Advanced Non-squamous Non-small Cell Lung Cancer Patients",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01057212",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01057212",
+          "stated_intervention": "bevacizumab",
+          "title": "Trial of Bevacizumab and Ixabepilone for Advanced or Metastatic Non-small Cell Lung Cancer (NSCLC)",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT06400472",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT06400472",
+          "stated_intervention": "bevacizumab",
+          "title": "A Study of Sofe-M in Participants With Selected Advanced Solid Tumors",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00271505",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00271505",
+          "stated_intervention": "Bevacizumab (Avastin)",
+          "title": "Avastin/Docetaxel/Carboplatin in Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00251524",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00251524",
+          "stated_intervention": "Bevacizumab, Oxaliplatin, Pemetrexed",
+          "title": "A Phase II Study of Eloxatin and Alimta in Combination With Bevacizumab in Advanced Non-Squamous NSCLC",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00741195",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00741195",
+          "stated_intervention": "Bevacizumab",
+          "title": "Docetaxel Plus Bevacizumab in Metastatic Non Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00976677",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00976677",
+          "stated_intervention": "bevacizumab",
+          "title": "Carboplatin, Paclitaxel, and Bevacizumab With or Without Erlotinib Hydrochloride in Treating Non-Smokers With Advanced Non-Small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00101348",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00101348",
+          "stated_intervention": "bevacizumab",
+          "title": "Erlotinib and Cetuximab With or Without Bevacizumab in Treating Patients With Metastatic or Unresectable Kidney, Colorectal, Head and Neck, Pancreatic, or Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "surface": "Alymsys",
+    "pipeline_resolution": {
+      "raw": "Alymsys",
+      "components": [
+        {
+          "component": "Alymsys",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "query_link": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "Alymsys",
+        "matched_alias": "Alymsys"
+      }
+    ],
+    "query_answer": {
+      "question": "What trials evaluate Alymsys?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "Alymsys",
+          "matched_alias": "Alymsys"
+        }
+      ],
+      "answer": "Trials evaluating this drug:\n  - NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00955305]\n  - NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00445848]\n  - NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB [NCT03616691]\n  - NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00531960]\n  - NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB [NCT03390686]\n  - NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT01057212]\n  - NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB [NCT06400472]\n  - NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00271505]\n  - NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00251524]\n  - NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00741195]\n  - NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00976677]\n  - NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00101348]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00955305",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00955305",
+          "stated_intervention": "Bevacizumab",
+          "title": "Paclitaxel, Carboplatin, and Bevacizumab With or Without Cixutumumab in Treating Patients With Stage IV or Recurrent Non-small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00445848",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00445848",
+          "stated_intervention": "bevacizumab",
+          "title": "S0636: Erlotinib and Bevacizumab in Never-Smokers With Stage IIIB or Stage IV Primary Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03616691",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03616691",
+          "stated_intervention": "Bevacizumab",
+          "title": "Atezolizumab Monotherapy and Consequent Therapy With Atezolizumab Plus Bevacizumab for NSCLC",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00531960",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00531960",
+          "stated_intervention": "Bevacizumab",
+          "title": "A Study of Tarceva (Erlotinib) in Combination With Avastin (Bevacizumab) in Patients With Advanced Non-Small Cell Lung Cancer.",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03390686",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03390686",
+          "stated_intervention": "Bevacizumab",
+          "title": "A Trial to Compare the Efficacy, Safety, Pharmacokinetics and Immunogenicity of HD204 to Avastin® in Advanced Non-squamous Non-small Cell Lung Cancer Patients",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01057212",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01057212",
+          "stated_intervention": "bevacizumab",
+          "title": "Trial of Bevacizumab and Ixabepilone for Advanced or Metastatic Non-small Cell Lung Cancer (NSCLC)",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT06400472",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT06400472",
+          "stated_intervention": "bevacizumab",
+          "title": "A Study of Sofe-M in Participants With Selected Advanced Solid Tumors",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00271505",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00271505",
+          "stated_intervention": "Bevacizumab (Avastin)",
+          "title": "Avastin/Docetaxel/Carboplatin in Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00251524",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00251524",
+          "stated_intervention": "Bevacizumab, Oxaliplatin, Pemetrexed",
+          "title": "A Phase II Study of Eloxatin and Alimta in Combination With Bevacizumab in Advanced Non-Squamous NSCLC",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00741195",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00741195",
+          "stated_intervention": "Bevacizumab",
+          "title": "Docetaxel Plus Bevacizumab in Metastatic Non Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00976677",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00976677",
+          "stated_intervention": "bevacizumab",
+          "title": "Carboplatin, Paclitaxel, and Bevacizumab With or Without Erlotinib Hydrochloride in Treating Non-Smokers With Advanced Non-Small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00101348",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00101348",
+          "stated_intervention": "bevacizumab",
+          "title": "Erlotinib and Cetuximab With or Without Bevacizumab in Treating Patients With Metastatic or Unresectable Kidney, Colorectal, Head and Neck, Pancreatic, or Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "surface": "Zirabev",
+    "pipeline_resolution": {
+      "raw": "Zirabev",
+      "components": [
+        {
+          "component": "Zirabev",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "query_link": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "Zirabev",
+        "matched_alias": "Zirabev"
+      }
+    ],
+    "query_answer": {
+      "question": "What trials evaluate Zirabev?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "Zirabev",
+          "matched_alias": "Zirabev"
+        }
+      ],
+      "answer": "Trials evaluating this drug:\n  - NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00955305]\n  - NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00445848]\n  - NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB [NCT03616691]\n  - NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00531960]\n  - NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB [NCT03390686]\n  - NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT01057212]\n  - NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB [NCT06400472]\n  - NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00271505]\n  - NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00251524]\n  - NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00741195]\n  - NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00976677]\n  - NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00101348]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00955305",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00955305",
+          "stated_intervention": "Bevacizumab",
+          "title": "Paclitaxel, Carboplatin, and Bevacizumab With or Without Cixutumumab in Treating Patients With Stage IV or Recurrent Non-small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00445848",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00445848",
+          "stated_intervention": "bevacizumab",
+          "title": "S0636: Erlotinib and Bevacizumab in Never-Smokers With Stage IIIB or Stage IV Primary Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03616691",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03616691",
+          "stated_intervention": "Bevacizumab",
+          "title": "Atezolizumab Monotherapy and Consequent Therapy With Atezolizumab Plus Bevacizumab for NSCLC",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00531960",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00531960",
+          "stated_intervention": "Bevacizumab",
+          "title": "A Study of Tarceva (Erlotinib) in Combination With Avastin (Bevacizumab) in Patients With Advanced Non-Small Cell Lung Cancer.",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03390686",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03390686",
+          "stated_intervention": "Bevacizumab",
+          "title": "A Trial to Compare the Efficacy, Safety, Pharmacokinetics and Immunogenicity of HD204 to Avastin® in Advanced Non-squamous Non-small Cell Lung Cancer Patients",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01057212",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01057212",
+          "stated_intervention": "bevacizumab",
+          "title": "Trial of Bevacizumab and Ixabepilone for Advanced or Metastatic Non-small Cell Lung Cancer (NSCLC)",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT06400472",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT06400472",
+          "stated_intervention": "bevacizumab",
+          "title": "A Study of Sofe-M in Participants With Selected Advanced Solid Tumors",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00271505",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00271505",
+          "stated_intervention": "Bevacizumab (Avastin)",
+          "title": "Avastin/Docetaxel/Carboplatin in Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00251524",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00251524",
+          "stated_intervention": "Bevacizumab, Oxaliplatin, Pemetrexed",
+          "title": "A Phase II Study of Eloxatin and Alimta in Combination With Bevacizumab in Advanced Non-Squamous NSCLC",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00741195",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00741195",
+          "stated_intervention": "Bevacizumab",
+          "title": "Docetaxel Plus Bevacizumab in Metastatic Non Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00976677",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00976677",
+          "stated_intervention": "bevacizumab",
+          "title": "Carboplatin, Paclitaxel, and Bevacizumab With or Without Erlotinib Hydrochloride in Treating Non-Smokers With Advanced Non-Small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00101348",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00101348",
+          "stated_intervention": "bevacizumab",
+          "title": "Erlotinib and Cetuximab With or Without Bevacizumab in Treating Patients With Metastatic or Unresectable Kidney, Colorectal, Head and Neck, Pancreatic, or Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "surface": "bevacizumab-awwb",
+    "pipeline_resolution": {
+      "raw": "bevacizumab-awwb",
+      "components": [
+        {
+          "component": "bevacizumab-awwb",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "query_link": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "bevacizumab-awwb",
+        "matched_alias": "Bevacizumab awwb"
+      }
+    ],
+    "query_answer": {
+      "question": "What trials evaluate bevacizumab-awwb?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "bevacizumab-awwb",
+          "matched_alias": "Bevacizumab awwb"
+        }
+      ],
+      "answer": "Trials evaluating this drug:\n  - NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00955305]\n  - NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00445848]\n  - NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB [NCT03616691]\n  - NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00531960]\n  - NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB [NCT03390686]\n  - NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT01057212]\n  - NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB [NCT06400472]\n  - NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00271505]\n  - NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00251524]\n  - NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00741195]\n  - NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB [NCT00976677]\n  - NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB [NCT00101348]\n\nScope: 12 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 12,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT00955305 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00955305",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00955305",
+          "stated_intervention": "Bevacizumab",
+          "title": "Paclitaxel, Carboplatin, and Bevacizumab With or Without Cixutumumab in Treating Patients With Stage IV or Recurrent Non-small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00445848 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00445848",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00445848",
+          "stated_intervention": "bevacizumab",
+          "title": "S0636: Erlotinib and Bevacizumab in Never-Smokers With Stage IIIB or Stage IV Primary Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT03616691 (PHASE2, UNKNOWN) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03616691",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03616691",
+          "stated_intervention": "Bevacizumab",
+          "title": "Atezolizumab Monotherapy and Consequent Therapy With Atezolizumab Plus Bevacizumab for NSCLC",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00531960 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00531960",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00531960",
+          "stated_intervention": "Bevacizumab",
+          "title": "A Study of Tarceva (Erlotinib) in Combination With Avastin (Bevacizumab) in Patients With Advanced Non-Small Cell Lung Cancer.",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT03390686 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03390686",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03390686",
+          "stated_intervention": "Bevacizumab",
+          "title": "A Trial to Compare the Efficacy, Safety, Pharmacokinetics and Immunogenicity of HD204 to Avastin® in Advanced Non-squamous Non-small Cell Lung Cancer Patients",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        },
+        {
+          "statement": "NCT01057212 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01057212",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01057212",
+          "stated_intervention": "bevacizumab",
+          "title": "Trial of Bevacizumab and Ixabepilone for Advanced or Metastatic Non-small Cell Lung Cancer (NSCLC)",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT06400472 (PHASE1, RECRUITING) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT06400472",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT06400472",
+          "stated_intervention": "bevacizumab",
+          "title": "A Study of Sofe-M in Participants With Selected Advanced Solid Tumors",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT00271505 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00271505",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00271505",
+          "stated_intervention": "Bevacizumab (Avastin)",
+          "title": "Avastin/Docetaxel/Carboplatin in Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00251524 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00251524",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00251524",
+          "stated_intervention": "Bevacizumab, Oxaliplatin, Pemetrexed",
+          "title": "A Phase II Study of Eloxatin and Alimta in Combination With Bevacizumab in Advanced Non-Squamous NSCLC",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00741195 (PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00741195",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00741195",
+          "stated_intervention": "Bevacizumab",
+          "title": "Docetaxel Plus Bevacizumab in Metastatic Non Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00976677 (PHASE2, TERMINATED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00976677",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00976677",
+          "stated_intervention": "bevacizumab",
+          "title": "Carboplatin, Paclitaxel, and Bevacizumab With or Without Erlotinib Hydrochloride in Treating Non-Smokers With Advanced Non-Small Cell Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT00101348 (PHASE1, PHASE2, COMPLETED) evaluates BEVACIZUMAB",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT00101348",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT00101348",
+          "stated_intervention": "bevacizumab",
+          "title": "Erlotinib and Cetuximab With or Without Bevacizumab in Treating Patients With Metastatic or Unresectable Kidney, Colorectal, Head and Neck, Pancreatic, or Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "surface": "platinum",
+    "pipeline_resolution": {
+      "raw": "platinum",
+      "components": [
+        {
+          "component": "platinum",
+          "tier": "BLOCKED_CLASS_TERM",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "class_term_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "category term, not an identifiable substance"
+        }
+      ]
+    },
+    "query_link": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1235478",
+        "label": "PLATINUM",
+        "matched_text": "platinum",
+        "matched_alias": "PLATINUM"
+      }
+    ],
+    "query_answer": {
+      "question": "What trials evaluate platinum?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1235478",
+          "label": "PLATINUM",
+          "matched_text": "platinum",
+          "matched_alias": "PLATINUM"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "surface": "tobramycin",
+    "pipeline_resolution": {
+      "raw": "tobramycin",
+      "components": [
+        {
+          "component": "tobramycin",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [],
+          "matched_alias": null,
+          "candidates": null
+        }
+      ]
+    },
+    "query_link": [],
+    "query_answer": {
+      "question": "What trials evaluate tobramycin?",
+      "intent": "trials_for_entity",
+      "entities": [],
+      "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "surface": "corticosteroid",
+    "pipeline_resolution": {
+      "raw": "corticosteroid",
+      "components": [
+        {
+          "component": "corticosteroid",
+          "tier": "BLOCKED_CLASS_TERM",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "class_term_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "category term, not an identifiable substance"
+        }
+      ]
+    },
+    "query_link": [],
+    "query_answer": {
+      "question": "What trials evaluate corticosteroid?",
+      "intent": "trials_for_entity",
+      "entities": [],
+      "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "surface": "liposomal doxorubicin",
+    "pipeline_resolution": {
+      "raw": "liposomal doxorubicin",
+      "components": [
+        {
+          "component": "doxorubicin",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "query_link": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL53463",
+        "label": "DOXORUBICIN",
+        "matched_text": "doxorubicin",
+        "matched_alias": "DOXORUBICIN"
+      }
+    ],
+    "query_answer": {
+      "question": "What trials evaluate liposomal doxorubicin?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL53463",
+          "label": "DOXORUBICIN",
+          "matched_text": "doxorubicin",
+          "matched_alias": "DOXORUBICIN"
+        }
+      ],
+      "answer": "Trials evaluating this drug:\n  - NCT01970540 (PHASE1, COMPLETED) evaluates DOXORUBICIN [NCT01970540]\n  - NCT04224337 (PHASE2, COMPLETED) evaluates DOXORUBICIN [NCT04224337]\n  - NCT01640847 (PHASE2, WITHDRAWN) evaluates DOXORUBICIN [NCT01640847]\n\nScope: 3 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 3,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT01970540 (PHASE1, COMPLETED) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01970540",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01970540",
+          "stated_intervention": "Doxorubicin",
+          "title": "Study Escalating Doses of PM01183 in Combination With Fixed Doxorubicin in Patients With Specific Advanced Unresectable Solid Tumors",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT04224337 (PHASE2, COMPLETED) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04224337",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04224337",
+          "stated_intervention": "Durvalumab + doxorubicin + ifosfamide",
+          "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT01640847 (PHASE2, WITHDRAWN) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01640847",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 0.98,
+          "resolution_tier": "ALIAS",
+          "url": "https://clinicaltrials.gov/study/NCT01640847",
+          "stated_intervention": "High Intensity Focused Ultrasound (HIFU) in combination with ThermoDox",
+          "title": "MRI Guided High Intensity Focused Ultrasound (HIFU) and ThermoDox for Palliation of Painful Bone Metastases",
+          "status": "WITHDRAWN",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "surface": "NanoPac",
+    "pipeline_resolution": {
+      "raw": "NanoPac",
+      "components": [
+        {
+          "component": "NanoPac",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "query_link": [],
+    "query_answer": {
+      "question": "What trials evaluate NanoPac?",
+      "intent": "trials_for_entity",
+      "entities": [],
+      "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "surface": "CC-486",
+    "pipeline_resolution": {
+      "raw": "CC-486",
+      "components": [
+        {
+          "component": "CC-486",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "query_link": [],
+    "query_answer": {
+      "question": "What trials evaluate CC-486?",
+      "intent": "trials_for_entity",
+      "entities": [],
+      "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  }
+]

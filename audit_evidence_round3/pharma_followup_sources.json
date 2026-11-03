@@ -1,0 +1,30 @@
+{
+  "readme_regimen_error": {
+    "source": "README.md:423-426",
+    "claim": "HS-20117+FOLFIRI and +mFOLFOX6 drop capecitabine",
+    "finding": "Neither cited regimen contains capecitabine. FOLFIRI contains leucovorin, fluorouracil, irinotecan; mFOLFOX6 contains leucovorin, fluorouracil, oxaliplatin.",
+    "evidence": [
+      "https://www.cancer.gov/about-cancer/treatment/drugs/folfiri",
+      "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/folfox-regimen"
+    ]
+  },
+  "single_product_split": {
+    "product": "DCVAC/LuCa",
+    "identity": "one autologous dendritic-cell active cellular immunotherapy",
+    "evidence": [
+      "https://pubmed.ncbi.nlm.nih.gov/34284344/",
+      "https://www.clinicaltrialsregister.eu/ctr-search/trial/2014-003084-37/SK"
+    ]
+  },
+  "second_wrong_adenovirus_edge": {
+    "trial": "NCT00062907",
+    "snapshot_field": "data/raw/trials.json.data[2248].protocolSection.armsInterventionsModule.interventions[1]",
+    "actual": "Recombinant adenovirus- Ad/L523S",
+    "wrong_target": "TASADENOTUREV CHEMBL3990045",
+    "finding": "Ad/L523S is a replication-defective vector carrying L523S; tasadenoturev is the different delta24RGD/DNX2401 construct.",
+    "evidence": [
+      "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/recombinant-adenovirus-l523s-vaccine",
+      "https://precision.fda.gov/uniisearch/srs/unii/79ME7DT193"
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+[
+  {
+    "raw": "autologous dendritic cell-adenovirus CCL21 vaccine",
+    "components": [
+      {
+        "component": "adenovirus",
+        "tier": "CONTAINED_ALIAS",
+        "drug_id": "CHEMBL3990045",
+        "score": null,
+        "rules": [
+          "segmented_from_phrase"
+        ],
+        "matched_alias": "adenovirus",
+        "candidates": null,
+        "note": "segmented out of 'autologous dendritic cell-adenovirus CCL21 vaccine'"
+      },
+      {
+        "component": "autologous dendritic CCL21 vaccine",
+        "tier": "UNRESOLVED",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "segmentation_residue"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+      }
+    ]
+  },
+  {
+    "raw": "dendritic cell-adenovirus CCL21 vaccine",
+    "components": [
+      {
+        "component": "dendritic cell-adenovirus CCL21 vaccine",
+        "tier": "BLOCKED_CLASS_TERM",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "class_term_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "category term, not an identifiable substance"
+      }
+    ]
+  },
+  {
+    "raw": "pegylated recombinant human hyaluronidase",
+    "components": [
+      {
+        "component": "pegylated recombinant human hyaluronidase",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "distinct_product_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "raw": "PEGVORHYALURONIDASE ALFA",
+    "components": [
+      {
+        "component": "PEGVORHYALURONIDASE ALFA",
+        "tier": "EXACT",
+        "drug_id": "CHEMBL3989976",
+        "score": null,
+        "rules": [],
+        "matched_alias": "PEGVORHYALURONIDASE ALFA",
+        "candidates": null
+      }
+    ]
+  },
+  {
+    "raw": "Genexol",
+    "components": [
+      {
+        "component": "Genexol",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "distinct_product_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  },
+  {
+    "raw": "Genexol-PM",
+    "components": [
+      {
+        "component": "Genexol-PM",
+        "tier": "BLOCKED_DISTINCT_PRODUCT",
+        "drug_id": null,
+        "score": null,
+        "rules": [
+          "distinct_product_guard"
+        ],
+        "matched_alias": null,
+        "candidates": null,
+        "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+      }
+    ]
+  }
+]

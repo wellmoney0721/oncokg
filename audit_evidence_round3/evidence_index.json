@@ -1,0 +1,63 @@
+{
+  "audit_scope": "Current HEAD, independent review only; no fixes or external publication.",
+  "main_report": "AUDIT_REPORT.md",
+  "reproduction": {
+    "script": "reproduce.py",
+    "commands_exit_codes_timing": "execution.json",
+    "stdout_stderr": "Named *.stdout.txt / *.stderr.txt for each execution.json entry",
+    "semantic_diffs": "reproduction_semantic_changes.json",
+    "tracked_file_preservation": "preservation.json",
+    "initial_tracked_hashes": "tracked_hashes_before.json",
+    "archive": "fresh_HEAD.zip",
+    "isolated_import_paths": "fresh_import_paths.stdout.txt",
+    "runtime_versions": "runtime.json"
+  },
+  "numeric_and_statistics": {
+    "bilingual_claim_inventory": "numbers_claim_inventory.json",
+    "independent_computation": "stats_numbers_audit.py",
+    "raw_counts_wilson_bootstrap": "stats_numbers_results.json",
+    "interpretation": "stats_findings.md",
+    "historical_numbers": ["stats_historical_evidence.json", "stats_historical_followup.py"]
+  },
+  "labels": {
+    "47_heldout_rescores_and_4_total_disagreements": "pharma_rescore.json",
+    "snapshot_trial_context": "pharma_label_source_trials.json",
+    "existing_8_corrections_review": "pharma_corrections_review.json",
+    "isolated_component_identity_guard_failure": "pharma_correction_guard.json"
+  },
+  "domain": {
+    "main_probes_and_script": ["domain_probes.json", "domain_probes.py"],
+    "single_product_split_class_length_residue": "domain_supplementary_probes.json",
+    "parenthetical_guard_regression": "domain_nested_parentheses.json",
+    "paired_registry_coverage": "registry_coverage_counterfactual.json",
+    "drug_domain_additional": ["pharma_initial_probes.json", "pharma_product_probes.json", "pharma_late_probes.json", "pharma_registry_removed.json"],
+    "primary_sources": ["pharma_sources.json", "pharma_followup_sources.json", "domain_primary_sources.json"]
+  },
+  "graph_company_query": {
+    "all_current_parent_keys": "graph_corporate_map_review.json",
+    "snapshot_sql": ["graph_snapshot_checks.json", "graph_additional_snapshot_checks.json", "graph_ccl21_edges.json"],
+    "company_probes": "graph_company_probes.json",
+    "retirement_readd": "graph_liveness_probes.json",
+    "source_provenance_update": "graph_provenance_history_probe.json",
+    "build_id_collision": ["graph_default_buildid_collision.json", "graph_collision_removal.json"],
+    "hostile_queries": ["query_cli_execution.json", "query_hostile_answers.json"],
+    "safety_guard_bypass": "query_resolution_bypass.json",
+    "groundedness_direct_tests": "query_groundedness_probes.json",
+    "limit": "No API key was available; model completions were not tested. Historical acquisitions and current legal existence are separate statuses in the corporate table."
+  },
+  "overclaims": "overclaims_inventory.json",
+  "additional_findings_with_exact_sources": [
+    {"source": "src/normalize.py:990,1124", "finding": "Daiichi Pharmaceutical dissolved in 2007 but is represented by a live parent edge; prefix rule also assigns unrelated Daiichi Jitsugyo to Daiichi Sankyo.", "evidence": "graph_corporate_map_review.json; graph_company_probes.json"},
+    {"source": "src/graph.py:126,240", "finding": "Later target-node upserts erase metadata for 126 of the300 association targets, including EGFR.", "evidence": "graph_additional_snapshot_checks.json.targets_with_metadata_lost"},
+    {"source": "src/graph.py:136,166-175", "finding": "Changing edge source A to B with identical record/other properties retains source A and reports zero changes.", "evidence": "graph_provenance_history_probe.json"},
+    {"source": "src/graph.py:100,209,371", "finding": "Second-resolution build IDs collide and overwrite build summary history; removals still retire correctly.", "evidence": "graph_collision_removal.json"},
+    {"source": "src/textrules.py:235-240", "finding": "Combination splitting splits the single cellular product DCVAC/LuCa into two unresolved records; dose100mg/mL similarly invents a mL component.", "evidence": "domain_supplementary_probes.json; domain_probes.json; pharma_followup_sources.json"},
+    {"source": "src/normalize.py:580-593,651", "finding": "cisplatin and paclitaxel (Abraxane, nab-paclitaxel) loses raw-parenthetical association and accepts conventional paclitaxel.", "evidence": "domain_nested_parentheses.json"},
+    {"source": "src/normalize.py:614-622", "finding": "cisplatin + placebo to match pembrolizumab blocks the entire string, losing the coadministered cisplatin despite separator.", "evidence": "domain_probes.json"},
+    {"source": "src/textrules.py:104-125; src/normalize.py:658", "finding": "VEGF blockers is unresolved with no class reason; cisplatin chemotherapy is wrongly blocked; long platelet-derived growth-factor receptor tyrosine kinase inhibitor resolves to TYROSINE; pembrolizumab-like antibodies bypasses class guard.", "evidence": "domain_probes.json; domain_supplementary_probes.json"},
+    {"source": "src/normalize.py:779-781", "finding": "Short non-development-code residue is silently discarded despite README universal residue preservation claim.", "evidence": "domain_supplementary_probes.json"},
+    {"source": "src/normalize.py:383-384,673; src/textrules.py:142", "finding": "Correct pegylated recombinant human hyaluronidase alias of existing PEGVORHYALURONIDASE ALFA is removed and blocked as not in vocabulary.", "evidence": "pharma_late_probes.json; pharma_sources.json"},
+    {"source": "README.md:423-426; README.ko.md:297-299", "finding": "FOLFIRI/mFOLFOX6 ingredient explanation wrongly includes capecitabine.", "evidence": "pharma_followup_sources.json"},
+    {"source": "src/query.py:308-309; README.md:135-136", "finding": "Company-portfolio answer lines omit sponsor class and non-development explanation despite claim that every answer line includes both.", "evidence": "graph_query_audit.py"}
+  ]
+}

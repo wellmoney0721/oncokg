@@ -1,0 +1,162 @@
+{
+  "earliest_retained_graph": {
+    "build_id": "build-2026-11-03T04:16:39+00:00",
+    "nodes": 6476,
+    "edges": 17591,
+    "added": 17591,
+    "changed": 0,
+    "retired": 0,
+    "restored": 0,
+    "nodes_by_type": {
+      "Company": 1570,
+      "Disease": 1,
+      "Drug": 1066,
+      "Investigator": 36,
+      "Target": 803,
+      "Trial": 3000
+    },
+    "edges_by_rel": {
+      "ACTS_ON": 2186,
+      "ASSOCIATED_WITH": 300,
+      "EVALUATES": 4449,
+      "PARENT_OF": 43,
+      "SPONSORS": 4652,
+      "SPONSORS_TRIAL_OF": 3187,
+      "STUDIES": 2774
+    }
+  },
+  "earliest_retained_dictionary_counts": {
+    "class_term_as_synonym": 134,
+    "cross_drug_synonym": 80,
+    "distinct_product_alias": 7,
+    "placebo_string_in_synonym_list": 6,
+    "genuinely_ambiguous_alias": 124,
+    "suspected_duplicate_entity": 47,
+    "parent_child_collapse": 78
+  },
+  "earliest_retained_coverage": {
+    "component_occurrences_total": 6788,
+    "component_occurrences_excluding_blocked": 6351,
+    "accepted_occurrences": 4969,
+    "resolved_rate_of_substance_like": 0.7824,
+    "resolved_rate_of_all": 0.732
+  },
+  "historical_fuzzy_scores_recomputed": {
+    "BMS-986504": {
+      "best_key": "bms986507",
+      "score": 88.88888888888889,
+      "candidates": [
+        {
+          "drug_id": "CHEMBL5314841",
+          "alias": "bms-986507",
+          "alias_type": "synonym"
+        }
+      ]
+    },
+    "recombinant interleukin-12": {
+      "best_key": "recombinantinterleukin2",
+      "score": 97.87234042553192,
+      "candidates": [
+        {
+          "drug_id": "CHEMBL1201438",
+          "alias": "recombinant interleukin-2",
+          "alias_type": "synonym"
+        }
+      ]
+    }
+  },
+  "credentialed_lead_trial_count": 36,
+  "credentialed_lead_trial_ids": [
+    "NCT00754364",
+    "NCT01212627",
+    "NCT04611867",
+    "NCT04166487",
+    "NCT04267575",
+    "NCT07086326",
+    "NCT00137839",
+    "NCT07504484",
+    "NCT00666978",
+    "NCT02812667",
+    "NCT05859217",
+    "NCT02343952",
+    "NCT07224971",
+    "NCT00372515",
+    "NCT02400814",
+    "NCT03743129",
+    "NCT04317534",
+    "NCT03003468",
+    "NCT03904108",
+    "NCT03313804",
+    "NCT03158883",
+    "NCT05157542",
+    "NCT04434560",
+    "NCT00592007",
+    "NCT05689671",
+    "NCT02818920",
+    "NCT03014648",
+    "NCT06732193",
+    "NCT06667154",
+    "NCT02938624",
+    "NCT04467801",
+    "NCT04695925",
+    "NCT01004510",
+    "NCT07132190",
+    "NCT06747169",
+    "NCT02416739"
+  ],
+  "retained_historical_sponsor_counts": {
+    "INDUSTRY": 1313,
+    "OTHER": 1675,
+    "NETWORK": 84,
+    "OTHER_GOV": 40,
+    "NIH": 73,
+    "FED": 2
+  },
+  "historical_nonindustry_fraction": 0.5880138060872293,
+  "current_platinum_guard_trial_count": 7,
+  "current_platinum_guard_rows": [
+    {
+      "nct": "NCT07882940",
+      "raw": "Becotatug Vedotin (MRG003)+pucotenlimab+platinum"
+    },
+    {
+      "nct": "NCT07822984",
+      "raw": "Platinum plus pemetrexed chemotherapy"
+    },
+    {
+      "nct": "NCT05394233",
+      "raw": "Tislelizumab Combined With Bevacizumab and Platinum Plus Pemetrexed"
+    },
+    {
+      "nct": "NCT01769066",
+      "raw": "Sequential Gefitinib With Pemetrexed/Platinum"
+    },
+    {
+      "nct": "NCT01769066",
+      "raw": "Pemetrexed/Platinum"
+    },
+    {
+      "nct": "NCT07174908",
+      "raw": "anti-PD-1 monoclonal antibody in combination with platinum and pemetrexed"
+    },
+    {
+      "nct": "NCT06969027",
+      "raw": "Platinum"
+    },
+    {
+      "nct": "NCT04970043",
+      "raw": "Camrelizumab+ pemetrexed + platinum"
+    }
+  ],
+  "counterfactual_undo_first_five_corrections_using_earliest_retained_population": {
+    "estimate": 0.9915026697177727,
+    "normal_interval": [
+      0.9847385980700203,
+      0.9982667413655251
+    ],
+    "weight_at_perfect_rate": 0.8874141876430206,
+    "note": "Not a reconstruction of the missing pre-round1 population or executable; does not verify exact99.1[98.4,99.8]."
+  },
+  "all_retained_commits": "fa7983a25fee83e54f618ce113b68fb85dade54e 3차 감사 지시서: 현재 수치와 2차 수리 점검 항목으로 갱신\nda5e3ba28647ee1a922372c5c0fc4bf31fac7351 대시보드 헤드라인을 라벨 당시 홀드아웃 89.6% 로, 템플릿의 낡은 문장 정정\neb37439cbb7740e1ff3396618e9d02a4a15b9ef1 README 두 개를 2라운드 수리 뒤 산출물에 맞춤, 수리 결과 기록\nca27e4bd0352b2f12633ac2ec828b9dc337cdead Codex 2라운드 수리 2: 약 이름 해석 도메인 오류, 평가 기준 시점 맞춤, 회귀 시험 20개\n8d8be5b0433a237ff1dbf8501f819f9c6a237f34 Codex 2라운드 수리 1: 조회 관계 이름, 회사 지도, 그래프 은퇴 순서, 근거 검사, 라벨 정정 3건\n73855d05eb3a5ba3b6f20abb1ecf38649f8f1ad4 Codex 2라운드 지적 직접 재현 결과\n172063a268c72c18b0c607f711fb14f1190c59e0 Codex 독립 감사 2라운드 보고서(원문)\n1b7e7f7e24f900319135a56b859d805ac1171f84 HANDOFF 4절 키움 봇 사실 확인 결과\ne79049b062678975569118c11355ddac2c1e832f OncoKG: 인수인계 시점 그대로 (HANDOFF.md 포함)\n",
+  "history_limit": "9commits, earliest e79049b already contains round1-corrected gold labels and Wilson propagation. No pre-round1 scored row ledger or graph artifact is retained."
+}
