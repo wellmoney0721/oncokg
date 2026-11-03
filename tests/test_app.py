@@ -123,3 +123,27 @@ def test_an_unrecorded_sponsor_count_stays_unknown():
         r = e.explore("CHEMBL1201438")
         items = [i for g in r["groups"] for i in g["items"] if i["edge_id"] == eid]
         assert items and items[0]["evidence_trials"] is None, bad
+
+
+# Codex review m3: a refusal is bound to the drug it qualifies
+def test_a_qualified_product_is_refused_with_its_drug_wherever_it_sits():
+    import app
+    e = app.Engine()
+    for t in ("paclitaxel with albumin bound nanoparticles",
+              "What is the generic version of bevacizumab?",
+              "generic version with bevacizumab"):
+        assert e.explore(t).get("refused"), t
+    a = e.kg.answer("What trials evaluate paclitaxel with albumin bound nanoparticles?",
+                    use_llm=False)
+    assert not a.evidence
+    for t in ("osimertinib with [89Zr] trastuzumab", "osimertinib, liposomal doxorubicin",
+              "osimertinib, biosimilar bevacizumab"):
+        assert e.explore(t)["center"]["id"] == "CHEMBL3353410", t
+
+
+def test_words_of_a_longer_name_are_not_read_again():
+    import app
+    e = app.Engine()
+    assert e.explore("erlotinib hydrochloride")["also"] == []
+    r = e.explore("Paclitaxel conjugate with poly-l-glutamic acid")
+    assert r["center"]["id"] == "CHEMBL2108628" and r["also"] == []

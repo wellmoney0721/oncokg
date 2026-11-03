@@ -29,3 +29,14 @@ All m1 reproductions FIXED. New:
 | should-fix | bool scores accepted and crashing render; rounded score; embedded multi-id alias alternatives dropped; "everything" docstring; silent 500-char cut | numbers exclude bool/NaN; score shown as stored; the hit's `also_matching_ids` disclosed; docstring; >500 chars is a 400 error; render errors shown |
 
 Tests 323.
+
+## Round 3 (audit_evidence_claims/m3) — CHANGES REQUIRED
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M3-B1 | "with" as a joiner let "paclitaxel with albumin bound nanoparticles" draw PACLITAXEL (and QA answer with it) | refusal is now bound to the drug it qualifies: the shortest span holding that drug and no other drug, inside one list item; "with" is no longer a joiner |
+| M3-B2 | "What is the generic version of bevacizumab?" drew BEVACIZUMAB (inherited) | same repair: the span must contain the drug, so the question prefix no longer absorbs the qualifier |
+| should-fix | the single-token qualifier pass crossed commas ("osimertinib, liposomal doxorubicin" refused osimertinib) | neighbours are taken only within the same list item and never a joining word |
+| found while fixing | words of a longer name were read again ("erlotinib hydrochloride" also listed ERLOTINIB) | a matched span is not re-linked |
+
+Tests 325.

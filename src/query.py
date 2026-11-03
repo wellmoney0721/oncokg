@@ -88,9 +88,11 @@ class Answer:
 # --------------------------------------------------------------------------- #
 # engine
 # --------------------------------------------------------------------------- #
-# Words that join two separately named things; a refused product never spans one.
-_JOINERS = {"and", "or", "plus", "with", "versus", "vs", "vs.", "+", "&", "then", "followed",
-            "without", "or/and", "and/or"}
+# Words that list separately named things. A refused product never spans one; "with"
+# is not among them, because it also sits inside product descriptions ("paclitaxel with
+# albumin bound nanoparticles").
+_JOINERS = {"and", "or", "plus", "versus", "vs", "vs.", "+", "&", "then", "followed",
+            "or/and", "and/or"}
 
 
 class OncoKG:
@@ -135,13 +137,19 @@ class OncoKG:
         # the originator molecule. A token naming a distinct product is
         # refused; a qualifier ("liposomal", "biosimilar") takes its
         # neighbours with it.
+        def joins(k: int) -> bool:
+            return tokens[k].lower() in _JOINERS
+
         refused: set[int] = set()
         for i, tok in enumerate(tokens):
             if T.is_distinct_product(tok) or T.is_radiotracer(tok):
                 refused.add(i)
                 if not T.canonical_key(tok) in self.dic["index"]:
-                    refused.update({i - 1, i + 1})
-        refused = {x for x in refused if 0 <= x < len(tokens)}
+                    # the qualifier takes its neighbours, within the same list item
+                    refused.update(k for k in (i - 1, i + 1)
+                                   if 0 <= k < len(tokens) and clause[k] == clause[i]
+                                   and not joins(k))
+        refused |= self._qualified_drug_spans(tokens, clause, refused, joins)
         run: list[int] = []
         for i in sorted(refused) + [None]:
             if run and (i is None or i != run[-1] + 1):
@@ -154,27 +162,13 @@ class OncoKG:
             if i is not None:
                 run.append(i)
 
+        matched: set[int] = set()
         for size in range(min(5, len(tokens)), 0, -1):
             for i in range(len(tokens) - size + 1):
-                if refused & set(range(i, i + size)):
+                if (refused | matched) & set(range(i, i + size)):
                     continue
                 window = " ".join(tokens[i:i + size])
                 if len(window) < 3:
-                    continue
-                # A product or tracer spelt across several tokens ("bevacizumab -
-                # awwb", "[89Zr] trastuzumab") is refused whole, so no part of it
-                # links to the originator.
-                # The span stops at a list boundary: a comma or a joining word
-                # ("osimertinib and generic version of bevacizumab" refuses only
-                # the second drug, and keeps the first).
-                if (size > 1 and len(set(clause[i:i + size])) == 1
-                        and not any(t.lower() in _JOINERS for t in tokens[i:i + size])
-                        and (T.is_distinct_product(window) or T.is_radiotracer(window))):
-                    found.append({"type": "Refused", "id": None, "label": window,
-                                  "matched_text": window,
-                                  "why": "names a distinct product or tracer, not "
-                                         "the originator molecule"})
-                    refused.update(range(i, i + size))
                     continue
                 key = T.canonical_key(window)
 
@@ -192,6 +186,7 @@ class OncoKG:
                                       "label": self.dic["drugs"][did]["name"],
                                       "matched_text": window,
                                       "matched_alias": hits[0]["alias"]})
+                    matched.update(range(i, i + size))   # words of a longer name are not read again
                     continue
 
                 if window.lower() in self.targets:
@@ -200,6 +195,7 @@ class OncoKG:
                         seen.add(("Target", t["target_id"]))
                         found.append({"type": "Target", "id": t["target_id"],
                                       "label": t["symbol"], "matched_text": window})
+                    matched.update(range(i, i + size))   # words of a longer name are not read again
                     continue
 
                 if key in self.companies:
@@ -211,6 +207,7 @@ class OncoKG:
                         found.append({"type": "Company", "id": cid,
                                       "label": row["label"], "matched_text": window,
                                       "also_matching_ids": self.companies[key][1:]})
+                    matched.update(range(i, i + size))   # words of a longer name are not read again
                     continue
 
                 if key in self.disease["index"]:
@@ -221,6 +218,65 @@ class OncoKG:
                                       "label": self.disease["name"],
                                       "matched_text": window})
         return found
+
+    def _drug_spans(self, tokens: list[str], skip: set[int]) -> list[tuple[int, int]]:
+        """Token spans that name exactly one drug, longest first, not overlapping."""
+        spans: list[tuple[int, int]] = []
+        taken: set[int] = set(skip)
+        for size in range(min(5, len(tokens)), 0, -1):
+            for i in range(len(tokens) - size + 1):
+                if taken & set(range(i, i + size)):
+                    continue
+                window = " ".join(tokens[i:i + size])
+                if len(window) < 3:
+                    continue
+                hits = self.dic["index"].get(T.canonical_key(window))
+                if hits and size > 1 and not re.search(r"[\s\-/]", hits[0]["alias"]):
+                    hits = None
+                if hits and len({h["drug_id"] for h in hits}) == 1:
+                    spans.append((i, i + size))
+                    taken.update(range(i, i + size))
+        return spans
+
+    def _qualified_drug_spans(self, tokens, clause, refused, joins) -> set[int]:
+        """Tokens of a drug together with the words that make it a distinct product or a
+        tracer ("generic version of bevacizumab", "paclitaxel with albumin bound
+        nanoparticles", "[89Zr] trastuzumab").
+
+        A refusal is bound to the drug it qualifies: the span holds that drug and no
+        other, stays inside one list item (no comma, no joining word), and is the
+        shortest such span. Spans are taken shortest first, and words used by one are
+        not reused by another, so "osimertinib with [89Zr] trastuzumab" refuses only
+        trastuzumab."""
+        out: set[int] = set()
+        drugs = self._drug_spans(tokens, refused)
+        while True:
+            best = None
+            for a, b in drugs:
+                if out & set(range(a, b)):
+                    continue
+                for length in range(b - a, 7):
+                    for s in range(max(0, b - length), a + 1):
+                        e = s + length
+                        if e > len(tokens):
+                            continue
+                        span = set(range(s, e))
+                        if (span & out or span & refused or len({clause[k] for k in span}) > 1
+                                or any(joins(k) for k in span)
+                                or any((c, d) != (a, b) and set(range(c, d)) & span
+                                       for c, d in drugs)):
+                            continue
+                        text = " ".join(tokens[s:e])
+                        if T.is_distinct_product(text) or T.is_radiotracer(text):
+                            if best is None or length < best[1] - best[0]:
+                                best = (s, e)
+                            break
+                    else:
+                        continue
+                    break
+            if best is None:
+                return out
+            out.update(range(*best))
 
     def org_family(self, company_id: str) -> list[str]:
         """The organisation plus any companies a curated parent edge links to it."""
