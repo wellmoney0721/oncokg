@@ -280,3 +280,12 @@ Stored-alias sweep: no change. Tests 352.
 | M26-S1 | "osimertinib linked to longer PFS", "... 3-year survival", "... response in 2026", "... resistance in EGFR" refused (capital/digit heuristic) | the capital/digit heuristic is gone; only named reagents count |
 
 Stored-alias sweep: no change. Tests 354.
+
+## Round 27 (audit_evidence_claims/m27) — incomplete (Codex stopped at model capacity before REPORT.md); its recorded findings repaired
+
+| # | Finding (attacks/FINDINGS.md) | Repair |
+| --- | --- | --- |
+| M27-B1 | "trastuzumab linked to SN-38", "DM-1", "Alexa Fluor 488": the hyphen split the code; Alexa not named | payload codes are also read on each neighbouring pair glued (sn+38, dm+1); alexa, rhodamine, cyanine dyes |
+| M27-B2 | "trastuzumab not merely / solely / exclusively conjugated to DM1 but also purified" | focus words after "not" (only, merely, solely, exclusively, just, simply, purely) do not start a negation |
+
+"not directly conjugated to DM1" still draws trastuzumab. Stored-alias sweep: no change. Tests 355.

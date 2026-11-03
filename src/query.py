@@ -240,11 +240,13 @@ def _payload_name(name: str) -> bool:
 _PAYLOAD_CODES = {"dm1", "dm4", "mmae", "mmaf", "sn38", "dxd", "pbd", "peg", "dota", "nota",
                   "dfo", "dtpa", "fitc", "cy5", "cy7", "cy55", "mcc", "smcc", "vcmmae", "calicheamicin",
                   "emtansine", "mertansine", "deruxtecan", "vedotin", "biotin", "hrp", "gfp"}
+# "not only", "not merely": a focus, not a negation ("not only conjugated ... but also purified")
+_FOCUS = {"only", "merely", "solely", "exclusively", "just", "simply", "purely"}
 # Prefix pieces a negation carries through ("non-radio-immuno-conjugated")
 _PIECES = {"radio", "immuno", "bio", "chemo", "photo", "nano"}
 # Nouns that name what a drug is joined to ("linked to polyethylene glycol")
 _REAGENTS = ("polyethylene", "glycol", "peg", "payload", "toxin", "dye", "fluoro", "fluoresc",
-             "chelat", "polymer", "nanoparticle", "liposom", "albumin", "biotin", "maytansin",
+             "chelat", "polymer", "rhodamin", "cyanin", "nanoparticle", "liposom", "albumin", "biotin", "maytansin",
              "auristatin", "peptide", "linker", "cytotox",
              "radionuclid", "isotop", "dextran", "dendrimer", "micelle", "lipid")
 
@@ -257,11 +259,13 @@ def _item_joined(words: tuple) -> bool:
     negated: set = set()
     # what the drug would be joined to, anywhere in the item and in either order
     # ("linked to a derivative of the toxin DM1", "polyethylene glycol linked to irinotecan")
-    reagent = any(x.startswith(_REAGENTS) or x in _PAYLOAD_CODES or x.startswith("irdye")
-                  for x in flat)
+    # each word, and each neighbouring pair glued, so a hyphenated code counts ("SN-38", "DM-1")
+    pieces = flat + [a + b for a, b in zip(flat, flat[1:])]
+    reagent = any(x.startswith(_REAGENTS) or x in _PAYLOAD_CODES or x.startswith(("irdye", "alexa"))
+                  for x in pieces)
     for i, x in enumerate(flat):
-        if i and flat[i - 1] in _NOT_WORDS and x != "only":
-            # "not only ... but also" affirms; otherwise the negation covers the one word it negates, carried on through an adverb
+        if i and flat[i - 1] in _NOT_WORDS and x not in _FOCUS:
+            # "not only / merely / solely ... but also" affirms; otherwise the negation covers the one word it negates, carried on through an adverb
             # or a prefix piece ("not covalently linked", "non-radio-immuno-conjugated"),
             # never across to a separate affirmative ("not radiolabelled but conjugated")
             j = i

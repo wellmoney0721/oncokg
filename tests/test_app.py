@@ -550,3 +550,14 @@ def test_not_only_affirms_and_linked_reads_the_whole_item():
               "osimertinib linked to resistance in EGFR"):
         assert e.explore(t)["center"]["label"] == "OSIMERTINIB", t
     assert e.explore("trastuzumab not covalently linked to DM1")["center"]["label"] == "TRASTUZUMAB"
+
+
+# Codex review m27 (partial: the run stopped at model capacity before its report)
+def test_hyphenated_payload_codes_named_dyes_and_focus_words():
+    import app
+    e = app.Engine()
+    for t in ("trastuzumab linked to SN-38", "SN-38 linked to trastuzumab", "trastuzumab linked to DM-1",
+              "trastuzumab linked to Alexa Fluor 488",
+              "trastuzumab not merely conjugated to DM1 but also purified"):
+        assert e.explore(t).get("refused"), t
+    assert e.explore("trastuzumab not directly conjugated to DM1")["center"]["label"] == "TRASTUZUMAB"
