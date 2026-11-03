@@ -132,7 +132,8 @@ def make_handler(engine: Engine):
                         if not answer:
                             raise ValueError("empty answer")
                         res = engine.check(text, answer)
-                self._send(200, json.dumps(res, ensure_ascii=False).encode("utf-8"),
+                self._send(200, json.dumps(res, ensure_ascii=False,
+                                           allow_nan=False).encode("utf-8"),
                            "application/json; charset=utf-8")
             except Exception as e:  # show the reason on the page, not a dead request
                 self._send(400, json.dumps({"error": str(e)}, ensure_ascii=False).encode("utf-8"),

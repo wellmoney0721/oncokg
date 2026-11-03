@@ -1,0 +1,3706 @@
+{
+  "commit": "aa5655ae89c47631fefb9c868989ba2c1befa82e",
+  "demonstrations": [
+    {
+      "question": "Which companies are developing osimertinib?",
+      "intent": "companies_for_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "evidence": [
+        {
+          "statement": "Astrazeneca (industry sponsor) is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT01802632, NCT02143466, NCT02224053",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 14,
+            "example_trials": [
+              "NCT01802632",
+              "NCT02143466",
+              "NCT02224053"
+            ]
+          }
+        },
+        {
+          "statement": "Memorial Sloan Kettering Cancer Center (other sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "edge_id": "ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT03810807, NCT06741085, NCT07535437",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 3,
+            "example_trials": [
+              "NCT03810807",
+              "NCT06741085",
+              "NCT07535437"
+            ]
+          }
+        },
+        {
+          "statement": "National Cancer Institute (nih sponsor) is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT03191149, NCT03831932, NCT04181060",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "NIH",
+            "evidence_trials": 3,
+            "example_trials": [
+              "NCT03191149",
+              "NCT03831932",
+              "NCT04181060"
+            ]
+          }
+        },
+        {
+          "statement": "Bristol Myers Squibb (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "edge_id": "ORG:bristolmyerssquibb|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT06618287, NCT07680790",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT06618287",
+              "NCT07680790"
+            ]
+          }
+        },
+        {
+          "statement": "Eli Lilly (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "edge_id": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT02411448, NCT02789345",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT02411448",
+              "NCT02789345"
+            ]
+          }
+        },
+        {
+          "statement": "M D Anderson Cancer Center (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "edge_id": "ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT04479306, NCT05017025",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT04479306",
+              "NCT05017025"
+            ]
+          }
+        },
+        {
+          "statement": "Second Affiliated Hospital Of Nanchang University (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "edge_id": "ORG:secondaffiliatedhospitalofnanchanguniversity|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT04425681, NCT06557096",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT04425681",
+              "NCT06557096"
+            ]
+          }
+        },
+        {
+          "statement": "Shanghai Jmt-bio (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "edge_id": "ORG:shanghaijmtbio|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT06391944, NCT06735391",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT06391944",
+              "NCT06735391"
+            ]
+          }
+        },
+        {
+          "statement": "Sichuan Kelun-biotech (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "edge_id": "ORG:sichuankelunbiotech|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT06670196, NCT07622186",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT06670196",
+              "NCT07622186"
+            ]
+          }
+        },
+        {
+          "statement": "Tianjin Medical University Cancer Institute And Hospital (other sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "edge_id": "ORG:tianjinmedicaluniversitycancerinstituteandhospital|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT04029350, NCT05507606",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "OTHER",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT04029350",
+              "NCT05507606"
+            ]
+          }
+        },
+        {
+          "statement": "Tyk Medicines (industry sponsor) is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "edge_id": "ORG:tykmedicines|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT05382728, NCT05948813",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 2,
+            "example_trials": [
+              "NCT05382728",
+              "NCT05948813"
+            ]
+          }
+        },
+        {
+          "statement": "Abbisko (industry sponsor) is lead sponsor of 1 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug",
+          "edge_id": "ORG:abbisko|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT07710612",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "derived_rule": "lead sponsor of trials evaluating this drug",
+            "sponsor_class": "INDUSTRY",
+            "evidence_trials": 1,
+            "example_trials": [
+              "NCT07710612"
+            ]
+          }
+        }
+      ],
+      "modes": {
+        "labels": {
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Astrazeneca",
+                "object": "OSIMERTINIB",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 14
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Memorial Sloan Kettering Cancer Center",
+                "object": "OSIMERTINIB",
+                "evidence": "ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 3
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "National Cancer Institute",
+                "object": "OSIMERTINIB",
+                "evidence": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 3
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Bristol Myers Squibb",
+                "object": "OSIMERTINIB",
+                "evidence": "ORG:bristolmyerssquibb|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Eli Lilly",
+                "object": "OSIMERTINIB",
+                "evidence": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "M D Anderson Cancer Center",
+                "object": "OSIMERTINIB",
+                "evidence": "ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Second Affiliated Hospital Of Nanchang University",
+                "object": "OSIMERTINIB",
+                "evidence": "ORG:secondaffiliatedhospitalofnanchanguniversity|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Shanghai Jmt-bio",
+                "object": "OSIMERTINIB",
+                "evidence": "ORG:shanghaijmtbio|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Sichuan Kelun-biotech",
+                "object": "OSIMERTINIB",
+                "evidence": "ORG:sichuankelunbiotech|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Tianjin Medical University Cancer Institute And Hospital",
+                "object": "OSIMERTINIB",
+                "evidence": "ORG:tianjinmedicaluniversitycancerinstituteandhospital|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Tyk Medicines",
+                "object": "OSIMERTINIB",
+                "evidence": "ORG:tykmedicines|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Abbisko",
+                "object": "OSIMERTINIB",
+                "evidence": "ORG:abbisko|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 1
+              }
+            ]
+          },
+          "output": {
+            "verified": false,
+            "accepted": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL3353410",
+                "trial_count": 14
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:memorialsloanketteringcancercenter",
+                "object": "CHEMBL3353410",
+                "trial_count": 3
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:nationalcancerinstitute",
+                "object": "CHEMBL3353410",
+                "trial_count": 3
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:bristolmyerssquibb|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:bristolmyerssquibb",
+                "object": "CHEMBL3353410",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:elililly",
+                "object": "CHEMBL3353410",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:mdandersoncancercenter",
+                "object": "CHEMBL3353410",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:shanghaijmtbio|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:shanghaijmtbio",
+                "object": "CHEMBL3353410",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:sichuankelunbiotech|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:sichuankelunbiotech",
+                "object": "CHEMBL3353410",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:tykmedicines|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:tykmedicines",
+                "object": "CHEMBL3353410",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:abbisko|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:abbisko",
+                "object": "CHEMBL3353410",
+                "trial_count": 1
+              }
+            ],
+            "rejected": [
+              {
+                "claim": {
+                  "kind": "relation",
+                  "relation": "SPONSORS_TRIAL_OF",
+                  "subject": "Second Affiliated Hospital Of Nanchang University",
+                  "object": "OSIMERTINIB",
+                  "evidence": "ORG:secondaffiliatedhospitalofnanchanguniversity|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                  "trial_count": 2
+                },
+                "why": "'Second Affiliated Hospital Of Nanchang University' does not name exactly one company on its own"
+              },
+              {
+                "claim": {
+                  "kind": "relation",
+                  "relation": "SPONSORS_TRIAL_OF",
+                  "subject": "Tianjin Medical University Cancer Institute And Hospital",
+                  "object": "OSIMERTINIB",
+                  "evidence": "ORG:tianjinmedicaluniversitycancerinstituteandhospital|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                  "trial_count": 2
+                },
+                "why": "'Tianjin Medical University Cancer Institute And Hospital' does not name exactly one company on its own"
+              }
+            ],
+            "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Memorial Sloan Kettering Cancer Center is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- National Cancer Institute is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Bristol Myers Squibb is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:bristolmyerssquibb|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Eli Lilly is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- M D Anderson Cancer Center is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Shanghai Jmt-bio is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:shanghaijmtbio|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Sichuan Kelun-biotech is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:sichuankelunbiotech|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Tyk Medicines is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:tykmedicines|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Abbisko is lead sponsor of 1 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:abbisko|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+          }
+        },
+        "ids": {
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 14
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:memorialsloanketteringcancercenter",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 3
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:nationalcancerinstitute",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 3
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:bristolmyerssquibb",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:bristolmyerssquibb|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:elililly",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:mdandersoncancercenter",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:secondaffiliatedhospitalofnanchanguniversity",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:secondaffiliatedhospitalofnanchanguniversity|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:shanghaijmtbio",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:shanghaijmtbio|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:sichuankelunbiotech",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:sichuankelunbiotech|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:tianjinmedicaluniversitycancerinstituteandhospital",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:tianjinmedicaluniversitycancerinstituteandhospital|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:tykmedicines",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:tykmedicines|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:abbisko",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:abbisko|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 1
+              }
+            ]
+          },
+          "output": {
+            "verified": true,
+            "accepted": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL3353410",
+                "trial_count": 14
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:memorialsloanketteringcancercenter",
+                "object": "CHEMBL3353410",
+                "trial_count": 3
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:nationalcancerinstitute",
+                "object": "CHEMBL3353410",
+                "trial_count": 3
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:bristolmyerssquibb|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:bristolmyerssquibb",
+                "object": "CHEMBL3353410",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:elililly",
+                "object": "CHEMBL3353410",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:mdandersoncancercenter",
+                "object": "CHEMBL3353410",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:secondaffiliatedhospitalofnanchanguniversity|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:secondaffiliatedhospitalofnanchanguniversity",
+                "object": "CHEMBL3353410",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:shanghaijmtbio|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:shanghaijmtbio",
+                "object": "CHEMBL3353410",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:sichuankelunbiotech|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:sichuankelunbiotech",
+                "object": "CHEMBL3353410",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:tianjinmedicaluniversitycancerinstituteandhospital|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:tianjinmedicaluniversitycancerinstituteandhospital",
+                "object": "CHEMBL3353410",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:tykmedicines|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:tykmedicines",
+                "object": "CHEMBL3353410",
+                "trial_count": 2
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:abbisko|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:abbisko",
+                "object": "CHEMBL3353410",
+                "trial_count": 1
+              }
+            ],
+            "rejected": [],
+            "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Memorial Sloan Kettering Cancer Center is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- National Cancer Institute is lead sponsor of 3 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Bristol Myers Squibb is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:bristolmyerssquibb|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Eli Lilly is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- M D Anderson Cancer Center is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:mdandersoncancercenter|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Second Affiliated Hospital Of Nanchang University is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:secondaffiliatedhospitalofnanchanguniversity|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Shanghai Jmt-bio is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:shanghaijmtbio|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Sichuan Kelun-biotech is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:sichuankelunbiotech|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Tianjin Medical University Cancer Institute And Hospital is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:tianjinmedicaluniversitycancerinstituteandhospital|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Tyk Medicines is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:tykmedicines|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Abbisko is lead sponsor of 1 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:abbisko|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+          }
+        }
+      }
+    },
+    {
+      "question": "What trials evaluate Tagrisso?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Tagrisso",
+          "matched_alias": "Tagrisso"
+        }
+      ],
+      "evidence": [
+        {
+          "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "edge_id": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03909334",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03909334",
+          "detail": {
+            "stated_intervention": "Osimertinib",
+            "title": "Study of Osimertinib With and Without Ramucirumab in Locally Advanced or Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+            "status": "ACTIVE_NOT_RECRUITING",
+            "phases": [
+              "PHASE2"
+            ]
+          }
+        },
+        {
+          "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+          "edge_id": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT07680790",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT07680790",
+          "detail": {
+            "stated_intervention": "Osimertinib",
+            "title": "Study of Izalontamab Brengitecan (BMS-986507) in Combination With Osimertinib Versus Osimertinib Monotherapy or Osimertinib in Combination With Platinum-based Chemotherapy for EGFRmt Non-small Cell Lung Cancer (IZABRIGHT-Lung02)",
+            "status": "RECRUITING",
+            "phases": [
+              "PHASE3"
+            ]
+          }
+        },
+        {
+          "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "edge_id": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT02411448",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT02411448",
+          "detail": {
+            "stated_intervention": "Osimertinib",
+            "title": "A Study of Ramucirumab (LY3009806) in Combination With Erlotinib in Previously Untreated Participants With EGFR Mutation-Positive Metastatic NSCLC (RELAY)",
+            "status": "ACTIVE_NOT_RECRUITING",
+            "phases": [
+              "PHASE3"
+            ]
+          }
+        },
+        {
+          "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "edge_id": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04285671",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04285671",
+          "detail": {
+            "stated_intervention": "Osimertinib",
+            "title": "Necitumumab and Trastuzumab in Combination With Osimertinib for the Treatment of Refractory Epidermal Growth Factor Receptor (EGFR)-Mutated Stage IV Non-small Cell Lung Cancer",
+            "status": "ACTIVE_NOT_RECRUITING",
+            "phases": [
+              "PHASE1",
+              "PHASE2"
+            ]
+          }
+        },
+        {
+          "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "edge_id": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04141644",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04141644",
+          "detail": {
+            "stated_intervention": "Osimertinib",
+            "title": "Safety and Efficacy of Combination Osimertinib and Ipilimumab in Patients w EGFR Mutated NSCLC",
+            "status": "ACTIVE_NOT_RECRUITING",
+            "phases": [
+              "PHASE1"
+            ]
+          }
+        },
+        {
+          "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+          "edge_id": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT03535363",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT03535363",
+          "detail": {
+            "stated_intervention": "Osimertinib",
+            "title": "Osimertinib With Stereotactic Radiosurgery (SRS) in Brain Metastases From EGFR Positive NSCLC",
+            "status": "COMPLETED",
+            "phases": [
+              "PHASE1"
+            ]
+          }
+        },
+        {
+          "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+          "edge_id": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04487080",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04487080",
+          "detail": {
+            "stated_intervention": "Osimertinib",
+            "title": "A Study of Amivantamab and Lazertinib Combination Therapy Versus Osimertinib in Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
+            "status": "ACTIVE_NOT_RECRUITING",
+            "phases": [
+              "PHASE3"
+            ]
+          }
+        },
+        {
+          "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+          "edge_id": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT07738172",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT07738172",
+          "detail": {
+            "stated_intervention": "Osimertinib",
+            "title": "Osimertinib With or Without Primary Lung Tumor Resection for EGFR-Mutant Oligometastatic Non-Small Cell Lung Cancer",
+            "status": "RECRUITING",
+            "phases": [
+              "PHASE3"
+            ]
+          }
+        },
+        {
+          "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+          "edge_id": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04541407",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04541407",
+          "detail": {
+            "stated_intervention": "Temozolomide plus Osimertinib",
+            "title": "Temodar Plus Tyrosine Kinase Inhibitors for Progressive CNS Disease",
+            "status": "COMPLETED",
+            "phases": [
+              "PHASE1"
+            ]
+          }
+        },
+        {
+          "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+          "edge_id": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04772235",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04772235",
+          "detail": {
+            "stated_intervention": "Osimertinib",
+            "title": "Phase I Study of Repotrectinib and Osimertinib in NSCLC Patients",
+            "status": "UNKNOWN",
+            "phases": [
+              "PHASE1"
+            ]
+          }
+        },
+        {
+          "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+          "edge_id": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT05011487",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT05011487",
+          "detail": {
+            "stated_intervention": "Osimertinib",
+            "title": "Neoadjuvant Osimertinib + Chemotherapy for EGFR-mutant Stage III NSCLC",
+            "status": "RECRUITING",
+            "phases": [
+              "PHASE2"
+            ]
+          }
+        },
+        {
+          "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+          "edge_id": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306",
+          "relation": "EVALUATES",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04479306",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04479306",
+          "detail": {
+            "stated_intervention": "Osimertinib",
+            "title": "Osimertinib in Combination With Alisertib or Sapanisertib for the Treatment of Osimertinib-Resistant EGFR Mutant Stage IIIB or IV Non-Small Cell Lung Cancer",
+            "status": "COMPLETED",
+            "phases": [
+              "PHASE1"
+            ]
+          }
+        }
+      ],
+      "modes": {
+        "labels": {
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT03909334",
+                "object": "OSIMERTINIB",
+                "evidence": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT03909334",
+                "evidence": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+                "phase": [
+                  "PHASE2"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT07680790",
+                "object": "OSIMERTINIB",
+                "evidence": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT07680790",
+                "evidence": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790",
+                "phase": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT02411448",
+                "object": "OSIMERTINIB",
+                "evidence": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT02411448",
+                "evidence": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448",
+                "phase": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT04285671",
+                "object": "OSIMERTINIB",
+                "evidence": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT04285671",
+                "evidence": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671",
+                "phase": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT04141644",
+                "object": "OSIMERTINIB",
+                "evidence": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT04141644",
+                "evidence": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT03535363",
+                "object": "OSIMERTINIB",
+                "evidence": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT03535363",
+                "evidence": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT04487080",
+                "object": "OSIMERTINIB",
+                "evidence": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT04487080",
+                "evidence": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080",
+                "phase": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT07738172",
+                "object": "OSIMERTINIB",
+                "evidence": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT07738172",
+                "evidence": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172",
+                "phase": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT04541407",
+                "object": "OSIMERTINIB",
+                "evidence": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT04541407",
+                "evidence": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT04772235",
+                "object": "OSIMERTINIB",
+                "evidence": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT04772235",
+                "evidence": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "UNKNOWN"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT05011487",
+                "object": "OSIMERTINIB",
+                "evidence": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT05011487",
+                "evidence": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487",
+                "phase": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT04479306",
+                "object": "OSIMERTINIB",
+                "evidence": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT04479306",
+                "evidence": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED"
+              }
+            ]
+          },
+          "output": {
+            "verified": true,
+            "accepted": [
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+                "subject": "NCT03909334",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+                "trial": "NCT03909334",
+                "phase": [
+                  "PHASE2"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790",
+                "subject": "NCT07680790",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790",
+                "trial": "NCT07680790",
+                "phase": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448",
+                "subject": "NCT02411448",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448",
+                "trial": "NCT02411448",
+                "phase": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671",
+                "subject": "NCT04285671",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671",
+                "trial": "NCT04285671",
+                "phase": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644",
+                "subject": "NCT04141644",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644",
+                "trial": "NCT04141644",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363",
+                "subject": "NCT03535363",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363",
+                "trial": "NCT03535363",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080",
+                "subject": "NCT04487080",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080",
+                "trial": "NCT04487080",
+                "phase": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172",
+                "subject": "NCT07738172",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172",
+                "trial": "NCT07738172",
+                "phase": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407",
+                "subject": "NCT04541407",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407",
+                "trial": "NCT04541407",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235",
+                "subject": "NCT04772235",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235",
+                "trial": "NCT04772235",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "UNKNOWN"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487",
+                "subject": "NCT05011487",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487",
+                "trial": "NCT05011487",
+                "phase": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306",
+                "subject": "NCT04479306",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306",
+                "trial": "NCT04479306",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED"
+              }
+            ],
+            "rejected": [],
+            "text": "- NCT03909334 evaluates OSIMERTINIB [NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334]\n- NCT03909334: phase PHASE2; status ACTIVE_NOT_RECRUITING [NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334]\n- NCT07680790 evaluates OSIMERTINIB [NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790]\n- NCT07680790: phase PHASE3; status RECRUITING [NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790]\n- NCT02411448 evaluates OSIMERTINIB [NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448]\n- NCT02411448: phase PHASE3; status ACTIVE_NOT_RECRUITING [NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448]\n- NCT04285671 evaluates OSIMERTINIB [NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671]\n- NCT04285671: phase PHASE1, PHASE2; status ACTIVE_NOT_RECRUITING [NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671]\n- NCT04141644 evaluates OSIMERTINIB [NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644]\n- NCT04141644: phase PHASE1; status ACTIVE_NOT_RECRUITING [NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644]\n- NCT03535363 evaluates OSIMERTINIB [NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363]\n- NCT03535363: phase PHASE1; status COMPLETED [NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363]\n- NCT04487080 evaluates OSIMERTINIB [NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080]\n- NCT04487080: phase PHASE3; status ACTIVE_NOT_RECRUITING [NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080]\n- NCT07738172 evaluates OSIMERTINIB [NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172]\n- NCT07738172: phase PHASE3; status RECRUITING [NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172]\n- NCT04541407 evaluates OSIMERTINIB [NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407]\n- NCT04541407: phase PHASE1; status COMPLETED [NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407]\n- NCT04772235 evaluates OSIMERTINIB [NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235]\n- NCT04772235: phase PHASE1; status UNKNOWN [NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235]\n- NCT05011487 evaluates OSIMERTINIB [NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487]\n- NCT05011487: phase PHASE2; status RECRUITING [NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487]\n- NCT04479306 evaluates OSIMERTINIB [NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306]\n- NCT04479306: phase PHASE1; status COMPLETED [NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306]"
+          }
+        },
+        "ids": {
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT03909334",
+                "object": "CHEMBL3353410",
+                "evidence": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT03909334",
+                "evidence": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+                "phase": [
+                  "PHASE2"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT07680790",
+                "object": "CHEMBL3353410",
+                "evidence": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT07680790",
+                "evidence": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790",
+                "phase": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT02411448",
+                "object": "CHEMBL3353410",
+                "evidence": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT02411448",
+                "evidence": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448",
+                "phase": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT04285671",
+                "object": "CHEMBL3353410",
+                "evidence": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT04285671",
+                "evidence": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671",
+                "phase": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT04141644",
+                "object": "CHEMBL3353410",
+                "evidence": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT04141644",
+                "evidence": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT03535363",
+                "object": "CHEMBL3353410",
+                "evidence": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT03535363",
+                "evidence": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT04487080",
+                "object": "CHEMBL3353410",
+                "evidence": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT04487080",
+                "evidence": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080",
+                "phase": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT07738172",
+                "object": "CHEMBL3353410",
+                "evidence": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT07738172",
+                "evidence": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172",
+                "phase": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT04541407",
+                "object": "CHEMBL3353410",
+                "evidence": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT04541407",
+                "evidence": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT04772235",
+                "object": "CHEMBL3353410",
+                "evidence": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT04772235",
+                "evidence": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "UNKNOWN"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT05011487",
+                "object": "CHEMBL3353410",
+                "evidence": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT05011487",
+                "evidence": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487",
+                "phase": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "subject": "NCT04479306",
+                "object": "CHEMBL3353410",
+                "evidence": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306"
+              },
+              {
+                "kind": "trial",
+                "trial": "NCT04479306",
+                "evidence": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED"
+              }
+            ]
+          },
+          "output": {
+            "verified": true,
+            "accepted": [
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+                "subject": "NCT03909334",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+                "trial": "NCT03909334",
+                "phase": [
+                  "PHASE2"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790",
+                "subject": "NCT07680790",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790",
+                "trial": "NCT07680790",
+                "phase": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448",
+                "subject": "NCT02411448",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448",
+                "trial": "NCT02411448",
+                "phase": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671",
+                "subject": "NCT04285671",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671",
+                "trial": "NCT04285671",
+                "phase": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644",
+                "subject": "NCT04141644",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644",
+                "trial": "NCT04141644",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363",
+                "subject": "NCT03535363",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363",
+                "trial": "NCT03535363",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080",
+                "subject": "NCT04487080",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080",
+                "trial": "NCT04487080",
+                "phase": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172",
+                "subject": "NCT07738172",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172",
+                "trial": "NCT07738172",
+                "phase": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407",
+                "subject": "NCT04541407",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407",
+                "trial": "NCT04541407",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235",
+                "subject": "NCT04772235",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235",
+                "trial": "NCT04772235",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "UNKNOWN"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487",
+                "subject": "NCT05011487",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487",
+                "trial": "NCT05011487",
+                "phase": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING"
+              },
+              {
+                "kind": "relation",
+                "relation": "EVALUATES",
+                "edge": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306",
+                "subject": "NCT04479306",
+                "object": "CHEMBL3353410"
+              },
+              {
+                "kind": "trial",
+                "edge": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306",
+                "trial": "NCT04479306",
+                "phase": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED"
+              }
+            ],
+            "rejected": [],
+            "text": "- NCT03909334 evaluates OSIMERTINIB [NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334]\n- NCT03909334: phase PHASE2; status ACTIVE_NOT_RECRUITING [NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334]\n- NCT07680790 evaluates OSIMERTINIB [NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790]\n- NCT07680790: phase PHASE3; status RECRUITING [NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790]\n- NCT02411448 evaluates OSIMERTINIB [NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448]\n- NCT02411448: phase PHASE3; status ACTIVE_NOT_RECRUITING [NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448]\n- NCT04285671 evaluates OSIMERTINIB [NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671]\n- NCT04285671: phase PHASE1, PHASE2; status ACTIVE_NOT_RECRUITING [NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671]\n- NCT04141644 evaluates OSIMERTINIB [NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644]\n- NCT04141644: phase PHASE1; status ACTIVE_NOT_RECRUITING [NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644]\n- NCT03535363 evaluates OSIMERTINIB [NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363]\n- NCT03535363: phase PHASE1; status COMPLETED [NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363]\n- NCT04487080 evaluates OSIMERTINIB [NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080]\n- NCT04487080: phase PHASE3; status ACTIVE_NOT_RECRUITING [NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080]\n- NCT07738172 evaluates OSIMERTINIB [NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172]\n- NCT07738172: phase PHASE3; status RECRUITING [NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172]\n- NCT04541407 evaluates OSIMERTINIB [NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407]\n- NCT04541407: phase PHASE1; status COMPLETED [NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407]\n- NCT04772235 evaluates OSIMERTINIB [NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235]\n- NCT04772235: phase PHASE1; status UNKNOWN [NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235]\n- NCT05011487 evaluates OSIMERTINIB [NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487]\n- NCT05011487: phase PHASE2; status RECRUITING [NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487]\n- NCT04479306 evaluates OSIMERTINIB [NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306]\n- NCT04479306: phase PHASE1; status COMPLETED [NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306]"
+          }
+        }
+      }
+    },
+    {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "relation": "ACTS_ON",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "action_type": "INHIBITOR"
+          }
+        }
+      ],
+      "modes": {
+        "labels": {
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "OSIMERTINIB",
+                "object": "EGFR",
+                "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+                "action": "INHIBITOR"
+              }
+            ]
+          },
+          "output": {
+            "verified": true,
+            "accepted": [
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+                "subject": "CHEMBL3353410",
+                "object": "ENSG00000146648",
+                "action": "INHIBITOR"
+              }
+            ],
+            "rejected": [],
+            "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"
+          }
+        },
+        "ids": {
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "CHEMBL3353410",
+                "object": "ENSG00000146648",
+                "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+                "action": "INHIBITOR"
+              }
+            ]
+          },
+          "output": {
+            "verified": true,
+            "accepted": [
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+                "subject": "CHEMBL3353410",
+                "object": "ENSG00000146648",
+                "action": "INHIBITOR"
+              }
+            ],
+            "rejected": [],
+            "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"
+          }
+        }
+      }
+    },
+    {
+      "question": "Which drugs act on ALK?",
+      "intent": "drugs_for_target",
+      "entities": [
+        {
+          "type": "Target",
+          "id": "ENSG00000171094",
+          "label": "ALK",
+          "matched_text": "ALK"
+        }
+      ],
+      "evidence": [
+        {
+          "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+          "edge_id": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+          "relation": "ACTS_ON",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL4650298",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "drug_id": "CHEMBL4650298",
+            "trials_in_graph": 0,
+            "max_phase_overall": "PHASE_1"
+          }
+        },
+        {
+          "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+          "edge_id": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+          "relation": "ACTS_ON",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3899477",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "drug_id": "CHEMBL3899477",
+            "trials_in_graph": 0,
+            "max_phase_overall": "PHASE_1_2"
+          }
+        },
+        {
+          "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+          "edge_id": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+          "relation": "ACTS_ON",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3545360",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "drug_id": "CHEMBL3545360",
+            "trials_in_graph": 0,
+            "max_phase_overall": "PHASE_1"
+          }
+        },
+        {
+          "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+          "edge_id": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+          "relation": "ACTS_ON",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3707320",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "drug_id": "CHEMBL3707320",
+            "trials_in_graph": 1,
+            "max_phase_overall": "APPROVAL"
+          }
+        },
+        {
+          "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+          "edge_id": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+          "relation": "ACTS_ON",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3286830",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "drug_id": "CHEMBL3286830",
+            "trials_in_graph": 13,
+            "max_phase_overall": "APPROVAL"
+          }
+        },
+        {
+          "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+          "edge_id": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+          "relation": "ACTS_ON",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL4113131",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "drug_id": "CHEMBL4113131",
+            "trials_in_graph": 10,
+            "max_phase_overall": "APPROVAL"
+          }
+        },
+        {
+          "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+          "edge_id": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+          "relation": "ACTS_ON",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL1983268",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "drug_id": "CHEMBL1983268",
+            "trials_in_graph": 5,
+            "max_phase_overall": "APPROVAL"
+          }
+        },
+        {
+          "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+          "edge_id": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+          "relation": "ACTS_ON",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3545311",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "drug_id": "CHEMBL3545311",
+            "trials_in_graph": 9,
+            "max_phase_overall": "APPROVAL"
+          }
+        },
+        {
+          "statement": "CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+          "edge_id": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+          "relation": "ACTS_ON",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL2403108",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "drug_id": "CHEMBL2403108",
+            "trials_in_graph": 9,
+            "max_phase_overall": "APPROVAL"
+          }
+        },
+        {
+          "statement": "CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph)",
+          "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+          "relation": "ACTS_ON",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL601719",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "drug_id": "CHEMBL601719",
+            "trials_in_graph": 15,
+            "max_phase_overall": "APPROVAL"
+          }
+        },
+        {
+          "statement": "ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph)",
+          "edge_id": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+          "relation": "ACTS_ON",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL1738797",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "drug_id": "CHEMBL1738797",
+            "trials_in_graph": 16,
+            "max_phase_overall": "APPROVAL"
+          }
+        }
+      ],
+      "modes": {
+        "labels": {
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "PLB1003",
+                "object": "ALK",
+                "evidence": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "PLB1003",
+                "evidence": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+                "trials_in_graph": 0,
+                "max_stage": "PHASE_1"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "CONTELTINIB",
+                "object": "ALK",
+                "evidence": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "CONTELTINIB",
+                "evidence": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+                "trials_in_graph": 0,
+                "max_stage": "PHASE_1_2"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "ASP-3026",
+                "object": "ALK",
+                "evidence": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "ASP-3026",
+                "evidence": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+                "trials_in_graph": 0,
+                "max_stage": "PHASE_1"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "ALECTINIB HYDROCHLORIDE",
+                "object": "ALK",
+                "evidence": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "ALECTINIB HYDROCHLORIDE",
+                "evidence": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+                "trials_in_graph": 1,
+                "max_stage": "APPROVAL"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "LORLATINIB",
+                "object": "ALK",
+                "evidence": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "LORLATINIB",
+                "evidence": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+                "trials_in_graph": 13,
+                "max_stage": "APPROVAL"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "ENSARTINIB",
+                "object": "ALK",
+                "evidence": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "ENSARTINIB",
+                "evidence": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+                "trials_in_graph": 10,
+                "max_stage": "APPROVAL"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "ENTRECTINIB",
+                "object": "ALK",
+                "evidence": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "ENTRECTINIB",
+                "evidence": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+                "trials_in_graph": 5,
+                "max_stage": "APPROVAL"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "BRIGATINIB",
+                "object": "ALK",
+                "evidence": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "BRIGATINIB",
+                "evidence": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+                "trials_in_graph": 9,
+                "max_stage": "APPROVAL"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "CERITINIB",
+                "object": "ALK",
+                "evidence": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "CERITINIB",
+                "evidence": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+                "trials_in_graph": 9,
+                "max_stage": "APPROVAL"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "CRIZOTINIB",
+                "object": "ALK",
+                "evidence": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "CRIZOTINIB",
+                "evidence": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+                "trials_in_graph": 15,
+                "max_stage": "APPROVAL"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "ALECTINIB",
+                "object": "ALK",
+                "evidence": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "ALECTINIB",
+                "evidence": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+                "trials_in_graph": 16,
+                "max_stage": "APPROVAL"
+              }
+            ]
+          },
+          "output": {
+            "verified": false,
+            "accepted": [
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+                "subject": "CHEMBL4650298",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+                "drug": "CHEMBL4650298",
+                "max_stage": "PHASE_1",
+                "trials_in_graph": 0
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+                "subject": "CHEMBL3899477",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+                "drug": "CHEMBL3899477",
+                "max_stage": "PHASE_1_2",
+                "trials_in_graph": 0
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+                "subject": "CHEMBL3545360",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+                "drug": "CHEMBL3545360",
+                "max_stage": "PHASE_1",
+                "trials_in_graph": 0
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+                "subject": "CHEMBL3286830",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+                "drug": "CHEMBL3286830",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 13
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+                "subject": "CHEMBL4113131",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+                "drug": "CHEMBL4113131",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 10
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+                "subject": "CHEMBL1983268",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+                "drug": "CHEMBL1983268",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 5
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+                "subject": "CHEMBL3545311",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+                "drug": "CHEMBL3545311",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 9
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+                "subject": "CHEMBL2403108",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+                "drug": "CHEMBL2403108",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 9
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+                "subject": "CHEMBL601719",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+                "drug": "CHEMBL601719",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 15
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+                "subject": "CHEMBL1738797",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+                "drug": "CHEMBL1738797",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 16
+              }
+            ],
+            "rejected": [
+              {
+                "claim": {
+                  "kind": "relation",
+                  "relation": "ACTS_ON",
+                  "subject": "ALECTINIB HYDROCHLORIDE",
+                  "object": "ALK",
+                  "evidence": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+                  "action": "INHIBITOR"
+                },
+                "why": "'ALECTINIB HYDROCHLORIDE' does not name exactly one drug on its own"
+              },
+              {
+                "claim": {
+                  "kind": "drug",
+                  "drug": "ALECTINIB HYDROCHLORIDE",
+                  "evidence": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+                  "trials_in_graph": 1,
+                  "max_stage": "APPROVAL"
+                },
+                "why": "'ALECTINIB HYDROCHLORIDE' does not name exactly one drug on its own"
+              }
+            ],
+            "text": "- PLB1003 acts on ALK (inhibitor) [CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298]\n- PLB1003: maximum clinical stage PHASE_1; 0 NSCLC trial(s) in this graph [CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298]\n- CONTELTINIB acts on ALK (inhibitor) [CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477]\n- CONTELTINIB: maximum clinical stage PHASE_1_2; 0 NSCLC trial(s) in this graph [CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477]\n- ASP-3026 acts on ALK (inhibitor) [CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360]\n- ASP-3026: maximum clinical stage PHASE_1; 0 NSCLC trial(s) in this graph [CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360]\n- LORLATINIB acts on ALK (inhibitor) [CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830]\n- LORLATINIB: maximum clinical stage APPROVAL; 13 NSCLC trial(s) in this graph [CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830]\n- ENSARTINIB acts on ALK (inhibitor) [CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131]\n- ENSARTINIB: maximum clinical stage APPROVAL; 10 NSCLC trial(s) in this graph [CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131]\n- ENTRECTINIB acts on ALK (inhibitor) [CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268]\n- ENTRECTINIB: maximum clinical stage APPROVAL; 5 NSCLC trial(s) in this graph [CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268]\n- BRIGATINIB acts on ALK (inhibitor) [CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311]\n- BRIGATINIB: maximum clinical stage APPROVAL; 9 NSCLC trial(s) in this graph [CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311]\n- CERITINIB acts on ALK (inhibitor) [CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108]\n- CERITINIB: maximum clinical stage APPROVAL; 9 NSCLC trial(s) in this graph [CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108]\n- CRIZOTINIB acts on ALK (inhibitor) [CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719]\n- CRIZOTINIB: maximum clinical stage APPROVAL; 15 NSCLC trial(s) in this graph [CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719]\n- ALECTINIB acts on ALK (inhibitor) [CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797]\n- ALECTINIB: maximum clinical stage APPROVAL; 16 NSCLC trial(s) in this graph [CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797]"
+          }
+        },
+        "ids": {
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "CHEMBL4650298",
+                "object": "ENSG00000171094",
+                "evidence": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "CHEMBL4650298",
+                "evidence": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+                "trials_in_graph": 0,
+                "max_stage": "PHASE_1"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "CHEMBL3899477",
+                "object": "ENSG00000171094",
+                "evidence": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "CHEMBL3899477",
+                "evidence": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+                "trials_in_graph": 0,
+                "max_stage": "PHASE_1_2"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "CHEMBL3545360",
+                "object": "ENSG00000171094",
+                "evidence": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "CHEMBL3545360",
+                "evidence": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+                "trials_in_graph": 0,
+                "max_stage": "PHASE_1"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "CHEMBL3707320",
+                "object": "ENSG00000171094",
+                "evidence": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "CHEMBL3707320",
+                "evidence": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+                "trials_in_graph": 1,
+                "max_stage": "APPROVAL"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "CHEMBL3286830",
+                "object": "ENSG00000171094",
+                "evidence": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "CHEMBL3286830",
+                "evidence": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+                "trials_in_graph": 13,
+                "max_stage": "APPROVAL"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "CHEMBL4113131",
+                "object": "ENSG00000171094",
+                "evidence": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "CHEMBL4113131",
+                "evidence": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+                "trials_in_graph": 10,
+                "max_stage": "APPROVAL"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "CHEMBL1983268",
+                "object": "ENSG00000171094",
+                "evidence": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "CHEMBL1983268",
+                "evidence": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+                "trials_in_graph": 5,
+                "max_stage": "APPROVAL"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "CHEMBL3545311",
+                "object": "ENSG00000171094",
+                "evidence": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "CHEMBL3545311",
+                "evidence": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+                "trials_in_graph": 9,
+                "max_stage": "APPROVAL"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "CHEMBL2403108",
+                "object": "ENSG00000171094",
+                "evidence": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "CHEMBL2403108",
+                "evidence": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+                "trials_in_graph": 9,
+                "max_stage": "APPROVAL"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "CHEMBL601719",
+                "object": "ENSG00000171094",
+                "evidence": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "CHEMBL601719",
+                "evidence": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+                "trials_in_graph": 15,
+                "max_stage": "APPROVAL"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "CHEMBL1738797",
+                "object": "ENSG00000171094",
+                "evidence": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "drug": "CHEMBL1738797",
+                "evidence": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+                "trials_in_graph": 16,
+                "max_stage": "APPROVAL"
+              }
+            ]
+          },
+          "output": {
+            "verified": true,
+            "accepted": [
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+                "subject": "CHEMBL4650298",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+                "drug": "CHEMBL4650298",
+                "max_stage": "PHASE_1",
+                "trials_in_graph": 0
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+                "subject": "CHEMBL3899477",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+                "drug": "CHEMBL3899477",
+                "max_stage": "PHASE_1_2",
+                "trials_in_graph": 0
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+                "subject": "CHEMBL3545360",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+                "drug": "CHEMBL3545360",
+                "max_stage": "PHASE_1",
+                "trials_in_graph": 0
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+                "subject": "CHEMBL3707320",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+                "drug": "CHEMBL3707320",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 1
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+                "subject": "CHEMBL3286830",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+                "drug": "CHEMBL3286830",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 13
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+                "subject": "CHEMBL4113131",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+                "drug": "CHEMBL4113131",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 10
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+                "subject": "CHEMBL1983268",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+                "drug": "CHEMBL1983268",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 5
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+                "subject": "CHEMBL3545311",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+                "drug": "CHEMBL3545311",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 9
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+                "subject": "CHEMBL2403108",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+                "drug": "CHEMBL2403108",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 9
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+                "subject": "CHEMBL601719",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+                "drug": "CHEMBL601719",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 15
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+                "subject": "CHEMBL1738797",
+                "object": "ENSG00000171094",
+                "action": "INHIBITOR"
+              },
+              {
+                "kind": "drug",
+                "edge": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+                "drug": "CHEMBL1738797",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 16
+              }
+            ],
+            "rejected": [],
+            "text": "- PLB1003 acts on ALK (inhibitor) [CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298]\n- PLB1003: maximum clinical stage PHASE_1; 0 NSCLC trial(s) in this graph [CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298]\n- CONTELTINIB acts on ALK (inhibitor) [CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477]\n- CONTELTINIB: maximum clinical stage PHASE_1_2; 0 NSCLC trial(s) in this graph [CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477]\n- ASP-3026 acts on ALK (inhibitor) [CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360]\n- ASP-3026: maximum clinical stage PHASE_1; 0 NSCLC trial(s) in this graph [CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360]\n- ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor) [CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320]\n- ALECTINIB HYDROCHLORIDE: maximum clinical stage APPROVAL; 1 NSCLC trial(s) in this graph [CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320]\n- LORLATINIB acts on ALK (inhibitor) [CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830]\n- LORLATINIB: maximum clinical stage APPROVAL; 13 NSCLC trial(s) in this graph [CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830]\n- ENSARTINIB acts on ALK (inhibitor) [CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131]\n- ENSARTINIB: maximum clinical stage APPROVAL; 10 NSCLC trial(s) in this graph [CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131]\n- ENTRECTINIB acts on ALK (inhibitor) [CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268]\n- ENTRECTINIB: maximum clinical stage APPROVAL; 5 NSCLC trial(s) in this graph [CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268]\n- BRIGATINIB acts on ALK (inhibitor) [CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311]\n- BRIGATINIB: maximum clinical stage APPROVAL; 9 NSCLC trial(s) in this graph [CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311]\n- CERITINIB acts on ALK (inhibitor) [CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108]\n- CERITINIB: maximum clinical stage APPROVAL; 9 NSCLC trial(s) in this graph [CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108]\n- CRIZOTINIB acts on ALK (inhibitor) [CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719]\n- CRIZOTINIB: maximum clinical stage APPROVAL; 15 NSCLC trial(s) in this graph [CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719]\n- ALECTINIB acts on ALK (inhibitor) [CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797]\n- ALECTINIB: maximum clinical stage APPROVAL; 16 NSCLC trial(s) in this graph [CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797]"
+          }
+        }
+      }
+    },
+    {
+      "question": "What is AstraZeneca running in NSCLC?",
+      "intent": "company_portfolio",
+      "entities": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "AstraZeneca",
+          "also_matching_ids": []
+        },
+        {
+          "type": "Disease",
+          "id": "MONDO_0005233",
+          "label": "non-small cell lung carcinoma",
+          "matched_text": "NSCLC"
+        }
+      ],
+      "evidence": [
+        {
+          "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+          "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT01802632, NCT02143466, NCT02224053",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "evidence_trials": 14,
+            "example_trials": [
+              "NCT01802632",
+              "NCT02143466",
+              "NCT02224053"
+            ]
+          }
+        },
+        {
+          "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+          "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT00006049, NCT00322452, NCT01000896",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "evidence_trials": 10,
+            "example_trials": [
+              "NCT00006049",
+              "NCT00322452",
+              "NCT01000896"
+            ]
+          }
+        },
+        {
+          "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+          "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT00006049, NCT00034879, NCT00234442",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "evidence_trials": 8,
+            "example_trials": [
+              "NCT00006049",
+              "NCT00034879",
+              "NCT00234442"
+            ]
+          }
+        },
+        {
+          "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+          "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT02740985, NCT03164616, NCT03703297",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "evidence_trials": 7,
+            "example_trials": [
+              "NCT02740985",
+              "NCT03164616",
+              "NCT03703297"
+            ]
+          }
+        },
+        {
+          "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+          "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT02453282, NCT03164616, NCT04035486",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "evidence_trials": 6,
+            "example_trials": [
+              "NCT02453282",
+              "NCT03164616",
+              "NCT04035486"
+            ]
+          }
+        },
+        {
+          "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+          "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT00372788, NCT02453282, NCT03164616",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "evidence_trials": 6,
+            "example_trials": [
+              "NCT00372788",
+              "NCT02453282",
+              "NCT03164616"
+            ]
+          }
+        },
+        {
+          "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+          "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT00006049, NCT00322452, NCT01000896",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "evidence_trials": 6,
+            "example_trials": [
+              "NCT00006049",
+              "NCT00322452",
+              "NCT01000896"
+            ]
+          }
+        },
+        {
+          "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+          "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT05123482, NCT06357533, NCT06627647",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "evidence_trials": 6,
+            "example_trials": [
+              "NCT05123482",
+              "NCT06357533",
+              "NCT06627647"
+            ]
+          }
+        },
+        {
+          "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+          "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT00372788, NCT01605916, NCT01933932",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "evidence_trials": 4,
+            "example_trials": [
+              "NCT00372788",
+              "NCT01605916",
+              "NCT01933932"
+            ]
+          }
+        },
+        {
+          "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+          "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT06357533, NCT06627647, NCT06692738",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "evidence_trials": 4,
+            "example_trials": [
+              "NCT06357533",
+              "NCT06627647",
+              "NCT06692738"
+            ]
+          }
+        },
+        {
+          "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+          "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT00478049, NCT01933932, NCT02740985",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "evidence_trials": 4,
+            "example_trials": [
+              "NCT00478049",
+              "NCT01933932",
+              "NCT02740985"
+            ]
+          }
+        },
+        {
+          "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+          "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+          "relation": "SPONSORS_TRIAL_OF",
+          "source": "derived",
+          "source_record": "NCT06357533, NCT07098338, NCT07291037",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "evidence_trials": 4,
+            "example_trials": [
+              "NCT06357533",
+              "NCT07098338",
+              "NCT07291037"
+            ]
+          }
+        }
+      ],
+      "modes": {
+        "labels": {
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Astrazeneca",
+                "object": "OSIMERTINIB",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 14
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Astrazeneca",
+                "object": "CARBOPLATIN",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+                "trial_count": 10
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Astrazeneca",
+                "object": "GEFITINIB",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+                "trial_count": 8
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Astrazeneca",
+                "object": "DURVALUMAB",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+                "trial_count": 7
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Astrazeneca",
+                "object": "CISPLATIN",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+                "trial_count": 6
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Astrazeneca",
+                "object": "PEMETREXED",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+                "trial_count": 6
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Astrazeneca",
+                "object": "PACLITAXEL",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+                "trial_count": 6
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Astrazeneca",
+                "object": "RILVEGOSTOMIG",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+                "trial_count": 6
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Astrazeneca",
+                "object": "SELUMETINIB",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+                "trial_count": 4
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Astrazeneca",
+                "object": "PEMBROLIZUMAB",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+                "trial_count": 4
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Astrazeneca",
+                "object": "DOCETAXEL",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+                "trial_count": 4
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "Astrazeneca",
+                "object": "DATOPOTAMAB DERUXTECAN",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+                "trial_count": 4
+              }
+            ]
+          },
+          "output": {
+            "verified": true,
+            "accepted": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL3353410",
+                "trial_count": 14
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL1351",
+                "trial_count": 10
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL939",
+                "trial_count": 8
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL3301587",
+                "trial_count": 7
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL11359",
+                "trial_count": 6
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL225072",
+                "trial_count": 6
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL428647",
+                "trial_count": 6
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL5314706",
+                "trial_count": 6
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL1614701",
+                "trial_count": 4
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL3137343",
+                "trial_count": 4
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL3545252",
+                "trial_count": 4
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL4297939",
+                "trial_count": 4
+              }
+            ],
+            "rejected": [],
+            "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Astrazeneca is lead sponsor of 10 trial(s) evaluating CARBOPLATIN - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|]\n- Astrazeneca is lead sponsor of 8 trial(s) evaluating GEFITINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|]\n- Astrazeneca is lead sponsor of 7 trial(s) evaluating DURVALUMAB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|]\n- Astrazeneca is lead sponsor of 6 trial(s) evaluating CISPLATIN - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|]\n- Astrazeneca is lead sponsor of 6 trial(s) evaluating PEMETREXED - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|]\n- Astrazeneca is lead sponsor of 6 trial(s) evaluating PACLITAXEL - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|]\n- Astrazeneca is lead sponsor of 6 trial(s) evaluating RILVEGOSTOMIG - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|]\n- Astrazeneca is lead sponsor of 4 trial(s) evaluating SELUMETINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|]\n- Astrazeneca is lead sponsor of 4 trial(s) evaluating PEMBROLIZUMAB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|]\n- Astrazeneca is lead sponsor of 4 trial(s) evaluating DOCETAXEL - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|]\n- Astrazeneca is lead sponsor of 4 trial(s) evaluating DATOPOTAMAB DERUXTECAN - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|]"
+          }
+        },
+        "ids": {
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 14
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL1351",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+                "trial_count": 10
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL939",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+                "trial_count": 8
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL3301587",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+                "trial_count": 7
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL11359",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+                "trial_count": 6
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL225072",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+                "trial_count": 6
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL428647",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+                "trial_count": 6
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL5314706",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+                "trial_count": 6
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL1614701",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+                "trial_count": 4
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL3137343",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+                "trial_count": 4
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL3545252",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+                "trial_count": 4
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL4297939",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+                "trial_count": 4
+              }
+            ]
+          },
+          "output": {
+            "verified": true,
+            "accepted": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL3353410",
+                "trial_count": 14
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL1351",
+                "trial_count": 10
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL939",
+                "trial_count": 8
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL3301587",
+                "trial_count": 7
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL11359",
+                "trial_count": 6
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL225072",
+                "trial_count": 6
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL428647",
+                "trial_count": 6
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL5314706",
+                "trial_count": 6
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL1614701",
+                "trial_count": 4
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL3137343",
+                "trial_count": 4
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL3545252",
+                "trial_count": 4
+              },
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL4297939",
+                "trial_count": 4
+              }
+            ],
+            "rejected": [],
+            "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]\n- Astrazeneca is lead sponsor of 10 trial(s) evaluating CARBOPLATIN - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|]\n- Astrazeneca is lead sponsor of 8 trial(s) evaluating GEFITINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|]\n- Astrazeneca is lead sponsor of 7 trial(s) evaluating DURVALUMAB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|]\n- Astrazeneca is lead sponsor of 6 trial(s) evaluating CISPLATIN - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|]\n- Astrazeneca is lead sponsor of 6 trial(s) evaluating PEMETREXED - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|]\n- Astrazeneca is lead sponsor of 6 trial(s) evaluating PACLITAXEL - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|]\n- Astrazeneca is lead sponsor of 6 trial(s) evaluating RILVEGOSTOMIG - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|]\n- Astrazeneca is lead sponsor of 4 trial(s) evaluating SELUMETINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|]\n- Astrazeneca is lead sponsor of 4 trial(s) evaluating PEMBROLIZUMAB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|]\n- Astrazeneca is lead sponsor of 4 trial(s) evaluating DOCETAXEL - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|]\n- Astrazeneca is lead sponsor of 4 trial(s) evaluating DATOPOTAMAB DERUXTECAN - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|]"
+          }
+        }
+      }
+    },
+    {
+      "question": "What is the capital of France?",
+      "intent": "unsupported",
+      "entities": [],
+      "evidence": [],
+      "modes": {
+        "labels": {
+          "input": {
+            "claims": []
+          },
+          "output": {
+            "question": "What is the capital of France?",
+            "intent": "unsupported",
+            "entities": [],
+            "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+            "generated_by": "refusal (no supporting evidence)",
+            "checks": {
+              "grounded": true,
+              "unsupported_claims": [],
+              "note": "refusing is the correct output when evidence is absent"
+            },
+            "evidence": []
+          }
+        },
+        "ids": {
+          "input": {
+            "claims": []
+          },
+          "output": {
+            "question": "What is the capital of France?",
+            "intent": "unsupported",
+            "entities": [],
+            "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+            "generated_by": "refusal (no supporting evidence)",
+            "checks": {
+              "grounded": true,
+              "unsupported_claims": [],
+              "note": "refusing is the correct output when evidence is absent"
+            },
+            "evidence": []
+          }
+        }
+      }
+    },
+    {
+      "question": "What is osimertinib?",
+      "intent": "drug_profile",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB is a Small molecule, max clinical stage APPROVAL, appearing in 79 NSCLC trial(s) in this graph",
+          "edge_id": "profile:CHEMBL3353410",
+          "relation": "PROFILE",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": null,
+          "confidence": 1.0,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "aliases_known": 9,
+            "mechanisms": [
+              "Epidermal growth factor receptor erbB1 inhibitor"
+            ]
+          }
+        },
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "relation": "ACTS_ON",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "tier": null,
+          "url": null,
+          "detail": {
+            "action_type": "INHIBITOR"
+          }
+        }
+      ],
+      "modes": {
+        "labels": {
+          "input": {
+            "claims": [
+              {
+                "kind": "drug",
+                "drug": "OSIMERTINIB",
+                "evidence": "profile:CHEMBL3353410",
+                "trials_in_graph": 79,
+                "max_stage": "APPROVAL"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "OSIMERTINIB",
+                "object": "EGFR",
+                "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+                "action": "INHIBITOR"
+              }
+            ]
+          },
+          "output": {
+            "verified": true,
+            "accepted": [
+              {
+                "kind": "drug",
+                "edge": "profile:CHEMBL3353410",
+                "drug": "CHEMBL3353410",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 79
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+                "subject": "CHEMBL3353410",
+                "object": "ENSG00000146648",
+                "action": "INHIBITOR"
+              }
+            ],
+            "rejected": [],
+            "text": "- OSIMERTINIB: maximum clinical stage APPROVAL; 79 NSCLC trial(s) in this graph [profile:CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"
+          }
+        },
+        "ids": {
+          "input": {
+            "claims": [
+              {
+                "kind": "drug",
+                "drug": "CHEMBL3353410",
+                "evidence": "profile:CHEMBL3353410",
+                "trials_in_graph": 79,
+                "max_stage": "APPROVAL"
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "subject": "CHEMBL3353410",
+                "object": "ENSG00000146648",
+                "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+                "action": "INHIBITOR"
+              }
+            ]
+          },
+          "output": {
+            "verified": true,
+            "accepted": [
+              {
+                "kind": "drug",
+                "edge": "profile:CHEMBL3353410",
+                "drug": "CHEMBL3353410",
+                "max_stage": "APPROVAL",
+                "trials_in_graph": 79
+              },
+              {
+                "kind": "relation",
+                "relation": "ACTS_ON",
+                "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+                "subject": "CHEMBL3353410",
+                "object": "ENSG00000146648",
+                "action": "INHIBITOR"
+              }
+            ],
+            "rejected": [],
+            "text": "- OSIMERTINIB: maximum clinical stage APPROVAL; 79 NSCLC trial(s) in this graph [profile:CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"
+          }
+        }
+      }
+    }
+  ],
+  "phase_examples": [
+    {
+      "category": "multiple",
+      "question": "What trials evaluate BEXAROTENE?",
+      "evidence": {
+        "statement": "NCT00153842 (PHASE1, PHASE2, TERMINATED) evaluates BEXAROTENE",
+        "edge_id": "NCT00153842|EVALUATES|CHEMBL1023|NCT00153842",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT00153842",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT00153842",
+        "detail": {
+          "stated_intervention": "Bexarotene (targretin)",
+          "title": "A Study of Paclitaxel and Carboplatin in Combination With Bexarotene Oral Capsules in Patients With Advanced Lung Cancer",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        }
+      },
+      "input": {
+        "claims": [
+          {
+            "kind": "trial",
+            "trial": "NCT00153842",
+            "evidence": "NCT00153842|EVALUATES|CHEMBL1023|NCT00153842",
+            "phase": [
+              "PHASE1",
+              "PHASE2"
+            ],
+            "status": "TERMINATED"
+          }
+        ]
+      },
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "trial",
+            "edge": "NCT00153842|EVALUATES|CHEMBL1023|NCT00153842",
+            "trial": "NCT00153842",
+            "phase": [
+              "PHASE1",
+              "PHASE2"
+            ],
+            "status": "TERMINATED"
+          }
+        ],
+        "rejected": [],
+        "text": "- NCT00153842: phase PHASE1, PHASE2; status TERMINATED [NCT00153842|EVALUATES|CHEMBL1023|NCT00153842]"
+      }
+    }
+  ],
+  "schema_limitations": [
+    {
+      "question": "What is osimertinib?",
+      "input": {
+        "claims": [
+          {
+            "kind": "drug",
+            "drug": "OSIMERTINIB",
+            "evidence": "profile:CHEMBL3353410",
+            "trials_in_graph": 79,
+            "max_stage": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        ]
+      },
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "drug",
+              "drug": "OSIMERTINIB",
+              "evidence": "profile:CHEMBL3353410",
+              "trials_in_graph": 79,
+              "max_stage": "APPROVAL",
+              "drug_type": "Small molecule"
+            },
+            "why": "unknown keys ['drug_type'] (no free text is accepted)"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "question": "What is osimertinib?",
+      "input": {
+        "claims": [
+          {
+            "kind": "drug",
+            "drug": "OSIMERTINIB",
+            "evidence": "profile:CHEMBL3353410",
+            "trials_in_graph": 79,
+            "max_stage": "APPROVAL",
+            "aliases_known": 9
+          }
+        ]
+      },
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "drug",
+              "drug": "OSIMERTINIB",
+              "evidence": "profile:CHEMBL3353410",
+              "trials_in_graph": 79,
+              "max_stage": "APPROVAL",
+              "aliases_known": 9
+            },
+            "why": "unknown keys ['aliases_known'] (no free text is accepted)"
+          }
+        ],
+        "text": ""
+      }
+    }
+  ],
+  "codes": {
+    "action_type": {
+      "INHIBITOR": 1708,
+      "BINDING AGENT": 46,
+      "AGONIST": 93,
+      "ANTAGONIST": 82,
+      "ACTIVATOR": 9,
+      "CROSS-LINKING AGENT": 3,
+      "BLOCKER": 10,
+      "ANTISENSE INHIBITOR": 8,
+      "MODULATOR": 31,
+      "NEGATIVE MODULATOR": 3,
+      "DISRUPTING AGENT": 16,
+      "STABILISER": 106,
+      "NEGATIVE ALLOSTERIC MODULATOR": 5,
+      "VACCINE ANTIGEN": 6,
+      "POSITIVE ALLOSTERIC MODULATOR": 48,
+      "OTHER": 5,
+      "POSITIVE MODULATOR": 2,
+      "OPENER": 5
+    },
+    "evidence_trials": {
+      "1": 2589,
+      "2": 350,
+      "4": 44,
+      "3": 125,
+      "7": 10,
+      "6": 17,
+      "10": 4,
+      "14": 3,
+      "8": 2,
+      "12": 2,
+      "19": 1,
+      "5": 15,
+      "21": 2,
+      "15": 2,
+      "29": 1,
+      "13": 2,
+      "11": 3,
+      "22": 1,
+      "9": 3
+    }
+  }
+}

@@ -1,0 +1,39 @@
+﻿faithful {"grounded": true, "accepted": 1, "rejected": 0, "answer_prefix": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"}
+fenced {"grounded": true, "accepted": 1, "rejected": 0, "answer_prefix": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"}
+prose_around_json {"grounded": true, "accepted": 1, "rejected": 0, "answer_prefix": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"}
+two_json_objects {"grounded": false, "accepted": 0, "rejected": 1, "answer_prefix": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support the"}
+braces_in_prefix {"grounded": false, "accepted": 0, "rejected": 1, "answer_prefix": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support the"}
+empty_string {"grounded": false, "accepted": 0, "rejected": 1, "answer_prefix": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support the"}
+malformed_json {"grounded": false, "accepted": 0, "rejected": 1, "answer_prefix": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support the"}
+empty_claims {"grounded": false, "accepted": 0, "rejected": 1, "answer_prefix": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support the"}
+not_json {"grounded": false, "accepted": 0, "rejected": 1, "answer_prefix": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support the"}
+unknown_field_injection {"grounded": false, "accepted": 0, "rejected": 1, "answer_prefix": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support the"}
+action_injection {"grounded": false, "accepted": 0, "rejected": 1, "answer_prefix": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support the"}
+kind_list {"type": "TypeError", "message": "unhashable type: 'list'"}
+kind_object {"type": "TypeError", "message": "unhashable type: 'dict'"}
+faithful_then_kind_list {"type": "TypeError", "message": "unhashable type: 'list'"}
+relation_list {"type": "TypeError", "message": "unhashable type: 'list'"}
+claims51 {"grounded": false, "accepted": 50, "rejected": 1, "answer_prefix": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB act"}
+claims50_then_injection {"grounded": false, "accepted": 50, "rejected": 1, "answer_prefix": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB act"}
+duplicate_action_bad_then_good {"grounded": true, "accepted": 1, "rejected": 0, "answer_prefix": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"}
+duplicate_action_good_then_bad {"grounded": false, "accepted": 0, "rejected": 1, "answer_prefix": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support the"}
+nan_action {"grounded": false, "accepted": 0, "rejected": 1, "answer_prefix": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support the"}
+infinity_action {"grounded": false, "accepted": 0, "rejected": 1, "answer_prefix": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support the"}
+nested1100 {"grounded": false, "accepted": 0, "rejected": 1, "answer_prefix": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support the"}
+nested20000 {"type": "RecursionError", "message": "maximum recursion depth exceeded while decoding a JSON array from a unicode string"}
+oversized_unknown {"grounded": false, "accepted": 0, "rejected": 1, "answer_prefix": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support the"}
+no_content {"type": "IndexError", "message": "list index out of range"}
+non_text_block {"type": "AttributeError", "message": "'types.SimpleNamespace' object has no attribute 'text'"}
+null_text {"type": "AttributeError", "message": "'NoneType' object has no attribute 'strip'"}
+sdk_failure {"type": "RuntimeError", "message": "simulated SDK failure"}
+missing_sdk {"grounded": false, "accepted": 0, "rejected": 1, "answer_prefix": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support the"}
+API faithful 200 
+API unknown_field_injection 200 
+API action_injection 200 
+API kind_list 400 unhashable type: 'list'
+API relation_list 400 unhashable type: 'list'
+API nested1100 200 
+API claims51 200 
+API oversized_unknown 400 Unterminated string starting at: line 1 column 53 (char 52)
+API nan_action 200 
+API empty_claims 200 

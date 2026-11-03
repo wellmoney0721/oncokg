@@ -450,8 +450,10 @@ check out (`src/structured.py`):
 
 Each claim is accepted only if its keys are exactly those of its kind (no free-text
 field exists, and an unknown key rejects the claim), the cited edge is one of those
-retrieved for the question and is live, the edge's relation and both ends are the
-ones the claim names (a name must resolve, whole, to that node), and every value
+retrieved for the question and is live (a drug claim may also cite the drug's
+profile record retrieved for the question), the edge's relation and both ends are the
+ones the claim names (a name is an id, a label exactly as the graph writes it, or an
+alias that resolves, whole, to that node), and every value
 equals what the graph stores: action type, sponsor's trial count, a trial's phase
 set and status, a drug's maximum stage and its number of trials. The answer is then
 written from accepted claims in the graph's own labels and values, with the edge id
@@ -531,7 +533,7 @@ fixed now, and its number has been reused.
     adversarial rounds found 33, about 40, about 25, about 20, about 15 and then 8
     sentence shapes that got through it (reversed nouns, clefts, pronouns, counts
     and phases borrowed across entities, headings, relative clauses, kind words),
-    and its repairs began to reject faithful answers (22 of 38 in round 6). Each
+    and its repairs began to reject faithful answers (only 22 of 38 passed in round 6). Each
     shape found is a regression test, but it reads word order, not meaning, and is
     documented as able to miss unsupported claims and to reject correct ones.
 14. **Provenance does not record the code version.** Snapshots carry their
@@ -559,7 +561,7 @@ pip install -r requirements.txt
 python src/run_all.py              # fetch, resolve, check, build, score, render
 python src/run_all.py --offline    # rebuild from the snapshots in data/raw
 
-python -m pytest tests -q                    # 300 tests
+python -m pytest tests -q                    # 312 tests
 python src/app.py                            # try-it page: http://localhost:8765
 python src/curation_effect.py                # resolve twice, with and without curation
 python src/apply_label_corrections.py --check

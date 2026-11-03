@@ -24,7 +24,8 @@ A claim is accepted only when all of these hold:
   * its kind and keys are exactly as above (an unknown key rejects the claim, so no
     free text can ride along) and every value has the expected type;
   * the cited evidence id is one of the edges retrieved for this question, and that
-    edge is live in the graph;
+    edge is live in the graph (or, for a drug claim, it is the drug's own profile
+    record "profile:<id>" retrieved for this question);
   * the edge's relation is the claimed relation, and its two ends are the entities
     the claim names (a name must resolve, as a whole, to exactly that node id);
   * every value equals what the graph stores: the edge's action type, the sponsor's
@@ -62,7 +63,13 @@ def _norm(v: str) -> str:
 
 
 def _flat(s: str) -> str:
-    return re.sub(r"[^a-z0-9]+", " ", s.lower()).strip()
+    """Case and punctuation aside, the same characters: letters of any script count, so
+    "osimertinib가 아닌" is not the same name as "osimertinib"."""
+    return " ".join(re.findall(r"[^\W_]+", s.casefold()))
+
+
+def _no_constant(name):
+    raise ValueError(f"{name} is not a JSON number")
 
 
 class Verifier:
@@ -82,6 +89,20 @@ class Verifier:
                 set(), f"{name} is a {row['type'].lower()}, not a {want.lower()}")
         if want == "Trial":
             return set(), "a trial is named by its registry id (NCT followed by 8 digits)"
+        # a label exactly as the graph (and so the evidence) writes it
+        rows = self.kg.conn.execute(
+            "SELECT id, type FROM node WHERE lower(label)=lower(?) AND retired_at IS NULL",
+            (name,)).fetchall()
+        if rows:
+            ids = {r["id"] for r in rows if r["type"] == want}
+            if ids:
+                return ids, None
+            return set(), f"{name} is a {rows[0]['type'].lower()}, not a {want.lower()}"
+        if not (name.isascii() and name.isprintable()):
+            # the linker drops characters it cannot read, so "osimertinib是安全的" would
+            # pass as osimertinib; outside the graph's own labels, names are plain ASCII
+            return set(), (f"'{name}' is not written the way the graph writes names "
+                           "(use the id or the name as it appears in the evidence)")
         ents = [e for e in self.kg.link_entities(name) if e.get("type") not in ("Disease",)]
         whole = len(ents) == 1 and _flat(ents[0].get("matched_text") or "") == _flat(name)
         if whole and ents[0].get("type") != want:
@@ -97,7 +118,7 @@ class Verifier:
         if not isinstance(claim, dict):
             return None, "a claim must be a JSON object"
         kind = claim.get("kind")
-        if kind not in KEYS:
+        if not isinstance(kind, str) or kind not in KEYS:
             return None, f"unknown kind {kind!r}; use relation, trial or drug"
         need, may = KEYS[kind]
         keys = set(claim)
@@ -119,7 +140,7 @@ class Verifier:
 
     def _relation(self, c, edge):
         rel = c["relation"]
-        if rel not in RELATIONS:
+        if not isinstance(rel, str) or rel not in RELATIONS:
             return None, f"unknown relation {rel!r}"
         if edge["rel"] != rel:
             return None, f"the cited edge is {edge['rel']}, not {rel}"
@@ -209,19 +230,28 @@ class Verifier:
         """`payload` is the model's JSON (a string or already parsed)."""
         if isinstance(payload, str):
             try:
-                payload = json.loads(payload)
-            except json.JSONDecodeError as e:
+                # NaN and Infinity are not JSON; refusing them keeps every echo valid JSON
+                payload = json.loads(payload, parse_constant=_no_constant)
+            except (ValueError, RecursionError) as e:
                 return {"verified": False, "accepted": [], "text": "",
-                        "rejected": [{"claim": None, "why": f"not valid JSON: {e.msg}"}]}
+                        "rejected": [{"claim": None, "why": "not valid JSON: "
+                                      + (getattr(e, "msg", None) or "nested too deeply")}]}
         claims = payload.get("claims") if isinstance(payload, dict) else None
-        if not isinstance(claims, list) or not claims or set(payload) != {"claims"}:
+        if isinstance(claims, list) and not claims and set(payload) == {"claims"}:
+            # the model's way of saying the evidence does not answer the question
+            return {"verified": False, "accepted": [], "rejected": [], "text": "",
+                    "empty": True}
+        if not isinstance(claims, list) or set(payload) != {"claims"}:
             return {"verified": False, "accepted": [], "text": "",
                     "rejected": [{"claim": None,
                                   "why": 'the answer must be {"claims": [...]} and nothing else'}]}
         retrieved = {e.edge_id for e in evidence}
         accepted, rejected = [], []
         for c in claims[:50]:
-            facts, why = self.check(c, retrieved)
+            try:
+                facts, why = self.check(c, retrieved)
+            except Exception as e:           # a claim the checker cannot read is rejected
+                facts, why = None, f"the claim could not be read ({type(e).__name__})"
             if why:
                 rejected.append({"claim": c, "why": why})
             else:

@@ -114,3 +114,39 @@ def test_model_reply_is_checked_and_only_accepted_claims_reach_the_answer(monkey
     assert "ACTIVATOR" not in a.text.upper().replace("(INHIBITOR)", "")
     assert a.text.startswith("- OSIMERTINIB acts on EGFR (inhibitor)")
     assert "1 claim(s) were removed" in a.text
+
+
+# Codex review s1
+@pytest.mark.parametrize("name", ["osimertinib가 아닌", "osimertinib是安全的", "非osimertinib",
+                                  "osimertinib💉", "OSIMERTINIB​", "osimertinib癌"])
+def test_names_outside_the_graphs_spelling_are_rejected(name):
+    r = verify(Q3, rel("ACTS_ON", name, "EGFR", OSI_EGFR))
+    assert not r["verified"]
+
+
+def test_label_copied_from_the_evidence_is_accepted():
+    ev = evidence(Q4)
+    alec = next(e for e in ev if e.statement.startswith("ALECTINIB HYDROCHLORIDE"))
+    r = KG.verify_structured({"claims": [rel("ACTS_ON", "ALECTINIB HYDROCHLORIDE", "ALK",
+                                             alec.edge_id, action="INHIBITOR")]}, ev)
+    assert r["verified"], r["rejected"]
+
+
+@pytest.mark.parametrize("raw", [
+    '{"claims":[{"kind":[]}]}',
+    '{"claims":[{"kind":"relation","relation":{},"subject":"osimertinib","object":"EGFR",'
+    '"evidence":"' + OSI_EGFR + '"}]}',
+    '{"claims":[{"kind":"relation","relation":"ACTS_ON","subject":"osimertinib",'
+    '"object":"EGFR","evidence":"' + OSI_EGFR + '","action":NaN}]}',
+    '{"claims":' + '[' * 5000 + 'null' + ']' * 5000 + '}',
+])
+def test_malformed_input_is_rejected_not_raised(raw):
+    r = verify(Q3, raw=raw)
+    assert not r["verified"] and r["rejected"]
+    json.dumps(r, allow_nan=False)
+
+
+def test_empty_reply_means_no_answer_not_a_removed_claim(monkeypatch):
+    monkeypatch.setattr(Q.OncoKG, "_llm_claims", staticmethod(lambda q, ev: ('{"claims": []}', "f")))
+    a = KG.answer(Q3, use_llm=True)
+    assert "removed" not in a.text and "nothing in the evidence" in a.text

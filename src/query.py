@@ -9,14 +9,13 @@ Three properties the answering layer holds to:
 
 * **Every statement is traceable.** Each claim carries the edges it rests on,
   each edge carries its source record and fetch time.
-* **The graph answers, not the model.** The language model, when a key is
-  present, is given the retrieved evidence and nothing else; with no key the
-  same evidence is rendered directly. The facts are identical either way, so the
-  model can only change the prose.
-* **The answer is checked against its own evidence.** Entities and numbers in
-  the generated text are verified against the retrieved set, and anything
-  unsupported is reported rather than shipped. An unverifiable answer is worse
-  than a short one.
+* **The graph answers, not the model.** With a key, the language model is given
+  the retrieved evidence and returns claims, not prose; each claim is checked
+  against the graph and the answer is written from the accepted ones in the
+  graph's own words (structured.py). With no key the evidence is rendered
+  directly.
+* **Nothing unsupported is shipped.** A claim the graph does not support is
+  reported and left out. An unverifiable answer is worse than a short one.
 """
 from __future__ import annotations
 
@@ -387,7 +386,9 @@ class OncoKG:
             # written from the accepted ones (structured.py).
             raw, by = self._llm_claims(question, evidence)
             result = self.verify_structured(raw, evidence)
-            text = result["text"] or "None of the model's claims could be verified."
+            text = result["text"] or (
+                "The model found nothing in the evidence that answers this question."
+                if result.get("empty") else "None of the model's claims could be verified.")
             if result["rejected"]:
                 text += (f"\n\n({len(result['rejected'])} claim(s) were removed because "
                          "the graph does not support them.)")
@@ -461,7 +462,8 @@ class OncoKG:
         msg = client.messages.create(
             model="claude-sonnet-4-5", max_tokens=1500,
             messages=[{"role": "user", "content": prompt}])
-        raw = msg.content[0].text.strip()
+        raw = next((b.text for b in (msg.content or []) if getattr(b, "text", None)), "")
+        raw = raw.strip()
         m = re.search(r"\{.*\}", raw, re.S)            # tolerate a code fence around it
         return (m.group(0) if m else raw), "language model, structured claims"
 

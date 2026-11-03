@@ -1,0 +1,28 @@
+{
+  "fixture": "in-memory graph copy only: change NCT03909334 phases to []",
+  "input": {
+    "claims": [
+      {
+        "kind": "trial",
+        "trial": "NCT03909334",
+        "evidence": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+        "phase": [],
+        "status": "ACTIVE_NOT_RECRUITING"
+      }
+    ]
+  },
+  "output": {
+    "verified": true,
+    "accepted": [
+      {
+        "kind": "trial",
+        "edge": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+        "trial": "NCT03909334",
+        "phase": [],
+        "status": "ACTIVE_NOT_RECRUITING"
+      }
+    ],
+    "rejected": [],
+    "text": "- NCT03909334: no phase given; status ACTIVE_NOT_RECRUITING [NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334]"
+  }
+}
