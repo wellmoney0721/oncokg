@@ -1,0 +1,477 @@
+{
+  "total": 36,
+  "identical": 35,
+  "errors": 0,
+  "rows": [
+    {
+      "kind": "EX1",
+      "index": 0,
+      "request": {
+        "text": "Tarceva"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX1",
+      "index": 1,
+      "request": {
+        "text": "OSI-774"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX1",
+      "index": 2,
+      "request": {
+        "text": "Gemicitabine"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX1",
+      "index": 3,
+      "request": {
+        "text": "erlotinib hydrochloride 150 mg tablet"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX1",
+      "index": 4,
+      "request": {
+        "text": "Cisplatin Docetaxel Gefitinib Pemetrexed"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX1",
+      "index": 5,
+      "request": {
+        "text": "placebo plus docetaxel"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX1",
+      "index": 6,
+      "request": {
+        "text": "Placebo to match pembrolizumab"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX1",
+      "index": 7,
+      "request": {
+        "text": "Abraxane"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX1",
+      "index": 8,
+      "request": {
+        "text": "Mvasi"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX1",
+      "index": 9,
+      "request": {
+        "text": "pembrolizumab-free regimen"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX1",
+      "index": 10,
+      "request": {
+        "text": "MEDI4736"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX1",
+      "index": 11,
+      "request": {
+        "text": "EGFR"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX1",
+      "index": 12,
+      "request": {
+        "text": "propranolol"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX2",
+      "index": 0,
+      "request": {
+        "text": "What trials evaluate Tagrisso?"
+      },
+      "identical": true,
+      "error": null,
+      "current_intent": "trials_for_entity",
+      "evidence_count": 12,
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Tagrisso",
+          "matched_alias": "Tagrisso"
+        }
+      ]
+    },
+    {
+      "kind": "EX2",
+      "index": 1,
+      "request": {
+        "text": "Which companies are developing osimertinib?"
+      },
+      "identical": true,
+      "error": null,
+      "current_intent": "companies_for_drug",
+      "evidence_count": 12,
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ]
+    },
+    {
+      "kind": "EX2",
+      "index": 2,
+      "request": {
+        "text": "Which drugs act on ALK?"
+      },
+      "identical": true,
+      "error": null,
+      "current_intent": "drugs_for_target",
+      "evidence_count": 11,
+      "entities": [
+        {
+          "type": "Target",
+          "id": "ENSG00000171094",
+          "label": "ALK",
+          "matched_text": "ALK"
+        }
+      ]
+    },
+    {
+      "kind": "EX2",
+      "index": 3,
+      "request": {
+        "text": "What does osimertinib target?"
+      },
+      "identical": true,
+      "error": null,
+      "current_intent": "targets_of_drug",
+      "evidence_count": 1,
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ]
+    },
+    {
+      "kind": "EX2",
+      "index": 4,
+      "request": {
+        "text": "What is AstraZeneca running in NSCLC?"
+      },
+      "identical": true,
+      "error": null,
+      "current_intent": "company_portfolio",
+      "evidence_count": 12,
+      "entities": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "AstraZeneca",
+          "also_matching_ids": []
+        },
+        {
+          "type": "Disease",
+          "id": "MONDO_0005233",
+          "label": "non-small cell lung carcinoma",
+          "matched_text": "NSCLC"
+        }
+      ]
+    },
+    {
+      "kind": "EX2",
+      "index": 5,
+      "request": {
+        "text": "What trials evaluate Mvasi?"
+      },
+      "identical": false,
+      "error": null,
+      "current_intent": "trials_for_entity",
+      "evidence_count": 0,
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "What trials evaluate Mvasi",
+          "matched_text": "What trials evaluate Mvasi",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": {
+        "kind": "EX2",
+        "index": 5,
+        "request": {
+          "text": "What trials evaluate Mvasi?"
+        },
+        "response": {
+          "question": "What trials evaluate Mvasi?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "evaluate Mvasi",
+              "matched_text": "evaluate Mvasi",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            }
+          ],
+          "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+          "generated_by": "refusal (no supporting evidence)",
+          "checks": {
+            "grounded": true,
+            "unsupported_claims": [],
+            "note": "refusing is the correct output when evidence is absent"
+          },
+          "evidence": []
+        }
+      },
+      "current": {
+        "kind": "EX2",
+        "index": 5,
+        "request": {
+          "text": "What trials evaluate Mvasi?"
+        },
+        "response": {
+          "question": "What trials evaluate Mvasi?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "What trials evaluate Mvasi",
+              "matched_text": "What trials evaluate Mvasi",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            }
+          ],
+          "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+          "generated_by": "refusal (no supporting evidence)",
+          "checks": {
+            "grounded": true,
+            "unsupported_claims": [],
+            "note": "refusing is the correct output when evidence is absent"
+          },
+          "evidence": []
+        }
+      }
+    },
+    {
+      "kind": "EX2",
+      "index": 6,
+      "request": {
+        "text": "What is the capital of France?"
+      },
+      "identical": true,
+      "error": null,
+      "current_intent": "unsupported",
+      "evidence_count": 0,
+      "entities": []
+    },
+    {
+      "kind": "EX3",
+      "index": 0,
+      "request": {
+        "text": "Which drugs act on ALK?",
+        "answer": "Alectinib and lorlatinib act on ALK."
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX3",
+      "index": 1,
+      "request": {
+        "text": "Which drugs act on ALK?",
+        "answer": "Alectinib, lorlatinib and zorbatinib act on ALK."
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX3",
+      "index": 2,
+      "request": {
+        "text": "Which drugs act on ALK?",
+        "answer": "Alectinib acts on EGFR."
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX3",
+      "index": 3,
+      "request": {
+        "text": "What trials evaluate Tagrisso?",
+        "answer": "Osimertinib is evaluated in 4,812 NSCLC trials."
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX3",
+      "index": 4,
+      "request": {
+        "text": "Which companies are developing osimertinib?",
+        "answer": "AstraZeneca has discontinued osimertinib."
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX3",
+      "index": 5,
+      "request": {
+        "text": "Which companies are developing osimertinib?",
+        "answer": "AstraZeneca develops osimertinib."
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX3",
+      "index": 6,
+      "request": {
+        "text": "What does osimertinib target?",
+        "answer": "Osimertinib targets EGFR and is safe for all patients."
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX3",
+      "index": 7,
+      "request": {
+        "text": "What does osimertinib target?",
+        "answer": "Osimertinib does not act on EGFR."
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX3",
+      "index": 8,
+      "request": {
+        "text": "What trials evaluate Tagrisso?",
+        "answer": "NCT07680790 is a phase 2 trial evaluating osimertinib."
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX4",
+      "index": 0,
+      "request": {
+        "text": "What does osimertinib target?",
+        "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"inhibitor\"}]}"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX4",
+      "index": 1,
+      "request": {
+        "text": "What does osimertinib target?",
+        "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"EGFR\", \"object\": \"osimertinib\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\"}]}"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX4",
+      "index": 2,
+      "request": {
+        "text": "What does osimertinib target?",
+        "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"activator\"}]}"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX4",
+      "index": 3,
+      "request": {
+        "text": "What does osimertinib target?",
+        "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"note\": \"safe for all patients\"}]}"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX4",
+      "index": 4,
+      "request": {
+        "text": "What trials evaluate Tagrisso?",
+        "answer": "{\"claims\": [{\"kind\": \"trial\", \"trial\": \"NCT03909334\", \"evidence\": \"NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334\", \"phase\": [\"PHASE2\"], \"status\": \"ACTIVE_NOT_RECRUITING\"}, {\"kind\": \"trial\", \"trial\": \"NCT03909334\", \"evidence\": \"NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334\", \"status\": \"RECRUITING\"}]}"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX4",
+      "index": 5,
+      "request": {
+        "text": "What is AstraZeneca running in NSCLC?",
+        "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"SPONSORS_TRIAL_OF\", \"subject\": \"AstraZeneca\", \"object\": \"osimertinib\", \"evidence\": \"ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|\", \"trial_count\": 10}]}"
+      },
+      "identical": true,
+      "error": null
+    },
+    {
+      "kind": "EX4",
+      "index": 6,
+      "request": {
+        "text": "What does osimertinib target?",
+        "answer": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"ALK\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000171094|CHEMBL3353410\"}]}"
+      },
+      "identical": true,
+      "error": null
+    }
+  ]
+}

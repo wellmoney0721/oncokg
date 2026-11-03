@@ -1,0 +1,731 @@
+[
+  {
+    "input": "biosimilar anastrozole, Arimidex",
+    "map": {
+      "refused": "biosimilar anastrozole",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "biosimilar anastrozole",
+        "matched_text": "biosimilar anastrozole",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "resolver": {
+      "raw": "biosimilar anastrozole, Arimidex",
+      "components": [
+        {
+          "component": "biosimilar anastrozole",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "split_combination",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        },
+        {
+          "component": "Arimidex",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1399",
+          "score": null,
+          "rules": [
+            "split_combination"
+          ],
+          "matched_alias": "Arimidex",
+          "candidates": null,
+          "drug": {
+            "name": "ANASTROZOLE",
+            "drug_type": "Small molecule",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Cytochrome P450 19A1 inhibitor"
+            ],
+            "trials": 2
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "biosimilar anastrozole and Arimidex",
+    "map": {
+      "center": {
+        "id": "CHEMBL1399",
+        "type": "Drug",
+        "label": "ANASTROZOLE",
+        "matched_text": "Arimidex",
+        "trials": 2,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "biosimilar anastrozole"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "biosimilar anastrozole",
+        "matched_text": "biosimilar anastrozole",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL1399",
+        "label": "ANASTROZOLE",
+        "matched_text": "Arimidex",
+        "matched_alias": "Arimidex"
+      }
+    ],
+    "resolver": {
+      "raw": "biosimilar anastrozole and Arimidex",
+      "components": [
+        {
+          "component": "biosimilar anastrozole",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "split_combination",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        },
+        {
+          "component": "Arimidex",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1399",
+          "score": null,
+          "rules": [
+            "split_combination"
+          ],
+          "matched_alias": "Arimidex",
+          "candidates": null,
+          "drug": {
+            "name": "ANASTROZOLE",
+            "drug_type": "Small molecule",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Cytochrome P450 19A1 inhibitor"
+            ],
+            "trials": 2
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "Arimidex",
+    "map": {
+      "center": {
+        "id": "CHEMBL1399",
+        "type": "Drug",
+        "label": "ANASTROZOLE",
+        "matched_text": "Arimidex",
+        "trials": 2,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": []
+    },
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1399",
+        "label": "ANASTROZOLE",
+        "matched_text": "Arimidex",
+        "matched_alias": "Arimidex"
+      }
+    ],
+    "resolver": {
+      "raw": "Arimidex",
+      "components": [
+        {
+          "component": "Arimidex",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1399",
+          "score": null,
+          "rules": [],
+          "matched_alias": "Arimidex",
+          "candidates": null,
+          "drug": {
+            "name": "ANASTROZOLE",
+            "drug_type": "Small molecule",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Cytochrome P450 19A1 inhibitor"
+            ],
+            "trials": 2
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "biosimilar recombinant, interleukin-2",
+    "map": {
+      "refused": "biosimilar recombinant",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "biosimilar recombinant",
+        "matched_text": "biosimilar recombinant",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "resolver": {
+      "raw": "biosimilar recombinant, interleukin-2",
+      "components": [
+        {
+          "component": "biosimilar recombinant",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "split_combination",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        },
+        {
+          "component": "interleukin-2",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1201438",
+          "score": null,
+          "rules": [
+            "split_combination"
+          ],
+          "matched_alias": "Interleukin 2",
+          "candidates": null,
+          "drug": {
+            "name": "ALDESLEUKIN",
+            "drug_type": "Protein",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Interleukin-2 receptor agonist"
+            ],
+            "trials": 11
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "interleukin-2",
+    "map": {
+      "center": {
+        "id": "CHEMBL1201438",
+        "type": "Drug",
+        "label": "ALDESLEUKIN",
+        "matched_text": "Interleukin 2",
+        "trials": 11,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Protein"
+        }
+      },
+      "also": []
+    },
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201438",
+        "label": "ALDESLEUKIN",
+        "matched_text": "interleukin-2",
+        "matched_alias": "Interleukin 2"
+      }
+    ],
+    "resolver": {
+      "raw": "interleukin-2",
+      "components": [
+        {
+          "component": "interleukin-2",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1201438",
+          "score": null,
+          "rules": [],
+          "matched_alias": "Interleukin 2",
+          "candidates": null,
+          "drug": {
+            "name": "ALDESLEUKIN",
+            "drug_type": "Protein",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Interleukin-2 receptor agonist"
+            ],
+            "trials": 11
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "biosimilar lidocaine, patch",
+    "map": {
+      "refused": "biosimilar lidocaine",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "biosimilar lidocaine",
+        "matched_text": "biosimilar lidocaine",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "resolver": {
+      "raw": "biosimilar lidocaine, patch",
+      "components": [
+        {
+          "component": "biosimilar lidocaine",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    }
+  },
+  {
+    "input": "patch",
+    "map": {
+      "center": {
+        "id": "CHEMBL3",
+        "type": "Drug",
+        "label": "NICOTINE",
+        "matched_text": "patch",
+        "trials": 2,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": []
+    },
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3",
+        "label": "NICOTINE",
+        "matched_text": "patch",
+        "matched_alias": "patch"
+      }
+    ],
+    "resolver": {
+      "raw": "patch",
+      "components": [
+        {
+          "component": "patch",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL3",
+          "score": null,
+          "rules": [
+            "strip_formulation"
+          ],
+          "matched_alias": "patch",
+          "candidates": null,
+          "drug": {
+            "name": "NICOTINE",
+            "drug_type": "Small molecule",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_3",
+            "mechanisms": [
+              "Neuronal acetylcholine receptor; alpha4/beta2 agonist"
+            ],
+            "trials": 2
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "biosimilar Prolia, xgeva",
+    "map": {
+      "refused": "biosimilar Prolia",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "biosimilar Prolia",
+        "matched_text": "biosimilar Prolia",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "resolver": {
+      "raw": "biosimilar Prolia, xgeva",
+      "components": [
+        {
+          "component": "biosimilar Prolia",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "split_combination",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        },
+        {
+          "component": "xgeva",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1237023",
+          "score": null,
+          "rules": [
+            "split_combination"
+          ],
+          "matched_alias": "Xgeva",
+          "candidates": null,
+          "drug": {
+            "name": "DENOSUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_3",
+            "mechanisms": [
+              "Tumor necrosis factor ligand superfamily member 11 inhibitor"
+            ],
+            "trials": 3
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "xgeva",
+    "map": {
+      "center": {
+        "id": "CHEMBL1237023",
+        "type": "Drug",
+        "label": "DENOSUMAB",
+        "matched_text": "Xgeva",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": []
+    },
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1237023",
+        "label": "DENOSUMAB",
+        "matched_text": "xgeva",
+        "matched_alias": "Xgeva"
+      }
+    ],
+    "resolver": {
+      "raw": "xgeva",
+      "components": [
+        {
+          "component": "xgeva",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1237023",
+          "score": null,
+          "rules": [],
+          "matched_alias": "Xgeva",
+          "candidates": null,
+          "drug": {
+            "name": "DENOSUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_3",
+            "mechanisms": [
+              "Tumor necrosis factor ligand superfamily member 11 inhibitor"
+            ],
+            "trials": 3
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "biosimilar pembrolizumab, Keytruda",
+    "map": {
+      "center": {
+        "id": "CHEMBL3137343",
+        "type": "Drug",
+        "label": "PEMBROLIZUMAB",
+        "matched_text": "Keytruda",
+        "trials": 217,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [
+        {
+          "refused": "biosimilar pembrolizumab"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "biosimilar pembrolizumab",
+        "matched_text": "biosimilar pembrolizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL3137343",
+        "label": "PEMBROLIZUMAB",
+        "matched_text": "Keytruda",
+        "matched_alias": "Keytruda"
+      }
+    ],
+    "resolver": {
+      "raw": "biosimilar pembrolizumab, Keytruda",
+      "components": [
+        {
+          "component": "biosimilar pembrolizumab",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "split_combination",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        },
+        {
+          "component": "Keytruda",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [
+            "split_combination"
+          ],
+          "matched_alias": "Keytruda",
+          "candidates": null,
+          "drug": {
+            "name": "PEMBROLIZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "APPROVAL",
+            "mechanisms": [
+              "Programmed cell death protein 1 inhibitor"
+            ],
+            "trials": 217
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "Keytruda",
+    "map": {
+      "center": {
+        "id": "CHEMBL3137343",
+        "type": "Drug",
+        "label": "PEMBROLIZUMAB",
+        "matched_text": "Keytruda",
+        "trials": 217,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": []
+    },
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL3137343",
+        "label": "PEMBROLIZUMAB",
+        "matched_text": "Keytruda",
+        "matched_alias": "Keytruda"
+      }
+    ],
+    "resolver": {
+      "raw": "Keytruda",
+      "components": [
+        {
+          "component": "Keytruda",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL3137343",
+          "score": null,
+          "rules": [],
+          "matched_alias": "Keytruda",
+          "candidates": null,
+          "drug": {
+            "name": "PEMBROLIZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "APPROVAL",
+            "mechanisms": [
+              "Programmed cell death protein 1 inhibitor"
+            ],
+            "trials": 217
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "biosimilar nivolumab, Opdivo",
+    "map": {
+      "center": {
+        "id": "CHEMBL2108738",
+        "type": "Drug",
+        "label": "NIVOLUMAB",
+        "matched_text": "Opdivo",
+        "trials": 112,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [
+        {
+          "refused": "biosimilar nivolumab"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "biosimilar nivolumab",
+        "matched_text": "biosimilar nivolumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL2108738",
+        "label": "NIVOLUMAB",
+        "matched_text": "Opdivo",
+        "matched_alias": "Opdivo"
+      }
+    ],
+    "resolver": {
+      "raw": "biosimilar nivolumab, Opdivo",
+      "components": [
+        {
+          "component": "biosimilar nivolumab",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "split_combination",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        },
+        {
+          "component": "Opdivo",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL2108738",
+          "score": null,
+          "rules": [
+            "split_combination"
+          ],
+          "matched_alias": "Opdivo",
+          "candidates": null,
+          "drug": {
+            "name": "NIVOLUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "APPROVAL",
+            "mechanisms": [
+              "Programmed cell death protein 1 inhibitor"
+            ],
+            "trials": 112
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "Opdivo",
+    "map": {
+      "center": {
+        "id": "CHEMBL2108738",
+        "type": "Drug",
+        "label": "NIVOLUMAB",
+        "matched_text": "Opdivo",
+        "trials": 112,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": []
+    },
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL2108738",
+        "label": "NIVOLUMAB",
+        "matched_text": "Opdivo",
+        "matched_alias": "Opdivo"
+      }
+    ],
+    "resolver": {
+      "raw": "Opdivo",
+      "components": [
+        {
+          "component": "Opdivo",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL2108738",
+          "score": null,
+          "rules": [],
+          "matched_alias": "Opdivo",
+          "candidates": null,
+          "drug": {
+            "name": "NIVOLUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "APPROVAL",
+            "mechanisms": [
+              "Programmed cell death protein 1 inhibitor"
+            ],
+            "trials": 112
+          }
+        }
+      ]
+    }
+  }
+]

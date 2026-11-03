@@ -170,3 +170,37 @@ def test_words_of_a_longer_name_are_not_read_again():
     assert e.explore("erlotinib hydrochloride")["also"] == []
     r = e.explore("Paclitaxel conjugate with poly-l-glutamic acid")
     assert r["center"]["id"] == "CHEMBL2108628" and r["also"] == []
+
+
+# Codex review m5
+def test_glued_separators_and_split_descriptions_do_not_leak_the_originator():
+    import app
+    e = app.Engine()
+    for t in ("bevacizumab-awwb/ osimertinib", "bevacizumab-awwb| osimertinib",
+              "bevacizumab - awwb/ osimertinib"):
+        r = e.explore(t)
+        assert r["center"]["id"] == "CHEMBL3353410", t
+        assert all(x.get("id") != "CHEMBL1201583" for x in r["also"]), t
+    for t in ("liposomal and nanoparticle formulation of doxorubicin",
+              "liposomal and sustained release doxorubicin"):
+        assert e.explore(t).get("refused"), t
+    a = e.kg.answer("Which trials evaluate liposomal and nanoparticle formulations of doxorubicin?",
+                    use_llm=False)
+    assert all("CHEMBL53463" not in ev.edge_id for ev in a.evidence)
+    assert e.explore("Mvasi and bevacizumab")["center"]["id"] == "CHEMBL1201583"
+
+
+def test_a_name_is_not_built_from_two_list_items():
+    import app
+    e = app.Engine()
+    assert e.explore("biosimilar anastrozole, Arimidex")["center"]["id"] == "CHEMBL1399"
+    assert e.explore("Erlotinib, hydrochloride biosimilar bevacizumab")["center"]["id"] == "CHEMBL553"
+
+
+def test_the_refusal_scan_grows_linearly():
+    import time
+    import query
+    kg = query.OncoKG()
+    t0 = time.time()
+    kg.link_entities(" ".join(["x"] * 500))
+    assert time.time() - t0 < 1.0

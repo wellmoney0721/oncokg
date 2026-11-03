@@ -95,6 +95,20 @@ _JOINERS = {"and", "or", "plus", "versus", "vs", "vs.", "+", "&", "then", "follo
             "or/and", "and/or"}
 
 
+
+def _qualified(words: list[str]) -> bool:
+    """Does any part of this list item name a distinct product or a tracer?
+
+    The unanchored patterns are tried on the whole item once; the anchored ones (a
+    biosimilar suffix, a leading isotope) on every run of up to eight words, so the
+    work grows linearly with the item."""
+    text = " ".join(words)
+    if T.is_distinct_product(text) or T.is_radiotracer(text):
+        return True
+    return any(T.is_distinct_product(w) or T.is_radiotracer(w)
+               for w in (" ".join(words[i:j]) for i in range(len(words))
+                         for j in range(i + 1, min(len(words), i + 8) + 1)))
+
 class OncoKG:
     def __init__(self, db_path: Path = DB_PATH,
                  resolved_path: Path = C.PROCESSED / "resolved.json"):
@@ -124,13 +138,21 @@ class OncoKG:
         found: list[dict] = []
         seen: set = set()
         tokens: list[str] = []
-        clause: list[int] = []          # which comma/semicolon-separated piece each token is in
-        for ci, piece in enumerate(re.split(r"[,;\uff0c\uff1b\u3001]", question)):
-            for t in re.split(r"\s+", piece):
-                t = t.strip(" ?.,!;:")
+        clause: list[int] = []          # which list piece each token is in
+        ci = 0
+        for piece in re.split(r"[,;\uff0c\uff1b\u3001]", question):
+            for raw in re.split(r"\s+", piece):
+                # a slash or bar glued to a word ("bevacizumab-awwb/ osimertinib")
+                # ends the piece; it must not hide a product suffix from the guards
+                t = raw.strip(" ?.,!;:/|")
                 if t:
                     tokens.append(t)
                     clause.append(ci)
+                if raw.endswith(("/", "|")) or raw in ("/", "|"):
+                    ci += 1
+                elif raw.startswith(("/", "|")) and t:
+                    clause[-1] = ci = ci + 1
+            ci += 1
 
         # The resolver's refusals apply to questions too: "Mvasi", "liposomal
         # doxorubicin" or "generic version of bevacizumab" must never answer as the
@@ -152,19 +174,29 @@ class OncoKG:
             seg.append(n)
         refused: set[int] = {k for k, t in enumerate(tokens)
                              if T.is_distinct_product(t) or T.is_radiotracer(t)}
-        drugs = self._drug_spans(tokens, {k for k in range(len(tokens)) if seg[k] < 0})
+        drugs = self._drug_spans(tokens, {k for k in range(len(tokens)) if seg[k] < 0}, seg)
+        dangling = None                 # a qualifier item with no drug, joined by "and"/"or"
+        prev_end = -1
         for sid in sorted(set(seg) - {-1}):
             idx = [k for k in range(len(tokens)) if seg[k] == sid]
             text = " ".join(tokens[k] for k in idx)
-            # some patterns are anchored ("[89Zr] trastuzumab"), so every run of words
-            # in the item is tried, not only the whole item
-            if not any(T.is_distinct_product(w) or T.is_radiotracer(w)
-                       for w in (" ".join(tokens[x] for x in idx[i:j])
-                                 for i in range(len(idx)) for j in range(i + 1, len(idx) + 1))):
-                continue
+            joined = dangling is not None and all(seg[k] < 0 for k in range(prev_end + 1, idx[0])) \
+                and idx[0] > prev_end + 1
+            prev_end = idx[-1]
             hit = [k for a, b in drugs if seg[a] == sid for k in range(a, b)]
-            if not hit and not (refused & set(idx)):
-                continue                        # a qualifier with no drug: nothing to refuse
+            if _qualified([tokens[k] for k in idx]):
+                if not hit and not (refused & set(idx)):
+                    # "liposomal and nanoparticle formulation of doxorubicin": a bare
+                    # qualifier carries over a listing word to the next item's drug
+                    dangling = text
+                    continue
+                dangling = None
+            elif joined and hit:
+                text = f"{dangling} ... {text}"
+                dangling = None
+            else:
+                dangling = None if not joined else dangling
+                continue
             refused.update(hit)
             found.append({"type": "Refused", "id": None, "label": text,
                           "matched_text": text,
@@ -176,6 +208,8 @@ class OncoKG:
             for i in range(len(tokens) - size + 1):
                 if (refused | matched) & set(range(i, i + size)):
                     continue
+                if size > 1 and (len(set(seg[i:i + size])) > 1 or min(seg[i:i + size]) < 0):
+                    continue            # a name never spans two list items
                 window = " ".join(tokens[i:i + size])
                 if len(window) < 3:
                     continue
@@ -228,13 +262,14 @@ class OncoKG:
                                       "matched_text": window})
         return found
 
-    def _drug_spans(self, tokens: list[str], skip: set[int]) -> list[tuple[int, int]]:
-        """Token spans that name exactly one drug, longest first, not overlapping."""
+    def _drug_spans(self, tokens: list[str], skip: set[int], seg: list[int]) -> list[tuple[int, int]]:
+        """Token spans that name exactly one drug, longest first, not overlapping, each
+        inside one list item."""
         spans: list[tuple[int, int]] = []
         taken: set[int] = set(skip)
         for size in range(min(5, len(tokens)), 0, -1):
             for i in range(len(tokens) - size + 1):
-                if taken & set(range(i, i + size)):
+                if taken & set(range(i, i + size)) or len(set(seg[i:i + size])) > 1:
                     continue
                 window = " ".join(tokens[i:i + size])
                 if len(window) < 3:

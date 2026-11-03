@@ -49,3 +49,15 @@ words names a distinct product or tracer has every drug in it refused (which dru
 drugs in other items, and targets/companies in the same item, still link. M4-B1 (both drugs now refused, never
 BEVACIZUMAB), M4-B2 (no distance cap), M4-B3 (one pass, no pre-consumed qualifier) and the EGFR/AstraZeneca over-refusal
 are covered by tests. Tests 326.
+
+## Round 5 (audit_evidence_claims/m5) — CHANGES REQUIRED
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M5-B1 | a glued "/" or "|" ("bevacizumab-awwb/ osimertinib") hid the suffix guard; the alias key dropped the slash and linked BEVACIZUMAB | tokens are stripped of "/" and "|", which end the list item |
+| M5-B2 | "liposomal and nanoparticle formulation of doxorubicin": "and" detached the bare qualifier | a qualifier item with no drug carries across a listing word to the next item's drugs (a distinct product named by itself, e.g. Mvasi, does not carry) |
+| M5-S1 | names were built across list items ("biosimilar anastrozole, Arimidex" lost Arimidex; "Erlotinib, hydrochloride ..." became the salt) | drug spans and the positive matcher stay inside one item |
+| M5-S3 | the all-runs scan was cubic (1.8 s at 250 words, under the lock) | whole item once for unanchored patterns, runs of at most eight words for anchored ones: 500 words in about 0.03 s |
+| M5-S2 | "Pegylated interferon alfa-2a" (a stored alias of the pegylated drug itself) is refused | not changed: the resolver refuses it too, and exempting known aliases from the product guards would reopen M5-B1 (recorded as a known over-refusal) |
+
+Tests 329.

@@ -1,0 +1,62 @@
+{
+  "cases": 113,
+  "aliases_checked": 7511,
+  "alias_anomalies": 50,
+  "new_lone_alias_refusals": [
+    {
+      "input": "Pegylated interferon alfa-2a",
+      "stored": {
+        "drug_id": "CHEMBL1201560",
+        "alias": "Pegylated interferon alfa-2a",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Pegylated interferon alfa-2a",
+          "matched_text": "Pegylated interferon alfa-2a",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Pegylated interferon",
+          "matched_text": "Pegylated interferon",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201560",
+          "label": "PEGINTERFERON ALFA-2A",
+          "matched_text": "alfa-2a",
+          "matched_alias": "alfa-2a"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201560"
+      ],
+      "resolver": {
+        "raw": "Pegylated interferon alfa-2a",
+        "components": [
+          {
+            "component": "Pegylated interferon alfa-2a",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      }
+    }
+  ]
+}

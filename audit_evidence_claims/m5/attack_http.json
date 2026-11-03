@@ -1,0 +1,2439 @@
+{
+  "base": "http://127.0.0.1:8880",
+  "cases": [
+    {
+      "path": "/api/explore",
+      "text": "osimertinib with generic version of bevacizumab",
+      "status": 200,
+      "body": {
+        "refused": "osimertinib with generic version of bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "osimertinib with generic version of bevacizumab",
+      "status": 200,
+      "body": {
+        "raw": "osimertinib with generic version of bevacizumab",
+        "components": [
+          {
+            "component": "osimertinib with generic version of bevacizumab",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "text": "bevacizumab with generic version of osimertinib",
+      "status": 200,
+      "body": {
+        "refused": "bevacizumab with generic version of osimertinib",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "bevacizumab with generic version of osimertinib",
+      "status": 200,
+      "body": {
+        "raw": "bevacizumab with generic version of osimertinib",
+        "components": [
+          {
+            "component": "bevacizumab with generic version of osimertinib",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "text": "osimertinib with a generic version of bevacizumab",
+      "status": 200,
+      "body": {
+        "refused": "osimertinib with a generic version of bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "osimertinib with a generic version of bevacizumab",
+      "status": 200,
+      "body": {
+        "raw": "osimertinib with a generic version of bevacizumab",
+        "components": [
+          {
+            "component": "osimertinib with a generic version of bevacizumab",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "text": "generic version of Paclitaxel conjugate with poly-l-glutamic acid",
+      "status": 200,
+      "body": {
+        "refused": "generic version of Paclitaxel conjugate with poly-l-glutamic acid",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "generic version of Paclitaxel conjugate with poly-l-glutamic acid",
+      "status": 200,
+      "body": {
+        "raw": "generic version of Paclitaxel conjugate with poly-l-glutamic acid",
+        "components": [
+          {
+            "component": "generic version of Paclitaxel conjugate with poly-l-glutamic acid",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "text": "Paclitaxel conjugate with poly-l-glutamic acid",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "CHEMBL2108628",
+          "type": "Drug",
+          "label": "PACLITAXEL POLIGLUMEX",
+          "matched_text": "Paclitaxel conjugate with poly-l-glutamic acid",
+          "trials": 4,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 15,
+            "items": [
+              {
+                "id": "ENSG00000167552",
+                "type": "Target",
+                "label": "TUBA1A",
+                "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000167552|CHEMBL2108628",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000123416",
+                "type": "Target",
+                "label": "TUBA1B",
+                "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000123416|CHEMBL2108628",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000167553",
+                "type": "Target",
+                "label": "TUBA1C",
+                "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000167553|CHEMBL2108628",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000198033",
+                "type": "Target",
+                "label": "TUBA3C",
+                "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000198033|CHEMBL2108628",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000152086",
+                "type": "Target",
+                "label": "TUBA3E",
+                "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000152086|CHEMBL2108628",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000127824",
+                "type": "Target",
+                "label": "TUBA4A",
+                "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000127824|CHEMBL2108628",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000196230",
+                "type": "Target",
+                "label": "TUBB",
+                "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000196230|CHEMBL2108628",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000101162",
+                "type": "Target",
+                "label": "TUBB1",
+                "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000101162|CHEMBL2108628",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000137267",
+                "type": "Target",
+                "label": "TUBB2A",
+                "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000137267|CHEMBL2108628",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000137285",
+                "type": "Target",
+                "label": "TUBB2B",
+                "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000137285|CHEMBL2108628",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000258947",
+                "type": "Target",
+                "label": "TUBB3",
+                "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000258947|CHEMBL2108628",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000104833",
+                "type": "Target",
+                "label": "TUBB4A",
+                "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000104833|CHEMBL2108628",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000188229",
+                "type": "Target",
+                "label": "TUBB4B",
+                "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000188229|CHEMBL2108628",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000176014",
+                "type": "Target",
+                "label": "TUBB6",
+                "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000176014|CHEMBL2108628",
+                "weight": 0,
+                "action": "STABILISER"
+              },
+              {
+                "id": "ENSG00000261456",
+                "type": "Target",
+                "label": "TUBB8",
+                "edge_id": "CHEMBL2108628|ACTS_ON|ENSG00000261456|CHEMBL2108628",
+                "weight": 0,
+                "action": "STABILISER"
+              }
+            ]
+          },
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 4,
+            "items": [
+              {
+                "id": "NCT00487669",
+                "type": "Trial",
+                "label": "NCT00487669",
+                "edge_id": "NCT00487669|EVALUATES|CHEMBL2108628|NCT00487669",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Phase II Study of Combination of Paclitaxel Poliglumex and Alimta for Advanced Non-small Cell Lung Cancer (NSCLC)",
+                "start_date": "2006-10",
+                "url": "https://clinicaltrials.gov/study/NCT00487669",
+                "weight": "2006-10"
+              },
+              {
+                "id": "NCT00352690",
+                "type": "Trial",
+                "label": "NCT00352690",
+                "edge_id": "NCT00352690|EVALUATES|CHEMBL2108628|NCT00352690",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "A Phase II Study of Radiation Therapy, Paclitaxel Poliglumex, and Carboplatin in Stage III Non-Small Cell Lung Cancer",
+                "start_date": "2006-04",
+                "url": "https://clinicaltrials.gov/study/NCT00352690",
+                "weight": "2006-04"
+              },
+              {
+                "id": "NCT00269828",
+                "type": "Trial",
+                "label": "NCT00269828",
+                "edge_id": "NCT00269828|EVALUATES|CHEMBL2108628|NCT00269828",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "TERMINATED",
+                "title": "A Survival Study for Women With Advanced Lung Cancer Who Have Not Previously Received Chemotherapy.",
+                "start_date": "2005-12",
+                "url": "https://clinicaltrials.gov/study/NCT00269828",
+                "weight": "2005-12"
+              },
+              {
+                "id": "NCT00054184",
+                "type": "Trial",
+                "label": "NCT00054184",
+                "edge_id": "NCT00054184|EVALUATES|CHEMBL2108628|NCT00054184",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "TERMINATED",
+                "title": "Polyglutamate Paclitaxel Compared With Docetaxel in Treating Patients With Progressive Non-Small Cell Lung Cancer",
+                "start_date": "2003-01",
+                "url": "https://clinicaltrials.gov/study/NCT00054184",
+                "weight": "2003-01"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 3,
+            "items": [
+              {
+                "id": "ORG:cti",
+                "type": "Company",
+                "label": "Cti",
+                "edge_id": "ORG:cti|SPONSORS_TRIAL_OF|CHEMBL2108628|",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:dartmouthhitchcockmedicalcenter",
+                "type": "Company",
+                "label": "Dartmouth-hitchcock Medical Center",
+                "edge_id": "ORG:dartmouthhitchcockmedicalcenter|SPONSORS_TRIAL_OF|CHEMBL2108628|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:washingtonuniversityschoolofmedicine",
+                "type": "Company",
+                "label": "Washington University School Of Medicine",
+                "edge_id": "ORG:washingtonuniversityschoolofmedicine|SPONSORS_TRIAL_OF|CHEMBL2108628|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "Paclitaxel conjugate with poly-l-glutamic acid",
+      "status": 200,
+      "body": {
+        "raw": "Paclitaxel conjugate with poly-l-glutamic acid",
+        "components": [
+          {
+            "component": "Paclitaxel conjugate with poly-l-glutamic acid",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL2108628",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Paclitaxel conjugate with poly-l-glutamic acid",
+            "candidates": null,
+            "drug": {
+              "name": "PACLITAXEL POLIGLUMEX",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_3",
+              "mechanisms": [
+                "Tubulin stabiliser"
+              ],
+              "trials": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "text": "biosimilar version of bevacizumab",
+      "status": 200,
+      "body": {
+        "refused": "biosimilar version of bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "biosimilar version of bevacizumab",
+      "status": 200,
+      "body": {
+        "raw": "biosimilar version of bevacizumab",
+        "components": [
+          {
+            "component": "biosimilar version of bevacizumab",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "text": "liposomal formulation of doxorubicin",
+      "status": 200,
+      "body": {
+        "refused": "liposomal formulation of doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "liposomal formulation of doxorubicin",
+      "status": 200,
+      "body": {
+        "raw": "liposomal formulation of doxorubicin",
+        "components": [
+          {
+            "component": "formulation of doxorubicin",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "strip_formulation",
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "text": "generic version of the monoclonal antibody bevacizumab",
+      "status": 200,
+      "body": {
+        "refused": "generic version of the monoclonal antibody bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "generic version of the monoclonal antibody bevacizumab",
+      "status": 200,
+      "body": {
+        "raw": "generic version of the monoclonal antibody bevacizumab",
+        "components": [
+          {
+            "component": "generic version of the monoclonal antibody bevacizumab",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "text": "generic version of the antibody bevacizumab",
+      "status": 200,
+      "body": {
+        "refused": "generic version of the antibody bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "generic version of the antibody bevacizumab",
+      "status": 200,
+      "body": {
+        "raw": "generic version of the antibody bevacizumab",
+        "components": [
+          {
+            "component": "generic version of the antibody bevacizumab",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "text": "generic version of bevacizumab and generic version of trastuzumab",
+      "status": 200,
+      "body": {
+        "refused": "generic version of bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "generic version of bevacizumab and generic version of trastuzumab",
+      "status": 200,
+      "body": {
+        "raw": "generic version of bevacizumab and generic version of trastuzumab",
+        "components": [
+          {
+            "component": "generic version of bevacizumab",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          },
+          {
+            "component": "generic version of trastuzumab",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "text": "EGFR with biosimilar bevacizumab",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "ENSG00000146648",
+          "type": "Target",
+          "label": "EGFR",
+          "matched_text": "EGFR",
+          "trials": null,
+          "props": {}
+        },
+        "also": [
+          {
+            "refused": "EGFR with biosimilar bevacizumab"
+          }
+        ],
+        "groups": [
+          {
+            "rel": "ACTS_ON",
+            "dir": "in",
+            "type": "Drug",
+            "role": null,
+            "total": 58,
+            "items": [
+              {
+                "id": "CHEMBL553",
+                "type": "Drug",
+                "label": "ERLOTINIB",
+                "edge_id": "CHEMBL553|ACTS_ON|ENSG00000146648|CHEMBL553",
+                "trials": 118,
+                "max_phase": "APPROVAL",
+                "weight": 118,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3353410",
+                "type": "Drug",
+                "label": "OSIMERTINIB",
+                "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+                "trials": 79,
+                "max_phase": "APPROVAL",
+                "weight": 79,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL939",
+                "type": "Drug",
+                "label": "GEFITINIB",
+                "edge_id": "CHEMBL939|ACTS_ON|ENSG00000146648|CHEMBL939",
+                "trials": 62,
+                "max_phase": "APPROVAL",
+                "weight": 62,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL1201577",
+                "type": "Drug",
+                "label": "CETUXIMAB",
+                "edge_id": "CHEMBL1201577|ACTS_ON|ENSG00000146648|CHEMBL1201577",
+                "trials": 41,
+                "max_phase": "APPROVAL",
+                "weight": 41,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL1079742",
+                "type": "Drug",
+                "label": "ERLOTINIB HYDROCHLORIDE",
+                "edge_id": "CHEMBL1079742|ACTS_ON|ENSG00000146648|CHEMBL1079742",
+                "trials": 31,
+                "max_phase": "APPROVAL",
+                "weight": 31,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL4297258",
+                "type": "Drug",
+                "label": "FIRMONERTINIB",
+                "edge_id": "CHEMBL4297258|ACTS_ON|ENSG00000146648|CHEMBL4297258",
+                "trials": 22,
+                "max_phase": "APPROVAL",
+                "weight": 22,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL2087361",
+                "type": "Drug",
+                "label": "ICOTINIB",
+                "edge_id": "CHEMBL2087361|ACTS_ON|ENSG00000146648|CHEMBL2087361",
+                "trials": 19,
+                "max_phase": "APPROVAL",
+                "weight": 19,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL1173655",
+                "type": "Drug",
+                "label": "AFATINIB",
+                "edge_id": "CHEMBL1173655|ACTS_ON|ENSG00000146648|CHEMBL1173655",
+                "trials": 18,
+                "max_phase": "APPROVAL",
+                "weight": 18,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL4761468",
+                "type": "Drug",
+                "label": "AUMOLERTINIB",
+                "edge_id": "CHEMBL4761468|ACTS_ON|ENSG00000146648|CHEMBL4761468",
+                "trials": 16,
+                "max_phase": "APPROVAL",
+                "weight": 16,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL4558324",
+                "type": "Drug",
+                "label": "LAZERTINIB",
+                "edge_id": "CHEMBL4558324|ACTS_ON|ENSG00000146648|CHEMBL4558324",
+                "trials": 15,
+                "max_phase": "APPROVAL",
+                "weight": 15,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL24828",
+                "type": "Drug",
+                "label": "VANDETANIB",
+                "edge_id": "CHEMBL24828|ACTS_ON|ENSG00000146648|CHEMBL24828",
+                "trials": 12,
+                "max_phase": "APPROVAL",
+                "weight": 12,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL4297774",
+                "type": "Drug",
+                "label": "AMIVANTAMAB",
+                "edge_id": "CHEMBL4297774|ACTS_ON|ENSG00000146648|CHEMBL4297774",
+                "trials": 11,
+                "max_phase": "APPROVAL",
+                "weight": 11,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3545311",
+                "type": "Drug",
+                "label": "BRIGATINIB",
+                "edge_id": "CHEMBL3545311|ACTS_ON|ENSG00000146648|CHEMBL3545311",
+                "trials": 9,
+                "max_phase": "APPROVAL",
+                "weight": 9,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL1743047",
+                "type": "Drug",
+                "label": "NECITUMUMAB",
+                "edge_id": "CHEMBL1743047|ACTS_ON|ENSG00000146648|CHEMBL1743047",
+                "trials": 9,
+                "max_phase": "APPROVAL",
+                "weight": 9,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL1201827",
+                "type": "Drug",
+                "label": "PANITUMUMAB",
+                "edge_id": "CHEMBL1201827|ACTS_ON|ENSG00000146648|CHEMBL1201827",
+                "trials": 8,
+                "max_phase": "APPROVAL",
+                "weight": 8,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL2105719",
+                "type": "Drug",
+                "label": "DACOMITINIB",
+                "edge_id": "CHEMBL2105719|ACTS_ON|ENSG00000146648|CHEMBL2105719",
+                "trials": 7,
+                "max_phase": "APPROVAL",
+                "weight": 7,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3545063",
+                "type": "Drug",
+                "label": "OSIMERTINIB MESYLATE",
+                "edge_id": "CHEMBL3545063|ACTS_ON|ENSG00000146648|CHEMBL3545063",
+                "trials": 7,
+                "max_phase": "APPROVAL",
+                "weight": 7,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3647420",
+                "type": "Drug",
+                "label": "PYROTINIB",
+                "edge_id": "CHEMBL3647420|ACTS_ON|ENSG00000146648|CHEMBL3647420",
+                "trials": 6,
+                "max_phase": "APPROVAL",
+                "weight": 6,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL554",
+                "type": "Drug",
+                "label": "LAPATINIB",
+                "edge_id": "CHEMBL554|ACTS_ON|ENSG00000146648|CHEMBL554",
+                "trials": 5,
+                "max_phase": "APPROVAL",
+                "weight": 5,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL2110732",
+                "type": "Drug",
+                "label": "DACOMITINIB ANHYDROUS",
+                "edge_id": "CHEMBL2110732|ACTS_ON|ENSG00000146648|CHEMBL2110732",
+                "trials": 4,
+                "max_phase": "APPROVAL",
+                "weight": 4,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3545154",
+                "type": "Drug",
+                "label": "POZIOTINIB",
+                "edge_id": "CHEMBL3545154|ACTS_ON|ENSG00000146648|CHEMBL3545154",
+                "trials": 4,
+                "max_phase": "PHASE_3",
+                "weight": 4,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL4650281",
+                "type": "Drug",
+                "label": "CLN-081",
+                "edge_id": "CHEMBL4650281|ACTS_ON|ENSG00000146648|CHEMBL4650281",
+                "trials": 3,
+                "max_phase": "PHASE_3",
+                "weight": 3,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL2108359",
+                "type": "Drug",
+                "label": "NIMOTUZUMAB",
+                "edge_id": "CHEMBL2108359|ACTS_ON|ENSG00000146648|CHEMBL2108359",
+                "trials": 3,
+                "max_phase": "APPROVAL",
+                "weight": 3,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3545308",
+                "type": "Drug",
+                "label": "ROCILETINIB",
+                "edge_id": "CHEMBL3545308|ACTS_ON|ENSG00000146648|CHEMBL3545308",
+                "trials": 3,
+                "max_phase": "APPROVAL",
+                "weight": 3,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL4297865",
+                "type": "Drug",
+                "label": "ABIVERTINIB",
+                "edge_id": "CHEMBL4297865|ACTS_ON|ENSG00000146648|CHEMBL4297865",
+                "trials": 2,
+                "max_phase": "PHASE_3",
+                "weight": 2,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3623290",
+                "type": "Drug",
+                "label": "AZD-3759",
+                "edge_id": "CHEMBL3623290|ACTS_ON|ENSG00000146648|CHEMBL3623290",
+                "trials": 2,
+                "max_phase": "PHASE_2_3",
+                "weight": 2,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL31965",
+                "type": "Drug",
+                "label": "CANERTINIB",
+                "edge_id": "CHEMBL31965|ACTS_ON|ENSG00000146648|CHEMBL31965",
+                "trials": 2,
+                "max_phase": "PHASE_2",
+                "weight": 2,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL4650319",
+                "type": "Drug",
+                "label": "MOBOCERTINIB",
+                "edge_id": "CHEMBL4650319|ACTS_ON|ENSG00000146648|CHEMBL4650319",
+                "trials": 2,
+                "max_phase": "APPROVAL",
+                "weight": 2,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3663929",
+                "type": "Drug",
+                "label": "NAQUOTINIB",
+                "edge_id": "CHEMBL3663929|ACTS_ON|ENSG00000146648|CHEMBL3663929",
+                "trials": 2,
+                "max_phase": "PHASE_3",
+                "weight": 2,
+                "action": "INHIBITOR"
+              },
+              {
+                "id": "CHEMBL3787344",
+                "type": "Drug",
+                "label": "NAZARTINIB",
+                "edge_id": "CHEMBL3787344|ACTS_ON|ENSG00000146648|CHEMBL3787344",
+                "trials": 2,
+                "max_phase": "PHASE_3",
+                "weight": 2,
+                "action": "INHIBITOR"
+              }
+            ]
+          },
+          {
+            "rel": "ASSOCIATED_WITH",
+            "dir": "out",
+            "type": "Disease",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "MONDO_0005233",
+                "type": "Disease",
+                "label": "non-small cell lung carcinoma",
+                "edge_id": "ENSG00000146648|ASSOCIATED_WITH|MONDO_0005233|MONDO_0005233",
+                "score": 0.8883707400322897,
+                "weight": 0.8883707400322897
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "EGFR with biosimilar bevacizumab",
+      "status": 200,
+      "body": {
+        "raw": "EGFR with biosimilar bevacizumab",
+        "components": [
+          {
+            "component": "EGFR with biosimilar bevacizumab",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "text": "AstraZeneca with biosimilar bevacizumab",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "ORG:astrazeneca",
+          "type": "Company",
+          "label": "Astrazeneca",
+          "matched_text": "AstraZeneca",
+          "trials": null,
+          "props": {}
+        },
+        "also": [
+          {
+            "refused": "AstraZeneca with biosimilar bevacizumab"
+          }
+        ],
+        "groups": [
+          {
+            "rel": "SPONSORS",
+            "dir": "out",
+            "type": "Trial",
+            "role": "collaborator",
+            "total": 60,
+            "items": [
+              {
+                "id": "NCT07146230",
+                "type": "Trial",
+                "label": "NCT07146230",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT07146230|NCT07146230",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "NOT_YET_RECRUITING",
+                "title": "The Selective Personalized Radio-Immunotherapy for Locally Advanced Non-Small Cell Lung Cancer Trial 2",
+                "start_date": "2026-09",
+                "url": "https://clinicaltrials.gov/study/NCT07146230",
+                "weight": "2026-09",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT07710612",
+                "type": "Trial",
+                "label": "NCT07710612",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT07710612|NCT07710612",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "NOT_YET_RECRUITING",
+                "title": "A Phase 2 Study of ABSK043 Combined With Osimertinib",
+                "start_date": "2026-08-31",
+                "url": "https://clinicaltrials.gov/study/NCT07710612",
+                "weight": "2026-08-31",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT06634056",
+                "type": "Trial",
+                "label": "NCT06634056",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT06634056|NCT06634056",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "Pneumonitis Prevention Protocol Using Pentoxifylline and α-tocopherol In Stage III Non-Small Cell Lung Cancer Patients Undergoing Chemoradiation",
+                "start_date": "2026-06-15",
+                "url": "https://clinicaltrials.gov/study/NCT06634056",
+                "weight": "2026-06-15",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT07485452",
+                "type": "Trial",
+                "label": "NCT07485452",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT07485452|NCT07485452",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "Boosting Osimertinib Blood Brain Barrier Penetration",
+                "start_date": "2026-06",
+                "url": "https://clinicaltrials.gov/study/NCT07485452",
+                "weight": "2026-06",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT07428044",
+                "type": "Trial",
+                "label": "NCT07428044",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT07428044|NCT07428044",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "WITHDRAWN",
+                "title": "A Study of Trastuzumab Deruxtecan in People With Non-Small Cell Lung Cancer",
+                "start_date": "2026-02-13",
+                "url": "https://clinicaltrials.gov/study/NCT07428044",
+                "weight": "2026-02-13",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT07058519",
+                "type": "Trial",
+                "label": "NCT07058519",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT07058519|NCT07058519",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "A Study of Osimertinib-based Adaptive Treatment Guided by ctDNA EGFRm+ Monitoring in NSCLC",
+                "start_date": "2025-09-23",
+                "url": "https://clinicaltrials.gov/study/NCT07058519",
+                "weight": "2025-09-23",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT06822543",
+                "type": "Trial",
+                "label": "NCT06822543",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT06822543|NCT06822543",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "A Single Arm, Phase 2 Study of Datopotamab Deruxtecan, Carboplatin, and Pembrolizumab for Treatment-naive Brain Metastases From NSCLC (Non-small Cell Lung Cancer)",
+                "start_date": "2025-09-12",
+                "url": "https://clinicaltrials.gov/study/NCT06822543",
+                "weight": "2025-09-12",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT06284317",
+                "type": "Trial",
+                "label": "NCT06284317",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT06284317|NCT06284317",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING",
+                "title": "A Study to Evaluate the Benefit of Adding Durvalumab After Chemotherapy, Durvalumab and Surgery in Patients With Early-stage, Operable, Non-small Cell Lung Cancer.",
+                "start_date": "2025-01-15",
+                "url": "https://clinicaltrials.gov/study/NCT06284317",
+                "weight": "2025-01-15",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT05911308",
+                "type": "Trial",
+                "label": "NCT05911308",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT05911308|NCT05911308",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "Abequolixron (RGX-104) and Durvalumab in Lung Cancer",
+                "start_date": "2024-04-01",
+                "url": "https://clinicaltrials.gov/study/NCT05911308",
+                "weight": "2024-04-01",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT05215340",
+                "type": "Trial",
+                "label": "NCT05215340",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT05215340|NCT05215340",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "Study of Dato-DXd Plus Pembrolizumab vs Pembrolizumab Alone in the First-line Treatment of Subjects With Advanced or Metastatic NSCLC Without Actionable Genomic Alterations",
+                "start_date": "2022-03-04",
+                "url": "https://clinicaltrials.gov/study/NCT05215340",
+                "weight": "2022-03-04",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT04372927",
+                "type": "Trial",
+                "label": "NCT04372927",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04372927|NCT04372927",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "ADMIRAL Trial: Adaptive Mediastinal Radiation With Chemo-Immunotherapy",
+                "start_date": "2021-12-10",
+                "url": "https://clinicaltrials.gov/study/NCT04372927",
+                "weight": "2021-12-10",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT04765709",
+                "type": "Trial",
+                "label": "NCT04765709",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04765709|NCT04765709",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "Durvalumab and Chemotherapy Induction Followed by Durvalumab and Radiotherapy in Large Volume Stage III NSCLC",
+                "start_date": "2021-09-24",
+                "url": "https://clinicaltrials.gov/study/NCT04765709",
+                "weight": "2021-09-24",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT04748419",
+                "type": "Trial",
+                "label": "NCT04748419",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04748419|NCT04748419",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "Safety & Efficacy of Consolidative Hypofractionated Radiation Therapy for Boosting Residual Lung Cancer With Durvalumab",
+                "start_date": "2021-07-15",
+                "url": "https://clinicaltrials.gov/study/NCT04748419",
+                "weight": "2021-07-15",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT04945317",
+                "type": "Trial",
+                "label": "NCT04945317",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04945317|NCT04945317",
+                "phases": [
+                  "NA"
+                ],
+                "status": "ENROLLING_BY_INVITATION",
+                "title": "ROSE for Improved Molecular Marker Testing Via EBUS",
+                "start_date": "2021-05-14",
+                "url": "https://clinicaltrials.gov/study/NCT04945317",
+                "weight": "2021-05-14",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT04585477",
+                "type": "Trial",
+                "label": "NCT04585477",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04585477|NCT04585477",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "Adjuvant ctDNA-Adapted Personalized Treatment in Early Stage NSCLC (ADAPT-E)",
+                "start_date": "2021-04-08",
+                "url": "https://clinicaltrials.gov/study/NCT04585477",
+                "weight": "2021-04-08",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT04470674",
+                "type": "Trial",
+                "label": "NCT04470674",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04470674|NCT04470674",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "WITHDRAWN",
+                "title": "Study of Durvalumab or Durvalumab Plus Chemotherapy in Kras Mutation Positive and PD-L1 High (≥ 50%) NSCLC Patients",
+                "start_date": "2021-04-06",
+                "url": "https://clinicaltrials.gov/study/NCT04470674",
+                "weight": "2021-04-06",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT04062708",
+                "type": "Trial",
+                "label": "NCT04062708",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04062708|NCT04062708",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "CHIO3 Trial: CHemotherapy Combined With Immune Checkpoint Inhibitor for Operable Stage IIIA/B Non-Small Cell Lung Cancer",
+                "start_date": "2021-03-10",
+                "url": "https://clinicaltrials.gov/study/NCT04062708",
+                "weight": "2021-03-10",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT04230408",
+                "type": "Trial",
+                "label": "NCT04230408",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04230408|NCT04230408",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Intensified Chemo-immuno-radiotherapy With Durvalumab for Stage III Non-Small Cell Lung Cancers",
+                "start_date": "2021-03-05",
+                "url": "https://clinicaltrials.gov/study/NCT04230408",
+                "weight": "2021-03-05",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT04441138",
+                "type": "Trial",
+                "label": "NCT04441138",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04441138|NCT04441138",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "Chemoradiation Followed by Durvalumab in Poor Risk and/or Elderly Patients With Stage III NSCLC",
+                "start_date": "2021-02-25",
+                "url": "https://clinicaltrials.gov/study/NCT04441138",
+                "weight": "2021-02-25",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT04262375",
+                "type": "Trial",
+                "label": "NCT04262375",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04262375|NCT04262375",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "WITHDRAWN",
+                "title": "A Phase 2 Study of Durvalumab (MEDI4736) and Oleclumab (MEDI9447) in Multi-Cancer Populations With Correlation to Clinical, Molecular and Immunologic Parameters With DNA MethylaTION",
+                "start_date": "2021-01",
+                "url": "https://clinicaltrials.gov/study/NCT04262375",
+                "weight": "2021-01",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT04465968",
+                "type": "Trial",
+                "label": "NCT04465968",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04465968|NCT04465968",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "NOT_YET_RECRUITING",
+                "title": "Efficacy and Safety of CRT, Durvalumab and Surgery for SST",
+                "start_date": "2020-09-01",
+                "url": "https://clinicaltrials.gov/study/NCT04465968",
+                "weight": "2020-09-01",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT04351256",
+                "type": "Trial",
+                "label": "NCT04351256",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04351256|NCT04351256",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Thoracic Radiotherapy Plus Durvalumab in Elderly and/or Frail NSCLC Stage III Patients Unfit for Chemotherapy",
+                "start_date": "2020-05-20",
+                "url": "https://clinicaltrials.gov/study/NCT04351256",
+                "weight": "2020-05-20",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT04392505",
+                "type": "Trial",
+                "label": "NCT04392505",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04392505|NCT04392505",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "Durvalumab(MEDI4736) After chemoRadioTherapy(DART) for NSCLC-a Translational and Biomarker Study",
+                "start_date": "2020-05-11",
+                "url": "https://clinicaltrials.gov/study/NCT04392505",
+                "weight": "2020-05-11",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT04042701",
+                "type": "Trial",
+                "label": "NCT04042701",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04042701|NCT04042701",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "DS8201a and Pembrolizumab in Participants With Locally Advanced/Metastatic Breast or Non-Small Cell Lung Cancer",
+                "start_date": "2020-02-10",
+                "url": "https://clinicaltrials.gov/study/NCT04042701",
+                "weight": "2020-02-10",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT03965468",
+                "type": "Trial",
+                "label": "NCT03965468",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT03965468|NCT03965468",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "Immunotherapy, Chemotherapy, Radiotherapy and Surgery for Synchronous Oligo-metastatic NSCLC",
+                "start_date": "2019-11-19",
+                "url": "https://clinicaltrials.gov/study/NCT03965468",
+                "weight": "2019-11-19",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT03732274",
+                "type": "Trial",
+                "label": "NCT03732274",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT03732274|NCT03732274",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Phase 1b/2a, Open-label Study of Vactosertib in Combination With Durvalumab in Advanced NSCLC",
+                "start_date": "2019-02-11",
+                "url": "https://clinicaltrials.gov/study/NCT03732274",
+                "weight": "2019-02-11",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT03784599",
+                "type": "Trial",
+                "label": "NCT03784599",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT03784599|NCT03784599",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "T-DM1 and Osimertinib Combination Treatment to Target HER2 Bypass Track Resistance in EGFR Mutation Positive NSCLC",
+                "start_date": "2018-12-18",
+                "url": "https://clinicaltrials.gov/study/NCT03784599",
+                "weight": "2018-12-18",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT03994393",
+                "type": "Trial",
+                "label": "NCT03994393",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT03994393|NCT03994393",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "UNKNOWN",
+                "title": "Non Small Cell Lung Cancer Trial of Durvalumab and Tremelimumab in Advanced Epidermal Growth Factor Receptor (EGFR) Mutant Disease.",
+                "start_date": "2018-10-23",
+                "url": "https://clinicaltrials.gov/study/NCT03994393",
+                "weight": "2018-10-23",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT03586453",
+                "type": "Trial",
+                "label": "NCT03586453",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT03586453|NCT03586453",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "Osimertinib In EGFR Mutant Lung Cancer",
+                "start_date": "2018-08-13",
+                "url": "https://clinicaltrials.gov/study/NCT03586453",
+                "weight": "2018-08-13",
+                "role": "collaborator"
+              },
+              {
+                "id": "NCT03433469",
+                "type": "Trial",
+                "label": "NCT03433469",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT03433469|NCT03433469",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "Osimertinib in Treating Participants With Stage I-IIIA EGFR-mutant Non-small Cell Lung Cancer Before Surgery",
+                "start_date": "2018-07-31",
+                "url": "https://clinicaltrials.gov/study/NCT03433469",
+                "weight": "2018-07-31",
+                "role": "collaborator"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS",
+            "dir": "out",
+            "type": "Trial",
+            "role": "lead_sponsor",
+            "total": 50,
+            "items": [
+              {
+                "id": "NCT07357597",
+                "type": "Trial",
+                "label": "NCT07357597",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT07357597|NCT07357597",
+                "phases": [
+                  "PHASE4"
+                ],
+                "status": "RECRUITING",
+                "title": "An Open-label, Single-arm Study of Prophylaxis for Datopotamab Deruxtecan (Dato-DXd) -Related Stomatitis in Eligible Patients With Metastatic or Inoperable Locally Recurrent Breast Cancer or Locally Advanced or Metastatic Epidermal Growth Factor Receptor-Mutated Non-small Cell Lung Cancer.",
+                "start_date": "2026-06-24",
+                "url": "https://clinicaltrials.gov/study/NCT07357597",
+                "weight": "2026-06-24",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT07613424",
+                "type": "Trial",
+                "label": "NCT07613424",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT07613424|NCT07613424",
+                "phases": [
+                  "NA"
+                ],
+                "status": "RECRUITING",
+                "title": "A Study of MET Concordance and Gene Profiling in 1L NSCLC (Genomet)",
+                "start_date": "2026-06-02",
+                "url": "https://clinicaltrials.gov/study/NCT07613424",
+                "weight": "2026-06-02",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT07291037",
+                "type": "Trial",
+                "label": "NCT07291037",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT07291037|NCT07291037",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING",
+                "title": "Phase III Study of Datopotamab Deruxtecan Versus Docetaxel in Previously Treated TROP2-positive Advanced or Metastatic Non-squamous NSCLC Without Actionable Genomic Alterations",
+                "start_date": "2025-10-31",
+                "url": "https://clinicaltrials.gov/study/NCT07291037",
+                "weight": "2025-10-31",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT07098338",
+                "type": "Trial",
+                "label": "NCT07098338",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT07098338|NCT07098338",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "A Study of Novel Combinations in Non-Small Cell Lung Cancer (NSCLC)",
+                "start_date": "2025-08-07",
+                "url": "https://clinicaltrials.gov/study/NCT07098338",
+                "weight": "2025-08-07",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT06868277",
+                "type": "Trial",
+                "label": "NCT06868277",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT06868277|NCT06868277",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING",
+                "title": "A Global Phase III Study of Rilvegostomig or Pembrolizumab Monotherapy for First-Line Treatment of PD-L1-high Metastatic Non-small Cell Lung Cancer",
+                "start_date": "2025-04-10",
+                "url": "https://clinicaltrials.gov/study/NCT06868277",
+                "weight": "2025-04-10",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT06627647",
+                "type": "Trial",
+                "label": "NCT06627647",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT06627647|NCT06627647",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING",
+                "title": "A Global Phase III Study of Rilvegostomig or Pembrolizumab Plus Chemotherapy for First-Line Treatment of Locally Advanced or Metastatic Non-Squamous NSCLC",
+                "start_date": "2024-11-27",
+                "url": "https://clinicaltrials.gov/study/NCT06627647",
+                "weight": "2024-11-27",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT06692738",
+                "type": "Trial",
+                "label": "NCT06692738",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT06692738|NCT06692738",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING",
+                "title": "A Global Phase III Study of Rilvegostomig or Pembrolizumab Plus Chemotherapy for First-Line Treatment of Locally Advanced or Metastatic Squamous Non-small Cell Lung Cancer (NSCLC)",
+                "start_date": "2024-11-18",
+                "url": "https://clinicaltrials.gov/study/NCT06692738",
+                "weight": "2024-11-18",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT06357533",
+                "type": "Trial",
+                "label": "NCT06357533",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT06357533|NCT06357533",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "RECRUITING",
+                "title": "Phase III, Open-label, Study of First-line Dato-DXd in Combination With Rilvegostomig for Advanced Non-squamous NSCLC With High PD-L1 Expression (TC ≥ 50%) and Without Actionable Genomic Alterations",
+                "start_date": "2024-04-11",
+                "url": "https://clinicaltrials.gov/study/NCT06357533",
+                "weight": "2024-04-11",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT06218914",
+                "type": "Trial",
+                "label": "NCT06218914",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT06218914|NCT06218914",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "RECRUITING",
+                "title": "Phase 1 Study to Investigate TCRTs KRAS Mutation in Unresectable, Advanced, and/or Metastatic Solid Tumors",
+                "start_date": "2024-03-22",
+                "url": "https://clinicaltrials.gov/study/NCT06218914",
+                "weight": "2024-03-22",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT05877599",
+                "type": "Trial",
+                "label": "NCT05877599",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT05877599|NCT05877599",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "RECRUITING",
+                "title": "A Study of NT-175 in Adult Participants With Advanced Malignancies That Are Positive for HLA-A*02:01 and the TP53 R175H Mutation",
+                "start_date": "2023-07-12",
+                "url": "https://clinicaltrials.gov/study/NCT05877599",
+                "weight": "2023-07-12",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT05647122",
+                "type": "Trial",
+                "label": "NCT05647122",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT05647122|NCT05647122",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "First in Human Study of AZD9592 in Solid Tumors",
+                "start_date": "2022-12-21",
+                "url": "https://clinicaltrials.gov/study/NCT05647122",
+                "weight": "2022-12-21",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT05219162",
+                "type": "Trial",
+                "label": "NCT05219162",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT05219162|NCT05219162",
+                "phases": [
+                  "PHASE4"
+                ],
+                "status": "COMPLETED",
+                "title": "Real-World Study on Gene Profile in Patients With Advanced NSCLC Who Progressed on First-Line Osimertinib Therapy(GPS).",
+                "start_date": "2022-02-25",
+                "url": "https://clinicaltrials.gov/study/NCT05219162",
+                "weight": "2022-02-25",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT05120349",
+                "type": "Trial",
+                "label": "NCT05120349",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT05120349|NCT05120349",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "A Global Study to Assess the Effects of Osimertinib in Participants With EGFRm Stage IA2-IA3 NSCLC Following Complete Tumour Resection",
+                "start_date": "2022-02-21",
+                "url": "https://clinicaltrials.gov/study/NCT05120349",
+                "weight": "2022-02-21",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT05123482",
+                "type": "Trial",
+                "label": "NCT05123482",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT05123482|NCT05123482",
+                "phases": [
+                  "PHASE1",
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "A Phase I/IIa Study of AZD8205 Given Alone or Combined, in Participants With Advanced/Metastatic Solid Malignancies",
+                "start_date": "2021-10-18",
+                "url": "https://clinicaltrials.gov/study/NCT05123482",
+                "weight": "2021-10-18",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT04870112",
+                "type": "Trial",
+                "label": "NCT04870112",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04870112|NCT04870112",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "TERMINATED",
+                "title": "A Study to Evaluate Subcutaneous Durvalumab in Patients With Non-Small Cell Lung Cancer and Small Cell Lung Cancer",
+                "start_date": "2021-06-28",
+                "url": "https://clinicaltrials.gov/study/NCT04870112",
+                "weight": "2021-06-28",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT04351555",
+                "type": "Trial",
+                "label": "NCT04351555",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04351555|NCT04351555",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "A Study of Osimertinib With or Without Chemotherapy Versus Chemotherapy Alone as Neoadjuvant Therapy for Patients With EGFRm Positive Resectable Non-Small Cell Lung Cancer",
+                "start_date": "2020-12-16",
+                "url": "https://clinicaltrials.gov/study/NCT04351555",
+                "weight": "2020-12-16",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT04249362",
+                "type": "Trial",
+                "label": "NCT04249362",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04249362|NCT04249362",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Study of Durvalumab Following Radiation Therapy in Patients With Stage 3 Unresectable NSCLC Ineligible for Chemotherapy",
+                "start_date": "2020-11-26",
+                "url": "https://clinicaltrials.gov/study/NCT04249362",
+                "weight": "2020-11-26",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT04504669",
+                "type": "Trial",
+                "label": "NCT04504669",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04504669|NCT04504669",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "First Time in Human Study of AZD8701 With or Without Durvalumab in Participants With Advanced Solid Tumours",
+                "start_date": "2020-08-18",
+                "url": "https://clinicaltrials.gov/study/NCT04504669",
+                "weight": "2020-08-18",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT04035486",
+                "type": "Trial",
+                "label": "NCT04035486",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT04035486|NCT04035486",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "A Study of Osimertinib With or Without Chemotherapy as 1st Line Treatment in Patients With Mutated Epidermal Growth Factor Receptor Non-Small Cell Lung Cancer (FLAURA2)",
+                "start_date": "2019-07-02",
+                "url": "https://clinicaltrials.gov/study/NCT04035486",
+                "weight": "2019-07-02",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT03853551",
+                "type": "Trial",
+                "label": "NCT03853551",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT03853551|NCT03853551",
+                "phases": [
+                  "PHASE4"
+                ],
+                "status": "COMPLETED",
+                "title": "Osimertinib Study in Indian Patients",
+                "start_date": "2019-04-18",
+                "url": "https://clinicaltrials.gov/study/NCT03853551",
+                "weight": "2019-04-18",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT03778229",
+                "type": "Trial",
+                "label": "NCT03778229",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT03778229|NCT03778229",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "Osimertinib Plus Savolitinib in EGFRm+/MET+ NSCLC Following Prior Osimertinib",
+                "start_date": "2019-01-09",
+                "url": "https://clinicaltrials.gov/study/NCT03778229",
+                "weight": "2019-01-09",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT03706690",
+                "type": "Trial",
+                "label": "NCT03706690",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT03706690|NCT03706690",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "A Study of Durvalumab as Consolidation Therapy in Non-Small Cell Lung Cancer Patients",
+                "start_date": "2018-11-27",
+                "url": "https://clinicaltrials.gov/study/NCT03706690",
+                "weight": "2018-11-27",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT03463525",
+                "type": "Trial",
+                "label": "NCT03463525",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT03463525|NCT03463525",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "Open-label PET Study With [11C]Osimertinib in Patients With EGFRm NSCLC and Brain Metastases",
+                "start_date": "2018-10-24",
+                "url": "https://clinicaltrials.gov/study/NCT03463525",
+                "weight": "2018-10-24",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT03703297",
+                "type": "Trial",
+                "label": "NCT03703297",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT03703297|NCT03703297",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "Study of Durvalumab + Tremelimumab, Durvalumab, and Placebo in Limited Stage Small-Cell Lung Cancer in Patients Who Have Not Progressed Following Concurrent Chemoradiation Therapy",
+                "start_date": "2018-09-27",
+                "url": "https://clinicaltrials.gov/study/NCT03703297",
+                "weight": "2018-09-27",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT03490669",
+                "type": "Trial",
+                "label": "NCT03490669",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT03490669|NCT03490669",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "Study to Evaluate Safety, PK, PD, Immunogenicity & Antitumor Activity of MSC-1 in Patients With Adv Solid Tumors",
+                "start_date": "2018-05-21",
+                "url": "https://clinicaltrials.gov/study/NCT03490669",
+                "weight": "2018-05-21",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT03164616",
+                "type": "Trial",
+                "label": "NCT03164616",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT03164616|NCT03164616",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "Study of Durvalumab + Tremelimumab With Chemotherapy or Durvalumab With Chemotherapy or Chemotherapy Alone for Patients With Lung Cancer (POSEIDON).",
+                "start_date": "2017-06-01",
+                "url": "https://clinicaltrials.gov/study/NCT03164616",
+                "weight": "2017-06-01",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT02908750",
+                "type": "Trial",
+                "label": "NCT02908750",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT02908750|NCT02908750",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "Study to Assess the Effect of Osimertinib (TAGRISSO™ ) on Blood Levels of Fexofenadine in Patients With EGFRm+ NSCLC",
+                "start_date": "2017-03-02",
+                "url": "https://clinicaltrials.gov/study/NCT02908750",
+                "weight": "2017-03-02",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT02740985",
+                "type": "Trial",
+                "label": "NCT02740985",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT02740985|NCT02740985",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "COMPLETED",
+                "title": "A Phase 1 Clinical Study of AZD4635 in Patients With Advanced Solid Malignancies",
+                "start_date": "2016-06-17",
+                "url": "https://clinicaltrials.gov/study/NCT02740985",
+                "weight": "2016-06-17",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT02474355",
+                "type": "Trial",
+                "label": "NCT02474355",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT02474355|NCT02474355",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "COMPLETED",
+                "title": "Real World Treatment Study of AZD9291 for Advanced/Metastatic EGFR T790M Mutation NSCLC",
+                "start_date": "2015-09-18",
+                "url": "https://clinicaltrials.gov/study/NCT02474355",
+                "weight": "2015-09-18",
+                "role": "lead_sponsor"
+              },
+              {
+                "id": "NCT02453282",
+                "type": "Trial",
+                "label": "NCT02453282",
+                "edge_id": "ORG:astrazeneca|SPONSORS|NCT02453282|NCT02453282",
+                "phases": [
+                  "PHASE3"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "Phase III Open Label First Line Therapy Study of MEDI 4736 (Durvalumab) With or Without Tremelimumab Versus SOC in Non Small-Cell Lung Cancer (NSCLC)",
+                "start_date": "2015-07-21",
+                "url": "https://clinicaltrials.gov/study/NCT02453282",
+                "weight": "2015-07-21",
+                "role": "lead_sponsor"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "out",
+            "type": "Drug",
+            "role": null,
+            "total": 32,
+            "items": [
+              {
+                "id": "CHEMBL3353410",
+                "type": "Drug",
+                "label": "OSIMERTINIB",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trials": 79,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 14,
+                "weight": 14,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL1351",
+                "type": "Drug",
+                "label": "CARBOPLATIN",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+                "trials": 391,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 10,
+                "weight": 10,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL939",
+                "type": "Drug",
+                "label": "GEFITINIB",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+                "trials": 62,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 8,
+                "weight": 8,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL3301587",
+                "type": "Drug",
+                "label": "DURVALUMAB",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+                "trials": 69,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 7,
+                "weight": 7,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL11359",
+                "type": "Drug",
+                "label": "CISPLATIN",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+                "trials": 259,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 6,
+                "weight": 6,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL428647",
+                "type": "Drug",
+                "label": "PACLITAXEL",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+                "trials": 234,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 6,
+                "weight": 6,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL225072",
+                "type": "Drug",
+                "label": "PEMETREXED",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+                "trials": 290,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 6,
+                "weight": 6,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL5314706",
+                "type": "Drug",
+                "label": "RILVEGOSTOMIG",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+                "trials": 6,
+                "max_phase": "PHASE_3",
+                "evidence_trials": 6,
+                "weight": 6,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL4297939",
+                "type": "Drug",
+                "label": "DATOPOTAMAB DERUXTECAN",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+                "trials": 9,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 4,
+                "weight": 4,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL3545252",
+                "type": "Drug",
+                "label": "DOCETAXEL",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+                "trials": 203,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 4,
+                "weight": 4,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL3137343",
+                "type": "Drug",
+                "label": "PEMBROLIZUMAB",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+                "trials": 217,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 4,
+                "weight": 4,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL1614701",
+                "type": "Drug",
+                "label": "SELUMETINIB",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+                "trials": 9,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 4,
+                "weight": 4,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL2108658",
+                "type": "Drug",
+                "label": "TREMELIMUMAB",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL2108658|",
+                "trials": 11,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 3,
+                "weight": 3,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL888",
+                "type": "Drug",
+                "label": "GEMCITABINE",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL888|",
+                "trials": 144,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL3334567",
+                "type": "Drug",
+                "label": "SAVOLITINIB",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3334567|",
+                "trials": 3,
+                "max_phase": "PHASE_3",
+                "evidence_trials": 2,
+                "weight": 2,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL271227",
+                "type": "Drug",
+                "label": "ABIRATERONE ACETATE",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL271227|",
+                "trials": 2,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL1201583",
+                "type": "Drug",
+                "label": "BEVACIZUMAB",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+                "trials": 122,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL384467",
+                "type": "Drug",
+                "label": "DEXAMETHASONE",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL384467|",
+                "trials": 18,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL1082407",
+                "type": "Drug",
+                "label": "ENZALUTAMIDE",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1082407|",
+                "trials": 1,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL553",
+                "type": "Drug",
+                "label": "ERLOTINIB",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL553|",
+                "trials": 118,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL44657",
+                "type": "Drug",
+                "label": "ETOPOSIDE",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL44657|",
+                "trials": 24,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL5315010",
+                "type": "Drug",
+                "label": "FALBIKITUG",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5315010|",
+                "trials": 1,
+                "max_phase": "PHASE_2",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL914",
+                "type": "Drug",
+                "label": "FEXOFENADINE",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL914|",
+                "trials": 1,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL4594442",
+                "type": "Drug",
+                "label": "IMARADENANT",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4594442|",
+                "trials": 1,
+                "max_phase": "PHASE_2",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL1679",
+                "type": "Drug",
+                "label": "LEUCOVORIN",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1679|",
+                "trials": 2,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL3990016",
+                "type": "Drug",
+                "label": "OLECLUMAB",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3990016|",
+                "trials": 5,
+                "max_phase": "PHASE_3",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL1743062",
+                "type": "Drug",
+                "label": "RAMUCIRUMAB",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1743062|",
+                "trials": 20,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL1496",
+                "type": "Drug",
+                "label": "ROSUVASTATIN",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1496|",
+                "trials": 2,
+                "max_phase": "APPROVAL",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL217092",
+                "type": "Drug",
+                "label": "SARACATINIB",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL217092|",
+                "trials": 2,
+                "max_phase": "PHASE_2_3",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "CHEMBL5095220",
+                "type": "Drug",
+                "label": "SARUPARIB",
+                "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5095220|",
+                "trials": 2,
+                "max_phase": "PHASE_3",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              }
+            ]
+          },
+          {
+            "rel": "PARENT_OF",
+            "dir": "out",
+            "type": "Company",
+            "role": null,
+            "total": 3,
+            "items": [
+              {
+                "id": "ORG:acerta",
+                "type": "Company",
+                "label": "Acerta",
+                "edge_id": "ORG:astrazeneca|PARENT_OF|ORG:acerta|hand-curated corporate map",
+                "weight": 0
+              },
+              {
+                "id": "ORG:alexion",
+                "type": "Company",
+                "label": "Alexion",
+                "edge_id": "ORG:astrazeneca|PARENT_OF|ORG:alexion|hand-curated corporate map",
+                "weight": 0
+              },
+              {
+                "id": "ORG:medimmune",
+                "type": "Company",
+                "label": "Medimmune",
+                "edge_id": "ORG:astrazeneca|PARENT_OF|ORG:medimmune|hand-curated corporate map",
+                "weight": 0
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "AstraZeneca with biosimilar bevacizumab",
+      "status": 200,
+      "body": {
+        "raw": "AstraZeneca with biosimilar bevacizumab",
+        "components": [
+          {
+            "component": "AstraZeneca with biosimilar bevacizumab",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/ask",
+      "text": "Which trials evaluate osimertinib with generic version of bevacizumab?",
+      "status": 200,
+      "body": {
+        "question": "Which trials evaluate osimertinib with generic version of bevacizumab?",
+        "intent": "trials_for_entity",
+        "entities": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "Which trials evaluate osimertinib with generic version of bevacizumab",
+            "matched_text": "Which trials evaluate osimertinib with generic version of bevacizumab",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+        "generated_by": "refusal (no supporting evidence)",
+        "checks": {
+          "grounded": true,
+          "unsupported_claims": [],
+          "note": "refusing is the correct output when evidence is absent"
+        },
+        "evidence": []
+      }
+    },
+    {
+      "path": "/api/ask",
+      "text": "Which companies sponsor osimertinib with generic version of bevacizumab?",
+      "status": 200,
+      "body": {
+        "question": "Which companies sponsor osimertinib with generic version of bevacizumab?",
+        "intent": "companies_for_target",
+        "entities": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "Which companies sponsor osimertinib with generic version of bevacizumab",
+            "matched_text": "Which companies sponsor osimertinib with generic version of bevacizumab",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+        "generated_by": "refusal (no supporting evidence)",
+        "checks": {
+          "grounded": true,
+          "unsupported_claims": [],
+          "note": "refusing is the correct output when evidence is absent"
+        },
+        "evidence": []
+      }
+    },
+    {
+      "path": "/api/ask",
+      "text": "What targets does generic version of Paclitaxel conjugate with poly-l-glutamic acid act on?",
+      "status": 200,
+      "body": {
+        "question": "What targets does generic version of Paclitaxel conjugate with poly-l-glutamic acid act on?",
+        "intent": "unsupported",
+        "entities": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "What targets does generic version of Paclitaxel conjugate with poly-l-glutamic acid act on",
+            "matched_text": "What targets does generic version of Paclitaxel conjugate with poly-l-glutamic acid act on",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+        "generated_by": "refusal (no supporting evidence)",
+        "checks": {
+          "grounded": true,
+          "unsupported_claims": [],
+          "note": "refusing is the correct output when evidence is absent"
+        },
+        "evidence": []
+      }
+    },
+    {
+      "path": "/api/ask",
+      "text": "Which trials evaluate biosimilar version of bevacizumab?",
+      "status": 200,
+      "body": {
+        "question": "Which trials evaluate biosimilar version of bevacizumab?",
+        "intent": "trials_for_entity",
+        "entities": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "Which trials evaluate biosimilar version of bevacizumab",
+            "matched_text": "Which trials evaluate biosimilar version of bevacizumab",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+        "generated_by": "refusal (no supporting evidence)",
+        "checks": {
+          "grounded": true,
+          "unsupported_claims": [],
+          "note": "refusing is the correct output when evidence is absent"
+        },
+        "evidence": []
+      }
+    },
+    {
+      "path": "/api/ask",
+      "text": "Which trials evaluate liposomal formulation of doxorubicin?",
+      "status": 200,
+      "body": {
+        "question": "Which trials evaluate liposomal formulation of doxorubicin?",
+        "intent": "trials_for_entity",
+        "entities": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "Which trials evaluate liposomal formulation of doxorubicin",
+            "matched_text": "Which trials evaluate liposomal formulation of doxorubicin",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+        "generated_by": "refusal (no supporting evidence)",
+        "checks": {
+          "grounded": true,
+          "unsupported_claims": [],
+          "note": "refusing is the correct output when evidence is absent"
+        },
+        "evidence": []
+      }
+    },
+    {
+      "path": "/api/ask",
+      "text": "Which trials evaluate generic version of the monoclonal antibody bevacizumab?",
+      "status": 200,
+      "body": {
+        "question": "Which trials evaluate generic version of the monoclonal antibody bevacizumab?",
+        "intent": "trials_for_entity",
+        "entities": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "Which trials evaluate generic version of the monoclonal antibody bevacizumab",
+            "matched_text": "Which trials evaluate generic version of the monoclonal antibody bevacizumab",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+        "generated_by": "refusal (no supporting evidence)",
+        "checks": {
+          "grounded": true,
+          "unsupported_claims": [],
+          "note": "refusing is the correct output when evidence is absent"
+        },
+        "evidence": []
+      }
+    }
+  ]
+}
