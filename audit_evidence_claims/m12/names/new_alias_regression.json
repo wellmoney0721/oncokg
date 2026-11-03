@@ -1,0 +1,3261 @@
+{
+  "head": "d9260a1ea544cf7bb80415383667784e0aba146a",
+  "previous": "2b9fc923f7b6f388f5babd2f998ed4c6e16d3439",
+  "comparison_scope": "HEAD^ query module with current app/rules/data; not a previous deployment reconstruction",
+  "previous_query_sha256": "45158410e67a88f743bc72655868a7a0d389b189133605a3bbba6887599885c8",
+  "cases": [
+    {
+      "text": "rad001c",
+      "canonical_key": "rad001c",
+      "dictionary": [
+        {
+          "drug_id": "CHEMBL1908360",
+          "alias": "rad001c",
+          "alias_type": "synonym",
+          "source": "AACT"
+        }
+      ],
+      "is_isotope": false,
+      "current": {
+        "resolver": {
+          "raw": "rad001c",
+          "components": [
+            {
+              "component": "rad001c",
+              "tier": "ALIAS",
+              "drug_id": "CHEMBL1908360",
+              "score": null,
+              "rules": [],
+              "matched_alias": "rad001c",
+              "candidates": null,
+              "drug": {
+                "name": "EVEROLIMUS",
+                "drug_type": "Small molecule",
+                "max_phase_overall": "APPROVAL",
+                "max_phase_in_nsclc": "PHASE_2",
+                "mechanisms": [
+                  "FK506-binding protein 1A inhibitor"
+                ],
+                "trials": 9
+              }
+            }
+          ]
+        },
+        "blocked": {},
+        "item_linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "rad001c",
+            "matched_text": "rad001c",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "whole_name": null,
+        "public_linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "rad001c",
+            "matched_text": "rad001c",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "map": {
+          "refused": "rad001c",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        "trial_qa": {
+          "question": "Which trials evaluate rad001c?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "rad001c",
+              "matched_text": "rad001c",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            }
+          ],
+          "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+          "generated_by": "refusal (no supporting evidence)",
+          "checks": {
+            "grounded": true,
+            "unsupported_claims": [],
+            "note": "refusing is the correct output when evidence is absent"
+          },
+          "evidence": []
+        }
+      },
+      "previous": {
+        "resolver": {
+          "raw": "rad001c",
+          "components": [
+            {
+              "component": "rad001c",
+              "tier": "ALIAS",
+              "drug_id": "CHEMBL1908360",
+              "score": null,
+              "rules": [],
+              "matched_alias": "rad001c",
+              "candidates": null,
+              "drug": {
+                "name": "EVEROLIMUS",
+                "drug_type": "Small molecule",
+                "max_phase_overall": "APPROVAL",
+                "max_phase_in_nsclc": "PHASE_2",
+                "mechanisms": [
+                  "FK506-binding protein 1A inhibitor"
+                ],
+                "trials": 9
+              }
+            }
+          ]
+        },
+        "blocked": {},
+        "item_linker": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1908360",
+            "label": "EVEROLIMUS",
+            "matched_text": "rad001c",
+            "matched_alias": "rad001c"
+          }
+        ],
+        "whole_name": {
+          "type": "Drug",
+          "id": "CHEMBL1908360",
+          "label": "EVEROLIMUS",
+          "matched_text": "rad001c",
+          "matched_alias": "rad001c"
+        },
+        "public_linker": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1908360",
+            "label": "EVEROLIMUS",
+            "matched_text": "rad001c",
+            "matched_alias": "rad001c"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL1908360",
+            "type": "Drug",
+            "label": "EVEROLIMUS",
+            "matched_text": "rad001c",
+            "trials": 9,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "EVALUATES",
+              "dir": "in",
+              "type": "Trial",
+              "role": null,
+              "total": 9,
+              "items": [
+                {
+                  "id": "NCT04591431",
+                  "type": "Trial",
+                  "label": "NCT04591431",
+                  "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "UNKNOWN",
+                  "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+                  "start_date": "2020-10-07",
+                  "url": "https://clinicaltrials.gov/study/NCT04591431",
+                  "weight": "2020-10-07"
+                },
+                {
+                  "id": "NCT02321501",
+                  "type": "Trial",
+                  "label": "NCT02321501",
+                  "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "ACTIVE_NOT_RECRUITING",
+                  "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+                  "start_date": "2016-06-22",
+                  "url": "https://clinicaltrials.gov/study/NCT02321501",
+                  "weight": "2016-06-22"
+                }
+              ]
+            },
+            {
+              "rel": "SPONSORS_TRIAL_OF",
+              "dir": "in",
+              "type": "Company",
+              "role": null,
+              "total": 7,
+              "items": [
+                {
+                  "id": "ORG:emoryuniversity",
+                  "type": "Company",
+                  "label": "Emory University",
+                  "edge_id": "ORG:emoryuniversity|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:novartis",
+                  "type": "Company",
+                  "label": "Novartis",
+                  "edge_id": "ORG:novartis|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "INDUSTRY"
+                }
+              ]
+            },
+            {
+              "rel": "ACTS_ON",
+              "dir": "out",
+              "type": "Target",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "ENSG00000088832",
+                  "type": "Target",
+                  "label": "FKBP1A",
+                  "edge_id": "CHEMBL1908360|ACTS_ON|ENSG00000088832|CHEMBL1908360",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                }
+              ]
+            }
+          ]
+        },
+        "trial_qa": {
+          "question": "Which trials evaluate rad001c?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Drug",
+              "id": "CHEMBL1908360",
+              "label": "EVEROLIMUS",
+              "matched_text": "rad001c",
+              "matched_alias": "rad001c"
+            }
+          ],
+          "answer": "Trials of this drug:\n  - NCT00933777 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00933777]\n  - NCT02321501 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates EVEROLIMUS [NCT02321501]\n  - NCT00655655 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00655655]\n  - NCT04591431 (PHASE2, UNKNOWN) evaluates EVEROLIMUS [NCT04591431]\n  - NCT00401778 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00401778]\n  - NCT00124280 (PHASE2, COMPLETED) evaluates EVEROLIMUS [NCT00124280]\n  - NCT00457119 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00457119]\n  - NCT01063478 (PHASE1, TERMINATED) evaluates EVEROLIMUS [NCT01063478]\n  - NCT00406276 (PHASE1, PHASE2, TERMINATED) evaluates EVEROLIMUS [NCT00406276]\n\nScope: 9 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 9,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "NCT00933777 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00933777|EVALUATES|CHEMBL1908360|NCT00933777",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00933777",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00933777",
+              "stated_intervention": "Combination of sorafenib and everolimus",
+              "title": "SORAVE - Sorafenib and Everolimus in Solid Tumors",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT02321501 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT02321501",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT02321501",
+              "stated_intervention": "Everolimus",
+              "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00655655 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00655655|EVALUATES|CHEMBL1908360|NCT00655655",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00655655",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00655655",
+              "stated_intervention": "everolimus",
+              "title": "Everolimus and Vatalanib in Treating Patients With Advanced Solid Tumors",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT04591431 (PHASE2, UNKNOWN) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04591431",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04591431",
+              "stated_intervention": "Everolimus",
+              "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+              "status": "UNKNOWN",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00401778 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00401778|EVALUATES|CHEMBL1908360|NCT00401778",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00401778",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00401778",
+              "stated_intervention": "RAD001",
+              "title": "Trial of RAD001 in Patients With Operable Non-Small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00124280 (PHASE2, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00124280|EVALUATES|CHEMBL1908360|NCT00124280",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00124280",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00124280",
+              "stated_intervention": "RAD001",
+              "title": "Study Investigating the Effect of Everolimus Monotherapy in Patients With Advanced Non-small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00457119 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00457119|EVALUATES|CHEMBL1908360|NCT00457119",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00457119",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00457119",
+              "stated_intervention": "RAD001",
+              "title": "Combination of RAD001 With Carboplatin, Paclitaxel and Bevacizumab in Non-small-cell Lung Cancer (NSCLC) Patients",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT01063478 (PHASE1, TERMINATED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT01063478|EVALUATES|CHEMBL1908360|NCT01063478",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT01063478",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT01063478",
+              "stated_intervention": "RAD001 (in addition to standard radiation and chemotherapy)",
+              "title": "Dose Escalation Study of RAD001 in Combination w/Chemotherapy & Radiation in Patients With NSCLC",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00406276 (PHASE1, PHASE2, TERMINATED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00406276|EVALUATES|CHEMBL1908360|NCT00406276",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00406276",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00406276",
+              "stated_intervention": "RAD001",
+              "title": "Phase I/II Trial of RAD001 Plus Docetaxel in Patients With Metastatic or Recurrent Non-Small Cell Lung Cancer",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "text": "RAD001C",
+      "canonical_key": "rad001c",
+      "dictionary": [
+        {
+          "drug_id": "CHEMBL1908360",
+          "alias": "rad001c",
+          "alias_type": "synonym",
+          "source": "AACT"
+        }
+      ],
+      "is_isotope": false,
+      "current": {
+        "resolver": {
+          "raw": "RAD001C",
+          "components": [
+            {
+              "component": "RAD001C",
+              "tier": "ALIAS",
+              "drug_id": "CHEMBL1908360",
+              "score": null,
+              "rules": [],
+              "matched_alias": "rad001c",
+              "candidates": null,
+              "drug": {
+                "name": "EVEROLIMUS",
+                "drug_type": "Small molecule",
+                "max_phase_overall": "APPROVAL",
+                "max_phase_in_nsclc": "PHASE_2",
+                "mechanisms": [
+                  "FK506-binding protein 1A inhibitor"
+                ],
+                "trials": 9
+              }
+            }
+          ]
+        },
+        "blocked": {},
+        "item_linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "RAD001C",
+            "matched_text": "RAD001C",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "whole_name": null,
+        "public_linker": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "RAD001C",
+            "matched_text": "RAD001C",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          }
+        ],
+        "map": {
+          "refused": "RAD001C",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        "trial_qa": {
+          "question": "Which trials evaluate RAD001C?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Refused",
+              "id": null,
+              "label": "RAD001C",
+              "matched_text": "RAD001C",
+              "why": "names a distinct product or tracer, not the originator molecule"
+            }
+          ],
+          "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+          "generated_by": "refusal (no supporting evidence)",
+          "checks": {
+            "grounded": true,
+            "unsupported_claims": [],
+            "note": "refusing is the correct output when evidence is absent"
+          },
+          "evidence": []
+        }
+      },
+      "previous": {
+        "resolver": {
+          "raw": "RAD001C",
+          "components": [
+            {
+              "component": "RAD001C",
+              "tier": "ALIAS",
+              "drug_id": "CHEMBL1908360",
+              "score": null,
+              "rules": [],
+              "matched_alias": "rad001c",
+              "candidates": null,
+              "drug": {
+                "name": "EVEROLIMUS",
+                "drug_type": "Small molecule",
+                "max_phase_overall": "APPROVAL",
+                "max_phase_in_nsclc": "PHASE_2",
+                "mechanisms": [
+                  "FK506-binding protein 1A inhibitor"
+                ],
+                "trials": 9
+              }
+            }
+          ]
+        },
+        "blocked": {},
+        "item_linker": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1908360",
+            "label": "EVEROLIMUS",
+            "matched_text": "RAD001C",
+            "matched_alias": "rad001c"
+          }
+        ],
+        "whole_name": {
+          "type": "Drug",
+          "id": "CHEMBL1908360",
+          "label": "EVEROLIMUS",
+          "matched_text": "RAD001C",
+          "matched_alias": "rad001c"
+        },
+        "public_linker": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1908360",
+            "label": "EVEROLIMUS",
+            "matched_text": "RAD001C",
+            "matched_alias": "rad001c"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL1908360",
+            "type": "Drug",
+            "label": "EVEROLIMUS",
+            "matched_text": "rad001c",
+            "trials": 9,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "EVALUATES",
+              "dir": "in",
+              "type": "Trial",
+              "role": null,
+              "total": 9,
+              "items": [
+                {
+                  "id": "NCT04591431",
+                  "type": "Trial",
+                  "label": "NCT04591431",
+                  "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "UNKNOWN",
+                  "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+                  "start_date": "2020-10-07",
+                  "url": "https://clinicaltrials.gov/study/NCT04591431",
+                  "weight": "2020-10-07"
+                },
+                {
+                  "id": "NCT02321501",
+                  "type": "Trial",
+                  "label": "NCT02321501",
+                  "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "ACTIVE_NOT_RECRUITING",
+                  "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+                  "start_date": "2016-06-22",
+                  "url": "https://clinicaltrials.gov/study/NCT02321501",
+                  "weight": "2016-06-22"
+                }
+              ]
+            },
+            {
+              "rel": "SPONSORS_TRIAL_OF",
+              "dir": "in",
+              "type": "Company",
+              "role": null,
+              "total": 7,
+              "items": [
+                {
+                  "id": "ORG:emoryuniversity",
+                  "type": "Company",
+                  "label": "Emory University",
+                  "edge_id": "ORG:emoryuniversity|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:novartis",
+                  "type": "Company",
+                  "label": "Novartis",
+                  "edge_id": "ORG:novartis|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "INDUSTRY"
+                }
+              ]
+            },
+            {
+              "rel": "ACTS_ON",
+              "dir": "out",
+              "type": "Target",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "ENSG00000088832",
+                  "type": "Target",
+                  "label": "FKBP1A",
+                  "edge_id": "CHEMBL1908360|ACTS_ON|ENSG00000088832|CHEMBL1908360",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                }
+              ]
+            }
+          ]
+        },
+        "trial_qa": {
+          "question": "Which trials evaluate RAD001C?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Drug",
+              "id": "CHEMBL1908360",
+              "label": "EVEROLIMUS",
+              "matched_text": "RAD001C",
+              "matched_alias": "rad001c"
+            }
+          ],
+          "answer": "Trials of this drug:\n  - NCT00933777 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00933777]\n  - NCT02321501 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates EVEROLIMUS [NCT02321501]\n  - NCT00655655 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00655655]\n  - NCT04591431 (PHASE2, UNKNOWN) evaluates EVEROLIMUS [NCT04591431]\n  - NCT00401778 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00401778]\n  - NCT00124280 (PHASE2, COMPLETED) evaluates EVEROLIMUS [NCT00124280]\n  - NCT00457119 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00457119]\n  - NCT01063478 (PHASE1, TERMINATED) evaluates EVEROLIMUS [NCT01063478]\n  - NCT00406276 (PHASE1, PHASE2, TERMINATED) evaluates EVEROLIMUS [NCT00406276]\n\nScope: 9 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 9,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "NCT00933777 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00933777|EVALUATES|CHEMBL1908360|NCT00933777",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00933777",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00933777",
+              "stated_intervention": "Combination of sorafenib and everolimus",
+              "title": "SORAVE - Sorafenib and Everolimus in Solid Tumors",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT02321501 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT02321501",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT02321501",
+              "stated_intervention": "Everolimus",
+              "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00655655 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00655655|EVALUATES|CHEMBL1908360|NCT00655655",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00655655",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00655655",
+              "stated_intervention": "everolimus",
+              "title": "Everolimus and Vatalanib in Treating Patients With Advanced Solid Tumors",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT04591431 (PHASE2, UNKNOWN) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04591431",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04591431",
+              "stated_intervention": "Everolimus",
+              "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+              "status": "UNKNOWN",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00401778 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00401778|EVALUATES|CHEMBL1908360|NCT00401778",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00401778",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00401778",
+              "stated_intervention": "RAD001",
+              "title": "Trial of RAD001 in Patients With Operable Non-Small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00124280 (PHASE2, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00124280|EVALUATES|CHEMBL1908360|NCT00124280",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00124280",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00124280",
+              "stated_intervention": "RAD001",
+              "title": "Study Investigating the Effect of Everolimus Monotherapy in Patients With Advanced Non-small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00457119 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00457119|EVALUATES|CHEMBL1908360|NCT00457119",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00457119",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00457119",
+              "stated_intervention": "RAD001",
+              "title": "Combination of RAD001 With Carboplatin, Paclitaxel and Bevacizumab in Non-small-cell Lung Cancer (NSCLC) Patients",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT01063478 (PHASE1, TERMINATED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT01063478|EVALUATES|CHEMBL1908360|NCT01063478",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT01063478",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT01063478",
+              "stated_intervention": "RAD001 (in addition to standard radiation and chemotherapy)",
+              "title": "Dose Escalation Study of RAD001 in Combination w/Chemotherapy & Radiation in Patients With NSCLC",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00406276 (PHASE1, PHASE2, TERMINATED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00406276|EVALUATES|CHEMBL1908360|NCT00406276",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00406276",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00406276",
+              "stated_intervention": "RAD001",
+              "title": "Phase I/II Trial of RAD001 Plus Docetaxel in Patients With Metastatic or Recurrent Non-Small Cell Lung Cancer",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "text": "rad",
+      "canonical_key": "rad",
+      "dictionary": [
+        {
+          "drug_id": "CHEMBL1908360",
+          "alias": "rad",
+          "alias_type": "synonym",
+          "source": "AACT"
+        }
+      ],
+      "is_isotope": false,
+      "current": {
+        "resolver": {
+          "raw": "rad",
+          "components": [
+            {
+              "component": "rad",
+              "tier": "ALIAS",
+              "drug_id": "CHEMBL1908360",
+              "score": null,
+              "rules": [],
+              "matched_alias": "rad",
+              "candidates": null,
+              "drug": {
+                "name": "EVEROLIMUS",
+                "drug_type": "Small molecule",
+                "max_phase_overall": "APPROVAL",
+                "max_phase_in_nsclc": "PHASE_2",
+                "mechanisms": [
+                  "FK506-binding protein 1A inhibitor"
+                ],
+                "trials": 9
+              }
+            }
+          ]
+        },
+        "blocked": {},
+        "item_linker": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1908360",
+            "label": "EVEROLIMUS",
+            "matched_text": "rad",
+            "matched_alias": "rad"
+          }
+        ],
+        "whole_name": {
+          "type": "Drug",
+          "id": "CHEMBL1908360",
+          "label": "EVEROLIMUS",
+          "matched_text": "rad",
+          "matched_alias": "rad"
+        },
+        "public_linker": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1908360",
+            "label": "EVEROLIMUS",
+            "matched_text": "rad",
+            "matched_alias": "rad"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL1908360",
+            "type": "Drug",
+            "label": "EVEROLIMUS",
+            "matched_text": "rad",
+            "trials": 9,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "EVALUATES",
+              "dir": "in",
+              "type": "Trial",
+              "role": null,
+              "total": 9,
+              "items": [
+                {
+                  "id": "NCT04591431",
+                  "type": "Trial",
+                  "label": "NCT04591431",
+                  "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "UNKNOWN",
+                  "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+                  "start_date": "2020-10-07",
+                  "url": "https://clinicaltrials.gov/study/NCT04591431",
+                  "weight": "2020-10-07"
+                },
+                {
+                  "id": "NCT02321501",
+                  "type": "Trial",
+                  "label": "NCT02321501",
+                  "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "ACTIVE_NOT_RECRUITING",
+                  "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+                  "start_date": "2016-06-22",
+                  "url": "https://clinicaltrials.gov/study/NCT02321501",
+                  "weight": "2016-06-22"
+                }
+              ]
+            },
+            {
+              "rel": "SPONSORS_TRIAL_OF",
+              "dir": "in",
+              "type": "Company",
+              "role": null,
+              "total": 7,
+              "items": [
+                {
+                  "id": "ORG:emoryuniversity",
+                  "type": "Company",
+                  "label": "Emory University",
+                  "edge_id": "ORG:emoryuniversity|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:novartis",
+                  "type": "Company",
+                  "label": "Novartis",
+                  "edge_id": "ORG:novartis|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "INDUSTRY"
+                }
+              ]
+            },
+            {
+              "rel": "ACTS_ON",
+              "dir": "out",
+              "type": "Target",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "ENSG00000088832",
+                  "type": "Target",
+                  "label": "FKBP1A",
+                  "edge_id": "CHEMBL1908360|ACTS_ON|ENSG00000088832|CHEMBL1908360",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                }
+              ]
+            }
+          ]
+        },
+        "trial_qa": {
+          "question": "Which trials evaluate rad?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Drug",
+              "id": "CHEMBL1908360",
+              "label": "EVEROLIMUS",
+              "matched_text": "rad",
+              "matched_alias": "rad"
+            }
+          ],
+          "answer": "Trials of this drug:\n  - NCT00933777 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00933777]\n  - NCT02321501 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates EVEROLIMUS [NCT02321501]\n  - NCT00655655 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00655655]\n  - NCT04591431 (PHASE2, UNKNOWN) evaluates EVEROLIMUS [NCT04591431]\n  - NCT00401778 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00401778]\n  - NCT00124280 (PHASE2, COMPLETED) evaluates EVEROLIMUS [NCT00124280]\n  - NCT00457119 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00457119]\n  - NCT01063478 (PHASE1, TERMINATED) evaluates EVEROLIMUS [NCT01063478]\n  - NCT00406276 (PHASE1, PHASE2, TERMINATED) evaluates EVEROLIMUS [NCT00406276]\n\nScope: 9 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 9,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "NCT00933777 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00933777|EVALUATES|CHEMBL1908360|NCT00933777",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00933777",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00933777",
+              "stated_intervention": "Combination of sorafenib and everolimus",
+              "title": "SORAVE - Sorafenib and Everolimus in Solid Tumors",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT02321501 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT02321501",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT02321501",
+              "stated_intervention": "Everolimus",
+              "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00655655 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00655655|EVALUATES|CHEMBL1908360|NCT00655655",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00655655",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00655655",
+              "stated_intervention": "everolimus",
+              "title": "Everolimus and Vatalanib in Treating Patients With Advanced Solid Tumors",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT04591431 (PHASE2, UNKNOWN) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04591431",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04591431",
+              "stated_intervention": "Everolimus",
+              "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+              "status": "UNKNOWN",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00401778 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00401778|EVALUATES|CHEMBL1908360|NCT00401778",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00401778",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00401778",
+              "stated_intervention": "RAD001",
+              "title": "Trial of RAD001 in Patients With Operable Non-Small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00124280 (PHASE2, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00124280|EVALUATES|CHEMBL1908360|NCT00124280",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00124280",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00124280",
+              "stated_intervention": "RAD001",
+              "title": "Study Investigating the Effect of Everolimus Monotherapy in Patients With Advanced Non-small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00457119 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00457119|EVALUATES|CHEMBL1908360|NCT00457119",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00457119",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00457119",
+              "stated_intervention": "RAD001",
+              "title": "Combination of RAD001 With Carboplatin, Paclitaxel and Bevacizumab in Non-small-cell Lung Cancer (NSCLC) Patients",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT01063478 (PHASE1, TERMINATED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT01063478|EVALUATES|CHEMBL1908360|NCT01063478",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT01063478",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT01063478",
+              "stated_intervention": "RAD001 (in addition to standard radiation and chemotherapy)",
+              "title": "Dose Escalation Study of RAD001 in Combination w/Chemotherapy & Radiation in Patients With NSCLC",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00406276 (PHASE1, PHASE2, TERMINATED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00406276|EVALUATES|CHEMBL1908360|NCT00406276",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00406276",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00406276",
+              "stated_intervention": "RAD001",
+              "title": "Phase I/II Trial of RAD001 Plus Docetaxel in Patients With Metastatic or Recurrent Non-Small Cell Lung Cancer",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ]
+            }
+          ]
+        }
+      },
+      "previous": {
+        "resolver": {
+          "raw": "rad",
+          "components": [
+            {
+              "component": "rad",
+              "tier": "ALIAS",
+              "drug_id": "CHEMBL1908360",
+              "score": null,
+              "rules": [],
+              "matched_alias": "rad",
+              "candidates": null,
+              "drug": {
+                "name": "EVEROLIMUS",
+                "drug_type": "Small molecule",
+                "max_phase_overall": "APPROVAL",
+                "max_phase_in_nsclc": "PHASE_2",
+                "mechanisms": [
+                  "FK506-binding protein 1A inhibitor"
+                ],
+                "trials": 9
+              }
+            }
+          ]
+        },
+        "blocked": {},
+        "item_linker": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1908360",
+            "label": "EVEROLIMUS",
+            "matched_text": "rad",
+            "matched_alias": "rad"
+          }
+        ],
+        "whole_name": {
+          "type": "Drug",
+          "id": "CHEMBL1908360",
+          "label": "EVEROLIMUS",
+          "matched_text": "rad",
+          "matched_alias": "rad"
+        },
+        "public_linker": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1908360",
+            "label": "EVEROLIMUS",
+            "matched_text": "rad",
+            "matched_alias": "rad"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL1908360",
+            "type": "Drug",
+            "label": "EVEROLIMUS",
+            "matched_text": "rad",
+            "trials": 9,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "EVALUATES",
+              "dir": "in",
+              "type": "Trial",
+              "role": null,
+              "total": 9,
+              "items": [
+                {
+                  "id": "NCT04591431",
+                  "type": "Trial",
+                  "label": "NCT04591431",
+                  "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "UNKNOWN",
+                  "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+                  "start_date": "2020-10-07",
+                  "url": "https://clinicaltrials.gov/study/NCT04591431",
+                  "weight": "2020-10-07"
+                },
+                {
+                  "id": "NCT02321501",
+                  "type": "Trial",
+                  "label": "NCT02321501",
+                  "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "ACTIVE_NOT_RECRUITING",
+                  "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+                  "start_date": "2016-06-22",
+                  "url": "https://clinicaltrials.gov/study/NCT02321501",
+                  "weight": "2016-06-22"
+                }
+              ]
+            },
+            {
+              "rel": "SPONSORS_TRIAL_OF",
+              "dir": "in",
+              "type": "Company",
+              "role": null,
+              "total": 7,
+              "items": [
+                {
+                  "id": "ORG:emoryuniversity",
+                  "type": "Company",
+                  "label": "Emory University",
+                  "edge_id": "ORG:emoryuniversity|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:novartis",
+                  "type": "Company",
+                  "label": "Novartis",
+                  "edge_id": "ORG:novartis|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "INDUSTRY"
+                }
+              ]
+            },
+            {
+              "rel": "ACTS_ON",
+              "dir": "out",
+              "type": "Target",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "ENSG00000088832",
+                  "type": "Target",
+                  "label": "FKBP1A",
+                  "edge_id": "CHEMBL1908360|ACTS_ON|ENSG00000088832|CHEMBL1908360",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                }
+              ]
+            }
+          ]
+        },
+        "trial_qa": {
+          "question": "Which trials evaluate rad?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Drug",
+              "id": "CHEMBL1908360",
+              "label": "EVEROLIMUS",
+              "matched_text": "rad",
+              "matched_alias": "rad"
+            }
+          ],
+          "answer": "Trials of this drug:\n  - NCT00933777 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00933777]\n  - NCT02321501 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates EVEROLIMUS [NCT02321501]\n  - NCT00655655 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00655655]\n  - NCT04591431 (PHASE2, UNKNOWN) evaluates EVEROLIMUS [NCT04591431]\n  - NCT00401778 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00401778]\n  - NCT00124280 (PHASE2, COMPLETED) evaluates EVEROLIMUS [NCT00124280]\n  - NCT00457119 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00457119]\n  - NCT01063478 (PHASE1, TERMINATED) evaluates EVEROLIMUS [NCT01063478]\n  - NCT00406276 (PHASE1, PHASE2, TERMINATED) evaluates EVEROLIMUS [NCT00406276]\n\nScope: 9 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 9,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "NCT00933777 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00933777|EVALUATES|CHEMBL1908360|NCT00933777",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00933777",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00933777",
+              "stated_intervention": "Combination of sorafenib and everolimus",
+              "title": "SORAVE - Sorafenib and Everolimus in Solid Tumors",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT02321501 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT02321501",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT02321501",
+              "stated_intervention": "Everolimus",
+              "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00655655 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00655655|EVALUATES|CHEMBL1908360|NCT00655655",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00655655",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00655655",
+              "stated_intervention": "everolimus",
+              "title": "Everolimus and Vatalanib in Treating Patients With Advanced Solid Tumors",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT04591431 (PHASE2, UNKNOWN) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04591431",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04591431",
+              "stated_intervention": "Everolimus",
+              "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+              "status": "UNKNOWN",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00401778 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00401778|EVALUATES|CHEMBL1908360|NCT00401778",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00401778",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00401778",
+              "stated_intervention": "RAD001",
+              "title": "Trial of RAD001 in Patients With Operable Non-Small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00124280 (PHASE2, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00124280|EVALUATES|CHEMBL1908360|NCT00124280",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00124280",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00124280",
+              "stated_intervention": "RAD001",
+              "title": "Study Investigating the Effect of Everolimus Monotherapy in Patients With Advanced Non-small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00457119 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00457119|EVALUATES|CHEMBL1908360|NCT00457119",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00457119",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00457119",
+              "stated_intervention": "RAD001",
+              "title": "Combination of RAD001 With Carboplatin, Paclitaxel and Bevacizumab in Non-small-cell Lung Cancer (NSCLC) Patients",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT01063478 (PHASE1, TERMINATED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT01063478|EVALUATES|CHEMBL1908360|NCT01063478",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT01063478",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT01063478",
+              "stated_intervention": "RAD001 (in addition to standard radiation and chemotherapy)",
+              "title": "Dose Escalation Study of RAD001 in Combination w/Chemotherapy & Radiation in Patients With NSCLC",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00406276 (PHASE1, PHASE2, TERMINATED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00406276|EVALUATES|CHEMBL1908360|NCT00406276",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00406276",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00406276",
+              "stated_intervention": "RAD001",
+              "title": "Phase I/II Trial of RAD001 Plus Docetaxel in Patients With Metastatic or Recurrent Non-Small Cell Lung Cancer",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "text": "RAD001",
+      "canonical_key": "rad001",
+      "dictionary": [
+        {
+          "drug_id": "CHEMBL1908360",
+          "alias": "RAD-001",
+          "alias_type": "synonym",
+          "source": "ChEMBL"
+        }
+      ],
+      "is_isotope": false,
+      "current": {
+        "resolver": {
+          "raw": "RAD001",
+          "components": [
+            {
+              "component": "RAD001",
+              "tier": "ALIAS",
+              "drug_id": "CHEMBL1908360",
+              "score": null,
+              "rules": [],
+              "matched_alias": "RAD-001",
+              "candidates": null,
+              "drug": {
+                "name": "EVEROLIMUS",
+                "drug_type": "Small molecule",
+                "max_phase_overall": "APPROVAL",
+                "max_phase_in_nsclc": "PHASE_2",
+                "mechanisms": [
+                  "FK506-binding protein 1A inhibitor"
+                ],
+                "trials": 9
+              }
+            }
+          ]
+        },
+        "blocked": {},
+        "item_linker": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1908360",
+            "label": "EVEROLIMUS",
+            "matched_text": "RAD001",
+            "matched_alias": "RAD-001"
+          }
+        ],
+        "whole_name": null,
+        "public_linker": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1908360",
+            "label": "EVEROLIMUS",
+            "matched_text": "RAD001",
+            "matched_alias": "RAD-001"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL1908360",
+            "type": "Drug",
+            "label": "EVEROLIMUS",
+            "matched_text": "RAD-001",
+            "trials": 9,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "EVALUATES",
+              "dir": "in",
+              "type": "Trial",
+              "role": null,
+              "total": 9,
+              "items": [
+                {
+                  "id": "NCT04591431",
+                  "type": "Trial",
+                  "label": "NCT04591431",
+                  "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "UNKNOWN",
+                  "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+                  "start_date": "2020-10-07",
+                  "url": "https://clinicaltrials.gov/study/NCT04591431",
+                  "weight": "2020-10-07"
+                },
+                {
+                  "id": "NCT02321501",
+                  "type": "Trial",
+                  "label": "NCT02321501",
+                  "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "ACTIVE_NOT_RECRUITING",
+                  "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+                  "start_date": "2016-06-22",
+                  "url": "https://clinicaltrials.gov/study/NCT02321501",
+                  "weight": "2016-06-22"
+                }
+              ]
+            },
+            {
+              "rel": "SPONSORS_TRIAL_OF",
+              "dir": "in",
+              "type": "Company",
+              "role": null,
+              "total": 7,
+              "items": [
+                {
+                  "id": "ORG:emoryuniversity",
+                  "type": "Company",
+                  "label": "Emory University",
+                  "edge_id": "ORG:emoryuniversity|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:novartis",
+                  "type": "Company",
+                  "label": "Novartis",
+                  "edge_id": "ORG:novartis|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "INDUSTRY"
+                }
+              ]
+            },
+            {
+              "rel": "ACTS_ON",
+              "dir": "out",
+              "type": "Target",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "ENSG00000088832",
+                  "type": "Target",
+                  "label": "FKBP1A",
+                  "edge_id": "CHEMBL1908360|ACTS_ON|ENSG00000088832|CHEMBL1908360",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                }
+              ]
+            }
+          ]
+        },
+        "trial_qa": {
+          "question": "Which trials evaluate RAD001?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Drug",
+              "id": "CHEMBL1908360",
+              "label": "EVEROLIMUS",
+              "matched_text": "RAD001",
+              "matched_alias": "RAD-001"
+            }
+          ],
+          "answer": "Trials of this drug:\n  - NCT00933777 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00933777]\n  - NCT02321501 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates EVEROLIMUS [NCT02321501]\n  - NCT00655655 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00655655]\n  - NCT04591431 (PHASE2, UNKNOWN) evaluates EVEROLIMUS [NCT04591431]\n  - NCT00401778 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00401778]\n  - NCT00124280 (PHASE2, COMPLETED) evaluates EVEROLIMUS [NCT00124280]\n  - NCT00457119 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00457119]\n  - NCT01063478 (PHASE1, TERMINATED) evaluates EVEROLIMUS [NCT01063478]\n  - NCT00406276 (PHASE1, PHASE2, TERMINATED) evaluates EVEROLIMUS [NCT00406276]\n\nScope: 9 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 9,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "NCT00933777 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00933777|EVALUATES|CHEMBL1908360|NCT00933777",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00933777",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00933777",
+              "stated_intervention": "Combination of sorafenib and everolimus",
+              "title": "SORAVE - Sorafenib and Everolimus in Solid Tumors",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT02321501 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT02321501",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT02321501",
+              "stated_intervention": "Everolimus",
+              "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00655655 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00655655|EVALUATES|CHEMBL1908360|NCT00655655",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00655655",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00655655",
+              "stated_intervention": "everolimus",
+              "title": "Everolimus and Vatalanib in Treating Patients With Advanced Solid Tumors",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT04591431 (PHASE2, UNKNOWN) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04591431",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04591431",
+              "stated_intervention": "Everolimus",
+              "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+              "status": "UNKNOWN",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00401778 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00401778|EVALUATES|CHEMBL1908360|NCT00401778",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00401778",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00401778",
+              "stated_intervention": "RAD001",
+              "title": "Trial of RAD001 in Patients With Operable Non-Small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00124280 (PHASE2, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00124280|EVALUATES|CHEMBL1908360|NCT00124280",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00124280",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00124280",
+              "stated_intervention": "RAD001",
+              "title": "Study Investigating the Effect of Everolimus Monotherapy in Patients With Advanced Non-small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00457119 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00457119|EVALUATES|CHEMBL1908360|NCT00457119",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00457119",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00457119",
+              "stated_intervention": "RAD001",
+              "title": "Combination of RAD001 With Carboplatin, Paclitaxel and Bevacizumab in Non-small-cell Lung Cancer (NSCLC) Patients",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT01063478 (PHASE1, TERMINATED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT01063478|EVALUATES|CHEMBL1908360|NCT01063478",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT01063478",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT01063478",
+              "stated_intervention": "RAD001 (in addition to standard radiation and chemotherapy)",
+              "title": "Dose Escalation Study of RAD001 in Combination w/Chemotherapy & Radiation in Patients With NSCLC",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00406276 (PHASE1, PHASE2, TERMINATED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00406276|EVALUATES|CHEMBL1908360|NCT00406276",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00406276",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00406276",
+              "stated_intervention": "RAD001",
+              "title": "Phase I/II Trial of RAD001 Plus Docetaxel in Patients With Metastatic or Recurrent Non-Small Cell Lung Cancer",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ]
+            }
+          ]
+        }
+      },
+      "previous": {
+        "resolver": {
+          "raw": "RAD001",
+          "components": [
+            {
+              "component": "RAD001",
+              "tier": "ALIAS",
+              "drug_id": "CHEMBL1908360",
+              "score": null,
+              "rules": [],
+              "matched_alias": "RAD-001",
+              "candidates": null,
+              "drug": {
+                "name": "EVEROLIMUS",
+                "drug_type": "Small molecule",
+                "max_phase_overall": "APPROVAL",
+                "max_phase_in_nsclc": "PHASE_2",
+                "mechanisms": [
+                  "FK506-binding protein 1A inhibitor"
+                ],
+                "trials": 9
+              }
+            }
+          ]
+        },
+        "blocked": {},
+        "item_linker": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1908360",
+            "label": "EVEROLIMUS",
+            "matched_text": "RAD001",
+            "matched_alias": "RAD-001"
+          }
+        ],
+        "whole_name": null,
+        "public_linker": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1908360",
+            "label": "EVEROLIMUS",
+            "matched_text": "RAD001",
+            "matched_alias": "RAD-001"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL1908360",
+            "type": "Drug",
+            "label": "EVEROLIMUS",
+            "matched_text": "RAD-001",
+            "trials": 9,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "EVALUATES",
+              "dir": "in",
+              "type": "Trial",
+              "role": null,
+              "total": 9,
+              "items": [
+                {
+                  "id": "NCT04591431",
+                  "type": "Trial",
+                  "label": "NCT04591431",
+                  "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "UNKNOWN",
+                  "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+                  "start_date": "2020-10-07",
+                  "url": "https://clinicaltrials.gov/study/NCT04591431",
+                  "weight": "2020-10-07"
+                },
+                {
+                  "id": "NCT02321501",
+                  "type": "Trial",
+                  "label": "NCT02321501",
+                  "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "ACTIVE_NOT_RECRUITING",
+                  "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+                  "start_date": "2016-06-22",
+                  "url": "https://clinicaltrials.gov/study/NCT02321501",
+                  "weight": "2016-06-22"
+                }
+              ]
+            },
+            {
+              "rel": "SPONSORS_TRIAL_OF",
+              "dir": "in",
+              "type": "Company",
+              "role": null,
+              "total": 7,
+              "items": [
+                {
+                  "id": "ORG:emoryuniversity",
+                  "type": "Company",
+                  "label": "Emory University",
+                  "edge_id": "ORG:emoryuniversity|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:novartis",
+                  "type": "Company",
+                  "label": "Novartis",
+                  "edge_id": "ORG:novartis|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "INDUSTRY"
+                }
+              ]
+            },
+            {
+              "rel": "ACTS_ON",
+              "dir": "out",
+              "type": "Target",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "ENSG00000088832",
+                  "type": "Target",
+                  "label": "FKBP1A",
+                  "edge_id": "CHEMBL1908360|ACTS_ON|ENSG00000088832|CHEMBL1908360",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                }
+              ]
+            }
+          ]
+        },
+        "trial_qa": {
+          "question": "Which trials evaluate RAD001?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Drug",
+              "id": "CHEMBL1908360",
+              "label": "EVEROLIMUS",
+              "matched_text": "RAD001",
+              "matched_alias": "RAD-001"
+            }
+          ],
+          "answer": "Trials of this drug:\n  - NCT00933777 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00933777]\n  - NCT02321501 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates EVEROLIMUS [NCT02321501]\n  - NCT00655655 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00655655]\n  - NCT04591431 (PHASE2, UNKNOWN) evaluates EVEROLIMUS [NCT04591431]\n  - NCT00401778 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00401778]\n  - NCT00124280 (PHASE2, COMPLETED) evaluates EVEROLIMUS [NCT00124280]\n  - NCT00457119 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00457119]\n  - NCT01063478 (PHASE1, TERMINATED) evaluates EVEROLIMUS [NCT01063478]\n  - NCT00406276 (PHASE1, PHASE2, TERMINATED) evaluates EVEROLIMUS [NCT00406276]\n\nScope: 9 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 9,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "NCT00933777 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00933777|EVALUATES|CHEMBL1908360|NCT00933777",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00933777",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00933777",
+              "stated_intervention": "Combination of sorafenib and everolimus",
+              "title": "SORAVE - Sorafenib and Everolimus in Solid Tumors",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT02321501 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT02321501",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT02321501",
+              "stated_intervention": "Everolimus",
+              "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00655655 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00655655|EVALUATES|CHEMBL1908360|NCT00655655",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00655655",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00655655",
+              "stated_intervention": "everolimus",
+              "title": "Everolimus and Vatalanib in Treating Patients With Advanced Solid Tumors",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT04591431 (PHASE2, UNKNOWN) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04591431",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04591431",
+              "stated_intervention": "Everolimus",
+              "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+              "status": "UNKNOWN",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00401778 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00401778|EVALUATES|CHEMBL1908360|NCT00401778",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00401778",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00401778",
+              "stated_intervention": "RAD001",
+              "title": "Trial of RAD001 in Patients With Operable Non-Small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00124280 (PHASE2, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00124280|EVALUATES|CHEMBL1908360|NCT00124280",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00124280",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00124280",
+              "stated_intervention": "RAD001",
+              "title": "Study Investigating the Effect of Everolimus Monotherapy in Patients With Advanced Non-small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00457119 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00457119|EVALUATES|CHEMBL1908360|NCT00457119",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00457119",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00457119",
+              "stated_intervention": "RAD001",
+              "title": "Combination of RAD001 With Carboplatin, Paclitaxel and Bevacizumab in Non-small-cell Lung Cancer (NSCLC) Patients",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT01063478 (PHASE1, TERMINATED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT01063478|EVALUATES|CHEMBL1908360|NCT01063478",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT01063478",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT01063478",
+              "stated_intervention": "RAD001 (in addition to standard radiation and chemotherapy)",
+              "title": "Dose Escalation Study of RAD001 in Combination w/Chemotherapy & Radiation in Patients With NSCLC",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00406276 (PHASE1, PHASE2, TERMINATED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00406276|EVALUATES|CHEMBL1908360|NCT00406276",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00406276",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00406276",
+              "stated_intervention": "RAD001",
+              "title": "Phase I/II Trial of RAD001 Plus Docetaxel in Patients With Metastatic or Recurrent Non-Small Cell Lung Cancer",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "text": "EVEROLIMUS",
+      "canonical_key": "everolimus",
+      "dictionary": [
+        {
+          "drug_id": "CHEMBL1908360",
+          "alias": "EVEROLIMUS",
+          "alias_type": "preferred_name",
+          "source": null
+        }
+      ],
+      "is_isotope": false,
+      "current": {
+        "resolver": {
+          "raw": "EVEROLIMUS",
+          "components": [
+            {
+              "component": "EVEROLIMUS",
+              "tier": "EXACT",
+              "drug_id": "CHEMBL1908360",
+              "score": null,
+              "rules": [],
+              "matched_alias": "EVEROLIMUS",
+              "candidates": null,
+              "drug": {
+                "name": "EVEROLIMUS",
+                "drug_type": "Small molecule",
+                "max_phase_overall": "APPROVAL",
+                "max_phase_in_nsclc": "PHASE_2",
+                "mechanisms": [
+                  "FK506-binding protein 1A inhibitor"
+                ],
+                "trials": 9
+              }
+            }
+          ]
+        },
+        "blocked": {},
+        "item_linker": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1908360",
+            "label": "EVEROLIMUS",
+            "matched_text": "EVEROLIMUS",
+            "matched_alias": "EVEROLIMUS"
+          }
+        ],
+        "whole_name": {
+          "type": "Drug",
+          "id": "CHEMBL1908360",
+          "label": "EVEROLIMUS",
+          "matched_text": "EVEROLIMUS",
+          "matched_alias": "EVEROLIMUS"
+        },
+        "public_linker": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1908360",
+            "label": "EVEROLIMUS",
+            "matched_text": "EVEROLIMUS",
+            "matched_alias": "EVEROLIMUS"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL1908360",
+            "type": "Drug",
+            "label": "EVEROLIMUS",
+            "matched_text": "EVEROLIMUS",
+            "trials": 9,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "EVALUATES",
+              "dir": "in",
+              "type": "Trial",
+              "role": null,
+              "total": 9,
+              "items": [
+                {
+                  "id": "NCT04591431",
+                  "type": "Trial",
+                  "label": "NCT04591431",
+                  "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "UNKNOWN",
+                  "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+                  "start_date": "2020-10-07",
+                  "url": "https://clinicaltrials.gov/study/NCT04591431",
+                  "weight": "2020-10-07"
+                },
+                {
+                  "id": "NCT02321501",
+                  "type": "Trial",
+                  "label": "NCT02321501",
+                  "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "ACTIVE_NOT_RECRUITING",
+                  "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+                  "start_date": "2016-06-22",
+                  "url": "https://clinicaltrials.gov/study/NCT02321501",
+                  "weight": "2016-06-22"
+                }
+              ]
+            },
+            {
+              "rel": "SPONSORS_TRIAL_OF",
+              "dir": "in",
+              "type": "Company",
+              "role": null,
+              "total": 7,
+              "items": [
+                {
+                  "id": "ORG:emoryuniversity",
+                  "type": "Company",
+                  "label": "Emory University",
+                  "edge_id": "ORG:emoryuniversity|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:novartis",
+                  "type": "Company",
+                  "label": "Novartis",
+                  "edge_id": "ORG:novartis|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "INDUSTRY"
+                }
+              ]
+            },
+            {
+              "rel": "ACTS_ON",
+              "dir": "out",
+              "type": "Target",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "ENSG00000088832",
+                  "type": "Target",
+                  "label": "FKBP1A",
+                  "edge_id": "CHEMBL1908360|ACTS_ON|ENSG00000088832|CHEMBL1908360",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                }
+              ]
+            }
+          ]
+        },
+        "trial_qa": {
+          "question": "Which trials evaluate EVEROLIMUS?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Drug",
+              "id": "CHEMBL1908360",
+              "label": "EVEROLIMUS",
+              "matched_text": "EVEROLIMUS",
+              "matched_alias": "EVEROLIMUS"
+            }
+          ],
+          "answer": "Trials of this drug:\n  - NCT00933777 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00933777]\n  - NCT02321501 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates EVEROLIMUS [NCT02321501]\n  - NCT00655655 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00655655]\n  - NCT04591431 (PHASE2, UNKNOWN) evaluates EVEROLIMUS [NCT04591431]\n  - NCT00401778 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00401778]\n  - NCT00124280 (PHASE2, COMPLETED) evaluates EVEROLIMUS [NCT00124280]\n  - NCT00457119 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00457119]\n  - NCT01063478 (PHASE1, TERMINATED) evaluates EVEROLIMUS [NCT01063478]\n  - NCT00406276 (PHASE1, PHASE2, TERMINATED) evaluates EVEROLIMUS [NCT00406276]\n\nScope: 9 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 9,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "NCT00933777 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00933777|EVALUATES|CHEMBL1908360|NCT00933777",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00933777",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00933777",
+              "stated_intervention": "Combination of sorafenib and everolimus",
+              "title": "SORAVE - Sorafenib and Everolimus in Solid Tumors",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT02321501 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT02321501",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT02321501",
+              "stated_intervention": "Everolimus",
+              "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00655655 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00655655|EVALUATES|CHEMBL1908360|NCT00655655",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00655655",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00655655",
+              "stated_intervention": "everolimus",
+              "title": "Everolimus and Vatalanib in Treating Patients With Advanced Solid Tumors",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT04591431 (PHASE2, UNKNOWN) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04591431",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04591431",
+              "stated_intervention": "Everolimus",
+              "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+              "status": "UNKNOWN",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00401778 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00401778|EVALUATES|CHEMBL1908360|NCT00401778",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00401778",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00401778",
+              "stated_intervention": "RAD001",
+              "title": "Trial of RAD001 in Patients With Operable Non-Small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00124280 (PHASE2, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00124280|EVALUATES|CHEMBL1908360|NCT00124280",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00124280",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00124280",
+              "stated_intervention": "RAD001",
+              "title": "Study Investigating the Effect of Everolimus Monotherapy in Patients With Advanced Non-small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00457119 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00457119|EVALUATES|CHEMBL1908360|NCT00457119",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00457119",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00457119",
+              "stated_intervention": "RAD001",
+              "title": "Combination of RAD001 With Carboplatin, Paclitaxel and Bevacizumab in Non-small-cell Lung Cancer (NSCLC) Patients",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT01063478 (PHASE1, TERMINATED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT01063478|EVALUATES|CHEMBL1908360|NCT01063478",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT01063478",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT01063478",
+              "stated_intervention": "RAD001 (in addition to standard radiation and chemotherapy)",
+              "title": "Dose Escalation Study of RAD001 in Combination w/Chemotherapy & Radiation in Patients With NSCLC",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00406276 (PHASE1, PHASE2, TERMINATED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00406276|EVALUATES|CHEMBL1908360|NCT00406276",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00406276",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00406276",
+              "stated_intervention": "RAD001",
+              "title": "Phase I/II Trial of RAD001 Plus Docetaxel in Patients With Metastatic or Recurrent Non-Small Cell Lung Cancer",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ]
+            }
+          ]
+        }
+      },
+      "previous": {
+        "resolver": {
+          "raw": "EVEROLIMUS",
+          "components": [
+            {
+              "component": "EVEROLIMUS",
+              "tier": "EXACT",
+              "drug_id": "CHEMBL1908360",
+              "score": null,
+              "rules": [],
+              "matched_alias": "EVEROLIMUS",
+              "candidates": null,
+              "drug": {
+                "name": "EVEROLIMUS",
+                "drug_type": "Small molecule",
+                "max_phase_overall": "APPROVAL",
+                "max_phase_in_nsclc": "PHASE_2",
+                "mechanisms": [
+                  "FK506-binding protein 1A inhibitor"
+                ],
+                "trials": 9
+              }
+            }
+          ]
+        },
+        "blocked": {},
+        "item_linker": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1908360",
+            "label": "EVEROLIMUS",
+            "matched_text": "EVEROLIMUS",
+            "matched_alias": "EVEROLIMUS"
+          }
+        ],
+        "whole_name": {
+          "type": "Drug",
+          "id": "CHEMBL1908360",
+          "label": "EVEROLIMUS",
+          "matched_text": "EVEROLIMUS",
+          "matched_alias": "EVEROLIMUS"
+        },
+        "public_linker": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1908360",
+            "label": "EVEROLIMUS",
+            "matched_text": "EVEROLIMUS",
+            "matched_alias": "EVEROLIMUS"
+          }
+        ],
+        "map": {
+          "center": {
+            "id": "CHEMBL1908360",
+            "type": "Drug",
+            "label": "EVEROLIMUS",
+            "matched_text": "EVEROLIMUS",
+            "trials": 9,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "EVALUATES",
+              "dir": "in",
+              "type": "Trial",
+              "role": null,
+              "total": 9,
+              "items": [
+                {
+                  "id": "NCT04591431",
+                  "type": "Trial",
+                  "label": "NCT04591431",
+                  "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "UNKNOWN",
+                  "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+                  "start_date": "2020-10-07",
+                  "url": "https://clinicaltrials.gov/study/NCT04591431",
+                  "weight": "2020-10-07"
+                },
+                {
+                  "id": "NCT02321501",
+                  "type": "Trial",
+                  "label": "NCT02321501",
+                  "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "ACTIVE_NOT_RECRUITING",
+                  "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+                  "start_date": "2016-06-22",
+                  "url": "https://clinicaltrials.gov/study/NCT02321501",
+                  "weight": "2016-06-22"
+                }
+              ]
+            },
+            {
+              "rel": "SPONSORS_TRIAL_OF",
+              "dir": "in",
+              "type": "Company",
+              "role": null,
+              "total": 7,
+              "items": [
+                {
+                  "id": "ORG:emoryuniversity",
+                  "type": "Company",
+                  "label": "Emory University",
+                  "edge_id": "ORG:emoryuniversity|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:novartis",
+                  "type": "Company",
+                  "label": "Novartis",
+                  "edge_id": "ORG:novartis|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "INDUSTRY"
+                }
+              ]
+            },
+            {
+              "rel": "ACTS_ON",
+              "dir": "out",
+              "type": "Target",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "ENSG00000088832",
+                  "type": "Target",
+                  "label": "FKBP1A",
+                  "edge_id": "CHEMBL1908360|ACTS_ON|ENSG00000088832|CHEMBL1908360",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                }
+              ]
+            }
+          ]
+        },
+        "trial_qa": {
+          "question": "Which trials evaluate EVEROLIMUS?",
+          "intent": "trials_for_entity",
+          "entities": [
+            {
+              "type": "Drug",
+              "id": "CHEMBL1908360",
+              "label": "EVEROLIMUS",
+              "matched_text": "EVEROLIMUS",
+              "matched_alias": "EVEROLIMUS"
+            }
+          ],
+          "answer": "Trials of this drug:\n  - NCT00933777 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00933777]\n  - NCT02321501 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates EVEROLIMUS [NCT02321501]\n  - NCT00655655 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00655655]\n  - NCT04591431 (PHASE2, UNKNOWN) evaluates EVEROLIMUS [NCT04591431]\n  - NCT00401778 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00401778]\n  - NCT00124280 (PHASE2, COMPLETED) evaluates EVEROLIMUS [NCT00124280]\n  - NCT00457119 (PHASE1, COMPLETED) evaluates EVEROLIMUS [NCT00457119]\n  - NCT01063478 (PHASE1, TERMINATED) evaluates EVEROLIMUS [NCT01063478]\n  - NCT00406276 (PHASE1, PHASE2, TERMINATED) evaluates EVEROLIMUS [NCT00406276]\n\nScope: 9 edge(s) from this graph; non-small cell lung cancer only.",
+          "generated_by": "deterministic template (no language model)",
+          "checks": {
+            "grounded": null,
+            "applicable": false,
+            "unsupported_claims": [],
+            "evidence_count": 9,
+            "method": "not applicable",
+            "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+          },
+          "evidence": [
+            {
+              "statement": "NCT00933777 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00933777|EVALUATES|CHEMBL1908360|NCT00933777",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00933777",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00933777",
+              "stated_intervention": "Combination of sorafenib and everolimus",
+              "title": "SORAVE - Sorafenib and Everolimus in Solid Tumors",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT02321501 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT02321501",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT02321501",
+              "stated_intervention": "Everolimus",
+              "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+              "status": "ACTIVE_NOT_RECRUITING",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00655655 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00655655|EVALUATES|CHEMBL1908360|NCT00655655",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00655655",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT00655655",
+              "stated_intervention": "everolimus",
+              "title": "Everolimus and Vatalanib in Treating Patients With Advanced Solid Tumors",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT04591431 (PHASE2, UNKNOWN) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT04591431",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 1.0,
+              "resolution_tier": "EXACT",
+              "url": "https://clinicaltrials.gov/study/NCT04591431",
+              "stated_intervention": "Everolimus",
+              "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+              "status": "UNKNOWN",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00401778 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00401778|EVALUATES|CHEMBL1908360|NCT00401778",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00401778",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00401778",
+              "stated_intervention": "RAD001",
+              "title": "Trial of RAD001 in Patients With Operable Non-Small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00124280 (PHASE2, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00124280|EVALUATES|CHEMBL1908360|NCT00124280",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00124280",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00124280",
+              "stated_intervention": "RAD001",
+              "title": "Study Investigating the Effect of Everolimus Monotherapy in Patients With Advanced Non-small Cell Lung Cancer (NSCLC)",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE2"
+              ]
+            },
+            {
+              "statement": "NCT00457119 (PHASE1, COMPLETED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00457119|EVALUATES|CHEMBL1908360|NCT00457119",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00457119",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00457119",
+              "stated_intervention": "RAD001",
+              "title": "Combination of RAD001 With Carboplatin, Paclitaxel and Bevacizumab in Non-small-cell Lung Cancer (NSCLC) Patients",
+              "status": "COMPLETED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT01063478 (PHASE1, TERMINATED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT01063478|EVALUATES|CHEMBL1908360|NCT01063478",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT01063478",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT01063478",
+              "stated_intervention": "RAD001 (in addition to standard radiation and chemotherapy)",
+              "title": "Dose Escalation Study of RAD001 in Combination w/Chemotherapy & Radiation in Patients With NSCLC",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE1"
+              ]
+            },
+            {
+              "statement": "NCT00406276 (PHASE1, PHASE2, TERMINATED) evaluates EVEROLIMUS",
+              "relation": "EVALUATES",
+              "edge_id": "NCT00406276|EVALUATES|CHEMBL1908360|NCT00406276",
+              "source": "clinicaltrials.gov",
+              "source_record": "NCT00406276",
+              "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+              "confidence": 0.98,
+              "resolution_tier": "ALIAS",
+              "url": "https://clinicaltrials.gov/study/NCT00406276",
+              "stated_intervention": "RAD001",
+              "title": "Phase I/II Trial of RAD001 Plus Docetaxel in Patients With Metastatic or Recurrent Non-Small Cell Lung Cancer",
+              "status": "TERMINATED",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "text": "CHEMBL1908360",
+      "canonical_key": "chembl1908360",
+      "dictionary": [],
+      "is_isotope": false,
+      "current": {
+        "resolver": {
+          "raw": "CHEMBL1908360",
+          "components": [
+            {
+              "component": "CHEMBL1908360",
+              "tier": "UNRESOLVED",
+              "drug_id": null,
+              "score": null,
+              "rules": [],
+              "matched_alias": null,
+              "candidates": null
+            }
+          ]
+        },
+        "blocked": {},
+        "item_linker": [],
+        "whole_name": null,
+        "public_linker": [],
+        "map": {
+          "center": {
+            "id": "CHEMBL1908360",
+            "type": "Drug",
+            "label": "EVEROLIMUS",
+            "matched_text": null,
+            "trials": 9,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "EVALUATES",
+              "dir": "in",
+              "type": "Trial",
+              "role": null,
+              "total": 9,
+              "items": [
+                {
+                  "id": "NCT04591431",
+                  "type": "Trial",
+                  "label": "NCT04591431",
+                  "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "UNKNOWN",
+                  "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+                  "start_date": "2020-10-07",
+                  "url": "https://clinicaltrials.gov/study/NCT04591431",
+                  "weight": "2020-10-07"
+                },
+                {
+                  "id": "NCT02321501",
+                  "type": "Trial",
+                  "label": "NCT02321501",
+                  "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "ACTIVE_NOT_RECRUITING",
+                  "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+                  "start_date": "2016-06-22",
+                  "url": "https://clinicaltrials.gov/study/NCT02321501",
+                  "weight": "2016-06-22"
+                }
+              ]
+            },
+            {
+              "rel": "SPONSORS_TRIAL_OF",
+              "dir": "in",
+              "type": "Company",
+              "role": null,
+              "total": 7,
+              "items": [
+                {
+                  "id": "ORG:emoryuniversity",
+                  "type": "Company",
+                  "label": "Emory University",
+                  "edge_id": "ORG:emoryuniversity|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:novartis",
+                  "type": "Company",
+                  "label": "Novartis",
+                  "edge_id": "ORG:novartis|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "INDUSTRY"
+                }
+              ]
+            },
+            {
+              "rel": "ACTS_ON",
+              "dir": "out",
+              "type": "Target",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "ENSG00000088832",
+                  "type": "Target",
+                  "label": "FKBP1A",
+                  "edge_id": "CHEMBL1908360|ACTS_ON|ENSG00000088832|CHEMBL1908360",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                }
+              ]
+            }
+          ]
+        },
+        "trial_qa": {
+          "question": "Which trials evaluate CHEMBL1908360?",
+          "intent": "trials_for_entity",
+          "entities": [],
+          "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+          "generated_by": "refusal (no supporting evidence)",
+          "checks": {
+            "grounded": true,
+            "unsupported_claims": [],
+            "note": "refusing is the correct output when evidence is absent"
+          },
+          "evidence": []
+        }
+      },
+      "previous": {
+        "resolver": {
+          "raw": "CHEMBL1908360",
+          "components": [
+            {
+              "component": "CHEMBL1908360",
+              "tier": "UNRESOLVED",
+              "drug_id": null,
+              "score": null,
+              "rules": [],
+              "matched_alias": null,
+              "candidates": null
+            }
+          ]
+        },
+        "blocked": {},
+        "item_linker": [],
+        "whole_name": null,
+        "public_linker": [],
+        "map": {
+          "center": {
+            "id": "CHEMBL1908360",
+            "type": "Drug",
+            "label": "EVEROLIMUS",
+            "matched_text": null,
+            "trials": 9,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "EVALUATES",
+              "dir": "in",
+              "type": "Trial",
+              "role": null,
+              "total": 9,
+              "items": [
+                {
+                  "id": "NCT04591431",
+                  "type": "Trial",
+                  "label": "NCT04591431",
+                  "edge_id": "NCT04591431|EVALUATES|CHEMBL1908360|NCT04591431",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "UNKNOWN",
+                  "title": "The Rome Trial From Histology to Target: the Road to Personalize Target Therapy and Immunotherapy",
+                  "start_date": "2020-10-07",
+                  "url": "https://clinicaltrials.gov/study/NCT04591431",
+                  "weight": "2020-10-07"
+                },
+                {
+                  "id": "NCT02321501",
+                  "type": "Trial",
+                  "label": "NCT02321501",
+                  "edge_id": "NCT02321501|EVALUATES|CHEMBL1908360|NCT02321501",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "ACTIVE_NOT_RECRUITING",
+                  "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+                  "start_date": "2016-06-22",
+                  "url": "https://clinicaltrials.gov/study/NCT02321501",
+                  "weight": "2016-06-22"
+                }
+              ]
+            },
+            {
+              "rel": "SPONSORS_TRIAL_OF",
+              "dir": "in",
+              "type": "Company",
+              "role": null,
+              "total": 7,
+              "items": [
+                {
+                  "id": "ORG:emoryuniversity",
+                  "type": "Company",
+                  "label": "Emory University",
+                  "edge_id": "ORG:emoryuniversity|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:novartis",
+                  "type": "Company",
+                  "label": "Novartis",
+                  "edge_id": "ORG:novartis|SPONSORS_TRIAL_OF|CHEMBL1908360|",
+                  "evidence_trials": 2,
+                  "weight": 2,
+                  "sponsor_class": "INDUSTRY"
+                }
+              ]
+            },
+            {
+              "rel": "ACTS_ON",
+              "dir": "out",
+              "type": "Target",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "ENSG00000088832",
+                  "type": "Target",
+                  "label": "FKBP1A",
+                  "edge_id": "CHEMBL1908360|ACTS_ON|ENSG00000088832|CHEMBL1908360",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                }
+              ]
+            }
+          ]
+        },
+        "trial_qa": {
+          "question": "Which trials evaluate CHEMBL1908360?",
+          "intent": "trials_for_entity",
+          "entities": [],
+          "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+          "generated_by": "refusal (no supporting evidence)",
+          "checks": {
+            "grounded": true,
+            "unsupported_claims": [],
+            "note": "refusing is the correct output when evidence is absent"
+          },
+          "evidence": []
+        }
+      }
+    },
+    {
+      "text": "001c",
+      "canonical_key": "001c",
+      "dictionary": [],
+      "is_isotope": true,
+      "current": {
+        "resolver": {
+          "raw": "001c",
+          "components": [
+            {
+              "component": "001c",
+              "tier": "BLOCKED_CLASS_TERM",
+              "drug_id": null,
+              "score": null,
+              "rules": [
+                "radiotracer_guard"
+              ],
+              "matched_alias": null,
+              "candidates": null,
+              "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+            }
+          ]
+        },
+        "blocked": {},
+        "item_linker": [],
+        "whole_name": null,
+        "public_linker": [],
+        "map": {
+          "not_found": "001c"
+        },
+        "trial_qa": {
+          "question": "Which trials evaluate 001c?",
+          "intent": "trials_for_entity",
+          "entities": [],
+          "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+          "generated_by": "refusal (no supporting evidence)",
+          "checks": {
+            "grounded": true,
+            "unsupported_claims": [],
+            "note": "refusing is the correct output when evidence is absent"
+          },
+          "evidence": []
+        }
+      },
+      "previous": {
+        "resolver": {
+          "raw": "001c",
+          "components": [
+            {
+              "component": "001c",
+              "tier": "BLOCKED_CLASS_TERM",
+              "drug_id": null,
+              "score": null,
+              "rules": [
+                "radiotracer_guard"
+              ],
+              "matched_alias": null,
+              "candidates": null,
+              "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+            }
+          ]
+        },
+        "blocked": {},
+        "item_linker": [],
+        "whole_name": null,
+        "public_linker": [],
+        "map": {
+          "not_found": "001c"
+        },
+        "trial_qa": {
+          "question": "Which trials evaluate 001c?",
+          "intent": "trials_for_entity",
+          "entities": [],
+          "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+          "generated_by": "refusal (no supporting evidence)",
+          "checks": {
+            "grounded": true,
+            "unsupported_claims": [],
+            "note": "refusing is the correct output when evidence is absent"
+          },
+          "evidence": []
+        }
+      }
+    },
+    {
+      "text": "1C",
+      "canonical_key": "1c",
+      "dictionary": [],
+      "is_isotope": true,
+      "current": {
+        "resolver": {
+          "raw": "1C",
+          "components": [
+            {
+              "component": "1C",
+              "tier": "BLOCKED_CLASS_TERM",
+              "drug_id": null,
+              "score": null,
+              "rules": [
+                "radiotracer_guard"
+              ],
+              "matched_alias": null,
+              "candidates": null,
+              "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+            }
+          ]
+        },
+        "blocked": {},
+        "item_linker": [],
+        "whole_name": null,
+        "public_linker": [],
+        "map": {
+          "not_found": "1C"
+        },
+        "trial_qa": {
+          "question": "Which trials evaluate 1C?",
+          "intent": "trials_for_entity",
+          "entities": [],
+          "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+          "generated_by": "refusal (no supporting evidence)",
+          "checks": {
+            "grounded": true,
+            "unsupported_claims": [],
+            "note": "refusing is the correct output when evidence is absent"
+          },
+          "evidence": []
+        }
+      },
+      "previous": {
+        "resolver": {
+          "raw": "1C",
+          "components": [
+            {
+              "component": "1C",
+              "tier": "BLOCKED_CLASS_TERM",
+              "drug_id": null,
+              "score": null,
+              "rules": [
+                "radiotracer_guard"
+              ],
+              "matched_alias": null,
+              "candidates": null,
+              "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+            }
+          ]
+        },
+        "blocked": {},
+        "item_linker": [],
+        "whole_name": null,
+        "public_linker": [],
+        "map": {
+          "not_found": "1C"
+        },
+        "trial_qa": {
+          "question": "Which trials evaluate 1C?",
+          "intent": "trials_for_entity",
+          "entities": [],
+          "answer": "This graph cannot answer that. It covers companies, drugs, targets and trials in non-small cell lung cancer only, and it answers questions about which of those relate to which. No entity in the question matched the graph.",
+          "generated_by": "refusal (no supporting evidence)",
+          "checks": {
+            "grounded": true,
+            "unsupported_claims": [],
+            "note": "refusing is the correct output when evidence is absent"
+          },
+          "evidence": []
+        }
+      }
+    }
+  ]
+}

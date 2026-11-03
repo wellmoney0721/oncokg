@@ -134,3 +134,11 @@ Tests 338.
 | M11-S1 | further lone-alias losses (`9-amino-20(s)-camptothecin`, `il-6ra`, `TAK-659F`) | recorded as known over-refusals: their keys end or contain what reads as an isotope label; refusing never draws a wrong drug |
 
 Dose and schedule text after a name is unaffected ("osimertinib 80 mg", "paclitaxel 2 cycles", "cisplatin 75 mg/m2 day 1"). Tests 339.
+
+## Round 12 (audit_evidence_claims/m12) — CHANGES REQUIRED (one blocker)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M12-B1 | "[89Z.r]-DFO-daratumumab": inside a consumed stored alias the split symbol was checked only as space-joined words, and the chelator kept the remainder from being a same-drug key | every run of the matched name's words is also glued (as the key glues them, up to a label's length) and compared with isotope labels |
+
+A sweep of every unambiguous stored alias run alone (before and after this change) shows no newly refused or changed names. Tests 340.

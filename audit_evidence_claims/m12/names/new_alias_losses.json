@@ -1,0 +1,61 @@
+{
+  "description": "Current versus m11 loss-set comparison; not a total defect count.",
+  "count": 1,
+  "cases": [
+    {
+      "input": "rad001c",
+      "stored": {
+        "drug_id": "CHEMBL1908360",
+        "alias": "rad001c",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "rad001c",
+          "matched_text": "rad001c",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1908360",
+          "label": "EVEROLIMUS",
+          "matched_text": "rad001c",
+          "matched_alias": "rad001c"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1908360"
+      ],
+      "resolver": {
+        "raw": "rad001c",
+        "components": [
+          {
+            "component": "rad001c",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1908360",
+            "score": null,
+            "rules": [],
+            "matched_alias": "rad001c",
+            "candidates": null,
+            "drug": {
+              "name": "EVEROLIMUS",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "FK506-binding protein 1A inhibitor"
+              ],
+              "trials": 9
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

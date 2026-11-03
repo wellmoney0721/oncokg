@@ -1,0 +1,12 @@
+{
+  "http_probe": {
+    "source": "audit_evidence_claims/m11/root_checks/new_leaks_http.py",
+    "adaptations": [
+      "output location derives from script",
+      "port 8899 to 8962",
+      "new candidate/control case list",
+      "temp paths inside output directory"
+    ]
+  },
+  "focused": "Original m12 stage probe patterned after m11/attacks/key_equivalence.py; HEAD^ reference intentionally preserved."
+}

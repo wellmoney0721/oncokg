@@ -1,0 +1,1359 @@
+[
+  {
+    "text": "M vasi",
+    "key": "mvasi",
+    "resolver": {
+      "raw": "M vasi",
+      "components": [
+        {
+          "component": "M vasi",
+          "tier": "FUZZY_REVIEW",
+          "drug_id": "CHEMBL986",
+          "score": 90.0,
+          "rules": [
+            "fuzzy_match"
+          ],
+          "matched_alias": "vas",
+          "candidates": null,
+          "drug": {
+            "name": "RETINOL",
+            "drug_type": "Small molecule",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "EARLY_PHASE_1",
+            "mechanisms": [],
+            "trials": 0
+          }
+        }
+      ]
+    },
+    "blocked": {},
+    "found": [],
+    "whole": null,
+    "map": {
+      "not_found": "M vasi"
+    },
+    "qualified": false
+  },
+  {
+    "text": "M.vasi",
+    "key": "mvasi",
+    "resolver": {
+      "raw": "M.vasi",
+      "components": [
+        {
+          "component": "M.vasi",
+          "tier": "FUZZY_REVIEW",
+          "drug_id": "CHEMBL986",
+          "score": 90.0,
+          "rules": [
+            "fuzzy_match"
+          ],
+          "matched_alias": "vas",
+          "candidates": null,
+          "drug": {
+            "name": "RETINOL",
+            "drug_type": "Small molecule",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "EARLY_PHASE_1",
+            "mechanisms": [],
+            "trials": 0
+          }
+        }
+      ]
+    },
+    "blocked": {},
+    "found": [],
+    "whole": null,
+    "map": {
+      "not_found": "M.vasi"
+    },
+    "qualified": true
+  },
+  {
+    "text": "bevacizumab - P.fizer",
+    "key": "bevacizumabpfizer",
+    "resolver": {
+      "raw": "bevacizumab - P.fizer",
+      "components": [
+        {
+          "component": "bevacizumab -",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201583",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "BEVACIZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'bevacizumab - P.fizer'",
+          "drug": {
+            "name": "BEVACIZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "APPROVAL",
+            "mechanisms": [
+              "Vascular endothelial growth factor A inhibitor"
+            ],
+            "trials": 122
+          }
+        },
+        {
+          "component": "P.fizer",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    },
+    "blocked": {},
+    "found": [
+      {
+        "type": "Company",
+        "id": "ORG:pfizer",
+        "label": "Pfizer",
+        "matched_text": "- P.fizer",
+        "also_matching_ids": []
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "bevacizumab",
+        "matched_alias": "BEVACIZUMAB"
+      }
+    ],
+    "whole": null,
+    "map": {
+      "center": {
+        "id": "ORG:pfizer",
+        "type": "Company",
+        "label": "Pfizer",
+        "matched_text": "- P.fizer",
+        "trials": null,
+        "props": {}
+      },
+      "also": [
+        {
+          "id": "CHEMBL1201583",
+          "type": "Drug",
+          "label": "BEVACIZUMAB"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "SPONSORS",
+          "dir": "out",
+          "type": "Trial",
+          "role": "lead_sponsor",
+          "total": 61,
+          "items": [
+            {
+              "id": "NCT07768358",
+              "type": "Trial",
+              "label": "NCT07768358",
+              "edge_id": "ORG:pfizer|SPONSORS|NCT07768358|NCT07768358",
+              "phases": [
+                "PHASE4"
+              ],
+              "status": "NOT_YET_RECRUITING",
+              "title": "Tucatinib Continuation Study",
+              "start_date": "2026-11-06",
+              "url": "https://clinicaltrials.gov/study/NCT07768358",
+              "weight": "2026-11-06",
+              "role": "lead_sponsor"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "out",
+          "type": "Drug",
+          "role": null,
+          "total": 35,
+          "items": [
+            {
+              "id": "CHEMBL1351",
+              "type": "Drug",
+              "label": "CARBOPLATIN",
+              "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL1351|",
+              "trials": 391,
+              "max_phase": "APPROVAL",
+              "evidence_trials": 7,
+              "weight": 7,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS",
+          "dir": "out",
+          "type": "Trial",
+          "role": "collaborator",
+          "total": 7,
+          "items": [
+            {
+              "id": "NCT04084717",
+              "type": "Trial",
+              "label": "NCT04084717",
+              "edge_id": "ORG:pfizer|SPONSORS|NCT04084717|NCT04084717",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Study of Crizotinib for ROS1 and MET Activated Lung Cancer",
+              "start_date": "2019-12-03",
+              "url": "https://clinicaltrials.gov/study/NCT04084717",
+              "weight": "2019-12-03",
+              "role": "collaborator"
+            }
+          ]
+        },
+        {
+          "rel": "PARENT_OF",
+          "dir": "out",
+          "type": "Company",
+          "role": null,
+          "total": 4,
+          "items": [
+            {
+              "id": "ORG:array",
+              "type": "Company",
+              "label": "Array",
+              "edge_id": "ORG:pfizer|PARENT_OF|ORG:array|hand-curated corporate map",
+              "weight": 0
+            }
+          ]
+        }
+      ]
+    },
+    "qualified": false
+  },
+  {
+    "text": "bevacizumab - Pf izer",
+    "key": "bevacizumabpfizer",
+    "resolver": {
+      "raw": "bevacizumab - Pf izer",
+      "components": [
+        {
+          "component": "bevacizumab -",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201583",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "BEVACIZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'bevacizumab - Pf izer'",
+          "drug": {
+            "name": "BEVACIZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "APPROVAL",
+            "mechanisms": [
+              "Vascular endothelial growth factor A inhibitor"
+            ],
+            "trials": 122
+          }
+        }
+      ]
+    },
+    "blocked": {},
+    "found": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab - Pf izer",
+        "matched_text": "bevacizumab - Pf izer",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Company",
+        "id": "ORG:pfizer",
+        "label": "Pfizer",
+        "matched_text": "- Pf izer",
+        "also_matching_ids": []
+      }
+    ],
+    "whole": null,
+    "map": {
+      "center": {
+        "id": "ORG:pfizer",
+        "type": "Company",
+        "label": "Pfizer",
+        "matched_text": "- Pf izer",
+        "trials": null,
+        "props": {}
+      },
+      "also": [
+        {
+          "refused": "bevacizumab - Pf izer"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "SPONSORS",
+          "dir": "out",
+          "type": "Trial",
+          "role": "lead_sponsor",
+          "total": 61,
+          "items": [
+            {
+              "id": "NCT07768358",
+              "type": "Trial",
+              "label": "NCT07768358",
+              "edge_id": "ORG:pfizer|SPONSORS|NCT07768358|NCT07768358",
+              "phases": [
+                "PHASE4"
+              ],
+              "status": "NOT_YET_RECRUITING",
+              "title": "Tucatinib Continuation Study",
+              "start_date": "2026-11-06",
+              "url": "https://clinicaltrials.gov/study/NCT07768358",
+              "weight": "2026-11-06",
+              "role": "lead_sponsor"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "out",
+          "type": "Drug",
+          "role": null,
+          "total": 35,
+          "items": [
+            {
+              "id": "CHEMBL1351",
+              "type": "Drug",
+              "label": "CARBOPLATIN",
+              "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL1351|",
+              "trials": 391,
+              "max_phase": "APPROVAL",
+              "evidence_trials": 7,
+              "weight": 7,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS",
+          "dir": "out",
+          "type": "Trial",
+          "role": "collaborator",
+          "total": 7,
+          "items": [
+            {
+              "id": "NCT04084717",
+              "type": "Trial",
+              "label": "NCT04084717",
+              "edge_id": "ORG:pfizer|SPONSORS|NCT04084717|NCT04084717",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Study of Crizotinib for ROS1 and MET Activated Lung Cancer",
+              "start_date": "2019-12-03",
+              "url": "https://clinicaltrials.gov/study/NCT04084717",
+              "weight": "2019-12-03",
+              "role": "collaborator"
+            }
+          ]
+        },
+        {
+          "rel": "PARENT_OF",
+          "dir": "out",
+          "type": "Company",
+          "role": null,
+          "total": 4,
+          "items": [
+            {
+              "id": "ORG:array",
+              "type": "Company",
+              "label": "Array",
+              "edge_id": "ORG:pfizer|PARENT_OF|ORG:array|hand-curated corporate map",
+              "weight": 0
+            }
+          ]
+        }
+      ]
+    },
+    "qualified": true
+  },
+  {
+    "text": "bevacizumab-Pfizer",
+    "key": "bevacizumabpfizer",
+    "resolver": {
+      "raw": "bevacizumab-Pfizer",
+      "components": [
+        {
+          "component": "bevacizumab-Pfizer",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "blocked": {},
+    "found": [],
+    "whole": null,
+    "map": {
+      "not_found": "bevacizumab-Pfizer"
+    },
+    "qualified": true
+  },
+  {
+    "text": "bevacizumab P.fizer",
+    "key": "bevacizumabpfizer",
+    "resolver": {
+      "raw": "bevacizumab P.fizer",
+      "components": [
+        {
+          "component": "bevacizumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201583",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "BEVACIZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'bevacizumab P.fizer'",
+          "drug": {
+            "name": "BEVACIZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "APPROVAL",
+            "mechanisms": [
+              "Vascular endothelial growth factor A inhibitor"
+            ],
+            "trials": 122
+          }
+        },
+        {
+          "component": "P.fizer",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    },
+    "blocked": {},
+    "found": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "bevacizumab",
+        "matched_alias": "BEVACIZUMAB"
+      },
+      {
+        "type": "Company",
+        "id": "ORG:pfizer",
+        "label": "Pfizer",
+        "matched_text": "P.fizer",
+        "also_matching_ids": []
+      }
+    ],
+    "whole": null,
+    "map": {
+      "center": {
+        "id": "CHEMBL1201583",
+        "type": "Drug",
+        "label": "BEVACIZUMAB",
+        "matched_text": "BEVACIZUMAB",
+        "trials": 122,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [
+        {
+          "id": "ORG:pfizer",
+          "type": "Company",
+          "label": "Pfizer"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 122,
+          "items": [
+            {
+              "id": "NCT07420439",
+              "type": "Trial",
+              "label": "NCT07420439",
+              "edge_id": "NCT07420439|EVALUATES|CHEMBL1201583|NCT07420439",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "NOT_YET_RECRUITING",
+              "title": "Treatment in Patients With Advanced Non-Small Cell Lung Carcinoma and Interstitial Lung Disease",
+              "start_date": "2026-09-15",
+              "url": "https://clinicaltrials.gov/study/NCT07420439",
+              "weight": "2026-09-15"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 86,
+          "items": [
+            {
+              "id": "ORG:roche",
+              "type": "Company",
+              "label": "Roche",
+              "edge_id": "ORG:roche|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+              "evidence_trials": 8,
+              "weight": 8,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000112715",
+              "type": "Target",
+              "label": "VEGFA",
+              "edge_id": "CHEMBL1201583|ACTS_ON|ENSG00000112715|CHEMBL1201583",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qualified": false
+  },
+  {
+    "text": "bio.similar bevacizumab",
+    "key": "biosimilarbevacizumab",
+    "resolver": {
+      "raw": "bio.similar bevacizumab",
+      "components": [
+        {
+          "component": "bevacizumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201583",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "BEVACIZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'bio.similar bevacizumab'",
+          "drug": {
+            "name": "BEVACIZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "APPROVAL",
+            "mechanisms": [
+              "Vascular endothelial growth factor A inhibitor"
+            ],
+            "trials": 122
+          }
+        },
+        {
+          "component": "bio.similar",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    },
+    "blocked": {},
+    "found": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bio.similar bevacizumab",
+        "matched_text": "bio.similar bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "whole": null,
+    "map": {
+      "refused": "bio.similar bevacizumab",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "qualified": true
+  },
+  {
+    "text": "b.i.o.similar bevacizumab",
+    "key": "biosimilarbevacizumab",
+    "resolver": {
+      "raw": "b.i.o.similar bevacizumab",
+      "components": [
+        {
+          "component": "bevacizumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201583",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "BEVACIZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'b.i.o.similar bevacizumab'",
+          "drug": {
+            "name": "BEVACIZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "APPROVAL",
+            "mechanisms": [
+              "Vascular endothelial growth factor A inhibitor"
+            ],
+            "trials": 122
+          }
+        },
+        {
+          "component": "b.i.o.similar",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    },
+    "blocked": {},
+    "found": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201583",
+        "label": "BEVACIZUMAB",
+        "matched_text": "bevacizumab",
+        "matched_alias": "BEVACIZUMAB"
+      }
+    ],
+    "whole": null,
+    "map": {
+      "center": {
+        "id": "CHEMBL1201583",
+        "type": "Drug",
+        "label": "BEVACIZUMAB",
+        "matched_text": "BEVACIZUMAB",
+        "trials": 122,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 122,
+          "items": [
+            {
+              "id": "NCT07420439",
+              "type": "Trial",
+              "label": "NCT07420439",
+              "edge_id": "NCT07420439|EVALUATES|CHEMBL1201583|NCT07420439",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "NOT_YET_RECRUITING",
+              "title": "Treatment in Patients With Advanced Non-Small Cell Lung Carcinoma and Interstitial Lung Disease",
+              "start_date": "2026-09-15",
+              "url": "https://clinicaltrials.gov/study/NCT07420439",
+              "weight": "2026-09-15"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 86,
+          "items": [
+            {
+              "id": "ORG:roche",
+              "type": "Company",
+              "label": "Roche",
+              "edge_id": "ORG:roche|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+              "evidence_trials": 8,
+              "weight": 8,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000112715",
+              "type": "Target",
+              "label": "VEGFA",
+              "edge_id": "CHEMBL1201583|ACTS_ON|ENSG00000112715|CHEMBL1201583",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qualified": false
+  },
+  {
+    "text": "biosimilar bevacizumab",
+    "key": "biosimilarbevacizumab",
+    "resolver": {
+      "raw": "biosimilar bevacizumab",
+      "components": [
+        {
+          "component": "biosimilar bevacizumab",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "blocked": {
+      "CHEMBL1201583": "biosimilar bevacizumab"
+    },
+    "found": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "biosimilar bevacizumab",
+        "matched_text": "biosimilar bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "whole": null,
+    "map": {
+      "refused": "biosimilar bevacizumab",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "qualified": true
+  },
+  {
+    "text": "lip.osomal doxorubicin",
+    "key": "liposomaldoxorubicin",
+    "resolver": {
+      "raw": "lip.osomal doxorubicin",
+      "components": [
+        {
+          "component": "doxorubicin",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL53463",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "DOXORUBICIN",
+          "candidates": null,
+          "note": "segmented out of 'lip.osomal doxorubicin'",
+          "drug": {
+            "name": "DOXORUBICIN",
+            "drug_type": "Small molecule",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "DNA topoisomerase II alpha inhibitor"
+            ],
+            "trials": 3
+          }
+        },
+        {
+          "component": "lip.osomal",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    },
+    "blocked": {},
+    "found": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL53463",
+        "label": "DOXORUBICIN",
+        "matched_text": "doxorubicin",
+        "matched_alias": "DOXORUBICIN"
+      }
+    ],
+    "whole": null,
+    "map": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qualified": false
+  },
+  {
+    "text": "liposomal doxorubicin",
+    "key": "liposomaldoxorubicin",
+    "resolver": {
+      "raw": "liposomal doxorubicin",
+      "components": [
+        {
+          "component": "doxorubicin",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "blocked": {
+      "CHEMBL53463": "doxorubicin"
+    },
+    "found": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "liposomal doxorubicin",
+        "matched_text": "liposomal doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "whole": null,
+    "map": {
+      "refused": "liposomal doxorubicin",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "qualified": true
+  },
+  {
+    "text": "trastuzumab 89Zr-labelled",
+    "key": "trastuzumab89zrlabelled",
+    "resolver": {
+      "raw": "trastuzumab 89Zr-labelled",
+      "components": [
+        {
+          "component": "trastuzumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201585",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "TRASTUZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'trastuzumab 89Zr-labelled'",
+          "drug": {
+            "name": "TRASTUZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+            ],
+            "trials": 13
+          }
+        },
+        {
+          "component": "labelled",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    },
+    "blocked": {},
+    "found": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "trastuzumab 89Zr-labelled",
+        "matched_text": "trastuzumab 89Zr-labelled",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "whole": null,
+    "map": {
+      "refused": "trastuzumab 89Zr-labelled",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "qualified": true
+  },
+  {
+    "text": "[89Zr]labelled trastuzumab",
+    "key": "89zrlabelledtrastuzumab",
+    "resolver": {
+      "raw": "[89Zr]labelled trastuzumab",
+      "components": [
+        {
+          "component": "labelled trastuzumab",
+          "tier": "BLOCKED_CLASS_TERM",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "radiotracer_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+        }
+      ]
+    },
+    "blocked": {
+      "CHEMBL1201585": "labelled trastuzumab"
+    },
+    "found": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "89Zr]labelled trastuzumab",
+        "matched_text": "89Zr]labelled trastuzumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "whole": null,
+    "map": {
+      "refused": "89Zr]labelled trastuzumab",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "qualified": true
+  },
+  {
+    "text": "[89Zr]-labelled trastuzumab",
+    "key": "89zrlabelledtrastuzumab",
+    "resolver": {
+      "raw": "[89Zr]-labelled trastuzumab",
+      "components": [
+        {
+          "component": "labelled trastuzumab",
+          "tier": "BLOCKED_CLASS_TERM",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "radiotracer_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+        }
+      ]
+    },
+    "blocked": {
+      "CHEMBL1201585": "labelled trastuzumab"
+    },
+    "found": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "89Zr]-labelled trastuzumab",
+        "matched_text": "89Zr]-labelled trastuzumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "whole": null,
+    "map": {
+      "refused": "89Zr]-labelled trastuzumab",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "qualified": true
+  },
+  {
+    "text": "[89Z.r]labelled trastuzumab",
+    "key": "89zrlabelledtrastuzumab",
+    "resolver": {
+      "raw": "[89Z.r]labelled trastuzumab",
+      "components": [
+        {
+          "component": "trastuzumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201585",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "TRASTUZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'labelled trastuzumab'",
+          "drug": {
+            "name": "TRASTUZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+            ],
+            "trials": 13
+          }
+        },
+        {
+          "component": "labelled",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    },
+    "blocked": {},
+    "found": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201585",
+        "label": "TRASTUZUMAB",
+        "matched_text": "trastuzumab",
+        "matched_alias": "TRASTUZUMAB"
+      }
+    ],
+    "whole": null,
+    "map": {
+      "center": {
+        "id": "CHEMBL1201585",
+        "type": "Drug",
+        "label": "TRASTUZUMAB",
+        "matched_text": "TRASTUZUMAB",
+        "trials": 13,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 13,
+          "items": [
+            {
+              "id": "NCT05785741",
+              "type": "Trial",
+              "label": "NCT05785741",
+              "edge_id": "NCT05785741|EVALUATES|CHEMBL1201585|NCT05785741",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ],
+              "status": "RECRUITING",
+              "title": "A Study of DB-1310 in Advanced/Metastatic Solid Tumors",
+              "start_date": "2023-08-17",
+              "url": "https://clinicaltrials.gov/study/NCT05785741",
+              "weight": "2023-08-17"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 12,
+          "items": [
+            {
+              "id": "ORG:nationalcancerinstitute",
+              "type": "Company",
+              "label": "National Cancer Institute",
+              "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201585|",
+              "evidence_trials": 2,
+              "weight": 2,
+              "sponsor_class": "NIH"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000141736",
+              "type": "Target",
+              "label": "ERBB2",
+              "edge_id": "CHEMBL1201585|ACTS_ON|ENSG00000141736|CHEMBL1201585",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qualified": false
+  },
+  {
+    "text": "trastuzumab (89Z.r-labelled)",
+    "key": "trastuzumab89zrlabelled",
+    "resolver": {
+      "raw": "trastuzumab (89Z.r-labelled)",
+      "components": [
+        {
+          "component": "trastuzumab",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL1201585",
+          "score": null,
+          "rules": [
+            "extract_parenthetical"
+          ],
+          "matched_alias": "TRASTUZUMAB",
+          "candidates": null,
+          "drug": {
+            "name": "TRASTUZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+            ],
+            "trials": 13
+          }
+        }
+      ]
+    },
+    "blocked": {},
+    "found": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "trastuzumab (89Z r)",
+        "matched_text": "trastuzumab (89Z r)",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "whole": null,
+    "map": {
+      "refused": "trastuzumab (89Z r)",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "qualified": false
+  },
+  {
+    "text": "bevacizumab a.w.w.b",
+    "key": "bevacizumabawwb",
+    "resolver": {
+      "raw": "bevacizumab a.w.w.b",
+      "components": [
+        {
+          "component": "bevacizumab a.w.w.b",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL1201583",
+          "score": null,
+          "rules": [],
+          "matched_alias": "Bevacizumab awwb",
+          "candidates": null,
+          "drug": {
+            "name": "BEVACIZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "APPROVAL",
+            "mechanisms": [
+              "Vascular endothelial growth factor A inhibitor"
+            ],
+            "trials": 122
+          }
+        }
+      ]
+    },
+    "blocked": {},
+    "found": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab a.w.w.b",
+        "matched_text": "bevacizumab a.w.w.b",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "whole": null,
+    "map": {
+      "refused": "bevacizumab a.w.w.b",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "qualified": false
+  },
+  {
+    "text": "A33 1.2.4.i",
+    "key": "a33124i",
+    "resolver": {
+      "raw": "A33 1.2.4.i",
+      "components": [
+        {
+          "component": "A33 1.2.4.i",
+          "tier": "ALIAS",
+          "drug_id": "CHEMBL5314551",
+          "score": null,
+          "rules": [],
+          "matched_alias": "A33 124i",
+          "candidates": null,
+          "drug": {
+            "name": "ADAKITUG",
+            "drug_type": "Antibody",
+            "max_phase_overall": "PHASE_2",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Interleukin-8 inhibitor"
+            ],
+            "trials": 0
+          }
+        }
+      ]
+    },
+    "blocked": {},
+    "found": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "A33 1.2.4.i",
+        "matched_text": "A33 1.2.4.i",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "whole": null,
+    "map": {
+      "refused": "A33 1.2.4.i",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "qualified": false
+  }
+]

@@ -1,0 +1,231 @@
+{
+  "semantics": "Compares current identity, map/evidence values and refusal existence, ignoring refusal wording and stated baseline outputs. Differences inspected separately; not a product correctness oracle.",
+  "ignored_keys": [
+    "alnum_words",
+    "baseline",
+    "baseline_ask",
+    "baseline_ask_using_old_linker",
+    "baseline_explore_using_old_linker",
+    "blocked",
+    "canonical_key",
+    "comparison_scope",
+    "current_explore_seconds",
+    "dictionary",
+    "dictionary_hits",
+    "elapsed",
+    "elapsed_s",
+    "head",
+    "label",
+    "matched_alias",
+    "matched_aliases",
+    "matched_text",
+    "milliseconds",
+    "ms",
+    "normalized_input",
+    "old",
+    "old_current",
+    "old_linker",
+    "oldmethod",
+    "owned_server_pid",
+    "pid",
+    "port",
+    "previous",
+    "previous_linker",
+    "previous_map",
+    "previous_query_sha256",
+    "previous_ref",
+    "qualified",
+    "resolver",
+    "resolver_blocked",
+    "rules",
+    "seconds",
+    "server_pid",
+    "why"
+  ],
+  "files": [
+    {
+      "file": "adapted_frozen_qa_relink_sweep.json",
+      "identical": true,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "adapted_names_m5_summary.json",
+      "identical": false,
+      "normalized_equal": false,
+      "differences": [
+        {
+          "path": "/alias_anomalies",
+          "previous": 318,
+          "current": 319
+        },
+        {
+          "path": "/new_lone_alias_refusals",
+          "previous_length": 69,
+          "current_length": 70
+        }
+      ]
+    },
+    {
+      "file": "alias_regressions.json",
+      "identical": false,
+      "normalized_equal": false,
+      "differences": [
+        {
+          "path": "/cases",
+          "previous_length": 88,
+          "current_length": 89
+        }
+      ]
+    },
+    {
+      "file": "attacks/lone_alias_results.json",
+      "identical": true,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "attacks/probe_results.json",
+      "identical": false,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "attacks/unicode_dashes.json",
+      "identical": true,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "focused_matrix.json",
+      "identical": true,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "historical_focus.json",
+      "identical": true,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "m10_attacks/focus_results.json",
+      "identical": false,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "m1_exact/names_product_bypass.json",
+      "identical": true,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "m1_exact/names_retired_http_results.json",
+      "identical": true,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "m9_attacks/probe_results.json",
+      "identical": false,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "names_attack.json",
+      "identical": true,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "names_boundary_details.json",
+      "identical": true,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "names_cross_item_refusal.json",
+      "identical": true,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "names_m5_attack.json",
+      "identical": false,
+      "normalized_equal": false,
+      "differences": [
+        {
+          "path": "/alias_anomalies",
+          "previous_length": 318,
+          "current_length": 319
+        }
+      ]
+    },
+    {
+      "file": "names_m5_confirm.json",
+      "identical": false,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "names_m5_summary.json",
+      "identical": false,
+      "normalized_equal": false,
+      "differences": [
+        {
+          "path": "/alias_anomalies",
+          "previous": 318,
+          "current": 319
+        },
+        {
+          "path": "/new_lone_alias_refusals",
+          "previous_length": 69,
+          "current_length": 70
+        }
+      ]
+    },
+    {
+      "file": "names_new_boundaries.json",
+      "identical": true,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "names_regressions.json",
+      "identical": true,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "names_reproduction_results.json",
+      "identical": true,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "names_separator_checks.json",
+      "identical": true,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "names_unsupported_forms.json",
+      "identical": true,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "new_alias_confirmation.json",
+      "identical": false,
+      "normalized_equal": true,
+      "differences": []
+    },
+    {
+      "file": "reversed_results.json",
+      "identical": true,
+      "normalized_equal": true,
+      "differences": []
+    }
+  ]
+}

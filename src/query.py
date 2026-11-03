@@ -256,7 +256,16 @@ class OncoKG:
         # as a name only when it stands alone ("566C", "18f"), never as the substance
         # of a longer phrase ("18F fluorothymidine")
         inside = [own[i:j] for i in range(len(own)) for j in (i + 1, i + 2) if j <= len(own)]
-        if lone and T.is_isotope_label(" ".join(own)):
+        # and every run of the name's words glued as the key glues them, so a symbol
+        # split by punctuation inside a stored alias is still an isotope ("[89Z.r]-DFO-")
+        for i in range(len(own)):
+            for j in range(i + 1, len(own) + 1):
+                glued = "".join(own[i:j])
+                if len(glued) > 6:
+                    break
+                if j - i > 1:
+                    inside.append([glued])
+        if lone and T.is_isotope_label("".join(own)):
             inside = []                      # the whole item is one isotope-shaped name
         name = " ".join(tokens[a:b])
         # the neighbours glued back together the way the lookup key glues them, so a

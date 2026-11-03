@@ -1,0 +1,1182 @@
+[
+  {
+    "t": "trastuzumab labelled with [89Zr]",
+    "map": {
+      "center": {
+        "id": "CHEMBL1201585",
+        "type": "Drug",
+        "label": "TRASTUZUMAB",
+        "matched_text": "TRASTUZUMAB",
+        "trials": 13,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 13,
+          "items": [
+            {
+              "id": "NCT05785741",
+              "type": "Trial",
+              "label": "NCT05785741",
+              "edge_id": "NCT05785741|EVALUATES|CHEMBL1201585|NCT05785741",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ],
+              "status": "RECRUITING",
+              "title": "A Study of DB-1310 in Advanced/Metastatic Solid Tumors",
+              "start_date": "2023-08-17",
+              "url": "https://clinicaltrials.gov/study/NCT05785741",
+              "weight": "2023-08-17"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 12,
+          "items": [
+            {
+              "id": "ORG:nationalcancerinstitute",
+              "type": "Company",
+              "label": "National Cancer Institute",
+              "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201585|",
+              "evidence_trials": 2,
+              "weight": 2,
+              "sponsor_class": "NIH"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000141736",
+              "type": "Target",
+              "label": "ERBB2",
+              "edge_id": "CHEMBL1201585|ACTS_ON|ENSG00000141736|CHEMBL1201585",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "resolver": {
+      "raw": "trastuzumab labelled with [89Zr]",
+      "components": [
+        {
+          "component": "trastuzumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201585",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "isotope_label_skipped",
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "TRASTUZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'trastuzumab labelled with'",
+          "drug": {
+            "name": "TRASTUZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+            ],
+            "trials": 13
+          }
+        },
+        {
+          "component": "labelled",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "isotope_label_skipped",
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    },
+    "blocked": {},
+    "item": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201585",
+        "label": "TRASTUZUMAB",
+        "matched_text": "trastuzumab",
+        "matched_alias": "TRASTUZUMAB"
+      }
+    ],
+    "qualified": false
+  },
+  {
+    "t": "trastuzumab labeled with 89Zr",
+    "map": {
+      "center": {
+        "id": "CHEMBL1201585",
+        "type": "Drug",
+        "label": "TRASTUZUMAB",
+        "matched_text": "TRASTUZUMAB",
+        "trials": 13,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 13,
+          "items": [
+            {
+              "id": "NCT05785741",
+              "type": "Trial",
+              "label": "NCT05785741",
+              "edge_id": "NCT05785741|EVALUATES|CHEMBL1201585|NCT05785741",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ],
+              "status": "RECRUITING",
+              "title": "A Study of DB-1310 in Advanced/Metastatic Solid Tumors",
+              "start_date": "2023-08-17",
+              "url": "https://clinicaltrials.gov/study/NCT05785741",
+              "weight": "2023-08-17"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 12,
+          "items": [
+            {
+              "id": "ORG:nationalcancerinstitute",
+              "type": "Company",
+              "label": "National Cancer Institute",
+              "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201585|",
+              "evidence_trials": 2,
+              "weight": 2,
+              "sponsor_class": "NIH"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000141736",
+              "type": "Target",
+              "label": "ERBB2",
+              "edge_id": "CHEMBL1201585|ACTS_ON|ENSG00000141736|CHEMBL1201585",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "resolver": {
+      "raw": "trastuzumab labeled with 89Zr",
+      "components": [
+        {
+          "component": "trastuzumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201585",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "TRASTUZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'trastuzumab labeled with 89Zr'",
+          "drug": {
+            "name": "TRASTUZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+            ],
+            "trials": 13
+          }
+        },
+        {
+          "component": "labeled",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    },
+    "blocked": {},
+    "item": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201585",
+        "label": "TRASTUZUMAB",
+        "matched_text": "trastuzumab",
+        "matched_alias": "TRASTUZUMAB"
+      }
+    ],
+    "qualified": false
+  },
+  {
+    "t": "trastuzumab labelled 89Zr",
+    "map": {
+      "center": {
+        "id": "CHEMBL1201585",
+        "type": "Drug",
+        "label": "TRASTUZUMAB",
+        "matched_text": "TRASTUZUMAB",
+        "trials": 13,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 13,
+          "items": [
+            {
+              "id": "NCT05785741",
+              "type": "Trial",
+              "label": "NCT05785741",
+              "edge_id": "NCT05785741|EVALUATES|CHEMBL1201585|NCT05785741",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ],
+              "status": "RECRUITING",
+              "title": "A Study of DB-1310 in Advanced/Metastatic Solid Tumors",
+              "start_date": "2023-08-17",
+              "url": "https://clinicaltrials.gov/study/NCT05785741",
+              "weight": "2023-08-17"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 12,
+          "items": [
+            {
+              "id": "ORG:nationalcancerinstitute",
+              "type": "Company",
+              "label": "National Cancer Institute",
+              "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201585|",
+              "evidence_trials": 2,
+              "weight": 2,
+              "sponsor_class": "NIH"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000141736",
+              "type": "Target",
+              "label": "ERBB2",
+              "edge_id": "CHEMBL1201585|ACTS_ON|ENSG00000141736|CHEMBL1201585",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "resolver": {
+      "raw": "trastuzumab labelled 89Zr",
+      "components": [
+        {
+          "component": "trastuzumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201585",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "TRASTUZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'trastuzumab labelled 89Zr'",
+          "drug": {
+            "name": "TRASTUZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+            ],
+            "trials": 13
+          }
+        },
+        {
+          "component": "labelled",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    },
+    "blocked": {},
+    "item": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201585",
+        "label": "TRASTUZUMAB",
+        "matched_text": "trastuzumab",
+        "matched_alias": "TRASTUZUMAB"
+      }
+    ],
+    "qualified": false
+  },
+  {
+    "t": "89Zr labelled trastuzumab",
+    "map": {
+      "center": {
+        "id": "CHEMBL1201585",
+        "type": "Drug",
+        "label": "TRASTUZUMAB",
+        "matched_text": "TRASTUZUMAB",
+        "trials": 13,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 13,
+          "items": [
+            {
+              "id": "NCT05785741",
+              "type": "Trial",
+              "label": "NCT05785741",
+              "edge_id": "NCT05785741|EVALUATES|CHEMBL1201585|NCT05785741",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ],
+              "status": "RECRUITING",
+              "title": "A Study of DB-1310 in Advanced/Metastatic Solid Tumors",
+              "start_date": "2023-08-17",
+              "url": "https://clinicaltrials.gov/study/NCT05785741",
+              "weight": "2023-08-17"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 12,
+          "items": [
+            {
+              "id": "ORG:nationalcancerinstitute",
+              "type": "Company",
+              "label": "National Cancer Institute",
+              "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201585|",
+              "evidence_trials": 2,
+              "weight": 2,
+              "sponsor_class": "NIH"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000141736",
+              "type": "Target",
+              "label": "ERBB2",
+              "edge_id": "CHEMBL1201585|ACTS_ON|ENSG00000141736|CHEMBL1201585",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "resolver": {
+      "raw": "89Zr labelled trastuzumab",
+      "components": [
+        {
+          "component": "trastuzumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201585",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "TRASTUZUMAB",
+          "candidates": null,
+          "note": "segmented out of '89Zr labelled trastuzumab'",
+          "drug": {
+            "name": "TRASTUZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+            ],
+            "trials": 13
+          }
+        },
+        {
+          "component": "labelled",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    },
+    "blocked": {},
+    "item": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201585",
+        "label": "TRASTUZUMAB",
+        "matched_text": "trastuzumab",
+        "matched_alias": "TRASTUZUMAB"
+      }
+    ],
+    "qualified": false
+  },
+  {
+    "t": "89Zr-labeled trastuzumab",
+    "map": {
+      "refused": "89Zr-labeled trastuzumab",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "resolver": {
+      "raw": "89Zr-labeled trastuzumab",
+      "components": [
+        {
+          "component": "89Zr-labeled trastuzumab",
+          "tier": "BLOCKED_CLASS_TERM",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "radiotracer_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+        }
+      ]
+    },
+    "blocked": {
+      "CHEMBL1201585": "89Zr-labeled trastuzumab"
+    },
+    "item": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "89Zr-labeled trastuzumab",
+        "matched_text": "89Zr-labeled trastuzumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "qualified": true
+  },
+  {
+    "t": "89Zr radiolabelled trastuzumab",
+    "map": {
+      "center": {
+        "id": "CHEMBL1201585",
+        "type": "Drug",
+        "label": "TRASTUZUMAB",
+        "matched_text": "TRASTUZUMAB",
+        "trials": 13,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 13,
+          "items": [
+            {
+              "id": "NCT05785741",
+              "type": "Trial",
+              "label": "NCT05785741",
+              "edge_id": "NCT05785741|EVALUATES|CHEMBL1201585|NCT05785741",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ],
+              "status": "RECRUITING",
+              "title": "A Study of DB-1310 in Advanced/Metastatic Solid Tumors",
+              "start_date": "2023-08-17",
+              "url": "https://clinicaltrials.gov/study/NCT05785741",
+              "weight": "2023-08-17"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 12,
+          "items": [
+            {
+              "id": "ORG:nationalcancerinstitute",
+              "type": "Company",
+              "label": "National Cancer Institute",
+              "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201585|",
+              "evidence_trials": 2,
+              "weight": 2,
+              "sponsor_class": "NIH"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000141736",
+              "type": "Target",
+              "label": "ERBB2",
+              "edge_id": "CHEMBL1201585|ACTS_ON|ENSG00000141736|CHEMBL1201585",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "resolver": {
+      "raw": "89Zr radiolabelled trastuzumab",
+      "components": [
+        {
+          "component": "trastuzumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201585",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "TRASTUZUMAB",
+          "candidates": null,
+          "note": "segmented out of '89Zr radiolabelled trastuzumab'",
+          "drug": {
+            "name": "TRASTUZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+            ],
+            "trials": 13
+          }
+        },
+        {
+          "component": "radiolabelled",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        }
+      ]
+    },
+    "blocked": {},
+    "item": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201585",
+        "label": "TRASTUZUMAB",
+        "matched_text": "trastuzumab",
+        "matched_alias": "TRASTUZUMAB"
+      }
+    ],
+    "qualified": false
+  },
+  {
+    "t": "trastuzumab-89Zr",
+    "map": {
+      "not_found": "trastuzumab-89Zr"
+    },
+    "resolver": {
+      "raw": "trastuzumab-89Zr",
+      "components": [
+        {
+          "component": "trastuzumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201585",
+          "score": null,
+          "rules": [
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "TRASTUZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'trastuzumab-89Zr'",
+          "drug": {
+            "name": "TRASTUZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+            ],
+            "trials": 13
+          }
+        }
+      ]
+    },
+    "blocked": {},
+    "item": [],
+    "qualified": false
+  },
+  {
+    "t": "trastuzumab (labelled with 89Zr)",
+    "map": {
+      "center": {
+        "id": "CHEMBL1201585",
+        "type": "Drug",
+        "label": "TRASTUZUMAB",
+        "matched_text": "TRASTUZUMAB",
+        "trials": 13,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 13,
+          "items": [
+            {
+              "id": "NCT05785741",
+              "type": "Trial",
+              "label": "NCT05785741",
+              "edge_id": "NCT05785741|EVALUATES|CHEMBL1201585|NCT05785741",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ],
+              "status": "RECRUITING",
+              "title": "A Study of DB-1310 in Advanced/Metastatic Solid Tumors",
+              "start_date": "2023-08-17",
+              "url": "https://clinicaltrials.gov/study/NCT05785741",
+              "weight": "2023-08-17"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 12,
+          "items": [
+            {
+              "id": "ORG:nationalcancerinstitute",
+              "type": "Company",
+              "label": "National Cancer Institute",
+              "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201585|",
+              "evidence_trials": 2,
+              "weight": 2,
+              "sponsor_class": "NIH"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000141736",
+              "type": "Target",
+              "label": "ERBB2",
+              "edge_id": "CHEMBL1201585|ACTS_ON|ENSG00000141736|CHEMBL1201585",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "resolver": {
+      "raw": "trastuzumab (labelled with 89Zr)",
+      "components": [
+        {
+          "component": "trastuzumab",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL1201585",
+          "score": null,
+          "rules": [
+            "extract_parenthetical"
+          ],
+          "matched_alias": "TRASTUZUMAB",
+          "candidates": null,
+          "drug": {
+            "name": "TRASTUZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+            ],
+            "trials": 13
+          }
+        }
+      ]
+    },
+    "blocked": {},
+    "item": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201585",
+        "label": "TRASTUZUMAB",
+        "matched_text": "trastuzumab",
+        "matched_alias": "TRASTUZUMAB"
+      }
+    ],
+    "qualified": true
+  },
+  {
+    "t": "[89Zr]-DFO-trastuzumab",
+    "map": {
+      "not_found": "[89Zr]-DFO-trastuzumab"
+    },
+    "resolver": {
+      "raw": "[89Zr]-DFO-trastuzumab",
+      "components": [
+        {
+          "component": "DFO-trastuzumab",
+          "tier": "BLOCKED_CLASS_TERM",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "radiotracer_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "radiolabelled tracer or isotope label, not a therapeutic exposure"
+        }
+      ]
+    },
+    "blocked": {},
+    "item": [],
+    "qualified": true
+  },
+  {
+    "t": "[89Z.r]-DFO-trastuzumab",
+    "map": {
+      "not_found": "[89Z.r]-DFO-trastuzumab"
+    },
+    "resolver": {
+      "raw": "[89Z.r]-DFO-trastuzumab",
+      "components": [
+        {
+          "component": "trastuzumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201585",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "TRASTUZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'DFO-trastuzumab'",
+          "drug": {
+            "name": "TRASTUZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+            ],
+            "trials": 13
+          }
+        }
+      ]
+    },
+    "blocked": {},
+    "item": [],
+    "qualified": false
+  },
+  {
+    "t": "[89Z.r]-DFO trastuzumab",
+    "map": {
+      "center": {
+        "id": "CHEMBL1201585",
+        "type": "Drug",
+        "label": "TRASTUZUMAB",
+        "matched_text": "TRASTUZUMAB",
+        "trials": 13,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 13,
+          "items": [
+            {
+              "id": "NCT05785741",
+              "type": "Trial",
+              "label": "NCT05785741",
+              "edge_id": "NCT05785741|EVALUATES|CHEMBL1201585|NCT05785741",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ],
+              "status": "RECRUITING",
+              "title": "A Study of DB-1310 in Advanced/Metastatic Solid Tumors",
+              "start_date": "2023-08-17",
+              "url": "https://clinicaltrials.gov/study/NCT05785741",
+              "weight": "2023-08-17"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 12,
+          "items": [
+            {
+              "id": "ORG:nationalcancerinstitute",
+              "type": "Company",
+              "label": "National Cancer Institute",
+              "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201585|",
+              "evidence_trials": 2,
+              "weight": 2,
+              "sponsor_class": "NIH"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000141736",
+              "type": "Target",
+              "label": "ERBB2",
+              "edge_id": "CHEMBL1201585|ACTS_ON|ENSG00000141736|CHEMBL1201585",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "resolver": {
+      "raw": "[89Z.r]-DFO trastuzumab",
+      "components": [
+        {
+          "component": "trastuzumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201585",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "TRASTUZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'DFO trastuzumab'",
+          "drug": {
+            "name": "TRASTUZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+            ],
+            "trials": 13
+          }
+        }
+      ]
+    },
+    "blocked": {},
+    "item": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201585",
+        "label": "TRASTUZUMAB",
+        "matched_text": "trastuzumab",
+        "matched_alias": "TRASTUZUMAB"
+      }
+    ],
+    "qualified": false
+  },
+  {
+    "t": "[89Z.r]-labelled trastuzumab, osimertinib",
+    "map": {
+      "center": {
+        "id": "CHEMBL1201585",
+        "type": "Drug",
+        "label": "TRASTUZUMAB",
+        "matched_text": "TRASTUZUMAB",
+        "trials": 13,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [
+        {
+          "id": "CHEMBL3353410",
+          "type": "Drug",
+          "label": "OSIMERTINIB"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 13,
+          "items": [
+            {
+              "id": "NCT05785741",
+              "type": "Trial",
+              "label": "NCT05785741",
+              "edge_id": "NCT05785741|EVALUATES|CHEMBL1201585|NCT05785741",
+              "phases": [
+                "PHASE1",
+                "PHASE2"
+              ],
+              "status": "RECRUITING",
+              "title": "A Study of DB-1310 in Advanced/Metastatic Solid Tumors",
+              "start_date": "2023-08-17",
+              "url": "https://clinicaltrials.gov/study/NCT05785741",
+              "weight": "2023-08-17"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 12,
+          "items": [
+            {
+              "id": "ORG:nationalcancerinstitute",
+              "type": "Company",
+              "label": "National Cancer Institute",
+              "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201585|",
+              "evidence_trials": 2,
+              "weight": 2,
+              "sponsor_class": "NIH"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000141736",
+              "type": "Target",
+              "label": "ERBB2",
+              "edge_id": "CHEMBL1201585|ACTS_ON|ENSG00000141736|CHEMBL1201585",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "resolver": {
+      "raw": "[89Z.r]-labelled trastuzumab, osimertinib",
+      "components": [
+        {
+          "component": "trastuzumab",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL1201585",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination",
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "TRASTUZUMAB",
+          "candidates": null,
+          "note": "segmented out of 'labelled trastuzumab'",
+          "drug": {
+            "name": "TRASTUZUMAB",
+            "drug_type": "Antibody",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "Receptor protein-tyrosine kinase erbB-2 inhibitor"
+            ],
+            "trials": 13
+          }
+        },
+        {
+          "component": "labelled",
+          "tier": "UNRESOLVED",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination",
+            "segmentation_residue"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "left over after segmentation; reported rather than dropped, so the gap stays visible"
+        },
+        {
+          "component": "osimertinib",
+          "tier": "EXACT",
+          "drug_id": "CHEMBL3353410",
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "split_combination"
+          ],
+          "matched_alias": "OSIMERTINIB",
+          "candidates": null,
+          "drug": {
+            "name": "OSIMERTINIB",
+            "drug_type": "Small molecule",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "APPROVAL",
+            "mechanisms": [
+              "Epidermal growth factor receptor erbB1 inhibitor"
+            ],
+            "trials": 79
+          }
+        }
+      ]
+    },
+    "blocked": {},
+    "item": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL1201585",
+        "label": "TRASTUZUMAB",
+        "matched_text": "trastuzumab",
+        "matched_alias": "TRASTUZUMAB"
+      },
+      {
+        "type": "Drug",
+        "id": "CHEMBL3353410",
+        "label": "OSIMERTINIB",
+        "matched_text": "osimertinib",
+        "matched_alias": "OSIMERTINIB"
+      }
+    ],
+    "qualified": true
+  }
+]

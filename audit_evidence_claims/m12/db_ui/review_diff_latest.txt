@@ -1,0 +1,70 @@
+commit d9260a1ea544cf7bb80415383667784e0aba146a
+Author: 강금영 <geoumyoung@gmail.com>
+Date:   Tue Nov 3 23:47:42 2026 +0900
+
+    관계 지도 Codex 11차 수리: 조각난 동위원소·접미사를 키처럼 붙여 검사
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+diff --git a/src/query.py b/src/query.py
+index f183fae..7853f9c 100644
+--- a/src/query.py
++++ b/src/query.py
+@@ -259,11 +259,31 @@ class OncoKG:
+         if lone and T.is_isotope_label(" ".join(own)):
+             inside = []                      # the whole item is one isotope-shaped name
+         name = " ".join(tokens[a:b])
+-        if nxt and nxt[0].lower() in T.BIOSIMILAR_FDA_SUFFIXES:
+-            return f"{name} {nxt[0]}"
++        # the neighbours glued back together the way the lookup key glues them, so a
++        # suffix or an isotope spelt in pieces is still seen ("a - w w b", "[89Z.r]")
++        nxt_all = _alnum_words(" ".join(tokens[k] for k in after))[:8]
++        prev_all = _alnum_words(" ".join(tokens[k] for k in before))[-8:]
++        for n in range(1, len(nxt_all) + 1):
++            glued = "".join(nxt_all[:n]).lower()
++            if glued in T.BIOSIMILAR_FDA_SUFFIXES or T.is_isotope_label(glued):
++                return f"{name} ({' '.join(nxt_all[:n])})"
++            if len(glued) > 6:
++                break
++        for n in range(1, len(prev_all) + 1):
++            glued = "".join(prev_all[-n:]).lower()
++            if T.is_isotope_label(glued):
++                return f"({' '.join(prev_all[-n:])}) {name}"
++            if len(glued) > 6:
++                break
+         for ws in inside + [prev[-1:], prev, nxt[:1], nxt]:
+             if ws and T.is_isotope_label(" ".join(ws)):
+                 return name if ws in inside else f"{name} ({' '.join(ws)})"
++        # an isotope glued to the name itself ("89zr-trastuzumab" read through "[89Z.r]")
++        for i in range(2, min(6, len(key))):
++            for iso, rest in ((key[:i], key[i:]), (key[-i:], key[:-i])):
++                if rest and T.is_isotope_label(iso) and any(
++                        h["drug_id"] == did for h in self.dic["index"].get(rest, [])):
++                    return name
+         return None
+ 
+     def _whole_name(self, text: str, blocked: dict, found: list):
+diff --git a/tests/test_app.py b/tests/test_app.py
+index bd8375d..d5a6fe1 100644
+--- a/tests/test_app.py
++++ b/tests/test_app.py
+@@ -326,3 +326,19 @@ def test_isotopes_inside_beside_or_instead_of_a_name_and_respelt_qualifiers_refu
+     for name, did in (("18f", "CHEMBL2030434"), ("9-ac", "CHEMBL274070"), ("ADAKITUG", "CHEMBL5314551")):
+         assert e.explore(name)["center"]["id"] == did, name
+     assert e.explore("trastuzumab 89 - Zr, osimertinib")["center"]["id"] == "CHEMBL3353410"
++
++
++# Codex review m11: suffixes and isotopes spelt in pieces are glued back as the key glues them
++def test_split_isotopes_and_spelt_out_suffixes_refuse():
++    import app
++    e = app.Engine()
++    for t in ("[89Z.r] trastuzumab", "89Z_r trastuzumab", "trastuzumab [89Z.r]",
++              "bevacizumab a - w w b", "bevacizumab - a - w - w - b", "bevacizumab a_w_w_b"):
++        assert e.explore(t).get("refused"), t
++    for t in ("[89Z.r] trastuzumab, osimertinib", "bevacizumab a - w w b, osimertinib"):
++        assert e.explore(t)["center"]["id"] == "CHEMBL3353410", t
++    for q in ("Which trials evaluate [89Z.r] trastuzumab?", "Which trials evaluate bevacizumab a - w w b?"):
++        assert not e.kg.answer(q, use_llm=False).evidence, q
++    for t, did in (("osimertinib 80 mg", "CHEMBL3353410"), ("paclitaxel 2 cycles", "CHEMBL428647"),
++                   ("cisplatin 75 mg/m2 day 1", "CHEMBL11359")):
++        assert e.explore(t)["center"]["id"] == did, t

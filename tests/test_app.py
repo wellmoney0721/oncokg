@@ -342,3 +342,14 @@ def test_split_isotopes_and_spelt_out_suffixes_refuse():
     for t, did in (("osimertinib 80 mg", "CHEMBL3353410"), ("paclitaxel 2 cycles", "CHEMBL428647"),
                    ("cisplatin 75 mg/m2 day 1", "CHEMBL11359")):
         assert e.explore(t)["center"]["id"] == did, t
+
+
+# Codex review m12: an isotope split by punctuation inside a stored alias, with a chelator between
+def test_a_split_isotope_inside_a_stored_tracer_alias_refuses():
+    import app
+    e = app.Engine()
+    for t in ("[89Z.r]-DFO-daratumumab", "89Z_r-dfo-daratumumab"):
+        assert e.explore(t).get("refused"), t
+    assert e.explore("[89Z.r]-DFO-daratumumab, osimertinib")["center"]["id"] == "CHEMBL3353410"
+    assert not e.kg.answer("Which trials evaluate [89Z.r]-DFO-daratumumab?", use_llm=False).evidence
+    assert e.explore("daratumumab")["center"]["id"] == "CHEMBL1743007"
