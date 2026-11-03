@@ -1,0 +1,8 @@
+--- audit_evidence_claims\r5\spec5_controls.py
++++ audit_evidence_claims\r6\replay6_r5_spec5_controls.py
+@@ -25,4 +25,4 @@
+  entities=e.kg.link_entities(Q[q]);ev=e.kg.retrieve(e.kg.classify(Q[q],entities),entities)
+  out.append(dict(id=id,question=Q[q],answer=a,**r,full_evidence=[vars(x) for x in ev]))
+  print(id,r["checks"]["grounded"],[(f["kind"],f["value"]) for f in r["checks"]["unsupported_claims"]])
+-Path("audit_evidence_claims/r5/spec5_controls.json").write_text(json.dumps(out,indent=2,ensure_ascii=False),encoding="utf8")
++Path("audit_evidence_claims/r6/replay6_r5_spec5_controls.json").write_text(json.dumps(out,indent=2,ensure_ascii=False),encoding="utf8")

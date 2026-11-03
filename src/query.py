@@ -77,7 +77,7 @@ class Answer:
             "generated_by": self.generated_by,
             "checks": self.checks,
             "evidence": [
-                {"statement": e.statement, "relation": e.relation,
+                {"statement": e.statement, "relation": e.relation, "edge_id": e.edge_id,
                  "source": e.source, "source_record": e.source_record,
                  "fetched_at": e.fetched_at, "confidence": e.confidence,
                  "resolution_tier": e.tier, "url": e.url, **e.detail}
@@ -382,20 +382,37 @@ class OncoKG:
         if use_llm is None:
             use_llm = bool(os.environ.get("ANTHROPIC_API_KEY"))
         if use_llm:
-            text, by = self._llm_answer(question, evidence)
-            generated = by != "template"
-        else:
-            text, by = self._template_answer(question, intent, entities, evidence)
-            generated = False
+            # The model does not write the answer. It returns claims, each citing an
+            # edge; the claims are checked exactly against the graph and the answer is
+            # written from the accepted ones (structured.py).
+            raw, by = self._llm_claims(question, evidence)
+            result = self.verify_structured(raw, evidence)
+            text = result["text"] or "None of the model's claims could be verified."
+            if result["rejected"]:
+                text += (f"\n\n({len(result['rejected'])} claim(s) were removed because "
+                         "the graph does not support them.)")
+            checks = {"grounded": result["verified"], "applicable": True,
+                      "method": "structured claims checked edge by edge against the graph",
+                      "accepted": len(result["accepted"]), "rejected": result["rejected"],
+                      "unsupported_claims": [{"kind": "rejected_claim", "value":
+                                              json.dumps(r["claim"])[:120], "why": r["why"]}
+                                             for r in result["rejected"]]}
+            return Answer(question, intent, entities, text, evidence, by, checks)
 
+        text, by = self._template_answer(question, intent, entities, evidence)
         # the trailing scope line is generated metadata, not a claim about the
         # world, so it is excluded from the groundedness check
         claim_text = text.split("\nScope:")[0]
         checks = self.check_groundedness(claim_text, evidence, entities,
-                                         generated=generated,
+                                         generated=False,
                                          vocabulary=set(self.dic["index"]),
                                          linker=self.link_entities)
         return Answer(question, intent, entities, text, evidence, by, checks)
+
+    def verify_structured(self, payload, evidence) -> dict:
+        """Check a structured answer against this question's evidence (structured.py)."""
+        from structured import Verifier
+        return Verifier(self).verify(payload, evidence)
 
     @staticmethod
     def _template_answer(question, intent, entities, evidence) -> tuple[str, str]:
@@ -418,29 +435,35 @@ class OncoKG:
         return "\n".join(lines), "deterministic template (no language model)"
 
     @staticmethod
-    def _llm_answer(question, evidence) -> tuple[str, str]:
+    def _llm_claims(question, evidence) -> tuple[str, str]:
+        """Ask the model for claims, not prose. Its reply is data to be checked."""
         try:
             import anthropic
         except ImportError:
-            return ("The anthropic package is not installed; set it up or unset "
-                    "ANTHROPIC_API_KEY to use the deterministic renderer.",
-                    "error")
-        block = "\n".join(
-            f"- {e.statement} | relation={e.relation} | source={e.source} "
-            f"| record={e.source_record} | confidence={e.confidence}"
-            for e in evidence)
+            return ('{"claims": []}', "error: the anthropic package is not installed")
+        block = "\n".join(f"- id={e.edge_id} | {e.statement}" for e in evidence)
         prompt = (
-            "You answer questions about a non-small cell lung cancer knowledge "
-            "graph. Use ONLY the evidence below. Do not add drugs, companies, "
-            "numbers or claims that are not in it. Cite the record id in square "
-            "brackets after each claim. If the evidence does not answer the "
-            "question, say so plainly.\n\n"
+            "You answer a question about a non-small cell lung cancer knowledge graph "
+            "by choosing facts from the evidence below. Reply with JSON only, of the form "
+            '{"claims": [...]}, where each claim is one of:\n'
+            '{"kind": "relation", "relation": "ACTS_ON" | "EVALUATES" | "SPONSORS_TRIAL_OF", '
+            '"subject": name, "object": name, "evidence": id, "action": optional, '
+            '"trial_count": optional integer}\n'
+            '{"kind": "trial", "trial": NCT id, "evidence": id, "phase": optional list, '
+            '"status": optional}\n'
+            '{"kind": "drug", "drug": name, "evidence": id, "max_stage": optional, '
+            '"trials_in_graph": optional integer}\n'
+            "Use the names and ids exactly as written in the evidence. Add no other keys "
+            "and no prose. If the evidence does not answer the question, reply "
+            '{"claims": []}.\n\n'
             f"Question: {question}\n\nEvidence:\n{block}\n")
         client = anthropic.Anthropic()
         msg = client.messages.create(
-            model="claude-sonnet-4-5", max_tokens=700,
+            model="claude-sonnet-4-5", max_tokens=1500,
             messages=[{"role": "user", "content": prompt}])
-        return msg.content[0].text, "language model, constrained to retrieved evidence"
+        raw = msg.content[0].text.strip()
+        m = re.search(r"\{.*\}", raw, re.S)            # tolerate a code fence around it
+        return (m.group(0) if m else raw), "language model, structured claims"
 
     # -- answer quality ---------------------------------------------------- #
     @staticmethod

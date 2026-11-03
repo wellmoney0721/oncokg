@@ -1,0 +1,12 @@
+--- audit_evidence_claims\r5\docs5_probe.py
++++ audit_evidence_claims\r6\replay6_r5_docs5_probe.py
+@@ -120,7 +120,7 @@
+         row={"id":ident,"category":category,"question_key":q,"question":Q[q],"answer":a,"result":result,"full_evidence":[asdict(e) for e in evidence]}
+         rows.append(row)
+         print(ident,result['checks']['grounded'],[(u['kind'],u['value']) for u in result['checks']['unsupported_claims']])
+-(ROOT/'audit_evidence_claims/r5/docs5_probe_results.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False),encoding='utf-8')
++(ROOT/'audit_evidence_claims/r6/replay6_r5_docs5_probe_results.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False),encoding='utf-8')
+ summary={str(q):{'passed':sum(r['result']['checks']['grounded'] for r in rows if r['category']=='faithful' and r['question_key']==q),'total':len(answers)} for q,answers in FAITHFUL.items()}
+ print(json.dumps(summary))
+-(ROOT/'audit_evidence_claims/r5/docs5_faithful_summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
++(ROOT/'audit_evidence_claims/r6/replay6_r5_docs5_faithful_summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')

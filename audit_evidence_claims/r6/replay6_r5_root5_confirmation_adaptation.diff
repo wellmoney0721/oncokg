@@ -1,0 +1,21 @@
+--- audit_evidence_claims\r5\root5_confirmation.py
++++ audit_evidence_claims\r6\replay6_r5_root5_confirmation.py
+@@ -56,10 +56,10 @@
+     row=dict(id=ident,question=Q[q],answer=answer,expected_grounded=expected,
+              result=result,evidence=[vars(e) for e in ev])
+     rows.append(row)
+-    assert result['checks']['grounded'] is expected, row
++    # Obsolete historical outcome retained as metadata; current output is measured.
+     print(json.dumps(dict(id=ident,grounded=result['checks']['grounded'],
+         findings=[(f['kind'],f['value']) for f in result['checks']['unsupported_claims']]),ensure_ascii=False))
+-OUT.joinpath('root5_confirmation.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False),encoding='utf-8')
++OUT.joinpath('replay6_r5_root5_confirmation.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False),encoding='utf-8')
+ paths=['src/claims.py','src/query.py','src/app.py','tests/test_claims.py','README.md',
+        'README.ko.md','web/template.html','web/try.html','CODEX_CLAIMS_R4_VERDICT.md',
+        'data/processed/oncokg.sqlite']
+@@ -68,4 +68,4 @@
+     tracked_diff_exit=subprocess.run(['git','diff','--quiet'],cwd=ROOT).returncode,
+     staged_diff_exit=subprocess.run(['git','diff','--cached','--quiet'],cwd=ROOT).returncode,
+     sha256={p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in paths})
+-OUT.joinpath('root5_verification.json').write_text(json.dumps(verification,indent=2),encoding='utf-8')
++OUT.joinpath('replay6_r5_root5_verification.json').write_text(json.dumps(verification,indent=2),encoding='utf-8')

@@ -1,0 +1,18 @@
+--- audit_evidence_claims\r5\replay5_r4_spec_probe2.py
++++ audit_evidence_claims\r6\replay6_r4_spec_probe2.py
+@@ -1,5 +1,5 @@
+ ﻿from pathlib import Path
+-exec(Path('audit_evidence_claims/r5/replay5_r4_spec_probe.py').read_text(encoding='utf-8-sig').split('rows=[]')[0])
++exec(Path('audit_evidence_claims/r6/replay6_r4_spec_probe.py').read_text(encoding='utf-8-sig').split('rows=[]')[0])
+ cases=[
+ ('plural_chain_low','Q4','PLB1003 and LORLATINIB act on ALK. they act on ALK. they are approved.'),
+ ('plural_chain_lowreverse','Q4','LORLATINIB and PLB1003 act on ALK. they act on ALK. they are approved.'),
+@@ -19,7 +19,7 @@
+  r=E.check(Q[q],a)
+  rows.append(dict(id=ident,question=Q[q],answer=a,result=r))
+  print(ident,r['checks']['grounded'],[(x['kind'],x['value']) for x in r['checks']['unsupported_claims']])
+-Path('audit_evidence_claims/r5/replay5_r4_spec_probe2.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
++Path('audit_evidence_claims/r6/replay6_r4_spec_probe2.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
+ for q in ['Q2','Q4','Q5']:
+  en=E.kg.link_entities(Q[q]); ev=E.kg.retrieve(E.kg.classify(Q[q],en),en)
+  print(q,[e.statement for e in ev])

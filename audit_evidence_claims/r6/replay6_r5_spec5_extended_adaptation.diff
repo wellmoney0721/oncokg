@@ -1,0 +1,8 @@
+--- audit_evidence_claims\r5\spec5_extended.py
++++ audit_evidence_claims\r6\replay6_r5_spec5_extended.py
+@@ -43,4 +43,4 @@
+  r=e.check(Q[q],a)
+  out.append(dict(id=id,question=Q[q],answer=a,**r))
+  print(id,r["checks"]["grounded"],[(f["kind"],f["value"]) for f in r["checks"]["unsupported_claims"]])
+-Path("audit_evidence_claims/r5/spec5_extended.json").write_text(json.dumps(out,indent=2,ensure_ascii=False),encoding="utf8")
++Path("audit_evidence_claims/r6/replay6_r5_spec5_extended.json").write_text(json.dumps(out,indent=2,ensure_ascii=False),encoding="utf8")

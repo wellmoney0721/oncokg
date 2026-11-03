@@ -1,0 +1,9 @@
+--- audit_evidence_claims\r5\replay5_adversarial_pairs.py
++++ audit_evidence_claims\r6\replay6_adversarial_pairs.py
+@@ -31,5 +31,5 @@
+ run('count_after_colon',['Which drugs act on ALK?'],'PLB1003 NSCLC trials: 13.')
+ run('count_after_colon_list',['Which drugs act on ALK?'],'- PLB1003: NSCLC trials: 13\n- lorlatinib: NSCLC trials: 0')
+ run('reversed_noun',['What does osimertinib target?'],'EGFR is an osimertinib inhibitor.')
+-Path('audit_evidence_claims/r5/replay5_adversarial_pairs_results.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
++Path('audit_evidence_claims/r6/replay6_adversarial_pairs_results.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
+ 

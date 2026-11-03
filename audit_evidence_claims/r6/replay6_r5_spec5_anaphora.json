@@ -1,0 +1,1575 @@
+[
+  {
+    "id": "wrong_such",
+    "question": "What is AstraZeneca running in NSCLC?",
+    "answer": "AstraZeneca sponsors trials of Tagrisso. There are 10 such trials in this graph.",
+    "intent": "company_portfolio",
+    "entities": [
+      {
+        "type": "Company",
+        "id": "ORG:astrazeneca",
+        "label": "Astrazeneca",
+        "matched_text": "AstraZeneca",
+        "also_matching_ids": []
+      },
+      {
+        "type": "Disease",
+        "id": "MONDO_0005233",
+        "label": "non-small cell lung carcinoma",
+        "matched_text": "NSCLC"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "number",
+          "value": "10",
+          "sentence": "There are 10 such trials in this graph.",
+          "why": "no evidence statement about these entities gives that figure"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647",
+        "source": "derived",
+        "url": null
+      }
+    ],
+    "evidence_count": 12,
+    "full_evidence": [
+      {
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 14,
+          "example_trials": [
+            "NCT01802632",
+            "NCT02143466",
+            "NCT02224053"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 10,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 8,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00034879",
+            "NCT00234442"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 7,
+          "example_trials": [
+            "NCT02740985",
+            "NCT03164616",
+            "NCT03703297"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT02453282",
+            "NCT03164616",
+            "NCT04035486"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00372788",
+            "NCT02453282",
+            "NCT03164616"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT05123482",
+            "NCT06357533",
+            "NCT06627647"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT01605916, NCT01933932",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00372788",
+            "NCT01605916",
+            "NCT01933932"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT06627647, NCT06692738",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT06627647",
+            "NCT06692738"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00478049, NCT01933932, NCT02740985",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00478049",
+            "NCT01933932",
+            "NCT02740985"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT07098338, NCT07291037",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT07098338",
+            "NCT07291037"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "right_such",
+    "question": "What is AstraZeneca running in NSCLC?",
+    "answer": "AstraZeneca sponsors trials of Tagrisso. There are 14 such trials in this graph.",
+    "intent": "company_portfolio",
+    "entities": [
+      {
+        "type": "Company",
+        "id": "ORG:astrazeneca",
+        "label": "Astrazeneca",
+        "matched_text": "AstraZeneca",
+        "also_matching_ids": []
+      },
+      {
+        "type": "Disease",
+        "id": "MONDO_0005233",
+        "label": "non-small cell lung carcinoma",
+        "matched_text": "NSCLC"
+      }
+    ],
+    "checks": {
+      "grounded": true,
+      "applicable": true,
+      "unsupported_claims": [],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647",
+        "source": "derived",
+        "url": null
+      }
+    ],
+    "evidence_count": 12,
+    "full_evidence": [
+      {
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 14,
+          "example_trials": [
+            "NCT01802632",
+            "NCT02143466",
+            "NCT02224053"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 10,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 8,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00034879",
+            "NCT00234442"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 7,
+          "example_trials": [
+            "NCT02740985",
+            "NCT03164616",
+            "NCT03703297"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT02453282",
+            "NCT03164616",
+            "NCT04035486"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00372788",
+            "NCT02453282",
+            "NCT03164616"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT05123482",
+            "NCT06357533",
+            "NCT06627647"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT01605916, NCT01933932",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00372788",
+            "NCT01605916",
+            "NCT01933932"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT06627647, NCT06692738",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT06627647",
+            "NCT06692738"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00478049, NCT01933932, NCT02740985",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00478049",
+            "NCT01933932",
+            "NCT02740985"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT07098338, NCT07291037",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT07098338",
+            "NCT07291037"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "wrong_such_elided",
+    "question": "What is AstraZeneca running in NSCLC?",
+    "answer": "AstraZeneca sponsors trials of Tagrisso and has 10 such trials.",
+    "intent": "company_portfolio",
+    "entities": [
+      {
+        "type": "Company",
+        "id": "ORG:astrazeneca",
+        "label": "Astrazeneca",
+        "matched_text": "AstraZeneca",
+        "also_matching_ids": []
+      },
+      {
+        "type": "Disease",
+        "id": "MONDO_0005233",
+        "label": "non-small cell lung carcinoma",
+        "matched_text": "NSCLC"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "number",
+          "value": "10",
+          "sentence": "AstraZeneca sponsors trials of Tagrisso and has 10 such trials.",
+          "why": "no evidence statement about these entities gives that figure"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647",
+        "source": "derived",
+        "url": null
+      }
+    ],
+    "evidence_count": 12,
+    "full_evidence": [
+      {
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 14,
+          "example_trials": [
+            "NCT01802632",
+            "NCT02143466",
+            "NCT02224053"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 10,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 8,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00034879",
+            "NCT00234442"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 7,
+          "example_trials": [
+            "NCT02740985",
+            "NCT03164616",
+            "NCT03703297"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT02453282",
+            "NCT03164616",
+            "NCT04035486"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00372788",
+            "NCT02453282",
+            "NCT03164616"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT05123482",
+            "NCT06357533",
+            "NCT06627647"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT01605916, NCT01933932",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00372788",
+            "NCT01605916",
+            "NCT01933932"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT06627647, NCT06692738",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT06627647",
+            "NCT06692738"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00478049, NCT01933932, NCT02740985",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00478049",
+            "NCT01933932",
+            "NCT02740985"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT07098338, NCT07291037",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT07098338",
+            "NCT07291037"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "wrong_typed",
+    "question": "What is AstraZeneca running in NSCLC?",
+    "answer": "AstraZeneca sponsors trials of Tagrisso. This drug has 10 such trials in this graph.",
+    "intent": "company_portfolio",
+    "entities": [
+      {
+        "type": "Company",
+        "id": "ORG:astrazeneca",
+        "label": "Astrazeneca",
+        "matched_text": "AstraZeneca",
+        "also_matching_ids": []
+      },
+      {
+        "type": "Disease",
+        "id": "MONDO_0005233",
+        "label": "non-small cell lung carcinoma",
+        "matched_text": "NSCLC"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "number",
+          "value": "10",
+          "sentence": "This drug has 10 such trials in this graph.",
+          "why": "no evidence statement about these entities gives that figure"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647",
+        "source": "derived",
+        "url": null
+      }
+    ],
+    "evidence_count": 12,
+    "full_evidence": [
+      {
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 14,
+          "example_trials": [
+            "NCT01802632",
+            "NCT02143466",
+            "NCT02224053"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 10,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 8,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00034879",
+            "NCT00234442"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 7,
+          "example_trials": [
+            "NCT02740985",
+            "NCT03164616",
+            "NCT03703297"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT02453282",
+            "NCT03164616",
+            "NCT04035486"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00372788",
+            "NCT02453282",
+            "NCT03164616"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT05123482",
+            "NCT06357533",
+            "NCT06627647"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT01605916, NCT01933932",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00372788",
+            "NCT01605916",
+            "NCT01933932"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT06627647, NCT06692738",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT06627647",
+            "NCT06692738"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00478049, NCT01933932, NCT02740985",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00478049",
+            "NCT01933932",
+            "NCT02740985"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT07098338, NCT07291037",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT07098338",
+            "NCT07291037"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "wrong_single",
+    "question": "What is AstraZeneca running in NSCLC?",
+    "answer": "AstraZeneca sponsors 10 trials of Tagrisso.",
+    "intent": "company_portfolio",
+    "entities": [
+      {
+        "type": "Company",
+        "id": "ORG:astrazeneca",
+        "label": "Astrazeneca",
+        "matched_text": "AstraZeneca",
+        "also_matching_ids": []
+      },
+      {
+        "type": "Disease",
+        "id": "MONDO_0005233",
+        "label": "non-small cell lung carcinoma",
+        "matched_text": "NSCLC"
+      }
+    ],
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "number",
+          "value": "10",
+          "sentence": "AstraZeneca sponsors 10 trials of Tagrisso.",
+          "why": "no evidence statement about these entities gives that figure"
+        }
+      ],
+      "evidence_count": 12,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "source": "derived",
+        "url": null
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647",
+        "source": "derived",
+        "url": null
+      }
+    ],
+    "evidence_count": 12,
+    "full_evidence": [
+      {
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 14,
+          "example_trials": [
+            "NCT01802632",
+            "NCT02143466",
+            "NCT02224053"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 10,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 8,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00034879",
+            "NCT00234442"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 7,
+          "example_trials": [
+            "NCT02740985",
+            "NCT03164616",
+            "NCT03703297"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT02453282",
+            "NCT03164616",
+            "NCT04035486"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00372788",
+            "NCT02453282",
+            "NCT03164616"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT05123482",
+            "NCT06357533",
+            "NCT06627647"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT01605916, NCT01933932",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00372788",
+            "NCT01605916",
+            "NCT01933932"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT06627647, NCT06692738",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT06627647",
+            "NCT06692738"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00478049, NCT01933932, NCT02740985",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00478049",
+            "NCT01933932",
+            "NCT02740985"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT07098338, NCT07291037",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT07098338",
+            "NCT07291037"
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+--- audit_evidence_claims\r5\replay5_r4_docs_diagnostics.py
++++ audit_evidence_claims\r6\replay6_r4_docs_diagnostics.py
+@@ -22,4 +22,4 @@
+   known|={s.strip().lower() for s in re.split(r'[,;\s|]+',part) if s.strip()}
+ for a in ['[CHEMBL3353410]','[CHEMBL3353410, ENSG00000146648]','[CHEMBL3353410 ENSG00000146648]','[ORG:is-safe]']:
+  rows.append(dict(id='citation_transform',input=a,output=_strip_citations(a,known),known=sorted(known)))
+-Path('audit_evidence_claims/r5/replay5_r4_docs_diagnostics_results.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
++Path('audit_evidence_claims/r6/replay6_r4_docs_diagnostics_results.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')

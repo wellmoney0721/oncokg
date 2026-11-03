@@ -1,0 +1,33 @@
+reversed_target {"answer": "EGFR acts on osimertinib.", "grounded": false, "findings": [["relation_direction", "EGFR acts OSIMERTINIB"]]}
+reversed_inhibition {"answer": "EGFR inhibits osimertinib.", "grounded": false, "findings": [["relation_direction", "EGFR inhibits OSIMERTINIB"]]}
+reversed_trial {"answer": "osimertinib evaluates NCT03909334.", "grounded": false, "findings": [["relation_direction", "OSIMERTINIB evaluates NCT03909334"]]}
+reversed_sponsor {"answer": "osimertinib sponsors AstraZeneca.", "grounded": false, "findings": [["relation_direction", "OSIMERTINIB sponsors Astrazeneca"]]}
+wrong_target {"answer": "osimertinib inhibits ALK.", "grounded": false, "findings": [["relation", "OSIMERTINIB — inhibits — ALK"]]}
+pronoun_target_same_line {"answer": "osimertinib acts on EGFR. It inhibits ALK.", "grounded": false, "findings": [["relation", "OSIMERTINIB — inhibits — ALK"]]}
+pronoun_target_newline {"answer": "osimertinib acts on EGFR.\nIt inhibits ALK.", "grounded": false, "findings": [["relation", "OSIMERTINIB — inhibits — ALK"]]}
+pronoun_this_drug {"answer": "osimertinib acts on EGFR. This drug inhibits ALK.", "grounded": false, "findings": [["relation", "OSIMERTINIB — inhibits — ALK"]]}
+noun_inhibitor {"answer": "osimertinib is an ALK inhibitor.", "grounded": false, "findings": [["relation", "OSIMERTINIB — inhibitor — ALK"]]}
+noun_egfr_inhibitor {"answer": "osimertinib is an EGFR inhibitor.", "grounded": true, "findings": []}
+possessive {"answer": "AstraZeneca's osimertinib.", "grounded": false, "findings": [["wording", "astrazeneca's"]]}
+possessive_relation {"answer": "AstraZeneca's osimertinib targets NSCLC.", "grounded": false, "findings": [["wording", "astrazeneca's"], ["indication", "lung cancer"], ["relation_incomplete", "targets"]]}
+wrong_trial_phase {"answer": "NCT03909334 is phase 3.", "grounded": false, "findings": [["phase", "phase 3"]]}
+swapped_trial_phases {"answer": "NCT03909334 is phase 3 and NCT07680790 is phase 2.", "grounded": false, "findings": [["phase", "phase 2"], ["phase", "phase 3"]]}
+swapped_trial_phases_split {"answer": "NCT03909334 is phase 3; NCT07680790 is phase 2.", "grounded": false, "findings": [["phase", "phase 2"], ["phase", "phase 3"]]}
+wrong_trial_status {"answer": "NCT03909334 is recruiting.", "grounded": false, "findings": [["status", "recruiting"]]}
+pooled_trial_status {"answer": "NCT03909334 is recruiting and NCT03535363 is completed.", "grounded": false, "findings": [["status", "recruiting"]]}
+pooled_trial_status2 {"answer": "NCT03909334 and NCT07680790 are recruiting.", "grounded": false, "findings": [["status", "recruiting"]]}
+wrong_drug_count {"answer": "PLB1003 has 13 NSCLC trials.", "grounded": false, "findings": [["number", "13"]]}
+wrong_drug_count_target {"answer": "PLB1003 acts on ALK with 13 NSCLC trials.", "grounded": false, "findings": [["number", "13"]]}
+swapped_drug_counts {"answer": "PLB1003 has 13 NSCLC trials and lorlatinib has 0 NSCLC trials.", "grounded": false, "findings": [["number", "0"], ["number", "13"]]}
+swapped_sponsor_counts {"answer": "AstraZeneca sponsors 10 NSCLC trials evaluating osimertinib and 14 NSCLC trials evaluating carboplatin.", "grounded": false, "findings": [["number", "10"], ["number", "14"]]}
+wrong_sponsor_count {"answer": "AstraZeneca sponsors 10 NSCLC trials evaluating osimertinib.", "grounded": false, "findings": [["number", "10"]]}
+wrong_trial_status_list {"answer": "- NCT03909334: recruiting\n- NCT07680790: recruiting", "grounded": false, "findings": [["status", "recruiting"]]}
+clinical_grammar_only {"answer": "osimertinib is the therapy for all lung cancer.", "grounded": false, "findings": [["wording", "all"], ["indication", "lung cancer"], ["wording", "therapy"]]}
+clinical_word_reuse {"answer": "osimertinib is a clinical inhibitor for all cancer.", "grounded": false, "findings": [["wording", "all"], ["wording", "cancer"], ["wording", "clinical"], ["relation_incomplete", "inhibitor"]]}
+empty_endpoint {"answer": "EGFR is a drug inhibitor.", "grounded": false, "findings": [["wording", "drug"], ["relation_incomplete", "inhibitor"]]}
+targetless_relation {"answer": "osimertinib sponsors trials.", "grounded": false, "findings": [["relation_incomplete", "sponsors"], ["wording", "trials"]]}
+missing_all_endpoints {"answer": "This drug targets all cancer.", "grounded": false, "findings": [["wording", "all"], ["wording", "cancer"], ["relation_incomplete", "targets"]]}
+count_long_unit {"answer": "PLB1003 has 13 non small cell lung cancer trials.", "grounded": false, "findings": [["number", "13"]]}
+trial_pronoun_reset {"answer": "NCT03909334 evaluates osimertinib. It evaluates osimertinib and is phase 3.", "grounded": false, "findings": [["phase", "phase 3"]]}
+trial_pronoun_control {"answer": "NCT03909334 evaluates osimertinib. It is phase 3.", "grounded": false, "findings": [["phase", "phase 3"]]}
+wrong_relation_type {"answer": "osimertinib evaluates AstraZeneca.", "grounded": false, "findings": [["unrelated_entity", "Astrazeneca"], ["unrelated_entity", "OSIMERTINIB"], ["relation_direction", "OSIMERTINIB evaluates"]]}

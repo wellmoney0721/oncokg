@@ -1,0 +1,15 @@
+--- audit_evidence_claims\r5\replay5_r4_spec_probe3.py
++++ audit_evidence_claims\r6\replay6_r4_spec_probe3.py
+@@ -1,5 +1,5 @@
+ ﻿from pathlib import Path
+-exec(Path('audit_evidence_claims/r5/replay5_r4_spec_probe.py').read_text(encoding='utf-8-sig').split('rows=[]')[0])
++exec(Path('audit_evidence_claims/r6/replay6_r4_spec_probe.py').read_text(encoding='utf-8-sig').split('rows=[]')[0])
+ cases=[
+ ('status_list_prefix','Q2','Recruiting trials evaluating osimertinib include NCT07680790 and NCT03909334.'),
+ ('phase_list_prefix','Q2','Phase 3 trials evaluating osimertinib include NCT07680790 and NCT03909334.'),
+@@ -21,4 +21,4 @@
+ for ident,q,a in cases:
+  r=E.check(Q[q],a); rows.append(dict(id=ident,question=Q[q],answer=a,result=r))
+  print(ident,r['checks']['grounded'],[(x['kind'],x['value']) for x in r['checks']['unsupported_claims']])
+-Path('audit_evidence_claims/r5/replay5_r4_spec_probe3.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
++Path('audit_evidence_claims/r6/replay6_r4_spec_probe3.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')

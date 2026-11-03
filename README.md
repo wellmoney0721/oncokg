@@ -435,21 +435,40 @@ Out of scope, it says so rather than guessing — though only when nothing links
 a question naming a drug it knows will be answered as a drug question, which is
 listed below as a defect rather than described as a feature.
 
-With `ANTHROPIC_API_KEY` set, a language model writes the prose from the
-retrieved evidence and nothing else, and the result is checked back against that
-evidence: capitalised entities, drug-shaped names, any word the drug vocabulary
-knows, and whole numbers in the generated text must appear in the retrieved
-set; figures written in words, in scientific notation or as Unicode fractions
-are refused as unverifiable. With no key, the same evidence is rendered directly and the check
-reports `applicable: false`, because a template built from the evidence cannot
-fail a test against it.
+With `ANTHROPIC_API_KEY` set, the language model does **not** write the answer.
+It returns claims as JSON, and the program writes the answer from the claims that
+check out (`src/structured.py`):
 
-The model path is **not** guaranteed to state the same facts as the template.
-The check catches invented names and figures in the forms above — a drug name
-outside the vocabulary that does not look like an INN still passes — and it
-cannot catch a relation the evidence does not support, a negation, a comparison, a clinical
-claim made of ordinary words ("is safe"), or two true figures paired wrongly.
-The pipeline has no required dependency on a model.
+```json
+{"claims": [
+  {"kind": "relation", "relation": "ACTS_ON", "subject": "osimertinib", "object": "EGFR",
+   "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410", "action": "INHIBITOR"},
+  {"kind": "trial", "trial": "NCT03909334", "evidence": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+   "phase": ["PHASE2"], "status": "ACTIVE_NOT_RECRUITING"}
+]}
+```
+
+Each claim is accepted only if its keys are exactly those of its kind (no free-text
+field exists, and an unknown key rejects the claim), the cited edge is one of those
+retrieved for the question and is live, the edge's relation and both ends are the
+ones the claim names (a name must resolve, whole, to that node), and every value
+equals what the graph stores: action type, sponsor's trial count, a trial's phase
+set and status, a drug's maximum stage and its number of trials. The answer is then
+written from accepted claims in the graph's own labels and values, with the edge id
+after each line, so nothing the model typed reaches the reader. Rejected claims are
+listed with the reason and left out.
+
+This replaced checking the model's prose. Six adversarial rounds against a prose
+checker (`src/claims.py`, kept as an auxiliary screen) each found new sentence
+shapes that slipped through, because a reader of word order cannot keep up with
+English. A closed claim format can be checked exactly. What it cannot judge is
+whether the claims chosen answer the question well or leave something important
+out: it guarantees what is said is in the graph, not that everything that matters
+was said.
+
+With no key, the evidence is rendered directly by a template, and the prose check
+reports `applicable: false`, because a template built from the evidence cannot
+fail a test against it. The pipeline has no required dependency on a model.
 
 ---
 
@@ -505,31 +524,16 @@ fixed now, and its number has been reused.
     obvious changes (spin-offs, renames, the two Mercks), but continued legal
     existence of every subsidiary is unverified, and nothing re-checks the map
     when ownership changes.
-13. **The claim check reads word order, not meaning.** Generated answers are read
-    clause by clause into subject, relation and object (`src/claims.py`, rules in
-    its docstring) and compared with the retrieved evidence for those entities. It
-    is a set of patterns, so it is only as good as the sentence shapes it was
-    written for. Five adversarial rounds found 33, about 40, about 25, about 20 and
-    then about 15 shapes that got through (reversed nouns, clefts, a second object after "and
-    on", pronouns read too early, plural pronouns, a count borrowed from a phase or
-    shared by two drugs, `agonist` inside `antagonist`, headings, bracketed text,
-    refused product names, words like "clinical trials" or "drug" treated as
-    grammar, "approved in NSCLC", "the following safe drugs", a phase or status
-    shared by two trials, letters spelled out one by one, a kind word in a heading or
-    a relative clause, "10 such trials"). Each is now a regression
-    test, but a shape
-    nobody has tried yet can still be misread. Known to get through: a clause whose
-    words, entities and figures all come from one evidence statement about those
-    entities but are arranged into a different claim; a drug name outside the
-    vocabulary that does not look like an INN; odd but evidence-consistent wording
-    ("osimertinib is the inhibition of EGFR"). Known to be over-strict: a true fact
-    the graph does not hold, a paraphrase it has no word for ("supports trials"), a
-    sentence about the evidence itself that uses a negation or "develops", and a
-    refusal naming something outside the graph ("the capital of France"). Three
-    narrow exceptions are deliberate: a line copied from an evidence statement
-    passes (its heading is still checked), a clause with no entity that only talks
-    about the graph passes, and a bracket is dropped as a citation only when every
-    id in it is a record of the retrieved evidence.
+13. **The prose check is an auxiliary screen, not a guarantee.** Answers from the
+    model are no longer prose but structured claims checked exactly (see "Asking it
+    things"). `src/claims.py`, which reads free prose clause by clause against the
+    evidence, is kept for prose from elsewhere (the try-it page's box 4). Six
+    adversarial rounds found 33, about 40, about 25, about 20, about 15 and then 8
+    sentence shapes that got through it (reversed nouns, clefts, pronouns, counts
+    and phases borrowed across entities, headings, relative clauses, kind words),
+    and its repairs began to reject faithful answers (22 of 38 in round 6). Each
+    shape found is a regression test, but it reads word order, not meaning, and is
+    documented as able to miss unsupported claims and to reject correct ones.
 14. **Provenance does not record the code version.** Snapshots carry their
     fetch time, but the graph does not store which revision of the rules built
     it, so a change that arrives with a new snapshot and a code change together
@@ -555,7 +559,7 @@ pip install -r requirements.txt
 python src/run_all.py              # fetch, resolve, check, build, score, render
 python src/run_all.py --offline    # rebuild from the snapshots in data/raw
 
-python -m pytest tests -q                    # 275 tests
+python -m pytest tests -q                    # 300 tests
 python src/app.py                            # try-it page: http://localhost:8765
 python src/curation_effect.py                # resolve twice, with and without curation
 python src/apply_label_corrections.py --check
@@ -584,6 +588,9 @@ src/
   qc.py                       dictionary, record and graph quality checks
   graph.py                    SQLite knowledge graph, provenance, change history
   query.py                    entity linking, retrieval, answering, groundedness check
+  structured.py               model answers as claims, each checked against the graph
+  claims.py                   auxiliary clause-by-clause check of free prose
+  app.py                      local try-it page (web/try.html)
   make_gold_sample.py         stratified sampling: dev / held-out test / post-fix
   apply_gold_labels*.py       the manual verdicts, with a reason for every "incorrect"
   apply_label_corrections.py  label errors found by independent re-score, with reasons

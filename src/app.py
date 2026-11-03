@@ -2,10 +2,11 @@
 
     python src/app.py            then open http://localhost:8765
 
-Three boxes: type an intervention string the way a registry would write it and see
+Four boxes: type an intervention string the way a registry would write it and see
 how the resolver reads it, or ask a question and see the grounded answer with its
-evidence, or paste an answer (say, one a language model wrote) and see what the
-groundedness check flags against the evidence for that question. All three call
+evidence, give a structured answer (claims citing evidence edges) and see which
+claims the graph supports and the answer written from them, or paste free prose and
+see what the auxiliary word-order check flags. All three call
 the functions the pipeline uses (resolve_drug_string, OncoKG.answer,
 OncoKG.check_groundedness) on the built artefacts, so what the page shows is what the
 pipeline would do. Nothing is written; the language model is never called.
@@ -67,6 +68,15 @@ class Engine:
     def ask(self, question: str) -> dict:
         return self.kg.answer(question, use_llm=False).to_dict()
 
+    def structured(self, question: str, payload: str) -> dict:
+        """Check a structured answer (claims citing edges) and write the answer from it."""
+        kg = self.kg
+        entities = kg.link_entities(question)
+        evidence = kg.retrieve(kg.classify(question, entities), entities)
+        res = kg.verify_structured(payload, evidence)
+        res["evidence"] = [{"edge_id": e.edge_id, "statement": e.statement} for e in evidence]
+        return res
+
     def check(self, question: str, answer: str) -> dict:
         """Check an answer someone else wrote against the evidence for the question."""
         kg = self.kg
@@ -104,13 +114,19 @@ def make_handler(engine: Engine):
                 text = str(body.get("text") or "").strip()[:500]
                 if not text:
                     raise ValueError("empty input")
-                if self.path not in ("/api/resolve", "/api/ask", "/api/check"):
+                if self.path not in ("/api/resolve", "/api/ask", "/api/check",
+                                     "/api/structured"):
                     return self._send(404, b"{}", "application/json")
                 with engine.lock:
                     if self.path == "/api/resolve":
                         res = engine.resolve(text)
                     elif self.path == "/api/ask":
                         res = engine.ask(text)
+                    elif self.path == "/api/structured":
+                        answer = str(body.get("answer") or "").strip()[:20000]
+                        if not answer:
+                            raise ValueError("empty answer")
+                        res = engine.structured(text, answer)
                     else:
                         answer = str(body.get("answer") or "").strip()[:4000]
                         if not answer:

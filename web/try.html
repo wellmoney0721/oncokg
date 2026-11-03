@@ -65,18 +65,29 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;font:12.5px var(--mono);backgrou
     <div class="out" id="o2" aria-live="polite"></div>
   </section>
   <section>
-    <h2>3. AI 답 검사해 보기</h2>
+    <h2>3. AI 답 검사 &mdash; 구조화된 주장</h2>
+    <p class="sub">언어 모델이 쓰는 답은 문장이 아니라 &lsquo;주장 목록&rsquo;입니다. 주장마다 무엇과 무엇이 어떤 관계인지, 어떤 값인지, 근거 엣지 id 가 무엇인지 적습니다.
+    프로그램이 주장을 하나씩 그래프와 정확히 대조해(근거 id 가 이번 질문의 근거에 있는지, 관계·방향·대상이 그 엣지와 같은지, 단계·상태·시험 수·작용 종류가 저장된 값과 같은지)
+    맞는 주장만으로 답 문장을 그래프의 이름과 값으로 씁니다. 모델이 쓴 글자는 답에 들어가지 않고, 정해지지 않은 칸이 하나라도 있으면 그 주장은 버립니다.</p>
+    <form id="f4"><input id="q4" style="width:100%;margin-top:14px" placeholder="질문 (영어)" autocomplete="off" aria-label="질문">
+      <textarea id="a4" rows="7" style="width:100%;margin-top:8px;font:12.5px var(--mono);padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)" placeholder='{"claims": [...]}' aria-label="주장 목록 (JSON)"></textarea>
+      <div class="row" style="margin-top:8px"><button>대조하기</button></div></form>
+    <div class="exs" id="ex4"></div>
+    <div class="out" id="o4" aria-live="polite"></div>
+  </section>
+  <section>
+    <h2>4. 보조 &mdash; 자유 문장 검사</h2>
     <p class="sub">질문과, AI가 했을 법한 답을 넣으면 그 질문의 근거와 절마다 대조합니다. 근거에 없는 약 이름·숫자,
     방향이 틀리거나 근거에 없는 관계, 다른 대상의 단계·숫자를 빌려 온 것, 그리고 &ldquo;안전하다&rdquo;, &ldquo;중단했다&rdquo;, &ldquo;~하지 않는다&rdquo;, &ldquo;개발한다&rdquo;처럼
     그래프가 보증할 수 없는 말을 찾아냅니다. 뜻이 아니라 단어 순서를 읽는 규칙이라 처음 보는 문장 모양은 놓칠 수 있고, 일부러 엄격해서 맞는 말이라도 그래프에 없으면 걸립니다.
-    걸린 것과 안 걸린 것 모두, 정말 맞는지는 바이오 지식으로 판단해 보세요.</p>
+    걸린 것과 안 걸린 것 모두, 정말 맞는지는 바이오 지식으로 판단해 보세요. 적대 검증 여섯 차례 동안 계속 새로 빠져나가는 문장이 나와서, 답을 쓰는 길은 3번(구조화된 주장)으로 바꾸고 이 검사는 보조로만 둡니다.</p>
     <form id="f3"><input id="q3" style="width:100%;margin-top:14px" placeholder="질문 (영어)" autocomplete="off" aria-label="질문">
       <textarea id="a3" rows="3" style="width:100%;margin-top:8px;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)" placeholder="AI의 답 (영어)" aria-label="AI의 답"></textarea>
       <div class="row" style="margin-top:8px"><button>검사하기</button></div></form>
     <div class="exs" id="ex3"></div>
     <div class="out" id="o3" aria-live="polite"></div>
   </section>
-  <p class="note">언어 모델은 부르지 않습니다. 답은 근거를 정해진 틀로 보여 준 것이고, 아무것도 저장하지 않습니다.</p>
+  <p class="note">이 화면은 언어 모델을 부르지 않습니다. 2번의 답은 근거를 정해진 틀로 보여 준 것이고, 3번은 모델이 냈을 법한 주장 목록을 직접 넣어 보는 곳입니다. 아무것도 저장하지 않습니다.</p>
 </div>
 <script>
 const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -131,6 +142,44 @@ const KIND = {entity:"근거에 없는 이름", drug_name:"근거에 없는 약 
   no_subject:"무엇에 대한 말인지 알 수 없음", no_antecedent:"'그것'이 가리키는 대상이 없음", unreadable:"읽을 수 없는 글 (영어가 아님)",
   unrelated_entity:"관계에 묶이지 않은 대상", fragment:"동사 없는 조각 (관계를 읽을 수 없음)", distinct_product:"그래프에 없는 별도 제품 (바이오시밀러·개량 제형 등)",
   indication:"질환에 대한 주장 (그래프는 시험만 기록)"};
+const AZ_OSI = "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|";
+const OSI_EGFR = "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410";
+const T1 = "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334";
+const EX4 = [
+  ["맞는 주장", "What does osimertinib target?",
+   {claims:[{kind:"relation",relation:"ACTS_ON",subject:"osimertinib",object:"EGFR",evidence:OSI_EGFR,action:"inhibitor"}]}],
+  ["방향 뒤집기", "What does osimertinib target?",
+   {claims:[{kind:"relation",relation:"ACTS_ON",subject:"EGFR",object:"osimertinib",evidence:OSI_EGFR}]}],
+  ["작용 종류 틀림", "What does osimertinib target?",
+   {claims:[{kind:"relation",relation:"ACTS_ON",subject:"osimertinib",object:"EGFR",evidence:OSI_EGFR,action:"activator"}]}],
+  ["자유 문장 끼워 넣기", "What does osimertinib target?",
+   {claims:[{kind:"relation",relation:"ACTS_ON",subject:"osimertinib",object:"EGFR",evidence:OSI_EGFR,note:"safe for all patients"}]}],
+  ["시험 상태 맞음 + 틀림", "What trials evaluate Tagrisso?",
+   {claims:[{kind:"trial",trial:"NCT03909334",evidence:T1,phase:["PHASE2"],status:"ACTIVE_NOT_RECRUITING"},
+            {kind:"trial",trial:"NCT03909334",evidence:T1,status:"RECRUITING"}]}],
+  ["시험 수 틀림", "What is AstraZeneca running in NSCLC?",
+   {claims:[{kind:"relation",relation:"SPONSORS_TRIAL_OF",subject:"AstraZeneca",object:"osimertinib",evidence:AZ_OSI,trial_count:10}]}],
+  ["근거에 없는 id", "What does osimertinib target?",
+   {claims:[{kind:"relation",relation:"ACTS_ON",subject:"osimertinib",object:"ALK",evidence:"CHEMBL3353410|ACTS_ON|ENSG00000171094|CHEMBL3353410"}]}]];
+document.getElementById("ex4").innerHTML = EX4.map((x,i)=>`<button type="button" class="ex" data-i="${i}">${esc(x[0])}</button>`).join("");
+document.getElementById("ex4").addEventListener("click",e=>{const b=e.target.closest(".ex"); if(!b) return; const x=EX4[+b.dataset.i];
+  document.getElementById("q4").value=x[1]; document.getElementById("a4").value=JSON.stringify(x[2],null,1); document.getElementById("f4").requestSubmit();});
+document.getElementById("f4").addEventListener("submit",async e=>{
+  e.preventDefault(); const o=document.getElementById("o4");
+  const q=document.getElementById("q4").value.trim(), a=document.getElementById("a4").value.trim(); if(!q||!a) return;
+  o.innerHTML="대조 중…";
+  try{
+    const r = await fetch("/api/structured",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text:q,answer:a})});
+    const j = await r.json(); if(!r.ok) throw new Error(j.error||r.status);
+    o.innerHTML = `<div><span class="chip ${j.verified?"ok":"no"}">${j.verified?"모든 주장이 그래프와 일치":`버린 주장 ${j.rejected.length}개`}</span>`+
+      ` <span class="code">받아들인 주장 ${j.accepted.length}개</span></div>`+
+      (j.text?`<p class="detail">이 주장들로 쓴 답 (그래프의 이름과 값으로):</p><pre>${esc(j.text)}</pre>`:"")+
+      j.rejected.map(x=>`<div class="comp no"><div class="top"><span class="verdict">버림</span></div><div class="detail">${esc(x.why)}</div>`+
+        (x.claim?`<div class="code">${esc(JSON.stringify(x.claim))}</div>`:"")+`</div>`).join("")+
+      `<details><summary>이번 질문의 근거와 id (${j.evidence.length}개)</summary><div class="ev">`+
+      j.evidence.map(x=>`<div>• ${esc(x.statement)}<br><span class="code">${esc(x.edge_id)}</span></div>`).join("")+`</div></details>`;
+  }catch(err){ o.innerHTML=`<p class="err">오류: ${esc(err.message)}</p>`; }
+});
 document.getElementById("f3").addEventListener("submit",async e=>{
   e.preventDefault(); const o=document.getElementById("o3");
   const q=document.getElementById("q3").value.trim(), a=document.getElementById("a3").value.trim(); if(!q||!a) return;
@@ -185,7 +234,7 @@ document.getElementById("f2").addEventListener("submit",async e=>{
     const a = await call("/api/ask",t);
     const refused = a.intent==="unsupported";
     const ents = (a.entities||[]).map(x=>`${esc(x.label)} <span class="code">(${esc(x.type==="Refused"?"거절":x.type)})</span>`).join(", ");
-    const ev = (a.evidence||[]).slice(0,8).map(x=>`<div>• ${esc(x.statement)} — ${x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.source_record||x.source)}</a>`:esc(x.source_record||x.source)} <span class="code">확실도 ${Number(x.confidence).toFixed(2)}</span></div>`).join("");
+    const ev = (a.evidence||[]).slice(0,8).map(x=>`<div>• ${esc(x.statement)} — ${x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.source_record||x.source)}</a>`:esc(x.source_record||x.source)} <span class="code">확실도 ${Number(x.confidence).toFixed(2)}</span><br><span class="code">근거 id: ${esc(x.edge_id||"")}</span></div>`).join("");
     o.innerHTML = `<div class="top" style="display:flex;gap:8px;flex-wrap:wrap">`+
       `<span class="chip">${esc(INTENT[a.intent]||a.intent)}</span>`+
       `<span class="chip ${refused?"no":""}">${refused?"답하지 않음":"근거를 그대로 옮긴 답 (검사 해당 없음 — 3번에서 AI 답을 검사해 보세요)"}</span></div>`+

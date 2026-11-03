@@ -1,0 +1,8 @@
+--- audit_evidence_claims\r5\docs5_controls.py
++++ audit_evidence_claims\r6\replay6_r5_docs5_controls.py
+@@ -41,4 +41,4 @@
+  e=engine.kg.link_entities(Q[q]); ev=engine.kg.retrieve(engine.kg.classify(Q[q],e),e)
+  rows.append(dict(id=ident,question=Q[q],answer=a,result=r,full_evidence=[asdict(x) for x in ev]))
+  print(ident,r['checks']['grounded'],[(u['kind'],u['value']) for u in r['checks']['unsupported_claims']])
+-(ROOT/'audit_evidence_claims/r5/docs5_controls_results.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
++(ROOT/'audit_evidence_claims/r6/replay6_r5_docs5_controls_results.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')

@@ -1,0 +1,15 @@
+--- audit_evidence_claims\r5\replay5_r4_spec_controls.py
++++ audit_evidence_claims\r6\replay6_r4_spec_controls.py
+@@ -1,5 +1,5 @@
+ ﻿from pathlib import Path
+-exec(Path('audit_evidence_claims/r5/replay5_r4_spec_probe.py').read_text(encoding='utf-8-sig').split('rows=[]')[0])
++exec(Path('audit_evidence_claims/r6/replay6_r4_spec_probe.py').read_text(encoding='utf-8-sig').split('rows=[]')[0])
+ cases=[
+ ('count_label_correct_for_carbo_only','Q5','AstraZeneca sponsors carboplatin in trials: 10.'),
+ ('count_label_group_14','Q5','AstraZeneca sponsors osimertinib and carboplatin in trials: 14.'),
+@@ -22,4 +22,4 @@
+ for ident,q,a in cases:
+  r=E.check(Q[q],a); rows.append(dict(id=ident,question=Q[q],answer=a,result=r))
+  print(ident,r['checks']['grounded'],[(x['kind'],x['value']) for x in r['checks']['unsupported_claims']])
+-Path('audit_evidence_claims/r5/replay5_r4_spec_controls.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
++Path('audit_evidence_claims/r6/replay6_r4_spec_controls.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')

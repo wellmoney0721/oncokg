@@ -1,0 +1,4069 @@
+[
+  {
+    "id": "wrong_target_pairs",
+    "retrieval_questions": [
+      "What does osimertinib target?",
+      "What does crizotinib target?"
+    ],
+    "answer": "osimertinib acts on ALK and crizotinib acts on EGFR.",
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "relation",
+          "value": "CRIZOTINIB — acts — EGFR",
+          "sentence": "osimertinib acts on ALK and crizotinib acts on EGFR.",
+          "why": "no retrieved edge links these two entities this way"
+        },
+        {
+          "kind": "relation",
+          "value": "OSIMERTINIB — acts — ALK",
+          "sentence": "osimertinib acts on ALK and crizotinib acts on EGFR.",
+          "why": "no retrieved edge links these two entities this way"
+        }
+      ],
+      "evidence_count": 7,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3353410",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on MET (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000105976|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on ALK (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on EML4 (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000143924|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on NPM1 (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000181163|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on ROS1 (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000047936|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on MST1R (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000164078|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      }
+    ]
+  },
+  {
+    "id": "correct_target_pairs_same_sentence",
+    "retrieval_questions": [
+      "What does osimertinib target?",
+      "What does crizotinib target?"
+    ],
+    "answer": "osimertinib acts on EGFR and crizotinib acts on ALK.",
+    "checks": {
+      "grounded": true,
+      "applicable": true,
+      "unsupported_claims": [],
+      "evidence_count": 7,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3353410",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on MET (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000105976|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on ALK (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on EML4 (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000143924|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on NPM1 (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000181163|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on ROS1 (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000047936|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on MST1R (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000164078|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      }
+    ]
+  },
+  {
+    "id": "correct_target_pairs_split",
+    "retrieval_questions": [
+      "What does osimertinib target?",
+      "What does crizotinib target?"
+    ],
+    "answer": "osimertinib acts on EGFR. crizotinib acts on ALK.",
+    "checks": {
+      "grounded": true,
+      "applicable": true,
+      "unsupported_claims": [],
+      "evidence_count": 7,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3353410",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on MET (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000105976|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on ALK (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on EML4 (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000143924|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on NPM1 (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000181163|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on ROS1 (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000047936|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on MST1R (inhibitor)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000164078|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      }
+    ]
+  },
+  {
+    "id": "wrong_trial_pairs",
+    "retrieval_questions": [
+      "What trials evaluate Tagrisso?",
+      "What trials evaluate crizotinib?"
+    ],
+    "answer": "NCT03909334 evaluates crizotinib and NCT06254599 evaluates osimertinib.",
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "relation",
+          "value": "NCT03909334 — evaluates — CRIZOTINIB",
+          "sentence": "NCT03909334 evaluates crizotinib and NCT06254599 evaluates osimertinib.",
+          "why": "no retrieved edge links these two entities this way"
+        },
+        {
+          "kind": "relation",
+          "value": "NCT06254599 — evaluates — OSIMERTINIB",
+          "sentence": "NCT03909334 evaluates crizotinib and NCT06254599 evaluates osimertinib.",
+          "why": "no retrieved edge links these two entities this way"
+        }
+      ],
+      "evidence_count": 24,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT03909334",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT03909334",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Study of Osimertinib With and Without Ramucirumab in Locally Advanced or Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT07680790",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT07680790",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Study of Izalontamab Brengitecan (BMS-986507) in Combination With Osimertinib Versus Osimertinib Monotherapy or Osimertinib in Combination With Platinum-based Chemotherapy for EGFRmt Non-small Cell Lung Cancer (IZABRIGHT-Lung02)",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT02411448",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT02411448",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "A Study of Ramucirumab (LY3009806) in Combination With Erlotinib in Previously Untreated Participants With EGFR Mutation-Positive Metastatic NSCLC (RELAY)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04285671",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04285671",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Necitumumab and Trastuzumab in Combination With Osimertinib for the Treatment of Refractory Epidermal Growth Factor Receptor (EGFR)-Mutated Stage IV Non-small Cell Lung Cancer",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04141644",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04141644",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Safety and Efficacy of Combination Osimertinib and Ipilimumab in Patients w EGFR Mutated NSCLC",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      },
+      {
+        "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "edge_id": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT03535363",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT03535363",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Osimertinib With Stereotactic Radiosurgery (SRS) in Brain Metastases From EGFR Positive NSCLC",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04487080",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04487080",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "A Study of Amivantamab and Lazertinib Combination Therapy Versus Osimertinib in Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT07738172",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT07738172",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Osimertinib With or Without Primary Lung Tumor Resection for EGFR-Mutant Oligometastatic Non-Small Cell Lung Cancer",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "edge_id": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04541407",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04541407",
+        "detail": {
+          "stated_intervention": "Temozolomide plus Osimertinib",
+          "title": "Temodar Plus Tyrosine Kinase Inhibitors for Progressive CNS Disease",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+        "edge_id": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04772235",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04772235",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Phase I Study of Repotrectinib and Osimertinib in NSCLC Patients",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      },
+      {
+        "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT05011487",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT05011487",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Neoadjuvant Osimertinib + Chemotherapy for EGFR-mutant Stage III NSCLC",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "edge_id": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04479306",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04479306",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Osimertinib in Combination With Alisertib or Sapanisertib for the Treatment of Osimertinib-Resistant EGFR Mutant Stage IIIB or IV Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      },
+      {
+        "statement": "NCT06254599 (PHASE3, NOT_YET_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT06254599|EVALUATES|CHEMBL601719|NCT06254599",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT06254599",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT06254599",
+        "detail": {
+          "stated_intervention": "Crizotinib Capsules",
+          "title": "A Study Of SY-3505 Versus Crizotinib In First Line Treatment Of Patients With ALK-Positive NSCLC",
+          "status": "NOT_YET_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT01945021 (PHASE2, COMPLETED) evaluates CRIZOTINIB",
+        "edge_id": "NCT01945021|EVALUATES|CHEMBL601719|NCT01945021",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT01945021",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT01945021",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Phase II Safety and Efficacy Study of Crizotinib in East Asian Patients With ROS1 Positive, ALK Negative Advanced NSCLC",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT02584634 (PHASE1, PHASE2, TERMINATED) evaluates CRIZOTINIB",
+        "edge_id": "NCT02584634|EVALUATES|CHEMBL601719|NCT02584634",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT02584634",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT02584634",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Study to Evaluate Safety, Efficacy, Pharmacokinetics And Pharmacodynamics Of Avelumab In Combination With Either Crizotinib Or PF-06463922 In Patients With NSCLC. (Javelin Lung 101)",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT02201992 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT02201992|EVALUATES|CHEMBL601719|NCT02201992",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT02201992",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT02201992",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Crizotinib in Treating Patients With Stage IB-IIIA Non-small Cell Lung Cancer That Has Been Removed by Surgery and ALK Fusion Mutations (An ALCHEMIST Treatment Trial)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT06140836 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT06140836|EVALUATES|CHEMBL601719|NCT06140836",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT06140836",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT06140836",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "A Study of Repotrectinib Versus Crizotinib in Participants With Locally Advanced or Metastatic Tyrosine Kinase Inhibitor (TKI)-naïve ROS1-positive Non-Small Cell Lung Cancer (NSCLC) (TRIDENT-3)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04084717 (PHASE2, COMPLETED) evaluates CRIZOTINIB",
+        "edge_id": "NCT04084717|EVALUATES|CHEMBL601719|NCT04084717",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04084717",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04084717",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Study of Crizotinib for ROS1 and MET Activated Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04439253 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT04439253|EVALUATES|CHEMBL601719|NCT04439253",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04439253",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04439253",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Testing Crizotinib as a Potential Targeted Treatment in Cancers With ROS1 Genetic Changes (MATCH-Subprotocol G)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04603807 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT04603807|EVALUATES|CHEMBL601719|NCT04603807",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04603807",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04603807",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "A Study to Compare the Efficacy and Safety of Entrectinib and Crizotinib in Participants With Advanced or Metastatic ROS1 Non-small Cell Lung Cancer (NSCLC) With and Without Central Nervous System (CNS) Metastases",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT05160922 (PHASE4, ACTIVE_NOT_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT05160922|EVALUATES|CHEMBL601719|NCT05160922",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT05160922",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT05160922",
+        "detail": {
+          "stated_intervention": "crizotinib",
+          "title": "Crizotinib Continuation Clinical Study",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE4"
+          ]
+        }
+      },
+      {
+        "statement": "NCT01639001 (PHASE3, COMPLETED) evaluates CRIZOTINIB",
+        "edge_id": "NCT01639001|EVALUATES|CHEMBL601719|NCT01639001",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT01639001",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT01639001",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "A Study Of Crizotinib Versus Chemotherapy In Previously Untreated ALK Positive East Asian Non-Small Cell Lung Cancer Patients",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04009317 (PHASE3, UNKNOWN) evaluates CRIZOTINIB",
+        "edge_id": "NCT04009317|EVALUATES|CHEMBL601719|NCT04009317",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04009317",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04009317",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Study of TQ-B3139 Versus Crizotinib in the First Line Treatment of Subjects With Anaplastic Lymphoma Kinase (ALK) Positive Non-Small Cell Lung Cancer (NSCLC)",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT07816380 (PHASE3, NOT_YET_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT07816380|EVALUATES|CHEMBL601719|NCT07816380",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT07816380",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT07816380",
+        "detail": {
+          "stated_intervention": "Crizotinib Capsules",
+          "title": "A Phase III Study to Evaluate the Efficacy and Safety of JYP0322 in Previously Untreated ROS1-Positive Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
+          "status": "NOT_YET_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "correct_trial_pairs_same_sentence",
+    "retrieval_questions": [
+      "What trials evaluate Tagrisso?",
+      "What trials evaluate crizotinib?"
+    ],
+    "answer": "NCT03909334 evaluates osimertinib and NCT06254599 evaluates crizotinib.",
+    "checks": {
+      "grounded": true,
+      "applicable": true,
+      "unsupported_claims": [],
+      "evidence_count": 24,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT03909334",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT03909334",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Study of Osimertinib With and Without Ramucirumab in Locally Advanced or Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT07680790",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT07680790",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Study of Izalontamab Brengitecan (BMS-986507) in Combination With Osimertinib Versus Osimertinib Monotherapy or Osimertinib in Combination With Platinum-based Chemotherapy for EGFRmt Non-small Cell Lung Cancer (IZABRIGHT-Lung02)",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT02411448",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT02411448",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "A Study of Ramucirumab (LY3009806) in Combination With Erlotinib in Previously Untreated Participants With EGFR Mutation-Positive Metastatic NSCLC (RELAY)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04285671",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04285671",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Necitumumab and Trastuzumab in Combination With Osimertinib for the Treatment of Refractory Epidermal Growth Factor Receptor (EGFR)-Mutated Stage IV Non-small Cell Lung Cancer",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04141644",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04141644",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Safety and Efficacy of Combination Osimertinib and Ipilimumab in Patients w EGFR Mutated NSCLC",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      },
+      {
+        "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "edge_id": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT03535363",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT03535363",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Osimertinib With Stereotactic Radiosurgery (SRS) in Brain Metastases From EGFR Positive NSCLC",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04487080",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04487080",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "A Study of Amivantamab and Lazertinib Combination Therapy Versus Osimertinib in Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT07738172",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT07738172",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Osimertinib With or Without Primary Lung Tumor Resection for EGFR-Mutant Oligometastatic Non-Small Cell Lung Cancer",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "edge_id": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04541407",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04541407",
+        "detail": {
+          "stated_intervention": "Temozolomide plus Osimertinib",
+          "title": "Temodar Plus Tyrosine Kinase Inhibitors for Progressive CNS Disease",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+        "edge_id": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04772235",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04772235",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Phase I Study of Repotrectinib and Osimertinib in NSCLC Patients",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      },
+      {
+        "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT05011487",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT05011487",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Neoadjuvant Osimertinib + Chemotherapy for EGFR-mutant Stage III NSCLC",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "edge_id": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04479306",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04479306",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Osimertinib in Combination With Alisertib or Sapanisertib for the Treatment of Osimertinib-Resistant EGFR Mutant Stage IIIB or IV Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      },
+      {
+        "statement": "NCT06254599 (PHASE3, NOT_YET_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT06254599|EVALUATES|CHEMBL601719|NCT06254599",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT06254599",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT06254599",
+        "detail": {
+          "stated_intervention": "Crizotinib Capsules",
+          "title": "A Study Of SY-3505 Versus Crizotinib In First Line Treatment Of Patients With ALK-Positive NSCLC",
+          "status": "NOT_YET_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT01945021 (PHASE2, COMPLETED) evaluates CRIZOTINIB",
+        "edge_id": "NCT01945021|EVALUATES|CHEMBL601719|NCT01945021",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT01945021",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT01945021",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Phase II Safety and Efficacy Study of Crizotinib in East Asian Patients With ROS1 Positive, ALK Negative Advanced NSCLC",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT02584634 (PHASE1, PHASE2, TERMINATED) evaluates CRIZOTINIB",
+        "edge_id": "NCT02584634|EVALUATES|CHEMBL601719|NCT02584634",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT02584634",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT02584634",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Study to Evaluate Safety, Efficacy, Pharmacokinetics And Pharmacodynamics Of Avelumab In Combination With Either Crizotinib Or PF-06463922 In Patients With NSCLC. (Javelin Lung 101)",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT02201992 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT02201992|EVALUATES|CHEMBL601719|NCT02201992",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT02201992",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT02201992",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Crizotinib in Treating Patients With Stage IB-IIIA Non-small Cell Lung Cancer That Has Been Removed by Surgery and ALK Fusion Mutations (An ALCHEMIST Treatment Trial)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT06140836 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT06140836|EVALUATES|CHEMBL601719|NCT06140836",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT06140836",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT06140836",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "A Study of Repotrectinib Versus Crizotinib in Participants With Locally Advanced or Metastatic Tyrosine Kinase Inhibitor (TKI)-naïve ROS1-positive Non-Small Cell Lung Cancer (NSCLC) (TRIDENT-3)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04084717 (PHASE2, COMPLETED) evaluates CRIZOTINIB",
+        "edge_id": "NCT04084717|EVALUATES|CHEMBL601719|NCT04084717",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04084717",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04084717",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Study of Crizotinib for ROS1 and MET Activated Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04439253 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT04439253|EVALUATES|CHEMBL601719|NCT04439253",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04439253",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04439253",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Testing Crizotinib as a Potential Targeted Treatment in Cancers With ROS1 Genetic Changes (MATCH-Subprotocol G)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04603807 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT04603807|EVALUATES|CHEMBL601719|NCT04603807",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04603807",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04603807",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "A Study to Compare the Efficacy and Safety of Entrectinib and Crizotinib in Participants With Advanced or Metastatic ROS1 Non-small Cell Lung Cancer (NSCLC) With and Without Central Nervous System (CNS) Metastases",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT05160922 (PHASE4, ACTIVE_NOT_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT05160922|EVALUATES|CHEMBL601719|NCT05160922",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT05160922",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT05160922",
+        "detail": {
+          "stated_intervention": "crizotinib",
+          "title": "Crizotinib Continuation Clinical Study",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE4"
+          ]
+        }
+      },
+      {
+        "statement": "NCT01639001 (PHASE3, COMPLETED) evaluates CRIZOTINIB",
+        "edge_id": "NCT01639001|EVALUATES|CHEMBL601719|NCT01639001",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT01639001",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT01639001",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "A Study Of Crizotinib Versus Chemotherapy In Previously Untreated ALK Positive East Asian Non-Small Cell Lung Cancer Patients",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04009317 (PHASE3, UNKNOWN) evaluates CRIZOTINIB",
+        "edge_id": "NCT04009317|EVALUATES|CHEMBL601719|NCT04009317",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04009317",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04009317",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Study of TQ-B3139 Versus Crizotinib in the First Line Treatment of Subjects With Anaplastic Lymphoma Kinase (ALK) Positive Non-Small Cell Lung Cancer (NSCLC)",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT07816380 (PHASE3, NOT_YET_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT07816380|EVALUATES|CHEMBL601719|NCT07816380",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT07816380",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT07816380",
+        "detail": {
+          "stated_intervention": "Crizotinib Capsules",
+          "title": "A Phase III Study to Evaluate the Efficacy and Safety of JYP0322 in Previously Untreated ROS1-Positive Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
+          "status": "NOT_YET_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "correct_trial_pairs_split",
+    "retrieval_questions": [
+      "What trials evaluate Tagrisso?",
+      "What trials evaluate crizotinib?"
+    ],
+    "answer": "NCT03909334 evaluates osimertinib. NCT06254599 evaluates crizotinib.",
+    "checks": {
+      "grounded": true,
+      "applicable": true,
+      "unsupported_claims": [],
+      "evidence_count": 24,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "NCT03909334 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT03909334",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT03909334",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Study of Osimertinib With and Without Ramucirumab in Locally Advanced or Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT07680790 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT07680790|EVALUATES|CHEMBL3353410|NCT07680790",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT07680790",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT07680790",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Study of Izalontamab Brengitecan (BMS-986507) in Combination With Osimertinib Versus Osimertinib Monotherapy or Osimertinib in Combination With Platinum-based Chemotherapy for EGFRmt Non-small Cell Lung Cancer (IZABRIGHT-Lung02)",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT02411448 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT02411448|EVALUATES|CHEMBL3353410|NCT02411448",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT02411448",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT02411448",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "A Study of Ramucirumab (LY3009806) in Combination With Erlotinib in Previously Untreated Participants With EGFR Mutation-Positive Metastatic NSCLC (RELAY)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04285671 (PHASE1, PHASE2, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT04285671|EVALUATES|CHEMBL3353410|NCT04285671",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04285671",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04285671",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Necitumumab and Trastuzumab in Combination With Osimertinib for the Treatment of Refractory Epidermal Growth Factor Receptor (EGFR)-Mutated Stage IV Non-small Cell Lung Cancer",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04141644 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT04141644|EVALUATES|CHEMBL3353410|NCT04141644",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04141644",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04141644",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Safety and Efficacy of Combination Osimertinib and Ipilimumab in Patients w EGFR Mutated NSCLC",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      },
+      {
+        "statement": "NCT03535363 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "edge_id": "NCT03535363|EVALUATES|CHEMBL3353410|NCT03535363",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT03535363",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT03535363",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Osimertinib With Stereotactic Radiosurgery (SRS) in Brain Metastases From EGFR Positive NSCLC",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04487080 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT04487080|EVALUATES|CHEMBL3353410|NCT04487080",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04487080",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04487080",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "A Study of Amivantamab and Lazertinib Combination Therapy Versus Osimertinib in Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT07738172 (PHASE3, RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT07738172|EVALUATES|CHEMBL3353410|NCT07738172",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT07738172",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT07738172",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Osimertinib With or Without Primary Lung Tumor Resection for EGFR-Mutant Oligometastatic Non-Small Cell Lung Cancer",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04541407 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "edge_id": "NCT04541407|EVALUATES|CHEMBL3353410|NCT04541407",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04541407",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04541407",
+        "detail": {
+          "stated_intervention": "Temozolomide plus Osimertinib",
+          "title": "Temodar Plus Tyrosine Kinase Inhibitors for Progressive CNS Disease",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04772235 (PHASE1, UNKNOWN) evaluates OSIMERTINIB",
+        "edge_id": "NCT04772235|EVALUATES|CHEMBL3353410|NCT04772235",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04772235",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04772235",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Phase I Study of Repotrectinib and Osimertinib in NSCLC Patients",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      },
+      {
+        "statement": "NCT05011487 (PHASE2, RECRUITING) evaluates OSIMERTINIB",
+        "edge_id": "NCT05011487|EVALUATES|CHEMBL3353410|NCT05011487",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT05011487",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT05011487",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Neoadjuvant Osimertinib + Chemotherapy for EGFR-mutant Stage III NSCLC",
+          "status": "RECRUITING",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04479306 (PHASE1, COMPLETED) evaluates OSIMERTINIB",
+        "edge_id": "NCT04479306|EVALUATES|CHEMBL3353410|NCT04479306",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04479306",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04479306",
+        "detail": {
+          "stated_intervention": "Osimertinib",
+          "title": "Osimertinib in Combination With Alisertib or Sapanisertib for the Treatment of Osimertinib-Resistant EGFR Mutant Stage IIIB or IV Non-Small Cell Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        }
+      },
+      {
+        "statement": "NCT06254599 (PHASE3, NOT_YET_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT06254599|EVALUATES|CHEMBL601719|NCT06254599",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT06254599",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT06254599",
+        "detail": {
+          "stated_intervention": "Crizotinib Capsules",
+          "title": "A Study Of SY-3505 Versus Crizotinib In First Line Treatment Of Patients With ALK-Positive NSCLC",
+          "status": "NOT_YET_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT01945021 (PHASE2, COMPLETED) evaluates CRIZOTINIB",
+        "edge_id": "NCT01945021|EVALUATES|CHEMBL601719|NCT01945021",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT01945021",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT01945021",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Phase II Safety and Efficacy Study of Crizotinib in East Asian Patients With ROS1 Positive, ALK Negative Advanced NSCLC",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT02584634 (PHASE1, PHASE2, TERMINATED) evaluates CRIZOTINIB",
+        "edge_id": "NCT02584634|EVALUATES|CHEMBL601719|NCT02584634",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT02584634",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT02584634",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Study to Evaluate Safety, Efficacy, Pharmacokinetics And Pharmacodynamics Of Avelumab In Combination With Either Crizotinib Or PF-06463922 In Patients With NSCLC. (Javelin Lung 101)",
+          "status": "TERMINATED",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT02201992 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT02201992|EVALUATES|CHEMBL601719|NCT02201992",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT02201992",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT02201992",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Crizotinib in Treating Patients With Stage IB-IIIA Non-small Cell Lung Cancer That Has Been Removed by Surgery and ALK Fusion Mutations (An ALCHEMIST Treatment Trial)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT06140836 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT06140836|EVALUATES|CHEMBL601719|NCT06140836",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT06140836",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT06140836",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "A Study of Repotrectinib Versus Crizotinib in Participants With Locally Advanced or Metastatic Tyrosine Kinase Inhibitor (TKI)-naïve ROS1-positive Non-Small Cell Lung Cancer (NSCLC) (TRIDENT-3)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04084717 (PHASE2, COMPLETED) evaluates CRIZOTINIB",
+        "edge_id": "NCT04084717|EVALUATES|CHEMBL601719|NCT04084717",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04084717",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04084717",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Study of Crizotinib for ROS1 and MET Activated Lung Cancer",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04439253 (PHASE2, ACTIVE_NOT_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT04439253|EVALUATES|CHEMBL601719|NCT04439253",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04439253",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04439253",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Testing Crizotinib as a Potential Targeted Treatment in Cancers With ROS1 Genetic Changes (MATCH-Subprotocol G)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04603807 (PHASE3, ACTIVE_NOT_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT04603807|EVALUATES|CHEMBL601719|NCT04603807",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04603807",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04603807",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "A Study to Compare the Efficacy and Safety of Entrectinib and Crizotinib in Participants With Advanced or Metastatic ROS1 Non-small Cell Lung Cancer (NSCLC) With and Without Central Nervous System (CNS) Metastases",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT05160922 (PHASE4, ACTIVE_NOT_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT05160922|EVALUATES|CHEMBL601719|NCT05160922",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT05160922",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT05160922",
+        "detail": {
+          "stated_intervention": "crizotinib",
+          "title": "Crizotinib Continuation Clinical Study",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phases": [
+            "PHASE4"
+          ]
+        }
+      },
+      {
+        "statement": "NCT01639001 (PHASE3, COMPLETED) evaluates CRIZOTINIB",
+        "edge_id": "NCT01639001|EVALUATES|CHEMBL601719|NCT01639001",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT01639001",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT01639001",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "A Study Of Crizotinib Versus Chemotherapy In Previously Untreated ALK Positive East Asian Non-Small Cell Lung Cancer Patients",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT04009317 (PHASE3, UNKNOWN) evaluates CRIZOTINIB",
+        "edge_id": "NCT04009317|EVALUATES|CHEMBL601719|NCT04009317",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT04009317",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT04009317",
+        "detail": {
+          "stated_intervention": "Crizotinib",
+          "title": "Study of TQ-B3139 Versus Crizotinib in the First Line Treatment of Subjects With Anaplastic Lymphoma Kinase (ALK) Positive Non-Small Cell Lung Cancer (NSCLC)",
+          "status": "UNKNOWN",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      },
+      {
+        "statement": "NCT07816380 (PHASE3, NOT_YET_RECRUITING) evaluates CRIZOTINIB",
+        "edge_id": "NCT07816380|EVALUATES|CHEMBL601719|NCT07816380",
+        "relation": "EVALUATES",
+        "source": "clinicaltrials.gov",
+        "source_record": "NCT07816380",
+        "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+        "confidence": 1.0,
+        "tier": "EXACT",
+        "url": "https://clinicaltrials.gov/study/NCT07816380",
+        "detail": {
+          "stated_intervention": "Crizotinib Capsules",
+          "title": "A Phase III Study to Evaluate the Efficacy and Safety of JYP0322 in Previously Untreated ROS1-Positive Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
+          "status": "NOT_YET_RECRUITING",
+          "phases": [
+            "PHASE3"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "wrong_company_pairs",
+    "retrieval_questions": [
+      "What is AstraZeneca running in NSCLC?",
+      "What is Pfizer running in NSCLC?"
+    ],
+    "answer": "AstraZeneca sponsors crizotinib and Pfizer sponsors osimertinib.",
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "relation",
+          "value": "Astrazeneca — sponsors — CRIZOTINIB",
+          "sentence": "AstraZeneca sponsors crizotinib and Pfizer sponsors osimertinib.",
+          "why": "no retrieved edge links these two entities this way"
+        },
+        {
+          "kind": "relation",
+          "value": "Pfizer — sponsors — OSIMERTINIB",
+          "sentence": "AstraZeneca sponsors crizotinib and Pfizer sponsors osimertinib.",
+          "why": "no retrieved edge links these two entities this way"
+        }
+      ],
+      "evidence_count": 24,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 14,
+          "example_trials": [
+            "NCT01802632",
+            "NCT02143466",
+            "NCT02224053"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 10,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 8,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00034879",
+            "NCT00234442"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 7,
+          "example_trials": [
+            "NCT02740985",
+            "NCT03164616",
+            "NCT03703297"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT02453282",
+            "NCT03164616",
+            "NCT04035486"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00372788",
+            "NCT02453282",
+            "NCT03164616"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT05123482",
+            "NCT06357533",
+            "NCT06627647"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT01605916, NCT01933932",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00372788",
+            "NCT01605916",
+            "NCT01933932"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT06627647, NCT06692738",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT06627647",
+            "NCT06692738"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00478049, NCT01933932, NCT02740985",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00478049",
+            "NCT01933932",
+            "NCT02740985"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT07098338, NCT07291037",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT07098338",
+            "NCT07291037"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 7 NSCLC trial(s) evaluating CARBOPLATIN",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00113516, NCT00174356, NCT00596830",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 7,
+          "example_trials": [
+            "NCT00113516",
+            "NCT00174356",
+            "NCT00596830"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 6 NSCLC trial(s) evaluating LORLATINIB",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL3286830|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02584634, NCT04362072, NCT04541706",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT02584634",
+            "NCT04362072",
+            "NCT04541706"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 6 NSCLC trial(s) evaluating CRIZOTINIB",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL601719|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00932893, NCT01121575, NCT01639001",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00932893",
+            "NCT01121575",
+            "NCT01639001"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 5 NSCLC trial(s) evaluating PACLITAXEL",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00113516, NCT00174356, NCT00596830",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 5,
+          "example_trials": [
+            "NCT00113516",
+            "NCT00174356",
+            "NCT00596830"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating CISPLATIN",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00254904, NCT00907504, NCT01639001",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00254904",
+            "NCT00907504",
+            "NCT01639001"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating DACOMITINIB",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL2105719|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT01465802, NCT01774721, NCT01858389",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT01465802",
+            "NCT01774721",
+            "NCT01858389"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating DACOMITINIB ANHYDROUS",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL2110732|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00548093, NCT00728390, NCT00769067",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00548093",
+            "NCT00728390",
+            "NCT00769067"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating PEMETREXED",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00321308, NCT00932893, NCT01639001",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00321308",
+            "NCT00932893",
+            "NCT01639001"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating BINIMETINIB",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL3187723|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT01885195, NCT03915951, NCT04543188",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT01885195",
+            "NCT03915951",
+            "NCT04543188"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating SASANLIMAB",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL4298191|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT05233436, NCT06285097, NCT06546553",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT05233436",
+            "NCT06285097",
+            "NCT06546553"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 3 NSCLC trial(s) evaluating AGATOLIMOD",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL2103792|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00254904, NCT00321308, NCT00321815",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 3,
+          "example_trials": [
+            "NCT00254904",
+            "NCT00321308",
+            "NCT00321815"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 3 NSCLC trial(s) evaluating DOCETAXEL",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00712504, NCT00932893, NCT03854227",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 3,
+          "example_trials": [
+            "NCT00712504",
+            "NCT00932893",
+            "NCT03854227"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "correct_company_pairs_same_sentence",
+    "retrieval_questions": [
+      "What is AstraZeneca running in NSCLC?",
+      "What is Pfizer running in NSCLC?"
+    ],
+    "answer": "AstraZeneca sponsors osimertinib and Pfizer sponsors crizotinib.",
+    "checks": {
+      "grounded": true,
+      "applicable": true,
+      "unsupported_claims": [],
+      "evidence_count": 24,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 14,
+          "example_trials": [
+            "NCT01802632",
+            "NCT02143466",
+            "NCT02224053"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 10,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 8,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00034879",
+            "NCT00234442"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 7,
+          "example_trials": [
+            "NCT02740985",
+            "NCT03164616",
+            "NCT03703297"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT02453282",
+            "NCT03164616",
+            "NCT04035486"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00372788",
+            "NCT02453282",
+            "NCT03164616"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT05123482",
+            "NCT06357533",
+            "NCT06627647"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT01605916, NCT01933932",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00372788",
+            "NCT01605916",
+            "NCT01933932"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT06627647, NCT06692738",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT06627647",
+            "NCT06692738"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00478049, NCT01933932, NCT02740985",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00478049",
+            "NCT01933932",
+            "NCT02740985"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT07098338, NCT07291037",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT07098338",
+            "NCT07291037"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 7 NSCLC trial(s) evaluating CARBOPLATIN",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00113516, NCT00174356, NCT00596830",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 7,
+          "example_trials": [
+            "NCT00113516",
+            "NCT00174356",
+            "NCT00596830"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 6 NSCLC trial(s) evaluating LORLATINIB",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL3286830|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02584634, NCT04362072, NCT04541706",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT02584634",
+            "NCT04362072",
+            "NCT04541706"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 6 NSCLC trial(s) evaluating CRIZOTINIB",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL601719|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00932893, NCT01121575, NCT01639001",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00932893",
+            "NCT01121575",
+            "NCT01639001"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 5 NSCLC trial(s) evaluating PACLITAXEL",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00113516, NCT00174356, NCT00596830",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 5,
+          "example_trials": [
+            "NCT00113516",
+            "NCT00174356",
+            "NCT00596830"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating CISPLATIN",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00254904, NCT00907504, NCT01639001",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00254904",
+            "NCT00907504",
+            "NCT01639001"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating DACOMITINIB",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL2105719|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT01465802, NCT01774721, NCT01858389",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT01465802",
+            "NCT01774721",
+            "NCT01858389"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating DACOMITINIB ANHYDROUS",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL2110732|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00548093, NCT00728390, NCT00769067",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00548093",
+            "NCT00728390",
+            "NCT00769067"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating PEMETREXED",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00321308, NCT00932893, NCT01639001",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00321308",
+            "NCT00932893",
+            "NCT01639001"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating BINIMETINIB",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL3187723|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT01885195, NCT03915951, NCT04543188",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT01885195",
+            "NCT03915951",
+            "NCT04543188"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating SASANLIMAB",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL4298191|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT05233436, NCT06285097, NCT06546553",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT05233436",
+            "NCT06285097",
+            "NCT06546553"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 3 NSCLC trial(s) evaluating AGATOLIMOD",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL2103792|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00254904, NCT00321308, NCT00321815",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 3,
+          "example_trials": [
+            "NCT00254904",
+            "NCT00321308",
+            "NCT00321815"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 3 NSCLC trial(s) evaluating DOCETAXEL",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00712504, NCT00932893, NCT03854227",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 3,
+          "example_trials": [
+            "NCT00712504",
+            "NCT00932893",
+            "NCT03854227"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "correct_company_pairs_split",
+    "retrieval_questions": [
+      "What is AstraZeneca running in NSCLC?",
+      "What is Pfizer running in NSCLC?"
+    ],
+    "answer": "AstraZeneca sponsors osimertinib. Pfizer sponsors crizotinib.",
+    "checks": {
+      "grounded": true,
+      "applicable": true,
+      "unsupported_claims": [],
+      "evidence_count": 24,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "Astrazeneca sponsors 14 NSCLC trial(s) evaluating OSIMERTINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT01802632, NCT02143466, NCT02224053",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 14,
+          "example_trials": [
+            "NCT01802632",
+            "NCT02143466",
+            "NCT02224053"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 10 NSCLC trial(s) evaluating CARBOPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 10,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 8 NSCLC trial(s) evaluating GEFITINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00034879, NCT00234442",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 8,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00034879",
+            "NCT00234442"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 7 NSCLC trial(s) evaluating DURVALUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02740985, NCT03164616, NCT03703297",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 7,
+          "example_trials": [
+            "NCT02740985",
+            "NCT03164616",
+            "NCT03703297"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating CISPLATIN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02453282, NCT03164616, NCT04035486",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT02453282",
+            "NCT03164616",
+            "NCT04035486"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PEMETREXED",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT02453282, NCT03164616",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00372788",
+            "NCT02453282",
+            "NCT03164616"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating PACLITAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00006049, NCT00322452, NCT01000896",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00006049",
+            "NCT00322452",
+            "NCT01000896"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 6 NSCLC trial(s) evaluating RILVEGOSTOMIG",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT05123482, NCT06357533, NCT06627647",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT05123482",
+            "NCT06357533",
+            "NCT06627647"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating SELUMETINIB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00372788, NCT01605916, NCT01933932",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00372788",
+            "NCT01605916",
+            "NCT01933932"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating PEMBROLIZUMAB",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT06627647, NCT06692738",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT06627647",
+            "NCT06692738"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DOCETAXEL",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00478049, NCT01933932, NCT02740985",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00478049",
+            "NCT01933932",
+            "NCT02740985"
+          ]
+        }
+      },
+      {
+        "statement": "Astrazeneca sponsors 4 NSCLC trial(s) evaluating DATOPOTAMAB DERUXTECAN",
+        "edge_id": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT06357533, NCT07098338, NCT07291037",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT06357533",
+            "NCT07098338",
+            "NCT07291037"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 7 NSCLC trial(s) evaluating CARBOPLATIN",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00113516, NCT00174356, NCT00596830",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 7,
+          "example_trials": [
+            "NCT00113516",
+            "NCT00174356",
+            "NCT00596830"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 6 NSCLC trial(s) evaluating LORLATINIB",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL3286830|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT02584634, NCT04362072, NCT04541706",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT02584634",
+            "NCT04362072",
+            "NCT04541706"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 6 NSCLC trial(s) evaluating CRIZOTINIB",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL601719|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00932893, NCT01121575, NCT01639001",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 6,
+          "example_trials": [
+            "NCT00932893",
+            "NCT01121575",
+            "NCT01639001"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 5 NSCLC trial(s) evaluating PACLITAXEL",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00113516, NCT00174356, NCT00596830",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 5,
+          "example_trials": [
+            "NCT00113516",
+            "NCT00174356",
+            "NCT00596830"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating CISPLATIN",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00254904, NCT00907504, NCT01639001",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00254904",
+            "NCT00907504",
+            "NCT01639001"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating DACOMITINIB",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL2105719|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT01465802, NCT01774721, NCT01858389",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT01465802",
+            "NCT01774721",
+            "NCT01858389"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating DACOMITINIB ANHYDROUS",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL2110732|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00548093, NCT00728390, NCT00769067",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00548093",
+            "NCT00728390",
+            "NCT00769067"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating PEMETREXED",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00321308, NCT00932893, NCT01639001",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT00321308",
+            "NCT00932893",
+            "NCT01639001"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating BINIMETINIB",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL3187723|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT01885195, NCT03915951, NCT04543188",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT01885195",
+            "NCT03915951",
+            "NCT04543188"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 4 NSCLC trial(s) evaluating SASANLIMAB",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL4298191|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT05233436, NCT06285097, NCT06546553",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 4,
+          "example_trials": [
+            "NCT05233436",
+            "NCT06285097",
+            "NCT06546553"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 3 NSCLC trial(s) evaluating AGATOLIMOD",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL2103792|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00254904, NCT00321308, NCT00321815",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 3,
+          "example_trials": [
+            "NCT00254904",
+            "NCT00321308",
+            "NCT00321815"
+          ]
+        }
+      },
+      {
+        "statement": "Pfizer sponsors 3 NSCLC trial(s) evaluating DOCETAXEL",
+        "edge_id": "ORG:pfizer|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "relation": "SPONSORS_TRIAL_OF",
+        "source": "derived",
+        "source_record": "NCT00712504, NCT00932893, NCT03854227",
+        "fetched_at": null,
+        "confidence": 1.0,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "evidence_trials": 3,
+          "example_trials": [
+            "NCT00712504",
+            "NCT00932893",
+            "NCT03854227"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "phase_13_regex",
+    "retrieval_questions": [
+      "Which drugs act on ALK?"
+    ],
+    "answer": "PLB1003 is phase 13.",
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "phase",
+          "value": "phase 13",
+          "sentence": "PLB1003 is phase 13.",
+          "why": "no evidence statement about these entities gives that phase"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL4650298",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL4650298",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1"
+        }
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3899477",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3899477",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1_2"
+        }
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3545360",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3545360",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1"
+        }
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3707320",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3707320",
+          "trials_in_graph": 1,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3286830",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3286830",
+          "trials_in_graph": 13,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL4113131",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL4113131",
+          "trials_in_graph": 10,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL1983268",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL1983268",
+          "trials_in_graph": 5,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3545311",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3545311",
+          "trials_in_graph": 9,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL2403108",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL2403108",
+          "trials_in_graph": 9,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL601719",
+          "trials_in_graph": 15,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL1738797",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL1738797",
+          "trials_in_graph": 16,
+          "max_phase_overall": "APPROVAL"
+        }
+      }
+    ]
+  },
+  {
+    "id": "phase_10_regex",
+    "retrieval_questions": [
+      "Which drugs act on ALK?"
+    ],
+    "answer": "PLB1003 is phase 10.",
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "phase",
+          "value": "phase 10",
+          "sentence": "PLB1003 is phase 10.",
+          "why": "no evidence statement about these entities gives that phase"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL4650298",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL4650298",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1"
+        }
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3899477",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3899477",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1_2"
+        }
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3545360",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3545360",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1"
+        }
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3707320",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3707320",
+          "trials_in_graph": 1,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3286830",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3286830",
+          "trials_in_graph": 13,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL4113131",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL4113131",
+          "trials_in_graph": 10,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL1983268",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL1983268",
+          "trials_in_graph": 5,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3545311",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3545311",
+          "trials_in_graph": 9,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL2403108",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL2403108",
+          "trials_in_graph": 9,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL601719",
+          "trials_in_graph": 15,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL1738797",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL1738797",
+          "trials_in_graph": 16,
+          "max_phase_overall": "APPROVAL"
+        }
+      }
+    ]
+  },
+  {
+    "id": "count_after_colon",
+    "retrieval_questions": [
+      "Which drugs act on ALK?"
+    ],
+    "answer": "PLB1003 NSCLC trials: 13.",
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "number",
+          "value": "13",
+          "sentence": "PLB1003 NSCLC trials: 13.",
+          "why": "no evidence statement about these entities gives that figure"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL4650298",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL4650298",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1"
+        }
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3899477",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3899477",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1_2"
+        }
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3545360",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3545360",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1"
+        }
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3707320",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3707320",
+          "trials_in_graph": 1,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3286830",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3286830",
+          "trials_in_graph": 13,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL4113131",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL4113131",
+          "trials_in_graph": 10,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL1983268",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL1983268",
+          "trials_in_graph": 5,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3545311",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3545311",
+          "trials_in_graph": 9,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL2403108",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL2403108",
+          "trials_in_graph": 9,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL601719",
+          "trials_in_graph": 15,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL1738797",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL1738797",
+          "trials_in_graph": 16,
+          "max_phase_overall": "APPROVAL"
+        }
+      }
+    ]
+  },
+  {
+    "id": "count_after_colon_list",
+    "retrieval_questions": [
+      "Which drugs act on ALK?"
+    ],
+    "answer": "- PLB1003: NSCLC trials: 13\n- lorlatinib: NSCLC trials: 0",
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "number",
+          "value": "0",
+          "sentence": "lorlatinib: NSCLC trials: 0",
+          "why": "no evidence statement about these entities gives that figure"
+        },
+        {
+          "kind": "number",
+          "value": "13",
+          "sentence": "PLB1003: NSCLC trials: 13",
+          "why": "no evidence statement about these entities gives that figure"
+        }
+      ],
+      "evidence_count": 11,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "PLB1003 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL4650298|ACTS_ON|ENSG00000171094|CHEMBL4650298",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL4650298",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL4650298",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1"
+        }
+      },
+      {
+        "statement": "CONTELTINIB acts on ALK (inhibitor; max stage PHASE_1_2; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3899477|ACTS_ON|ENSG00000171094|CHEMBL3899477",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3899477",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3899477",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1_2"
+        }
+      },
+      {
+        "statement": "ASP-3026 acts on ALK (inhibitor; max stage PHASE_1; 0 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3545360|ACTS_ON|ENSG00000171094|CHEMBL3545360",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3545360",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3545360",
+          "trials_in_graph": 0,
+          "max_phase_overall": "PHASE_1"
+        }
+      },
+      {
+        "statement": "ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor; max stage APPROVAL; 1 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3707320",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3707320",
+          "trials_in_graph": 1,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "LORLATINIB acts on ALK (inhibitor; max stage APPROVAL; 13 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3286830|ACTS_ON|ENSG00000171094|CHEMBL3286830",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3286830",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3286830",
+          "trials_in_graph": 13,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ENSARTINIB acts on ALK (inhibitor; max stage APPROVAL; 10 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL4113131|ACTS_ON|ENSG00000171094|CHEMBL4113131",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL4113131",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL4113131",
+          "trials_in_graph": 10,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ENTRECTINIB acts on ALK (inhibitor; max stage APPROVAL; 5 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL1983268|ACTS_ON|ENSG00000171094|CHEMBL1983268",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL1983268",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL1983268",
+          "trials_in_graph": 5,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "BRIGATINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL3545311|ACTS_ON|ENSG00000171094|CHEMBL3545311",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3545311",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL3545311",
+          "trials_in_graph": 9,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "CERITINIB acts on ALK (inhibitor; max stage APPROVAL; 9 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL2403108|ACTS_ON|ENSG00000171094|CHEMBL2403108",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL2403108",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL2403108",
+          "trials_in_graph": 9,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "CRIZOTINIB acts on ALK (inhibitor; max stage APPROVAL; 15 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL601719|ACTS_ON|ENSG00000171094|CHEMBL601719",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL601719",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL601719",
+          "trials_in_graph": 15,
+          "max_phase_overall": "APPROVAL"
+        }
+      },
+      {
+        "statement": "ALECTINIB acts on ALK (inhibitor; max stage APPROVAL; 16 NSCLC trial(s) in this graph)",
+        "edge_id": "CHEMBL1738797|ACTS_ON|ENSG00000171094|CHEMBL1738797",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL1738797",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "drug_id": "CHEMBL1738797",
+          "trials_in_graph": 16,
+          "max_phase_overall": "APPROVAL"
+        }
+      }
+    ]
+  },
+  {
+    "id": "reversed_noun",
+    "retrieval_questions": [
+      "What does osimertinib target?"
+    ],
+    "answer": "EGFR is an osimertinib inhibitor.",
+    "checks": {
+      "grounded": false,
+      "applicable": true,
+      "unsupported_claims": [
+        {
+          "kind": "relation_direction",
+          "value": "EGFR inhibitor OSIMERTINIB",
+          "sentence": "EGFR is an osimertinib inhibitor.",
+          "why": "this relation runs from a drug to a target; the sentence has it the other way or between the wrong kinds"
+        }
+      ],
+      "evidence_count": 1,
+      "method": "entity and tokenised-numeric overlap against the retrieved evidence; sentence claims checked against edges and entity-scoped wording"
+    },
+    "evidence": [
+      {
+        "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+        "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+        "relation": "ACTS_ON",
+        "source": "Open Targets / ChEMBL",
+        "source_record": "CHEMBL3353410",
+        "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+        "confidence": 0.95,
+        "tier": null,
+        "url": null,
+        "detail": {
+          "action_type": "INHIBITOR"
+        }
+      }
+    ]
+  }
+]
