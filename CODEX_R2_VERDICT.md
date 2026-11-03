@@ -68,3 +68,20 @@ Codex 보고를 그대로 믿지 않고, 아래 각 줄을 이 레포에서 직�
 
 - `corticosteroid` 의 해석 대상(HYDROCORTISONE 이라 함 → 실제는 PREDNISONE).
 - `mab inhibitor` 를 "가드를 빠져나간다"고 했지만 결과는 UNRESOLVED 라 잘못된 주장은 생기지 않는다(사유 코드 누락만 결함).
+
+## 수리 결과 (2026-11-03 KST)
+
+위 "맞음"·"부분" 항목은 전부 고쳤다. 커밋 8d8be5b · ca27e4b, 회귀 시험 `tests/test_audit_round2.py` 20개(전체 44개 통과).
+연달아 두 번 재빌드했을 때 added/changed/retired = 0/0/0.
+
+- 홀드아웃 헤드라인: 라벨 당시 원시 **103/115 = 89.6%**(Wilson 82.6~93.9). Codex 의 가중 96.0% 는 오늘의 모집단 가중치에
+  예전 라벨을 섞은 값이라 싣지 않는다(라벨 당시 계층 모집단은 저장돼 있지 않다).
+- 현재 파이프라인 test 99/99 는 수리가 겨냥한 행을 다시 채점한 것이라 홀드아웃 추정치가 아니다. 해석이 바뀐 25행은
+  stale 로 빼서 `evaluation_frozen_test.json.stale_labels` 에 재라벨링 목록으로 남겼다.
+- 수리하면서 새로 찾은 것: AACT 유래 동의어 2,595개(전체 28%)가 오염원이다(tobramycin 은 그 한 예). 318개를 규칙으로 뺐다.
+  첫 시도는 너무 넓어 apatinib(=rivoceranib) 같은 맞는 이름까지 지웠다 → 큐레이션된 동의어·철자 유사도로 좁혔다.
+  남은 거절 쪽 오류(terelizumab 등)는 README 남은 결함 11번.
+- 수리 첫판이 망가뜨렸다가 되돌린 것: "Non-platinum chemotherapy: paclitaxel" 이 부정으로 막힘("non" 제외),
+  PTX·DOC 3글자 약어 삭제(사전 전체에서 한 분자에만 걸리면 유지).
+- 수리 전후 gold 문자열 411개 해석 비교: 28개 바뀜. 괄호 공유 버그(AZD8205→saruparib, IM→imatinib)·요법 약어(AC→doxorubicin,
+  EP→etoposide)가 없어졌고, ABI-007·Genexol-PM·CC-486·NanoPac 은 별도 제품으로 막힌다.
