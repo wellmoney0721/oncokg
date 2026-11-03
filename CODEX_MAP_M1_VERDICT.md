@@ -100,3 +100,16 @@ Tests 334.
 | M8-S4 | a stored name's final period stripped before comparison | both sides are stripped alike |
 
 Tests 336.
+
+## Round 9 (audit_evidence_claims/m9) — CHANGES REQUIRED
+
+The positive lookup key (letters and digits only) was broader than every refusal check. Refusal now runs on that same form:
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M9-B1 | "bevacizumab_awwb", "bevácizumab-awwb" | item guards also see the text accent-stripped and with underscores and punctuation folded; a matched name whose key ends in a known biosimilar suffix (stem = the same drug) is refused |
+| M9-B2 | "[89.Zr] trastuzumab", "89:Zr trastuzumab" | an isotope label (one or two letters-and-digits words, any separator) just before or after a matched name refuses that name |
+| M9-B3 | "bevacizumab awwb", "bevacizumab (awwb)" (stored alias `Bevacizumab awwb`) | the suffix-key rule above, and a known suffix as the next word |
+| M9-S1 | four lone stored names refused | "Theophylline in dextrose 5% in plastic container" fixed (the item-wide isotope rule is gone; isotopes count only beside a name). Still refused, recorded as known over-refusal: `40-o-(2-hydroxyethyl)-rapamycin`, `42-o-(2-hydroxyethyl)rapamycin` (the chemical locant reads as an isotope) and `Trastuzumab--vcmmae conjugate` (an ADC, a different drug). An exact-stored-name exception was not added: 71 stored aliases carry an isotope without a hyphen ("89zr panitumumab", "Lutetium (177lu) dotatate"), and the exception would draw them as the originator. EVEROLIMUS and TRASTUZUMAB VEDOTIN remain reachable by their names and ids. |
+
+Side effect: "osimertinib with [89Zr] trastuzumab" now refuses only trastuzumab (the isotope binds to its neighbour) instead of both. Tests 337.

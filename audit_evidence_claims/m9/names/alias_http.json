@@ -1,0 +1,1662 @@
+[
+  {
+    "input": "(E/Z)-AFATINIB",
+    "stored_hits": [
+      {
+        "drug_id": "CHEMBL1173655",
+        "alias": "(E/Z)-AFATINIB",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      }
+    ],
+    "requests": [
+      {
+        "endpoint": "resolve",
+        "status": 200,
+        "response": {
+          "raw": "(E/Z)-AFATINIB",
+          "components": [
+            {
+              "component": "AFATINIB",
+              "tier": "EXACT",
+              "drug_id": "CHEMBL1173655",
+              "score": null,
+              "rules": [
+                "extract_parenthetical"
+              ],
+              "matched_alias": "AFATINIB",
+              "candidates": null,
+              "drug": {
+                "name": "AFATINIB",
+                "drug_type": "Small molecule",
+                "max_phase_overall": "APPROVAL",
+                "max_phase_in_nsclc": "APPROVAL",
+                "mechanisms": [
+                  "Epidermal growth factor receptor erbB1 inhibitor",
+                  "Receptor protein-tyrosine kinase erbB-2 inhibitor",
+                  "Receptor protein-tyrosine kinase erbB-4 inhibitor"
+                ],
+                "trials": 18
+              }
+            }
+          ]
+        }
+      },
+      {
+        "endpoint": "explore",
+        "status": 200,
+        "response": {
+          "center": {
+            "id": "CHEMBL1173655",
+            "type": "Drug",
+            "label": "AFATINIB",
+            "matched_text": "(E/Z)-AFATINIB",
+            "trials": 18,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "EVALUATES",
+              "dir": "in",
+              "type": "Trial",
+              "role": null,
+              "total": 18,
+              "items": [
+                {
+                  "id": "NCT05298176",
+                  "type": "Trial",
+                  "label": "NCT05298176",
+                  "edge_id": "NCT05298176|EVALUATES|CHEMBL1173655|NCT05298176",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Combining Afatinib and Concurrent Chemotherapy, Followed by Osimertinib and Concurrent Chemotherapy, in Untreated EGFR Positive NSCLC Tumors",
+                  "start_date": "2022-01-04",
+                  "url": "https://clinicaltrials.gov/study/NCT05298176",
+                  "weight": "2022-01-04"
+                },
+                {
+                  "id": "NCT03054038",
+                  "type": "Trial",
+                  "label": "NCT03054038",
+                  "edge_id": "NCT03054038|EVALUATES|CHEMBL1173655|NCT03054038",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "TERMINATED",
+                  "title": "Afatinib and Necitumumab in Patients With EGFR Mutation Positive Advanced or Metastatic Non-small Cell Lung Cancer",
+                  "start_date": "2017-07-20",
+                  "url": "https://clinicaltrials.gov/study/NCT03054038",
+                  "weight": "2017-07-20"
+                },
+                {
+                  "id": "NCT02183883",
+                  "type": "Trial",
+                  "label": "NCT02183883",
+                  "edge_id": "NCT02183883|EVALUATES|CHEMBL1173655|NCT02183883",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Deciphering Afatinib Response and Resistance With INtratumour Heterogeneity",
+                  "start_date": "2016-12-16",
+                  "url": "https://clinicaltrials.gov/study/NCT02183883",
+                  "weight": "2016-12-16"
+                },
+                {
+                  "id": "NCT02795156",
+                  "type": "Trial",
+                  "label": "NCT02795156",
+                  "edge_id": "NCT02795156|EVALUATES|CHEMBL1173655|NCT02795156",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Study Assessing Activity of Molecularly Matched Targeted Therapies in Select Tumor Types Based on Genomic Alterations",
+                  "start_date": "2016-09-28",
+                  "url": "https://clinicaltrials.gov/study/NCT02795156",
+                  "weight": "2016-09-28"
+                },
+                {
+                  "id": "NCT02716311",
+                  "type": "Trial",
+                  "label": "NCT02716311",
+                  "edge_id": "NCT02716311|EVALUATES|CHEMBL1173655|NCT02716311",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Combination of Cetuximab With Afatinib for Patient With EGFR Mutated Lung Cancer",
+                  "start_date": "2016-05",
+                  "url": "https://clinicaltrials.gov/study/NCT02716311",
+                  "weight": "2016-05"
+                },
+                {
+                  "id": "NCT02488694",
+                  "type": "Trial",
+                  "label": "NCT02488694",
+                  "edge_id": "NCT02488694|EVALUATES|CHEMBL1173655|NCT02488694",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "TERMINATED",
+                  "title": "Maintaining ERBB Blockade in EGFR-mutated Lung Cancer",
+                  "start_date": "2015-11",
+                  "url": "https://clinicaltrials.gov/study/NCT02488694",
+                  "weight": "2015-11"
+                },
+                {
+                  "id": "NCT02145637",
+                  "type": "Trial",
+                  "label": "NCT02145637",
+                  "edge_id": "NCT02145637|EVALUATES|CHEMBL1173655|NCT02145637",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Phase I Study of the Combination of Afatinib and Ruxolitinib in Patients With Treatment-refractory Non-Small Cell Lung Cancer (NSCLC)",
+                  "start_date": "2015-05-07",
+                  "url": "https://clinicaltrials.gov/study/NCT02145637",
+                  "weight": "2015-05-07"
+                },
+                {
+                  "id": "NCT02044380",
+                  "type": "Trial",
+                  "label": "NCT02044380",
+                  "edge_id": "NCT02044380|EVALUATES|CHEMBL1173655|NCT02044380",
+                  "phases": [
+                    "PHASE3"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Afatinib in Patients With Non Small Cell Lung Cancer (NSCLC) With Epidermal Growth Factor Receptor (EGFR) Mutations",
+                  "start_date": "2014-03",
+                  "url": "https://clinicaltrials.gov/study/NCT02044380",
+                  "weight": "2014-03"
+                },
+                {
+                  "id": "NCT01999985",
+                  "type": "Trial",
+                  "label": "NCT01999985",
+                  "edge_id": "NCT01999985|EVALUATES|CHEMBL1173655|NCT01999985",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Phase I Trial of Afatinib (BIBW 2992) and Dasatinib in Non-small Cell Lung Cancer (NSCLC)",
+                  "start_date": "2013-12-31",
+                  "url": "https://clinicaltrials.gov/study/NCT01999985",
+                  "weight": "2013-12-31"
+                },
+                {
+                  "id": "NCT01853826",
+                  "type": "Trial",
+                  "label": "NCT01853826",
+                  "edge_id": "NCT01853826|EVALUATES|CHEMBL1173655|NCT01853826",
+                  "phases": [
+                    "PHASE3"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "An Open Label Trial of Afatinib (Giotrif) in Treatment-naive (1st Line) or Chemotherapy Pre-treated Patients With Locally Advanced or Metastatic Non-small Cell Lung Cancer (NSCLC) Harboring EGFR Mutation(s)",
+                  "start_date": "2013-07-17",
+                  "url": "https://clinicaltrials.gov/study/NCT01853826",
+                  "weight": "2013-07-17"
+                },
+                {
+                  "id": "NCT01861223",
+                  "type": "Trial",
+                  "label": "NCT01861223",
+                  "edge_id": "NCT01861223|EVALUATES|CHEMBL1173655|NCT01861223",
+                  "phases": [
+                    "PHASE1",
+                    "PHASE2"
+                  ],
+                  "status": "UNKNOWN",
+                  "title": "Afatinib Plus Nimotuzumb for NSCLC",
+                  "start_date": "2013-05",
+                  "url": "https://clinicaltrials.gov/study/NCT01861223",
+                  "weight": "2013-05"
+                },
+                {
+                  "id": "NCT01836341",
+                  "type": "Trial",
+                  "label": "NCT01836341",
+                  "edge_id": "NCT01836341|EVALUATES|CHEMBL1173655|NCT01836341",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "WITHDRAWN",
+                  "title": "Afatinib In Combination With Cisplatin Or Carboplatin + Pemetrexed In Patients With EGFR-Mutant Lung Cancers Undergoing Definitive Chemoradiation",
+                  "start_date": "2013-04",
+                  "url": "https://clinicaltrials.gov/study/NCT01836341",
+                  "weight": "2013-04"
+                },
+                {
+                  "id": "NCT01156545",
+                  "type": "Trial",
+                  "label": "NCT01156545",
+                  "edge_id": "NCT01156545|EVALUATES|CHEMBL1173655|NCT01156545",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "BIBW 2992 Plus Simvastatin vs. BIBW 2992 in Previously Treated Patients With Advanced Non-adenocarcinomatous NSCLC",
+                  "start_date": "2010-10",
+                  "url": "https://clinicaltrials.gov/study/NCT01156545",
+                  "weight": "2010-10"
+                },
+                {
+                  "id": "NCT01121393",
+                  "type": "Trial",
+                  "label": "NCT01121393",
+                  "edge_id": "NCT01121393|EVALUATES|CHEMBL1173655|NCT01121393",
+                  "phases": [
+                    "PHASE3"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "BIBW 2992 (Afatinib) vs Gemcitabine-cisplatin in 1st Line Non-small Cell Lung Cancer (NSCLC)",
+                  "start_date": "2010-04-19",
+                  "url": "https://clinicaltrials.gov/study/NCT01121393",
+                  "weight": "2010-04-19"
+                },
+                {
+                  "id": "NCT01090011",
+                  "type": "Trial",
+                  "label": "NCT01090011",
+                  "edge_id": "NCT01090011|EVALUATES|CHEMBL1173655|NCT01090011",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Trial of BIBW 2992 (Afatinib) + Cetuximab in Non-Small Cell Lung Cancer",
+                  "start_date": "2010-03",
+                  "url": "https://clinicaltrials.gov/study/NCT01090011",
+                  "weight": "2010-03"
+                },
+                {
+                  "id": "NCT00993499",
+                  "type": "Trial",
+                  "label": "NCT00993499",
+                  "edge_id": "NCT00993499|EVALUATES|CHEMBL1173655|NCT00993499",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Trial of Continuous Once Daily Oral Treatment Using BIBW 2992 (Afatinib) Plus Sirolimus (Rapamune®) in Patients With Non-small Cell Lung Cancer Harbouring an EGFR Mutation and/or Disease Progression Following Prior Erlotinib or Gefitinib",
+                  "start_date": "2009-10",
+                  "url": "https://clinicaltrials.gov/study/NCT00993499",
+                  "weight": "2009-10"
+                },
+                {
+                  "id": "NCT00796549",
+                  "type": "Trial",
+                  "label": "NCT00796549",
+                  "edge_id": "NCT00796549|EVALUATES|CHEMBL1173655|NCT00796549",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "BIBW2992 (Afatinib) in Advanced (EGFR-FISH +) NSCLC (Non Small Cell Lung Cancer) Patients",
+                  "start_date": "2008-12",
+                  "url": "https://clinicaltrials.gov/study/NCT00796549",
+                  "weight": "2008-12"
+                },
+                {
+                  "id": "NCT00711594",
+                  "type": "Trial",
+                  "label": "NCT00711594",
+                  "edge_id": "NCT00711594|EVALUATES|CHEMBL1173655|NCT00711594",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "LUX-Lung 4: BIBW 2992 (Afatinib) Phase I Trial in Advanced Non Small Cell Lung Cancer Patients & Phase II Trial in Non Small Cell Lung Cancer Patients Failing Erlotinib or Gefitinib",
+                  "start_date": "2008-04",
+                  "url": "https://clinicaltrials.gov/study/NCT00711594",
+                  "weight": "2008-04"
+                }
+              ]
+            },
+            {
+              "rel": "SPONSORS_TRIAL_OF",
+              "dir": "in",
+              "type": "Company",
+              "role": null,
+              "total": 12,
+              "items": [
+                {
+                  "id": "ORG:boehringeringelheim",
+                  "type": "Company",
+                  "label": "Boehringer Ingelheim",
+                  "edge_id": "ORG:boehringeringelheim|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 7,
+                  "weight": 7,
+                  "sponsor_class": "INDUSTRY"
+                },
+                {
+                  "id": "ORG:aiostudienggmbh",
+                  "type": "Company",
+                  "label": "Aio-studien-ggmbh",
+                  "edge_id": "ORG:aiostudienggmbh|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:amsterdamumclocationvumc",
+                  "type": "Company",
+                  "label": "Amsterdam Umc Location Vumc",
+                  "edge_id": "ORG:amsterdamumclocationvumc|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:hleemoffittcancercenterandresearchinstitute",
+                  "type": "Company",
+                  "label": "H Lee Moffitt Cancer Center And Research Institute",
+                  "edge_id": "ORG:hleemoffittcancercenterandresearchinstitute|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:intergroupefrancophonedecancerologiethoracique",
+                  "type": "Company",
+                  "label": "Intergroupe Francophone De Cancerologie Thoracique",
+                  "edge_id": "ORG:intergroupefrancophonedecancerologiethoracique|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:memorialsloanketteringcancercenter",
+                  "type": "Company",
+                  "label": "Memorial Sloan Kettering Cancer Center",
+                  "edge_id": "ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:nationalcancercenterkorea",
+                  "type": "Company",
+                  "label": "National Cancer Center Korea",
+                  "edge_id": "ORG:nationalcancercenterkorea|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER_GOV"
+                },
+                {
+                  "id": "ORG:samsungmedicalcenter",
+                  "type": "Company",
+                  "label": "Samsung Medical Center",
+                  "edge_id": "ORG:samsungmedicalcenter|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:scridevelopmentinnovations",
+                  "type": "Company",
+                  "label": "Scri Development Innovations",
+                  "edge_id": "ORG:scridevelopmentinnovations|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:universitycollegelondon",
+                  "type": "Company",
+                  "label": "University College London",
+                  "edge_id": "ORG:universitycollegelondon|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:vanderbiltingramcancercenter",
+                  "type": "Company",
+                  "label": "Vanderbilt-ingram Cancer Center",
+                  "edge_id": "ORG:vanderbiltingramcancercenter|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:yonseiuniversity",
+                  "type": "Company",
+                  "label": "Yonsei University",
+                  "edge_id": "ORG:yonseiuniversity|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                }
+              ]
+            },
+            {
+              "rel": "ACTS_ON",
+              "dir": "out",
+              "type": "Target",
+              "role": null,
+              "total": 3,
+              "items": [
+                {
+                  "id": "ENSG00000146648",
+                  "type": "Target",
+                  "label": "EGFR",
+                  "edge_id": "CHEMBL1173655|ACTS_ON|ENSG00000146648|CHEMBL1173655",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                },
+                {
+                  "id": "ENSG00000141736",
+                  "type": "Target",
+                  "label": "ERBB2",
+                  "edge_id": "CHEMBL1173655|ACTS_ON|ENSG00000141736|CHEMBL1173655",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                },
+                {
+                  "id": "ENSG00000178568",
+                  "type": "Target",
+                  "label": "ERBB4",
+                  "edge_id": "CHEMBL1173655|ACTS_ON|ENSG00000178568|CHEMBL1173655",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "input": "RO 09-1978/000",
+    "stored_hits": [
+      {
+        "drug_id": "CHEMBL1773",
+        "alias": "RO 09-1978/000",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      }
+    ],
+    "requests": [
+      {
+        "endpoint": "resolve",
+        "status": 200,
+        "response": {
+          "raw": "RO 09-1978/000",
+          "components": [
+            {
+              "component": "RO 09-1978/000",
+              "tier": "ALIAS",
+              "drug_id": "CHEMBL1773",
+              "score": null,
+              "rules": [],
+              "matched_alias": "RO 09-1978/000",
+              "candidates": null,
+              "drug": {
+                "name": "CAPECITABINE",
+                "drug_type": "Small molecule",
+                "max_phase_overall": "APPROVAL",
+                "max_phase_in_nsclc": "PHASE_3",
+                "mechanisms": [
+                  "Thymidylate synthase inhibitor"
+                ],
+                "trials": 7
+              }
+            }
+          ]
+        }
+      },
+      {
+        "endpoint": "explore",
+        "status": 200,
+        "response": {
+          "center": {
+            "id": "CHEMBL1773",
+            "type": "Drug",
+            "label": "CAPECITABINE",
+            "matched_text": "RO 09-1978/000",
+            "trials": 7,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "EVALUATES",
+              "dir": "in",
+              "type": "Trial",
+              "role": null,
+              "total": 7,
+              "items": [
+                {
+                  "id": "NCT07551778",
+                  "type": "Trial",
+                  "label": "NCT07551778",
+                  "edge_id": "NCT07551778|EVALUATES|CHEMBL1773|NCT07551778",
+                  "phases": [
+                    "PHASE1",
+                    "PHASE2"
+                  ],
+                  "status": "NOT_YET_RECRUITING",
+                  "title": "Allogeneic NK Cell Therapy Combined With Standard Maintenance Treatment in Advanced Solid Tumors",
+                  "start_date": "2026-08",
+                  "url": "https://clinicaltrials.gov/study/NCT07551778",
+                  "weight": "2026-08"
+                },
+                {
+                  "id": "NCT05785741",
+                  "type": "Trial",
+                  "label": "NCT05785741",
+                  "edge_id": "NCT05785741|EVALUATES|CHEMBL1773|NCT05785741",
+                  "phases": [
+                    "PHASE1",
+                    "PHASE2"
+                  ],
+                  "status": "RECRUITING",
+                  "title": "A Study of DB-1310 in Advanced/Metastatic Solid Tumors",
+                  "start_date": "2023-08-17",
+                  "url": "https://clinicaltrials.gov/study/NCT05785741",
+                  "weight": "2023-08-17"
+                },
+                {
+                  "id": "NCT02009449",
+                  "type": "Trial",
+                  "label": "NCT02009449",
+                  "edge_id": "NCT02009449|EVALUATES|CHEMBL1773|NCT02009449",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "A Phase 1 Study of Pegilodecakin (LY3500518) in Participants With Advanced Solid Tumors",
+                  "start_date": "2013-11-15",
+                  "url": "https://clinicaltrials.gov/study/NCT02009449",
+                  "weight": "2013-11-15"
+                },
+                {
+                  "id": "NCT00816868",
+                  "type": "Trial",
+                  "label": "NCT00816868",
+                  "edge_id": "NCT00816868|EVALUATES|CHEMBL1773|NCT00816868",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "A Phase II Study of TX Regimen as First-line Treatment for Asian Elderly Patients With Advanced Adenocarcinoma of Lung",
+                  "start_date": "2009-01",
+                  "url": "https://clinicaltrials.gov/study/NCT00816868",
+                  "weight": "2009-01"
+                },
+                {
+                  "id": "NCT00514293",
+                  "type": "Trial",
+                  "label": "NCT00514293",
+                  "edge_id": "NCT00514293|EVALUATES|CHEMBL1773|NCT00514293",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "UNKNOWN",
+                  "title": "Bexarotene, Tretinoin, and Combination Chemotherapy in Treating Patients With Stage III or Stage IV Non-Small Cell Lung Cancer",
+                  "start_date": "2007-01",
+                  "url": "https://clinicaltrials.gov/study/NCT00514293",
+                  "weight": "2007-01"
+                },
+                {
+                  "id": "NCT00268151",
+                  "type": "Trial",
+                  "label": "NCT00268151",
+                  "edge_id": "NCT00268151|EVALUATES|CHEMBL1773|NCT00268151",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "TERMINATED",
+                  "title": "Oxaliplatin in Combination With Capecitabine and Concurrent Radiation Therapy in Non-Small Cell Lung Cancer",
+                  "start_date": "2005-02",
+                  "url": "https://clinicaltrials.gov/study/NCT00268151",
+                  "weight": "2005-02"
+                },
+                {
+                  "id": "NCT00201825",
+                  "type": "Trial",
+                  "label": "NCT00201825",
+                  "edge_id": "NCT00201825|EVALUATES|CHEMBL1773|NCT00201825",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "A Phase II Study of Capecitabine and Docetaxel in Previously Untreated Advanced Non-Small Cell Lung Cancer Patients",
+                  "start_date": "2004-12",
+                  "url": "https://clinicaltrials.gov/study/NCT00201825",
+                  "weight": "2004-12"
+                }
+              ]
+            },
+            {
+              "rel": "SPONSORS_TRIAL_OF",
+              "dir": "in",
+              "type": "Company",
+              "role": null,
+              "total": 7,
+              "items": [
+                {
+                  "id": "ORG:boetechnologygroup",
+                  "type": "Company",
+                  "label": "Boe Technology Group",
+                  "edge_id": "ORG:boetechnologygroup|SPONSORS_TRIAL_OF|CHEMBL1773|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "INDUSTRY"
+                },
+                {
+                  "id": "ORG:dualitybio",
+                  "type": "Company",
+                  "label": "Dualitybio",
+                  "edge_id": "ORG:dualitybio|SPONSORS_TRIAL_OF|CHEMBL1773|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "INDUSTRY"
+                },
+                {
+                  "id": "ORG:elililly",
+                  "type": "Company",
+                  "label": "Eli Lilly",
+                  "edge_id": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL1773|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "INDUSTRY"
+                },
+                {
+                  "id": "ORG:raghunandanmd",
+                  "type": "Company",
+                  "label": "Raghu Nandan M D",
+                  "edge_id": "ORG:raghunandanmd|SPONSORS_TRIAL_OF|CHEMBL1773|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:sunyatsenuniversity",
+                  "type": "Company",
+                  "label": "Sun Yat-sen University",
+                  "edge_id": "ORG:sunyatsenuniversity|SPONSORS_TRIAL_OF|CHEMBL1773|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:tonybekaiisaab",
+                  "type": "Company",
+                  "label": "Tony Bekaii-saab",
+                  "edge_id": "ORG:tonybekaiisaab|SPONSORS_TRIAL_OF|CHEMBL1773|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:universityoflouisville",
+                  "type": "Company",
+                  "label": "University Of Louisville",
+                  "edge_id": "ORG:universityoflouisville|SPONSORS_TRIAL_OF|CHEMBL1773|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                }
+              ]
+            },
+            {
+              "rel": "ACTS_ON",
+              "dir": "out",
+              "type": "Target",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "ENSG00000176890",
+                  "type": "Target",
+                  "label": "TYMS",
+                  "edge_id": "CHEMBL1773|ACTS_ON|ENSG00000176890|CHEMBL1773",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "input": "Anusol plus hc",
+    "stored_hits": [
+      {
+        "drug_id": "CHEMBL389621",
+        "alias": "Anusol plus hc",
+        "alias_type": "trade_name",
+        "source": null
+      }
+    ],
+    "requests": [
+      {
+        "endpoint": "resolve",
+        "status": 200,
+        "response": {
+          "raw": "Anusol plus hc",
+          "components": [
+            {
+              "component": "Anusol",
+              "tier": "UNRESOLVED",
+              "drug_id": null,
+              "score": null,
+              "rules": [
+                "split_combination"
+              ],
+              "matched_alias": null,
+              "candidates": null
+            },
+            {
+              "component": "hc",
+              "tier": "BLOCKED_TARGET_TERM",
+              "drug_id": null,
+              "score": null,
+              "rules": [
+                "split_combination",
+                "target_symbol_guard"
+              ],
+              "matched_alias": null,
+              "candidates": null,
+              "note": "a target or gene symbol, not an administered substance"
+            }
+          ]
+        }
+      },
+      {
+        "endpoint": "explore",
+        "status": 200,
+        "response": {
+          "center": {
+            "id": "CHEMBL389621",
+            "type": "Drug",
+            "label": "HYDROCORTISONE",
+            "matched_text": "Anusol plus hc",
+            "trials": 1,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "ACTS_ON",
+              "dir": "out",
+              "type": "Target",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "ENSG00000113580",
+                  "type": "Target",
+                  "label": "NR3C1",
+                  "edge_id": "CHEMBL389621|ACTS_ON|ENSG00000113580|CHEMBL389621",
+                  "weight": 0,
+                  "action": "AGONIST"
+                }
+              ]
+            },
+            {
+              "rel": "EVALUATES",
+              "dir": "in",
+              "type": "Trial",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "NCT00473083",
+                  "type": "Trial",
+                  "label": "NCT00473083",
+                  "edge_id": "NCT00473083|EVALUATES|CHEMBL389621|NCT00473083",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Systemic and Topical Treatments for Rash Secondary to Erlotinib in Lung Cancer",
+                  "start_date": "2009-01",
+                  "url": "https://clinicaltrials.gov/study/NCT00473083",
+                  "weight": "2009-01"
+                }
+              ]
+            },
+            {
+              "rel": "SPONSORS_TRIAL_OF",
+              "dir": "in",
+              "type": "Company",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "ORG:britishcolumbiacanceragency",
+                  "type": "Company",
+                  "label": "British Columbia Cancer Agency",
+                  "edge_id": "ORG:britishcolumbiacanceragency|SPONSORS_TRIAL_OF|CHEMBL389621|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "input": "CHEMBL1173655",
+    "stored_hits": [],
+    "requests": [
+      {
+        "endpoint": "resolve",
+        "status": 200,
+        "response": {
+          "raw": "CHEMBL1173655",
+          "components": [
+            {
+              "component": "CHEMBL1173655",
+              "tier": "UNRESOLVED",
+              "drug_id": null,
+              "score": null,
+              "rules": [],
+              "matched_alias": null,
+              "candidates": null
+            }
+          ]
+        }
+      },
+      {
+        "endpoint": "explore",
+        "status": 200,
+        "response": {
+          "center": {
+            "id": "CHEMBL1173655",
+            "type": "Drug",
+            "label": "AFATINIB",
+            "matched_text": null,
+            "trials": 18,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "EVALUATES",
+              "dir": "in",
+              "type": "Trial",
+              "role": null,
+              "total": 18,
+              "items": [
+                {
+                  "id": "NCT05298176",
+                  "type": "Trial",
+                  "label": "NCT05298176",
+                  "edge_id": "NCT05298176|EVALUATES|CHEMBL1173655|NCT05298176",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Combining Afatinib and Concurrent Chemotherapy, Followed by Osimertinib and Concurrent Chemotherapy, in Untreated EGFR Positive NSCLC Tumors",
+                  "start_date": "2022-01-04",
+                  "url": "https://clinicaltrials.gov/study/NCT05298176",
+                  "weight": "2022-01-04"
+                },
+                {
+                  "id": "NCT03054038",
+                  "type": "Trial",
+                  "label": "NCT03054038",
+                  "edge_id": "NCT03054038|EVALUATES|CHEMBL1173655|NCT03054038",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "TERMINATED",
+                  "title": "Afatinib and Necitumumab in Patients With EGFR Mutation Positive Advanced or Metastatic Non-small Cell Lung Cancer",
+                  "start_date": "2017-07-20",
+                  "url": "https://clinicaltrials.gov/study/NCT03054038",
+                  "weight": "2017-07-20"
+                },
+                {
+                  "id": "NCT02183883",
+                  "type": "Trial",
+                  "label": "NCT02183883",
+                  "edge_id": "NCT02183883|EVALUATES|CHEMBL1173655|NCT02183883",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Deciphering Afatinib Response and Resistance With INtratumour Heterogeneity",
+                  "start_date": "2016-12-16",
+                  "url": "https://clinicaltrials.gov/study/NCT02183883",
+                  "weight": "2016-12-16"
+                },
+                {
+                  "id": "NCT02795156",
+                  "type": "Trial",
+                  "label": "NCT02795156",
+                  "edge_id": "NCT02795156|EVALUATES|CHEMBL1173655|NCT02795156",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Study Assessing Activity of Molecularly Matched Targeted Therapies in Select Tumor Types Based on Genomic Alterations",
+                  "start_date": "2016-09-28",
+                  "url": "https://clinicaltrials.gov/study/NCT02795156",
+                  "weight": "2016-09-28"
+                },
+                {
+                  "id": "NCT02716311",
+                  "type": "Trial",
+                  "label": "NCT02716311",
+                  "edge_id": "NCT02716311|EVALUATES|CHEMBL1173655|NCT02716311",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Combination of Cetuximab With Afatinib for Patient With EGFR Mutated Lung Cancer",
+                  "start_date": "2016-05",
+                  "url": "https://clinicaltrials.gov/study/NCT02716311",
+                  "weight": "2016-05"
+                },
+                {
+                  "id": "NCT02488694",
+                  "type": "Trial",
+                  "label": "NCT02488694",
+                  "edge_id": "NCT02488694|EVALUATES|CHEMBL1173655|NCT02488694",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "TERMINATED",
+                  "title": "Maintaining ERBB Blockade in EGFR-mutated Lung Cancer",
+                  "start_date": "2015-11",
+                  "url": "https://clinicaltrials.gov/study/NCT02488694",
+                  "weight": "2015-11"
+                },
+                {
+                  "id": "NCT02145637",
+                  "type": "Trial",
+                  "label": "NCT02145637",
+                  "edge_id": "NCT02145637|EVALUATES|CHEMBL1173655|NCT02145637",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Phase I Study of the Combination of Afatinib and Ruxolitinib in Patients With Treatment-refractory Non-Small Cell Lung Cancer (NSCLC)",
+                  "start_date": "2015-05-07",
+                  "url": "https://clinicaltrials.gov/study/NCT02145637",
+                  "weight": "2015-05-07"
+                },
+                {
+                  "id": "NCT02044380",
+                  "type": "Trial",
+                  "label": "NCT02044380",
+                  "edge_id": "NCT02044380|EVALUATES|CHEMBL1173655|NCT02044380",
+                  "phases": [
+                    "PHASE3"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Afatinib in Patients With Non Small Cell Lung Cancer (NSCLC) With Epidermal Growth Factor Receptor (EGFR) Mutations",
+                  "start_date": "2014-03",
+                  "url": "https://clinicaltrials.gov/study/NCT02044380",
+                  "weight": "2014-03"
+                },
+                {
+                  "id": "NCT01999985",
+                  "type": "Trial",
+                  "label": "NCT01999985",
+                  "edge_id": "NCT01999985|EVALUATES|CHEMBL1173655|NCT01999985",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Phase I Trial of Afatinib (BIBW 2992) and Dasatinib in Non-small Cell Lung Cancer (NSCLC)",
+                  "start_date": "2013-12-31",
+                  "url": "https://clinicaltrials.gov/study/NCT01999985",
+                  "weight": "2013-12-31"
+                },
+                {
+                  "id": "NCT01853826",
+                  "type": "Trial",
+                  "label": "NCT01853826",
+                  "edge_id": "NCT01853826|EVALUATES|CHEMBL1173655|NCT01853826",
+                  "phases": [
+                    "PHASE3"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "An Open Label Trial of Afatinib (Giotrif) in Treatment-naive (1st Line) or Chemotherapy Pre-treated Patients With Locally Advanced or Metastatic Non-small Cell Lung Cancer (NSCLC) Harboring EGFR Mutation(s)",
+                  "start_date": "2013-07-17",
+                  "url": "https://clinicaltrials.gov/study/NCT01853826",
+                  "weight": "2013-07-17"
+                },
+                {
+                  "id": "NCT01861223",
+                  "type": "Trial",
+                  "label": "NCT01861223",
+                  "edge_id": "NCT01861223|EVALUATES|CHEMBL1173655|NCT01861223",
+                  "phases": [
+                    "PHASE1",
+                    "PHASE2"
+                  ],
+                  "status": "UNKNOWN",
+                  "title": "Afatinib Plus Nimotuzumb for NSCLC",
+                  "start_date": "2013-05",
+                  "url": "https://clinicaltrials.gov/study/NCT01861223",
+                  "weight": "2013-05"
+                },
+                {
+                  "id": "NCT01836341",
+                  "type": "Trial",
+                  "label": "NCT01836341",
+                  "edge_id": "NCT01836341|EVALUATES|CHEMBL1173655|NCT01836341",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "WITHDRAWN",
+                  "title": "Afatinib In Combination With Cisplatin Or Carboplatin + Pemetrexed In Patients With EGFR-Mutant Lung Cancers Undergoing Definitive Chemoradiation",
+                  "start_date": "2013-04",
+                  "url": "https://clinicaltrials.gov/study/NCT01836341",
+                  "weight": "2013-04"
+                },
+                {
+                  "id": "NCT01156545",
+                  "type": "Trial",
+                  "label": "NCT01156545",
+                  "edge_id": "NCT01156545|EVALUATES|CHEMBL1173655|NCT01156545",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "BIBW 2992 Plus Simvastatin vs. BIBW 2992 in Previously Treated Patients With Advanced Non-adenocarcinomatous NSCLC",
+                  "start_date": "2010-10",
+                  "url": "https://clinicaltrials.gov/study/NCT01156545",
+                  "weight": "2010-10"
+                },
+                {
+                  "id": "NCT01121393",
+                  "type": "Trial",
+                  "label": "NCT01121393",
+                  "edge_id": "NCT01121393|EVALUATES|CHEMBL1173655|NCT01121393",
+                  "phases": [
+                    "PHASE3"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "BIBW 2992 (Afatinib) vs Gemcitabine-cisplatin in 1st Line Non-small Cell Lung Cancer (NSCLC)",
+                  "start_date": "2010-04-19",
+                  "url": "https://clinicaltrials.gov/study/NCT01121393",
+                  "weight": "2010-04-19"
+                },
+                {
+                  "id": "NCT01090011",
+                  "type": "Trial",
+                  "label": "NCT01090011",
+                  "edge_id": "NCT01090011|EVALUATES|CHEMBL1173655|NCT01090011",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Trial of BIBW 2992 (Afatinib) + Cetuximab in Non-Small Cell Lung Cancer",
+                  "start_date": "2010-03",
+                  "url": "https://clinicaltrials.gov/study/NCT01090011",
+                  "weight": "2010-03"
+                },
+                {
+                  "id": "NCT00993499",
+                  "type": "Trial",
+                  "label": "NCT00993499",
+                  "edge_id": "NCT00993499|EVALUATES|CHEMBL1173655|NCT00993499",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Trial of Continuous Once Daily Oral Treatment Using BIBW 2992 (Afatinib) Plus Sirolimus (Rapamune®) in Patients With Non-small Cell Lung Cancer Harbouring an EGFR Mutation and/or Disease Progression Following Prior Erlotinib or Gefitinib",
+                  "start_date": "2009-10",
+                  "url": "https://clinicaltrials.gov/study/NCT00993499",
+                  "weight": "2009-10"
+                },
+                {
+                  "id": "NCT00796549",
+                  "type": "Trial",
+                  "label": "NCT00796549",
+                  "edge_id": "NCT00796549|EVALUATES|CHEMBL1173655|NCT00796549",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "BIBW2992 (Afatinib) in Advanced (EGFR-FISH +) NSCLC (Non Small Cell Lung Cancer) Patients",
+                  "start_date": "2008-12",
+                  "url": "https://clinicaltrials.gov/study/NCT00796549",
+                  "weight": "2008-12"
+                },
+                {
+                  "id": "NCT00711594",
+                  "type": "Trial",
+                  "label": "NCT00711594",
+                  "edge_id": "NCT00711594|EVALUATES|CHEMBL1173655|NCT00711594",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "LUX-Lung 4: BIBW 2992 (Afatinib) Phase I Trial in Advanced Non Small Cell Lung Cancer Patients & Phase II Trial in Non Small Cell Lung Cancer Patients Failing Erlotinib or Gefitinib",
+                  "start_date": "2008-04",
+                  "url": "https://clinicaltrials.gov/study/NCT00711594",
+                  "weight": "2008-04"
+                }
+              ]
+            },
+            {
+              "rel": "SPONSORS_TRIAL_OF",
+              "dir": "in",
+              "type": "Company",
+              "role": null,
+              "total": 12,
+              "items": [
+                {
+                  "id": "ORG:boehringeringelheim",
+                  "type": "Company",
+                  "label": "Boehringer Ingelheim",
+                  "edge_id": "ORG:boehringeringelheim|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 7,
+                  "weight": 7,
+                  "sponsor_class": "INDUSTRY"
+                },
+                {
+                  "id": "ORG:aiostudienggmbh",
+                  "type": "Company",
+                  "label": "Aio-studien-ggmbh",
+                  "edge_id": "ORG:aiostudienggmbh|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:amsterdamumclocationvumc",
+                  "type": "Company",
+                  "label": "Amsterdam Umc Location Vumc",
+                  "edge_id": "ORG:amsterdamumclocationvumc|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:hleemoffittcancercenterandresearchinstitute",
+                  "type": "Company",
+                  "label": "H Lee Moffitt Cancer Center And Research Institute",
+                  "edge_id": "ORG:hleemoffittcancercenterandresearchinstitute|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:intergroupefrancophonedecancerologiethoracique",
+                  "type": "Company",
+                  "label": "Intergroupe Francophone De Cancerologie Thoracique",
+                  "edge_id": "ORG:intergroupefrancophonedecancerologiethoracique|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:memorialsloanketteringcancercenter",
+                  "type": "Company",
+                  "label": "Memorial Sloan Kettering Cancer Center",
+                  "edge_id": "ORG:memorialsloanketteringcancercenter|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:nationalcancercenterkorea",
+                  "type": "Company",
+                  "label": "National Cancer Center Korea",
+                  "edge_id": "ORG:nationalcancercenterkorea|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER_GOV"
+                },
+                {
+                  "id": "ORG:samsungmedicalcenter",
+                  "type": "Company",
+                  "label": "Samsung Medical Center",
+                  "edge_id": "ORG:samsungmedicalcenter|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:scridevelopmentinnovations",
+                  "type": "Company",
+                  "label": "Scri Development Innovations",
+                  "edge_id": "ORG:scridevelopmentinnovations|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:universitycollegelondon",
+                  "type": "Company",
+                  "label": "University College London",
+                  "edge_id": "ORG:universitycollegelondon|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:vanderbiltingramcancercenter",
+                  "type": "Company",
+                  "label": "Vanderbilt-ingram Cancer Center",
+                  "edge_id": "ORG:vanderbiltingramcancercenter|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:yonseiuniversity",
+                  "type": "Company",
+                  "label": "Yonsei University",
+                  "edge_id": "ORG:yonseiuniversity|SPONSORS_TRIAL_OF|CHEMBL1173655|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                }
+              ]
+            },
+            {
+              "rel": "ACTS_ON",
+              "dir": "out",
+              "type": "Target",
+              "role": null,
+              "total": 3,
+              "items": [
+                {
+                  "id": "ENSG00000146648",
+                  "type": "Target",
+                  "label": "EGFR",
+                  "edge_id": "CHEMBL1173655|ACTS_ON|ENSG00000146648|CHEMBL1173655",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                },
+                {
+                  "id": "ENSG00000141736",
+                  "type": "Target",
+                  "label": "ERBB2",
+                  "edge_id": "CHEMBL1173655|ACTS_ON|ENSG00000141736|CHEMBL1173655",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                },
+                {
+                  "id": "ENSG00000178568",
+                  "type": "Target",
+                  "label": "ERBB4",
+                  "edge_id": "CHEMBL1173655|ACTS_ON|ENSG00000178568|CHEMBL1173655",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "input": "CHEMBL1773",
+    "stored_hits": [],
+    "requests": [
+      {
+        "endpoint": "resolve",
+        "status": 200,
+        "response": {
+          "raw": "CHEMBL1773",
+          "components": [
+            {
+              "component": "CHEMBL1773",
+              "tier": "UNRESOLVED",
+              "drug_id": null,
+              "score": null,
+              "rules": [],
+              "matched_alias": null,
+              "candidates": null
+            }
+          ]
+        }
+      },
+      {
+        "endpoint": "explore",
+        "status": 200,
+        "response": {
+          "center": {
+            "id": "CHEMBL1773",
+            "type": "Drug",
+            "label": "CAPECITABINE",
+            "matched_text": null,
+            "trials": 7,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "EVALUATES",
+              "dir": "in",
+              "type": "Trial",
+              "role": null,
+              "total": 7,
+              "items": [
+                {
+                  "id": "NCT07551778",
+                  "type": "Trial",
+                  "label": "NCT07551778",
+                  "edge_id": "NCT07551778|EVALUATES|CHEMBL1773|NCT07551778",
+                  "phases": [
+                    "PHASE1",
+                    "PHASE2"
+                  ],
+                  "status": "NOT_YET_RECRUITING",
+                  "title": "Allogeneic NK Cell Therapy Combined With Standard Maintenance Treatment in Advanced Solid Tumors",
+                  "start_date": "2026-08",
+                  "url": "https://clinicaltrials.gov/study/NCT07551778",
+                  "weight": "2026-08"
+                },
+                {
+                  "id": "NCT05785741",
+                  "type": "Trial",
+                  "label": "NCT05785741",
+                  "edge_id": "NCT05785741|EVALUATES|CHEMBL1773|NCT05785741",
+                  "phases": [
+                    "PHASE1",
+                    "PHASE2"
+                  ],
+                  "status": "RECRUITING",
+                  "title": "A Study of DB-1310 in Advanced/Metastatic Solid Tumors",
+                  "start_date": "2023-08-17",
+                  "url": "https://clinicaltrials.gov/study/NCT05785741",
+                  "weight": "2023-08-17"
+                },
+                {
+                  "id": "NCT02009449",
+                  "type": "Trial",
+                  "label": "NCT02009449",
+                  "edge_id": "NCT02009449|EVALUATES|CHEMBL1773|NCT02009449",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "A Phase 1 Study of Pegilodecakin (LY3500518) in Participants With Advanced Solid Tumors",
+                  "start_date": "2013-11-15",
+                  "url": "https://clinicaltrials.gov/study/NCT02009449",
+                  "weight": "2013-11-15"
+                },
+                {
+                  "id": "NCT00816868",
+                  "type": "Trial",
+                  "label": "NCT00816868",
+                  "edge_id": "NCT00816868|EVALUATES|CHEMBL1773|NCT00816868",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "A Phase II Study of TX Regimen as First-line Treatment for Asian Elderly Patients With Advanced Adenocarcinoma of Lung",
+                  "start_date": "2009-01",
+                  "url": "https://clinicaltrials.gov/study/NCT00816868",
+                  "weight": "2009-01"
+                },
+                {
+                  "id": "NCT00514293",
+                  "type": "Trial",
+                  "label": "NCT00514293",
+                  "edge_id": "NCT00514293|EVALUATES|CHEMBL1773|NCT00514293",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "UNKNOWN",
+                  "title": "Bexarotene, Tretinoin, and Combination Chemotherapy in Treating Patients With Stage III or Stage IV Non-Small Cell Lung Cancer",
+                  "start_date": "2007-01",
+                  "url": "https://clinicaltrials.gov/study/NCT00514293",
+                  "weight": "2007-01"
+                },
+                {
+                  "id": "NCT00268151",
+                  "type": "Trial",
+                  "label": "NCT00268151",
+                  "edge_id": "NCT00268151|EVALUATES|CHEMBL1773|NCT00268151",
+                  "phases": [
+                    "PHASE1"
+                  ],
+                  "status": "TERMINATED",
+                  "title": "Oxaliplatin in Combination With Capecitabine and Concurrent Radiation Therapy in Non-Small Cell Lung Cancer",
+                  "start_date": "2005-02",
+                  "url": "https://clinicaltrials.gov/study/NCT00268151",
+                  "weight": "2005-02"
+                },
+                {
+                  "id": "NCT00201825",
+                  "type": "Trial",
+                  "label": "NCT00201825",
+                  "edge_id": "NCT00201825|EVALUATES|CHEMBL1773|NCT00201825",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "A Phase II Study of Capecitabine and Docetaxel in Previously Untreated Advanced Non-Small Cell Lung Cancer Patients",
+                  "start_date": "2004-12",
+                  "url": "https://clinicaltrials.gov/study/NCT00201825",
+                  "weight": "2004-12"
+                }
+              ]
+            },
+            {
+              "rel": "SPONSORS_TRIAL_OF",
+              "dir": "in",
+              "type": "Company",
+              "role": null,
+              "total": 7,
+              "items": [
+                {
+                  "id": "ORG:boetechnologygroup",
+                  "type": "Company",
+                  "label": "Boe Technology Group",
+                  "edge_id": "ORG:boetechnologygroup|SPONSORS_TRIAL_OF|CHEMBL1773|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "INDUSTRY"
+                },
+                {
+                  "id": "ORG:dualitybio",
+                  "type": "Company",
+                  "label": "Dualitybio",
+                  "edge_id": "ORG:dualitybio|SPONSORS_TRIAL_OF|CHEMBL1773|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "INDUSTRY"
+                },
+                {
+                  "id": "ORG:elililly",
+                  "type": "Company",
+                  "label": "Eli Lilly",
+                  "edge_id": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL1773|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "INDUSTRY"
+                },
+                {
+                  "id": "ORG:raghunandanmd",
+                  "type": "Company",
+                  "label": "Raghu Nandan M D",
+                  "edge_id": "ORG:raghunandanmd|SPONSORS_TRIAL_OF|CHEMBL1773|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:sunyatsenuniversity",
+                  "type": "Company",
+                  "label": "Sun Yat-sen University",
+                  "edge_id": "ORG:sunyatsenuniversity|SPONSORS_TRIAL_OF|CHEMBL1773|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:tonybekaiisaab",
+                  "type": "Company",
+                  "label": "Tony Bekaii-saab",
+                  "edge_id": "ORG:tonybekaiisaab|SPONSORS_TRIAL_OF|CHEMBL1773|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                },
+                {
+                  "id": "ORG:universityoflouisville",
+                  "type": "Company",
+                  "label": "University Of Louisville",
+                  "edge_id": "ORG:universityoflouisville|SPONSORS_TRIAL_OF|CHEMBL1773|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                }
+              ]
+            },
+            {
+              "rel": "ACTS_ON",
+              "dir": "out",
+              "type": "Target",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "ENSG00000176890",
+                  "type": "Target",
+                  "label": "TYMS",
+                  "edge_id": "CHEMBL1773|ACTS_ON|ENSG00000176890|CHEMBL1773",
+                  "weight": 0,
+                  "action": "INHIBITOR"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "input": "CHEMBL389621",
+    "stored_hits": [],
+    "requests": [
+      {
+        "endpoint": "resolve",
+        "status": 200,
+        "response": {
+          "raw": "CHEMBL389621",
+          "components": [
+            {
+              "component": "CHEMBL389621",
+              "tier": "UNRESOLVED",
+              "drug_id": null,
+              "score": null,
+              "rules": [],
+              "matched_alias": null,
+              "candidates": null
+            }
+          ]
+        }
+      },
+      {
+        "endpoint": "explore",
+        "status": 200,
+        "response": {
+          "center": {
+            "id": "CHEMBL389621",
+            "type": "Drug",
+            "label": "HYDROCORTISONE",
+            "matched_text": null,
+            "trials": 1,
+            "props": {
+              "max_phase_overall": "APPROVAL",
+              "drug_type": "Small molecule"
+            }
+          },
+          "also": [],
+          "groups": [
+            {
+              "rel": "ACTS_ON",
+              "dir": "out",
+              "type": "Target",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "ENSG00000113580",
+                  "type": "Target",
+                  "label": "NR3C1",
+                  "edge_id": "CHEMBL389621|ACTS_ON|ENSG00000113580|CHEMBL389621",
+                  "weight": 0,
+                  "action": "AGONIST"
+                }
+              ]
+            },
+            {
+              "rel": "EVALUATES",
+              "dir": "in",
+              "type": "Trial",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "NCT00473083",
+                  "type": "Trial",
+                  "label": "NCT00473083",
+                  "edge_id": "NCT00473083|EVALUATES|CHEMBL389621|NCT00473083",
+                  "phases": [
+                    "PHASE2"
+                  ],
+                  "status": "COMPLETED",
+                  "title": "Systemic and Topical Treatments for Rash Secondary to Erlotinib in Lung Cancer",
+                  "start_date": "2009-01",
+                  "url": "https://clinicaltrials.gov/study/NCT00473083",
+                  "weight": "2009-01"
+                }
+              ]
+            },
+            {
+              "rel": "SPONSORS_TRIAL_OF",
+              "dir": "in",
+              "type": "Company",
+              "role": null,
+              "total": 1,
+              "items": [
+                {
+                  "id": "ORG:britishcolumbiacanceragency",
+                  "type": "Company",
+                  "label": "British Columbia Cancer Agency",
+                  "edge_id": "ORG:britishcolumbiacanceragency|SPONSORS_TRIAL_OF|CHEMBL389621|",
+                  "evidence_trials": 1,
+                  "weight": 1,
+                  "sponsor_class": "OTHER"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

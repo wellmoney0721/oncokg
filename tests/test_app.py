@@ -147,7 +147,6 @@ def test_a_list_item_with_a_qualifier_refuses_every_drug_in_it():
     import app
     e = app.Engine()
     for t in ("osimertinib with generic version of bevacizumab",
-              "osimertinib with [89Zr] trastuzumab",
               "generic version of Paclitaxel conjugate with poly-l-glutamic acid",
               "generic version of the monoclonal antibody bevacizumab",
               "biosimilar version of bevacizumab",
@@ -289,3 +288,23 @@ def test_lone_names_qualifier_boundaries_and_cache_rollover():
         assert e.explore(t)["center"]["id"] == "CHEMBL3353410", t
     e.kg._resolve_cache = {f"k{i}": [] for i in range(4096)}
     assert e.explore("osimertinib")["center"]["id"] == "CHEMBL3353410"
+
+
+
+# Codex review m9: refusal on the same letters-and-digits form the name is looked up by
+def test_underscores_accents_spaced_suffixes_and_punctuated_isotopes_refuse():
+    import app
+    e = app.Engine()
+    for t in ("bevacizumab_awwb", "bevacizumab__awwb", "bevácizumab-awwb",
+              "bevácizumab-awwb", "[89.Zr] trastuzumab", "89:Zr trastuzumab",
+              "bevacizumab awwb", "bevacizumab (awwb)", "trastuzumab 89Zr"):
+        assert e.explore(t).get("refused"), t
+    for q in ("Which trials evaluate bevacizumab_awwb?", "Which trials evaluate [89.Zr] trastuzumab?",
+              "Which trials evaluate bevacizumab awwb?"):
+        assert not e.kg.answer(q, use_llm=False).evidence, q
+    r = e.explore("osimertinib with [89Zr] trastuzumab")
+    assert r["center"]["id"] == "CHEMBL3353410"
+    assert all(x.get("id") != "CHEMBL1201585" for x in r["also"])
+    assert e.explore("bevacizumab_awwb, osimertinib")["center"]["id"] == "CHEMBL3353410"
+    assert e.explore("Theophylline in dextrose 5% in plastic container")["center"]["id"] == "CHEMBL1355736"
+    assert e.explore("cemiplimab-rwlc")["center"]["label"] == "CEMIPLIMAB"

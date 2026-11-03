@@ -102,6 +102,17 @@ _DASHES = "[" + "".join(re.escape(chr(c)) for c in range(0x110000)
                         if unicodedata.category(chr(c)) == "Pd" or chr(c) in "\u2212\u207b\u208b") + "]"
 
 
+def _plain(text: str) -> str:
+    """Accents off, as the alias key does."""
+    t = unicodedata.normalize("NFKD", text or "")
+    return unicodedata.normalize("NFC", "".join(c for c in t if not unicodedata.combining(c)))
+
+
+def _alnum_words(text: str) -> list[str]:
+    """Letters-and-digits words, with every other character a separator."""
+    return re.findall(r"[A-Za-z0-9]+", _plain(text))
+
+
 def _fold(text: str) -> str:
     return re.sub(_DASHES, "-", unicodedata.normalize("NFKC", text or ""))
 
@@ -112,18 +123,17 @@ def _qualified(words: list[str]) -> bool:
     biosimilar suffix, a leading isotope) on every run of up to eight words, so the
     work grows linearly with the item."""
     def hit(text: str) -> bool:
-        # the alias key ignores punctuation, so the guards also see the text with every
-        # run of punctuation (not spaces) read as one hyphen ("bevacizumab-(awwb)")
+        # the alias key ignores punctuation, underscores and accents, so the guards also
+        # see the text with those folded ("bevacizumab-(awwb)", "bevacizumab_awwb",
+        # "bevácizumab-awwb")
+        plain = _plain(text)
         return any(T.is_distinct_product(v) or T.is_radiotracer(v)
-                   for v in {text, re.sub(r"[^\w\s]+", "-", text).strip("-")})
+                   for v in {text, plain, re.sub(r"(?:[^\w\s]|_)+", "-", plain).strip("-")})
 
     if hit(" ".join(words)):
         return True
-    if len(words) > 1:                  # an isotope beside a name; a lone "566C" is a name
-        if any(T.is_isotope_label(w) for w in words):
-            return True
-        if any(T.is_isotope_label(f"{a} {b}") for a, b in zip(words, words[1:])):
-            return True                 # "89 Zr trastuzumab"
+    if any(T.canonical_key(w) in T.BIOSIMILAR_BRANDS | T.REFORMULATION_NAMES for w in words):
+        return True
     return any(hit(" ".join(words[i:j])) for i in range(len(words))
                for j in range(i + 1, min(len(words), i + 8) + 1))
 
@@ -217,6 +227,33 @@ class OncoKG:
                     if h["drug_id"] not in accepted:
                         out[h["drug_id"]] = piece
         return out
+
+    def _marked(self, key: str, did: str, tokens, seg, a: int, b: int):
+        """The text that makes this drug name a distinct product or a tracer, if any.
+
+        Checked on the same letters-and-digits form the name was looked up by: a known
+        biosimilar suffix at the end of the name ("bevacizumab awwb", "bevacizumab_awwb")
+        or as the next word, or an isotope label just before or after it ("[89.Zr]
+        trastuzumab", "89:Zr trastuzumab")."""
+        for sfx in T.BIOSIMILAR_FDA_SUFFIXES:
+            stem = key[:-len(sfx)]
+            if key.endswith(sfx) and stem and any(
+                    h["drug_id"] == did for h in self.dic["index"].get(stem, [])):
+                return " ".join(tokens[a:b])
+        same = [k for k in range(len(tokens)) if seg[k] == seg[a]]
+        before = [k for k in same if k < a][-2:]
+        after = [k for k in same if k >= b][:2]
+        if after and T.canonical_key(tokens[after[0]]) in T.BIOSIMILAR_FDA_SUFFIXES:
+            return " ".join(tokens[a:after[0] + 1])
+        own = _alnum_words(" ".join(tokens[a:b]))
+        prev = _alnum_words(" ".join(tokens[k] for k in before))[-2:]
+        nxt = _alnum_words(" ".join(tokens[k] for k in after))[:2]
+        for ws in (prev[-1:], prev, own[:1], own[:2], nxt[:1], nxt):
+            if ws and len(ws) <= 2 and T.is_isotope_label(" ".join(ws)) and ws != own:
+                lo = before[0] if (ws is prev or ws == prev[-1:]) and before else a
+                hi = after[-1] + 1 if (ws is nxt or ws == nxt[:1]) and after else b
+                return " ".join(tokens[lo:hi])
+        return None
 
     def _whole_name(self, text: str, blocked: dict, found: list):
         """The whole input is exactly one stored drug name, letter for letter ("CP-358,774",
@@ -346,6 +383,16 @@ class OncoKG:
                     hits = None
                 if hits and len({h["drug_id"] for h in hits}) == 1:
                     did = hits[0]["drug_id"]
+                    why = self._marked(key, did, tokens, seg, i, i + size)
+                    if why:
+                        # the name carries a product suffix or sits beside an isotope:
+                        # refuse it, never fall back to the bare molecule
+                        found.append({"type": "Refused", "id": None, "label": why,
+                                      "matched_text": why,
+                                      "why": "names a distinct product or tracer, not "
+                                             "the originator molecule"})
+                        refused.update(range(i, i + size))
+                        continue
                     if ("Drug", did) not in seen:
                         seen.add(("Drug", did))
                         found.append({"type": "Drug", "id": did,
