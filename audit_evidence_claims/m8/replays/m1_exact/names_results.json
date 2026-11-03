@@ -1,0 +1,757 @@
+{
+  "results": [
+    {
+      "input": "osimertinib EGFR",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        },
+        {
+          "type": "Target",
+          "id": "ENSG00000146648",
+          "label": "EGFR",
+          "matched_text": "EGFR"
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "CHEMBL3353410",
+          "type": "Drug",
+          "label": "OSIMERTINIB",
+          "matched_text": "OSIMERTINIB",
+          "trials": 79,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": [
+          {
+            "id": "ENSG00000146648",
+            "type": "Target",
+            "label": "EGFR"
+          }
+        ]
+      },
+      "groups": 4,
+      "seconds": 0.02929259999655187
+    },
+    {
+      "input": "EGFR osimertinib",
+      "linked": [
+        {
+          "type": "Target",
+          "id": "ENSG00000146648",
+          "label": "EGFR",
+          "matched_text": "EGFR"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "ENSG00000146648",
+          "type": "Target",
+          "label": "EGFR",
+          "matched_text": "EGFR",
+          "trials": null,
+          "props": {}
+        },
+        "also": [
+          {
+            "id": "CHEMBL3353410",
+            "type": "Drug",
+            "label": "OSIMERTINIB"
+          }
+        ]
+      },
+      "groups": 2,
+      "seconds": 0.02475450001657009
+    },
+    {
+      "input": "Mvasi bevacizumab",
+      "linked": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Mvasi bevacizumab",
+          "matched_text": "Mvasi bevacizumab",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "result": {
+        "refused": "Mvasi bevacizumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "groups": 0,
+      "seconds": 0.0014275000430643559
+    },
+    {
+      "input": "bevacizumab Mvasi",
+      "linked": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "bevacizumab Mvasi",
+          "matched_text": "bevacizumab Mvasi",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "result": {
+        "refused": "bevacizumab Mvasi",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "groups": 0,
+      "seconds": 0.0012702001258730888
+    },
+    {
+      "input": "Mvasi",
+      "linked": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Mvasi",
+          "matched_text": "Mvasi",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "result": {
+        "refused": "Mvasi",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "groups": 0,
+      "seconds": 0.0002552999649196863
+    },
+    {
+      "input": "Zirabev",
+      "linked": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Zirabev",
+          "matched_text": "Zirabev",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "result": {
+        "refused": "Zirabev",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "groups": 0,
+      "seconds": 0.0001938999630510807
+    },
+    {
+      "input": "ABP 215",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201583",
+          "label": "BEVACIZUMAB",
+          "matched_text": "ABP 215",
+          "matched_alias": "Abp-215"
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "CHEMBL1201583",
+          "type": "Drug",
+          "label": "BEVACIZUMAB",
+          "matched_text": "Abp-215",
+          "trials": 122,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        },
+        "also": []
+      },
+      "groups": 3,
+      "seconds": 0.024336899863556027
+    },
+    {
+      "input": "liposomal doxorubicin",
+      "linked": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "liposomal doxorubicin",
+          "matched_text": "liposomal doxorubicin",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "result": {
+        "refused": "liposomal doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "groups": 0,
+      "seconds": 0.00222880020737648
+    },
+    {
+      "input": "89Zr trastuzumab",
+      "linked": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "89Zr trastuzumab",
+          "matched_text": "89Zr trastuzumab",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "result": {
+        "refused": "89Zr trastuzumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "groups": 0,
+      "seconds": 0.0013337999116629362
+    },
+    {
+      "input": "89Zr-trastuzumab",
+      "linked": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "89Zr-trastuzumab",
+          "matched_text": "89Zr-trastuzumab",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "result": {
+        "refused": "89Zr-trastuzumab",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      "groups": 0,
+      "seconds": 0.001325499964877963
+    },
+    {
+      "input": "Tarceva",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1079742",
+          "label": "ERLOTINIB HYDROCHLORIDE",
+          "matched_text": "Tarceva",
+          "matched_alias": "Tarceva"
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "CHEMBL1079742",
+          "type": "Drug",
+          "label": "ERLOTINIB HYDROCHLORIDE",
+          "matched_text": "Tarceva",
+          "trials": 31,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": []
+      },
+      "groups": 3,
+      "seconds": 0.021140299970284104
+    },
+    {
+      "input": "erlotinib",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL553",
+          "label": "ERLOTINIB",
+          "matched_text": "erlotinib",
+          "matched_alias": "ERLOTINIB"
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "CHEMBL553",
+          "type": "Drug",
+          "label": "ERLOTINIB",
+          "matched_text": "ERLOTINIB",
+          "trials": 118,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": []
+      },
+      "groups": 4,
+      "seconds": 0.02698859991505742
+    },
+    {
+      "input": "erlotinib hydrochloride",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1079742",
+          "label": "ERLOTINIB HYDROCHLORIDE",
+          "matched_text": "erlotinib hydrochloride",
+          "matched_alias": "ERLOTINIB HYDROCHLORIDE"
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "CHEMBL1079742",
+          "type": "Drug",
+          "label": "ERLOTINIB HYDROCHLORIDE",
+          "matched_text": "ERLOTINIB HYDROCHLORIDE",
+          "trials": 31,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": []
+      },
+      "groups": 3,
+      "seconds": 0.022816200042143464
+    },
+    {
+      "input": "osimertinib mesylate",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3545063",
+          "label": "OSIMERTINIB MESYLATE",
+          "matched_text": "osimertinib mesylate",
+          "matched_alias": "OSIMERTINIB MESYLATE"
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "CHEMBL3545063",
+          "type": "Drug",
+          "label": "OSIMERTINIB MESYLATE",
+          "matched_text": "OSIMERTINIB MESYLATE",
+          "trials": 7,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": []
+      },
+      "groups": 3,
+      "seconds": 0.022455000085756183
+    },
+    {
+      "input": "Tagrisso",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Tagrisso",
+          "matched_alias": "Tagrisso"
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "CHEMBL3353410",
+          "type": "Drug",
+          "label": "OSIMERTINIB",
+          "matched_text": "Tagrisso",
+          "trials": 79,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": []
+      },
+      "groups": 4,
+      "seconds": 0.025553399929776788
+    },
+    {
+      "input": "AstraZeneca",
+      "linked": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "AstraZeneca",
+          "also_matching_ids": []
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "ORG:astrazeneca",
+          "type": "Company",
+          "label": "Astrazeneca",
+          "matched_text": "AstraZeneca",
+          "trials": null,
+          "props": {}
+        },
+        "also": []
+      },
+      "groups": 4,
+      "seconds": 0.029139500111341476
+    },
+    {
+      "input": "Roche",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1622",
+          "label": "FOLIC ACID",
+          "matched_text": "Roche",
+          "matched_alias": "Roche"
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "CHEMBL1622",
+          "type": "Drug",
+          "label": "FOLIC ACID",
+          "matched_text": "Roche",
+          "trials": 3,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": [
+          {
+            "id": "ORG:roche",
+            "type": "Company",
+            "label": "Roche"
+          }
+        ]
+      },
+      "groups": 2,
+      "seconds": 0.021477899979799986
+    },
+    {
+      "input": "Genentech",
+      "linked": [
+        {
+          "type": "Company",
+          "id": "ORG:genentech",
+          "label": "Genentech",
+          "matched_text": "Genentech",
+          "also_matching_ids": []
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "ORG:genentech",
+          "type": "Company",
+          "label": "Genentech",
+          "matched_text": "Genentech",
+          "trials": null,
+          "props": {}
+        },
+        "also": []
+      },
+      "groups": 4,
+      "seconds": 0.025827100034803152
+    },
+    {
+      "input": "BeiGene",
+      "linked": [
+        {
+          "type": "Company",
+          "id": "ORG:beonemedicines",
+          "label": "Beigene",
+          "matched_text": "BeiGene",
+          "also_matching_ids": []
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "ORG:beonemedicines",
+          "type": "Company",
+          "label": "Beigene",
+          "matched_text": "BeiGene",
+          "trials": null,
+          "props": {}
+        },
+        "also": []
+      },
+      "groups": 3,
+      "seconds": 0.026016199961304665
+    },
+    {
+      "input": "Merck",
+      "linked": [],
+      "result": {
+        "not_found": "Merck"
+      },
+      "groups": 0,
+      "seconds": 0.00027249986305832863
+    },
+    {
+      "input": "MSD",
+      "linked": [
+        {
+          "type": "Company",
+          "id": "ORG:msd",
+          "label": "Msd",
+          "matched_text": "MSD",
+          "also_matching_ids": []
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "ORG:msd",
+          "type": "Company",
+          "label": "Msd",
+          "matched_text": "MSD",
+          "trials": null,
+          "props": {}
+        },
+        "also": []
+      },
+      "groups": 2,
+      "seconds": 0.021808400051668286
+    },
+    {
+      "input": "Johnson & Johnson",
+      "linked": [],
+      "result": {
+        "not_found": "Johnson & Johnson"
+      },
+      "groups": 0,
+      "seconds": 0.0009007998742163181
+    },
+    {
+      "input": "Janssen",
+      "linked": [],
+      "result": {
+        "not_found": "Janssen"
+      },
+      "groups": 0,
+      "seconds": 0.0004942999221384525
+    },
+    {
+      "input": "CHEMBL3353410",
+      "linked": [],
+      "result": {
+        "center": {
+          "id": "CHEMBL3353410",
+          "type": "Drug",
+          "label": "OSIMERTINIB",
+          "matched_text": null,
+          "trials": 79,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": []
+      },
+      "groups": 4,
+      "seconds": 0.02425890020094812
+    },
+    {
+      "input": "chembl3353410",
+      "linked": [],
+      "result": {
+        "not_found": "chembl3353410"
+      },
+      "groups": 0,
+      "seconds": 0.0004727998748421669
+    },
+    {
+      "input": "NCT00200395",
+      "linked": [],
+      "result": {
+        "center": {
+          "id": "NCT00200395",
+          "type": "Trial",
+          "label": "NCT00200395",
+          "matched_text": null,
+          "trials": null,
+          "props": {
+            "phases": [
+              "PHASE2"
+            ],
+            "status": "COMPLETED",
+            "title": "OSI-774 (Erlotinib, Tarceva) in Elderly Patients",
+            "url": "https://clinicaltrials.gov/study/NCT00200395",
+            "start_date": "2003-07-02"
+          }
+        },
+        "also": []
+      },
+      "groups": 4,
+      "seconds": 0.013511799974367023
+    },
+    {
+      "input": "nct00200395",
+      "linked": [],
+      "result": {
+        "not_found": "nct00200395"
+      },
+      "groups": 0,
+      "seconds": 0.0003467998467385769
+    },
+    {
+      "input": "  osimertinib  ",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "CHEMBL3353410",
+          "type": "Drug",
+          "label": "OSIMERTINIB",
+          "matched_text": "OSIMERTINIB",
+          "trials": 79,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": []
+      },
+      "groups": 4,
+      "seconds": 0.024146199924871325
+    },
+    {
+      "input": "OSIMERTINIB",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "OSIMERTINIB",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "CHEMBL3353410",
+          "type": "Drug",
+          "label": "OSIMERTINIB",
+          "matched_text": "OSIMERTINIB",
+          "trials": 79,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": []
+      },
+      "groups": 4,
+      "seconds": 0.023362099891528487
+    },
+    {
+      "input": "ＯＳＩＭＥＲＴＩＮＩＢ",
+      "linked": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "OSIMERTINIB",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "CHEMBL3353410",
+          "type": "Drug",
+          "label": "OSIMERTINIB",
+          "matched_text": "OSIMERTINIB",
+          "trials": 79,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": []
+      },
+      "groups": 4,
+      "seconds": 0.02196769998408854
+    },
+    {
+      "input": "NSCLC",
+      "linked": [
+        {
+          "type": "Disease",
+          "id": "MONDO_0005233",
+          "label": "non-small cell lung carcinoma",
+          "matched_text": "NSCLC"
+        }
+      ],
+      "result": {
+        "center": {
+          "id": "MONDO_0005233",
+          "type": "Disease",
+          "label": "non-small cell lung carcinoma",
+          "matched_text": "NSCLC",
+          "trials": null,
+          "props": {}
+        },
+        "also": []
+      },
+      "groups": 2,
+      "seconds": 0.054440599866211414
+    },
+    {
+      "input": "비소세포폐암",
+      "linked": [],
+      "result": {
+        "not_found": "비소세포폐암"
+      },
+      "groups": 0,
+      "seconds": 0.00044100009836256504
+    },
+    {
+      "input": "no such thing zz",
+      "linked": [],
+      "result": {
+        "not_found": "no such thing zz"
+      },
+      "groups": 0,
+      "seconds": 0.0006572999991476536
+    },
+    {
+      "input": "null",
+      "linked": [],
+      "result": {
+        "not_found": "null"
+      },
+      "groups": 0,
+      "seconds": 0.00024220021441578865
+    },
+    {
+      "input": "unknown",
+      "linked": [],
+      "result": {
+        "not_found": "unknown"
+      },
+      "groups": 0,
+      "seconds": 0.00021919980645179749
+    },
+    {
+      "input": "investigator",
+      "linked": [],
+      "result": {
+        "not_found": "investigator"
+      },
+      "groups": 0,
+      "seconds": 0.0002818000502884388
+    }
+  ],
+  "multi_companies": {},
+  "retired_counts": {
+    "node": 7,
+    "edge": 142
+  }
+}

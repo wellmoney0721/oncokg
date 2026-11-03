@@ -1,0 +1,374 @@
+[
+  {
+    "round": "M1",
+    "finding": "B1 `bevacizumab - awwb`, `89Zr - trastuzumab`, `[89Zr] trastuzumab`",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — refusal, no centre. [Original script replay](m1_exact/names_product_bypass.json), [HTTP](../root_checks/regression_http.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "B2 collaborator called lead: `NCT00200395`, reverse `ORG:genentech`",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — Genentech collaborator / Montefiore lead, both directions. `src/app.py:137,160-169`; `web/try.html:142-149`. [DB/UI](../db_ui/db_assertions.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "B3 Investigator called institution: `NCT00754364`, `ORG:armandosantoromd`",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — person-specific heading. `web/try.html:143,148`. [DB/UI](../db_ui/db_assertions.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "B4 retire CHEMBL3353410 in memory; query name, ID, EGFR",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — name/ID not_found; retired neighbour excluded. `src/app.py:115-118`. [Original HTTP fixture](m1_exact/names_retired_http_results.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "Retired Trial included in live Drug count",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — centre count and neighbour count/weight 0. `src/app.py:129-132,139,174`. [Fixtures](../db_ui/db_fixtures.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "S1 misleading most-evidence wording/order, Disease",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — actual start-date/score/count/A–Z sort disclosed and verified. `src/app.py:141-170`; `web/try.html:148-158,231-235`. [Oracle](../db_ui/db_validate.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "S2 silent ring cuts: ALDESLEUKIN, Disease, AstraZeneca",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — 22/25, 39/3,074, 41/145 drawn disclosed; cut lists say 30. [UI](../demos_cost/ui_harness_results.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "S3 stale trail after refusal/not-found/server/network error",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — state/buttons clear, obsolete back harmless. `web/try.html:213-216,243-244`. [UI](../demos_cost/ui_harness_results.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "S4 reverse-completed EGFR/KRAS requests and concurrent duplicate EGFR",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — latest KRAS stays, duplicate gives one trail entry. `web/try.html:211-214`. [UI](../demos_cost/ui_harness_results.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "S5 silent ambiguity: Roche, MET, osimertinib EGFR/reversal, Mvasi and bevacizumab",
+    "status": "FIXED",
+    "current_evidence": "**FIXED for disclosure** — selected reading/alternatives/refusal visible. `src/app.py:95-114`; `web/try.html:222-226`. [Names](names_reproduction_results.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "S6 action/class specificity",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — specific gloss and original AGONIST/BINDING AGENT/class codes. `web/try.html:162-176`. [UI](../demos_cost/ui_harness_results.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "S7 start date, sponsor-to-Drug global count/phase, zero-trial Drug",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — NCT00200395 start 2003-07-02; osimertinib sponsor 14/global 79/APPROVAL; CHEMBL925 count 0. [DB/UI](../db_ui/db_assertions.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "S8 node/edge props null, list, broken JSON",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — 12 original requests and restorations return 200. `src/app.py:211-217`. [Fixtures](../db_ui/db_fixtures.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "Hostile labels/titles/IDs/URLs; scheme/host/credential/backslash probes",
+    "status": "FIXED",
+    "current_evidence": "**FIXED for exercised markup paths** — escaping and HTTPS registry allowlist; browser limitation above. `web/try.html:104,180,199,221-235`. [Assertions](../demos_cost/ui_assertions.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "Unknown type Other / relation NEWREL",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — raw fallback, no undefined tooltip. [UI](../demos_cost/ui_regressions.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "All three / everything documentation overclaims",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — All of them / a capped list per relation. `src/app.py:5-11`."
+  },
+  {
+    "round": "M1",
+    "finding": "Silent 500-character cut: `\"x\"*500 + \" osimertinib\"`, `\"osimertinib \" + \"x\"*600`",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — explicit HTTP 400, no partial map. `src/app.py:239-243`. [HTTP](../root_checks/http_results.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "Lowercase IDs / Investigator names: nct00200395, chembl3353410, Armando Santoro Md",
+    "status": "NOT FIXED",
+    "current_evidence": "**NOT FIXED**, unchanged usability limit. [Controls](names_unsupported_forms.json)."
+  },
+  {
+    "round": "M1",
+    "finding": "Raw list/null/malformed JSON/oversized-body errors",
+    "status": "NOT FIXED",
+    "current_evidence": "**NOT FIXED**, unchanged controlled 400 exposing parse/attribute details; subsequent valid requests succeed. `src/app.py:237-239,267-269`. [HTTP](../root_checks/http_results.json)."
+  },
+  {
+    "round": "M2b",
+    "finding": "R1 `osimertinib and generic version of bevacizumab`, reverse/comma, trial/sponsor QA",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — only separate osimertinib; correct evidence. [HTTP](../root_checks/regression_http.json), [supplement](../root_checks/supplemental_http.json)."
+  },
+  {
+    "round": "M2b",
+    "finding": "R1 tracer/oral-product collateral refusal, both orders",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — `[89Zr] trastuzumab and osimertinib` and `osimertinib and oral azacitidine` retain osimertinib. [Names](names_regressions.json)."
+  },
+  {
+    "round": "M2b",
+    "finding": "Inherited `What is the generic version of bevacizumab?`",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — refusal, no centre; also M3-B2. [HTTP](../root_checks/supplemental_http.json)."
+  },
+  {
+    "round": "M2b",
+    "finding": "R2 missing sponsor count, Alaunos–ALDESLEUKIN edge, both endpoints and null/list/broken/empty props",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — null/zero sort weight; UI unknown, numeric 0 stays 0. `src/app.py:141-146`; `web/try.html:173`. [Fixture](../db_ui/db_missing_sponsor_count.json)."
+  },
+  {
+    "round": "M2b",
+    "finding": "Bool association score and hidden precision rounding",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — bool null/weight 0; exact EGFR/KRAS decimal values retained. [DB](../db_ui/db_score_fixture.json), [UI](../demos_cost/ui_regressions.json)."
+  },
+  {
+    "round": "M2b",
+    "finding": "Embedded multi-ID `Sharedbrand company` fixture",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — Roche disclosed alongside selected AstraZeneca. `src/app.py:97-102`. [Fixture](names_boundary_details.json)."
+  },
+  {
+    "round": "M2b",
+    "finding": "Missing/unknown SPONSORS role and equal-weight A–Z",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — neutral role wording, both directions/types; ordering verified. [DB/UI](../db_ui/db_assertions.json)."
+  },
+  {
+    "round": "M2b",
+    "finding": "Trial phases='PHASE2' render exception, four entry routes",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — caught error, cleared trail, recovery/stale suppression. [Callbacks](../demos_cost/ui_m3_checks.json)."
+  },
+  {
+    "round": "M2b",
+    "finding": "Residual module wording / successful-input truncation",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — individual M1 rows above."
+  },
+  {
+    "round": "M3 and M4",
+    "finding": "M3-B1 `paclitaxel with albumin bound nanoparticles`, formulation variant, `generic version with bevacizumab`",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — no originator centre/evidence. [HTTP](../root_checks/supplemental_http.json), [names](names_new_boundaries.json)."
+  },
+  {
+    "round": "M3 and M4",
+    "finding": "M3-B2 leading generic-version question",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — full qualified drug refused. [HTTP](../root_checks/supplemental_http.json)."
+  },
+  {
+    "round": "M3 and M4",
+    "finding": "M3 comma collateral refusal: osimertinib with separately listed liposomal/biosimilar drug; reversals/QA",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — separate osimertinib retained, 12 trial rows. [HTTP](../root_checks/supplemental_http.json)."
+  },
+  {
+    "round": "M3 and M4",
+    "finding": "M3 bare erlotinib hydrochloride / long paclitaxel-poliglumex name; nested-parent re-link",
+    "status": "FIXED",
+    "current_evidence": "**FIXED / retained** — correct complete IDs; no nested parent; explicit separate parent survives. [Names](names_attack.json)."
+  },
+  {
+    "round": "M3 and M4",
+    "finding": "M4-B1 wrong shortest-span tie: `osimertinib with generic version of bevacizumab`, reversal/added a",
+    "status": "FIXED",
+    "current_evidence": "**FIXED under revised design** — both same-item drugs refused; zero qualified-drug QA evidence. [HTTP](../root_checks/attack_http.json)."
+  },
+  {
+    "round": "M3 and M4",
+    "finding": "M4-B1 semicolon and fullwidth-comma variants",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — separate osimertinib retained. [Separators](names_separator_checks.json)."
+  },
+  {
+    "round": "M3 and M4",
+    "finding": "M4-B2 long qualified poliglumex / `generic version of the monoclonal antibody bevacizumab`",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — refused; bare long-name control preserved. [HTTP](../root_checks/attack_http.json)."
+  },
+  {
+    "round": "M3 and M4",
+    "finding": "M4-B3 consumed qualifier: biosimilar version / liposomal formulation / albumin-bound / two-product combination",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — no parent hit/evidence. [Names](names_attack.json), [HTTP](../root_checks/attack_http.json)."
+  },
+  {
+    "round": "M3 and M4",
+    "finding": "M4 target/company collateral refusal: EGFR or AstraZeneca beside biosimilar bevacizumab, reverse/with controls",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — target/company retained; drug refusal disclosed. [HTTP](../root_checks/m5_http.json)."
+  },
+  {
+    "round": "M3 and M4",
+    "finding": "M4 no-relink QA assessment",
+    "status": "FIXED",
+    "current_evidence": "**FIXED / retained** — exact frozen 1,648-input counterfactual, 64 identical / 1,560 metadata-only / 24 semantic differences / 0 errors; adapted matcher target is `_link`. [Result](adapted_frozen_qa_relink_sweep.json)."
+  },
+  {
+    "round": "M3 and M4",
+    "finding": "M3/M4 blank/whitespace form",
+    "status": "NOT FIXED",
+    "current_evidence": "**NOT FIXED**, unchanged usability limit: no request, previous view stays. `web/try.html:241`. [UI](../demos_cost/ui_m3_checks.json)."
+  },
+  {
+    "round": "M3 and M4",
+    "finding": "M3/M4 positive/negative Infinity fixture",
+    "status": "NOT FIXED",
+    "current_evidence": "**NOT FIXED**, unchanged failure closed: controlled HTTP 400, no invalid value drawn, none in snapshot. `src/app.py:207-208,264-269`. [Fixture](../db_ui/db_numeric_fixture.json)."
+  },
+  {
+    "round": "M3 and M4",
+    "finding": "Repeated lowercase-ID/name and raw request qualifications",
+    "status": "NOT FIXED",
+    "current_evidence": "**NOT FIXED**, same individual M1 rows above."
+  },
+  {
+    "round": "M5 and M6",
+    "finding": "M5-B1 reported attached slash/pipe and internal both-sides-glued attack",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — `bevacizumab-awwb/ osimertinib` and `bevacizumab - awwb/osimertinib` select only OSIMERTINIB and expose refusal; pipe counterparts too. [HTTP](../root_checks/m5_http.json), [m6 replay](../root_checks/confirm_http.json)."
+  },
+  {
+    "round": "M5 and M6",
+    "finding": "M5-B2 `liposomal and nanoparticle formulation of doxorubicin`, plural/sustained-release",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — forward qualifier carry refuses product; QA 0. [HTTP](../root_checks/m5_http.json)."
+  },
+  {
+    "round": "M5 and M6",
+    "finding": "M5-S1 `biosimilar anastrozole, Arimidex`; `biosimilar Prolia, xgeva`",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — separate aliases survive; 2/3 trial rows. [HTTP](../root_checks/cross_item_http.json)."
+  },
+  {
+    "round": "M5 and M6",
+    "finding": "M5-S1 `Erlotinib, hydrochloride biosimilar bevacizumab`, semicolon",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — original qualified comma/semicolon inputs preserve CHEMBL553; the simplified comma-list M7 regression is also repaired. [Exact HTTP](../root_checks/m5_http.json), [M7 controls](historical_focus.json)."
+  },
+  {
+    "round": "M5 and M6",
+    "finding": "M5-S2 Pegylated interferon alfa-2a",
+    "status": "NOT FIXED",
+    "current_evidence": "**NOT FIXED — accepted known over-refusal**, not a new blocker. Canonical name/ID work. [HTTP](../root_checks/m5_http.json)."
+  },
+  {
+    "round": "M5 and M6",
+    "finding": "M5-S3 all-substring cubic work / 999-character plain-answer timeout",
+    "status": "FIXED",
+    "current_evidence": "**FIXED for exact previous cost cases** — bounded predicate work and original plain-answer requests complete. Repeated-piece overhead also repaired; new cache-boundary failure is recorded separately below. [Original HTTP](../root_checks/perf_check_http.json), [current instrumentation](../demos_cost/perf_current.json)."
+  },
+  {
+    "round": "M5 and M6",
+    "finding": "M6-B1 interior slash/pipe",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — separate osimertinib retained; forbidden originator absent from QA. [Exact HTTP](../root_checks/confirm_http.json), [39-case matrix](focused_matrix.json)."
+  },
+  {
+    "round": "M5 and M6",
+    "finding": "M6-B2 U+3002 suffix punctuation, trailing em dash/hyphen, leading hyphen",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — all four original edge-punctuation inputs refuse, as do trial/sponsor QA. [Exact HTTP](../root_checks/confirm_http.json), [current focused stages](historical_focus.json)."
+  },
+  {
+    "round": "M5 and M6",
+    "finding": "M6-B2 supplementary bracketed/Unicode variants",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — parenthesized/bracketed suffixes and folded Unicode-hyphen cases now refuse; question-mark and quoted shortcut cases also refuse. [Historical matrix](historical_focus.json), [m7 attack HTTP](../m7_attacks/http_results.json)."
+  },
+  {
+    "round": "M5 and M6",
+    "finding": "M6-B3 `doxorubicin (nanoparticle and liposomal formulation)` / `bevacizumab (investigational and biosimilar)`",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — both parenthesized reversed qualifiers produce no centre or QA evidence. [Exact HTTP](../root_checks/carry_http.json), [stages](historical_focus.json)."
+  },
+  {
+    "round": "M5 and M6",
+    "finding": "M6 non-parenthetical reversed-qualifier supplement",
+    "status": "NOT FIXED",
+    "current_evidence": "**NOT FIXED as original expectation; accepted current item-policy consequence** — `doxorubicin in nanoparticle and liposomal formulations` still selects doxorubicin after listing-word separation. [Exact HTTP](../root_checks/reverse_http.json)."
+  },
+  {
+    "round": "M5 and M6",
+    "finding": "M6-S1 six complete stored aliases returning another Drug ID",
+    "status": "FIXED",
+    "current_evidence": "**FIXED for all six bare inputs** — intended stored IDs retained. [Current stages](historical_focus.json), [HTTP](../root_checks/alias_http.json)."
+  },
+  {
+    "round": "M5 and M6",
+    "finding": "M6-S1 prefixed QA using those comma-containing names",
+    "status": "NOT FIXED",
+    "current_evidence": "**NOT FIXED — current whole-input-only design consequence**. ENDOSTATIN prefixed QA still selects CHEMBL4297747 with 2 rows; Rapamycin prefixed QA CHEMBL413 with 5 rows. [Exact HTTP](../root_checks/alias_http.json), [direct QA](historical_focus.json)."
+  },
+  {
+    "round": "M5 and M6",
+    "finding": "M6 associated lone stored-alias losses",
+    "status": "FIXED",
+    "current_evidence": "**FIXED for all 19 non-M5-S2 historical lost aliases** — slash/joiner names restored; known M5-S2 still refuses. The current sweep separately records new isotope-token over-refusals. [Exact previous/current alias comparison](alias_regressions.json), [complete current sweep](adapted_names_m5_summary.json)."
+  },
+  {
+    "round": "M5 and M6",
+    "finding": "M6 split_2000 / many-piece cost control",
+    "status": "FIXED",
+    "current_evidence": "**FIXED for exact repeated-piece cost control** — current resolver skips no-drug pieces and deduplicates; the previous per-piece delay is gone. [Exact stress replay](../demos_cost/cost_stress.json), [old/current samples](../demos_cost/fresh_cost_comparison.json)."
+  },
+  {
+    "round": "M7",
+    "finding": "M7-B1 Whole-name refusal bypass: `bevacizumab-awwb?`, `bevacizumab-awwb!`, quoted form",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — All return refusal/no centre; trial and sponsor QA zero. [Current stages](historical_focus.json), [original m7 HTTP replay](../m7_attacks/http_results.json)."
+  },
+  {
+    "round": "M7",
+    "finding": "M7-B2 Wrappers and Unicode hyphens: `(bevacizumab-awwb)`, `[bevacizumab-awwb]`, U+2011 suffix and bio-similar",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — All named inputs refuse after shared normalization and edge stripping; no originator QA. [Stages](historical_focus.json), [HTTP](../m7_attacks/http_results.json)."
+  },
+  {
+    "round": "M7",
+    "finding": "M7-B3 Whitespace isotope: `89Zr trastuzumab`",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — No centre; both QA forms have zero evidence. [Stages](historical_focus.json), [HTTP](../m7_attacks/http_results.json)."
+  },
+  {
+    "round": "M7",
+    "finding": "M7-S1 Canonical equality too broad: `Erlotinib, hydrochloride`, `osimertinib,mesylate`, `is a`",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — Respectively CHEMBL553, CHEMBL3353410 and not_found; actual exact aliases retain intended IDs. [Current controls](historical_focus.json), [HTTP](../m7_attacks/http_results.json)."
+  },
+  {
+    "round": "M7",
+    "finding": "M7-S2 Lone exact stored names: `(E/Z)-AFATINIB`, `RO 09-1978/000`, `Anusol plus hc` and 19-alias set",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — All 19 old non-M5-S2 losses restored; three named controls select CHEMBL1173655 / CHEMBL1773 / CHEMBL389621. [Exact previous/current comparison](alias_regressions.json), [HTTP](alias_http.json)."
+  },
+  {
+    "round": "M7",
+    "finding": "M7-S3 Repeated identical-piece full resolver cost / queued ordinary map",
+    "status": "FIXED",
+    "current_evidence": "**FIXED** — Exact old repeated-x controls and corresponding requests complete with materially reduced work. New distinct-drug workload and cache failure are separate. [Cost replay](../demos_cost/cost_stress.json), [comparison](../demos_cost/fresh_cost_comparison.json), [HTTP](../demos_cost/fresh_cost_http.json)."
+  }
+]

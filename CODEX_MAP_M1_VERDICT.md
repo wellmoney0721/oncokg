@@ -86,3 +86,17 @@ Tests 331.
 | M7-S3 | the resolver ran on every piece | each distinct piece once, only if it holds a drug name, with a per-engine cache |
 
 Tests 334.
+
+## Round 8 (audit_evidence_claims/m8) — CHANGES REQUIRED
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M8-B1 | "[89 Zr] trastuzumab": the resolver's tracer refusal was re-tested on its cleaned component and lost | the resolver's `radiotracer_guard` rule is honoured as recorded; an isotope label written as two words ("89 Zr") beside a name qualifies the item |
+| M8-B2 | "bevacizumab-(awwb)": interior wrappers defeated the anchored guard while the alias key ignored them | the guards also see each item with every run of punctuation (not spaces) read as one hyphen |
+| M8-B3 | dashes outside the hand-written list (U+2E3A, 14 of 26 Pd) | every Pd character and the minus signs fold to "-"; a test covers all 26 |
+| M8-S1 | cache rollover cleared the entry it was about to read (KeyError, 400) | the result is kept in a local before the cache is touched |
+| M8-S2 | a bare qualifier carried across a comma ("biosimilar, and osimertinib") | carry only within the same comma/semicolon piece |
+| M8-S3 | lone stored names shaped like isotopes ("566C", "9-ac", "5ac") refused | a lone stored name in its own piece is not refused by the tracer rule; an isotope qualifies only beside other words |
+| M8-S4 | a stored name's final period stripped before comparison | both sides are stripped alike |
+
+Tests 336.

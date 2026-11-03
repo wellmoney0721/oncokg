@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\geoum\Dropbox\GY's Formal Workspace\2026 Job recruting\바이오리서치에이아이\oncokg\audit_evidence_claims\m8\replays\m7_focus.py", line 38, in <module>
+    row={'finding':finding,'input':s,'expected_center':expected,'actual_center':m.get('center',{}).get('id'),'resolver':E.resolve(s),'resolver_blocked':blocked,'whole_name':E.kg._whole_name(s,blocked),'list_linker':E.kg._link(s),'linker':E.kg.link_entities(s),'map':{k:v for k,v in m.items() if k!='groups'},'stored_hits':E.dic['index'].get(T.canonical_key(s),[])}
+                                                                                                                                                                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+TypeError: OncoKG._whole_name() missing 1 required positional argument: 'found'

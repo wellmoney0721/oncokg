@@ -1,0 +1,1240 @@
+{
+  "base": "http://127.0.0.1:8931",
+  "cases": [
+    {
+      "path": "/api/explore",
+      "text": "biosimilar anastrozole, Arimidex",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "CHEMBL1399",
+          "type": "Drug",
+          "label": "ANASTROZOLE",
+          "matched_text": "Arimidex",
+          "trials": 2,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": [
+          {
+            "refused": "biosimilar anastrozole"
+          }
+        ],
+        "groups": [
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 2,
+            "items": [
+              {
+                "id": "NCT02779751",
+                "type": "Trial",
+                "label": "NCT02779751",
+                "edge_id": "NCT02779751|EVALUATES|CHEMBL1399|NCT02779751",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "A Study of Abemaciclib (LY2835219) in Participants With Non-Small Cell Lung Cancer or Breast Cancer",
+                "start_date": "2016-11-14",
+                "url": "https://clinicaltrials.gov/study/NCT02779751",
+                "weight": "2016-11-14"
+              },
+              {
+                "id": "NCT00932152",
+                "type": "Trial",
+                "label": "NCT00932152",
+                "edge_id": "NCT00932152|EVALUATES|CHEMBL1399|NCT00932152",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "Fulvestrant and Anastrozole as Consolidation Therapy in Postmenopausal Women With Advanced Non-small Cell Lung Cancer",
+                "start_date": "2010-09",
+                "url": "https://clinicaltrials.gov/study/NCT00932152",
+                "weight": "2010-09"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 2,
+            "items": [
+              {
+                "id": "ORG:elililly",
+                "type": "Company",
+                "label": "Eli Lilly",
+                "edge_id": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL1399|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:universityofpittsburgh",
+                "type": "Company",
+                "label": "University Of Pittsburgh",
+                "edge_id": "ORG:universityofpittsburgh|SPONSORS_TRIAL_OF|CHEMBL1399|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          },
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ENSG00000137869",
+                "type": "Target",
+                "label": "CYP19A1",
+                "edge_id": "CHEMBL1399|ACTS_ON|ENSG00000137869|CHEMBL1399",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "biosimilar anastrozole, Arimidex",
+      "status": 200,
+      "body": {
+        "raw": "biosimilar anastrozole, Arimidex",
+        "components": [
+          {
+            "component": "biosimilar anastrozole",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          },
+          {
+            "component": "Arimidex",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1399",
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": "Arimidex",
+            "candidates": null,
+            "drug": {
+              "name": "ANASTROZOLE",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Cytochrome P450 19A1 inhibitor"
+              ],
+              "trials": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "text": "biosimilar anastrozole and Arimidex",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "CHEMBL1399",
+          "type": "Drug",
+          "label": "ANASTROZOLE",
+          "matched_text": "Arimidex",
+          "trials": 2,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": [
+          {
+            "refused": "biosimilar anastrozole"
+          }
+        ],
+        "groups": [
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 2,
+            "items": [
+              {
+                "id": "NCT02779751",
+                "type": "Trial",
+                "label": "NCT02779751",
+                "edge_id": "NCT02779751|EVALUATES|CHEMBL1399|NCT02779751",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "A Study of Abemaciclib (LY2835219) in Participants With Non-Small Cell Lung Cancer or Breast Cancer",
+                "start_date": "2016-11-14",
+                "url": "https://clinicaltrials.gov/study/NCT02779751",
+                "weight": "2016-11-14"
+              },
+              {
+                "id": "NCT00932152",
+                "type": "Trial",
+                "label": "NCT00932152",
+                "edge_id": "NCT00932152|EVALUATES|CHEMBL1399|NCT00932152",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "Fulvestrant and Anastrozole as Consolidation Therapy in Postmenopausal Women With Advanced Non-small Cell Lung Cancer",
+                "start_date": "2010-09",
+                "url": "https://clinicaltrials.gov/study/NCT00932152",
+                "weight": "2010-09"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 2,
+            "items": [
+              {
+                "id": "ORG:elililly",
+                "type": "Company",
+                "label": "Eli Lilly",
+                "edge_id": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL1399|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:universityofpittsburgh",
+                "type": "Company",
+                "label": "University Of Pittsburgh",
+                "edge_id": "ORG:universityofpittsburgh|SPONSORS_TRIAL_OF|CHEMBL1399|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          },
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ENSG00000137869",
+                "type": "Target",
+                "label": "CYP19A1",
+                "edge_id": "CHEMBL1399|ACTS_ON|ENSG00000137869|CHEMBL1399",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "biosimilar anastrozole and Arimidex",
+      "status": 200,
+      "body": {
+        "raw": "biosimilar anastrozole and Arimidex",
+        "components": [
+          {
+            "component": "biosimilar anastrozole",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          },
+          {
+            "component": "Arimidex",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1399",
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": "Arimidex",
+            "candidates": null,
+            "drug": {
+              "name": "ANASTROZOLE",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Cytochrome P450 19A1 inhibitor"
+              ],
+              "trials": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "text": "Arimidex",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "CHEMBL1399",
+          "type": "Drug",
+          "label": "ANASTROZOLE",
+          "matched_text": "Arimidex",
+          "trials": 2,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Small molecule"
+          }
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 2,
+            "items": [
+              {
+                "id": "NCT02779751",
+                "type": "Trial",
+                "label": "NCT02779751",
+                "edge_id": "NCT02779751|EVALUATES|CHEMBL1399|NCT02779751",
+                "phases": [
+                  "PHASE1"
+                ],
+                "status": "ACTIVE_NOT_RECRUITING",
+                "title": "A Study of Abemaciclib (LY2835219) in Participants With Non-Small Cell Lung Cancer or Breast Cancer",
+                "start_date": "2016-11-14",
+                "url": "https://clinicaltrials.gov/study/NCT02779751",
+                "weight": "2016-11-14"
+              },
+              {
+                "id": "NCT00932152",
+                "type": "Trial",
+                "label": "NCT00932152",
+                "edge_id": "NCT00932152|EVALUATES|CHEMBL1399|NCT00932152",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "TERMINATED",
+                "title": "Fulvestrant and Anastrozole as Consolidation Therapy in Postmenopausal Women With Advanced Non-small Cell Lung Cancer",
+                "start_date": "2010-09",
+                "url": "https://clinicaltrials.gov/study/NCT00932152",
+                "weight": "2010-09"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 2,
+            "items": [
+              {
+                "id": "ORG:elililly",
+                "type": "Company",
+                "label": "Eli Lilly",
+                "edge_id": "ORG:elililly|SPONSORS_TRIAL_OF|CHEMBL1399|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:universityofpittsburgh",
+                "type": "Company",
+                "label": "University Of Pittsburgh",
+                "edge_id": "ORG:universityofpittsburgh|SPONSORS_TRIAL_OF|CHEMBL1399|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          },
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ENSG00000137869",
+                "type": "Target",
+                "label": "CYP19A1",
+                "edge_id": "CHEMBL1399|ACTS_ON|ENSG00000137869|CHEMBL1399",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "Arimidex",
+      "status": 200,
+      "body": {
+        "raw": "Arimidex",
+        "components": [
+          {
+            "component": "Arimidex",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1399",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Arimidex",
+            "candidates": null,
+            "drug": {
+              "name": "ANASTROZOLE",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Cytochrome P450 19A1 inhibitor"
+              ],
+              "trials": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "text": "biosimilar Prolia, xgeva",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "CHEMBL1237023",
+          "type": "Drug",
+          "label": "DENOSUMAB",
+          "matched_text": "Xgeva",
+          "trials": 3,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        },
+        "also": [
+          {
+            "refused": "biosimilar Prolia"
+          }
+        ],
+        "groups": [
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 3,
+            "items": [
+              {
+                "id": "NCT07034391",
+                "type": "Trial",
+                "label": "NCT07034391",
+                "edge_id": "NCT07034391|EVALUATES|CHEMBL1237023|NCT07034391",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "A Study Evaluating the Efficacy of PD-1 Inhibitor Combined With Denosumab and Chemotherapy in Locally Advanced or Metastatic Non-Squamous Non-Small Cell Lung Cancer Patients With Driver Gene-Negative Status",
+                "start_date": "2025-05-12",
+                "url": "https://clinicaltrials.gov/study/NCT07034391",
+                "weight": "2025-05-12"
+              },
+              {
+                "id": "NCT03669523",
+                "type": "Trial",
+                "label": "NCT03669523",
+                "edge_id": "NCT03669523|EVALUATES|CHEMBL1237023|NCT03669523",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Denosumab and Nivolumab Combination As 2d-line Therapy in Stage IV NSC Lung Cancer with Bone Metastases (DENIVOS)",
+                "start_date": "2018-11-06",
+                "url": "https://clinicaltrials.gov/study/NCT03669523",
+                "weight": "2018-11-06"
+              },
+              {
+                "id": "NCT00896454",
+                "type": "Trial",
+                "label": "NCT00896454",
+                "edge_id": "NCT00896454|EVALUATES|CHEMBL1237023|NCT00896454",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Study of Denosumab in the Treatment of Hypercalcemia of Malignancy in Subjects With Elevated Serum Calcium",
+                "start_date": "2009-11-16",
+                "url": "https://clinicaltrials.gov/study/NCT00896454",
+                "weight": "2009-11-16"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 3,
+            "items": [
+              {
+                "id": "ORG:amgen",
+                "type": "Company",
+                "label": "Amgen",
+                "edge_id": "ORG:amgen|SPONSORS_TRIAL_OF|CHEMBL1237023|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:centrehospitalierannecygenevois",
+                "type": "Company",
+                "label": "Centre Hospitalier Annecy Genevois",
+                "edge_id": "ORG:centrehospitalierannecygenevois|SPONSORS_TRIAL_OF|CHEMBL1237023|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:chinamedicaluniversitychina",
+                "type": "Company",
+                "label": "China Medical University China",
+                "edge_id": "ORG:chinamedicaluniversitychina|SPONSORS_TRIAL_OF|CHEMBL1237023|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          },
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ENSG00000120659",
+                "type": "Target",
+                "label": "TNFSF11",
+                "edge_id": "CHEMBL1237023|ACTS_ON|ENSG00000120659|CHEMBL1237023",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "biosimilar Prolia, xgeva",
+      "status": 200,
+      "body": {
+        "raw": "biosimilar Prolia, xgeva",
+        "components": [
+          {
+            "component": "biosimilar Prolia",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          },
+          {
+            "component": "xgeva",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1237023",
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": "Xgeva",
+            "candidates": null,
+            "drug": {
+              "name": "DENOSUMAB",
+              "drug_type": "Antibody",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_3",
+              "mechanisms": [
+                "Tumor necrosis factor ligand superfamily member 11 inhibitor"
+              ],
+              "trials": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "text": "biosimilar Prolia and xgeva",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "CHEMBL1237023",
+          "type": "Drug",
+          "label": "DENOSUMAB",
+          "matched_text": "Xgeva",
+          "trials": 3,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        },
+        "also": [
+          {
+            "refused": "biosimilar Prolia"
+          }
+        ],
+        "groups": [
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 3,
+            "items": [
+              {
+                "id": "NCT07034391",
+                "type": "Trial",
+                "label": "NCT07034391",
+                "edge_id": "NCT07034391|EVALUATES|CHEMBL1237023|NCT07034391",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "A Study Evaluating the Efficacy of PD-1 Inhibitor Combined With Denosumab and Chemotherapy in Locally Advanced or Metastatic Non-Squamous Non-Small Cell Lung Cancer Patients With Driver Gene-Negative Status",
+                "start_date": "2025-05-12",
+                "url": "https://clinicaltrials.gov/study/NCT07034391",
+                "weight": "2025-05-12"
+              },
+              {
+                "id": "NCT03669523",
+                "type": "Trial",
+                "label": "NCT03669523",
+                "edge_id": "NCT03669523|EVALUATES|CHEMBL1237023|NCT03669523",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Denosumab and Nivolumab Combination As 2d-line Therapy in Stage IV NSC Lung Cancer with Bone Metastases (DENIVOS)",
+                "start_date": "2018-11-06",
+                "url": "https://clinicaltrials.gov/study/NCT03669523",
+                "weight": "2018-11-06"
+              },
+              {
+                "id": "NCT00896454",
+                "type": "Trial",
+                "label": "NCT00896454",
+                "edge_id": "NCT00896454|EVALUATES|CHEMBL1237023|NCT00896454",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Study of Denosumab in the Treatment of Hypercalcemia of Malignancy in Subjects With Elevated Serum Calcium",
+                "start_date": "2009-11-16",
+                "url": "https://clinicaltrials.gov/study/NCT00896454",
+                "weight": "2009-11-16"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 3,
+            "items": [
+              {
+                "id": "ORG:amgen",
+                "type": "Company",
+                "label": "Amgen",
+                "edge_id": "ORG:amgen|SPONSORS_TRIAL_OF|CHEMBL1237023|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:centrehospitalierannecygenevois",
+                "type": "Company",
+                "label": "Centre Hospitalier Annecy Genevois",
+                "edge_id": "ORG:centrehospitalierannecygenevois|SPONSORS_TRIAL_OF|CHEMBL1237023|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:chinamedicaluniversitychina",
+                "type": "Company",
+                "label": "China Medical University China",
+                "edge_id": "ORG:chinamedicaluniversitychina|SPONSORS_TRIAL_OF|CHEMBL1237023|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          },
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ENSG00000120659",
+                "type": "Target",
+                "label": "TNFSF11",
+                "edge_id": "CHEMBL1237023|ACTS_ON|ENSG00000120659|CHEMBL1237023",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "biosimilar Prolia and xgeva",
+      "status": 200,
+      "body": {
+        "raw": "biosimilar Prolia and xgeva",
+        "components": [
+          {
+            "component": "biosimilar Prolia",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          },
+          {
+            "component": "xgeva",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1237023",
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": "Xgeva",
+            "candidates": null,
+            "drug": {
+              "name": "DENOSUMAB",
+              "drug_type": "Antibody",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_3",
+              "mechanisms": [
+                "Tumor necrosis factor ligand superfamily member 11 inhibitor"
+              ],
+              "trials": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/explore",
+      "text": "xgeva",
+      "status": 200,
+      "body": {
+        "center": {
+          "id": "CHEMBL1237023",
+          "type": "Drug",
+          "label": "DENOSUMAB",
+          "matched_text": "Xgeva",
+          "trials": 3,
+          "props": {
+            "max_phase_overall": "APPROVAL",
+            "drug_type": "Antibody"
+          }
+        },
+        "also": [],
+        "groups": [
+          {
+            "rel": "EVALUATES",
+            "dir": "in",
+            "type": "Trial",
+            "role": null,
+            "total": 3,
+            "items": [
+              {
+                "id": "NCT07034391",
+                "type": "Trial",
+                "label": "NCT07034391",
+                "edge_id": "NCT07034391|EVALUATES|CHEMBL1237023|NCT07034391",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "RECRUITING",
+                "title": "A Study Evaluating the Efficacy of PD-1 Inhibitor Combined With Denosumab and Chemotherapy in Locally Advanced or Metastatic Non-Squamous Non-Small Cell Lung Cancer Patients With Driver Gene-Negative Status",
+                "start_date": "2025-05-12",
+                "url": "https://clinicaltrials.gov/study/NCT07034391",
+                "weight": "2025-05-12"
+              },
+              {
+                "id": "NCT03669523",
+                "type": "Trial",
+                "label": "NCT03669523",
+                "edge_id": "NCT03669523|EVALUATES|CHEMBL1237023|NCT03669523",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Denosumab and Nivolumab Combination As 2d-line Therapy in Stage IV NSC Lung Cancer with Bone Metastases (DENIVOS)",
+                "start_date": "2018-11-06",
+                "url": "https://clinicaltrials.gov/study/NCT03669523",
+                "weight": "2018-11-06"
+              },
+              {
+                "id": "NCT00896454",
+                "type": "Trial",
+                "label": "NCT00896454",
+                "edge_id": "NCT00896454|EVALUATES|CHEMBL1237023|NCT00896454",
+                "phases": [
+                  "PHASE2"
+                ],
+                "status": "COMPLETED",
+                "title": "Study of Denosumab in the Treatment of Hypercalcemia of Malignancy in Subjects With Elevated Serum Calcium",
+                "start_date": "2009-11-16",
+                "url": "https://clinicaltrials.gov/study/NCT00896454",
+                "weight": "2009-11-16"
+              }
+            ]
+          },
+          {
+            "rel": "SPONSORS_TRIAL_OF",
+            "dir": "in",
+            "type": "Company",
+            "role": null,
+            "total": 3,
+            "items": [
+              {
+                "id": "ORG:amgen",
+                "type": "Company",
+                "label": "Amgen",
+                "edge_id": "ORG:amgen|SPONSORS_TRIAL_OF|CHEMBL1237023|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              },
+              {
+                "id": "ORG:centrehospitalierannecygenevois",
+                "type": "Company",
+                "label": "Centre Hospitalier Annecy Genevois",
+                "edge_id": "ORG:centrehospitalierannecygenevois|SPONSORS_TRIAL_OF|CHEMBL1237023|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              },
+              {
+                "id": "ORG:chinamedicaluniversitychina",
+                "type": "Company",
+                "label": "China Medical University China",
+                "edge_id": "ORG:chinamedicaluniversitychina|SPONSORS_TRIAL_OF|CHEMBL1237023|",
+                "evidence_trials": 1,
+                "weight": 1,
+                "sponsor_class": "OTHER"
+              }
+            ]
+          },
+          {
+            "rel": "ACTS_ON",
+            "dir": "out",
+            "type": "Target",
+            "role": null,
+            "total": 1,
+            "items": [
+              {
+                "id": "ENSG00000120659",
+                "type": "Target",
+                "label": "TNFSF11",
+                "edge_id": "CHEMBL1237023|ACTS_ON|ENSG00000120659|CHEMBL1237023",
+                "weight": 0,
+                "action": "INHIBITOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/resolve",
+      "text": "xgeva",
+      "status": 200,
+      "body": {
+        "raw": "xgeva",
+        "components": [
+          {
+            "component": "xgeva",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1237023",
+            "score": null,
+            "rules": [],
+            "matched_alias": "Xgeva",
+            "candidates": null,
+            "drug": {
+              "name": "DENOSUMAB",
+              "drug_type": "Antibody",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_3",
+              "mechanisms": [
+                "Tumor necrosis factor ligand superfamily member 11 inhibitor"
+              ],
+              "trials": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/ask",
+      "text": "Which trials evaluate biosimilar anastrozole, Arimidex?",
+      "status": 200,
+      "body": {
+        "question": "Which trials evaluate biosimilar anastrozole, Arimidex?",
+        "intent": "trials_for_entity",
+        "entities": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "Which trials evaluate biosimilar anastrozole",
+            "matched_text": "Which trials evaluate biosimilar anastrozole",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL1399",
+            "label": "ANASTROZOLE",
+            "matched_text": "Arimidex",
+            "matched_alias": "Arimidex"
+          }
+        ],
+        "answer": "Trials of this drug:\n  - NCT00932152 (PHASE2, TERMINATED) evaluates ANASTROZOLE [NCT00932152]\n  - NCT02779751 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates ANASTROZOLE [NCT02779751]\n\nScope: 2 edge(s) from this graph; non-small cell lung cancer only.",
+        "generated_by": "deterministic template (no language model)",
+        "checks": {
+          "grounded": null,
+          "applicable": false,
+          "unsupported_claims": [],
+          "evidence_count": 2,
+          "method": "not applicable",
+          "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+        },
+        "evidence": [
+          {
+            "statement": "NCT00932152 (PHASE2, TERMINATED) evaluates ANASTROZOLE",
+            "relation": "EVALUATES",
+            "edge_id": "NCT00932152|EVALUATES|CHEMBL1399|NCT00932152",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT00932152",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT00932152",
+            "stated_intervention": "anastrozole (Arimidex)",
+            "title": "Fulvestrant and Anastrozole as Consolidation Therapy in Postmenopausal Women With Advanced Non-small Cell Lung Cancer",
+            "status": "TERMINATED",
+            "phases": [
+              "PHASE2"
+            ]
+          },
+          {
+            "statement": "NCT02779751 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates ANASTROZOLE",
+            "relation": "EVALUATES",
+            "edge_id": "NCT02779751|EVALUATES|CHEMBL1399|NCT02779751",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT02779751",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT02779751",
+            "stated_intervention": "Anastrozole",
+            "title": "A Study of Abemaciclib (LY2835219) in Participants With Non-Small Cell Lung Cancer or Breast Cancer",
+            "status": "ACTIVE_NOT_RECRUITING",
+            "phases": [
+              "PHASE1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/ask",
+      "text": "Which trials evaluate Arimidex?",
+      "status": 200,
+      "body": {
+        "question": "Which trials evaluate Arimidex?",
+        "intent": "trials_for_entity",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1399",
+            "label": "ANASTROZOLE",
+            "matched_text": "Arimidex",
+            "matched_alias": "Arimidex"
+          }
+        ],
+        "answer": "Trials of this drug:\n  - NCT00932152 (PHASE2, TERMINATED) evaluates ANASTROZOLE [NCT00932152]\n  - NCT02779751 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates ANASTROZOLE [NCT02779751]\n\nScope: 2 edge(s) from this graph; non-small cell lung cancer only.",
+        "generated_by": "deterministic template (no language model)",
+        "checks": {
+          "grounded": null,
+          "applicable": false,
+          "unsupported_claims": [],
+          "evidence_count": 2,
+          "method": "not applicable",
+          "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+        },
+        "evidence": [
+          {
+            "statement": "NCT00932152 (PHASE2, TERMINATED) evaluates ANASTROZOLE",
+            "relation": "EVALUATES",
+            "edge_id": "NCT00932152|EVALUATES|CHEMBL1399|NCT00932152",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT00932152",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT00932152",
+            "stated_intervention": "anastrozole (Arimidex)",
+            "title": "Fulvestrant and Anastrozole as Consolidation Therapy in Postmenopausal Women With Advanced Non-small Cell Lung Cancer",
+            "status": "TERMINATED",
+            "phases": [
+              "PHASE2"
+            ]
+          },
+          {
+            "statement": "NCT02779751 (PHASE1, ACTIVE_NOT_RECRUITING) evaluates ANASTROZOLE",
+            "relation": "EVALUATES",
+            "edge_id": "NCT02779751|EVALUATES|CHEMBL1399|NCT02779751",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT02779751",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT02779751",
+            "stated_intervention": "Anastrozole",
+            "title": "A Study of Abemaciclib (LY2835219) in Participants With Non-Small Cell Lung Cancer or Breast Cancer",
+            "status": "ACTIVE_NOT_RECRUITING",
+            "phases": [
+              "PHASE1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/ask",
+      "text": "Which trials evaluate biosimilar Prolia, xgeva?",
+      "status": 200,
+      "body": {
+        "question": "Which trials evaluate biosimilar Prolia, xgeva?",
+        "intent": "trials_for_entity",
+        "entities": [
+          {
+            "type": "Refused",
+            "id": null,
+            "label": "Which trials evaluate biosimilar Prolia",
+            "matched_text": "Which trials evaluate biosimilar Prolia",
+            "why": "names a distinct product or tracer, not the originator molecule"
+          },
+          {
+            "type": "Drug",
+            "id": "CHEMBL1237023",
+            "label": "DENOSUMAB",
+            "matched_text": "xgeva",
+            "matched_alias": "Xgeva"
+          }
+        ],
+        "answer": "Trials of this drug:\n  - NCT00896454 (PHASE2, COMPLETED) evaluates DENOSUMAB [NCT00896454]\n  - NCT07034391 (PHASE2, RECRUITING) evaluates DENOSUMAB [NCT07034391]\n  - NCT03669523 (PHASE2, COMPLETED) evaluates DENOSUMAB [NCT03669523]\n\nScope: 3 edge(s) from this graph; non-small cell lung cancer only.",
+        "generated_by": "deterministic template (no language model)",
+        "checks": {
+          "grounded": null,
+          "applicable": false,
+          "unsupported_claims": [],
+          "evidence_count": 3,
+          "method": "not applicable",
+          "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+        },
+        "evidence": [
+          {
+            "statement": "NCT00896454 (PHASE2, COMPLETED) evaluates DENOSUMAB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT00896454|EVALUATES|CHEMBL1237023|NCT00896454",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT00896454",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT00896454",
+            "stated_intervention": "denosumab",
+            "title": "Study of Denosumab in the Treatment of Hypercalcemia of Malignancy in Subjects With Elevated Serum Calcium",
+            "status": "COMPLETED",
+            "phases": [
+              "PHASE2"
+            ]
+          },
+          {
+            "statement": "NCT07034391 (PHASE2, RECRUITING) evaluates DENOSUMAB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT07034391|EVALUATES|CHEMBL1237023|NCT07034391",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT07034391",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 0.88,
+            "resolution_tier": "CONTAINED_ALIAS",
+            "url": "https://clinicaltrials.gov/study/NCT07034391",
+            "stated_intervention": "denosumab combined anti-PD-1 inhibitor with chemotherapy",
+            "title": "A Study Evaluating the Efficacy of PD-1 Inhibitor Combined With Denosumab and Chemotherapy in Locally Advanced or Metastatic Non-Squamous Non-Small Cell Lung Cancer Patients With Driver Gene-Negative Status",
+            "status": "RECRUITING",
+            "phases": [
+              "PHASE2"
+            ]
+          },
+          {
+            "statement": "NCT03669523 (PHASE2, COMPLETED) evaluates DENOSUMAB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT03669523|EVALUATES|CHEMBL1237023|NCT03669523",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT03669523",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 0.88,
+            "resolution_tier": "CONTAINED_ALIAS",
+            "url": "https://clinicaltrials.gov/study/NCT03669523",
+            "stated_intervention": "Denosumab-nivolumab combination",
+            "title": "Denosumab and Nivolumab Combination As 2d-line Therapy in Stage IV NSC Lung Cancer with Bone Metastases (DENIVOS)",
+            "status": "COMPLETED",
+            "phases": [
+              "PHASE2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/ask",
+      "text": "Which trials evaluate xgeva?",
+      "status": 200,
+      "body": {
+        "question": "Which trials evaluate xgeva?",
+        "intent": "trials_for_entity",
+        "entities": [
+          {
+            "type": "Drug",
+            "id": "CHEMBL1237023",
+            "label": "DENOSUMAB",
+            "matched_text": "xgeva",
+            "matched_alias": "Xgeva"
+          }
+        ],
+        "answer": "Trials of this drug:\n  - NCT00896454 (PHASE2, COMPLETED) evaluates DENOSUMAB [NCT00896454]\n  - NCT07034391 (PHASE2, RECRUITING) evaluates DENOSUMAB [NCT07034391]\n  - NCT03669523 (PHASE2, COMPLETED) evaluates DENOSUMAB [NCT03669523]\n\nScope: 3 edge(s) from this graph; non-small cell lung cancer only.",
+        "generated_by": "deterministic template (no language model)",
+        "checks": {
+          "grounded": null,
+          "applicable": false,
+          "unsupported_claims": [],
+          "evidence_count": 3,
+          "method": "not applicable",
+          "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+        },
+        "evidence": [
+          {
+            "statement": "NCT00896454 (PHASE2, COMPLETED) evaluates DENOSUMAB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT00896454|EVALUATES|CHEMBL1237023|NCT00896454",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT00896454",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 1.0,
+            "resolution_tier": "EXACT",
+            "url": "https://clinicaltrials.gov/study/NCT00896454",
+            "stated_intervention": "denosumab",
+            "title": "Study of Denosumab in the Treatment of Hypercalcemia of Malignancy in Subjects With Elevated Serum Calcium",
+            "status": "COMPLETED",
+            "phases": [
+              "PHASE2"
+            ]
+          },
+          {
+            "statement": "NCT07034391 (PHASE2, RECRUITING) evaluates DENOSUMAB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT07034391|EVALUATES|CHEMBL1237023|NCT07034391",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT07034391",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 0.88,
+            "resolution_tier": "CONTAINED_ALIAS",
+            "url": "https://clinicaltrials.gov/study/NCT07034391",
+            "stated_intervention": "denosumab combined anti-PD-1 inhibitor with chemotherapy",
+            "title": "A Study Evaluating the Efficacy of PD-1 Inhibitor Combined With Denosumab and Chemotherapy in Locally Advanced or Metastatic Non-Squamous Non-Small Cell Lung Cancer Patients With Driver Gene-Negative Status",
+            "status": "RECRUITING",
+            "phases": [
+              "PHASE2"
+            ]
+          },
+          {
+            "statement": "NCT03669523 (PHASE2, COMPLETED) evaluates DENOSUMAB",
+            "relation": "EVALUATES",
+            "edge_id": "NCT03669523|EVALUATES|CHEMBL1237023|NCT03669523",
+            "source": "clinicaltrials.gov",
+            "source_record": "NCT03669523",
+            "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+            "confidence": 0.88,
+            "resolution_tier": "CONTAINED_ALIAS",
+            "url": "https://clinicaltrials.gov/study/NCT03669523",
+            "stated_intervention": "Denosumab-nivolumab combination",
+            "title": "Denosumab and Nivolumab Combination As 2d-line Therapy in Stage IV NSC Lung Cancer with Bone Metastases (DENIVOS)",
+            "status": "COMPLETED",
+            "phases": [
+              "PHASE2"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

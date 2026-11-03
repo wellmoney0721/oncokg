@@ -263,3 +263,29 @@ def test_repeated_list_pieces_are_resolved_once():
     t0 = time.time()
     kg.link_entities(";".join(["x"] * 2000))
     assert time.time() - t0 < 1.0
+
+
+# Codex review m8
+def test_spaced_isotopes_inner_wrappers_and_every_dash_refuse():
+    import unicodedata
+    import app
+    e = app.Engine()
+    for t in ("[89 Zr] trastuzumab", "[89\tZr] trastuzumab", "[89 Zr] trastuzumab",
+              "bevacizumab-(awwb)", "bevacizumab-[awwb]"):
+        assert e.explore(t).get("refused"), t
+    for c in (chr(i) for i in range(0x110000) if unicodedata.category(chr(i)) == "Pd"):
+        assert e.explore("bevacizumab" + c + "awwb").get("refused"), hex(ord(c))
+    assert not e.kg.answer("Which trials evaluate [89 Zr] trastuzumab?", use_llm=False).evidence
+    assert e.explore("bevacizumab-(awwb), osimertinib")["center"]["id"] == "CHEMBL3353410"
+
+
+def test_lone_names_qualifier_boundaries_and_cache_rollover():
+    import app
+    e = app.Engine()
+    for name, did in (("566C", "CHEMBL1450"), ("9-ac", "CHEMBL274070"), ("5ac", "CHEMBL1489"),
+                      ("5.BETA.,20-EPOXY-1,2.ALPHA.,4,7.BETA.", "CHEMBL428647")):
+        assert e.explore(name)["center"]["id"] == did, name
+    for t in ("biosimilar, and osimertinib", "biosimilar; and osimertinib", "biosimilar and, osimertinib"):
+        assert e.explore(t)["center"]["id"] == "CHEMBL3353410", t
+    e.kg._resolve_cache = {f"k{i}": [] for i in range(4096)}
+    assert e.explore("osimertinib")["center"]["id"] == "CHEMBL3353410"

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\geoum\Dropbox\GY's Formal Workspace\2026 Job recruting\바이오리서치에이아이\oncokg\audit_evidence_claims\m8\replays\names_m5_attack.py", line 81, in <module>
+    s=hits[0]['alias'];a,b=cur.kg.link_entities(s),old.kg.link_entities(s)
+                           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\geoum\Dropbox\GY's Formal Workspace\2026 Job recruting\바이오리서치에이아이\oncokg\src\query.py", line 147, in link_entities
+    blocked = self._resolver_blocked(question)
+  File "C:\Users\geoum\Dropbox\GY's Formal Workspace\2026 Job recruting\바이오리서치에이아이\oncokg\src\query.py", line 182, in _resolver_blocked
+    comps += self._resolve_cache[piece]
+             ~~~~~~~~~~~~~~~~~~~^^^^^^^
+KeyError: 'Gallium gozetotide ga-68'

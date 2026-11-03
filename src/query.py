@@ -97,8 +97,13 @@ _JOINERS = {"and", "or", "plus", "versus", "vs", "vs.", "+", "&", "then", "follo
 
 
 
-# every Unicode dash and minus, read as a hyphen
-_DASHES = r"[\u2010-\u2015\u2212\ufe58\ufe63\uff0d]"
+# every Unicode dash (category Pd) and minus sign, read as a hyphen
+_DASHES = "[" + "".join(re.escape(chr(c)) for c in range(0x110000)
+                        if unicodedata.category(chr(c)) == "Pd" or chr(c) in "\u2212\u207b\u208b") + "]"
+
+
+def _fold(text: str) -> str:
+    return re.sub(_DASHES, "-", unicodedata.normalize("NFKC", text or ""))
 
 def _qualified(words: list[str]) -> bool:
     """Does any part of this list item name a distinct product or a tracer?
@@ -106,14 +111,21 @@ def _qualified(words: list[str]) -> bool:
     The unanchored patterns are tried on the whole item once; the anchored ones (a
     biosimilar suffix, a leading isotope) on every run of up to eight words, so the
     work grows linearly with the item."""
-    text = " ".join(words)
-    if T.is_distinct_product(text) or T.is_radiotracer(text):
+    def hit(text: str) -> bool:
+        # the alias key ignores punctuation, so the guards also see the text with every
+        # run of punctuation (not spaces) read as one hyphen ("bevacizumab-(awwb)")
+        return any(T.is_distinct_product(v) or T.is_radiotracer(v)
+                   for v in {text, re.sub(r"[^\w\s]+", "-", text).strip("-")})
+
+    if hit(" ".join(words)):
         return True
-    if any(T.is_isotope_label(w) for w in words):   # "89Zr trastuzumab", "[89Zr] ..."
-        return True
-    return any(T.is_distinct_product(w) or T.is_radiotracer(w)
-               for w in (" ".join(words[i:j]) for i in range(len(words))
-                         for j in range(i + 1, min(len(words), i + 8) + 1)))
+    if len(words) > 1:                  # an isotope beside a name; a lone "566C" is a name
+        if any(T.is_isotope_label(w) for w in words):
+            return True
+        if any(T.is_isotope_label(f"{a} {b}") for a, b in zip(words, words[1:])):
+            return True                 # "89 Zr trastuzumab"
+    return any(hit(" ".join(words[i:j])) for i in range(len(words))
+               for j in range(i + 1, min(len(words), i + 8) + 1))
 
 class OncoKG:
     def __init__(self, db_path: Path = DB_PATH,
@@ -143,7 +155,7 @@ class OncoKG:
     # -- entity linking ---------------------------------------------------- #
     def link_entities(self, question: str) -> list[dict]:
         # one spelling for every check: compatibility forms folded, every dash a hyphen
-        question = re.sub(_DASHES, "-", unicodedata.normalize("NFKC", question or ""))
+        question = _fold(question)
         blocked = self._resolver_blocked(question)
         found = self._link(question)
         whole = self._whole_name(question, blocked, found)
@@ -166,27 +178,34 @@ class OncoKG:
         """Drug ids inside the pieces the intervention resolver refuses as a distinct
         product or a tracer, with the refused piece."""
         comps = []
+        lone = set()
         pieces = {p.strip() for p in re.split(r"[,;\uff0c\uff1b\u3001/|]", text) if p.strip()}
         for piece in pieces:                         # each distinct list piece once
             words = [w for w in re.split(r"[^\w\-]+", piece) if w]
             if not self._drug_spans(words, set(), [0] * len(words)):
                 continue                             # no drug in it: nothing to refuse
-            if piece not in self._resolve_cache:
+            got = self._resolve_cache.get(piece)
+            if got is None:
                 try:
-                    self._resolve_cache[piece] = N.resolve_drug_string(
-                        piece, self.dic, self.index_keys)["components"]
+                    got = N.resolve_drug_string(piece, self.dic, self.index_keys)["components"]
                 except Exception:                    # never let a guard crash a lookup
-                    self._resolve_cache[piece] = []
-                if len(self._resolve_cache) > 4096:
+                    got = []
+                if len(self._resolve_cache) >= 4096:
                     self._resolve_cache.clear()
-            comps += self._resolve_cache[piece]
+                self._resolve_cache[piece] = got
+            if len(words) == 1 and T.canonical_key(piece) in self.dic["index"]:
+                lone.add(piece)                      # one stored name on its own ("566C")
+            comps += got
         out: dict = {}
         accepted = {c.get("drug_id") for c in comps
                     if c.get("drug_id") and not str(c.get("tier", "")).startswith("BLOCKED")}
         for c in comps:
             piece = c.get("component") or ""
+            tracer = "radiotracer_guard" in (c.get("rules") or []) or T.is_radiotracer(piece)
             if not (c.get("tier") == "BLOCKED_DISTINCT_PRODUCT"
-                    or (str(c.get("tier", "")).startswith("BLOCKED") and T.is_radiotracer(piece))):
+                    or (str(c.get("tier", "")).startswith("BLOCKED") and tracer)):
+                continue
+            if piece in lone:
                 continue
             words = [w for w in re.split(r"[\s/|,;]+", piece) if w]
             words = [w.strip(" ?.!:()[]") or w for w in words]
@@ -208,12 +227,11 @@ class OncoKG:
         if blocked or any(e["type"] == "Refused" for e in found):
             return None
         name = text.strip(" ?!.")
-        if T.is_distinct_product(name) or T.is_radiotracer(name) or _qualified(name.split()):
-            return None
+        if T.is_distinct_product(name) or T.is_radiotracer(name):
+            return None             # the list linker above has already applied the rest
         key = T.canonical_key(name)
         exact = [h for h in (self.dic["index"].get(key) or [])
-                 if re.sub(_DASHES, "-", unicodedata.normalize("NFKC", h["alias"])).lower()
-                 == name.lower()]
+                 if _fold(h["alias"]).strip(" ?!.").lower() == name.lower()]
         if not exact or len({h["drug_id"] for h in exact}) != 1:
             return None
         did = exact[0]["drug_id"]
@@ -279,8 +297,9 @@ class OncoKG:
         for sid in sorted(set(seg) - {-1}):
             idx = [k for k in range(len(tokens)) if seg[k] == sid]
             text = " ".join(tokens[k] for k in idx)
-            joined = dangling is not None and all(seg[k] < 0 for k in range(prev_end + 1, idx[0])) \
-                and idx[0] > prev_end + 1
+            joined = (dangling is not None and idx[0] > prev_end + 1
+                      and all(seg[k] < 0 for k in range(prev_end + 1, idx[0]))
+                      and clause[idx[0]] == clause[prev_end])
             prev_end = idx[-1]
             hit = [k for a, b in drugs if seg[a] == sid for k in range(a, b)]
             if _qualified([tokens[k] for k in idx]):
