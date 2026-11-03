@@ -275,7 +275,18 @@ _ADC_WORDS = {"antibody", "drug", "conjugate", "conjugates", "adc", "adcs", "imm
 _DRUG_MARK = "zzdrugzz"
 # Words that end a partner window: a new clause or a preposition that starts a setting
 _WINDOW_STOP = {"and", "but", "or", "which", "that", "in", "among", "at", "for", "after",
-                "before", "during", "versus", "vs", "compared", _DRUG_MARK}
+                "before", "during", "versus", "vs", "compared", _DRUG_MARK,
+                # question words start a clause too ("Which trials evaluate resistance
+                # linked to osimertinib?", "Which trials evaluate antibody-drug conjugate ...")
+                "what", "who", "whom", "evaluate", "evaluates", "evaluating", "evaluated",
+                "test", "tests", "testing", "tested", "trial", "trials", "sponsor", "sponsors",
+                "sponsored", "sponsoring", "study", "studies", "studying", "does", "do", "did",
+                "show", "shows", "use", "uses", "using"}
+# A setting or site phrase between a joining word and its partner ("conjugated at lysine
+# residues to eFluor 450", "linked in solution to ..."): read past it to the partner
+_SETTING = {"at", "in", "for", "on", "through", "under", "within"}
+# Gene-style symbols are a relation when a relation word goes with them ("EGFR mutations")
+_GENE = re.compile(r"[A-Z][A-Z0-9]{1,9}")
 # Words skipped inside a partner window
 _WINDOW_SKIP = {"to", "with", "via", "a", "an", "the", "of", "is", "are", "was", "be", "been"}
 # What "linked to" may relate a drug to without describing a conjugate ("osimertinib
@@ -299,14 +310,23 @@ _RELATION_WORDS = {
 
 
 def _partners(flat: list, i: int) -> list:
-    """The words a joining word at flat[i] joins the drug to: up to three on the side away
-    from the drug, stopping at a clause word or at the drug itself."""
+    """Positions of the words a joining word at flat[i] joins the drug to: up to three on
+    each side, stopping at a clause word or at the drug itself. A setting or site phrase
+    right after the joining word ("conjugated at lysine residues to eFluor 450") is read
+    past when a "to"/"with" follows within five words."""
     out = []
     for step in (1, -1):
         k, got = i + step, []
+        if step == 1 and k < len(flat) and flat[k] in _SETTING:
+            for m in range(k + 1, min(len(flat), k + 6)):
+                if flat[m] in ("to", "with"):
+                    k = m
+                    break
+                if flat[m] in _WINDOW_STOP and flat[m] not in _SETTING:
+                    break
         while 0 <= k < len(flat) and len(got) < 3 and flat[k] not in _WINDOW_STOP:
             if flat[k] not in _WINDOW_SKIP:
-                got.append(flat[k])
+                got.append(k)
             k += step
         out += got
     return out
@@ -347,7 +367,10 @@ def _item_joined(words: tuple) -> bool:
             # to trastuzumab"); "osimertinib linked to longer PFS" is a relation
             if "via" in flat[i + 1:i + 4] or reagent:
                 return True
-            if any(not (p in _RELATION_WORDS or p.isdigit()) for p in _partners(flat, i)):
+            ps = _partners(flat, i)
+            related = any(flat[p] in _RELATION_WORDS for p in ps)
+            if any(not (flat[p] in _RELATION_WORDS or flat[p].isdigit()
+                        or (related and _GENE.fullmatch(raw[p]))) for p in ps):
                 return True
     return False
 
@@ -360,7 +383,7 @@ def _joined_beyond_adc(words: tuple) -> bool:
     flat = [x.lower() for x in _alnum_words(" ".join(words))]
     for i, x in enumerate(flat):
         if x.startswith(_JOINED) or x == "linked":
-            if any(p not in _ADC_WORDS for p in _partners(flat, i)):
+            if any(flat[p] not in _ADC_WORDS for p in _partners(flat, i)):
                 return True
     return False
 

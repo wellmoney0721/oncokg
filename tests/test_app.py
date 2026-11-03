@@ -605,3 +605,21 @@ def test_linked_fails_closed_and_modification_verbs_refuse():
         assert e.explore(t)["center"]["label"] == label, t
     q = e.kg.link_entities("Which trials evaluate trastuzumab emtansine antibody-drug conjugate?")
     assert [x["label"] for x in q if x["type"] == "Drug"] == ["TRASTUZUMAB EMTANSINE"]
+
+
+# Codex review m31
+def test_setting_phrase_before_partner_and_gene_relations_and_question_scaffold():
+    import app
+    e = app.Engine()
+    for t in ("trastuzumab linked at lysine residues to eFluor 450",
+              "trastuzumab emtansine conjugated in solution to eFluor 450",
+              "trastuzumab deruxtecan functionalized in solution with eFluor 450"):
+        assert e.explore(t).get("refused"), t
+    for t in ("osimertinib linked to EGFR mutations", "osimertinib linked to TP53 mutations"):
+        assert e.explore(t)["center"]["label"] == "OSIMERTINIB", t
+    for q, label in (("Which trials evaluate resistance linked to osimertinib?", "OSIMERTINIB"),
+                     ("Which trials evaluate antibody-drug conjugate trastuzumab emtansine?",
+                      "TRASTUZUMAB EMTANSINE")):
+        ents = e.kg.link_entities(q)
+        assert [x["label"] for x in ents if x["type"] == "Drug"] == [label], q
+        assert not any(x["type"] == "Refused" for x in ents), q

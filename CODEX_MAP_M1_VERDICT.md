@@ -318,3 +318,13 @@ Stored-alias sweep: no change. Tests 357.
 | M30-S1 | "Which trials evaluate trastuzumab emtansine antibody-drug conjugate?" refused: the question words counted as a further partner | a named conjugate's partners are only the words beside each joining word, stopping at the drug's own name |
 
 README test counts updated. Stored-alias sweep: no change. Tests 358.
+
+## Round 31 (audit_evidence_claims/m31) — CHANGES REQUIRED (one blocker, two recall regressions)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M31-B1 | "trastuzumab linked at lysine residues to eFluor 450", "... conjugated in solution to ...", "... for detection to ..." (13 cases incl. named ADCs): "at/in/for" ended the partner window before the partner | a setting or site phrase right after the joining word is read past when a "to"/"with" follows within five words |
+| M31-S1 | "osimertinib linked to EGFR mutations / TP53 mutations / EGFR resistance" refused; "Which trials evaluate resistance linked to osimertinib?" lost QA evidence | a gene-style symbol counts as a relation when a relation word goes with it; question words (evaluate, trials, sponsors, which, who, ...) end a partner window |
+| retained | "Which trials evaluate antibody-drug conjugate trastuzumab emtansine?" had no QA evidence (inherited) | same question-word window stop |
+
+Codex usage limit reached after this round (resets 2026-11-10); round 32 has not been run. Stored-alias sweep: no change. Tests 359.
