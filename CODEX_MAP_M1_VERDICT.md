@@ -73,3 +73,16 @@ Tests 329.
 | M6-S1 | complete stored names with list punctuation picked another drug | an input that is exactly one stored name (and not refused) is read whole |
 
 Tests 331.
+
+## Round 7 (audit_evidence_claims/m7) — CHANGES REQUIRED
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M7-B1 | the whole-name shortcut ran before the list linker and overrode its refusal ("bevacizumab-awwb?") | the shortcut runs last and only if neither the resolver nor the list linker refused anything |
+| M7-B2 | wrappers and Unicode hyphens ("(bevacizumab-awwb)", U+2011) defeated both guards | input is NFKC-normalised and every dash folded to "-" before any check; all edge punctuation and wrappers are stripped from words |
+| M7-B3 | "89Zr trastuzumab" (space-separated isotope) passed both guards | an isotope label anywhere in a list item qualifies the item |
+| M7-S1 | the whole-name shortcut used the aggressive key ("is a", "Erlotinib, hydrochloride") | only a letter-for-letter stored name (after the same normalisation) is read whole |
+| M7-S2 | exact stored names with "/" or a listing word were rejected first | the exact-name check no longer pre-rejects them |
+| M7-S3 | the resolver ran on every piece | each distinct piece once, only if it holds a drug name, with a per-engine cache |
+
+Tests 334.

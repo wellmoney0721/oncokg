@@ -232,3 +232,34 @@ def test_a_whole_input_that_is_one_stored_name_is_read_whole():
     assert e.explore("CP-358,774")["center"]["id"] == "CHEMBL553"
     assert e.explore("Rapamycin, 42-o-(2-hydroxyethyl)-")["center"]["id"] == "CHEMBL1908360"
     assert e.explore("Erlotinib/hydrochloride")["center"]["id"] == "CHEMBL553"
+
+
+# Codex review m7: one normalised spelling for every check
+def test_wrappers_unicode_hyphens_punctuation_and_spaced_isotopes_refuse():
+    import app
+    e = app.Engine()
+    for t in ("bevacizumab-awwb?", "bevacizumab-awwb!", '"bevacizumab-awwb"', "(bevacizumab-awwb)",
+              "[bevacizumab-awwb]", "bevacizumab‑awwb", "bio‑similar bevacizumab",
+              "89Zr trastuzumab", "[89Zr] trastuzumab"):
+        assert e.explore(t).get("refused"), t
+    for q in ("Which trials evaluate (bevacizumab-awwb)?", "Which trials evaluate 89Zr trastuzumab?",
+              "Which trials evaluate bio‑similar bevacizumab?"):
+        assert not e.kg.answer(q, use_llm=False).evidence, q
+
+
+def test_only_an_exact_stored_name_is_read_whole():
+    import app
+    e = app.Engine()
+    assert e.explore("Erlotinib, hydrochloride")["center"]["id"] == "CHEMBL553"
+    assert e.explore("is a").get("not_found")
+    assert e.explore("(E/Z)-AFATINIB")["center"]["id"] == "CHEMBL1173655"
+    assert e.explore("RO 09-1978/000")["center"]["id"] == "CHEMBL1773"
+
+
+def test_repeated_list_pieces_are_resolved_once():
+    import time
+    import query
+    kg = query.OncoKG()
+    t0 = time.time()
+    kg.link_entities(";".join(["x"] * 2000))
+    assert time.time() - t0 < 1.0

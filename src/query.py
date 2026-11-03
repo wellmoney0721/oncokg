@@ -24,6 +24,7 @@ import os
 import re
 import sqlite3
 import sys
+import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -96,6 +97,9 @@ _JOINERS = {"and", "or", "plus", "versus", "vs", "vs.", "+", "&", "then", "follo
 
 
 
+# every Unicode dash and minus, read as a hyphen
+_DASHES = r"[\u2010-\u2015\u2212\ufe58\ufe63\uff0d]"
+
 def _qualified(words: list[str]) -> bool:
     """Does any part of this list item name a distinct product or a tracer?
 
@@ -104,6 +108,8 @@ def _qualified(words: list[str]) -> bool:
     work grows linearly with the item."""
     text = " ".join(words)
     if T.is_distinct_product(text) or T.is_radiotracer(text):
+        return True
+    if any(T.is_isotope_label(w) for w in words):   # "89Zr trastuzumab", "[89Zr] ..."
         return True
     return any(T.is_distinct_product(w) or T.is_radiotracer(w)
                for w in (" ".join(words[i:j]) for i in range(len(words))
@@ -117,6 +123,7 @@ class OncoKG:
         resolved = json.loads(resolved_path.read_text(encoding="utf-8"))
         self.dic = resolved["dictionary"]
         self.index_keys = list(self.dic["index"].keys())
+        self._resolve_cache: dict = {}
         self.disease = resolved["disease"]
         self.targets = {t["symbol"].lower(): t for t in resolved["targets"]
                         if t.get("symbol")}
@@ -135,11 +142,13 @@ class OncoKG:
 
     # -- entity linking ---------------------------------------------------- #
     def link_entities(self, question: str) -> list[dict]:
+        # one spelling for every check: compatibility forms folded, every dash a hyphen
+        question = re.sub(_DASHES, "-", unicodedata.normalize("NFKC", question or ""))
         blocked = self._resolver_blocked(question)
-        whole = self._whole_name(question, blocked)
+        found = self._link(question)
+        whole = self._whole_name(question, blocked, found)
         if whole:
             return [whole]
-        found = self._link(question)
         if not blocked:
             return found
         # a drug the resolver refuses in this text is refused here too, whatever the
@@ -157,13 +166,20 @@ class OncoKG:
         """Drug ids inside the pieces the intervention resolver refuses as a distinct
         product or a tracer, with the refused piece."""
         comps = []
-        for piece in re.split(r"[,;，；、/|]", text):  # the list pieces used below
-            if not piece.strip():
-                continue
-            try:
-                comps += N.resolve_drug_string(piece, self.dic, self.index_keys)["components"]
-            except Exception:                               # never let a guard crash a lookup
-                continue
+        pieces = {p.strip() for p in re.split(r"[,;\uff0c\uff1b\u3001/|]", text) if p.strip()}
+        for piece in pieces:                         # each distinct list piece once
+            words = [w for w in re.split(r"[^\w\-]+", piece) if w]
+            if not self._drug_spans(words, set(), [0] * len(words)):
+                continue                             # no drug in it: nothing to refuse
+            if piece not in self._resolve_cache:
+                try:
+                    self._resolve_cache[piece] = N.resolve_drug_string(
+                        piece, self.dic, self.index_keys)["components"]
+                except Exception:                    # never let a guard crash a lookup
+                    self._resolve_cache[piece] = []
+                if len(self._resolve_cache) > 4096:
+                    self._resolve_cache.clear()
+            comps += self._resolve_cache[piece]
         out: dict = {}
         accepted = {c.get("drug_id") for c in comps
                     if c.get("drug_id") and not str(c.get("tier", "")).startswith("BLOCKED")}
@@ -183,20 +199,26 @@ class OncoKG:
                         out[h["drug_id"]] = piece
         return out
 
-    def _whole_name(self, text: str, blocked: dict):
-        """The whole input is one stored drug name ("CP-358,774", "Rapamycin,
-        42-o-(2-hydroxyethyl)-"): read it whole, before list punctuation splits it."""
-        if re.search(r"[/|]", text) or any(w.lower() in _JOINERS for w in text.split()):
-            return None                              # a list, not one name
-        key = T.canonical_key(text.strip(" ?.!"))
-        hits = self.dic["index"].get(key) if key else None
-        if not hits or len({h["drug_id"] for h in hits}) != 1 or blocked:
+    def _whole_name(self, text: str, blocked: dict, found: list):
+        """The whole input is exactly one stored drug name, letter for letter ("CP-358,774",
+        "(E/Z)-AFATINIB"): read it whole rather than as the list its punctuation suggests.
+
+        Only after every refusal has had its say: nothing the resolver or the list
+        linker refused, and no product or tracer pattern in the name."""
+        if blocked or any(e["type"] == "Refused" for e in found):
             return None
-        if T.is_distinct_product(text) or T.is_radiotracer(text):
+        name = text.strip(" ?!.")
+        if T.is_distinct_product(name) or T.is_radiotracer(name) or _qualified(name.split()):
             return None
-        did = hits[0]["drug_id"]
+        key = T.canonical_key(name)
+        exact = [h for h in (self.dic["index"].get(key) or [])
+                 if re.sub(_DASHES, "-", unicodedata.normalize("NFKC", h["alias"])).lower()
+                 == name.lower()]
+        if not exact or len({h["drug_id"] for h in exact}) != 1:
+            return None
+        did = exact[0]["drug_id"]
         return {"type": "Drug", "id": did, "label": self.dic["drugs"][did]["name"],
-                "matched_text": text.strip(), "matched_alias": hits[0]["alias"]}
+                "matched_text": name, "matched_alias": exact[0]["alias"]}
 
     def _link(self, question: str) -> list[dict]:
         found: list[dict] = []
@@ -215,9 +237,9 @@ class OncoKG:
                     if not part:
                         continue
                     if re.search(r"\w", part):
-                        # edge punctuation off, as the resolver does ("bevacizumab-
-                        # awwb\u3002"); brackets stay, they mark isotopes ("[89Zr]")
-                        t = re.sub(r"^[^\w\[\(]+|[^\w\]\)]+$", "", part)
+                        # edge punctuation and wrappers off ("bevacizumab-awwb?",
+                        # "(bevacizumab-awwb)"); an isotope ("[89Zr]") is checked as a word
+                        t = re.sub(r"^[^\w]+|[^\w]+$", "", part)
                     elif part in ("-", "\u2013", "\u2014", "+", "&"):
                         t = part            # "bevacizumab - awwb" needs its dash
                     else:
@@ -225,7 +247,7 @@ class OncoKG:
                     if t:
                         tokens.append(t)
                         clause.append(ci)
-                        inner.append(depth > 0 or t.startswith("("))
+                        inner.append(depth > 0 or part.startswith("("))
                     depth = max(0, depth + part.count("(") - part.count(")"))
             ci += 1
 

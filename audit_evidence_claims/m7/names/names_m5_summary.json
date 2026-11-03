@@ -1,0 +1,960 @@
+{
+  "cases": 113,
+  "aliases_checked": 7511,
+  "alias_anomalies": 291,
+  "new_lone_alias_refusals": [
+    {
+      "input": "hpv-16/18 as04-adjuvanted vaccine",
+      "stored": {
+        "drug_id": "CHEMBL6068359",
+        "alias": "hpv-16/18 as04-adjuvanted vaccine",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL6068359",
+          "label": "HUMAN PAPILLOMAVIRUS, L1 PROTEIN VIRUS LIKE PARTICLES",
+          "matched_text": "hpv-16/18 as04-adjuvanted vaccine",
+          "matched_alias": "hpv-16/18 as04-adjuvanted vaccine"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL6068359"
+      ],
+      "resolver": {
+        "raw": "hpv-16/18 as04-adjuvanted vaccine",
+        "components": [
+          {
+            "component": "hpv-16/18 as04-adjuvanted vaccine",
+            "tier": "BLOCKED_CLASS_TERM",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "class_term_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "category term, not an identifiable substance"
+          }
+        ]
+      }
+    },
+    {
+      "input": "hpv-16/18 vlp/as04 vaccine",
+      "stored": {
+        "drug_id": "CHEMBL6068359",
+        "alias": "hpv-16/18 vlp/as04 vaccine",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL6068359",
+          "label": "HUMAN PAPILLOMAVIRUS, L1 PROTEIN VIRUS LIKE PARTICLES",
+          "matched_text": "hpv-16/18 vlp/as04 vaccine",
+          "matched_alias": "hpv-16/18 vlp/as04 vaccine"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL6068359"
+      ],
+      "resolver": {
+        "raw": "hpv-16/18 vlp/as04 vaccine",
+        "components": [
+          {
+            "component": "hpv-16/18 vlp",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          },
+          {
+            "component": "as04 vaccine",
+            "tier": "BLOCKED_CLASS_TERM",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "class_term_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "category term, not an identifiable substance"
+          }
+        ]
+      }
+    },
+    {
+      "input": "human papillomavirus-16/18 l1/as04 vaccine",
+      "stored": {
+        "drug_id": "CHEMBL6068359",
+        "alias": "human papillomavirus-16/18 l1/as04 vaccine",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL6068359",
+          "label": "HUMAN PAPILLOMAVIRUS, L1 PROTEIN VIRUS LIKE PARTICLES",
+          "matched_text": "human papillomavirus-16/18 l1/as04 vaccine",
+          "matched_alias": "human papillomavirus-16/18 l1/as04 vaccine"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL6068359"
+      ],
+      "resolver": {
+        "raw": "human papillomavirus-16/18 l1/as04 vaccine",
+        "components": [
+          {
+            "component": "human papillomavirus-16/18 l1",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          },
+          {
+            "component": "as04 vaccine",
+            "tier": "BLOCKED_CLASS_TERM",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "class_term_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "category term, not an identifiable substance"
+          }
+        ]
+      }
+    },
+    {
+      "input": "ptk/zk",
+      "stored": {
+        "drug_id": "CHEMBL101253",
+        "alias": "ptk/zk",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL101253",
+          "label": "VATALANIB",
+          "matched_text": "ptk/zk",
+          "matched_alias": "ptk/zk"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL101253"
+      ],
+      "resolver": {
+        "raw": "ptk/zk",
+        "components": [
+          {
+            "component": "ptk",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          },
+          {
+            "component": "zk",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "Pegylated interferon alfa-2a",
+      "stored": {
+        "drug_id": "CHEMBL1201560",
+        "alias": "Pegylated interferon alfa-2a",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Pegylated interferon alfa-2a",
+          "matched_text": "Pegylated interferon alfa-2a",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "previous": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Pegylated interferon",
+          "matched_text": "Pegylated interferon",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201560",
+          "label": "PEGINTERFERON ALFA-2A",
+          "matched_text": "alfa-2a",
+          "matched_alias": "alfa-2a"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201560"
+      ],
+      "resolver": {
+        "raw": "Pegylated interferon alfa-2a",
+        "components": [
+          {
+            "component": "Pegylated interferon alfa-2a",
+            "tier": "BLOCKED_DISTINCT_PRODUCT",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "distinct_product_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+          }
+        ]
+      }
+    },
+    {
+      "input": "RO 25-8310/000",
+      "stored": {
+        "drug_id": "CHEMBL1201560",
+        "alias": "RO 25-8310/000",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201560",
+          "label": "PEGINTERFERON ALFA-2A",
+          "matched_text": "RO 25-8310/000",
+          "matched_alias": "RO 25-8310/000"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1201560"
+      ],
+      "resolver": {
+        "raw": "RO 25-8310/000",
+        "components": [
+          {
+            "component": "RO 25-8310/000",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1201560",
+            "score": null,
+            "rules": [],
+            "matched_alias": "RO 25-8310/000",
+            "candidates": null,
+            "drug": {
+              "name": "PEGINTERFERON ALFA-2A",
+              "drug_type": "Protein",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1_2",
+              "mechanisms": [
+                "Interferon alpha/beta receptor agonist"
+              ],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "RO 09-1978/000",
+      "stored": {
+        "drug_id": "CHEMBL1773",
+        "alias": "RO 09-1978/000",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1773",
+          "label": "CAPECITABINE",
+          "matched_text": "RO 09-1978/000",
+          "matched_alias": "RO 09-1978/000"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1773"
+      ],
+      "resolver": {
+        "raw": "RO 09-1978/000",
+        "components": [
+          {
+            "component": "RO 09-1978/000",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1773",
+            "score": null,
+            "rules": [],
+            "matched_alias": "RO 09-1978/000",
+            "candidates": null,
+            "drug": {
+              "name": "CAPECITABINE",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_3",
+              "mechanisms": [
+                "Thymidylate synthase inhibitor"
+              ],
+              "trials": 7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "dm/t",
+      "stored": {
+        "drug_id": "CHEMBL384467",
+        "alias": "dm/t",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL384467",
+          "label": "DEXAMETHASONE",
+          "matched_text": "dm/t",
+          "matched_alias": "dm/t"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL384467"
+      ],
+      "resolver": {
+        "raw": "dm/t",
+        "components": [
+          {
+            "component": "dm/t",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL384467",
+            "score": null,
+            "rules": [],
+            "matched_alias": "dm/t",
+            "candidates": null,
+            "drug": {
+              "name": "DEXAMETHASONE",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_2",
+              "mechanisms": [
+                "Glucocorticoid receptor agonist"
+              ],
+              "trials": 18
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "BA 41166/E",
+      "stored": {
+        "drug_id": "CHEMBL374478",
+        "alias": "BA 41166/E",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL374478",
+          "label": "RIFAMPIN",
+          "matched_text": "BA 41166/E",
+          "matched_alias": "BA 41166/E"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL374478"
+      ],
+      "resolver": {
+        "raw": "BA 41166/E",
+        "components": [
+          {
+            "component": "BA 41166/E",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL374478",
+            "score": null,
+            "rules": [],
+            "matched_alias": "BA 41166/E",
+            "candidates": null,
+            "drug": {
+              "name": "RIFAMPIN",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "PHASE_1",
+              "mechanisms": [
+                "Bacterial DNA-directed RNA polymerase inhibitor"
+              ],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "pd-1/vegf bispecific",
+      "stored": {
+        "drug_id": "CHEMBL6068451",
+        "alias": "pd-1/vegf bispecific",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL6068451",
+          "label": "IVONESCIMAB",
+          "matched_text": "pd-1/vegf bispecific",
+          "matched_alias": "pd-1/vegf bispecific"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL6068451"
+      ],
+      "resolver": {
+        "raw": "pd-1/vegf bispecific",
+        "components": [
+          {
+            "component": "pd-1",
+            "tier": "BLOCKED_TARGET_TERM",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "target_symbol_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "a target or gene symbol, not an administered substance"
+          },
+          {
+            "component": "vegf bispecific",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "APO2L/TRAIL",
+      "stored": {
+        "drug_id": "CHEMBL2107846",
+        "alias": "APO2L/TRAIL",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2107846",
+          "label": "DULANERMIN",
+          "matched_text": "APO2L/TRAIL",
+          "matched_alias": "APO2L/TRAIL"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL2107846"
+      ],
+      "resolver": {
+        "raw": "APO2L/TRAIL",
+        "components": [
+          {
+            "component": "APO2L",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          },
+          {
+            "component": "TRAIL",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "Anusol plus hc",
+      "stored": {
+        "drug_id": "CHEMBL389621",
+        "alias": "Anusol plus hc",
+        "alias_type": "trade_name",
+        "source": null
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL389621",
+          "label": "HYDROCORTISONE",
+          "matched_text": "Anusol plus hc",
+          "matched_alias": "Anusol plus hc"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL389621"
+      ],
+      "resolver": {
+        "raw": "Anusol plus hc",
+        "components": [
+          {
+            "component": "Anusol",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          },
+          {
+            "component": "hc",
+            "tier": "BLOCKED_TARGET_TERM",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "split_combination",
+              "target_symbol_guard"
+            ],
+            "matched_alias": null,
+            "candidates": null,
+            "note": "a target or gene symbol, not an administered substance"
+          }
+        ]
+      }
+    },
+    {
+      "input": "hyzaar 100/25 mg tablets",
+      "stored": {
+        "drug_id": "CHEMBL995",
+        "alias": "hyzaar 100/25 mg tablets",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL995",
+          "label": "LOSARTAN POTASSIUM",
+          "matched_text": "hyzaar 100/25 mg tablets",
+          "matched_alias": "hyzaar 100/25 mg tablets"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL995"
+      ],
+      "resolver": {
+        "raw": "hyzaar 100/25 mg tablets",
+        "components": [
+          {
+            "component": "hyzaar 100/",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "strip_dose",
+              "strip_formulation"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "(E/Z)-AFATINIB",
+      "stored": {
+        "drug_id": "CHEMBL1173655",
+        "alias": "(E/Z)-AFATINIB",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1173655",
+          "label": "AFATINIB",
+          "matched_text": "(E/Z)-AFATINIB",
+          "matched_alias": "(E/Z)-AFATINIB"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1173655"
+      ],
+      "resolver": {
+        "raw": "(E/Z)-AFATINIB",
+        "components": [
+          {
+            "component": "AFATINIB",
+            "tier": "EXACT",
+            "drug_id": "CHEMBL1173655",
+            "score": null,
+            "rules": [
+              "extract_parenthetical"
+            ],
+            "matched_alias": "AFATINIB",
+            "candidates": null,
+            "drug": {
+              "name": "AFATINIB",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor",
+                "Receptor protein-tyrosine kinase erbB-2 inhibitor",
+                "Receptor protein-tyrosine kinase erbB-4 inhibitor"
+              ],
+              "trials": 18
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "(E/Z)-BIBW 2992",
+      "stored": {
+        "drug_id": "CHEMBL1173655",
+        "alias": "(E/Z)-BIBW 2992",
+        "alias_type": "synonym",
+        "source": "ChEMBL"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1173655",
+          "label": "AFATINIB",
+          "matched_text": "(E/Z)-BIBW 2992",
+          "matched_alias": "(E/Z)-BIBW 2992"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1173655"
+      ],
+      "resolver": {
+        "raw": "(E/Z)-BIBW 2992",
+        "components": [
+          {
+            "component": "BIBW 2992",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL1173655",
+            "score": null,
+            "rules": [
+              "extract_parenthetical"
+            ],
+            "matched_alias": "BIBW 2992",
+            "candidates": null,
+            "drug": {
+              "name": "AFATINIB",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "APPROVAL",
+              "mechanisms": [
+                "Epidermal growth factor receptor erbB1 inhibitor",
+                "Receptor protein-tyrosine kinase erbB-2 inhibitor",
+                "Receptor protein-tyrosine kinase erbB-4 inhibitor"
+              ],
+              "trials": 18
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "5 mg/500 mg metaglip tablets",
+      "stored": {
+        "drug_id": "CHEMBL1703",
+        "alias": "5 mg/500 mg metaglip tablets",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1703",
+          "label": "METFORMIN HYDROCHLORIDE",
+          "matched_text": "5 mg/500 mg metaglip tablets",
+          "matched_alias": "5 mg/500 mg metaglip tablets"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1703"
+      ],
+      "resolver": {
+        "raw": "5 mg/500 mg metaglip tablets",
+        "components": [
+          {
+            "component": "/ metaglip",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "strip_dose",
+              "strip_formulation"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "zemimet sr tab. 50/1000 mg",
+      "stored": {
+        "drug_id": "CHEMBL1703",
+        "alias": "zemimet sr tab. 50/1000 mg",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1703",
+          "label": "METFORMIN HYDROCHLORIDE",
+          "matched_text": "zemimet sr tab 50/1000 mg",
+          "matched_alias": "zemimet sr tab. 50/1000 mg"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL1703"
+      ],
+      "resolver": {
+        "raw": "zemimet sr tab. 50/1000 mg",
+        "components": [
+          {
+            "component": "zemimet sr tab. 50/",
+            "tier": "UNRESOLVED",
+            "drug_id": null,
+            "score": null,
+            "rules": [
+              "strip_dose"
+            ],
+            "matched_alias": null,
+            "candidates": null
+          }
+        ]
+      }
+    },
+    {
+      "input": "d/c/f/taf",
+      "stored": {
+        "drug_id": "CHEMBL2095208",
+        "alias": "d/c/f/taf",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2095208",
+          "label": "COBICISTAT",
+          "matched_text": "d/c/f/taf",
+          "matched_alias": "d/c/f/taf"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL2095208"
+      ],
+      "resolver": {
+        "raw": "d/c/f/taf",
+        "components": [
+          {
+            "component": "d/c/f/taf",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL2095208",
+            "score": null,
+            "rules": [],
+            "matched_alias": "d/c/f/taf",
+            "candidates": null,
+            "drug": {
+              "name": "COBICISTAT",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "EARLY_PHASE_1",
+              "mechanisms": [
+                "Cytochrome P450 3A inhibitor"
+              ],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "e/c/f/taf",
+      "stored": {
+        "drug_id": "CHEMBL2095208",
+        "alias": "e/c/f/taf",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2095208",
+          "label": "COBICISTAT",
+          "matched_text": "e/c/f/taf",
+          "matched_alias": "e/c/f/taf"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL2095208"
+      ],
+      "resolver": {
+        "raw": "e/c/f/taf",
+        "components": [
+          {
+            "component": "e/c/f/taf",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL2095208",
+            "score": null,
+            "rules": [],
+            "matched_alias": "e/c/f/taf",
+            "candidates": null,
+            "drug": {
+              "name": "COBICISTAT",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "EARLY_PHASE_1",
+              "mechanisms": [
+                "Cytochrome P450 3A inhibitor"
+              ],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": "e/c/f/tdf",
+      "stored": {
+        "drug_id": "CHEMBL2095208",
+        "alias": "e/c/f/tdf",
+        "alias_type": "synonym",
+        "source": "AACT"
+      },
+      "current": [],
+      "previous": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2095208",
+          "label": "COBICISTAT",
+          "matched_text": "e/c/f/tdf",
+          "matched_alias": "e/c/f/tdf"
+        }
+      ],
+      "current_ids": [],
+      "previous_ids": [
+        "CHEMBL2095208"
+      ],
+      "resolver": {
+        "raw": "e/c/f/tdf",
+        "components": [
+          {
+            "component": "e/c/f/tdf",
+            "tier": "ALIAS",
+            "drug_id": "CHEMBL2095208",
+            "score": null,
+            "rules": [],
+            "matched_alias": "e/c/f/tdf",
+            "candidates": null,
+            "drug": {
+              "name": "COBICISTAT",
+              "drug_type": "Small molecule",
+              "max_phase_overall": "APPROVAL",
+              "max_phase_in_nsclc": "EARLY_PHASE_1",
+              "mechanisms": [
+                "Cytochrome P450 3A inhibitor"
+              ],
+              "trials": 0
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

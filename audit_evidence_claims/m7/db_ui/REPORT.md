@@ -1,0 +1,60 @@
+# Round 7: database, page-script, demonstrations and standards
+
+Reviewed HEAD **`9bd7cb4b5d9270bbe99cb5dfec3993502f6b5377`**, 2026-11-03 KST. **Every previously repaired DB/UI reproduction remains FIXED.** The blank-submit and Infinity qualifications remain **NOT FIXED**, with the same controlled behavior as before. No new live-edge, relation/direction, stored-value, generated-markup or demo regression was found in this scope. Originator-refusal and cost investigations are reported separately by the primary and names reviewers.
+
+## Method and results
+
+The m1, m2b, m3, m4, m5 and m6 reports plus `CODEX_MAP_M1_VERDICT.md` were read. The consolidated m6 DB fixtures and page harnesses were reused, preserving their scenarios/assertions. Changes are confined to m7 output paths and choosing m6 as the demo comparison baseline. [Source/destination hashes and adaptations](reuse_manifest.json), [completed commands, return codes and logs](execution.json). No tracked file was edited. All database mutations occur in isolated in-memory SQLite fixtures; production query connections in the inherited probes use `mode=ro`. Fixture servers bind ephemeral port 0 and close in `finally`.
+
+- **6,469/6,469 live centres, 22 relation/direction/type/role combinations, 0 oracle mismatches.** One exhaustive pass took **282.0016 s** under concurrent audit load. It independently checks live edge sets, endpoints, group totals/order, item ranking, stored properties, global trial counts, sponsor counts/classes, action types and scores. [Oracle](db_recheck.py), [results](db_validate.json).
+- **19/19 DB assertions pass.** Retired centres/trials, 12 malformed-props requests plus restorations, missing sponsor counts, boolean/precision/numeric fixtures, and all 1,001 Drug neighbours across three count batches pass. [Assertions](db_assertions.json).
+- **24/24 UI aggregate assertions pass.** Generated markup, URL restrictions, role headings, recorded values, cut notices, errors, trail/back behavior, duplicate requests and stale-response ordering pass. Five current root-owned CLI HTTP bodies exactly equal the fresh direct-Engine maps; root-served HTML equals the worktree. [Assertions](ui_assertions.json), [root HTTP evidence](../root_checks/http_results.json).
+- All **36** page-demo responses are **structurally identical to m6**: 13 resolver, 7 QA, 9 prose-check, 7 structured-check. No Engine/render error; all **36 demonstration click callbacks plus 6 map callbacks** succeed. [Comparison](ui_demo_compare.json), [fresh responses](ui_demos_responses.json), [callbacks](ui_m3_checks.json).
+- Independently started the original CLI **`python -B -u src/app.py 8904`**, then sent **all 36 demo payloads over HTTP**. **36/36 HTTP 200; 36/36 response bodies exactly equal the fresh Engine responses**. Actual served bytes equal `web/try.html`. The owned process was terminated after verification and is closed; its termination return code 1 is recorded, not a test/server failure. [HTTP requests/results](demo_http.json), [lifecycle](demo_http_lifecycle.json), [reproducer](demo_http.py).
+- Current snapshot has **7 retired nodes, 142 retired edges, no self-loops and no live edges with retired endpoints**; all six node types are covered. SPONSORS has 3,000 lead and 1,652 collaborator roles, including 43 Investigator edges. All stored props are JSON objects, and all 3,000 stored URLs use the registry HTTPS prefix. DB SHA-256: `7341c5a7089731f67356da5a588b269d4b69e8e6c4c054acf19aa4ef2837b529`. [Snapshot](db_snapshot_facts.json).
+
+## Earlier finding dispositions
+
+Repeated later-round findings are grouped by their original identity; each cited reproduction was rerun against current HEAD.
+
+| Prior finding and exact reproduction | Disposition | Fresh evidence and current source |
+|---|---|---|
+| M1-B2 collaborator labelled lead: `NCT00200395`, reverse `ORG:genentech` | **FIXED** | Montefiore is lead; Genentech is collaborator; reverse roles remain separate. `src/app.py:137,160-169`; `web/try.html:142-149`; [DB](db_validate.json), [render](ui_harness_results.json). |
+| M1-B3 Investigator institution wording: `NCT00754364`, reverse `ORG:armandosantoromd` | **FIXED** | Armando Santoro Md receives `책임 주관 연구자 (lead sponsor)`. `web/try.html:143,148`; [DB](db_validate.json), [render](ui_harness_results.json). |
+| M1-B4 retired centre by name: in-memory retirement of `CHEMBL3353410`; then `osimertinib`, its ID and `EGFR` | **FIXED** | Name and ID yield not_found; EGFR excludes the retired neighbour. `src/app.py:115-118`; [real-handler fixture](db_retired_center.json). |
+| M1 retired Trial count: live D, retired T, live T-EVALUATES-D and D-ACTS_ON-X | **FIXED** | D centre count and X's D neighbour count/weight are 0; retired T excluded. `src/app.py:129-132,139,174`; [fixture](db_fixtures.json). |
+| M1-S1 order/wording; later equal-weight A-Z repair: `MONDO_0005233` | **FIXED** | Trials use start date; associated Targets use scores; unweighted/equal-weight labels use A-Z. Each group states its actual order. `src/app.py:141-170`; `web/try.html:148-158,231-235`; [oracle](db_validate.json), [render](ui_harness_results.json). |
+| M1-S2 silent ring cuts: `CHEMBL1201438`, Disease, AstraZeneca | **FIXED** | Rendered notices are 22/25, 39/3,074 and 41/145; cut lists say 30 retained. No nonempty group lost in these maps. MAX=40 is a soft target, not a promised hard cap. `web/try.html:191-204,233`; [render](ui_harness_results.json). |
+| M1-S3 stale trail: osimertinib -> EGFR -> Mvasi / unknown / server error / network error, then old back callback | **FIXED** | Trail state and markup clear in all terminal states; obsolete callback harmless; ordinary back works. `web/try.html:213-216,243-244`; [controlled callbacks](ui_harness_results.json). |
+| M1-S4 reply ordering and duplicates: EGFR/KRAS completed in reverse; concurrent duplicate EGFR | **FIXED** | KRAS stays, stale success/error ignored, duplicate leaves one trail entry. `web/try.html:211-214`; [controlled completions](ui_harness_results.json). |
+| M1-S5 identity disclosure: `Roche`, `MET`, `osimertinib EGFR`, reversal, `Mvasi and bevacizumab` | **FIXED for exact inputs** | Chosen reading and other identities/refused component are displayed. Stored FOLIC ACID/METFORMIN collisions remain disclosed. `src/app.py:95-114`; `web/try.html:222-226`; [render](ui_harness_results.json). Embedded multi-ID alias data replay belongs to the names review. |
+| M1-S6 action/class detail: AGONIST, BINDING AGENT, sponsor codes | **FIXED** | Specific gloss plus original action code; INDUSTRY/NIH/FED/OTHER_GOV/NETWORK/OTHER/UNKNOWN preserved. `web/try.html:162-176`; [render](ui_harness_results.json). |
+| M1-S7 omitted values: Trial start; sponsor-to-Drug global count/phase; zero-trial Drug | **FIXED** | `NCT00200395` start `2003-07-02`; AstraZeneca -> osimertinib sponsor count 14, global count 79, APPROVAL; `CHEMBL925` count 0. `src/app.py:138-149,171-177`; `web/try.html:173-174,228-229`; [DB](db_validate.json), [UI](ui_harness_results.json). |
+| M1-S8 malformed props: node D / edge A `null`, `[]`, `{broken` | **FIXED** | All 12 original requests return 200, as do all six restored controls. `_obj` treats these as empty objects. `src/app.py:135,171,211-217`; [fixture](db_fixtures.json). |
+| M1 URL/markup qualification: javascript/data URLs, hostile labels/titles/node IDs/edge IDs/alternatives | **FIXED for exercised map paths** | Registry HTTPS allowlist rejects tested scheme, host-prefix, credential and backslash spoofs. HTML/SVG text and attributes escape payloads. `web/try.html:104,180,199,221-235`; [payloads](ui_harness_results.json), [assertions](ui_assertions.json). Browser execution is not claimed. |
+| M1 unknown-type tooltip: synthetic Other / NEWREL | **FIXED** | Raw fallback type/relation preserved without undefined. `web/try.html:158,199,227`; [assertions](ui_regressions.json). |
+| M1/M2b docstring All three / everything claims | **FIXED** | `All of them` and `a capped list per relation` at `src/app.py:5-11`; README command lines remain accurate at `README.md:566` and `README.ko.md:387`. |
+| M2b-R2 unrecorded sponsor count: `ORG:alaunos\|SPONSORS_TRIAL_OF\|CHEMBL1201438\|` props `null`, `[]`, `{broken`, `{}`, both endpoints | **FIXED** | API gives null with zero sorting weight; UI says `기록 없음`, not factual 0. Original recorded 1 stays 1; explicit numeric 0 renders 0. `src/app.py:141-146`; `web/try.html:173`; [fixture](db_missing_sponsor_count.json), [render](ui_missing_sponsor_count.json). |
+| M2b missing/unknown SPONSORS role, both directions and node types | **FIXED** | All eight DB fixture variants return 200. Thirty UI role checks show `역할 기록 없음` for unknown roles; never infer collaborator. `src/app.py:137,162-169`; `web/try.html:147-149`; [DB](db_role_fallback.json), [UI](ui_regressions.json). |
+| M2b boolean association scores and rounded precision | **FIXED** | True/false API scores become null/weight 0; injected UI booleans do not throw. Exact `0.8883707400322897` and `0.8337881598550857` preserved. `src/app.py:152-155,207-208`; `web/try.html:176`; [DB](db_score_fixture.json), [UI](ui_regressions.json). |
+| M2b render error escape: Trial `props.phases='PHASE2'`, four entry points | **FIXED** | Form/node/trail/example display the caught rendering error, clear trail and recover; stale malformed reply discarded. `web/try.html:238-248`; [UI](ui_m3_checks.json). |
+| M3-M5 Infinity numeric qualification | **NOT FIXED — unchanged, failure closed** | `_number` accepts +/-Infinity; `allow_nan=False` yields controlled HTTP 400, with no invalid numeric map. None in snapshot. `src/app.py:207-208,264-269`; [fixture](db_numeric_fixture.json). |
+| M3-M5 empty/whitespace map form | **NOT FIXED — unchanged usability qualification** | Sends no request and retains previous view. `web/try.html:241`; [UI](ui_m3_checks.json). |
+
+Silent text truncation and raw request-shape errors are replayed by the primary HTTP review. Lowercase IDs, Investigator names, embedded alias alternatives and all refusal findings are covered by the independent names review. These are not implicitly certified by this DB/UI table.
+
+## Limits, standards and reproduction
+
+The UI harness executes the actual complete current page script in Node VM with controlled DOM/fetch stubs. It verifies generated markup, callbacks, request ordering and errors; it does not verify browser paint/layout or browser-executed exploit behavior. The extra 36-case CLI check verifies HTTP endpoint payloads, not browser rendering. No browser-executed XSS safety claim is made. The supplied database has no self-loop or unknown node type; unknown-type display uses an isolated synthetic UI fixture. Infinity yields controlled HTTP 400 and no graph value. No model was called by the exercised application paths; `Engine.ask` specifies `use_llm=False` (`src/app.py:180-181`). The application opens SQLite read/write (`src/app.py:41`), so observed read-only behavior is path/integrity evidence, not an enforced global connection permission.
+
+**Standards axis: 0 documented violations.** No tracked standards files were found; the user-provided evidence and no-tracked-edit instructions govern. No application code change was applied, so the conditional KOA Studio / KhOpenApi original/new-code comparison is not triggered. [Standards review](standards_findings.md), [evidence](standards_evidence.json).
+
+Run from repository root, with bytecode disabled. The exhaustive oracle is intentionally one pass in the runner. `ui_assertions.py` requires the root review's completed `root_checks/http_results.json` and `served_try.html`. Port 8904 must be available for the final command.
+
+```text
+python -B audit_evidence_claims/m7/db_ui/run_replays.py
+python -B audit_evidence_claims/m7/db_ui/ui_assertions.py
+python -B audit_evidence_claims/m7/db_ui/demo_http.py
+```
+
+**Scope conclusion:** previously repaired graph/database/UI findings remain fixed; demos have no observed regression; unchanged blank-submit and Infinity qualifications are separately retained. Overall approval depends on the primary report's refusal and cost investigations.

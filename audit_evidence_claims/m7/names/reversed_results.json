@@ -1,0 +1,1552 @@
+[
+  {
+    "input": "doxorubicin in nanoparticle and liposomal formulations",
+    "resolver": {
+      "raw": "doxorubicin in nanoparticle and liposomal formulations",
+      "components": [
+        {
+          "component": "doxorubicin",
+          "tier": "CONTAINED_ALIAS",
+          "drug_id": "CHEMBL53463",
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "split_combination",
+            "segmented_from_phrase"
+          ],
+          "matched_alias": "DOXORUBICIN",
+          "candidates": null,
+          "note": "segmented out of 'doxorubicin in'",
+          "drug": {
+            "name": "DOXORUBICIN",
+            "drug_type": "Small molecule",
+            "max_phase_overall": "APPROVAL",
+            "max_phase_in_nsclc": "PHASE_2",
+            "mechanisms": [
+              "DNA topoisomerase II alpha inhibitor"
+            ],
+            "trials": 3
+          }
+        },
+        {
+          "component": "formulations",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "split_combination",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Drug",
+        "id": "CHEMBL53463",
+        "label": "DOXORUBICIN",
+        "matched_text": "doxorubicin",
+        "matched_alias": "DOXORUBICIN"
+      }
+    ],
+    "map": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "liposomal formulations"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate doxorubicin in nanoparticle and liposomal formulations?",
+    "qa": {
+      "question": "Which trials evaluate doxorubicin in nanoparticle and liposomal formulations?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL53463",
+          "label": "DOXORUBICIN",
+          "matched_text": "doxorubicin",
+          "matched_alias": "DOXORUBICIN"
+        }
+      ],
+      "answer": "Trials of this drug:\n  - NCT01970540 (PHASE1, COMPLETED) evaluates DOXORUBICIN [NCT01970540]\n  - NCT04224337 (PHASE2, COMPLETED) evaluates DOXORUBICIN [NCT04224337]\n  - NCT01640847 (PHASE2, WITHDRAWN) evaluates DOXORUBICIN [NCT01640847]\n\nScope: 3 edge(s) from this graph; non-small cell lung cancer only.",
+      "generated_by": "deterministic template (no language model)",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "unsupported_claims": [],
+        "evidence_count": 3,
+        "method": "not applicable",
+        "why": "the answer was rendered directly from the retrieved evidence, so checking it against that evidence is circular and would always pass"
+      },
+      "evidence": [
+        {
+          "statement": "NCT01970540 (PHASE1, COMPLETED) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01970540|EVALUATES|CHEMBL53463|NCT01970540",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01970540",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT01970540",
+          "stated_intervention": "Doxorubicin",
+          "title": "Study Escalating Doses of PM01183 in Combination With Fixed Doxorubicin in Patients With Specific Advanced Unresectable Solid Tumors",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE1"
+          ]
+        },
+        {
+          "statement": "NCT04224337 (PHASE2, COMPLETED) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT04224337",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 1.0,
+          "resolution_tier": "EXACT",
+          "url": "https://clinicaltrials.gov/study/NCT04224337",
+          "stated_intervention": "Durvalumab + doxorubicin + ifosfamide",
+          "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+          "status": "COMPLETED",
+          "phases": [
+            "PHASE2"
+          ]
+        },
+        {
+          "statement": "NCT01640847 (PHASE2, WITHDRAWN) evaluates DOXORUBICIN",
+          "relation": "EVALUATES",
+          "edge_id": "NCT01640847|EVALUATES|CHEMBL53463|NCT01640847",
+          "source": "clinicaltrials.gov",
+          "source_record": "NCT01640847",
+          "fetched_at": "2026-11-03T02:31:37.196527+00:00",
+          "confidence": 0.98,
+          "resolution_tier": "ALIAS",
+          "url": "https://clinicaltrials.gov/study/NCT01640847",
+          "stated_intervention": "High Intensity Focused Ultrasound (HIFU) in combination with ThermoDox",
+          "title": "MRI Guided High Intensity Focused Ultrasound (HIFU) and ThermoDox for Palliation of Painful Bone Metastases",
+          "status": "WITHDRAWN",
+          "phases": [
+            "PHASE2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "doxorubicin in nanoparticle and liposomal",
+    "resolver": {
+      "raw": "doxorubicin in nanoparticle and liposomal",
+      "components": [
+        {
+          "component": "doxorubicin in and",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "doxorubicin in and",
+        "matched_text": "doxorubicin in and",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "doxorubicin in and",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "liposomal"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate doxorubicin in nanoparticle and liposomal?",
+    "qa": {
+      "question": "Which trials evaluate doxorubicin in nanoparticle and liposomal?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate doxorubicin in and ?",
+          "matched_text": "Which trials evaluate doxorubicin in and ?",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "input": "doxorubicin (nanoparticle and liposomal formulation)",
+    "resolver": {
+      "raw": "doxorubicin (nanoparticle and liposomal formulation)",
+      "components": [
+        {
+          "component": "doxorubicin",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "doxorubicin (nanoparticle and liposomal formulation)",
+        "matched_text": "doxorubicin (nanoparticle and liposomal formulation)",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "doxorubicin (nanoparticle and liposomal formulation)",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "liposomal formulation)"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate doxorubicin (nanoparticle and liposomal formulation)?",
+    "qa": {
+      "question": "Which trials evaluate doxorubicin (nanoparticle and liposomal formulation)?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate doxorubicin (nanoparticle and liposomal formulation)",
+          "matched_text": "Which trials evaluate doxorubicin (nanoparticle and liposomal formulation)",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate doxorubicin ?",
+          "matched_text": "Which trials evaluate doxorubicin ?",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "input": "doxorubicin (sustained-release and liposomal)",
+    "resolver": {
+      "raw": "doxorubicin (sustained-release and liposomal)",
+      "components": [
+        {
+          "component": "doxorubicin",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "doxorubicin (sustained-release and liposomal)",
+        "matched_text": "doxorubicin (sustained-release and liposomal)",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "doxorubicin (sustained-release and liposomal)",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "liposomal)"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate doxorubicin (sustained-release and liposomal)?",
+    "qa": {
+      "question": "Which trials evaluate doxorubicin (sustained-release and liposomal)?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate doxorubicin (sustained-release and liposomal)",
+          "matched_text": "Which trials evaluate doxorubicin (sustained-release and liposomal)",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate doxorubicin ?",
+          "matched_text": "Which trials evaluate doxorubicin ?",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "input": "bevacizumab (investigational and biosimilar)",
+    "resolver": {
+      "raw": "bevacizumab (investigational and biosimilar)",
+      "components": [
+        {
+          "component": "bevacizumab",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab (investigational and biosimilar)",
+        "matched_text": "bevacizumab (investigational and biosimilar)",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "bevacizumab (investigational and biosimilar)",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL1201583",
+        "type": "Drug",
+        "label": "BEVACIZUMAB",
+        "matched_text": "BEVACIZUMAB",
+        "trials": 122,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [
+        {
+          "refused": "biosimilar)"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 122,
+          "items": [
+            {
+              "id": "NCT07420439",
+              "type": "Trial",
+              "label": "NCT07420439",
+              "edge_id": "NCT07420439|EVALUATES|CHEMBL1201583|NCT07420439",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "NOT_YET_RECRUITING",
+              "title": "Treatment in Patients With Advanced Non-Small Cell Lung Carcinoma and Interstitial Lung Disease",
+              "start_date": "2026-09-15",
+              "url": "https://clinicaltrials.gov/study/NCT07420439",
+              "weight": "2026-09-15"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 86,
+          "items": [
+            {
+              "id": "ORG:roche",
+              "type": "Company",
+              "label": "Roche",
+              "edge_id": "ORG:roche|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+              "evidence_trials": 8,
+              "weight": 8,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000112715",
+              "type": "Target",
+              "label": "VEGFA",
+              "edge_id": "CHEMBL1201583|ACTS_ON|ENSG00000112715|CHEMBL1201583",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate bevacizumab (investigational and biosimilar)?",
+    "qa": {
+      "question": "Which trials evaluate bevacizumab (investigational and biosimilar)?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate bevacizumab (investigational and biosimilar)",
+          "matched_text": "Which trials evaluate bevacizumab (investigational and biosimilar)",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate bevacizumab ?",
+          "matched_text": "Which trials evaluate bevacizumab ?",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "input": "bevacizumab (generic and biosimilar formulation)",
+    "resolver": {
+      "raw": "bevacizumab (generic and biosimilar formulation)",
+      "components": [
+        {
+          "component": "bevacizumab",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab (generic and biosimilar formulation)",
+        "matched_text": "bevacizumab (generic and biosimilar formulation)",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "bevacizumab (generic and biosimilar formulation)",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL1201583",
+        "type": "Drug",
+        "label": "BEVACIZUMAB",
+        "matched_text": "BEVACIZUMAB",
+        "trials": 122,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Antibody"
+        }
+      },
+      "also": [
+        {
+          "refused": "biosimilar formulation)"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 122,
+          "items": [
+            {
+              "id": "NCT07420439",
+              "type": "Trial",
+              "label": "NCT07420439",
+              "edge_id": "NCT07420439|EVALUATES|CHEMBL1201583|NCT07420439",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "NOT_YET_RECRUITING",
+              "title": "Treatment in Patients With Advanced Non-Small Cell Lung Carcinoma and Interstitial Lung Disease",
+              "start_date": "2026-09-15",
+              "url": "https://clinicaltrials.gov/study/NCT07420439",
+              "weight": "2026-09-15"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 86,
+          "items": [
+            {
+              "id": "ORG:roche",
+              "type": "Company",
+              "label": "Roche",
+              "edge_id": "ORG:roche|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+              "evidence_trials": 8,
+              "weight": 8,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000112715",
+              "type": "Target",
+              "label": "VEGFA",
+              "edge_id": "CHEMBL1201583|ACTS_ON|ENSG00000112715|CHEMBL1201583",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate bevacizumab (generic and biosimilar formulation)?",
+    "qa": {
+      "question": "Which trials evaluate bevacizumab (generic and biosimilar formulation)?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate bevacizumab (generic and biosimilar formulation)",
+          "matched_text": "Which trials evaluate bevacizumab (generic and biosimilar formulation)",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate bevacizumab ?",
+          "matched_text": "Which trials evaluate bevacizumab ?",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "input": "paclitaxel (investigational and albumin-bound nanoparticle formulation)",
+    "resolver": {
+      "raw": "paclitaxel (investigational and albumin-bound nanoparticle formulation)",
+      "components": [
+        {
+          "component": "paclitaxel",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "paclitaxel (investigational and albumin-bound nanoparticle formulation)",
+        "matched_text": "paclitaxel (investigational and albumin-bound nanoparticle formulation)",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "paclitaxel (investigational and albumin-bound nanoparticle formulation)",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL428647",
+        "type": "Drug",
+        "label": "PACLITAXEL",
+        "matched_text": "PACLITAXEL",
+        "trials": 234,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "albumin-bound nanoparticle formulation)"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 234,
+          "items": [
+            {
+              "id": "NCT07720167",
+              "type": "Trial",
+              "label": "NCT07720167",
+              "edge_id": "NCT07720167|EVALUATES|CHEMBL428647|NCT07720167",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "NOT_YET_RECRUITING",
+              "title": "Cemiplimab for Clinical Stage I, 2-3.9cm, Non-Small Cell Lung Cancer",
+              "start_date": "2026-11-01",
+              "url": "https://clinicaltrials.gov/study/NCT07720167",
+              "weight": "2026-11-01"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 149,
+          "items": [
+            {
+              "id": "ORG:nationalcancerinstitute",
+              "type": "Company",
+              "label": "National Cancer Institute",
+              "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL428647|",
+              "evidence_trials": 14,
+              "weight": 14,
+              "sponsor_class": "NIH"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 15,
+          "items": [
+            {
+              "id": "ENSG00000167552",
+              "type": "Target",
+              "label": "TUBA1A",
+              "edge_id": "CHEMBL428647|ACTS_ON|ENSG00000167552|CHEMBL428647",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Investigator",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ORG:juliakrotowmd",
+              "type": "Investigator",
+              "label": "Julia K Rotow Md",
+              "edge_id": "ORG:juliakrotowmd|SPONSORS_TRIAL_OF|CHEMBL428647|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "OTHER"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate paclitaxel (investigational and albumin-bound nanoparticle formulation)?",
+    "qa": {
+      "question": "Which trials evaluate paclitaxel (investigational and albumin-bound nanoparticle formulation)?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate paclitaxel (investigational and albumin-bound nanoparticle formulation)",
+          "matched_text": "Which trials evaluate paclitaxel (investigational and albumin-bound nanoparticle formulation)",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate paclitaxel ?",
+          "matched_text": "Which trials evaluate paclitaxel ?",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "input": "doxorubicin formulated as sustained-release and liposomal",
+    "resolver": {
+      "raw": "doxorubicin formulated as sustained-release and liposomal",
+      "components": [
+        {
+          "component": "doxorubicin formulated as sustained-release and",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "doxorubicin formulated as sustained-release and",
+        "matched_text": "doxorubicin formulated as sustained-release and",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "doxorubicin formulated as sustained-release and",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "liposomal"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate doxorubicin formulated as sustained-release and liposomal?",
+    "qa": {
+      "question": "Which trials evaluate doxorubicin formulated as sustained-release and liposomal?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate doxorubicin formulated as sustained-release and ?",
+          "matched_text": "Which trials evaluate doxorubicin formulated as sustained-release and ?",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "input": "doxorubicin (nanoparticle liposomal formulation)",
+    "resolver": {
+      "raw": "doxorubicin (nanoparticle liposomal formulation)",
+      "components": [
+        {
+          "component": "doxorubicin",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "doxorubicin (nanoparticle liposomal formulation)",
+        "matched_text": "doxorubicin (nanoparticle liposomal formulation)",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "doxorubicin (nanoparticle liposomal formulation)",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "previous_514929c": {
+      "refused": "doxorubicin (nanoparticle liposomal formulation)",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "qa_input": "Which trials evaluate doxorubicin (nanoparticle liposomal formulation)?",
+    "qa": {
+      "question": "Which trials evaluate doxorubicin (nanoparticle liposomal formulation)?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate doxorubicin (nanoparticle liposomal formulation)",
+          "matched_text": "Which trials evaluate doxorubicin (nanoparticle liposomal formulation)",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate doxorubicin ?",
+          "matched_text": "Which trials evaluate doxorubicin ?",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "input": "bevacizumab (investigational biosimilar)",
+    "resolver": {
+      "raw": "bevacizumab (investigational biosimilar)",
+      "components": [
+        {
+          "component": "bevacizumab",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "extract_parenthetical",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "bevacizumab (investigational biosimilar)",
+        "matched_text": "bevacizumab (investigational biosimilar)",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "bevacizumab (investigational biosimilar)",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "previous_514929c": {
+      "refused": "bevacizumab (investigational biosimilar)",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "qa_input": "Which trials evaluate bevacizumab (investigational biosimilar)?",
+    "qa": {
+      "question": "Which trials evaluate bevacizumab (investigational biosimilar)?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate bevacizumab (investigational biosimilar)",
+          "matched_text": "Which trials evaluate bevacizumab (investigational biosimilar)",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        },
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate bevacizumab ?",
+          "matched_text": "Which trials evaluate bevacizumab ?",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  },
+  {
+    "input": "liposomal and nanoparticle formulation of doxorubicin",
+    "resolver": {
+      "raw": "liposomal and nanoparticle formulation of doxorubicin",
+      "components": [
+        {
+          "component": "and formulation of doxorubicin",
+          "tier": "BLOCKED_DISTINCT_PRODUCT",
+          "drug_id": null,
+          "score": null,
+          "rules": [
+            "strip_formulation",
+            "distinct_product_guard"
+          ],
+          "matched_alias": null,
+          "candidates": null,
+          "note": "distinct product (biosimilar or alternative formulation); not the originator molecule and not in this vocabulary"
+        }
+      ]
+    },
+    "linker": [
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "liposomal ... nanoparticle formulation of doxorubicin",
+        "matched_text": "liposomal ... nanoparticle formulation of doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      },
+      {
+        "type": "Refused",
+        "id": null,
+        "label": "and formulation of doxorubicin",
+        "matched_text": "and formulation of doxorubicin",
+        "why": "names a distinct product or tracer, not the originator molecule"
+      }
+    ],
+    "map": {
+      "refused": "liposomal ... nanoparticle formulation of doxorubicin",
+      "why": "names a distinct product or tracer, not the originator molecule"
+    },
+    "previous_514929c": {
+      "center": {
+        "id": "CHEMBL53463",
+        "type": "Drug",
+        "label": "DOXORUBICIN",
+        "matched_text": "DOXORUBICIN",
+        "trials": 3,
+        "props": {
+          "max_phase_overall": "APPROVAL",
+          "drug_type": "Small molecule"
+        }
+      },
+      "also": [
+        {
+          "refused": "liposomal"
+        }
+      ],
+      "groups": [
+        {
+          "rel": "EVALUATES",
+          "dir": "in",
+          "type": "Trial",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "NCT04224337",
+              "type": "Trial",
+              "label": "NCT04224337",
+              "edge_id": "NCT04224337|EVALUATES|CHEMBL53463|NCT04224337",
+              "phases": [
+                "PHASE2"
+              ],
+              "status": "COMPLETED",
+              "title": "Phase II Study of Durvalumab ,Doxorubicin, and Ifosfamide in Pulmonary Sarcomatoid Carcinoma",
+              "start_date": "2020-06-11",
+              "url": "https://clinicaltrials.gov/study/NCT04224337",
+              "weight": "2020-06-11"
+            }
+          ]
+        },
+        {
+          "rel": "SPONSORS_TRIAL_OF",
+          "dir": "in",
+          "type": "Company",
+          "role": null,
+          "total": 3,
+          "items": [
+            {
+              "id": "ORG:imunon",
+              "type": "Company",
+              "label": "Imunon",
+              "edge_id": "ORG:imunon|SPONSORS_TRIAL_OF|CHEMBL53463|",
+              "evidence_trials": 1,
+              "weight": 1,
+              "sponsor_class": "INDUSTRY"
+            }
+          ]
+        },
+        {
+          "rel": "ACTS_ON",
+          "dir": "out",
+          "type": "Target",
+          "role": null,
+          "total": 1,
+          "items": [
+            {
+              "id": "ENSG00000131747",
+              "type": "Target",
+              "label": "TOP2A",
+              "edge_id": "CHEMBL53463|ACTS_ON|ENSG00000131747|CHEMBL53463",
+              "weight": 0,
+              "action": "INHIBITOR"
+            }
+          ]
+        }
+      ]
+    },
+    "qa_input": "Which trials evaluate liposomal and nanoparticle formulation of doxorubicin?",
+    "qa": {
+      "question": "Which trials evaluate liposomal and nanoparticle formulation of doxorubicin?",
+      "intent": "trials_for_entity",
+      "entities": [
+        {
+          "type": "Refused",
+          "id": null,
+          "label": "Which trials evaluate liposomal ... nanoparticle formulation of doxorubicin",
+          "matched_text": "Which trials evaluate liposomal ... nanoparticle formulation of doxorubicin",
+          "why": "names a distinct product or tracer, not the originator molecule"
+        }
+      ],
+      "answer": "The entities in the question were recognised but the graph holds no edges that answer it.",
+      "generated_by": "refusal (no supporting evidence)",
+      "checks": {
+        "grounded": true,
+        "unsupported_claims": [],
+        "note": "refusing is the correct output when evidence is absent"
+      },
+      "evidence": []
+    }
+  }
+]

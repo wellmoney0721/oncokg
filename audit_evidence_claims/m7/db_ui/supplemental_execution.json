@@ -1,0 +1,14 @@
+{
+  "commands": [
+    {
+      "command": "python -B audit_evidence_claims/m7/db_ui/ui_assertions.py",
+      "returncode": 0,
+      "output": "24 aggregate assertions passed"
+    },
+    {
+      "command": "python -B audit_evidence_claims/m7/db_ui/demo_http.py",
+      "returncode": 0,
+      "output": "36/36 HTTP 200; 36/36 equal direct Engine; served equals worktree"
+    }
+  ]
+}
