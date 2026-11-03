@@ -55,7 +55,7 @@ are covered by tests. Tests 326.
 | # | Finding | Repair |
 | --- | --- | --- |
 | M5-B1 | a glued "/" or "|" ("bevacizumab-awwb/ osimertinib") hid the suffix guard; the alias key dropped the slash and linked BEVACIZUMAB | tokens are stripped of "/" and "|", which end the list item |
-| M5-B2 | "liposomal and nanoparticle formulation of doxorubicin": "and" detached the bare qualifier | a qualifier item with no drug carries across a listing word to the next item's drugs (a distinct product named by itself, e.g. Mvasi, does not carry) |
+| M5-B2 | "liposomal and nanoparticle formulation of doxorubicin": "and" detached the bare qualifier | a qualifier item with no drug carries across a listing word to the next item's drugs; a product named by itself (in the index, or a known biosimilar/reformulation brand such as Mvasi, Abraxane) does not carry |
 | M5-S1 | names were built across list items ("biosimilar anastrozole, Arimidex" lost Arimidex; "Erlotinib, hydrochloride ..." became the salt) | drug spans and the positive matcher stay inside one item |
 | M5-S3 | the all-runs scan was cubic (1.8 s at 250 words, under the lock) | whole item once for unanchored patterns, runs of at most eight words for anchored ones: 500 words in about 0.03 s |
 | M5-S2 | "Pegylated interferon alfa-2a" (a stored alias of the pegylated drug itself) is refused | not changed: the resolver refuses it too, and exempting known aliases from the product guards would reopen M5-B1 (recorded as a known over-refusal) |

@@ -185,9 +185,14 @@ class OncoKG:
             prev_end = idx[-1]
             hit = [k for a, b in drugs if seg[a] == sid for k in range(a, b)]
             if _qualified([tokens[k] for k in idx]):
-                if not hit and not (refused & set(idx)):
+                named = any(k in refused and (
+                    T.canonical_key(tokens[k]) in self.dic["index"]
+                    or tokens[k].lower() in T.BIOSIMILAR_BRANDS | T.REFORMULATION_NAMES)
+                    for k in idx)
+                if not hit and not named:
                     # "liposomal and nanoparticle formulation of doxorubicin": a bare
-                    # qualifier carries over a listing word to the next item's drug
+                    # qualifier carries over a listing word to the next item's drug; a
+                    # product named by itself ("Mvasi and bevacizumab") does not
                     dangling = text
                     continue
                 dangling = None
