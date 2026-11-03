@@ -74,7 +74,8 @@ class Engine:
         intent = kg.classify(question, entities)
         evidence = kg.retrieve(intent, entities)
         checks = kg.check_groundedness(answer, evidence, entities, generated=True,
-                                       vocabulary=set(self.dic["index"]))
+                                       vocabulary=set(self.dic["index"]),
+                                       linker=kg.link_entities)
         return {"intent": intent, "entities": entities, "checks": checks,
                 "evidence": [{"statement": e.statement, "source_record": e.source_record,
                               "source": e.source, "url": e.url} for e in evidence[:8]],

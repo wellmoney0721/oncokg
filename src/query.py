@@ -153,6 +153,11 @@ class OncoKG:
                 key = T.canonical_key(window)
 
                 hits = self.dic["index"].get(key)
+                # Several words only make a drug name when the name itself has
+                # several words. The key drops spaces, so "is a" read as the
+                # abbreviation "isa" (isatuximab) in any question or answer.
+                if hits and size > 1 and not re.search(r"[\s\-/]", hits[0]["alias"]):
+                    hits = None
                 if hits and len({h["drug_id"] for h in hits}) == 1:
                     did = hits[0]["drug_id"]
                     if ("Drug", did) not in seen:
@@ -384,7 +389,8 @@ class OncoKG:
         claim_text = text.split("\nScope:")[0]
         checks = self.check_groundedness(claim_text, evidence, entities,
                                          generated=generated,
-                                         vocabulary=set(self.dic["index"]))
+                                         vocabulary=set(self.dic["index"]),
+                                         linker=self.link_entities)
         return Answer(question, intent, entities, text, evidence, by, checks)
 
     @staticmethod
@@ -434,7 +440,7 @@ class OncoKG:
     @staticmethod
     def check_groundedness(text: str, evidence: list[Evidence],
                            entities: list[dict], generated: bool = True,
-                           vocabulary: set | None = None) -> dict:
+                           vocabulary: set | None = None, linker=None) -> dict:
         """Verify a *generated* answer says nothing the evidence does not contain.
 
         Two things this check is not, both found by an adversarial review and
@@ -446,16 +452,15 @@ class OncoKG:
            `grounded=True` for it would be a test that always passes. When the
            answer was rendered rather than generated, the check reports
            `applicable=False` and asserts nothing.
-        2. Even on generated prose it is a floor, not a proof. It verifies that
-           capitalised entities, drug-shaped names and numbers appear in the
-           retrieved set, and refuses figures written in words. It cannot
-           detect a *relation* the evidence does not support ("AstraZeneca has
-           discontinued this drug" passes, because both tokens are present),
-           a negation or reversal ("does not act on EGFR"), a comparison or
-           ranking, a causal or clinical claim made of ordinary words
-           ("cures cancer", "is safe"), or a wrong pairing of two true
-           figures. It catches fabricated names and fabricated figures and
-           nothing beyond that.
+        2. Names and numbers alone are a floor. It verifies that capitalised
+           entities, drug-shaped names and numbers appear in the retrieved set,
+           and refuses figures written in words. Given a `linker` (the query
+           layer's entity linker), it also reads the answer sentence by sentence
+           (claims.check_claims): every stated relation must hold between the
+           same entities in the evidence, and every other content word must be
+           grammar or appear in evidence about that sentence's own entities, so
+           "AstraZeneca has discontinued this drug", "does not act on EGFR" and
+           "is safe" are reported. It reads words, not meaning; see claims.py.
         """
         if not generated:
             return {
@@ -484,7 +489,13 @@ class OncoKG:
 
         unsupported: list[dict] = []
 
+        # "phase 3" is stated as PHASE3 in the evidence, so a phase number is
+        # matched against that form, not against the bare figures
+        haystack_flat = re.sub(r"[\s_\-]+", "", haystack)
+        phase_nums = {m.group(1) for m in re.finditer(r"\bphase\s*(\d)\b", text, re.I)}
         for num in set(RE_NUMBER.findall(text)):
+            if num in phase_nums and f"phase{num}" in haystack_flat:
+                continue
             if num.replace(",", "") not in haystack_numbers:
                 unsupported.append({"kind": "number", "value": num,
                                     "why": "not present in the retrieved evidence"})
@@ -527,6 +538,10 @@ class OncoKG:
             unsupported.append({"kind": "number_unreadable", "value": odd,
                                 "why": "a figure in a form the check cannot match"})
 
+        if linker is not None:
+            from claims import check_claims
+            unsupported.extend(check_claims(text, evidence, linker))
+
         # one finding per value, first reason kept, in a stable order
         seen_values: set[str] = set()
         unsupported = [u for u in sorted(unsupported, key=lambda u: (u["value"], u["kind"]))
@@ -538,7 +553,9 @@ class OncoKG:
             "unsupported_claims": unsupported,
             "evidence_count": len(evidence),
             "method": ("entity and tokenised-numeric overlap against the "
-                       "retrieved evidence; does not verify relations"),
+                       "retrieved evidence" + ("; sentence claims checked against "
+                       "edges and entity-scoped wording" if linker is not None
+                       else "; relations not checked (no linker)")),
         }
 
 

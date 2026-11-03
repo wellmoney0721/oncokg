@@ -35,7 +35,7 @@ def test_check_flags_invented_name_and_number_not_relation():
     assert [u["value"].lower() for u in bad["checks"]["unsupported_claims"]] == ["zorbatinib"]
     num = ENGINE.check("What trials evaluate Tagrisso?", "It is in 4,812 trials.")
     assert not num["checks"]["grounded"]
-    # a false relation built from true tokens passes: the documented limit
+    # a false statement built from true tokens is caught by the claim check
     rel = ENGINE.check("Which companies are developing osimertinib?",
                        "AstraZeneca has discontinued osimertinib.")
-    assert rel["checks"]["grounded"] is True
+    assert rel["checks"]["grounded"] is False

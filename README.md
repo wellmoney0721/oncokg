@@ -505,11 +505,16 @@ fixed now, and its number has been reused.
     obvious changes (spin-offs, renames, the two Mercks), but continued legal
     existence of every subsidiary is unverified, and nothing re-checks the map
     when ownership changes.
-13. **The groundedness check is a floor.** It catches invented names and
-    figures. It does not verify relations, negations, comparisons or clinical
-    claims made of ordinary words, and it counts any number word, including
-    "one", as an unverifiable figure. A drug name outside the vocabulary that
-    does not look like an INN still passes.
+13. **The claim check reads words, not meaning.** Answers are now checked
+    sentence by sentence (`src/claims.py`): a stated relation must hold between
+    the same entities in the evidence, and every other content word must be
+    grammar or appear in evidence about that sentence's entities, so
+    "discontinued", "is safe", "does not act on" and "develops" are reported.
+    It is strict on purpose, so a true fact the graph does not hold is reported
+    as unverifiable, and a sentence that rearranges the evidence's own words
+    about one entity can still pass. Number words, including "one", count as
+    unverifiable figures, and a drug name outside the vocabulary that does not
+    look like an INN still passes.
 14. **Provenance does not record the code version.** Snapshots carry their
     fetch time, but the graph does not store which revision of the rules built
     it, so a change that arrives with a new snapshot and a code change together
@@ -535,7 +540,7 @@ pip install -r requirements.txt
 python src/run_all.py              # fetch, resolve, check, build, score, render
 python src/run_all.py --offline    # rebuild from the snapshots in data/raw
 
-python -m pytest tests -q                    # 59 tests
+python -m pytest tests -q                    # 79 tests
 python src/app.py                            # try-it page: http://localhost:8765
 python src/curation_effect.py                # resolve twice, with and without curation
 python src/apply_label_corrections.py --check
