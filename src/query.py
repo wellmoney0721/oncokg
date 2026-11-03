@@ -119,7 +119,8 @@ def _fold(text: str) -> str:
 
 
 # Mass numbers of the isotopes used in medicine, per element (lower case).
-_MEDICAL_MASS = {"h": {2, 3}, "c": {11, 13, 14}, "n": {13, 15}, "o": {15}, "f": {18},
+# Radioactive labels only: stable 2H, 13C and 15N mark chemistry ("13-cis"), not tracers.
+_MEDICAL_MASS = {"h": {3}, "c": {11, 14}, "n": {13}, "o": {15}, "f": {18},
                  "p": {32}, "s": {35}, "cu": {61, 62, 64, 67}, "ga": {67, 68}, "br": {76, 77},
                  "rb": {82}, "sr": {89, 90}, "y": {86, 90}, "zr": {89}, "tc": {99}, "in": {111},
                  "i": {123, 124, 125, 131}, "sm": {153}, "lu": {177}, "re": {186, 188},
@@ -129,6 +130,36 @@ _MEDICAL_MASS = {"h": {2, 3}, "c": {11, 13, 14}, "n": {13, 15}, "o": {15}, "f": 
 def _medical_isotope(label: str) -> bool:
     m = re.match(r"^(\d{1,3})m?([a-z]{1,2})$", (label or "").lower())
     return bool(m and int(m.group(1)) in _MEDICAL_MASS.get(m.group(2), set()))
+
+
+def _medical_isotope_in(key: str, one_letter: bool = True) -> bool:
+    """Is a medical isotope written anywhere in this run-together key, mass first ("89zr",
+    "a33124i") or a two-letter element first ("lu177")? One-letter elements only when
+    `one_letter` (within a word: "3hvinblastine"; across words "13 nsclc" is not N-13)."""
+    for m in re.finditer(r"(\d+)m?([a-z]{1,2})", key):
+        mass = int(m.group(1)[-3:])
+        el = m.group(2)
+        if mass in _MEDICAL_MASS.get(el, set()):
+            return True
+        if one_letter and mass in _MEDICAL_MASS.get(el[:1], set()):
+            return True
+    for m in re.finditer(r"([a-z]{2})(\d{2,3})(?!\d)", key):
+        if int(m.group(2)) in _MEDICAL_MASS.get(m.group(1), set()):
+            return True
+    return False
+
+
+def _labelled(drug_name: str) -> bool:
+    """Does a drug's preferred name carry an isotope (it is the radiolabelled product)?"""
+    key = T.canonical_key(drug_name)
+    if _medical_isotope_in(key):
+        return True
+    for m in re.finditer(r"\d+", key):         # element before the mass ("f18", "y90")
+        mass = int(m.group()[:3])
+        before = key[max(0, m.start() - 2):m.start()]
+        if mass in _MEDICAL_MASS.get(before, set()) or mass in _MEDICAL_MASS.get(before[-1:], set()):
+            return True
+    return False
 
 def _isotope_edge(word: str) -> bool:
     """An isotope label fused to the start or the end of one word ("89ZrDFO", "DFO89Zr").
@@ -337,6 +368,15 @@ class OncoKG:
         # an isotope glued to the name itself ("89zr-trastuzumab" read through "[89Z.r]")
         # anything may sit between them (a chelator: "89ZrDFO-daratumumab"), so the rest
         # needs only to end, or start, with a name of the same drug
+        # A medical isotope anywhere in the list item once its letters and digits are run
+        # together, however it is split or cased ("89-ZrDFO trastuzumab", "3hvinblastine",
+        # "trastuzumab Ga68"), refuses an unlabelled drug. A drug whose own name carries a
+        # label (LUTETIUM LU 177 DOTATATE, FLUDEOXYGLUCOSE F 18) is the labelled product.
+        item_key = T.canonical_key(" ".join(tokens[k] for k in same))
+        if ((_medical_isotope_in(item_key, one_letter=False)
+             or any(_medical_isotope_in(T.canonical_key(tokens[k])) for k in same))
+                and not _labelled(self.dic["drugs"][did]["name"])):
+            return name
         # A one-letter element is left to the case-marked word check above: lower-case
         # chemistry ("13-cis retinoic acid") is not carbon-13.
         # The drug's name may sit anywhere in the rest ("89Zrpanitumumab-PET-CT"). A

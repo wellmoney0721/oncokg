@@ -302,9 +302,9 @@ def test_underscores_accents_spaced_suffixes_and_punctuated_isotopes_refuse():
     for q in ("Which trials evaluate bevacizumab_awwb?", "Which trials evaluate [89.Zr] trastuzumab?",
               "Which trials evaluate bevacizumab awwb?"):
         assert not e.kg.answer(q, use_llm=False).evidence, q
-    r = e.explore("osimertinib with [89Zr] trastuzumab")
-    assert r["center"]["id"] == "CHEMBL3353410"
-    assert all(x.get("id") != "CHEMBL1201585" for x in r["also"])
+    # the isotope shares the list item with osimertinib: both refused (fail closed, round 15)
+    assert e.explore("osimertinib with [89Zr] trastuzumab").get("refused")
+    assert e.explore("osimertinib, [89Zr] trastuzumab")["center"]["id"] == "CHEMBL3353410"
     assert e.explore("bevacizumab_awwb, osimertinib")["center"]["id"] == "CHEMBL3353410"
     assert e.explore("Theophylline in dextrose 5% in plastic container")["center"]["id"] == "CHEMBL1355736"
     assert e.explore("cemiplimab-rwlc")["center"]["label"] == "CEMIPLIMAB"
@@ -381,3 +381,17 @@ def test_upper_case_one_letter_isotopes_and_trailing_markers_refuse():
         assert r.get("center"), t
         if did:
             assert r["center"]["id"] == did, t
+
+
+# Codex review m15: a medical isotope anywhere in the item refuses an unlabelled drug
+def test_a_medical_isotope_anywhere_in_the_item_refuses_an_unlabelled_drug():
+    import app
+    e = app.Engine()
+    for t in ("89-ZrDFO trastuzumab", "3hvinblastine", "trastuzumab Ga68", "lu177 trastuzumab"):
+        assert e.explore(t).get("refused"), t
+    assert not e.kg.answer("Which trials evaluate 89-ZrDFO trastuzumab?", use_llm=False).evidence
+    # a drug that is itself the labelled product, and text that only looks numeric
+    for t, label in (("18-FDG", "FLUDEOXYGLUCOSE F 18"), ("ra-223", "RADIUM RA 223 DICHLORIDE"),
+                     ("lu-177 dotatate", "LUTETIUM OXODOTREOTIDE LU-177"),
+                     ("lorlatinib 13 NSCLC trials", "LORLATINIB"), ("paclitaxel 2 cycles", "PACLITAXEL")):
+        assert e.explore(t)["center"]["label"] == label, t

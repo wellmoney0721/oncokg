@@ -162,3 +162,18 @@ Kept narrow on purpose: lower-case chemistry and dose text are not read as isoto
 Stored-alias sweep: no newly refused names. Tests 342.
 
 Known data limitation found while fixing, not changed here: ChEMBL lists bevacizumab biosimilar development codes as synonyms of bevacizumab (HLX04, HLX-04, HLX04-O, BAT1706, SB8, MB02, FKB238, BI 695502), so these draw BEVACIZUMAB. Fixing it belongs in the dictionary curation step (resolver and graph), with a re-measurement, not in the map.
+
+## Round 15 (audit_evidence_claims/m15) — CHANGES REQUIRED
+
+Each round found another spelling of an isotope. The rule is now one check on the run-together key, using a table of
+radioactive masses used in medicine (H-3, C-11/14, N-13, O-15, F-18, Cu-61..67, Ga-67/68, Zr-89, Y-86/90, Tc-99,
+In-111, I-123..131, Lu-177, Ra-223, ...; stable 2H/13C/15N excluded so "13-cis" is chemistry):
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M15-B1 | "89-ZrDFO trastuzumab" | a medical isotope anywhere in the list item (two-letter elements across words; one-letter elements within a word) refuses an unlabelled drug |
+| M15-B2 | "3hvinblastine" (lower case) | same rule; the mass table, not the case, decides |
+| — | — | a drug whose own preferred name carries a label (LUTETIUM ... LU-177, FLUDEOXYGLUCOSE F 18, RADIUM RA 223) is the labelled product and is not refused |
+
+Same list item, fail closed: "osimertinib with [89Zr] trastuzumab" refuses both; "osimertinib, [89Zr] trastuzumab" keeps
+osimertinib. Additional known over-refusals: `GS-11CAL-101`, `3en3hg4wsw` (codes that read as C-11 / H-3). Tests 343.
