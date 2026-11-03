@@ -270,3 +270,13 @@ Stored-alias sweep: no change. Tests 352.
 | M25-B2 | "trastuzumab linked to a DM1 payload", "linked to polyethylene glycol": only the word right after "to" was tested | up to three words after to/with (articles skipped) are tested for a code or a reagent noun (polyethylene glycol, payload, dye, toxin, chelator, ...) |
 
 "osimertinib linked to drug resistance", "linked with poor prognosis" still draw the drug. Stored-alias sweep: no change. Tests 353.
+
+## Round 26 (audit_evidence_claims/m26) — CHANGES REQUIRED (two blockers)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M26-B1 | "trastuzumab is not only conjugated to DM1 but also purified": "only" ends in -ly, so the negation carried through to "conjugated" | "not only" does not start a negation |
+| M26-B2 | "trastuzumab linked to a derivative of the toxin DM1": articles were dropped after the word window was cut; also the reverse "polyethylene glycol linked to irinotecan" | "linked" counts when a payload, dye, carrier or chelator (reagent nouns and codes: DM1, MMAE, SN-38, PEG, DOTA, FITC, IRDye...) is named anywhere in the item, in either order |
+| M26-S1 | "osimertinib linked to longer PFS", "... 3-year survival", "... response in 2026", "... resistance in EGFR" refused (capital/digit heuristic) | the capital/digit heuristic is gone; only named reagents count |
+
+Stored-alias sweep: no change. Tests 354.

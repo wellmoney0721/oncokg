@@ -536,3 +536,17 @@ def test_negation_stops_at_its_word_and_named_reagents_after_an_article_refuse()
                      ("osimertinib linked to drug resistance", "OSIMERTINIB"),
                      ("osimertinib linked with poor prognosis", "OSIMERTINIB")):
         assert e.explore(t)["center"]["label"] == label, t
+
+
+# Codex review m26
+def test_not_only_affirms_and_linked_reads_the_whole_item():
+    import app
+    e = app.Engine()
+    for t in ("trastuzumab is not only conjugated to DM1 but also purified",
+              "trastuzumab linked to a derivative of the toxin DM1",
+              "polyethylene glycol linked to irinotecan"):
+        assert e.explore(t).get("refused"), t
+    for t in ("osimertinib linked to longer PFS", "osimertinib linked to response in 2026",
+              "osimertinib linked to resistance in EGFR"):
+        assert e.explore(t)["center"]["label"] == "OSIMERTINIB", t
+    assert e.explore("trastuzumab not covalently linked to DM1")["center"]["label"] == "TRASTUZUMAB"
