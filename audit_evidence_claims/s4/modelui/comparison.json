@@ -1,0 +1,75 @@
+{
+  "s1": {
+    "model_cases_executed": 29,
+    "recorded_model_rows": 28,
+    "missing_cases": [
+      "sdk_failure"
+    ],
+    "common_inputs_identical": true,
+    "outage_captured_separately": true,
+    "api_requests_identical": true,
+    "api_count": 10,
+    "page_count": 10,
+    "no_raw_injected_elements": true,
+    "exceptions": []
+  },
+  "s2": {
+    "model_cases_executed": 29,
+    "recorded_model_rows": 28,
+    "missing_cases": [
+      "sdk_failure"
+    ],
+    "common_inputs_identical": true,
+    "outage_captured_separately": true,
+    "api_requests_identical": true,
+    "api_count": 10,
+    "page_count": 10,
+    "no_raw_injected_elements": true,
+    "exceptions": [],
+    "attack_inputs_identical": true,
+    "attack_rows": 22,
+    "nesting_subcases": 55,
+    "attack_api_requests_identical": true,
+    "attack_api_count": 7,
+    "attack_page_count": 7,
+    "attack_no_raw_injected_elements": true,
+    "attack_exceptions": [
+      {
+        "case": "sdk_shape:text_number",
+        "exception": "AttributeError: 'int' object has no attribute 'strip'"
+      }
+    ],
+    "attack_strict_json_failures": []
+  },
+  "s3": {
+    "rows": 68,
+    "api_count": 27,
+    "page_count": 27,
+    "inputs_identical": true,
+    "api_requests_identical": true,
+    "all_outputs_identical": true,
+    "all_http_outputs_identical": true,
+    "all_strict_http_json": true,
+    "no_raw_injected_elements": true,
+    "exceptions": [
+      {
+        "case": "model:shape:numeric_text",
+        "exception": "AttributeError: 'int' object has no attribute 'strip'"
+      },
+      {
+        "case": "model:shape:missing_content",
+        "exception": "AttributeError: 'types.SimpleNamespace' object has no attribute 'content'"
+      },
+      {
+        "case": "model:shape:none_message",
+        "exception": "AttributeError: 'NoneType' object has no attribute 'content'"
+      }
+    ],
+    "strict_json_failures": [
+      {
+        "case": "sanitiser:parsed_5001_digit_int",
+        "serialize_exception": "ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit"
+      }
+    ]
+  }
+}

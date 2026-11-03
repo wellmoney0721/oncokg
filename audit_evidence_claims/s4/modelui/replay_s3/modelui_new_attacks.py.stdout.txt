@@ -1,0 +1,81 @@
+raw_action:NaN exception= None strict= True verified= False checks= None accepted= 0 text= 
+raw_action:Infinity exception= None strict= True verified= False checks= None accepted= 0 text= 
+raw_action:-Infinity exception= None strict= True verified= False checks= None accepted= 0 text= 
+raw_action:1e309 exception= None strict= True verified= False checks= None accepted= 0 text= 
+raw_action:-1e309 exception= None strict= True verified= False checks= None accepted= 0 text= 
+raw_action:1.7976931348623159e308 exception= None strict= True verified= False checks= None accepted= 0 text= 
+raw_action:-1.7976931348623159e308 exception= None strict= True verified= False checks= None accepted= 0 text= 
+raw_action:1.7976931348623157e308 exception= None strict= True verified= False checks= None accepted= 0 text= 
+raw_action:1e308 exception= None strict= True verified= False checks= None accepted= 0 text= 
+raw_action:-1e308 exception= None strict= True verified= False checks= None accepted= 0 text= 
+raw_action:1e-400 exception= None strict= True verified= False checks= None accepted= 0 text= 
+raw_action:-1e-400 exception= None strict= True verified= False checks= None accepted= 0 text= 
+raw_action:-0.0 exception= None strict= True verified= False checks= None accepted= 0 text= 
+raw_action:0.0 exception= None strict= True verified= False checks= None accepted= 0 text= 
+raw_action:1.0 exception= None strict= True verified= False checks= None accepted= 0 text= 
+raw_action:1e999999999999999999999 exception= None strict= True verified= False checks= None accepted= 0 text= 
+raw_action:1e-999999999999999999999 exception= None strict= True verified= False checks= None accepted= 0 text= 
+parsed_nonfinite:action:nan exception= None strict= True verified= False checks= None accepted= 0 text= 
+parsed_nonfinite:kind:nan exception= None strict= True verified= False checks= None accepted= 0 text= 
+parsed_nonfinite:subject:nan exception= None strict= True verified= False checks= None accepted= 0 text= 
+parsed_nonfinite:evidence:nan exception= None strict= True verified= False checks= None accepted= 0 text= 
+parsed_nonfinite:note:nan exception= None strict= True verified= False checks= None accepted= 0 text= 
+parsed_nonfinite:action:inf exception= None strict= True verified= False checks= None accepted= 0 text= 
+parsed_nonfinite:kind:inf exception= None strict= True verified= False checks= None accepted= 0 text= 
+parsed_nonfinite:subject:inf exception= None strict= True verified= False checks= None accepted= 0 text= 
+parsed_nonfinite:evidence:inf exception= None strict= True verified= False checks= None accepted= 0 text= 
+parsed_nonfinite:note:inf exception= None strict= True verified= False checks= None accepted= 0 text= 
+parsed_nonfinite:action:negative_inf exception= None strict= True verified= False checks= None accepted= 0 text= 
+parsed_nonfinite:kind:negative_inf exception= None strict= True verified= False checks= None accepted= 0 text= 
+parsed_nonfinite:subject:negative_inf exception= None strict= True verified= False checks= None accepted= 0 text= 
+parsed_nonfinite:evidence:negative_inf exception= None strict= True verified= False checks= None accepted= 0 text= 
+parsed_nonfinite:note:negative_inf exception= None strict= True verified= False checks= None accepted= 0 text= 
+sanitiser:depth100 exception= None strict= True verified= False checks= None accepted= 0 text= 
+sanitiser:cycle exception= None strict= True verified= False checks= None accepted= 0 text= 
+sanitiser:breadth100_strings exception= None strict= True verified= False checks= None accepted= 0 text= 
+sanitiser:parsed_5001_digit_int exception= None strict= False verified= False checks= None accepted= 0 text= 
+sanitiser:raw_5001_digit_int exception= None strict= True verified= False checks= None accepted= 0 text= 
+injection:kind exception= None strict= True verified= False checks= None accepted= 0 text= 
+injection:relation exception= None strict= True verified= False checks= None accepted= 0 text= 
+injection:subject exception= None strict= True verified= False checks= None accepted= 0 text= 
+injection:object exception= None strict= True verified= False checks= None accepted= 0 text= 
+injection:action exception= None strict= True verified= False checks= None accepted= 0 text= 
+injection:evidence exception= None strict= True verified= False checks= None accepted= 0 text= 
+injection:note exception= None strict= True verified= False checks= None accepted= 0 text= 
+injection:key exception= None strict= True verified= False checks= None accepted= 0 text= 
+injection:mixed exception= None strict= True verified= False checks= None accepted= 2 text= - OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL335341
+injection:surrogate exception= None strict= True verified= False checks= None accepted= 0 text= 
+model:missing_sdk exception= None strict= True verified= None checks= False accepted= 0 text= The language model could not be used (the anthropic package is not installed); no answer w
+legacy_exact:sdk_failure exception= None strict= True verified= None checks= False accepted= 0 text= The language model could not be used (RuntimeError); no answer was generated.
+model:init_error:RuntimeError exception= None strict= True verified= None checks= False accepted= 0 text= The language model could not be used (RuntimeError); no answer was generated.
+model:init_error:ValueError exception= None strict= True verified= None checks= False accepted= 0 text= The language model could not be used (ValueError); no answer was generated.
+model:init_error:ConnectionError exception= None strict= True verified= None checks= False accepted= 0 text= The language model could not be used (ConnectionError); no answer was generated.
+model:init_error:TimeoutError exception= None strict= True verified= None checks= False accepted= 0 text= The language model could not be used (TimeoutError); no answer was generated.
+model:create_error:RuntimeError exception= None strict= True verified= None checks= False accepted= 0 text= The language model could not be used (RuntimeError); no answer was generated.
+model:create_error:ValueError exception= None strict= True verified= None checks= False accepted= 0 text= The language model could not be used (ValueError); no answer was generated.
+model:create_error:ConnectionError exception= None strict= True verified= None checks= False accepted= 0 text= The language model could not be used (ConnectionError); no answer was generated.
+model:create_error:TimeoutError exception= None strict= True verified= None checks= False accepted= 0 text= The language model could not be used (TimeoutError); no answer was generated.
+model:shape:empty exception= None strict= True verified= None checks= True accepted= 0 text= None of the model's claims could be verified.
+
+(1 claim(s) were removed because the graph 
+model:shape:none exception= None strict= True verified= None checks= True accepted= 0 text= None of the model's claims could be verified.
+
+(1 claim(s) were removed because the graph 
+model:shape:tool exception= None strict= True verified= None checks= True accepted= 0 text= None of the model's claims could be verified.
+
+(1 claim(s) were removed because the graph 
+model:shape:null_text exception= None strict= True verified= None checks= True accepted= 0 text= None of the model's claims could be verified.
+
+(1 claim(s) were removed because the graph 
+model:shape:numeric_text exception= AttributeError: 'int' object has no attribute 'strip' strict= None verified= None checks= None accepted= 0 text= 
+model:shape:missing_content exception= AttributeError: 'types.SimpleNamespace' object has no attribute 'content' strict= None verified= None checks= None accepted= 0 text= 
+model:shape:none_message exception= AttributeError: 'NoneType' object has no attribute 'content' strict= None verified= None checks= None accepted= 0 text= 
+model:shape:tool_then_good exception= None strict= True verified= None checks= True accepted= 0 text= - OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL335341
+model:shape:whitespace_then_good exception= None strict= True verified= None checks= True accepted= 0 text= None of the model's claims could be verified.
+
+(1 claim(s) were removed because the graph 
+model:shape:empty_then_good exception= None strict= True verified= None checks= True accepted= 0 text= - OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL335341
+model:overflow exception= None strict= True verified= None checks= True accepted= 0 text= None of the model's claims could be verified.
+
+(1 claim(s) were removed because the graph 
+api_count 27 all_strict True

@@ -1,0 +1,249 @@
+{
+  "head": "8adf2dd4e3cb9e2559dcabd67670300dbba6503c",
+  "reviewed_file_count": 35,
+  "changed_reviewed_files": [],
+  "tracked_status": "",
+  "untracked_outside_s4": [],
+  "missing_report_links": [],
+  "root_replays": [
+    {
+      "series": "s1",
+      "exit": 0,
+      "cases": 117,
+      "identical_inputs": true,
+      "exceptions": [],
+      "source_sha256": "8fc4200b1d9239332ad404f6d3f94f7f2ecadade38ff93e3a8c8b1c805a4db6f",
+      "adaptation": "ROOT parent index 2 -> 3 only; original commit field remains historical metadata."
+    },
+    {
+      "series": "s2",
+      "exit": 0,
+      "cases": 117,
+      "identical_inputs": true,
+      "exceptions": [],
+      "source_sha256": "0b47ecd01b67968c074ead6ade3fc6f40548a71110a1d36002b12c5fd70edafa",
+      "adaptation": "ROOT parent index 2 -> 3 only; original commit field remains historical metadata."
+    },
+    {
+      "series": "s3_constructor",
+      "exit": 0,
+      "cases": 8,
+      "identical_inputs": true,
+      "source_sha256": "c115fd1420dafa7a0a46033d0cdce5203e4d8dcba3cd44cffc90ed6b06fe8597",
+      "adaptation": "ROOT parent index 1 -> 2 only",
+      "results": [
+        {
+          "fixture": [
+            "Astrazeneca",
+            "ORG:genentech"
+          ],
+          "accepted": []
+        },
+        {
+          "fixture": [
+            "Astra-Zeneca",
+            "ORG:genentech"
+          ],
+          "accepted": [
+            "AstraZeneca"
+          ]
+        }
+      ]
+    }
+  ],
+  "identity_replays": [
+    {
+      "source": "audit_evidence_claims\\s1\\identity_probe.py",
+      "output": "audit_evidence_claims\\s4\\identity\\replay_s1\\identity_probe.py",
+      "exit": 0,
+      "source_sha256": "6cf5c4919f1ebffcfe1949811d8928936f520f940bda34ff264dbd5700a0540c",
+      "adaptation": "root/output paths only; historical bug assertion recorded as data",
+      "cases": 130,
+      "same_inputs": true,
+      "exceptions": [],
+      "retired_edges": 142,
+      "retired_edges_all_rejected": true
+    },
+    {
+      "source": "audit_evidence_claims\\s2\\identity_probe.py",
+      "output": "audit_evidence_claims\\s4\\identity\\replay_s2\\identity_probe.py",
+      "exit": 0,
+      "source_sha256": "6cf5c4919f1ebffcfe1949811d8928936f520f940bda34ff264dbd5700a0540c",
+      "adaptation": "root/output paths only; historical bug assertion recorded as data",
+      "cases": 130,
+      "same_inputs": true,
+      "exceptions": [],
+      "retired_edges": 142,
+      "retired_edges_all_rejected": true
+    },
+    {
+      "source": "audit_evidence_claims\\s2\\identity_attack.py",
+      "output": "audit_evidence_claims\\s4\\identity\\replay_s2\\identity_attack.py",
+      "exit": 0,
+      "source_sha256": "81bec210b0fe6104edef492500e12ff020061cb4ce62337a1e8832b2c9ce6fc8",
+      "adaptation": "root/output paths only; historical bug assertion recorded as data",
+      "cases": 44,
+      "same_inputs": true,
+      "exceptions": []
+    },
+    {
+      "source": "audit_evidence_claims\\s2\\root_contract_probe.py",
+      "output": "audit_evidence_claims\\s4\\identity\\replay_s2\\root_contract_probe.py",
+      "exit": 0,
+      "source_sha256": "a6623ecf0d6dfa63df5e73d82aa89965843c7cb12ba9aadae197258f71c30c48",
+      "adaptation": "root/output paths only; historical bug assertion recorded as data",
+      "cases": 0,
+      "same_inputs": true,
+      "exceptions": []
+    },
+    {
+      "source": "audit_evidence_claims\\s3\\identity_attack.py",
+      "output": "audit_evidence_claims\\s4\\identity\\replay_s3\\identity_attack.py",
+      "exit": 0,
+      "source_sha256": "0da25e0e966763a7998a8a93b1497bfccd0d60bd5175c9233f7ef6c213e87f19",
+      "adaptation": "root/output paths only; historical bug assertion recorded as data",
+      "cases": 35,
+      "same_inputs": true,
+      "exceptions": []
+    }
+  ],
+  "duplicate_label_contract_rejected": true,
+  "s4_boundary_cases": 15,
+  "s4_boundary_all_expected": true,
+  "constructor_alias_cases_rejected": true,
+  "faithful_checks": {
+    "s1": {
+      "same_demo_inputs": true,
+      "questions": 7,
+      "claims_accepted": {
+        "labels": 73,
+        "ids": 73
+      },
+      "same_phase_inputs": true,
+      "same_schema_inputs": true
+    },
+    "s2": {
+      "same_demo_inputs": true,
+      "questions": 7,
+      "claims_accepted": {
+        "labels": 73,
+        "ids": 73
+      },
+      "same_phase_inputs": true,
+      "same_schema_inputs": true,
+      "additional_output_identical": true,
+      "dictionary_identical": true
+    },
+    "s3/replay_s1": {
+      "same_demo_inputs": true,
+      "questions": 7,
+      "claims_accepted": {
+        "labels": 73,
+        "ids": 73
+      },
+      "same_phase_inputs": true,
+      "same_schema_inputs": true
+    },
+    "s3/replay_s2": {
+      "same_demo_inputs": true,
+      "questions": 7,
+      "claims_accepted": {
+        "labels": 73,
+        "ids": 73
+      },
+      "same_phase_inputs": true,
+      "same_schema_inputs": true,
+      "additional_output_identical": true,
+      "dictionary_identical": true
+    }
+  },
+  "faithful_historical_input_checks": {
+    "all_original_action_inputs_unchanged": true,
+    "profile_input_unchanged": true,
+    "empty_phase_input_unchanged": true,
+    "empty_phase_output_unchanged": true,
+    "s1_dictionary_unchanged": true
+  },
+  "model_ui": {
+    "s1": {
+      "model_cases_executed": 29,
+      "recorded_model_rows": 28,
+      "missing_cases": [
+        "sdk_failure"
+      ],
+      "common_inputs_identical": true,
+      "outage_captured_separately": true,
+      "api_requests_identical": true,
+      "api_count": 10,
+      "page_count": 10,
+      "no_raw_injected_elements": true,
+      "exceptions": []
+    },
+    "s2": {
+      "model_cases_executed": 29,
+      "recorded_model_rows": 28,
+      "missing_cases": [
+        "sdk_failure"
+      ],
+      "common_inputs_identical": true,
+      "outage_captured_separately": true,
+      "api_requests_identical": true,
+      "api_count": 10,
+      "page_count": 10,
+      "no_raw_injected_elements": true,
+      "exceptions": [],
+      "attack_inputs_identical": true,
+      "attack_rows": 22,
+      "nesting_subcases": 55,
+      "attack_api_requests_identical": true,
+      "attack_api_count": 7,
+      "attack_page_count": 7,
+      "attack_no_raw_injected_elements": true,
+      "attack_exceptions": [
+        {
+          "case": "sdk_shape:text_number",
+          "exception": "AttributeError: 'int' object has no attribute 'strip'"
+        }
+      ],
+      "attack_strict_json_failures": []
+    },
+    "s3": {
+      "rows": 68,
+      "api_count": 27,
+      "page_count": 27,
+      "inputs_identical": true,
+      "api_requests_identical": true,
+      "all_outputs_identical": true,
+      "all_http_outputs_identical": true,
+      "all_strict_http_json": true,
+      "no_raw_injected_elements": true,
+      "exceptions": [
+        {
+          "case": "model:shape:numeric_text",
+          "exception": "AttributeError: 'int' object has no attribute 'strip'"
+        },
+        {
+          "case": "model:shape:missing_content",
+          "exception": "AttributeError: 'types.SimpleNamespace' object has no attribute 'content'"
+        },
+        {
+          "case": "model:shape:none_message",
+          "exception": "AttributeError: 'NoneType' object has no attribute 'content'"
+        }
+      ],
+      "strict_json_failures": [
+        {
+          "case": "sanitiser:parsed_5001_digit_int",
+          "serialize_exception": "ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit"
+        }
+      ]
+    }
+  },
+  "model_ui_scripts_exit_zero": true,
+  "legacy_outages_captured": 2,
+  "legacy_outages_no_groundedness_claim": true,
+  "pytest_result": "316 passed in 9.12s",
+  "sqlite_integrity": "ok",
+  "report_final_line": "VERDICT: APPROVE",
+  "all_assertions_passed": true
+}

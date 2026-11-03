@@ -1,0 +1,147 @@
+{
+  "checks": {
+    "all_original_action_inputs_unchanged": true,
+    "profile_input_unchanged": true,
+    "empty_phase_input_unchanged": true,
+    "empty_phase_output_unchanged": true,
+    "s1_dictionary_unchanged": true
+  },
+  "selected_original_false_rejections": [
+    {
+      "question": "Which companies are developing osimertinib?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "Second Affiliated Hospital Of Nanchang University",
+            "object": "OSIMERTINIB",
+            "evidence": "ORG:secondaffiliatedhospitalofnanchanguniversity|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 2
+          }
+        ]
+      },
+      "in_full_payload_verified": true,
+      "corresponding_rendered_lines": [
+        "- Second Affiliated Hospital Of Nanchang University is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:secondaffiliatedhospitalofnanchanguniversity|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      ],
+      "individual_output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:secondaffiliatedhospitalofnanchanguniversity|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "subject": "ORG:secondaffiliatedhospitalofnanchanguniversity",
+            "object": "CHEMBL3353410",
+            "trial_count": 2
+          }
+        ],
+        "rejected": [],
+        "text": "- Second Affiliated Hospital Of Nanchang University is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:secondaffiliatedhospitalofnanchanguniversity|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      }
+    },
+    {
+      "question": "Which companies are developing osimertinib?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "Tianjin Medical University Cancer Institute And Hospital",
+            "object": "OSIMERTINIB",
+            "evidence": "ORG:tianjinmedicaluniversitycancerinstituteandhospital|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 2
+          }
+        ]
+      },
+      "in_full_payload_verified": true,
+      "corresponding_rendered_lines": [
+        "- Tianjin Medical University Cancer Institute And Hospital is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:tianjinmedicaluniversitycancerinstituteandhospital|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      ],
+      "individual_output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:tianjinmedicaluniversitycancerinstituteandhospital|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "subject": "ORG:tianjinmedicaluniversitycancerinstituteandhospital",
+            "object": "CHEMBL3353410",
+            "trial_count": 2
+          }
+        ],
+        "rejected": [],
+        "text": "- Tianjin Medical University Cancer Institute And Hospital is lead sponsor of 2 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:tianjinmedicaluniversitycancerinstituteandhospital|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      }
+    },
+    {
+      "question": "Which drugs act on ALK?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "ALECTINIB HYDROCHLORIDE",
+            "object": "ALK",
+            "evidence": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "in_full_payload_verified": true,
+      "corresponding_rendered_lines": [
+        "- ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor) [CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320]",
+        "- ALECTINIB HYDROCHLORIDE: maximum clinical stage APPROVAL; 1 NSCLC trial(s) in this graph [CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320]"
+      ],
+      "individual_output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "edge": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+            "subject": "CHEMBL3707320",
+            "object": "ENSG00000171094",
+            "action": "INHIBITOR"
+          }
+        ],
+        "rejected": [],
+        "text": "- ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor) [CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320]"
+      }
+    },
+    {
+      "question": "Which drugs act on ALK?",
+      "input": {
+        "claims": [
+          {
+            "kind": "drug",
+            "drug": "ALECTINIB HYDROCHLORIDE",
+            "evidence": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+            "trials_in_graph": 1,
+            "max_stage": "APPROVAL"
+          }
+        ]
+      },
+      "in_full_payload_verified": true,
+      "corresponding_rendered_lines": [
+        "- ALECTINIB HYDROCHLORIDE acts on ALK (inhibitor) [CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320]",
+        "- ALECTINIB HYDROCHLORIDE: maximum clinical stage APPROVAL; 1 NSCLC trial(s) in this graph [CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320]"
+      ],
+      "individual_output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "drug",
+            "edge": "CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320",
+            "drug": "CHEMBL3707320",
+            "max_stage": "APPROVAL",
+            "trials_in_graph": 1
+          }
+        ],
+        "rejected": [],
+        "text": "- ALECTINIB HYDROCHLORIDE: maximum clinical stage APPROVAL; 1 NSCLC trial(s) in this graph [CHEMBL3707320|ACTS_ON|ENSG00000171094|CHEMBL3707320]"
+      }
+    }
+  ]
+}

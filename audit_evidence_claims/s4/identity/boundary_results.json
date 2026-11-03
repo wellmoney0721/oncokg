@@ -1,0 +1,746 @@
+{
+  "cases": [
+    {
+      "tag": "two_candidates:AstraZeneca!",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "fixture": [
+        [
+          "UPDATE node SET label='Astrazeneca' WHERE id=?",
+          [
+            "ORG:genentech"
+          ]
+        ]
+      ],
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "AstraZeneca!",
+            "object": "CHEMBL3353410",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "company_candidates": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "resolved_ids": [],
+      "resolve_reason": "'AstraZeneca!' names 2 company nodes; use the id",
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "SPONSORS_TRIAL_OF",
+              "subject": "AstraZeneca!",
+              "object": "CHEMBL3353410",
+              "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+              "trial_count": 14
+            },
+            "why": "'AstraZeneca!' names 2 company nodes; use the id"
+          }
+        ],
+        "text": ""
+      },
+      "expected_verified": false,
+      "expectation_met": true,
+      "fixture_integrity": "ok"
+    },
+    {
+      "tag": "two_candidates:astra-zeneca",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "fixture": [
+        [
+          "UPDATE node SET label='Astrazeneca' WHERE id=?",
+          [
+            "ORG:genentech"
+          ]
+        ]
+      ],
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "astra-zeneca",
+            "object": "CHEMBL3353410",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "company_candidates": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "resolved_ids": [],
+      "resolve_reason": "'astra-zeneca' names 2 company nodes; use the id",
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "SPONSORS_TRIAL_OF",
+              "subject": "astra-zeneca",
+              "object": "CHEMBL3353410",
+              "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+              "trial_count": 14
+            },
+            "why": "'astra-zeneca' names 2 company nodes; use the id"
+          }
+        ],
+        "text": ""
+      },
+      "expected_verified": false,
+      "expectation_met": true,
+      "fixture_integrity": "ok"
+    },
+    {
+      "tag": "two_candidates:ASTRAZENECA?",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "fixture": [
+        [
+          "UPDATE node SET label='Astrazeneca' WHERE id=?",
+          [
+            "ORG:genentech"
+          ]
+        ]
+      ],
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "ASTRAZENECA?",
+            "object": "CHEMBL3353410",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "company_candidates": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "resolved_ids": [],
+      "resolve_reason": "'ASTRAZENECA?' names 2 company nodes; use the id",
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "SPONSORS_TRIAL_OF",
+              "subject": "ASTRAZENECA?",
+              "object": "CHEMBL3353410",
+              "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+              "trial_count": 14
+            },
+            "why": "'ASTRAZENECA?' names 2 company nodes; use the id"
+          }
+        ],
+        "text": ""
+      },
+      "expected_verified": false,
+      "expectation_met": true,
+      "fixture_integrity": "ok"
+    },
+    {
+      "tag": "two_candidates:AstraZeneca",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "fixture": [
+        [
+          "UPDATE node SET label='Astrazeneca' WHERE id=?",
+          [
+            "ORG:genentech"
+          ]
+        ]
+      ],
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "AstraZeneca",
+            "object": "CHEMBL3353410",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "company_candidates": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "resolved_ids": [],
+      "resolve_reason": "'AstraZeneca' is the label of 2 company nodes; use the id",
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "SPONSORS_TRIAL_OF",
+              "subject": "AstraZeneca",
+              "object": "CHEMBL3353410",
+              "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+              "trial_count": 14
+            },
+            "why": "'AstraZeneca' is the label of 2 company nodes; use the id"
+          }
+        ],
+        "text": ""
+      },
+      "expected_verified": false,
+      "expectation_met": true,
+      "fixture_integrity": "ok"
+    },
+    {
+      "tag": "two_candidates:AZ_exact_id",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "fixture": [
+        [
+          "UPDATE node SET label='Astrazeneca' WHERE id=?",
+          [
+            "ORG:genentech"
+          ]
+        ]
+      ],
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "ORG:astrazeneca",
+            "object": "CHEMBL3353410",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "company_candidates": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "resolved_ids": [
+        "ORG:astrazeneca"
+      ],
+      "resolve_reason": null,
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "subject": "ORG:astrazeneca",
+            "object": "CHEMBL3353410",
+            "trial_count": 14
+          }
+        ],
+        "rejected": [],
+        "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      },
+      "expected_verified": true,
+      "expectation_met": true,
+      "fixture_integrity": "ok"
+    },
+    {
+      "tag": "two_candidates:GE_exact_id_own_edge",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "fixture": [
+        [
+          "UPDATE node SET label='Astrazeneca' WHERE id=?",
+          [
+            "ORG:genentech"
+          ]
+        ]
+      ],
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "ORG:genentech",
+            "object": "CHEMBL1201583",
+            "evidence": "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+            "trial_count": 5
+          }
+        ]
+      },
+      "company_candidates": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "resolved_ids": [
+        "ORG:genentech"
+      ],
+      "resolve_reason": null,
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+            "subject": "ORG:genentech",
+            "object": "CHEMBL1201583",
+            "trial_count": 5
+          }
+        ],
+        "rejected": [],
+        "text": "- Astrazeneca is lead sponsor of 5 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug [ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|]"
+      },
+      "expected_verified": true,
+      "expectation_met": true,
+      "fixture_integrity": "ok"
+    },
+    {
+      "tag": "two_candidates:GE_exact_id_wrong_edge",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "fixture": [
+        [
+          "UPDATE node SET label='Astrazeneca' WHERE id=?",
+          [
+            "ORG:genentech"
+          ]
+        ]
+      ],
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "ORG:genentech",
+            "object": "CHEMBL3353410",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "company_candidates": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "resolved_ids": [
+        "ORG:genentech"
+      ],
+      "resolve_reason": null,
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "SPONSORS_TRIAL_OF",
+              "subject": "ORG:genentech",
+              "object": "CHEMBL3353410",
+              "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+              "trial_count": 14
+            },
+            "why": "the cited edge does not join these two entities in this direction"
+          }
+        ],
+        "text": ""
+      },
+      "expected_verified": false,
+      "expectation_met": true,
+      "fixture_integrity": "ok"
+    },
+    {
+      "tag": "three_candidates:alias",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "fixture": [
+        [
+          "UPDATE node SET label='Astrazeneca' WHERE id=?",
+          [
+            "ORG:genentech"
+          ]
+        ],
+        [
+          "UPDATE node SET label='Astrazeneca' WHERE id=?",
+          [
+            "ORG:roche"
+          ]
+        ]
+      ],
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "AstraZeneca!",
+            "object": "CHEMBL3353410",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "company_candidates": [
+        "ORG:astrazeneca",
+        "ORG:genentech",
+        "ORG:roche"
+      ],
+      "resolved_ids": [],
+      "resolve_reason": "'AstraZeneca!' names 3 company nodes; use the id",
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "SPONSORS_TRIAL_OF",
+              "subject": "AstraZeneca!",
+              "object": "CHEMBL3353410",
+              "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+              "trial_count": 14
+            },
+            "why": "'AstraZeneca!' names 3 company nodes; use the id"
+          }
+        ],
+        "text": ""
+      },
+      "expected_verified": false,
+      "expectation_met": true,
+      "fixture_integrity": "ok"
+    },
+    {
+      "tag": "three_candidates:AZ_exact_id",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "fixture": [
+        [
+          "UPDATE node SET label='Astrazeneca' WHERE id=?",
+          [
+            "ORG:genentech"
+          ]
+        ],
+        [
+          "UPDATE node SET label='Astrazeneca' WHERE id=?",
+          [
+            "ORG:roche"
+          ]
+        ]
+      ],
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "ORG:astrazeneca",
+            "object": "CHEMBL3353410",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "company_candidates": [
+        "ORG:astrazeneca",
+        "ORG:genentech",
+        "ORG:roche"
+      ],
+      "resolved_ids": [
+        "ORG:astrazeneca"
+      ],
+      "resolve_reason": null,
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "subject": "ORG:astrazeneca",
+            "object": "CHEMBL3353410",
+            "trial_count": 14
+          }
+        ],
+        "rejected": [],
+        "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      },
+      "expected_verified": true,
+      "expectation_met": true,
+      "fixture_integrity": "ok"
+    },
+    {
+      "tag": "retired_duplicate_then_constructor:alias",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "fixture": [
+        [
+          "UPDATE node SET label='Astrazeneca' WHERE id=?",
+          [
+            "ORG:genentech"
+          ]
+        ],
+        [
+          "UPDATE node SET retired_at='s4-fixture' WHERE id=?",
+          [
+            "ORG:genentech"
+          ]
+        ]
+      ],
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "AstraZeneca!",
+            "object": "CHEMBL3353410",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "company_candidates": [
+        "ORG:astrazeneca"
+      ],
+      "resolved_ids": [
+        "ORG:astrazeneca"
+      ],
+      "resolve_reason": null,
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "subject": "ORG:astrazeneca",
+            "object": "CHEMBL3353410",
+            "trial_count": 14
+          }
+        ],
+        "rejected": [],
+        "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      },
+      "expected_verified": true,
+      "expectation_met": true,
+      "fixture_integrity": "ok"
+    },
+    {
+      "tag": "persisted_singleton:punctuation_alias",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "fixture": null,
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "AstraZeneca!",
+            "object": "CHEMBL3353410",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "company_candidates": [
+        "ORG:astrazeneca"
+      ],
+      "resolved_ids": [
+        "ORG:astrazeneca"
+      ],
+      "resolve_reason": null,
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "subject": "ORG:astrazeneca",
+            "object": "CHEMBL3353410",
+            "trial_count": 14
+          }
+        ],
+        "rejected": [],
+        "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      },
+      "expected_verified": true,
+      "expectation_met": true,
+      "fixture_integrity": "ok"
+    },
+    {
+      "tag": "persisted_singleton:exact_label",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "fixture": null,
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "AstraZeneca",
+            "object": "CHEMBL3353410",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "company_candidates": [
+        "ORG:astrazeneca"
+      ],
+      "resolved_ids": [
+        "ORG:astrazeneca"
+      ],
+      "resolve_reason": null,
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "subject": "ORG:astrazeneca",
+            "object": "CHEMBL3353410",
+            "trial_count": 14
+          }
+        ],
+        "rejected": [],
+        "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      },
+      "expected_verified": true,
+      "expectation_met": true,
+      "fixture_integrity": "ok"
+    },
+    {
+      "tag": "persisted_rename_singleton:BeiGene",
+      "question": "What is BeiGene running in NSCLC?",
+      "fixture": null,
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "BeiGene",
+            "object": "CHEMBL4297840",
+            "evidence": "ORG:beonemedicines|SPONSORS_TRIAL_OF|CHEMBL4297840|",
+            "trial_count": 4
+          }
+        ]
+      },
+      "company_candidates": [
+        "ORG:astrazeneca"
+      ],
+      "resolved_ids": [
+        "ORG:beonemedicines"
+      ],
+      "resolve_reason": null,
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:beonemedicines|SPONSORS_TRIAL_OF|CHEMBL4297840|",
+            "subject": "ORG:beonemedicines",
+            "object": "CHEMBL4297840",
+            "trial_count": 4
+          }
+        ],
+        "rejected": [],
+        "text": "- Beigene is lead sponsor of 4 trial(s) evaluating TISLELIZUMAB - a sponsorship, not evidence of developing the drug [ORG:beonemedicines|SPONSORS_TRIAL_OF|CHEMBL4297840|]"
+      },
+      "expected_verified": true,
+      "expectation_met": true,
+      "fixture_integrity": "ok"
+    },
+    {
+      "tag": "persisted_rename_singleton:BeOne",
+      "question": "What is BeiGene running in NSCLC?",
+      "fixture": null,
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "BeOne",
+            "object": "CHEMBL4297840",
+            "evidence": "ORG:beonemedicines|SPONSORS_TRIAL_OF|CHEMBL4297840|",
+            "trial_count": 4
+          }
+        ]
+      },
+      "company_candidates": [
+        "ORG:astrazeneca"
+      ],
+      "resolved_ids": [
+        "ORG:beonemedicines"
+      ],
+      "resolve_reason": null,
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:beonemedicines|SPONSORS_TRIAL_OF|CHEMBL4297840|",
+            "subject": "ORG:beonemedicines",
+            "object": "CHEMBL4297840",
+            "trial_count": 4
+          }
+        ],
+        "rejected": [],
+        "text": "- Beigene is lead sponsor of 4 trial(s) evaluating TISLELIZUMAB - a sponsorship, not evidence of developing the drug [ORG:beonemedicines|SPONSORS_TRIAL_OF|CHEMBL4297840|]"
+      },
+      "expected_verified": true,
+      "expectation_met": true,
+      "fixture_integrity": "ok"
+    },
+    {
+      "tag": "persisted_rename_singleton:ORG:beonemedicines",
+      "question": "What is BeiGene running in NSCLC?",
+      "fixture": null,
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "ORG:beonemedicines",
+            "object": "CHEMBL4297840",
+            "evidence": "ORG:beonemedicines|SPONSORS_TRIAL_OF|CHEMBL4297840|",
+            "trial_count": 4
+          }
+        ]
+      },
+      "company_candidates": [
+        "ORG:astrazeneca"
+      ],
+      "resolved_ids": [
+        "ORG:beonemedicines"
+      ],
+      "resolve_reason": null,
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:beonemedicines|SPONSORS_TRIAL_OF|CHEMBL4297840|",
+            "subject": "ORG:beonemedicines",
+            "object": "CHEMBL4297840",
+            "trial_count": 4
+          }
+        ],
+        "rejected": [],
+        "text": "- Beigene is lead sponsor of 4 trial(s) evaluating TISLELIZUMAB - a sponsorship, not evidence of developing the drug [ORG:beonemedicines|SPONSORS_TRIAL_OF|CHEMBL4297840|]"
+      },
+      "expected_verified": true,
+      "expectation_met": true,
+      "fixture_integrity": "ok"
+    }
+  ],
+  "persisted": {
+    "company_multi_id_keys": {},
+    "same_type_duplicate_labels": [],
+    "source_integrity": "ok"
+  }
+}

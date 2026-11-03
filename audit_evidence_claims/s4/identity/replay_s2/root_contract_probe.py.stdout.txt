@@ -1,0 +1,43 @@
+{
+  "question": "What does osimertinib target?",
+  "fixture_only": true,
+  "fixture_sql": "UPDATE node SET label='OSIMERTINIB' WHERE id='CHEMBL3707320'",
+  "live_duplicate_label_count": 0,
+  "input": {
+    "claims": [
+      {
+        "kind": "relation",
+        "relation": "ACTS_ON",
+        "subject": "OSIMERTINIB",
+        "object": "EGFR",
+        "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+        "action": "INHIBITOR"
+      }
+    ]
+  },
+  "resolved_ids": [],
+  "resolve_reason": "'OSIMERTINIB' is the label of 2 drug nodes; use the id",
+  "output": {
+    "verified": false,
+    "accepted": [],
+    "rejected": [
+      {
+        "claim": {
+          "kind": "relation",
+          "relation": "ACTS_ON",
+          "subject": "OSIMERTINIB",
+          "object": "EGFR",
+          "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "action": "INHIBITOR"
+        },
+        "why": "'OSIMERTINIB' is the label of 2 drug nodes; use the id"
+      }
+    ],
+    "text": ""
+  },
+  "source_graph_integrity": "ok",
+  "fixture_graph_integrity": "ok",
+  "legacy_bug_assertion_holds": false
+}
+
+STDERR:

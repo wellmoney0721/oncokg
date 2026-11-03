@@ -1,0 +1,2283 @@
+[
+  {
+    "case": "raw_action:NaN",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": NaN}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "text": "",
+      "rejected": [
+        {
+          "claim": null,
+          "why": "not valid JSON: nested too deeply"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 122,
+    "utf8_serializable": true
+  },
+  {
+    "case": "raw_action:Infinity",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": Infinity}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "text": "",
+      "rejected": [
+        {
+          "claim": null,
+          "why": "not valid JSON: nested too deeply"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 122,
+    "utf8_serializable": true
+  },
+  {
+    "case": "raw_action:-Infinity",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": -Infinity}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "text": "",
+      "rejected": [
+        {
+          "claim": null,
+          "why": "not valid JSON: nested too deeply"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 122,
+    "utf8_serializable": true
+  },
+  {
+    "case": "raw_action:1e309",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": 1e309}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "text": "",
+      "rejected": [
+        {
+          "claim": null,
+          "why": "not valid JSON: nested too deeply"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 122,
+    "utf8_serializable": true
+  },
+  {
+    "case": "raw_action:-1e309",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": -1e309}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "text": "",
+      "rejected": [
+        {
+          "claim": null,
+          "why": "not valid JSON: nested too deeply"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 122,
+    "utf8_serializable": true
+  },
+  {
+    "case": "raw_action:1.7976931348623159e308",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": 1.7976931348623159e308}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "text": "",
+      "rejected": [
+        {
+          "claim": null,
+          "why": "not valid JSON: nested too deeply"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 122,
+    "utf8_serializable": true
+  },
+  {
+    "case": "raw_action:-1.7976931348623159e308",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": -1.7976931348623159e308}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "text": "",
+      "rejected": [
+        {
+          "claim": null,
+          "why": "not valid JSON: nested too deeply"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 122,
+    "utf8_serializable": true
+  },
+  {
+    "case": "raw_action:1.7976931348623157e308",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": 1.7976931348623157e308}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": 1.7976931348623157e+308
+          },
+          "why": "an action belongs to an ACTS_ON claim, as a string"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 324,
+    "utf8_serializable": true
+  },
+  {
+    "case": "raw_action:1e308",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": 1e308}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": 1e+308
+          },
+          "why": "an action belongs to an ACTS_ON claim, as a string"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 307,
+    "utf8_serializable": true
+  },
+  {
+    "case": "raw_action:-1e308",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": -1e308}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": -1e+308
+          },
+          "why": "an action belongs to an ACTS_ON claim, as a string"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 308,
+    "utf8_serializable": true
+  },
+  {
+    "case": "raw_action:1e-400",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": 1e-400}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": 0.0
+          },
+          "why": "an action belongs to an ACTS_ON claim, as a string"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 304,
+    "utf8_serializable": true
+  },
+  {
+    "case": "raw_action:-1e-400",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": -1e-400}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": -0.0
+          },
+          "why": "an action belongs to an ACTS_ON claim, as a string"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 305,
+    "utf8_serializable": true
+  },
+  {
+    "case": "raw_action:-0.0",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": -0.0}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": -0.0
+          },
+          "why": "an action belongs to an ACTS_ON claim, as a string"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 305,
+    "utf8_serializable": true
+  },
+  {
+    "case": "raw_action:0.0",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": 0.0}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": 0.0
+          },
+          "why": "an action belongs to an ACTS_ON claim, as a string"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 304,
+    "utf8_serializable": true
+  },
+  {
+    "case": "raw_action:1.0",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": 1.0}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": 1.0
+          },
+          "why": "an action belongs to an ACTS_ON claim, as a string"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 304,
+    "utf8_serializable": true
+  },
+  {
+    "case": "raw_action:1e999999999999999999999",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": 1e999999999999999999999}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "text": "",
+      "rejected": [
+        {
+          "claim": null,
+          "why": "not valid JSON: nested too deeply"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 122,
+    "utf8_serializable": true
+  },
+  {
+    "case": "raw_action:1e-999999999999999999999",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": 1e-999999999999999999999}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": 0.0
+          },
+          "why": "an action belongs to an ACTS_ON claim, as a string"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 304,
+    "utf8_serializable": true
+  },
+  {
+    "case": "parsed_nonfinite:action:nan",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": NaN}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "nan"
+          },
+          "why": "an action belongs to an ACTS_ON claim, as a string"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 306,
+    "utf8_serializable": true
+  },
+  {
+    "case": "parsed_nonfinite:kind:nan",
+    "input": "{\"claims\": [{\"kind\": NaN, \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "nan",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          },
+          "why": "unknown kind nan; use relation, trial or drug"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 302,
+    "utf8_serializable": true
+  },
+  {
+    "case": "parsed_nonfinite:subject:nan",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": NaN, \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "nan",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          },
+          "why": "the name must be a short non-empty string"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 295,
+    "utf8_serializable": true
+  },
+  {
+    "case": "parsed_nonfinite:evidence:nan",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": NaN, \"action\": \"INHIBITOR\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "nan",
+            "action": "INHIBITOR"
+          },
+          "why": "the cited evidence is not among the edges retrieved for this question"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 283,
+    "utf8_serializable": true
+  },
+  {
+    "case": "parsed_nonfinite:note:nan",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\", \"note\": NaN}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR",
+            "note": "nan"
+          },
+          "why": "unknown keys ['note'] (no free text is accepted)"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 325,
+    "utf8_serializable": true
+  },
+  {
+    "case": "parsed_nonfinite:action:inf",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": Infinity}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "inf"
+          },
+          "why": "an action belongs to an ACTS_ON claim, as a string"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 306,
+    "utf8_serializable": true
+  },
+  {
+    "case": "parsed_nonfinite:kind:inf",
+    "input": "{\"claims\": [{\"kind\": Infinity, \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "inf",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          },
+          "why": "unknown kind inf; use relation, trial or drug"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 302,
+    "utf8_serializable": true
+  },
+  {
+    "case": "parsed_nonfinite:subject:inf",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": Infinity, \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "inf",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          },
+          "why": "the name must be a short non-empty string"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 295,
+    "utf8_serializable": true
+  },
+  {
+    "case": "parsed_nonfinite:evidence:inf",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": Infinity, \"action\": \"INHIBITOR\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "inf",
+            "action": "INHIBITOR"
+          },
+          "why": "the cited evidence is not among the edges retrieved for this question"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 283,
+    "utf8_serializable": true
+  },
+  {
+    "case": "parsed_nonfinite:note:inf",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\", \"note\": Infinity}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR",
+            "note": "inf"
+          },
+          "why": "unknown keys ['note'] (no free text is accepted)"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 325,
+    "utf8_serializable": true
+  },
+  {
+    "case": "parsed_nonfinite:action:negative_inf",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": -Infinity}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "-inf"
+          },
+          "why": "an action belongs to an ACTS_ON claim, as a string"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 307,
+    "utf8_serializable": true
+  },
+  {
+    "case": "parsed_nonfinite:kind:negative_inf",
+    "input": "{\"claims\": [{\"kind\": -Infinity, \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "-inf",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          },
+          "why": "unknown kind -inf; use relation, trial or drug"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 304,
+    "utf8_serializable": true
+  },
+  {
+    "case": "parsed_nonfinite:subject:negative_inf",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": -Infinity, \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "-inf",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          },
+          "why": "the name must be a short non-empty string"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 296,
+    "utf8_serializable": true
+  },
+  {
+    "case": "parsed_nonfinite:evidence:negative_inf",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": -Infinity, \"action\": \"INHIBITOR\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "-inf",
+            "action": "INHIBITOR"
+          },
+          "why": "the cited evidence is not among the edges retrieved for this question"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 284,
+    "utf8_serializable": true
+  },
+  {
+    "case": "parsed_nonfinite:note:negative_inf",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\", \"note\": -Infinity}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR",
+            "note": "-inf"
+          },
+          "why": "unknown keys ['note'] (no free text is accepted)"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 326,
+    "utf8_serializable": true
+  },
+  {
+    "case": "sanitiser:depth100",
+    "input": "claims=[GOOD + note={child:[...]} depth 100, leaf=inf]",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR",
+            "note": {
+              "child": [
+                {
+                  "child": [
+                    {
+                      "child": [
+                        {
+                          "child": [
+                            {
+                              "child": [
+                                {
+                                  "child": [
+                                    {
+                                      "child": [
+                                        {
+                                          "child": [
+                                            {
+                                              "child": [
+                                                {
+                                                  "child": [
+                                                    "\u2026"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "why": "unknown keys ['note'] (no free text is accepted)"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 458,
+    "utf8_serializable": true
+  },
+  {
+    "case": "sanitiser:cycle",
+    "input": "Python pre-parsed non-JSON cyclic list in note",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR",
+            "note": [
+              [
+                [
+                  [
+                    [
+                      [
+                        [
+                          [
+                            [
+                              [
+                                [
+                                  [
+                                    [
+                                      [
+                                        [
+                                          [
+                                            [
+                                              [
+                                                [
+                                                  [
+                                                    "\u2026"
+                                                  ]
+                                                ]
+                                              ]
+                                            ]
+                                          ]
+                                        ]
+                                      ]
+                                    ]
+                                  ]
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          "why": "unknown keys ['note'] (no free text is accepted)"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 368,
+    "utf8_serializable": true
+  },
+  {
+    "case": "sanitiser:breadth100_strings",
+    "input": "100 note keys, each [NaN, MARK * 100]",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR",
+            "note": {
+              "0": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "1": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "2": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "3": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "4": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "5": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "6": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "7": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "8": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "9": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "10": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "11": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "12": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "13": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "14": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "15": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "16": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "17": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "18": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "19": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "20": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "21": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "22": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "23": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "24": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "25": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "26": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "27": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "28": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "29": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "30": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "31": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "32": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "33": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "34": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "35": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "36": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "37": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "38": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "39": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "40": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "41": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "42": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "43": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "44": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "45": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "46": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "47": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "48": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ],
+              "49": [
+                "nan",
+                "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'<img src=x onerror=\""
+              ]
+            }
+          },
+          "why": "unknown keys ['note'] (no free text is accepted)"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 27060,
+    "utf8_serializable": true
+  },
+  {
+    "case": "sanitiser:parsed_5001_digit_int",
+    "input": "Python pre-parsed note=10**5000 (bypasses Python JSON integer-string limit)",
+    "result": {
+      "verified": false,
+      "text": "",
+      "rejected_count": 1
+    },
+    "strict_json_serializable": false,
+    "serialize_exception": "ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit",
+    "utf8_serializable": false,
+    "utf8_exception": "ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit"
+  },
+  {
+    "case": "sanitiser:raw_5001_digit_int",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\", \"note\": 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "text": "",
+      "rejected": [
+        {
+          "claim": null,
+          "why": "not valid JSON: nested too deeply"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 122,
+    "utf8_serializable": true
+  },
+  {
+    "case": "injection:kind",
+    "input": "{\"claims\": [{\"kind\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          },
+          "why": "unknown kind '<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"\\''; use relation, trial or drug"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 498,
+    "utf8_serializable": true
+  },
+  {
+    "case": "injection:relation",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          },
+          "why": "unknown relation '<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"\\''"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 474,
+    "utf8_serializable": true
+  },
+  {
+    "case": "injection:subject",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          },
+          "why": "'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'' does not name exactly one drug on its own"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 493,
+    "utf8_serializable": true
+  },
+  {
+    "case": "injection:object",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          },
+          "why": "'<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'' does not name exactly one target on its own"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 502,
+    "utf8_serializable": true
+  },
+  {
+    "case": "injection:action",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'"
+          },
+          "why": "the graph gives the action as INHIBITOR, not <img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 496,
+    "utf8_serializable": true
+  },
+  {
+    "case": "injection:evidence",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\", \"action\": \"INHIBITOR\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'",
+            "action": "INHIBITOR"
+          },
+          "why": "the cited evidence is not among the edges retrieved for this question"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 379,
+    "utf8_serializable": true
+  },
+  {
+    "case": "injection:note",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\", \"note\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR",
+            "note": "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'"
+          },
+          "why": "unknown keys ['note'] (no free text is accepted)"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 421,
+    "utf8_serializable": true
+  },
+  {
+    "case": "injection:key",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\", \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR",
+            "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'": "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'"
+          },
+          "why": "unknown keys ['<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"\\''] (no free text is accepted)"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 613,
+    "utf8_serializable": true
+  },
+  {
+    "case": "injection:mixed",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}, {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\", \"note\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\"}, {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [
+        {
+          "kind": "relation",
+          "relation": "ACTS_ON",
+          "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "subject": "CHEMBL3353410",
+          "object": "ENSG00000146648",
+          "action": "INHIBITOR"
+        },
+        {
+          "kind": "relation",
+          "relation": "ACTS_ON",
+          "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "subject": "CHEMBL3353410",
+          "object": "ENSG00000146648",
+          "action": "INHIBITOR"
+        }
+      ],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR",
+            "note": "<img src=x onerror=\"globalThis.MODEL_INJECTED=1\"><script>globalThis.MODEL_INJECTED=2</script>&\"'"
+          },
+          "why": "unknown keys ['note'] (no free text is accepted)"
+        }
+      ],
+      "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 981,
+    "utf8_serializable": true
+  },
+  {
+    "case": "injection:surrogate",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"\\ud800\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}]}",
+    "result": {
+      "verified": false,
+      "accepted": [],
+      "rejected": [
+        {
+          "claim": {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "\ud800",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          },
+          "why": "the claim could not be read (UnicodeEncodeError)"
+        }
+      ],
+      "text": ""
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 305,
+    "utf8_serializable": false,
+    "utf8_exception": "UnicodeEncodeError: 'utf-8' codec can't encode character '\\ud800' in position 115: surrogates not allowed"
+  },
+  {
+    "case": "model:missing_sdk",
+    "input": "sys.modules[anthropic]=None; use_llm=True",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "The language model could not be used (the anthropic package is not installed); no answer was generated.",
+      "generated_by": "error: the anthropic package is not installed",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "accepted": 0,
+        "rejected": [],
+        "unsupported_claims": [],
+        "method": "no model reply to check"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 906,
+    "utf8_serializable": true
+  },
+  {
+    "case": "legacy_exact:sdk_failure",
+    "input": "messages.create raises RuntimeError('simulated SDK failure')",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "The language model could not be used (RuntimeError); no answer was generated.",
+      "generated_by": "error: RuntimeError",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "accepted": 0,
+        "rejected": [],
+        "unsupported_claims": [],
+        "method": "no model reply to check"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 854,
+    "utf8_serializable": true
+  },
+  {
+    "case": "model:init_error:RuntimeError",
+    "input": "init_error=RuntimeError(SENSITIVE... MARK)",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "The language model could not be used (RuntimeError); no answer was generated.",
+      "generated_by": "error: RuntimeError",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "accepted": 0,
+        "rejected": [],
+        "unsupported_claims": [],
+        "method": "no model reply to check"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 854,
+    "utf8_serializable": true
+  },
+  {
+    "case": "model:init_error:ValueError",
+    "input": "init_error=ValueError(SENSITIVE... MARK)",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "The language model could not be used (ValueError); no answer was generated.",
+      "generated_by": "error: ValueError",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "accepted": 0,
+        "rejected": [],
+        "unsupported_claims": [],
+        "method": "no model reply to check"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 850,
+    "utf8_serializable": true
+  },
+  {
+    "case": "model:init_error:ConnectionError",
+    "input": "init_error=ConnectionError(SENSITIVE... MARK)",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "The language model could not be used (ConnectionError); no answer was generated.",
+      "generated_by": "error: ConnectionError",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "accepted": 0,
+        "rejected": [],
+        "unsupported_claims": [],
+        "method": "no model reply to check"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 860,
+    "utf8_serializable": true
+  },
+  {
+    "case": "model:init_error:TimeoutError",
+    "input": "init_error=TimeoutError(SENSITIVE... MARK)",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "The language model could not be used (TimeoutError); no answer was generated.",
+      "generated_by": "error: TimeoutError",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "accepted": 0,
+        "rejected": [],
+        "unsupported_claims": [],
+        "method": "no model reply to check"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 854,
+    "utf8_serializable": true
+  },
+  {
+    "case": "model:create_error:RuntimeError",
+    "input": "create_error=RuntimeError(SENSITIVE... MARK)",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "The language model could not be used (RuntimeError); no answer was generated.",
+      "generated_by": "error: RuntimeError",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "accepted": 0,
+        "rejected": [],
+        "unsupported_claims": [],
+        "method": "no model reply to check"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 854,
+    "utf8_serializable": true
+  },
+  {
+    "case": "model:create_error:ValueError",
+    "input": "create_error=ValueError(SENSITIVE... MARK)",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "The language model could not be used (ValueError); no answer was generated.",
+      "generated_by": "error: ValueError",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "accepted": 0,
+        "rejected": [],
+        "unsupported_claims": [],
+        "method": "no model reply to check"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 850,
+    "utf8_serializable": true
+  },
+  {
+    "case": "model:create_error:ConnectionError",
+    "input": "create_error=ConnectionError(SENSITIVE... MARK)",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "The language model could not be used (ConnectionError); no answer was generated.",
+      "generated_by": "error: ConnectionError",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "accepted": 0,
+        "rejected": [],
+        "unsupported_claims": [],
+        "method": "no model reply to check"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 860,
+    "utf8_serializable": true
+  },
+  {
+    "case": "model:create_error:TimeoutError",
+    "input": "create_error=TimeoutError(SENSITIVE... MARK)",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "The language model could not be used (TimeoutError); no answer was generated.",
+      "generated_by": "error: TimeoutError",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "accepted": 0,
+        "rejected": [],
+        "unsupported_claims": [],
+        "method": "no model reply to check"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 854,
+    "utf8_serializable": true
+  },
+  {
+    "case": "model:shape:empty",
+    "input": "namespace(content=[])",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support them.)",
+      "generated_by": "language model, structured claims",
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "method": "structured claims checked edge by edge against the graph",
+        "accepted": 0,
+        "rejected": [
+          {
+            "claim": null,
+            "why": "not valid JSON: Expecting value"
+          }
+        ],
+        "unsupported_claims": [
+          {
+            "kind": "rejected_claim",
+            "value": "null",
+            "why": "not valid JSON: Expecting value"
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 1081,
+    "utf8_serializable": true
+  },
+  {
+    "case": "model:shape:none",
+    "input": "namespace(content=None)",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support them.)",
+      "generated_by": "language model, structured claims",
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "method": "structured claims checked edge by edge against the graph",
+        "accepted": 0,
+        "rejected": [
+          {
+            "claim": null,
+            "why": "not valid JSON: Expecting value"
+          }
+        ],
+        "unsupported_claims": [
+          {
+            "kind": "rejected_claim",
+            "value": "null",
+            "why": "not valid JSON: Expecting value"
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 1081,
+    "utf8_serializable": true
+  },
+  {
+    "case": "model:shape:tool",
+    "input": "namespace(content=[namespace(type='tool_use')])",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support them.)",
+      "generated_by": "language model, structured claims",
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "method": "structured claims checked edge by edge against the graph",
+        "accepted": 0,
+        "rejected": [
+          {
+            "claim": null,
+            "why": "not valid JSON: Expecting value"
+          }
+        ],
+        "unsupported_claims": [
+          {
+            "kind": "rejected_claim",
+            "value": "null",
+            "why": "not valid JSON: Expecting value"
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 1081,
+    "utf8_serializable": true
+  },
+  {
+    "case": "model:shape:null_text",
+    "input": "namespace(content=[namespace(text=None)])",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support them.)",
+      "generated_by": "language model, structured claims",
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "method": "structured claims checked edge by edge against the graph",
+        "accepted": 0,
+        "rejected": [
+          {
+            "claim": null,
+            "why": "not valid JSON: Expecting value"
+          }
+        ],
+        "unsupported_claims": [
+          {
+            "kind": "rejected_claim",
+            "value": "null",
+            "why": "not valid JSON: Expecting value"
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 1081,
+    "utf8_serializable": true
+  },
+  {
+    "case": "model:shape:numeric_text",
+    "input": "namespace(content=[namespace(text=42)])",
+    "exception": "AttributeError: 'int' object has no attribute 'strip'"
+  },
+  {
+    "case": "model:shape:missing_content",
+    "input": "namespace()",
+    "exception": "AttributeError: 'types.SimpleNamespace' object has no attribute 'content'"
+  },
+  {
+    "case": "model:shape:none_message",
+    "input": "None",
+    "exception": "AttributeError: 'NoneType' object has no attribute 'content'"
+  },
+  {
+    "case": "model:shape:tool_then_good",
+    "input": "namespace(content=[namespace(type='tool_use'), namespace(text='{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}]}')])",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]",
+      "generated_by": "language model, structured claims",
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "method": "structured claims checked edge by edge against the graph",
+        "accepted": 1,
+        "rejected": [],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 915,
+    "utf8_serializable": true
+  },
+  {
+    "case": "model:shape:whitespace_then_good",
+    "input": "namespace(content=[namespace(text=' '), namespace(text='{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}]}')])",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support them.)",
+      "generated_by": "language model, structured claims",
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "method": "structured claims checked edge by edge against the graph",
+        "accepted": 0,
+        "rejected": [
+          {
+            "claim": null,
+            "why": "not valid JSON: Expecting value"
+          }
+        ],
+        "unsupported_claims": [
+          {
+            "kind": "rejected_claim",
+            "value": "null",
+            "why": "not valid JSON: Expecting value"
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 1081,
+    "utf8_serializable": true
+  },
+  {
+    "case": "model:shape:empty_then_good",
+    "input": "namespace(content=[namespace(text=''), namespace(text='{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}]}')])",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]",
+      "generated_by": "language model, structured claims",
+      "checks": {
+        "grounded": true,
+        "applicable": true,
+        "method": "structured claims checked edge by edge against the graph",
+        "accepted": 1,
+        "rejected": [],
+        "unsupported_claims": []
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 915,
+    "utf8_serializable": true
+  },
+  {
+    "case": "model:overflow",
+    "input": "{\"claims\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": 1e309}]}",
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "None of the model's claims could be verified.\n\n(1 claim(s) were removed because the graph does not support them.)",
+      "generated_by": "language model, structured claims",
+      "checks": {
+        "grounded": false,
+        "applicable": true,
+        "method": "structured claims checked edge by edge against the graph",
+        "accepted": 0,
+        "rejected": [
+          {
+            "claim": null,
+            "why": "not valid JSON: nested too deeply"
+          }
+        ],
+        "unsupported_claims": [
+          {
+            "kind": "rejected_claim",
+            "value": "null",
+            "why": "not valid JSON: nested too deeply"
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    },
+    "strict_json_serializable": true,
+    "strict_json_bytes_ascii": 1085,
+    "utf8_serializable": true
+  }
+]

@@ -1,0 +1,191 @@
+[
+  {
+    "case": "NaN",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": NaN}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"text\": \"\", \"rejected\": [{\"claim\": null, \"why\": \"not valid JSON: nested too deeply\"}], \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "Infinity",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": Infinity}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"text\": \"\", \"rejected\": [{\"claim\": null, \"why\": \"not valid JSON: nested too deeply\"}], \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "-Infinity",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": -Infinity}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"text\": \"\", \"rejected\": [{\"claim\": null, \"why\": \"not valid JSON: nested too deeply\"}], \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "1e309",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": 1e309}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"text\": \"\", \"rejected\": [{\"claim\": null, \"why\": \"not valid JSON: nested too deeply\"}], \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "-1e309",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": -1e309}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"text\": \"\", \"rejected\": [{\"claim\": null, \"why\": \"not valid JSON: nested too deeply\"}], \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "1.7976931348623159e308",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": 1.7976931348623159e308}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"text\": \"\", \"rejected\": [{\"claim\": null, \"why\": \"not valid JSON: nested too deeply\"}], \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "-1.7976931348623159e308",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": -1.7976931348623159e308}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"text\": \"\", \"rejected\": [{\"claim\": null, \"why\": \"not valid JSON: nested too deeply\"}], \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "1.7976931348623157e308",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": 1.7976931348623157e308}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": 1.7976931348623157e+308}, \"why\": \"an action belongs to an ACTS_ON claim, as a string\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "1e308",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": 1e308}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": 1e+308}, \"why\": \"an action belongs to an ACTS_ON claim, as a string\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "-1e308",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": -1e308}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": -1e+308}, \"why\": \"an action belongs to an ACTS_ON claim, as a string\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "1e-400",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": 1e-400}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": 0.0}, \"why\": \"an action belongs to an ACTS_ON claim, as a string\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "-1e-400",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": -1e-400}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": -0.0}, \"why\": \"an action belongs to an ACTS_ON claim, as a string\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "-0.0",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": -0.0}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": -0.0}, \"why\": \"an action belongs to an ACTS_ON claim, as a string\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "0.0",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": 0.0}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": 0.0}, \"why\": \"an action belongs to an ACTS_ON claim, as a string\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "1.0",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": 1.0}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": 1.0}, \"why\": \"an action belongs to an ACTS_ON claim, as a string\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "1e999999999999999999999",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": 1e999999999999999999999}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"text\": \"\", \"rejected\": [{\"claim\": null, \"why\": \"not valid JSON: nested too deeply\"}], \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "1e-999999999999999999999",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": 1e-999999999999999999999}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": 0.0}, \"why\": \"an action belongs to an ACTS_ON claim, as a string\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "kind",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"<img src=x onerror=\\\\\\\"globalThis.MODEL_INJECTED=1\\\\\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\\\\\"'\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": \\\"INHIBITOR\\\"}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}, \"why\": \"unknown kind '<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"\\\\''; use relation, trial or drug\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "relation",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"<img src=x onerror=\\\\\\\"globalThis.MODEL_INJECTED=1\\\\\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\\\\\"'\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": \\\"INHIBITOR\\\"}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}, \"why\": \"unknown relation '<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"\\\\''\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "subject",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"<img src=x onerror=\\\\\\\"globalThis.MODEL_INJECTED=1\\\\\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\\\\\"'\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": \\\"INHIBITOR\\\"}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}, \"why\": \"'<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'' does not name exactly one drug on its own\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "object",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"<img src=x onerror=\\\\\\\"globalThis.MODEL_INJECTED=1\\\\\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\\\\\"'\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": \\\"INHIBITOR\\\"}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\"}, \"why\": \"'<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'' does not name exactly one target on its own\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "action",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": \\\"<img src=x onerror=\\\\\\\"globalThis.MODEL_INJECTED=1\\\\\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\\\\\"'\\\"}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\"}, \"why\": \"the graph gives the action as INHIBITOR, not <img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "evidence",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"<img src=x onerror=\\\\\\\"globalThis.MODEL_INJECTED=1\\\\\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\\\\\"'\\\", \\\"action\\\": \\\"INHIBITOR\\\"}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\", \"action\": \"INHIBITOR\"}, \"why\": \"the cited evidence is not among the edges retrieved for this question\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "note",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": \\\"INHIBITOR\\\", \\\"note\\\": \\\"<img src=x onerror=\\\\\\\"globalThis.MODEL_INJECTED=1\\\\\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\\\\\"'\\\"}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\", \"note\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\"}, \"why\": \"unknown keys ['note'] (no free text is accepted)\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "key",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": \\\"INHIBITOR\\\", \\\"<img src=x onerror=\\\\\\\"globalThis.MODEL_INJECTED=1\\\\\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\\\\\"'\\\": \\\"<img src=x onerror=\\\\\\\"globalThis.MODEL_INJECTED=1\\\\\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\\\\\"'\\\"}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\", \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\"}, \"why\": \"unknown keys ['<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"\\\\''] (no free text is accepted)\"}], \"text\": \"\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "mixed",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": \\\"INHIBITOR\\\"}, {\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": \\\"INHIBITOR\\\", \\\"note\\\": \\\"<img src=x onerror=\\\\\\\"globalThis.MODEL_INJECTED=1\\\\\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\\\\\"'\\\"}, {\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": \\\"INHIBITOR\\\"}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [{\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"edge\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"subject\": \"CHEMBL3353410\", \"object\": \"ENSG00000146648\", \"action\": \"INHIBITOR\"}, {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"edge\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"subject\": \"CHEMBL3353410\", \"object\": \"ENSG00000146648\", \"action\": \"INHIBITOR\"}], \"rejected\": [{\"claim\": {\"kind\": \"relation\", \"relation\": \"ACTS_ON\", \"subject\": \"osimertinib\", \"object\": \"EGFR\", \"evidence\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"action\": \"INHIBITOR\", \"note\": \"<img src=x onerror=\\\"globalThis.MODEL_INJECTED=1\\\"><script>globalThis.MODEL_INJECTED=2</script>&\\\"'\"}, \"why\": \"unknown keys ['note'] (no free text is accepted)\"}], \"text\": \"- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\", \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}",
+    "strict_json": true
+  },
+  {
+    "case": "surrogate",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"\\\\ud800\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": \\\"INHIBITOR\\\"}]}\"}",
+    "http_status": 400,
+    "response_raw": "{\"error\": \"'utf-8' codec can't encode character '\\\\ud800' in position 115: surrogates not allowed\"}",
+    "strict_json": true
+  }
+]

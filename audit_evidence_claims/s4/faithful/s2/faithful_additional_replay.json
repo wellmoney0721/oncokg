@@ -1,0 +1,211 @@
+{
+  "action_cases": [
+    {
+      "question": "What does aprinocarsen target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "APRINOCARSEN",
+            "object": "PRKCA",
+            "evidence": "CHEMBL2108287|ACTS_ON|ENSG00000154229|CHEMBL2108287",
+            "action": "ANTISENSE INHIBITOR"
+          }
+        ]
+      },
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "edge": "CHEMBL2108287|ACTS_ON|ENSG00000154229|CHEMBL2108287",
+            "subject": "CHEMBL2108287",
+            "object": "ENSG00000154229",
+            "action": "ANTISENSE INHIBITOR"
+          }
+        ],
+        "rejected": [],
+        "text": "- APRINOCARSEN acts on PRKCA (antisense inhibitor) [CHEMBL2108287|ACTS_ON|ENSG00000154229|CHEMBL2108287]"
+      }
+    },
+    {
+      "question": "What does aprinocarsen target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "APRINOCARSEN",
+            "object": "PRKCA",
+            "evidence": "CHEMBL2108287|ACTS_ON|ENSG00000154229|CHEMBL2108287",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "APRINOCARSEN",
+              "object": "PRKCA",
+              "evidence": "CHEMBL2108287|ACTS_ON|ENSG00000154229|CHEMBL2108287",
+              "action": "INHIBITOR"
+            },
+            "why": "the graph gives the action as ANTISENSE INHIBITOR, not INHIBITOR"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "question": "What does aprinocarsen target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "APRINOCARSEN",
+            "object": "ENSG00000154229",
+            "evidence": "CHEMBL2108287|ACTS_ON|ENSG00000154229|CHEMBL2108287",
+            "action": "ANTISENSE INHIBITOR"
+          }
+        ]
+      },
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "edge": "CHEMBL2108287|ACTS_ON|ENSG00000154229|CHEMBL2108287",
+            "subject": "CHEMBL2108287",
+            "object": "ENSG00000154229",
+            "action": "ANTISENSE INHIBITOR"
+          }
+        ],
+        "rejected": [],
+        "text": "- APRINOCARSEN acts on PRKCA (antisense inhibitor) [CHEMBL2108287|ACTS_ON|ENSG00000154229|CHEMBL2108287]"
+      }
+    },
+    {
+      "question": "What does aprinocarsen target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "APRINOCARSEN",
+            "object": "ENSG00000154229",
+            "evidence": "CHEMBL2108287|ACTS_ON|ENSG00000154229|CHEMBL2108287",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "APRINOCARSEN",
+              "object": "ENSG00000154229",
+              "evidence": "CHEMBL2108287|ACTS_ON|ENSG00000154229|CHEMBL2108287",
+              "action": "INHIBITOR"
+            },
+            "why": "the graph gives the action as ANTISENSE INHIBITOR, not INHIBITOR"
+          }
+        ],
+        "text": ""
+      }
+    }
+  ],
+  "profile": {
+    "question": "What is osimertinib?",
+    "input": {
+      "claims": [
+        {
+          "kind": "drug",
+          "drug": "OSIMERTINIB",
+          "evidence": "profile:CHEMBL3353410",
+          "trials_in_graph": 79,
+          "max_stage": "APPROVAL"
+        },
+        {
+          "kind": "relation",
+          "relation": "ACTS_ON",
+          "subject": "OSIMERTINIB",
+          "object": "EGFR",
+          "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "action": "INHIBITOR"
+        }
+      ]
+    },
+    "output": {
+      "verified": true,
+      "accepted": [
+        {
+          "kind": "drug",
+          "edge": "profile:CHEMBL3353410",
+          "drug": "CHEMBL3353410",
+          "max_stage": "APPROVAL",
+          "trials_in_graph": 79
+        },
+        {
+          "kind": "relation",
+          "relation": "ACTS_ON",
+          "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "subject": "CHEMBL3353410",
+          "object": "ENSG00000146648",
+          "action": "INHIBITOR"
+        }
+      ],
+      "rejected": [],
+      "text": "- OSIMERTINIB: maximum clinical stage APPROVAL; 79 NSCLC trial(s) in this graph [profile:CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"
+    },
+    "live_edge_count": 0
+  },
+  "empty_phase_fixture": {
+    "fixture": "in-memory graph copy only: change NCT03909334 phases to []",
+    "input": {
+      "claims": [
+        {
+          "kind": "trial",
+          "trial": "NCT03909334",
+          "evidence": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+          "phase": [],
+          "status": "ACTIVE_NOT_RECRUITING"
+        }
+      ]
+    },
+    "output": {
+      "verified": true,
+      "accepted": [
+        {
+          "kind": "trial",
+          "edge": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+          "trial": "NCT03909334",
+          "phase": [],
+          "status": "ACTIVE_NOT_RECRUITING"
+        }
+      ],
+      "rejected": [],
+      "text": "- NCT03909334: no phase given; status ACTIVE_NOT_RECRUITING [NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334]"
+    }
+  },
+  "long_live_labels": [],
+  "duplicate_trial_pairs": [],
+  "norm_collisions": {
+    "action_type": {},
+    "status": {},
+    "phases": {},
+    "max_phase_overall": {}
+  }
+}

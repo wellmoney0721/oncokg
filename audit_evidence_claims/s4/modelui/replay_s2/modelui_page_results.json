@@ -1,0 +1,72 @@
+[
+  {
+    "case": "faithful",
+    "html": "<div><span class=\"chip ok\">모든 주장이 그래프와 일치</span> <span class=\"code\">받아들인 주장 1개</span></div><p class=\"detail\">이 주장들로 쓴 답 (그래프의 이름과 값으로):</p><pre>- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]</pre><details><summary>이번 질문의 근거와 id (1개)</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor)<br><span class=\"code\">CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410</span></div></div></details>",
+    "has_raw_injected_element": false,
+    "has_escaped_injected_element": false,
+    "marker_executed": false
+  },
+  {
+    "case": "unknown_field_injection",
+    "html": "<div><span class=\"chip no\">버린 주장 1개</span> <span class=\"code\">받아들인 주장 0개</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"verdict\">버림</span></div><div class=\"detail\">unknown keys ['note'] (no free text is accepted)</div><div class=\"code\">{&quot;kind&quot;:&quot;relation&quot;,&quot;relation&quot;:&quot;ACTS_ON&quot;,&quot;subject&quot;:&quot;osimertinib&quot;,&quot;object&quot;:&quot;EGFR&quot;,&quot;evidence&quot;:&quot;CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410&quot;,&quot;action&quot;:&quot;INHIBITOR&quot;,&quot;note&quot;:&quot;&lt;img src=x onerror=\\&quot;globalThis.MODEL_INJECTED=1\\&quot;&gt;&lt;script&gt;globalThis.MODEL_INJECTED=2&lt;/script&gt;&amp;\\&quot;'&quot;}</div></div><details><summary>이번 질문의 근거와 id (1개)</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor)<br><span class=\"code\">CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410</span></div></div></details>",
+    "has_raw_injected_element": false,
+    "has_escaped_injected_element": true,
+    "marker_executed": false
+  },
+  {
+    "case": "action_injection",
+    "html": "<div><span class=\"chip no\">버린 주장 1개</span> <span class=\"code\">받아들인 주장 0개</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"verdict\">버림</span></div><div class=\"detail\">the graph gives the action as INHIBITOR, not &lt;img src=x onerror=&quot;globalThis.MODEL_INJECTED=1&quot;&gt;&lt;script&gt;globalThis.MODEL_INJECTED=2&lt;/script&gt;&amp;&quot;'</div><div class=\"code\">{&quot;kind&quot;:&quot;relation&quot;,&quot;relation&quot;:&quot;ACTS_ON&quot;,&quot;subject&quot;:&quot;osimertinib&quot;,&quot;object&quot;:&quot;EGFR&quot;,&quot;evidence&quot;:&quot;CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410&quot;,&quot;action&quot;:&quot;&lt;img src=x onerror=\\&quot;globalThis.MODEL_INJECTED=1\\&quot;&gt;&lt;script&gt;globalThis.MODEL_INJECTED=2&lt;/script&gt;&amp;\\&quot;'&quot;}</div></div><details><summary>이번 질문의 근거와 id (1개)</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor)<br><span class=\"code\">CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410</span></div></div></details>",
+    "has_raw_injected_element": false,
+    "has_escaped_injected_element": true,
+    "marker_executed": false
+  },
+  {
+    "case": "kind_list",
+    "html": "<div><span class=\"chip no\">버린 주장 1개</span> <span class=\"code\">받아들인 주장 0개</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"verdict\">버림</span></div><div class=\"detail\">unknown kind []; use relation, trial or drug</div><div class=\"code\">{&quot;kind&quot;:[]}</div></div><details><summary>이번 질문의 근거와 id (1개)</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor)<br><span class=\"code\">CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410</span></div></div></details>",
+    "has_raw_injected_element": false,
+    "has_escaped_injected_element": false,
+    "marker_executed": false
+  },
+  {
+    "case": "relation_list",
+    "html": "<div><span class=\"chip no\">버린 주장 1개</span> <span class=\"code\">받아들인 주장 0개</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"verdict\">버림</span></div><div class=\"detail\">unknown relation []</div><div class=\"code\">{&quot;kind&quot;:&quot;relation&quot;,&quot;relation&quot;:[],&quot;subject&quot;:&quot;osimertinib&quot;,&quot;object&quot;:&quot;EGFR&quot;,&quot;evidence&quot;:&quot;CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410&quot;,&quot;action&quot;:&quot;INHIBITOR&quot;}</div></div><details><summary>이번 질문의 근거와 id (1개)</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor)<br><span class=\"code\">CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410</span></div></div></details>",
+    "has_raw_injected_element": false,
+    "has_escaped_injected_element": false,
+    "marker_executed": false
+  },
+  {
+    "case": "nested1100",
+    "html": "<div><span class=\"chip no\">버린 주장 1개</span> <span class=\"code\">받아들인 주장 0개</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"verdict\">버림</span></div><div class=\"detail\">a claim must be a JSON object</div><div class=\"code\">[[[[[[[[[[[[[[[[[[[[[&quot;…&quot;]]]]]]]]]]]]]]]]]]]]]</div></div><details><summary>이번 질문의 근거와 id (1개)</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor)<br><span class=\"code\">CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410</span></div></div></details>",
+    "has_raw_injected_element": false,
+    "has_escaped_injected_element": false,
+    "marker_executed": false
+  },
+  {
+    "case": "claims51",
+    "html": "<div><span class=\"chip no\">버린 주장 1개</span> <span class=\"code\">받아들인 주장 50개</span></div><p class=\"detail\">이 주장들로 쓴 답 (그래프의 이름과 값으로):</p><pre>- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]\n- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]</pre><div class=\"comp no\"><div class=\"top\"><span class=\"verdict\">버림</span></div><div class=\"detail\">more than 50 claims; the rest were not read</div></div><details><summary>이번 질문의 근거와 id (1개)</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor)<br><span class=\"code\">CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410</span></div></div></details>",
+    "has_raw_injected_element": false,
+    "has_escaped_injected_element": false,
+    "marker_executed": false
+  },
+  {
+    "case": "oversized_unknown",
+    "html": "<p class=\"err\">오류: Unterminated string starting at: line 1 column 53 (char 52)</p>",
+    "has_raw_injected_element": false,
+    "has_escaped_injected_element": false,
+    "marker_executed": false
+  },
+  {
+    "case": "nan_action",
+    "html": "<div><span class=\"chip no\">버린 주장 1개</span> <span class=\"code\">받아들인 주장 0개</span></div><div class=\"comp no\"><div class=\"top\"><span class=\"verdict\">버림</span></div><div class=\"detail\">not valid JSON: nested too deeply</div></div><details><summary>이번 질문의 근거와 id (1개)</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor)<br><span class=\"code\">CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410</span></div></div></details>",
+    "has_raw_injected_element": false,
+    "has_escaped_injected_element": false,
+    "marker_executed": false
+  },
+  {
+    "case": "empty_claims",
+    "html": "<div><span class=\"chip no\">버린 주장 0개</span> <span class=\"code\">받아들인 주장 0개</span></div><details><summary>이번 질문의 근거와 id (1개)</summary><div class=\"ev\"><div>• OSIMERTINIB acts on EGFR (inhibitor)<br><span class=\"code\">CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410</span></div></div></details>",
+    "has_raw_injected_element": false,
+    "has_escaped_injected_element": false,
+    "marker_executed": false
+  }
+]

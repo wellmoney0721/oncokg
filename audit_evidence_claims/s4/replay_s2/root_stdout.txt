@@ -1,0 +1,43 @@
+{
+  "cases": 117,
+  "verified": 7,
+  "exceptions": [],
+  "accepted_names": [
+    {
+      "case": "name:' osimertinib '",
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "subject": "CHEMBL3353410",
+            "object": "ENSG00000146648",
+            "action": "INHIBITOR"
+          }
+        ],
+        "rejected": [],
+        "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"
+      }
+    },
+    {
+      "case": "name:'OSIMERTINIB'",
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "subject": "CHEMBL3353410",
+            "object": "ENSG00000146648",
+            "action": "INHIBITOR"
+          }
+        ],
+        "rejected": [],
+        "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"
+      }
+    }
+  ]
+}

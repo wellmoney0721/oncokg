@@ -1,0 +1,431 @@
+{
+  "cases": [
+    {
+      "fixture_sql": "UPDATE node SET label=? WHERE id=?",
+      "fixture_args": [
+        "Astrazeneca",
+        "ORG:genentech"
+      ],
+      "question": "What is AstraZeneca running in NSCLC?",
+      "company_key": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "entities": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "AstraZeneca",
+          "also_matching_ids": [
+            "ORG:genentech"
+          ]
+        },
+        {
+          "type": "Disease",
+          "id": "MONDO_0005233",
+          "label": "non-small cell lung carcinoma",
+          "matched_text": "NSCLC"
+        }
+      ],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL3707227|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|"
+      ],
+      "genentech_node": {
+        "id": "ORG:genentech",
+        "type": "Company",
+        "label": "Astrazeneca",
+        "props": "{\"class\": \"INDUSTRY\", \"parent\": \"Roche\", \"raw_names\": [\"Genentech, Inc.\"]}",
+        "first_seen": "2026-11-03T04:16:39+00:00",
+        "last_seen": "2026-11-03T06:26:33+00:00",
+        "retired_at": null
+      },
+      "parent_edges": [
+        {
+          "id": "ORG:roche|PARENT_OF|ORG:genentech|hand-curated corporate map",
+          "src": "ORG:roche",
+          "dst": "ORG:genentech",
+          "rel": "PARENT_OF",
+          "props": "{\"note\": \"hand-curated; no licensed ownership dataset was used\"}",
+          "confidence": 0.9,
+          "tier": null,
+          "source": "curated",
+          "source_record": "hand-curated corporate map",
+          "source_fetched_at": "2026-11-03T06:26:33+00:00",
+          "first_seen": "2026-11-03T04:16:39+00:00",
+          "last_seen": "2026-11-03T06:26:33+00:00",
+          "retired_at": null
+        }
+      ],
+      "cases": [
+        {
+          "name": "AstraZeneca",
+          "resolved_ids": [],
+          "reason": "'AstraZeneca' is the label of 2 company nodes; use the id",
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "AstraZeneca",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 14
+              }
+            ]
+          },
+          "output": {
+            "verified": false,
+            "accepted": [],
+            "rejected": [
+              {
+                "claim": {
+                  "kind": "relation",
+                  "relation": "SPONSORS_TRIAL_OF",
+                  "subject": "AstraZeneca",
+                  "object": "CHEMBL3353410",
+                  "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                  "trial_count": 14
+                },
+                "why": "'AstraZeneca' is the label of 2 company nodes; use the id"
+              }
+            ],
+            "text": ""
+          }
+        },
+        {
+          "name": "AstraZeneca",
+          "resolved_ids": [],
+          "reason": "'AstraZeneca' is the label of 2 company nodes; use the id",
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "AstraZeneca",
+                "object": "CHEMBL1201583",
+                "evidence": "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+                "trial_count": 5
+              }
+            ]
+          },
+          "output": {
+            "verified": false,
+            "accepted": [],
+            "rejected": [
+              {
+                "claim": {
+                  "kind": "relation",
+                  "relation": "SPONSORS_TRIAL_OF",
+                  "subject": "AstraZeneca",
+                  "object": "CHEMBL1201583",
+                  "evidence": "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+                  "trial_count": 5
+                },
+                "why": "'AstraZeneca' is the label of 2 company nodes; use the id"
+              }
+            ],
+            "text": ""
+          }
+        },
+        {
+          "name": "AstraZeneca!",
+          "resolved_ids": [],
+          "reason": "'AstraZeneca!' names 2 company nodes; use the id",
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "AstraZeneca!",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 14
+              }
+            ]
+          },
+          "output": {
+            "verified": false,
+            "accepted": [],
+            "rejected": [
+              {
+                "claim": {
+                  "kind": "relation",
+                  "relation": "SPONSORS_TRIAL_OF",
+                  "subject": "AstraZeneca!",
+                  "object": "CHEMBL3353410",
+                  "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                  "trial_count": 14
+                },
+                "why": "'AstraZeneca!' names 2 company nodes; use the id"
+              }
+            ],
+            "text": ""
+          }
+        },
+        {
+          "name": "AstraZeneca!",
+          "resolved_ids": [],
+          "reason": "'AstraZeneca!' names 2 company nodes; use the id",
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "AstraZeneca!",
+                "object": "CHEMBL1201583",
+                "evidence": "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+                "trial_count": 5
+              }
+            ]
+          },
+          "output": {
+            "verified": false,
+            "accepted": [],
+            "rejected": [
+              {
+                "claim": {
+                  "kind": "relation",
+                  "relation": "SPONSORS_TRIAL_OF",
+                  "subject": "AstraZeneca!",
+                  "object": "CHEMBL1201583",
+                  "evidence": "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+                  "trial_count": 5
+                },
+                "why": "'AstraZeneca!' names 2 company nodes; use the id"
+              }
+            ],
+            "text": ""
+          }
+        }
+      ],
+      "integrity": "ok"
+    },
+    {
+      "fixture_sql": "UPDATE node SET label=? WHERE id=?",
+      "fixture_args": [
+        "Astra-Zeneca",
+        "ORG:genentech"
+      ],
+      "question": "What is AstraZeneca running in NSCLC?",
+      "company_key": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "entities": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "AstraZeneca",
+          "also_matching_ids": [
+            "ORG:genentech"
+          ]
+        },
+        {
+          "type": "Disease",
+          "id": "MONDO_0005233",
+          "label": "non-small cell lung carcinoma",
+          "matched_text": "NSCLC"
+        }
+      ],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL3707227|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|"
+      ],
+      "genentech_node": {
+        "id": "ORG:genentech",
+        "type": "Company",
+        "label": "Astra-Zeneca",
+        "props": "{\"class\": \"INDUSTRY\", \"parent\": \"Roche\", \"raw_names\": [\"Genentech, Inc.\"]}",
+        "first_seen": "2026-11-03T04:16:39+00:00",
+        "last_seen": "2026-11-03T06:26:33+00:00",
+        "retired_at": null
+      },
+      "parent_edges": [
+        {
+          "id": "ORG:roche|PARENT_OF|ORG:genentech|hand-curated corporate map",
+          "src": "ORG:roche",
+          "dst": "ORG:genentech",
+          "rel": "PARENT_OF",
+          "props": "{\"note\": \"hand-curated; no licensed ownership dataset was used\"}",
+          "confidence": 0.9,
+          "tier": null,
+          "source": "curated",
+          "source_record": "hand-curated corporate map",
+          "source_fetched_at": "2026-11-03T06:26:33+00:00",
+          "first_seen": "2026-11-03T04:16:39+00:00",
+          "last_seen": "2026-11-03T06:26:33+00:00",
+          "retired_at": null
+        }
+      ],
+      "cases": [
+        {
+          "name": "AstraZeneca",
+          "resolved_ids": [
+            "ORG:astrazeneca"
+          ],
+          "reason": null,
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "AstraZeneca",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 14
+              }
+            ]
+          },
+          "output": {
+            "verified": true,
+            "accepted": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "subject": "ORG:astrazeneca",
+                "object": "CHEMBL3353410",
+                "trial_count": 14
+              }
+            ],
+            "rejected": [],
+            "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+          }
+        },
+        {
+          "name": "AstraZeneca",
+          "resolved_ids": [
+            "ORG:astrazeneca"
+          ],
+          "reason": null,
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "AstraZeneca",
+                "object": "CHEMBL1201583",
+                "evidence": "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+                "trial_count": 5
+              }
+            ]
+          },
+          "output": {
+            "verified": false,
+            "accepted": [],
+            "rejected": [
+              {
+                "claim": {
+                  "kind": "relation",
+                  "relation": "SPONSORS_TRIAL_OF",
+                  "subject": "AstraZeneca",
+                  "object": "CHEMBL1201583",
+                  "evidence": "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+                  "trial_count": 5
+                },
+                "why": "the cited edge does not join these two entities in this direction"
+              }
+            ],
+            "text": ""
+          }
+        },
+        {
+          "name": "AstraZeneca!",
+          "resolved_ids": [],
+          "reason": "'AstraZeneca!' names 2 company nodes; use the id",
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "AstraZeneca!",
+                "object": "CHEMBL3353410",
+                "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                "trial_count": 14
+              }
+            ]
+          },
+          "output": {
+            "verified": false,
+            "accepted": [],
+            "rejected": [
+              {
+                "claim": {
+                  "kind": "relation",
+                  "relation": "SPONSORS_TRIAL_OF",
+                  "subject": "AstraZeneca!",
+                  "object": "CHEMBL3353410",
+                  "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+                  "trial_count": 14
+                },
+                "why": "'AstraZeneca!' names 2 company nodes; use the id"
+              }
+            ],
+            "text": ""
+          }
+        },
+        {
+          "name": "AstraZeneca!",
+          "resolved_ids": [],
+          "reason": "'AstraZeneca!' names 2 company nodes; use the id",
+          "input": {
+            "claims": [
+              {
+                "kind": "relation",
+                "relation": "SPONSORS_TRIAL_OF",
+                "subject": "AstraZeneca!",
+                "object": "CHEMBL1201583",
+                "evidence": "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+                "trial_count": 5
+              }
+            ]
+          },
+          "output": {
+            "verified": false,
+            "accepted": [],
+            "rejected": [
+              {
+                "claim": {
+                  "kind": "relation",
+                  "relation": "SPONSORS_TRIAL_OF",
+                  "subject": "AstraZeneca!",
+                  "object": "CHEMBL1201583",
+                  "evidence": "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+                  "trial_count": 5
+                },
+                "why": "'AstraZeneca!' names 2 company nodes; use the id"
+              }
+            ],
+            "text": ""
+          }
+        }
+      ],
+      "integrity": "ok"
+    }
+  ],
+  "production_multi_id_company_keys": {},
+  "source_integrity": "ok"
+}

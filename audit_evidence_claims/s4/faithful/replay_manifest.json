@@ -1,0 +1,99 @@
+{
+  "head": "8adf2dd4e3cb9e2559dcabd67670300dbba6503c",
+  "jobs": [
+    {
+      "source": "audit_evidence_claims\\s1\\faithful_probe.py",
+      "replay": "audit_evidence_claims\\s4\\faithful\\s1\\faithful_probe.py",
+      "returncode": 0,
+      "changes": "Output path only. Historical commit metadata unchanged."
+    },
+    {
+      "source": "audit_evidence_claims\\s2\\faithful_probe.py",
+      "replay": "audit_evidence_claims\\s4\\faithful\\s2\\faithful_probe.py",
+      "returncode": 0,
+      "changes": "Output path only. Historical commit metadata unchanged."
+    },
+    {
+      "source": "audit_evidence_claims\\s2\\faithful_additional_replay.py",
+      "replay": "audit_evidence_claims\\s4\\faithful\\s2\\faithful_additional_replay.py",
+      "returncode": 0,
+      "changes": "Output path only. Historical commit metadata unchanged."
+    },
+    {
+      "source": "audit_evidence_claims\\s2\\faithful_dictionary_replay.py",
+      "replay": "audit_evidence_claims\\s4\\faithful\\s2\\faithful_dictionary_replay.py",
+      "returncode": 0,
+      "changes": "Output path only. Historical commit metadata unchanged."
+    },
+    {
+      "source": "audit_evidence_claims\\s3\\replay_s1\\faithful_probe.py",
+      "replay": "audit_evidence_claims\\s4\\faithful\\s3_replay_s1\\faithful_probe.py",
+      "returncode": 0,
+      "changes": "Output path only. Historical commit metadata unchanged."
+    },
+    {
+      "source": "audit_evidence_claims\\s3\\replay_s2\\faithful_probe.py",
+      "replay": "audit_evidence_claims\\s4\\faithful\\s3_replay_s2\\faithful_probe.py",
+      "returncode": 0,
+      "changes": "Output path only. Historical commit metadata unchanged."
+    },
+    {
+      "source": "audit_evidence_claims\\s3\\replay_s2\\faithful_additional_replay.py",
+      "replay": "audit_evidence_claims\\s4\\faithful\\s3_replay_s2\\faithful_additional_replay.py",
+      "returncode": 0,
+      "changes": "Output path only. Historical commit metadata unchanged."
+    },
+    {
+      "source": "audit_evidence_claims\\s3\\replay_s2\\faithful_dictionary_replay.py",
+      "replay": "audit_evidence_claims\\s4\\faithful\\s3_replay_s2\\faithful_dictionary_replay.py",
+      "returncode": 0,
+      "changes": "Output path only. Historical commit metadata unchanged."
+    }
+  ],
+  "checks": {
+    "s1": {
+      "same_demo_inputs": true,
+      "questions": 7,
+      "claims_accepted": {
+        "labels": 73,
+        "ids": 73
+      },
+      "same_phase_inputs": true,
+      "same_schema_inputs": true
+    },
+    "s2": {
+      "same_demo_inputs": true,
+      "questions": 7,
+      "claims_accepted": {
+        "labels": 73,
+        "ids": 73
+      },
+      "same_phase_inputs": true,
+      "same_schema_inputs": true,
+      "additional_output_identical": true,
+      "dictionary_identical": true
+    },
+    "s3/replay_s1": {
+      "same_demo_inputs": true,
+      "questions": 7,
+      "claims_accepted": {
+        "labels": 73,
+        "ids": 73
+      },
+      "same_phase_inputs": true,
+      "same_schema_inputs": true
+    },
+    "s3/replay_s2": {
+      "same_demo_inputs": true,
+      "questions": 7,
+      "claims_accepted": {
+        "labels": 73,
+        "ids": 73
+      },
+      "same_phase_inputs": true,
+      "same_schema_inputs": true,
+      "additional_output_identical": true,
+      "dictionary_identical": true
+    }
+  }
+}
