@@ -17,3 +17,15 @@ Round 2 (audit_evidence_claims/m2) stopped at Codex's usage limit before a repor
 Its partial fixtures showed a SPONSORS edge without a role would be labelled collaborator; the page now says
 "역할 기록 없음" for any role other than lead_sponsor/collaborator. Groups shown as "이름 순" were sorted Z to A; now A to Z
 within equal weight. Round 2 to be re-run when the limit resets (2026-11-04 15:37).
+
+## Round 2 re-run (audit_evidence_claims/m2b) — CHANGES REQUIRED
+
+All m1 reproductions FIXED. New:
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| R1 | "osimertinib and generic version of bevacizumab": the refusal window swallowed osimertinib and left bevacizumab to link (map and QA switched subject) | a refused product span never crosses a comma or a joining word (and, or, plus, with, vs, …); separately named drugs survive in either order |
+| R2 | malformed sponsor props displayed as "0건" | an unrecorded count is `evidence_trials: null`, shown as "기록 없음"; 0 is only a sort weight |
+| should-fix | bool scores accepted and crashing render; rounded score; embedded multi-id alias alternatives dropped; "everything" docstring; silent 500-char cut | numbers exclude bool/NaN; score shown as stored; the hit's `also_matching_ids` disclosed; docstring; >500 chars is a 400 error; render errors shown |
+
+Tests 323.

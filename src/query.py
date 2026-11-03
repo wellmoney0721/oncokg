@@ -88,6 +88,11 @@ class Answer:
 # --------------------------------------------------------------------------- #
 # engine
 # --------------------------------------------------------------------------- #
+# Words that join two separately named things; a refused product never spans one.
+_JOINERS = {"and", "or", "plus", "with", "versus", "vs", "vs.", "+", "&", "then", "followed",
+            "without", "or/and", "and/or"}
+
+
 class OncoKG:
     def __init__(self, db_path: Path = DB_PATH,
                  resolved_path: Path = C.PROCESSED / "resolved.json"):
@@ -116,8 +121,14 @@ class OncoKG:
     def link_entities(self, question: str) -> list[dict]:
         found: list[dict] = []
         seen: set = set()
-        tokens = [t.strip(" ?.,!;:") for t in re.split(r"[\s,]+", question)
-                  if t.strip(" ?.,!;:")]
+        tokens: list[str] = []
+        clause: list[int] = []          # which comma-separated piece each token is in
+        for ci, piece in enumerate(question.split(",")):
+            for t in re.split(r"\s+", piece):
+                t = t.strip(" ?.,!;:")
+                if t:
+                    tokens.append(t)
+                    clause.append(ci)
 
         # The resolver's refusals apply to questions too. Linking straight
         # against the index let "Mvasi" or "liposomal doxorubicin" answer as
@@ -153,7 +164,12 @@ class OncoKG:
                 # A product or tracer spelt across several tokens ("bevacizumab -
                 # awwb", "[89Zr] trastuzumab") is refused whole, so no part of it
                 # links to the originator.
-                if size > 1 and (T.is_distinct_product(window) or T.is_radiotracer(window)):
+                # The span stops at a list boundary: a comma or a joining word
+                # ("osimertinib and generic version of bevacizumab" refuses only
+                # the second drug, and keeps the first).
+                if (size > 1 and len(set(clause[i:i + size])) == 1
+                        and not any(t.lower() in _JOINERS for t in tokens[i:i + size])
+                        and (T.is_distinct_product(window) or T.is_radiotracer(window))):
                     found.append({"type": "Refused", "id": None, "label": window,
                                   "matched_text": window,
                                   "why": "names a distinct product or tracer, not "

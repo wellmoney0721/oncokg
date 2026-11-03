@@ -90,3 +90,36 @@ def test_explore_shows_other_readings_of_an_ambiguous_name():
     import app
     r = app.Engine().explore("Roche")
     assert any(x.get("id") == "ORG:roche" for x in r["also"])
+
+
+# Codex review m2b
+def test_a_refused_product_does_not_swallow_a_separately_named_drug():
+    import app
+    e = app.Engine()
+    for t in ("osimertinib and generic version of bevacizumab",
+              "generic version of bevacizumab and osimertinib",
+              "[89Zr] trastuzumab and osimertinib",
+              "osimertinib, generic version of bevacizumab",
+              "osimertinib and oral azacitidine"):
+        r = e.explore(t)
+        assert r["center"]["id"] == "CHEMBL3353410", t
+        assert all(x.get("id") != "CHEMBL1201583" for x in r["also"]), t
+    a = e.kg.answer("Which trials evaluate osimertinib and generic version of bevacizumab?",
+                    use_llm=False)
+    assert a.evidence and all("CHEMBL1201583" not in ev.edge_id for ev in a.evidence)
+
+
+def test_an_unrecorded_sponsor_count_stays_unknown():
+    import app
+    import sqlite3
+    e = app.Engine()
+    mem = sqlite3.connect(":memory:", check_same_thread=False)
+    e.kg.conn.backup(mem)
+    mem.row_factory = sqlite3.Row
+    eid = "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|"
+    for bad in ("null", "[]", "{broken", '{"evidence_trials": true}'):
+        mem.execute("UPDATE edge SET props=? WHERE id=?", (bad, eid))
+        e.kg.conn = mem
+        r = e.explore("CHEMBL1201438")
+        items = [i for g in r["groups"] for i in g["items"] if i["edge_id"] == eid]
+        assert items and items[0]["evidence_trials"] is None, bad

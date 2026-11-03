@@ -170,10 +170,10 @@ const SCLASS = {INDUSTRY:"제약사", NIH:"미국 NIH", FED:"미국 연방기관
 function itemDetail(it, rel){
   if(it.type==="Trial") return [PH(it.phases), it.status, it.start_date, it.title].filter(Boolean).join(" · ");
   const parts = [];
-  if(rel==="SPONSORS_TRIAL_OF") parts.push(`책임 주관한 임상 ${it.weight}건`+(it.sponsor_class?` · ${SCLASS[it.sponsor_class]||""} (${it.sponsor_class})`:""));
+  if(rel==="SPONSORS_TRIAL_OF") parts.push((it.evidence_trials==null?"책임 주관한 임상 수 기록 없음":`책임 주관한 임상 ${it.evidence_trials}건`)+(it.sponsor_class?` · ${SCLASS[it.sponsor_class]||""} (${it.sponsor_class})`:""));
   if(it.type==="Drug") parts.push(`그래프 안 임상 ${it.trials}건`, it.max_phase?(PHASE[it.max_phase]||it.max_phase)+"까지":"");
   if(it.action) parts.push(actLabel(it.action));
-  if(it.score!=null) parts.push(`연관 점수 ${it.score.toFixed(3)}`);
+  if(typeof it.score==="number") parts.push(`연관 점수 ${it.score}`);
   return parts.filter(Boolean).join(" · ");
 }
 // only links to the trial registry are made clickable
@@ -213,7 +213,7 @@ async function explore(text, push=true){
   let r; try{ r = await call("/api/explore",text); }catch(e){ if(my!==seq) return; trail.length=0; showTrail(); o.innerHTML=`<p class="err">${esc(e.message)}</p>`; return; }
   if(my!==seq) return;
   if(r.refused){ trail.length=0; showTrail(); o.innerHTML=`<div class="comp no"><div class="top"><span class="verdict">연결하지 않음</span><span class="s">${esc(r.refused)}</span></div><div class="detail">바이오시밀러·개량 제형·추적자처럼 원래 약과 다른 제품이라, 원래 약의 관계로 그리지 않습니다.</div></div>`; return; }
-  if(r.not_found){ trail.length=0; showTrail(); o.innerHTML=`<p class="err">그래프에서 찾지 못했습니다: ${esc(r.not_found)} (이 그래프는 비소세포폐암 임상시험 3,000건 범위입니다. 입력은 앞 500자까지만 읽습니다)</p>`; return; }
+  if(r.not_found){ trail.length=0; showTrail(); o.innerHTML=`<p class="err">그래프에서 찾지 못했습니다: ${esc(r.not_found)} (이 그래프는 비소세포폐암 임상시험 3,000건 범위입니다. 입력은 500자까지 받습니다)</p>`; return; }
   const c=r.center;
   if(push){ trail.push([c.id,c.label]); }
   showTrail();
@@ -235,14 +235,17 @@ async function explore(text, push=true){
       `${u?` <a href="${esc(u)}" target="_blank" rel="noopener">↗</a>`:""} <span class="code">${esc(it.edge_id)}</span></div>`;}).join("")}</div></details>`;}).join("");
   o.innerHTML = head + drawMap(r) + lists;
 }
-document.getElementById("f0").addEventListener("submit",e=>{e.preventDefault(); const v=document.getElementById("t0").value.trim(); if(v){trail.length=0; explore(v);}});
-document.getElementById("o0").addEventListener("click",e=>{const b=e.target.closest("[data-id]"); if(b){ explore(b.dataset.id); }});
+// a payload the page cannot draw shows the error instead of a map that never arrives
+const exploreSafe = (...a) => explore(...a).catch(e=>{ trail.length=0; showTrail();
+  document.getElementById("o0").innerHTML=`<p class="err">그리지 못했습니다: ${esc(e.message)}</p>`; });
+document.getElementById("f0").addEventListener("submit",e=>{e.preventDefault(); const v=document.getElementById("t0").value.trim(); if(v){trail.length=0; exploreSafe(v);}});
+document.getElementById("o0").addEventListener("click",e=>{const b=e.target.closest("[data-id]"); if(b){ exploreSafe(b.dataset.id); }});
 document.getElementById("trail0").addEventListener("click",e=>{const b=e.target.closest("[data-back]"); if(!b) return;
-  const i=+b.dataset.back; if(!trail[i]) return; const id=trail[i][0]; trail.length=i+1; explore(id,false);});
+  const i=+b.dataset.back; if(!trail[i]) return; const id=trail[i][0]; trail.length=i+1; exploreSafe(id,false);});
 document.getElementById("ex0").innerHTML = [["osimertinib","약"],["EGFR","표적"],["KRAS","표적"],["AstraZeneca","회사"],["NCT00200395","임상"],["Mvasi","바이오시밀러"]]
   .map(([t,h])=>`<button type="button" class="ex" data-t="${esc(t)}">${esc(t)} <small>${esc(h)}</small></button>`).join("");
 document.getElementById("ex0").addEventListener("click",e=>{const b=e.target.closest(".ex"); if(!b) return;
-  document.getElementById("t0").value=b.dataset.t; trail.length=0; explore(b.dataset.t);});
+  document.getElementById("t0").value=b.dataset.t; trail.length=0; exploreSafe(b.dataset.t);});
 const EX3 = [
   ["근거대로 쓴 답","Which drugs act on ALK?","Alectinib and lorlatinib act on ALK."],
   ["지어낸 약 이름","Which drugs act on ALK?","Alectinib, lorlatinib and zorbatinib act on ALK."],

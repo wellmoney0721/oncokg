@@ -1,0 +1,2994 @@
+{
+  "fixture": "read-only real database backed up into memory; mutate only one edge props",
+  "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+  "sql": "UPDATE edge SET props=? WHERE id=?",
+  "baseline": [
+    {
+      "stored_props": "{\"derived\": true, \"evidence_sample\": [\"NCT05194735\"], \"evidence_trials\": 1, \"evidence_trials_all\": [\"NCT05194735\"], \"is_industry_sponsor\": true, \"not_a_development_claim\": \"sponsorship is not evidence of originating or developing the molecule; academic, cooperative-group and government sponsors run trials of other organisations' drugs\", \"rule\": \"lead sponsor of trials evaluating this drug\", \"sponsor_class\": \"INDUSTRY\"}",
+      "requests": [
+        {
+          "input": "CHEMBL1201438",
+          "status": 200,
+          "matched_edge_items": [
+            {
+              "group": {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "in",
+                "type": "Company",
+                "total": 11
+              },
+              "item": {
+                "id": "ORG:alaunos",
+                "type": "Company",
+                "label": "Alaunos",
+                "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              }
+            }
+          ],
+          "body": {
+            "center": {
+              "id": "CHEMBL1201438",
+              "type": "Drug",
+              "label": "ALDESLEUKIN",
+              "trials": 11,
+              "props": {
+                "max_phase_overall": "APPROVAL",
+                "drug_type": "Protein"
+              }
+            },
+            "groups": [
+              {
+                "rel": "EVALUATES",
+                "dir": "in",
+                "type": "Trial",
+                "total": 11,
+                "items": [
+                  {
+                    "id": "NCT04102436",
+                    "type": "Trial",
+                    "label": "NCT04102436",
+                    "edge_id": "NCT04102436|EVALUATES|CHEMBL1201438|NCT04102436",
+                    "phases": [
+                      "PHASE2"
+                    ],
+                    "status": "WITHDRAWN",
+                    "title": "Non-Viral TCR Gene Therapy",
+                    "start_date": "2024-03-08",
+                    "url": "https://clinicaltrials.gov/study/NCT04102436",
+                    "weight": "2024-03-08"
+                  },
+                  {
+                    "id": "NCT05603013",
+                    "type": "Trial",
+                    "label": "NCT05603013",
+                    "edge_id": "NCT05603013|EVALUATES|CHEMBL1201438|NCT05603013",
+                    "phases": [
+                      "PHASE2"
+                    ],
+                    "status": "UNKNOWN",
+                    "title": "Vinorelbine Metronomic Chemotherapy Combined With Hypofractionated Radiotherapy, PD-1/PD-L1 Sequential GM-CSF and IL-2 for Treatment of Advanced Refractory Non-small Cell Lung Cancer and Breast Cancer(PRaG 6.0)",
+                    "start_date": "2022-10-30",
+                    "url": "https://clinicaltrials.gov/study/NCT05603013",
+                    "weight": "2022-10-30"
+                  },
+                  {
+                    "id": "NCT05395052",
+                    "type": "Trial",
+                    "label": "NCT05395052",
+                    "edge_id": "NCT05395052|EVALUATES|CHEMBL1201438|NCT05395052",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "FT536 Monotherapy and in Combination With Monoclonal Antibodies in Advanced Solid Tumors",
+                    "start_date": "2022-05-31",
+                    "url": "https://clinicaltrials.gov/study/NCT05395052",
+                    "weight": "2022-05-31"
+                  },
+                  {
+                    "id": "NCT05267626",
+                    "type": "Trial",
+                    "label": "NCT05267626",
+                    "edge_id": "NCT05267626|EVALUATES|CHEMBL1201438|NCT05267626",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "RECRUITING",
+                    "title": "Study of AU-007, A Monoclonal Antibody That Binds to IL-2 and Inhibits IL-2Rα Binding, in Patients With Unresectable Locally Advanced or Metastatic Cancer",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05267626",
+                    "weight": "2022-04-04"
+                  },
+                  {
+                    "id": "NCT05194735",
+                    "type": "Trial",
+                    "label": "NCT05194735",
+                    "edge_id": "NCT05194735|EVALUATES|CHEMBL1201438|NCT05194735",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Phase I/II Study of Autologous T Cells to Express T-Cell Receptors (TCRs) in Subjects With Solid Tumors",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05194735",
+                    "weight": "2022-04-04"
+                  },
+                  {
+                    "id": "NCT05296564",
+                    "type": "Trial",
+                    "label": "NCT05296564",
+                    "edge_id": "NCT05296564|EVALUATES|CHEMBL1201438|NCT05296564",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "RECRUITING",
+                    "title": "Anti-NY-ESO-1 TCR-Gene Engineered Lymphocytes Given by Infusion to Patients With NY-ESO-1 -Expressing Metastatic Cancers",
+                    "start_date": "2022-04-01",
+                    "url": "https://clinicaltrials.gov/study/NCT05296564",
+                    "weight": "2022-04-01"
+                  },
+                  {
+                    "id": "NCT04596033",
+                    "type": "Trial",
+                    "label": "NCT04596033",
+                    "edge_id": "NCT04596033|EVALUATES|CHEMBL1201438|NCT04596033",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "TiTAN-1: Safety, Proliferation and Persistence of GEN-011 Autologous Cell Therapy",
+                    "start_date": "2020-11-11",
+                    "url": "https://clinicaltrials.gov/study/NCT04596033",
+                    "weight": "2020-11-11"
+                  },
+                  {
+                    "id": "NCT03970382",
+                    "type": "Trial",
+                    "label": "NCT03970382",
+                    "edge_id": "NCT03970382|EVALUATES|CHEMBL1201438|NCT03970382",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "SUSPENDED",
+                    "title": "A Study of Gene Edited Autologous Neoantigen Targeted TCR T Cells With or Without Anti-PD-1 in Patients With Solid Tumors",
+                    "start_date": "2019-07-03",
+                    "url": "https://clinicaltrials.gov/study/NCT03970382",
+                    "weight": "2019-07-03"
+                  },
+                  {
+                    "id": "NCT03215810",
+                    "type": "Trial",
+                    "label": "NCT03215810",
+                    "edge_id": "NCT03215810|EVALUATES|CHEMBL1201438|NCT03215810",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "COMPLETED",
+                    "title": "Nivolumab and Tumor Infiltrating Lymphocytes (TIL) in Advanced Non-Small Cell Lung Cancer",
+                    "start_date": "2017-10-11",
+                    "url": "https://clinicaltrials.gov/study/NCT03215810",
+                    "weight": "2017-10-11"
+                  },
+                  {
+                    "id": "NCT00569296",
+                    "type": "Trial",
+                    "label": "NCT00569296",
+                    "edge_id": "NCT00569296|EVALUATES|CHEMBL1201438|NCT00569296",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Laboratory-Treated Autologous Lymphocytes, Aldesleukin, and GM-CSF in Treating Patients With Recurrent, Refractory, or Metastatic Non-Small Cell Lung Cancer",
+                    "start_date": "2007-11",
+                    "url": "https://clinicaltrials.gov/study/NCT00569296",
+                    "weight": "2007-11"
+                  },
+                  {
+                    "id": "NCT01212887",
+                    "type": "Trial",
+                    "label": "NCT01212887",
+                    "edge_id": "NCT01212887|EVALUATES|CHEMBL1201438|NCT01212887",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Treated Blood Cells, Cyclophosphamide, Fludarabine Phosphate, and Aldesleukin in Treating Patients With Cancer",
+                    "start_date": "2007-08",
+                    "url": "https://clinicaltrials.gov/study/NCT01212887",
+                    "weight": "2007-08"
+                  }
+                ]
+              },
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "in",
+                "type": "Company",
+                "total": 11,
+                "items": [
+                  {
+                    "id": "ORG:secondaffiliatedhospitalofsoochowuniversity",
+                    "type": "Company",
+                    "label": "Second Affiliated Hospital Of Soochow University",
+                    "edge_id": "ORG:secondaffiliatedhospitalofsoochowuniversity|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:rogerwilliamsmedicalcenter",
+                    "type": "Company",
+                    "label": "Roger Williams Medical Center",
+                    "edge_id": "ORG:rogerwilliamsmedicalcenter|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:pact",
+                    "type": "Company",
+                    "label": "Pact",
+                    "edge_id": "ORG:pact|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:nationalcancerinstitute",
+                    "type": "Company",
+                    "label": "National Cancer Institute",
+                    "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "NIH"
+                  },
+                  {
+                    "id": "ORG:hadassahmedicalorganization",
+                    "type": "Company",
+                    "label": "Hadassah Medical Organization",
+                    "edge_id": "ORG:hadassahmedicalorganization|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:hleemoffittcancercenterandresearchinstitute",
+                    "type": "Company",
+                    "label": "H Lee Moffitt Cancer Center And Research Institute",
+                    "edge_id": "ORG:hleemoffittcancercenterandresearchinstitute|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:genocea",
+                    "type": "Company",
+                    "label": "Genocea",
+                    "edge_id": "ORG:genocea|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:fate",
+                    "type": "Company",
+                    "label": "Fate",
+                    "edge_id": "ORG:fate|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:cancerresearchuk",
+                    "type": "Company",
+                    "label": "Cancer Research Uk",
+                    "edge_id": "ORG:cancerresearchuk|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:aulos",
+                    "type": "Company",
+                    "label": "Aulos",
+                    "edge_id": "ORG:aulos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:alaunos",
+                    "type": "Company",
+                    "label": "Alaunos",
+                    "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  }
+                ]
+              },
+              {
+                "rel": "ACTS_ON",
+                "dir": "out",
+                "type": "Target",
+                "total": 3,
+                "items": [
+                  {
+                    "id": "ENSG00000147168",
+                    "type": "Target",
+                    "label": "IL2RG",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000147168|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  },
+                  {
+                    "id": "ENSG00000100385",
+                    "type": "Target",
+                    "label": "IL2RB",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000100385|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  },
+                  {
+                    "id": "ENSG00000134460",
+                    "type": "Target",
+                    "label": "IL2RA",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000134460|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "ORG:alaunos",
+          "status": 200,
+          "matched_edge_items": [
+            {
+              "group": {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "total": 1
+              },
+              "item": {
+                "id": "CHEMBL1201438",
+                "type": "Drug",
+                "label": "ALDESLEUKIN",
+                "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              }
+            }
+          ],
+          "body": {
+            "center": {
+              "id": "ORG:alaunos",
+              "type": "Company",
+              "label": "Alaunos",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "NCT05194735",
+                    "type": "Trial",
+                    "label": "NCT05194735",
+                    "edge_id": "ORG:alaunos|SPONSORS|NCT05194735|NCT05194735",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Phase I/II Study of Autologous T Cells to Express T-Cell Receptors (TCRs) in Subjects With Solid Tumors",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05194735",
+                    "weight": "2022-04-04"
+                  }
+                ]
+              },
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "CHEMBL1201438",
+                    "type": "Drug",
+                    "label": "ALDESLEUKIN",
+                    "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_props": "null",
+      "requests": [
+        {
+          "input": "CHEMBL1201438",
+          "status": 400,
+          "matched_edge_items": [],
+          "body": {
+            "error": "'NoneType' object has no attribute 'get'"
+          }
+        },
+        {
+          "input": "ORG:alaunos",
+          "status": 400,
+          "matched_edge_items": [],
+          "body": {
+            "error": "'NoneType' object has no attribute 'get'"
+          }
+        }
+      ]
+    },
+    {
+      "stored_props": "[]",
+      "requests": [
+        {
+          "input": "CHEMBL1201438",
+          "status": 400,
+          "matched_edge_items": [],
+          "body": {
+            "error": "'list' object has no attribute 'get'"
+          }
+        },
+        {
+          "input": "ORG:alaunos",
+          "status": 400,
+          "matched_edge_items": [],
+          "body": {
+            "error": "'list' object has no attribute 'get'"
+          }
+        }
+      ]
+    },
+    {
+      "stored_props": "{broken",
+      "requests": [
+        {
+          "input": "CHEMBL1201438",
+          "status": 400,
+          "matched_edge_items": [],
+          "body": {
+            "error": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+          }
+        },
+        {
+          "input": "ORG:alaunos",
+          "status": 400,
+          "matched_edge_items": [],
+          "body": {
+            "error": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+          }
+        }
+      ]
+    },
+    {
+      "stored_props": "{}",
+      "requests": [
+        {
+          "input": "CHEMBL1201438",
+          "status": 200,
+          "matched_edge_items": [
+            {
+              "group": {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "in",
+                "type": "Company",
+                "total": 11
+              },
+              "item": {
+                "id": "ORG:alaunos",
+                "type": "Company",
+                "label": "Alaunos",
+                "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                "weight": 0,
+                "sponsor_class": null
+              }
+            }
+          ],
+          "body": {
+            "center": {
+              "id": "CHEMBL1201438",
+              "type": "Drug",
+              "label": "ALDESLEUKIN",
+              "trials": 11,
+              "props": {
+                "max_phase_overall": "APPROVAL",
+                "drug_type": "Protein"
+              }
+            },
+            "groups": [
+              {
+                "rel": "EVALUATES",
+                "dir": "in",
+                "type": "Trial",
+                "total": 11,
+                "items": [
+                  {
+                    "id": "NCT04102436",
+                    "type": "Trial",
+                    "label": "NCT04102436",
+                    "edge_id": "NCT04102436|EVALUATES|CHEMBL1201438|NCT04102436",
+                    "phases": [
+                      "PHASE2"
+                    ],
+                    "status": "WITHDRAWN",
+                    "title": "Non-Viral TCR Gene Therapy",
+                    "start_date": "2024-03-08",
+                    "url": "https://clinicaltrials.gov/study/NCT04102436",
+                    "weight": "2024-03-08"
+                  },
+                  {
+                    "id": "NCT05603013",
+                    "type": "Trial",
+                    "label": "NCT05603013",
+                    "edge_id": "NCT05603013|EVALUATES|CHEMBL1201438|NCT05603013",
+                    "phases": [
+                      "PHASE2"
+                    ],
+                    "status": "UNKNOWN",
+                    "title": "Vinorelbine Metronomic Chemotherapy Combined With Hypofractionated Radiotherapy, PD-1/PD-L1 Sequential GM-CSF and IL-2 for Treatment of Advanced Refractory Non-small Cell Lung Cancer and Breast Cancer(PRaG 6.0)",
+                    "start_date": "2022-10-30",
+                    "url": "https://clinicaltrials.gov/study/NCT05603013",
+                    "weight": "2022-10-30"
+                  },
+                  {
+                    "id": "NCT05395052",
+                    "type": "Trial",
+                    "label": "NCT05395052",
+                    "edge_id": "NCT05395052|EVALUATES|CHEMBL1201438|NCT05395052",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "FT536 Monotherapy and in Combination With Monoclonal Antibodies in Advanced Solid Tumors",
+                    "start_date": "2022-05-31",
+                    "url": "https://clinicaltrials.gov/study/NCT05395052",
+                    "weight": "2022-05-31"
+                  },
+                  {
+                    "id": "NCT05267626",
+                    "type": "Trial",
+                    "label": "NCT05267626",
+                    "edge_id": "NCT05267626|EVALUATES|CHEMBL1201438|NCT05267626",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "RECRUITING",
+                    "title": "Study of AU-007, A Monoclonal Antibody That Binds to IL-2 and Inhibits IL-2Rα Binding, in Patients With Unresectable Locally Advanced or Metastatic Cancer",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05267626",
+                    "weight": "2022-04-04"
+                  },
+                  {
+                    "id": "NCT05194735",
+                    "type": "Trial",
+                    "label": "NCT05194735",
+                    "edge_id": "NCT05194735|EVALUATES|CHEMBL1201438|NCT05194735",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Phase I/II Study of Autologous T Cells to Express T-Cell Receptors (TCRs) in Subjects With Solid Tumors",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05194735",
+                    "weight": "2022-04-04"
+                  },
+                  {
+                    "id": "NCT05296564",
+                    "type": "Trial",
+                    "label": "NCT05296564",
+                    "edge_id": "NCT05296564|EVALUATES|CHEMBL1201438|NCT05296564",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "RECRUITING",
+                    "title": "Anti-NY-ESO-1 TCR-Gene Engineered Lymphocytes Given by Infusion to Patients With NY-ESO-1 -Expressing Metastatic Cancers",
+                    "start_date": "2022-04-01",
+                    "url": "https://clinicaltrials.gov/study/NCT05296564",
+                    "weight": "2022-04-01"
+                  },
+                  {
+                    "id": "NCT04596033",
+                    "type": "Trial",
+                    "label": "NCT04596033",
+                    "edge_id": "NCT04596033|EVALUATES|CHEMBL1201438|NCT04596033",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "TiTAN-1: Safety, Proliferation and Persistence of GEN-011 Autologous Cell Therapy",
+                    "start_date": "2020-11-11",
+                    "url": "https://clinicaltrials.gov/study/NCT04596033",
+                    "weight": "2020-11-11"
+                  },
+                  {
+                    "id": "NCT03970382",
+                    "type": "Trial",
+                    "label": "NCT03970382",
+                    "edge_id": "NCT03970382|EVALUATES|CHEMBL1201438|NCT03970382",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "SUSPENDED",
+                    "title": "A Study of Gene Edited Autologous Neoantigen Targeted TCR T Cells With or Without Anti-PD-1 in Patients With Solid Tumors",
+                    "start_date": "2019-07-03",
+                    "url": "https://clinicaltrials.gov/study/NCT03970382",
+                    "weight": "2019-07-03"
+                  },
+                  {
+                    "id": "NCT03215810",
+                    "type": "Trial",
+                    "label": "NCT03215810",
+                    "edge_id": "NCT03215810|EVALUATES|CHEMBL1201438|NCT03215810",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "COMPLETED",
+                    "title": "Nivolumab and Tumor Infiltrating Lymphocytes (TIL) in Advanced Non-Small Cell Lung Cancer",
+                    "start_date": "2017-10-11",
+                    "url": "https://clinicaltrials.gov/study/NCT03215810",
+                    "weight": "2017-10-11"
+                  },
+                  {
+                    "id": "NCT00569296",
+                    "type": "Trial",
+                    "label": "NCT00569296",
+                    "edge_id": "NCT00569296|EVALUATES|CHEMBL1201438|NCT00569296",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Laboratory-Treated Autologous Lymphocytes, Aldesleukin, and GM-CSF in Treating Patients With Recurrent, Refractory, or Metastatic Non-Small Cell Lung Cancer",
+                    "start_date": "2007-11",
+                    "url": "https://clinicaltrials.gov/study/NCT00569296",
+                    "weight": "2007-11"
+                  },
+                  {
+                    "id": "NCT01212887",
+                    "type": "Trial",
+                    "label": "NCT01212887",
+                    "edge_id": "NCT01212887|EVALUATES|CHEMBL1201438|NCT01212887",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Treated Blood Cells, Cyclophosphamide, Fludarabine Phosphate, and Aldesleukin in Treating Patients With Cancer",
+                    "start_date": "2007-08",
+                    "url": "https://clinicaltrials.gov/study/NCT01212887",
+                    "weight": "2007-08"
+                  }
+                ]
+              },
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "in",
+                "type": "Company",
+                "total": 11,
+                "items": [
+                  {
+                    "id": "ORG:secondaffiliatedhospitalofsoochowuniversity",
+                    "type": "Company",
+                    "label": "Second Affiliated Hospital Of Soochow University",
+                    "edge_id": "ORG:secondaffiliatedhospitalofsoochowuniversity|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:rogerwilliamsmedicalcenter",
+                    "type": "Company",
+                    "label": "Roger Williams Medical Center",
+                    "edge_id": "ORG:rogerwilliamsmedicalcenter|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:pact",
+                    "type": "Company",
+                    "label": "Pact",
+                    "edge_id": "ORG:pact|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:nationalcancerinstitute",
+                    "type": "Company",
+                    "label": "National Cancer Institute",
+                    "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "NIH"
+                  },
+                  {
+                    "id": "ORG:hadassahmedicalorganization",
+                    "type": "Company",
+                    "label": "Hadassah Medical Organization",
+                    "edge_id": "ORG:hadassahmedicalorganization|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:hleemoffittcancercenterandresearchinstitute",
+                    "type": "Company",
+                    "label": "H Lee Moffitt Cancer Center And Research Institute",
+                    "edge_id": "ORG:hleemoffittcancercenterandresearchinstitute|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:genocea",
+                    "type": "Company",
+                    "label": "Genocea",
+                    "edge_id": "ORG:genocea|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:fate",
+                    "type": "Company",
+                    "label": "Fate",
+                    "edge_id": "ORG:fate|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:cancerresearchuk",
+                    "type": "Company",
+                    "label": "Cancer Research Uk",
+                    "edge_id": "ORG:cancerresearchuk|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:aulos",
+                    "type": "Company",
+                    "label": "Aulos",
+                    "edge_id": "ORG:aulos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:alaunos",
+                    "type": "Company",
+                    "label": "Alaunos",
+                    "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 0,
+                    "sponsor_class": null
+                  }
+                ]
+              },
+              {
+                "rel": "ACTS_ON",
+                "dir": "out",
+                "type": "Target",
+                "total": 3,
+                "items": [
+                  {
+                    "id": "ENSG00000147168",
+                    "type": "Target",
+                    "label": "IL2RG",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000147168|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  },
+                  {
+                    "id": "ENSG00000100385",
+                    "type": "Target",
+                    "label": "IL2RB",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000100385|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  },
+                  {
+                    "id": "ENSG00000134460",
+                    "type": "Target",
+                    "label": "IL2RA",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000134460|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "ORG:alaunos",
+          "status": 200,
+          "matched_edge_items": [
+            {
+              "group": {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "total": 1
+              },
+              "item": {
+                "id": "CHEMBL1201438",
+                "type": "Drug",
+                "label": "ALDESLEUKIN",
+                "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                "weight": 0,
+                "sponsor_class": null
+              }
+            }
+          ],
+          "body": {
+            "center": {
+              "id": "ORG:alaunos",
+              "type": "Company",
+              "label": "Alaunos",
+              "trials": null,
+              "props": {}
+            },
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "NCT05194735",
+                    "type": "Trial",
+                    "label": "NCT05194735",
+                    "edge_id": "ORG:alaunos|SPONSORS|NCT05194735|NCT05194735",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Phase I/II Study of Autologous T Cells to Express T-Cell Receptors (TCRs) in Subjects With Solid Tumors",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05194735",
+                    "weight": "2022-04-04"
+                  }
+                ]
+              },
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "CHEMBL1201438",
+                    "type": "Drug",
+                    "label": "ALDESLEUKIN",
+                    "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 0,
+                    "sponsor_class": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "HEAD": [
+    {
+      "stored_props": "{\"derived\": true, \"evidence_sample\": [\"NCT05194735\"], \"evidence_trials\": 1, \"evidence_trials_all\": [\"NCT05194735\"], \"is_industry_sponsor\": true, \"not_a_development_claim\": \"sponsorship is not evidence of originating or developing the molecule; academic, cooperative-group and government sponsors run trials of other organisations' drugs\", \"rule\": \"lead sponsor of trials evaluating this drug\", \"sponsor_class\": \"INDUSTRY\"}",
+      "requests": [
+        {
+          "input": "CHEMBL1201438",
+          "status": 200,
+          "matched_edge_items": [
+            {
+              "group": {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "in",
+                "type": "Company",
+                "role": null,
+                "total": 11
+              },
+              "item": {
+                "id": "ORG:alaunos",
+                "type": "Company",
+                "label": "Alaunos",
+                "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              }
+            }
+          ],
+          "body": {
+            "center": {
+              "id": "CHEMBL1201438",
+              "type": "Drug",
+              "label": "ALDESLEUKIN",
+              "matched_text": null,
+              "trials": 11,
+              "props": {
+                "max_phase_overall": "APPROVAL",
+                "drug_type": "Protein"
+              }
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "EVALUATES",
+                "dir": "in",
+                "type": "Trial",
+                "role": null,
+                "total": 11,
+                "items": [
+                  {
+                    "id": "NCT04102436",
+                    "type": "Trial",
+                    "label": "NCT04102436",
+                    "edge_id": "NCT04102436|EVALUATES|CHEMBL1201438|NCT04102436",
+                    "phases": [
+                      "PHASE2"
+                    ],
+                    "status": "WITHDRAWN",
+                    "title": "Non-Viral TCR Gene Therapy",
+                    "start_date": "2024-03-08",
+                    "url": "https://clinicaltrials.gov/study/NCT04102436",
+                    "weight": "2024-03-08"
+                  },
+                  {
+                    "id": "NCT05603013",
+                    "type": "Trial",
+                    "label": "NCT05603013",
+                    "edge_id": "NCT05603013|EVALUATES|CHEMBL1201438|NCT05603013",
+                    "phases": [
+                      "PHASE2"
+                    ],
+                    "status": "UNKNOWN",
+                    "title": "Vinorelbine Metronomic Chemotherapy Combined With Hypofractionated Radiotherapy, PD-1/PD-L1 Sequential GM-CSF and IL-2 for Treatment of Advanced Refractory Non-small Cell Lung Cancer and Breast Cancer(PRaG 6.0)",
+                    "start_date": "2022-10-30",
+                    "url": "https://clinicaltrials.gov/study/NCT05603013",
+                    "weight": "2022-10-30"
+                  },
+                  {
+                    "id": "NCT05395052",
+                    "type": "Trial",
+                    "label": "NCT05395052",
+                    "edge_id": "NCT05395052|EVALUATES|CHEMBL1201438|NCT05395052",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "FT536 Monotherapy and in Combination With Monoclonal Antibodies in Advanced Solid Tumors",
+                    "start_date": "2022-05-31",
+                    "url": "https://clinicaltrials.gov/study/NCT05395052",
+                    "weight": "2022-05-31"
+                  },
+                  {
+                    "id": "NCT05194735",
+                    "type": "Trial",
+                    "label": "NCT05194735",
+                    "edge_id": "NCT05194735|EVALUATES|CHEMBL1201438|NCT05194735",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Phase I/II Study of Autologous T Cells to Express T-Cell Receptors (TCRs) in Subjects With Solid Tumors",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05194735",
+                    "weight": "2022-04-04"
+                  },
+                  {
+                    "id": "NCT05267626",
+                    "type": "Trial",
+                    "label": "NCT05267626",
+                    "edge_id": "NCT05267626|EVALUATES|CHEMBL1201438|NCT05267626",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "RECRUITING",
+                    "title": "Study of AU-007, A Monoclonal Antibody That Binds to IL-2 and Inhibits IL-2Rα Binding, in Patients With Unresectable Locally Advanced or Metastatic Cancer",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05267626",
+                    "weight": "2022-04-04"
+                  },
+                  {
+                    "id": "NCT05296564",
+                    "type": "Trial",
+                    "label": "NCT05296564",
+                    "edge_id": "NCT05296564|EVALUATES|CHEMBL1201438|NCT05296564",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "RECRUITING",
+                    "title": "Anti-NY-ESO-1 TCR-Gene Engineered Lymphocytes Given by Infusion to Patients With NY-ESO-1 -Expressing Metastatic Cancers",
+                    "start_date": "2022-04-01",
+                    "url": "https://clinicaltrials.gov/study/NCT05296564",
+                    "weight": "2022-04-01"
+                  },
+                  {
+                    "id": "NCT04596033",
+                    "type": "Trial",
+                    "label": "NCT04596033",
+                    "edge_id": "NCT04596033|EVALUATES|CHEMBL1201438|NCT04596033",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "TiTAN-1: Safety, Proliferation and Persistence of GEN-011 Autologous Cell Therapy",
+                    "start_date": "2020-11-11",
+                    "url": "https://clinicaltrials.gov/study/NCT04596033",
+                    "weight": "2020-11-11"
+                  },
+                  {
+                    "id": "NCT03970382",
+                    "type": "Trial",
+                    "label": "NCT03970382",
+                    "edge_id": "NCT03970382|EVALUATES|CHEMBL1201438|NCT03970382",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "SUSPENDED",
+                    "title": "A Study of Gene Edited Autologous Neoantigen Targeted TCR T Cells With or Without Anti-PD-1 in Patients With Solid Tumors",
+                    "start_date": "2019-07-03",
+                    "url": "https://clinicaltrials.gov/study/NCT03970382",
+                    "weight": "2019-07-03"
+                  },
+                  {
+                    "id": "NCT03215810",
+                    "type": "Trial",
+                    "label": "NCT03215810",
+                    "edge_id": "NCT03215810|EVALUATES|CHEMBL1201438|NCT03215810",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "COMPLETED",
+                    "title": "Nivolumab and Tumor Infiltrating Lymphocytes (TIL) in Advanced Non-Small Cell Lung Cancer",
+                    "start_date": "2017-10-11",
+                    "url": "https://clinicaltrials.gov/study/NCT03215810",
+                    "weight": "2017-10-11"
+                  },
+                  {
+                    "id": "NCT00569296",
+                    "type": "Trial",
+                    "label": "NCT00569296",
+                    "edge_id": "NCT00569296|EVALUATES|CHEMBL1201438|NCT00569296",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Laboratory-Treated Autologous Lymphocytes, Aldesleukin, and GM-CSF in Treating Patients With Recurrent, Refractory, or Metastatic Non-Small Cell Lung Cancer",
+                    "start_date": "2007-11",
+                    "url": "https://clinicaltrials.gov/study/NCT00569296",
+                    "weight": "2007-11"
+                  },
+                  {
+                    "id": "NCT01212887",
+                    "type": "Trial",
+                    "label": "NCT01212887",
+                    "edge_id": "NCT01212887|EVALUATES|CHEMBL1201438|NCT01212887",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Treated Blood Cells, Cyclophosphamide, Fludarabine Phosphate, and Aldesleukin in Treating Patients With Cancer",
+                    "start_date": "2007-08",
+                    "url": "https://clinicaltrials.gov/study/NCT01212887",
+                    "weight": "2007-08"
+                  }
+                ]
+              },
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "in",
+                "type": "Company",
+                "role": null,
+                "total": 11,
+                "items": [
+                  {
+                    "id": "ORG:alaunos",
+                    "type": "Company",
+                    "label": "Alaunos",
+                    "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:aulos",
+                    "type": "Company",
+                    "label": "Aulos",
+                    "edge_id": "ORG:aulos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:cancerresearchuk",
+                    "type": "Company",
+                    "label": "Cancer Research Uk",
+                    "edge_id": "ORG:cancerresearchuk|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:fate",
+                    "type": "Company",
+                    "label": "Fate",
+                    "edge_id": "ORG:fate|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:genocea",
+                    "type": "Company",
+                    "label": "Genocea",
+                    "edge_id": "ORG:genocea|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:hleemoffittcancercenterandresearchinstitute",
+                    "type": "Company",
+                    "label": "H Lee Moffitt Cancer Center And Research Institute",
+                    "edge_id": "ORG:hleemoffittcancercenterandresearchinstitute|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:hadassahmedicalorganization",
+                    "type": "Company",
+                    "label": "Hadassah Medical Organization",
+                    "edge_id": "ORG:hadassahmedicalorganization|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:nationalcancerinstitute",
+                    "type": "Company",
+                    "label": "National Cancer Institute",
+                    "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "NIH"
+                  },
+                  {
+                    "id": "ORG:pact",
+                    "type": "Company",
+                    "label": "Pact",
+                    "edge_id": "ORG:pact|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:rogerwilliamsmedicalcenter",
+                    "type": "Company",
+                    "label": "Roger Williams Medical Center",
+                    "edge_id": "ORG:rogerwilliamsmedicalcenter|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:secondaffiliatedhospitalofsoochowuniversity",
+                    "type": "Company",
+                    "label": "Second Affiliated Hospital Of Soochow University",
+                    "edge_id": "ORG:secondaffiliatedhospitalofsoochowuniversity|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  }
+                ]
+              },
+              {
+                "rel": "ACTS_ON",
+                "dir": "out",
+                "type": "Target",
+                "role": null,
+                "total": 3,
+                "items": [
+                  {
+                    "id": "ENSG00000134460",
+                    "type": "Target",
+                    "label": "IL2RA",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000134460|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  },
+                  {
+                    "id": "ENSG00000100385",
+                    "type": "Target",
+                    "label": "IL2RB",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000100385|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  },
+                  {
+                    "id": "ENSG00000147168",
+                    "type": "Target",
+                    "label": "IL2RG",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000147168|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "ORG:alaunos",
+          "status": 200,
+          "matched_edge_items": [
+            {
+              "group": {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1
+              },
+              "item": {
+                "id": "CHEMBL1201438",
+                "type": "Drug",
+                "label": "ALDESLEUKIN",
+                "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                "trials": 11,
+                "max_phase": "APPROVAL",
+                "weight": 1,
+                "sponsor_class": "INDUSTRY"
+              }
+            }
+          ],
+          "body": {
+            "center": {
+              "id": "ORG:alaunos",
+              "type": "Company",
+              "label": "Alaunos",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "role": "lead_sponsor",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "NCT05194735",
+                    "type": "Trial",
+                    "label": "NCT05194735",
+                    "edge_id": "ORG:alaunos|SPONSORS|NCT05194735|NCT05194735",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Phase I/II Study of Autologous T Cells to Express T-Cell Receptors (TCRs) in Subjects With Solid Tumors",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05194735",
+                    "weight": "2022-04-04",
+                    "role": "lead_sponsor"
+                  }
+                ]
+              },
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "CHEMBL1201438",
+                    "type": "Drug",
+                    "label": "ALDESLEUKIN",
+                    "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "trials": 11,
+                    "max_phase": "APPROVAL",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_props": "null",
+      "requests": [
+        {
+          "input": "CHEMBL1201438",
+          "status": 200,
+          "matched_edge_items": [
+            {
+              "group": {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "in",
+                "type": "Company",
+                "role": null,
+                "total": 11
+              },
+              "item": {
+                "id": "ORG:alaunos",
+                "type": "Company",
+                "label": "Alaunos",
+                "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                "weight": 0,
+                "sponsor_class": null
+              }
+            }
+          ],
+          "body": {
+            "center": {
+              "id": "CHEMBL1201438",
+              "type": "Drug",
+              "label": "ALDESLEUKIN",
+              "matched_text": null,
+              "trials": 11,
+              "props": {
+                "max_phase_overall": "APPROVAL",
+                "drug_type": "Protein"
+              }
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "EVALUATES",
+                "dir": "in",
+                "type": "Trial",
+                "role": null,
+                "total": 11,
+                "items": [
+                  {
+                    "id": "NCT04102436",
+                    "type": "Trial",
+                    "label": "NCT04102436",
+                    "edge_id": "NCT04102436|EVALUATES|CHEMBL1201438|NCT04102436",
+                    "phases": [
+                      "PHASE2"
+                    ],
+                    "status": "WITHDRAWN",
+                    "title": "Non-Viral TCR Gene Therapy",
+                    "start_date": "2024-03-08",
+                    "url": "https://clinicaltrials.gov/study/NCT04102436",
+                    "weight": "2024-03-08"
+                  },
+                  {
+                    "id": "NCT05603013",
+                    "type": "Trial",
+                    "label": "NCT05603013",
+                    "edge_id": "NCT05603013|EVALUATES|CHEMBL1201438|NCT05603013",
+                    "phases": [
+                      "PHASE2"
+                    ],
+                    "status": "UNKNOWN",
+                    "title": "Vinorelbine Metronomic Chemotherapy Combined With Hypofractionated Radiotherapy, PD-1/PD-L1 Sequential GM-CSF and IL-2 for Treatment of Advanced Refractory Non-small Cell Lung Cancer and Breast Cancer(PRaG 6.0)",
+                    "start_date": "2022-10-30",
+                    "url": "https://clinicaltrials.gov/study/NCT05603013",
+                    "weight": "2022-10-30"
+                  },
+                  {
+                    "id": "NCT05395052",
+                    "type": "Trial",
+                    "label": "NCT05395052",
+                    "edge_id": "NCT05395052|EVALUATES|CHEMBL1201438|NCT05395052",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "FT536 Monotherapy and in Combination With Monoclonal Antibodies in Advanced Solid Tumors",
+                    "start_date": "2022-05-31",
+                    "url": "https://clinicaltrials.gov/study/NCT05395052",
+                    "weight": "2022-05-31"
+                  },
+                  {
+                    "id": "NCT05194735",
+                    "type": "Trial",
+                    "label": "NCT05194735",
+                    "edge_id": "NCT05194735|EVALUATES|CHEMBL1201438|NCT05194735",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Phase I/II Study of Autologous T Cells to Express T-Cell Receptors (TCRs) in Subjects With Solid Tumors",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05194735",
+                    "weight": "2022-04-04"
+                  },
+                  {
+                    "id": "NCT05267626",
+                    "type": "Trial",
+                    "label": "NCT05267626",
+                    "edge_id": "NCT05267626|EVALUATES|CHEMBL1201438|NCT05267626",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "RECRUITING",
+                    "title": "Study of AU-007, A Monoclonal Antibody That Binds to IL-2 and Inhibits IL-2Rα Binding, in Patients With Unresectable Locally Advanced or Metastatic Cancer",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05267626",
+                    "weight": "2022-04-04"
+                  },
+                  {
+                    "id": "NCT05296564",
+                    "type": "Trial",
+                    "label": "NCT05296564",
+                    "edge_id": "NCT05296564|EVALUATES|CHEMBL1201438|NCT05296564",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "RECRUITING",
+                    "title": "Anti-NY-ESO-1 TCR-Gene Engineered Lymphocytes Given by Infusion to Patients With NY-ESO-1 -Expressing Metastatic Cancers",
+                    "start_date": "2022-04-01",
+                    "url": "https://clinicaltrials.gov/study/NCT05296564",
+                    "weight": "2022-04-01"
+                  },
+                  {
+                    "id": "NCT04596033",
+                    "type": "Trial",
+                    "label": "NCT04596033",
+                    "edge_id": "NCT04596033|EVALUATES|CHEMBL1201438|NCT04596033",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "TiTAN-1: Safety, Proliferation and Persistence of GEN-011 Autologous Cell Therapy",
+                    "start_date": "2020-11-11",
+                    "url": "https://clinicaltrials.gov/study/NCT04596033",
+                    "weight": "2020-11-11"
+                  },
+                  {
+                    "id": "NCT03970382",
+                    "type": "Trial",
+                    "label": "NCT03970382",
+                    "edge_id": "NCT03970382|EVALUATES|CHEMBL1201438|NCT03970382",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "SUSPENDED",
+                    "title": "A Study of Gene Edited Autologous Neoantigen Targeted TCR T Cells With or Without Anti-PD-1 in Patients With Solid Tumors",
+                    "start_date": "2019-07-03",
+                    "url": "https://clinicaltrials.gov/study/NCT03970382",
+                    "weight": "2019-07-03"
+                  },
+                  {
+                    "id": "NCT03215810",
+                    "type": "Trial",
+                    "label": "NCT03215810",
+                    "edge_id": "NCT03215810|EVALUATES|CHEMBL1201438|NCT03215810",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "COMPLETED",
+                    "title": "Nivolumab and Tumor Infiltrating Lymphocytes (TIL) in Advanced Non-Small Cell Lung Cancer",
+                    "start_date": "2017-10-11",
+                    "url": "https://clinicaltrials.gov/study/NCT03215810",
+                    "weight": "2017-10-11"
+                  },
+                  {
+                    "id": "NCT00569296",
+                    "type": "Trial",
+                    "label": "NCT00569296",
+                    "edge_id": "NCT00569296|EVALUATES|CHEMBL1201438|NCT00569296",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Laboratory-Treated Autologous Lymphocytes, Aldesleukin, and GM-CSF in Treating Patients With Recurrent, Refractory, or Metastatic Non-Small Cell Lung Cancer",
+                    "start_date": "2007-11",
+                    "url": "https://clinicaltrials.gov/study/NCT00569296",
+                    "weight": "2007-11"
+                  },
+                  {
+                    "id": "NCT01212887",
+                    "type": "Trial",
+                    "label": "NCT01212887",
+                    "edge_id": "NCT01212887|EVALUATES|CHEMBL1201438|NCT01212887",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Treated Blood Cells, Cyclophosphamide, Fludarabine Phosphate, and Aldesleukin in Treating Patients With Cancer",
+                    "start_date": "2007-08",
+                    "url": "https://clinicaltrials.gov/study/NCT01212887",
+                    "weight": "2007-08"
+                  }
+                ]
+              },
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "in",
+                "type": "Company",
+                "role": null,
+                "total": 11,
+                "items": [
+                  {
+                    "id": "ORG:aulos",
+                    "type": "Company",
+                    "label": "Aulos",
+                    "edge_id": "ORG:aulos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:cancerresearchuk",
+                    "type": "Company",
+                    "label": "Cancer Research Uk",
+                    "edge_id": "ORG:cancerresearchuk|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:fate",
+                    "type": "Company",
+                    "label": "Fate",
+                    "edge_id": "ORG:fate|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:genocea",
+                    "type": "Company",
+                    "label": "Genocea",
+                    "edge_id": "ORG:genocea|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:hleemoffittcancercenterandresearchinstitute",
+                    "type": "Company",
+                    "label": "H Lee Moffitt Cancer Center And Research Institute",
+                    "edge_id": "ORG:hleemoffittcancercenterandresearchinstitute|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:hadassahmedicalorganization",
+                    "type": "Company",
+                    "label": "Hadassah Medical Organization",
+                    "edge_id": "ORG:hadassahmedicalorganization|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:nationalcancerinstitute",
+                    "type": "Company",
+                    "label": "National Cancer Institute",
+                    "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "NIH"
+                  },
+                  {
+                    "id": "ORG:pact",
+                    "type": "Company",
+                    "label": "Pact",
+                    "edge_id": "ORG:pact|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:rogerwilliamsmedicalcenter",
+                    "type": "Company",
+                    "label": "Roger Williams Medical Center",
+                    "edge_id": "ORG:rogerwilliamsmedicalcenter|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:secondaffiliatedhospitalofsoochowuniversity",
+                    "type": "Company",
+                    "label": "Second Affiliated Hospital Of Soochow University",
+                    "edge_id": "ORG:secondaffiliatedhospitalofsoochowuniversity|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:alaunos",
+                    "type": "Company",
+                    "label": "Alaunos",
+                    "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 0,
+                    "sponsor_class": null
+                  }
+                ]
+              },
+              {
+                "rel": "ACTS_ON",
+                "dir": "out",
+                "type": "Target",
+                "role": null,
+                "total": 3,
+                "items": [
+                  {
+                    "id": "ENSG00000134460",
+                    "type": "Target",
+                    "label": "IL2RA",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000134460|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  },
+                  {
+                    "id": "ENSG00000100385",
+                    "type": "Target",
+                    "label": "IL2RB",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000100385|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  },
+                  {
+                    "id": "ENSG00000147168",
+                    "type": "Target",
+                    "label": "IL2RG",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000147168|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "ORG:alaunos",
+          "status": 200,
+          "matched_edge_items": [
+            {
+              "group": {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1
+              },
+              "item": {
+                "id": "CHEMBL1201438",
+                "type": "Drug",
+                "label": "ALDESLEUKIN",
+                "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                "trials": 11,
+                "max_phase": "APPROVAL",
+                "weight": 0,
+                "sponsor_class": null
+              }
+            }
+          ],
+          "body": {
+            "center": {
+              "id": "ORG:alaunos",
+              "type": "Company",
+              "label": "Alaunos",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "role": "lead_sponsor",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "NCT05194735",
+                    "type": "Trial",
+                    "label": "NCT05194735",
+                    "edge_id": "ORG:alaunos|SPONSORS|NCT05194735|NCT05194735",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Phase I/II Study of Autologous T Cells to Express T-Cell Receptors (TCRs) in Subjects With Solid Tumors",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05194735",
+                    "weight": "2022-04-04",
+                    "role": "lead_sponsor"
+                  }
+                ]
+              },
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "CHEMBL1201438",
+                    "type": "Drug",
+                    "label": "ALDESLEUKIN",
+                    "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "trials": 11,
+                    "max_phase": "APPROVAL",
+                    "weight": 0,
+                    "sponsor_class": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_props": "[]",
+      "requests": [
+        {
+          "input": "CHEMBL1201438",
+          "status": 200,
+          "matched_edge_items": [
+            {
+              "group": {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "in",
+                "type": "Company",
+                "role": null,
+                "total": 11
+              },
+              "item": {
+                "id": "ORG:alaunos",
+                "type": "Company",
+                "label": "Alaunos",
+                "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                "weight": 0,
+                "sponsor_class": null
+              }
+            }
+          ],
+          "body": {
+            "center": {
+              "id": "CHEMBL1201438",
+              "type": "Drug",
+              "label": "ALDESLEUKIN",
+              "matched_text": null,
+              "trials": 11,
+              "props": {
+                "max_phase_overall": "APPROVAL",
+                "drug_type": "Protein"
+              }
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "EVALUATES",
+                "dir": "in",
+                "type": "Trial",
+                "role": null,
+                "total": 11,
+                "items": [
+                  {
+                    "id": "NCT04102436",
+                    "type": "Trial",
+                    "label": "NCT04102436",
+                    "edge_id": "NCT04102436|EVALUATES|CHEMBL1201438|NCT04102436",
+                    "phases": [
+                      "PHASE2"
+                    ],
+                    "status": "WITHDRAWN",
+                    "title": "Non-Viral TCR Gene Therapy",
+                    "start_date": "2024-03-08",
+                    "url": "https://clinicaltrials.gov/study/NCT04102436",
+                    "weight": "2024-03-08"
+                  },
+                  {
+                    "id": "NCT05603013",
+                    "type": "Trial",
+                    "label": "NCT05603013",
+                    "edge_id": "NCT05603013|EVALUATES|CHEMBL1201438|NCT05603013",
+                    "phases": [
+                      "PHASE2"
+                    ],
+                    "status": "UNKNOWN",
+                    "title": "Vinorelbine Metronomic Chemotherapy Combined With Hypofractionated Radiotherapy, PD-1/PD-L1 Sequential GM-CSF and IL-2 for Treatment of Advanced Refractory Non-small Cell Lung Cancer and Breast Cancer(PRaG 6.0)",
+                    "start_date": "2022-10-30",
+                    "url": "https://clinicaltrials.gov/study/NCT05603013",
+                    "weight": "2022-10-30"
+                  },
+                  {
+                    "id": "NCT05395052",
+                    "type": "Trial",
+                    "label": "NCT05395052",
+                    "edge_id": "NCT05395052|EVALUATES|CHEMBL1201438|NCT05395052",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "FT536 Monotherapy and in Combination With Monoclonal Antibodies in Advanced Solid Tumors",
+                    "start_date": "2022-05-31",
+                    "url": "https://clinicaltrials.gov/study/NCT05395052",
+                    "weight": "2022-05-31"
+                  },
+                  {
+                    "id": "NCT05194735",
+                    "type": "Trial",
+                    "label": "NCT05194735",
+                    "edge_id": "NCT05194735|EVALUATES|CHEMBL1201438|NCT05194735",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Phase I/II Study of Autologous T Cells to Express T-Cell Receptors (TCRs) in Subjects With Solid Tumors",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05194735",
+                    "weight": "2022-04-04"
+                  },
+                  {
+                    "id": "NCT05267626",
+                    "type": "Trial",
+                    "label": "NCT05267626",
+                    "edge_id": "NCT05267626|EVALUATES|CHEMBL1201438|NCT05267626",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "RECRUITING",
+                    "title": "Study of AU-007, A Monoclonal Antibody That Binds to IL-2 and Inhibits IL-2Rα Binding, in Patients With Unresectable Locally Advanced or Metastatic Cancer",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05267626",
+                    "weight": "2022-04-04"
+                  },
+                  {
+                    "id": "NCT05296564",
+                    "type": "Trial",
+                    "label": "NCT05296564",
+                    "edge_id": "NCT05296564|EVALUATES|CHEMBL1201438|NCT05296564",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "RECRUITING",
+                    "title": "Anti-NY-ESO-1 TCR-Gene Engineered Lymphocytes Given by Infusion to Patients With NY-ESO-1 -Expressing Metastatic Cancers",
+                    "start_date": "2022-04-01",
+                    "url": "https://clinicaltrials.gov/study/NCT05296564",
+                    "weight": "2022-04-01"
+                  },
+                  {
+                    "id": "NCT04596033",
+                    "type": "Trial",
+                    "label": "NCT04596033",
+                    "edge_id": "NCT04596033|EVALUATES|CHEMBL1201438|NCT04596033",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "TiTAN-1: Safety, Proliferation and Persistence of GEN-011 Autologous Cell Therapy",
+                    "start_date": "2020-11-11",
+                    "url": "https://clinicaltrials.gov/study/NCT04596033",
+                    "weight": "2020-11-11"
+                  },
+                  {
+                    "id": "NCT03970382",
+                    "type": "Trial",
+                    "label": "NCT03970382",
+                    "edge_id": "NCT03970382|EVALUATES|CHEMBL1201438|NCT03970382",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "SUSPENDED",
+                    "title": "A Study of Gene Edited Autologous Neoantigen Targeted TCR T Cells With or Without Anti-PD-1 in Patients With Solid Tumors",
+                    "start_date": "2019-07-03",
+                    "url": "https://clinicaltrials.gov/study/NCT03970382",
+                    "weight": "2019-07-03"
+                  },
+                  {
+                    "id": "NCT03215810",
+                    "type": "Trial",
+                    "label": "NCT03215810",
+                    "edge_id": "NCT03215810|EVALUATES|CHEMBL1201438|NCT03215810",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "COMPLETED",
+                    "title": "Nivolumab and Tumor Infiltrating Lymphocytes (TIL) in Advanced Non-Small Cell Lung Cancer",
+                    "start_date": "2017-10-11",
+                    "url": "https://clinicaltrials.gov/study/NCT03215810",
+                    "weight": "2017-10-11"
+                  },
+                  {
+                    "id": "NCT00569296",
+                    "type": "Trial",
+                    "label": "NCT00569296",
+                    "edge_id": "NCT00569296|EVALUATES|CHEMBL1201438|NCT00569296",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Laboratory-Treated Autologous Lymphocytes, Aldesleukin, and GM-CSF in Treating Patients With Recurrent, Refractory, or Metastatic Non-Small Cell Lung Cancer",
+                    "start_date": "2007-11",
+                    "url": "https://clinicaltrials.gov/study/NCT00569296",
+                    "weight": "2007-11"
+                  },
+                  {
+                    "id": "NCT01212887",
+                    "type": "Trial",
+                    "label": "NCT01212887",
+                    "edge_id": "NCT01212887|EVALUATES|CHEMBL1201438|NCT01212887",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Treated Blood Cells, Cyclophosphamide, Fludarabine Phosphate, and Aldesleukin in Treating Patients With Cancer",
+                    "start_date": "2007-08",
+                    "url": "https://clinicaltrials.gov/study/NCT01212887",
+                    "weight": "2007-08"
+                  }
+                ]
+              },
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "in",
+                "type": "Company",
+                "role": null,
+                "total": 11,
+                "items": [
+                  {
+                    "id": "ORG:aulos",
+                    "type": "Company",
+                    "label": "Aulos",
+                    "edge_id": "ORG:aulos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:cancerresearchuk",
+                    "type": "Company",
+                    "label": "Cancer Research Uk",
+                    "edge_id": "ORG:cancerresearchuk|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:fate",
+                    "type": "Company",
+                    "label": "Fate",
+                    "edge_id": "ORG:fate|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:genocea",
+                    "type": "Company",
+                    "label": "Genocea",
+                    "edge_id": "ORG:genocea|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:hleemoffittcancercenterandresearchinstitute",
+                    "type": "Company",
+                    "label": "H Lee Moffitt Cancer Center And Research Institute",
+                    "edge_id": "ORG:hleemoffittcancercenterandresearchinstitute|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:hadassahmedicalorganization",
+                    "type": "Company",
+                    "label": "Hadassah Medical Organization",
+                    "edge_id": "ORG:hadassahmedicalorganization|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:nationalcancerinstitute",
+                    "type": "Company",
+                    "label": "National Cancer Institute",
+                    "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "NIH"
+                  },
+                  {
+                    "id": "ORG:pact",
+                    "type": "Company",
+                    "label": "Pact",
+                    "edge_id": "ORG:pact|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:rogerwilliamsmedicalcenter",
+                    "type": "Company",
+                    "label": "Roger Williams Medical Center",
+                    "edge_id": "ORG:rogerwilliamsmedicalcenter|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:secondaffiliatedhospitalofsoochowuniversity",
+                    "type": "Company",
+                    "label": "Second Affiliated Hospital Of Soochow University",
+                    "edge_id": "ORG:secondaffiliatedhospitalofsoochowuniversity|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:alaunos",
+                    "type": "Company",
+                    "label": "Alaunos",
+                    "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 0,
+                    "sponsor_class": null
+                  }
+                ]
+              },
+              {
+                "rel": "ACTS_ON",
+                "dir": "out",
+                "type": "Target",
+                "role": null,
+                "total": 3,
+                "items": [
+                  {
+                    "id": "ENSG00000134460",
+                    "type": "Target",
+                    "label": "IL2RA",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000134460|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  },
+                  {
+                    "id": "ENSG00000100385",
+                    "type": "Target",
+                    "label": "IL2RB",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000100385|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  },
+                  {
+                    "id": "ENSG00000147168",
+                    "type": "Target",
+                    "label": "IL2RG",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000147168|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "ORG:alaunos",
+          "status": 200,
+          "matched_edge_items": [
+            {
+              "group": {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1
+              },
+              "item": {
+                "id": "CHEMBL1201438",
+                "type": "Drug",
+                "label": "ALDESLEUKIN",
+                "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                "trials": 11,
+                "max_phase": "APPROVAL",
+                "weight": 0,
+                "sponsor_class": null
+              }
+            }
+          ],
+          "body": {
+            "center": {
+              "id": "ORG:alaunos",
+              "type": "Company",
+              "label": "Alaunos",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "role": "lead_sponsor",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "NCT05194735",
+                    "type": "Trial",
+                    "label": "NCT05194735",
+                    "edge_id": "ORG:alaunos|SPONSORS|NCT05194735|NCT05194735",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Phase I/II Study of Autologous T Cells to Express T-Cell Receptors (TCRs) in Subjects With Solid Tumors",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05194735",
+                    "weight": "2022-04-04",
+                    "role": "lead_sponsor"
+                  }
+                ]
+              },
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "CHEMBL1201438",
+                    "type": "Drug",
+                    "label": "ALDESLEUKIN",
+                    "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "trials": 11,
+                    "max_phase": "APPROVAL",
+                    "weight": 0,
+                    "sponsor_class": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_props": "{broken",
+      "requests": [
+        {
+          "input": "CHEMBL1201438",
+          "status": 200,
+          "matched_edge_items": [
+            {
+              "group": {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "in",
+                "type": "Company",
+                "role": null,
+                "total": 11
+              },
+              "item": {
+                "id": "ORG:alaunos",
+                "type": "Company",
+                "label": "Alaunos",
+                "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                "weight": 0,
+                "sponsor_class": null
+              }
+            }
+          ],
+          "body": {
+            "center": {
+              "id": "CHEMBL1201438",
+              "type": "Drug",
+              "label": "ALDESLEUKIN",
+              "matched_text": null,
+              "trials": 11,
+              "props": {
+                "max_phase_overall": "APPROVAL",
+                "drug_type": "Protein"
+              }
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "EVALUATES",
+                "dir": "in",
+                "type": "Trial",
+                "role": null,
+                "total": 11,
+                "items": [
+                  {
+                    "id": "NCT04102436",
+                    "type": "Trial",
+                    "label": "NCT04102436",
+                    "edge_id": "NCT04102436|EVALUATES|CHEMBL1201438|NCT04102436",
+                    "phases": [
+                      "PHASE2"
+                    ],
+                    "status": "WITHDRAWN",
+                    "title": "Non-Viral TCR Gene Therapy",
+                    "start_date": "2024-03-08",
+                    "url": "https://clinicaltrials.gov/study/NCT04102436",
+                    "weight": "2024-03-08"
+                  },
+                  {
+                    "id": "NCT05603013",
+                    "type": "Trial",
+                    "label": "NCT05603013",
+                    "edge_id": "NCT05603013|EVALUATES|CHEMBL1201438|NCT05603013",
+                    "phases": [
+                      "PHASE2"
+                    ],
+                    "status": "UNKNOWN",
+                    "title": "Vinorelbine Metronomic Chemotherapy Combined With Hypofractionated Radiotherapy, PD-1/PD-L1 Sequential GM-CSF and IL-2 for Treatment of Advanced Refractory Non-small Cell Lung Cancer and Breast Cancer(PRaG 6.0)",
+                    "start_date": "2022-10-30",
+                    "url": "https://clinicaltrials.gov/study/NCT05603013",
+                    "weight": "2022-10-30"
+                  },
+                  {
+                    "id": "NCT05395052",
+                    "type": "Trial",
+                    "label": "NCT05395052",
+                    "edge_id": "NCT05395052|EVALUATES|CHEMBL1201438|NCT05395052",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "FT536 Monotherapy and in Combination With Monoclonal Antibodies in Advanced Solid Tumors",
+                    "start_date": "2022-05-31",
+                    "url": "https://clinicaltrials.gov/study/NCT05395052",
+                    "weight": "2022-05-31"
+                  },
+                  {
+                    "id": "NCT05194735",
+                    "type": "Trial",
+                    "label": "NCT05194735",
+                    "edge_id": "NCT05194735|EVALUATES|CHEMBL1201438|NCT05194735",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Phase I/II Study of Autologous T Cells to Express T-Cell Receptors (TCRs) in Subjects With Solid Tumors",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05194735",
+                    "weight": "2022-04-04"
+                  },
+                  {
+                    "id": "NCT05267626",
+                    "type": "Trial",
+                    "label": "NCT05267626",
+                    "edge_id": "NCT05267626|EVALUATES|CHEMBL1201438|NCT05267626",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "RECRUITING",
+                    "title": "Study of AU-007, A Monoclonal Antibody That Binds to IL-2 and Inhibits IL-2Rα Binding, in Patients With Unresectable Locally Advanced or Metastatic Cancer",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05267626",
+                    "weight": "2022-04-04"
+                  },
+                  {
+                    "id": "NCT05296564",
+                    "type": "Trial",
+                    "label": "NCT05296564",
+                    "edge_id": "NCT05296564|EVALUATES|CHEMBL1201438|NCT05296564",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "RECRUITING",
+                    "title": "Anti-NY-ESO-1 TCR-Gene Engineered Lymphocytes Given by Infusion to Patients With NY-ESO-1 -Expressing Metastatic Cancers",
+                    "start_date": "2022-04-01",
+                    "url": "https://clinicaltrials.gov/study/NCT05296564",
+                    "weight": "2022-04-01"
+                  },
+                  {
+                    "id": "NCT04596033",
+                    "type": "Trial",
+                    "label": "NCT04596033",
+                    "edge_id": "NCT04596033|EVALUATES|CHEMBL1201438|NCT04596033",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "TiTAN-1: Safety, Proliferation and Persistence of GEN-011 Autologous Cell Therapy",
+                    "start_date": "2020-11-11",
+                    "url": "https://clinicaltrials.gov/study/NCT04596033",
+                    "weight": "2020-11-11"
+                  },
+                  {
+                    "id": "NCT03970382",
+                    "type": "Trial",
+                    "label": "NCT03970382",
+                    "edge_id": "NCT03970382|EVALUATES|CHEMBL1201438|NCT03970382",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "SUSPENDED",
+                    "title": "A Study of Gene Edited Autologous Neoantigen Targeted TCR T Cells With or Without Anti-PD-1 in Patients With Solid Tumors",
+                    "start_date": "2019-07-03",
+                    "url": "https://clinicaltrials.gov/study/NCT03970382",
+                    "weight": "2019-07-03"
+                  },
+                  {
+                    "id": "NCT03215810",
+                    "type": "Trial",
+                    "label": "NCT03215810",
+                    "edge_id": "NCT03215810|EVALUATES|CHEMBL1201438|NCT03215810",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "COMPLETED",
+                    "title": "Nivolumab and Tumor Infiltrating Lymphocytes (TIL) in Advanced Non-Small Cell Lung Cancer",
+                    "start_date": "2017-10-11",
+                    "url": "https://clinicaltrials.gov/study/NCT03215810",
+                    "weight": "2017-10-11"
+                  },
+                  {
+                    "id": "NCT00569296",
+                    "type": "Trial",
+                    "label": "NCT00569296",
+                    "edge_id": "NCT00569296|EVALUATES|CHEMBL1201438|NCT00569296",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Laboratory-Treated Autologous Lymphocytes, Aldesleukin, and GM-CSF in Treating Patients With Recurrent, Refractory, or Metastatic Non-Small Cell Lung Cancer",
+                    "start_date": "2007-11",
+                    "url": "https://clinicaltrials.gov/study/NCT00569296",
+                    "weight": "2007-11"
+                  },
+                  {
+                    "id": "NCT01212887",
+                    "type": "Trial",
+                    "label": "NCT01212887",
+                    "edge_id": "NCT01212887|EVALUATES|CHEMBL1201438|NCT01212887",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Treated Blood Cells, Cyclophosphamide, Fludarabine Phosphate, and Aldesleukin in Treating Patients With Cancer",
+                    "start_date": "2007-08",
+                    "url": "https://clinicaltrials.gov/study/NCT01212887",
+                    "weight": "2007-08"
+                  }
+                ]
+              },
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "in",
+                "type": "Company",
+                "role": null,
+                "total": 11,
+                "items": [
+                  {
+                    "id": "ORG:aulos",
+                    "type": "Company",
+                    "label": "Aulos",
+                    "edge_id": "ORG:aulos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:cancerresearchuk",
+                    "type": "Company",
+                    "label": "Cancer Research Uk",
+                    "edge_id": "ORG:cancerresearchuk|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:fate",
+                    "type": "Company",
+                    "label": "Fate",
+                    "edge_id": "ORG:fate|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:genocea",
+                    "type": "Company",
+                    "label": "Genocea",
+                    "edge_id": "ORG:genocea|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:hleemoffittcancercenterandresearchinstitute",
+                    "type": "Company",
+                    "label": "H Lee Moffitt Cancer Center And Research Institute",
+                    "edge_id": "ORG:hleemoffittcancercenterandresearchinstitute|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:hadassahmedicalorganization",
+                    "type": "Company",
+                    "label": "Hadassah Medical Organization",
+                    "edge_id": "ORG:hadassahmedicalorganization|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:nationalcancerinstitute",
+                    "type": "Company",
+                    "label": "National Cancer Institute",
+                    "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "NIH"
+                  },
+                  {
+                    "id": "ORG:pact",
+                    "type": "Company",
+                    "label": "Pact",
+                    "edge_id": "ORG:pact|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:rogerwilliamsmedicalcenter",
+                    "type": "Company",
+                    "label": "Roger Williams Medical Center",
+                    "edge_id": "ORG:rogerwilliamsmedicalcenter|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:secondaffiliatedhospitalofsoochowuniversity",
+                    "type": "Company",
+                    "label": "Second Affiliated Hospital Of Soochow University",
+                    "edge_id": "ORG:secondaffiliatedhospitalofsoochowuniversity|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:alaunos",
+                    "type": "Company",
+                    "label": "Alaunos",
+                    "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 0,
+                    "sponsor_class": null
+                  }
+                ]
+              },
+              {
+                "rel": "ACTS_ON",
+                "dir": "out",
+                "type": "Target",
+                "role": null,
+                "total": 3,
+                "items": [
+                  {
+                    "id": "ENSG00000134460",
+                    "type": "Target",
+                    "label": "IL2RA",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000134460|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  },
+                  {
+                    "id": "ENSG00000100385",
+                    "type": "Target",
+                    "label": "IL2RB",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000100385|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  },
+                  {
+                    "id": "ENSG00000147168",
+                    "type": "Target",
+                    "label": "IL2RG",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000147168|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "ORG:alaunos",
+          "status": 200,
+          "matched_edge_items": [
+            {
+              "group": {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1
+              },
+              "item": {
+                "id": "CHEMBL1201438",
+                "type": "Drug",
+                "label": "ALDESLEUKIN",
+                "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                "trials": 11,
+                "max_phase": "APPROVAL",
+                "weight": 0,
+                "sponsor_class": null
+              }
+            }
+          ],
+          "body": {
+            "center": {
+              "id": "ORG:alaunos",
+              "type": "Company",
+              "label": "Alaunos",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "role": "lead_sponsor",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "NCT05194735",
+                    "type": "Trial",
+                    "label": "NCT05194735",
+                    "edge_id": "ORG:alaunos|SPONSORS|NCT05194735|NCT05194735",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Phase I/II Study of Autologous T Cells to Express T-Cell Receptors (TCRs) in Subjects With Solid Tumors",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05194735",
+                    "weight": "2022-04-04",
+                    "role": "lead_sponsor"
+                  }
+                ]
+              },
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "CHEMBL1201438",
+                    "type": "Drug",
+                    "label": "ALDESLEUKIN",
+                    "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "trials": 11,
+                    "max_phase": "APPROVAL",
+                    "weight": 0,
+                    "sponsor_class": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stored_props": "{}",
+      "requests": [
+        {
+          "input": "CHEMBL1201438",
+          "status": 200,
+          "matched_edge_items": [
+            {
+              "group": {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "in",
+                "type": "Company",
+                "role": null,
+                "total": 11
+              },
+              "item": {
+                "id": "ORG:alaunos",
+                "type": "Company",
+                "label": "Alaunos",
+                "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                "weight": 0,
+                "sponsor_class": null
+              }
+            }
+          ],
+          "body": {
+            "center": {
+              "id": "CHEMBL1201438",
+              "type": "Drug",
+              "label": "ALDESLEUKIN",
+              "matched_text": null,
+              "trials": 11,
+              "props": {
+                "max_phase_overall": "APPROVAL",
+                "drug_type": "Protein"
+              }
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "EVALUATES",
+                "dir": "in",
+                "type": "Trial",
+                "role": null,
+                "total": 11,
+                "items": [
+                  {
+                    "id": "NCT04102436",
+                    "type": "Trial",
+                    "label": "NCT04102436",
+                    "edge_id": "NCT04102436|EVALUATES|CHEMBL1201438|NCT04102436",
+                    "phases": [
+                      "PHASE2"
+                    ],
+                    "status": "WITHDRAWN",
+                    "title": "Non-Viral TCR Gene Therapy",
+                    "start_date": "2024-03-08",
+                    "url": "https://clinicaltrials.gov/study/NCT04102436",
+                    "weight": "2024-03-08"
+                  },
+                  {
+                    "id": "NCT05603013",
+                    "type": "Trial",
+                    "label": "NCT05603013",
+                    "edge_id": "NCT05603013|EVALUATES|CHEMBL1201438|NCT05603013",
+                    "phases": [
+                      "PHASE2"
+                    ],
+                    "status": "UNKNOWN",
+                    "title": "Vinorelbine Metronomic Chemotherapy Combined With Hypofractionated Radiotherapy, PD-1/PD-L1 Sequential GM-CSF and IL-2 for Treatment of Advanced Refractory Non-small Cell Lung Cancer and Breast Cancer(PRaG 6.0)",
+                    "start_date": "2022-10-30",
+                    "url": "https://clinicaltrials.gov/study/NCT05603013",
+                    "weight": "2022-10-30"
+                  },
+                  {
+                    "id": "NCT05395052",
+                    "type": "Trial",
+                    "label": "NCT05395052",
+                    "edge_id": "NCT05395052|EVALUATES|CHEMBL1201438|NCT05395052",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "FT536 Monotherapy and in Combination With Monoclonal Antibodies in Advanced Solid Tumors",
+                    "start_date": "2022-05-31",
+                    "url": "https://clinicaltrials.gov/study/NCT05395052",
+                    "weight": "2022-05-31"
+                  },
+                  {
+                    "id": "NCT05194735",
+                    "type": "Trial",
+                    "label": "NCT05194735",
+                    "edge_id": "NCT05194735|EVALUATES|CHEMBL1201438|NCT05194735",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Phase I/II Study of Autologous T Cells to Express T-Cell Receptors (TCRs) in Subjects With Solid Tumors",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05194735",
+                    "weight": "2022-04-04"
+                  },
+                  {
+                    "id": "NCT05267626",
+                    "type": "Trial",
+                    "label": "NCT05267626",
+                    "edge_id": "NCT05267626|EVALUATES|CHEMBL1201438|NCT05267626",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "RECRUITING",
+                    "title": "Study of AU-007, A Monoclonal Antibody That Binds to IL-2 and Inhibits IL-2Rα Binding, in Patients With Unresectable Locally Advanced or Metastatic Cancer",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05267626",
+                    "weight": "2022-04-04"
+                  },
+                  {
+                    "id": "NCT05296564",
+                    "type": "Trial",
+                    "label": "NCT05296564",
+                    "edge_id": "NCT05296564|EVALUATES|CHEMBL1201438|NCT05296564",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "RECRUITING",
+                    "title": "Anti-NY-ESO-1 TCR-Gene Engineered Lymphocytes Given by Infusion to Patients With NY-ESO-1 -Expressing Metastatic Cancers",
+                    "start_date": "2022-04-01",
+                    "url": "https://clinicaltrials.gov/study/NCT05296564",
+                    "weight": "2022-04-01"
+                  },
+                  {
+                    "id": "NCT04596033",
+                    "type": "Trial",
+                    "label": "NCT04596033",
+                    "edge_id": "NCT04596033|EVALUATES|CHEMBL1201438|NCT04596033",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "TiTAN-1: Safety, Proliferation and Persistence of GEN-011 Autologous Cell Therapy",
+                    "start_date": "2020-11-11",
+                    "url": "https://clinicaltrials.gov/study/NCT04596033",
+                    "weight": "2020-11-11"
+                  },
+                  {
+                    "id": "NCT03970382",
+                    "type": "Trial",
+                    "label": "NCT03970382",
+                    "edge_id": "NCT03970382|EVALUATES|CHEMBL1201438|NCT03970382",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "SUSPENDED",
+                    "title": "A Study of Gene Edited Autologous Neoantigen Targeted TCR T Cells With or Without Anti-PD-1 in Patients With Solid Tumors",
+                    "start_date": "2019-07-03",
+                    "url": "https://clinicaltrials.gov/study/NCT03970382",
+                    "weight": "2019-07-03"
+                  },
+                  {
+                    "id": "NCT03215810",
+                    "type": "Trial",
+                    "label": "NCT03215810",
+                    "edge_id": "NCT03215810|EVALUATES|CHEMBL1201438|NCT03215810",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "COMPLETED",
+                    "title": "Nivolumab and Tumor Infiltrating Lymphocytes (TIL) in Advanced Non-Small Cell Lung Cancer",
+                    "start_date": "2017-10-11",
+                    "url": "https://clinicaltrials.gov/study/NCT03215810",
+                    "weight": "2017-10-11"
+                  },
+                  {
+                    "id": "NCT00569296",
+                    "type": "Trial",
+                    "label": "NCT00569296",
+                    "edge_id": "NCT00569296|EVALUATES|CHEMBL1201438|NCT00569296",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Laboratory-Treated Autologous Lymphocytes, Aldesleukin, and GM-CSF in Treating Patients With Recurrent, Refractory, or Metastatic Non-Small Cell Lung Cancer",
+                    "start_date": "2007-11",
+                    "url": "https://clinicaltrials.gov/study/NCT00569296",
+                    "weight": "2007-11"
+                  },
+                  {
+                    "id": "NCT01212887",
+                    "type": "Trial",
+                    "label": "NCT01212887",
+                    "edge_id": "NCT01212887|EVALUATES|CHEMBL1201438|NCT01212887",
+                    "phases": [
+                      "PHASE1"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Treated Blood Cells, Cyclophosphamide, Fludarabine Phosphate, and Aldesleukin in Treating Patients With Cancer",
+                    "start_date": "2007-08",
+                    "url": "https://clinicaltrials.gov/study/NCT01212887",
+                    "weight": "2007-08"
+                  }
+                ]
+              },
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "in",
+                "type": "Company",
+                "role": null,
+                "total": 11,
+                "items": [
+                  {
+                    "id": "ORG:aulos",
+                    "type": "Company",
+                    "label": "Aulos",
+                    "edge_id": "ORG:aulos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:cancerresearchuk",
+                    "type": "Company",
+                    "label": "Cancer Research Uk",
+                    "edge_id": "ORG:cancerresearchuk|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:fate",
+                    "type": "Company",
+                    "label": "Fate",
+                    "edge_id": "ORG:fate|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:genocea",
+                    "type": "Company",
+                    "label": "Genocea",
+                    "edge_id": "ORG:genocea|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:hleemoffittcancercenterandresearchinstitute",
+                    "type": "Company",
+                    "label": "H Lee Moffitt Cancer Center And Research Institute",
+                    "edge_id": "ORG:hleemoffittcancercenterandresearchinstitute|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:hadassahmedicalorganization",
+                    "type": "Company",
+                    "label": "Hadassah Medical Organization",
+                    "edge_id": "ORG:hadassahmedicalorganization|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:nationalcancerinstitute",
+                    "type": "Company",
+                    "label": "National Cancer Institute",
+                    "edge_id": "ORG:nationalcancerinstitute|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "NIH"
+                  },
+                  {
+                    "id": "ORG:pact",
+                    "type": "Company",
+                    "label": "Pact",
+                    "edge_id": "ORG:pact|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "INDUSTRY"
+                  },
+                  {
+                    "id": "ORG:rogerwilliamsmedicalcenter",
+                    "type": "Company",
+                    "label": "Roger Williams Medical Center",
+                    "edge_id": "ORG:rogerwilliamsmedicalcenter|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:secondaffiliatedhospitalofsoochowuniversity",
+                    "type": "Company",
+                    "label": "Second Affiliated Hospital Of Soochow University",
+                    "edge_id": "ORG:secondaffiliatedhospitalofsoochowuniversity|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 1,
+                    "sponsor_class": "OTHER"
+                  },
+                  {
+                    "id": "ORG:alaunos",
+                    "type": "Company",
+                    "label": "Alaunos",
+                    "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "weight": 0,
+                    "sponsor_class": null
+                  }
+                ]
+              },
+              {
+                "rel": "ACTS_ON",
+                "dir": "out",
+                "type": "Target",
+                "role": null,
+                "total": 3,
+                "items": [
+                  {
+                    "id": "ENSG00000134460",
+                    "type": "Target",
+                    "label": "IL2RA",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000134460|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  },
+                  {
+                    "id": "ENSG00000100385",
+                    "type": "Target",
+                    "label": "IL2RB",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000100385|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  },
+                  {
+                    "id": "ENSG00000147168",
+                    "type": "Target",
+                    "label": "IL2RG",
+                    "edge_id": "CHEMBL1201438|ACTS_ON|ENSG00000147168|CHEMBL1201438",
+                    "weight": 0,
+                    "action": "AGONIST"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "input": "ORG:alaunos",
+          "status": 200,
+          "matched_edge_items": [
+            {
+              "group": {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1
+              },
+              "item": {
+                "id": "CHEMBL1201438",
+                "type": "Drug",
+                "label": "ALDESLEUKIN",
+                "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                "trials": 11,
+                "max_phase": "APPROVAL",
+                "weight": 0,
+                "sponsor_class": null
+              }
+            }
+          ],
+          "body": {
+            "center": {
+              "id": "ORG:alaunos",
+              "type": "Company",
+              "label": "Alaunos",
+              "matched_text": null,
+              "trials": null,
+              "props": {}
+            },
+            "also": [],
+            "groups": [
+              {
+                "rel": "SPONSORS",
+                "dir": "out",
+                "type": "Trial",
+                "role": "lead_sponsor",
+                "total": 1,
+                "items": [
+                  {
+                    "id": "NCT05194735",
+                    "type": "Trial",
+                    "label": "NCT05194735",
+                    "edge_id": "ORG:alaunos|SPONSORS|NCT05194735|NCT05194735",
+                    "phases": [
+                      "PHASE1",
+                      "PHASE2"
+                    ],
+                    "status": "TERMINATED",
+                    "title": "Phase I/II Study of Autologous T Cells to Express T-Cell Receptors (TCRs) in Subjects With Solid Tumors",
+                    "start_date": "2022-04-04",
+                    "url": "https://clinicaltrials.gov/study/NCT05194735",
+                    "weight": "2022-04-04",
+                    "role": "lead_sponsor"
+                  }
+                ]
+              },
+              {
+                "rel": "SPONSORS_TRIAL_OF",
+                "dir": "out",
+                "type": "Drug",
+                "role": null,
+                "total": 1,
+                "items": [
+                  {
+                    "id": "CHEMBL1201438",
+                    "type": "Drug",
+                    "label": "ALDESLEUKIN",
+                    "edge_id": "ORG:alaunos|SPONSORS_TRIAL_OF|CHEMBL1201438|",
+                    "trials": 11,
+                    "max_phase": "APPROVAL",
+                    "weight": 0,
+                    "sponsor_class": null
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,8 @@
 
     python src/app.py            then open http://localhost:8765
 
-A relation map (a node and everything a live edge ties it to, click to move on),
+A relation map (a node and the nodes live edges tie it to, a capped list per relation,
+click to move on),
 then four boxes: type an intervention string the way a registry would write it and see
 how the resolver reads it, or ask a question and see the grounded answer with its
 evidence, give a structured answer (claims citing evidence edges) and see which
@@ -93,11 +94,16 @@ class Engine:
                 return {"not_found": text}
             nid, matched = hits[0]["id"], hits[0].get("matched_alias") or hits[0].get("matched_text")
             also = [{"id": e["id"], "type": e["type"], "label": e["label"]} for e in hits[1:]]
+            for oid in hits[0].get("also_matching_ids") or []:   # one alias, several ids
+                lab = conn.execute("SELECT type, label FROM node WHERE id=? AND retired_at IS NULL",
+                                   (oid,)).fetchone()
+                if lab and oid != nid:
+                    also.append({"id": oid, "type": lab["type"], "label": lab["label"]})
             # the same words may also name an organisation or a target the linker
             # passed over because a drug alias came first ("Roche" is a folic acid alias)
             key = T.canonical_key(text)
             for cid in self.kg.companies.get(key, []):
-                if cid != nid:
+                if cid != nid and all(x.get("id") != cid for x in also):
                     lab = conn.execute("SELECT label FROM node WHERE id=? AND retired_at IS NULL",
                                        (cid,)).fetchone()
                     if lab:
@@ -133,7 +139,10 @@ class Engine:
                 item["trials"] = trials.get(r["id"], 0)
                 item["max_phase"] = np_.get("max_phase_overall")
             if r["rel"] == "SPONSORS_TRIAL_OF":
-                item["weight"] = ep.get("evidence_trials") or 0
+                n = ep.get("evidence_trials")
+                # a count the edge does not record stays unknown; 0 is only for sorting
+                item["evidence_trials"] = n if _number(n) else None
+                item["weight"] = n if _number(n) else 0
                 item["sponsor_class"] = ep.get("sponsor_class")
             elif r["type"] == "Trial":
                 item.update({k: np_.get(k) for k in ("phases", "status", "title", "start_date", "url")})
@@ -142,7 +151,7 @@ class Engine:
                 item["weight"] = item["trials"]
             elif r["rel"] == "ASSOCIATED_WITH":
                 score = ep.get("association_score")
-                item["score"] = score if isinstance(score, (int, float)) else None
+                item["score"] = score if _number(score) else None
                 item["weight"] = item["score"] or 0
             else:
                 item["weight"] = 0
@@ -195,6 +204,10 @@ class Engine:
                 "evidence_count": len(evidence)}
 
 
+def _number(v) -> bool:
+    return isinstance(v, (int, float)) and not isinstance(v, bool) and v == v
+
+
 def _obj(raw) -> dict:
     """Stored props as a dict; anything else (null, a list, broken JSON) as empty."""
     try:
@@ -223,7 +236,9 @@ def make_handler(engine: Engine):
             try:
                 n = int(self.headers.get("Content-Length") or 0)
                 body = json.loads(self.rfile.read(min(n, 20000)) or b"{}")
-                text = str(body.get("text") or "").strip()[:500]
+                text = str(body.get("text") or "").strip()
+                if len(text) > 500:                      # refused, not silently cut
+                    raise ValueError("input is longer than 500 characters")
                 if not text:
                     raise ValueError("empty input")
                 if self.path not in ("/api/resolve", "/api/ask", "/api/check",

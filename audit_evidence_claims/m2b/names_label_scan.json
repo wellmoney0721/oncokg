@@ -1,0 +1,1064 @@
+{
+  "counts": {
+    "('Company', 'same_center')": 1331,
+    "('Company', 'different_center')": 55,
+    "('Company', 'not_found')": 177,
+    "('Disease', 'same_center')": 1,
+    "('Investigator', 'not_found')": 35,
+    "('Investigator', 'different_center')": 1,
+    "('Target', 'same_center')": 296,
+    "('Target', 'different_center')": 4,
+    "('Target', 'not_found')": 503
+  },
+  "examples": [
+    {
+      "expected": {
+        "id": "ORG:roche",
+        "type": "Company",
+        "label": "Roche"
+      },
+      "hits": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1622",
+          "label": "FOLIC ACID",
+          "matched_text": "Roche",
+          "matched_alias": "Roche"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:nationalinstitutesofhealthclinicalcenter",
+        "type": "Company",
+        "label": "National Institutes Of Health Clinical Center"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:nationalinstitutesofhealth",
+          "label": "National Institutes Of Health",
+          "matched_text": "National Institutes Of Health",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:institutducancerdemontpelliervaldaurelle",
+        "type": "Company",
+        "label": "Institut Du Cancer De Montpellier - Val D'aurelle"
+      },
+      "hits": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL109",
+          "label": "VALPROIC ACID",
+          "matched_text": "Val",
+          "matched_alias": "val"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:abbvie",
+        "type": "Company",
+        "label": "Abbvie"
+      },
+      "hits": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3137309",
+          "label": "VENETOCLAX",
+          "matched_text": "Abbvie",
+          "matched_alias": "ABBVIE"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:thefirsthospitalofjilinuniversity",
+        "type": "Company",
+        "label": "The First Hospital Of Jilin University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:jilinuniversity",
+          "label": "Jilin University",
+          "matched_text": "Jilin University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:celgene",
+        "type": "Company",
+        "label": "Celgene"
+      },
+      "hits": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL468",
+          "label": "THALIDOMIDE",
+          "matched_text": "Celgene",
+          "matched_alias": "Celgene"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:ohiostateuniversitycomprehensivecancercenter",
+        "type": "Company",
+        "label": "Ohio State University Comprehensive Cancer Center"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:ohiostateuniversity",
+          "label": "Ohio State University",
+          "matched_text": "Ohio State University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:thefirstaffiliatedhospitalofguangzhoumedicaluniversity",
+        "type": "Company",
+        "label": "The First Affiliated Hospital Of Guangzhou Medical University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:guangzhoumedicaluniversity",
+          "label": "Guangzhou Medical University",
+          "matched_text": "Guangzhou Medical University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:firstaffiliatedhospitalxianjiaotonguniversity",
+        "type": "Company",
+        "label": "First Affiliated Hospital Xi'an Jiaotong University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:xianjiaotonguniversity",
+          "label": "Xi'an Jiaotong University",
+          "matched_text": "Xi'an Jiaotong University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:amgen",
+        "type": "Company",
+        "label": "Amgen"
+      },
+      "hits": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1201567",
+          "label": "FILGRASTIM",
+          "matched_text": "Amgen",
+          "matched_alias": "amgen"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:thefirstaffiliatedhospitalofzhengzhouuniversity",
+        "type": "Company",
+        "label": "The First Affiliated Hospital Of Zhengzhou University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:zhengzhouuniversity",
+          "label": "Zhengzhou University",
+          "matched_text": "Zhengzhou University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:dapinghospitalandtheresearchinstituteofsurgeryofthethirdmilitarymedicaluniversity",
+        "type": "Company",
+        "label": "Daping Hospital And The Research Institute Of Surgery Of The Third Military Medical University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:thirdmilitarymedicaluniversity",
+          "label": "Third Military Medical University",
+          "matched_text": "Third Military Medical University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:cancerinstituteandhospitalchineseacademyofmedicalsciences",
+        "type": "Company",
+        "label": "Cancer Institute And Hospital Chinese Academy Of Medical Sciences"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:chineseacademyofmedicalsciences",
+          "label": "Chinese Academy Of Medical Sciences",
+          "matched_text": "Chinese Academy Of Medical Sciences",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:nationaltaiwanuniversityhospitalyunlinbranch",
+        "type": "Company",
+        "label": "National Taiwan University Hospital Yun-lin Branch"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:nationaltaiwanuniversityhospital",
+          "label": "National Taiwan University Hospital",
+          "matched_text": "National Taiwan University Hospital",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:seagenawhollyownedsubsidiaryofpfizer",
+        "type": "Company",
+        "label": "Seagen A Wholly Owned Subsidiary Of Pfizer"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:seagen",
+          "label": "Seagen",
+          "matched_text": "Seagen",
+          "also_matching_ids": []
+        },
+        {
+          "type": "Company",
+          "id": "ORG:pfizer",
+          "label": "Pfizer",
+          "matched_text": "Pfizer",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:emdseronoresearchdevelopmentinstitute",
+        "type": "Company",
+        "label": "Emd Serono Research & Development Institute"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:emdserono",
+          "label": "Emd Serono",
+          "matched_text": "Emd Serono",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:beijingchesthospitalcapitalmedicaluniversity",
+        "type": "Company",
+        "label": "Beijing Chest Hospital Capital Medical University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:beijingchesthospital",
+          "label": "Beijing Chest Hospital",
+          "matched_text": "Beijing Chest Hospital",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:secondaffiliatedhospitalzhejianguniversityschoolofmedicine",
+        "type": "Company",
+        "label": "Second Affiliated Hospital Zhejiang University School Of Medicine"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:zhejianguniversity",
+          "label": "Zhejiang University",
+          "matched_text": "Zhejiang University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:institutfurklinischekrebsforschungikfatkrankenhausnordwest",
+        "type": "Company",
+        "label": "Institut Für Klinische Krebsforschung Ikf At Krankenhaus Nordwest"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:krankenhausnordwest",
+          "label": "Krankenhaus Nordwest",
+          "matched_text": "Krankenhaus Nordwest",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:secondaffiliatedhospitalofnanchanguniversity",
+        "type": "Company",
+        "label": "Second Affiliated Hospital Of Nanchang University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:nanchanguniversity",
+          "label": "Nanchang University",
+          "matched_text": "Nanchang University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:hunancancerhospitaltheaffiliatedcancerhospitalofxiangyaschoolofmedicinecentralsouthuniversity",
+        "type": "Company",
+        "label": "Hunan Cancer Hospital - The Affiliated Cancer Hospital Of Xiangya School Of Medicine Central South University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:hunancancerhospital",
+          "label": "Hunan Cancer Hospital",
+          "matched_text": "Hunan Cancer Hospital -",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:rapttherapeuticsamemberofthegskgroupofcompanies",
+        "type": "Company",
+        "label": "Rapt Therapeutics A Member Of The Gsk Group Of Companies"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:glaxosmithkline",
+          "label": "Glaxosmithkline",
+          "matched_text": "Gsk",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:londonhealthsciencescentreresearchinstituteorlawsonresearchinstituteofstjosephs",
+        "type": "Company",
+        "label": "London Health Sciences Centre Research Institute Or Lawson Research Institute Of St Joseph's"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:londonhealthsciencescentre",
+          "label": "London Health Sciences Centre",
+          "matched_text": "London Health Sciences Centre",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:wyethisnowawhollyownedsubsidiaryofpfizer",
+        "type": "Company",
+        "label": "Wyeth Is Now A Wholly Owned Subsidiary Of Pfizer"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:pfizer",
+          "label": "Pfizer",
+          "matched_text": "Pfizer",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:universityofmichiganrogelcancercenter",
+        "type": "Company",
+        "label": "University Of Michigan Rogel Cancer Center"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:universityofmichigan",
+          "label": "University Of Michigan",
+          "matched_text": "University Of Michigan",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:chinajapanunionhospitalsunyatsenuniversitycancercenter",
+        "type": "Company",
+        "label": "China-japan Union Hospital Sun Yat-sen University Cancer Center"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:sunyatsenuniversity",
+          "label": "Sun Yat-sen University",
+          "matched_text": "Sun Yat-sen University",
+          "also_matching_ids": []
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL535",
+          "label": "SUNITINIB",
+          "matched_text": "Sun",
+          "matched_alias": "sun"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:taizhouhospitalofzhejiangprovinceaffiliatedtowenzhoumedicaluniversity",
+        "type": "Company",
+        "label": "Taizhou Hospital Of Zhejiang Province Affiliated To Wenzhou Medical University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:taizhouhospital",
+          "label": "Taizhou Hospital",
+          "matched_text": "Taizhou Hospital",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:thefourthaffiliatedhospitalofzhejianguniversityschoolofmedicine",
+        "type": "Company",
+        "label": "The Fourth Affiliated Hospital Of Zhejiang University School Of Medicine"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:zhejianguniversity",
+          "label": "Zhejiang University",
+          "matched_text": "Zhejiang University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:humangenomecenterinstituteofmedicalscienceuniversityoftokyo",
+        "type": "Company",
+        "label": "Human Genome Center Institute Of Medical Science University Of Tokyo"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:humangenome",
+          "label": "Human Genome",
+          "matched_text": "Human Genome",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:thesecondaffiliatedhospitalofharbinmedicaluniversity",
+        "type": "Company",
+        "label": "The Second Affiliated Hospital Of Harbin Medical University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:harbinmedicaluniversity",
+          "label": "Harbin Medical University",
+          "matched_text": "Harbin Medical University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:secondaffiliatedhospitalofxianjiaotonguniversity",
+        "type": "Company",
+        "label": "Second Affiliated Hospital Of Xi'an Jiaotong University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:xianjiaotonguniversity",
+          "label": "Xi'an Jiaotong University",
+          "matched_text": "Xi'an Jiaotong University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:affiliatedcancerhospitalinstituteofguangzhoumedicaluniversity",
+        "type": "Company",
+        "label": "Affiliated Cancer Hospital & Institute Of Guangzhou Medical University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:guangzhoumedicaluniversity",
+          "label": "Guangzhou Medical University",
+          "matched_text": "Guangzhou Medical University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:departmentofobstetricsandgynecologyaffiliateddongguanpeopleshospitalsouthernmedicaluniversity",
+        "type": "Company",
+        "label": "Department Of Obstetrics And Gynecology Affiliated Dongguan People's Hospital Southern Medical University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:dongguanpeopleshospital",
+          "label": "Dongguan People's Hospital",
+          "matched_text": "Dongguan People's Hospital",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:korearesearchinstituteofbiosciencebiotechnology",
+        "type": "Company",
+        "label": "Korea Research Institute Of Bioscience & Biotechnology"
+      },
+      "hits": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1622",
+          "label": "FOLIC ACID",
+          "matched_text": "Bioscience &",
+          "matched_alias": "Bio science"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:nationalhealthandmedicalresearchcouncilaustralia",
+        "type": "Company",
+        "label": "National Health And Medical Research Council Australia"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:medicalresearchcouncil",
+          "label": "Medical Research Council",
+          "matched_text": "Medical Research Council",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:firstaffiliatedhospitalofzhejianguniversity",
+        "type": "Company",
+        "label": "First Affiliated Hospital Of Zhejiang University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:zhejianguniversity",
+          "label": "Zhejiang University",
+          "matched_text": "Zhejiang University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:fifthaffiliatedhospitalsunyatsenuniversity",
+        "type": "Company",
+        "label": "Fifth Affiliated Hospital Sun Yat-sen University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:sunyatsenuniversity",
+          "label": "Sun Yat-sen University",
+          "matched_text": "Sun Yat-sen University",
+          "also_matching_ids": []
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL535",
+          "label": "SUNITINIB",
+          "matched_text": "Sun",
+          "matched_alias": "sun"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:johnsonjohnsonpharmaceuticalresearchdevelopmentllc",
+        "type": "Company",
+        "label": "Johnson & Johnson Pharmaceutical Research & Development L L C"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:johnsonjohnson",
+          "label": "Johnson & Johnson",
+          "matched_text": "Johnson & Johnson",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:secondaffiliatedhospitalofguangzhoumedicaluniversity",
+        "type": "Company",
+        "label": "Second Affiliated Hospital Of Guangzhou Medical University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:guangzhoumedicaluniversity",
+          "label": "Guangzhou Medical University",
+          "matched_text": "Guangzhou Medical University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:obi",
+        "type": "Company",
+        "label": "Obi"
+      },
+      "hits": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1743048",
+          "label": "OBINUTUZUMAB",
+          "matched_text": "Obi",
+          "matched_alias": "obi"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:sidneykimmelcomprehensivecancercenteratthomasjeffersonuniversity",
+        "type": "Company",
+        "label": "Sidney Kimmel Comprehensive Cancer Center At Thomas Jefferson University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:thomasjeffersonuniversity",
+          "label": "Thomas Jefferson University",
+          "matched_text": "Thomas Jefferson University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:lucillepmarkeycancercenteratuniversityofkentucky",
+        "type": "Company",
+        "label": "Lucille P Markey Cancer Center At University Of Kentucky"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:universityofkentucky",
+          "label": "University Of Kentucky",
+          "matched_text": "University Of Kentucky",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:firstaffiliatedhospitalsunyatsenuniversity",
+        "type": "Company",
+        "label": "First Affiliated Hospital Sun Yat-sen University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:sunyatsenuniversity",
+          "label": "Sun Yat-sen University",
+          "matched_text": "Sun Yat-sen University",
+          "also_matching_ids": []
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL535",
+          "label": "SUNITINIB",
+          "matched_text": "Sun",
+          "matched_alias": "sun"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:secondaffiliatedhospitalsunyatsenuniversity",
+        "type": "Company",
+        "label": "Second Affiliated Hospital Sun Yat-sen University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:sunyatsenuniversity",
+          "label": "Sun Yat-sen University",
+          "matched_text": "Sun Yat-sen University",
+          "also_matching_ids": []
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL535",
+          "label": "SUNITINIB",
+          "matched_text": "Sun",
+          "matched_alias": "sun"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:thefirstaffiliatedhospitalofnanchanguniversity",
+        "type": "Company",
+        "label": "The First Affiliated Hospital Of Nanchang University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:nanchanguniversity",
+          "label": "Nanchang University",
+          "matched_text": "Nanchang University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:pts",
+        "type": "Company",
+        "label": "Pts"
+      },
+      "hits": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL574",
+          "label": "P-TOLUENESULFONAMIDE",
+          "matched_text": "Pts",
+          "matched_alias": "pts"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:sixthaffiliatedhospitalsunyatsenuniversity",
+        "type": "Company",
+        "label": "Sixth Affiliated Hospital Sun Yat-sen University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:sunyatsenuniversity",
+          "label": "Sun Yat-sen University",
+          "matched_text": "Sun Yat-sen University",
+          "also_matching_ids": []
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL535",
+          "label": "SUNITINIB",
+          "matched_text": "Sun",
+          "matched_alias": "sun"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:firstaffiliatedhospitalofkunmingmedicaluniversity",
+        "type": "Company",
+        "label": "First Affiliated Hospital Of Kunming Medical University"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:kunmingmedicaluniversity",
+          "label": "Kunming Medical University",
+          "matched_text": "Kunming Medical University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:merckhealthcarekgaadarmstadtgermanyanaffiliateofmerckkgaadarmstadtgermany",
+        "type": "Company",
+        "label": "Merck Healthcare Kgaa Darmstadt Germany An Affiliate Of Merck Kgaa Darmstadt Germany"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:merckkgaadarmstadtgermany",
+          "label": "Merck Kgaa Darmstadt Germany",
+          "matched_text": "Merck Kgaa Darmstadt Germany",
+          "also_matching_ids": []
+        },
+        {
+          "type": "Company",
+          "id": "ORG:merckkgaa",
+          "label": "Merck KGaA",
+          "matched_text": "Merck Kgaa",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:chiataitianqingpharmaceuticalgroupnanjingshunxinpharmaceutical",
+        "type": "Company",
+        "label": "Chia Tai Tianqing Pharmaceutical Group Nanjing Shunxin Pharmaceutical"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:chiataitianqingpharmaceuticalgroup",
+          "label": "Chia Tai Tianqing Pharmaceutical Group",
+          "matched_text": "Chia Tai Tianqing Pharmaceutical Group",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:cliniquesuniversitairessaintlucuniversitecatholiquedelouvain",
+        "type": "Company",
+        "label": "Cliniques Universitaires Saint-luc- Université Catholique De Louvain"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:universitecatholiquedelouvain",
+          "label": "Université Catholique De Louvain",
+          "matched_text": "Université Catholique De Louvain",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:foundationforthenationalinstitutesofhealth",
+        "type": "Company",
+        "label": "Foundation For The National Institutes Of Health"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:nationalinstitutesofhealth",
+          "label": "National Institutes Of Health",
+          "matched_text": "National Institutes Of Health",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:shanghaitongjihospitaltongjiuniversityschoolofmedicine",
+        "type": "Company",
+        "label": "Shanghai Tongji Hospital Tongji University School Of Medicine"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:tongjihospital",
+          "label": "Tongji Hospital",
+          "matched_text": "Tongji Hospital",
+          "also_matching_ids": []
+        },
+        {
+          "type": "Company",
+          "id": "ORG:tongjiuniversity",
+          "label": "Tongji University",
+          "matched_text": "Tongji University",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:mercksharpdohmerahwaynj",
+        "type": "Company",
+        "label": "Merck Sharp & Dohme Rahway Nj"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:mercksharpdohme",
+          "label": "Merck Sharp & Dohme",
+          "matched_text": "Merck Sharp & Dohme",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:plexxikon",
+        "type": "Company",
+        "label": "Plexxikon"
+      },
+      "hits": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1229517",
+          "label": "VEMURAFENIB",
+          "matched_text": "Plexxikon",
+          "matched_alias": "plexxikon"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ORG:armandosantoromd",
+        "type": "Investigator",
+        "label": "Armando Santoro Md"
+      },
+      "hits": []
+    },
+    {
+      "expected": {
+        "id": "ORG:angelatabermd",
+        "type": "Investigator",
+        "label": "Angela Taber Md"
+      },
+      "hits": []
+    },
+    {
+      "expected": {
+        "id": "ORG:innachenmd",
+        "type": "Investigator",
+        "label": "Inna Chen Md"
+      },
+      "hits": []
+    },
+    {
+      "expected": {
+        "id": "ORG:juliakrotowmd",
+        "type": "Investigator",
+        "label": "Julia K Rotow Md"
+      },
+      "hits": []
+    },
+    {
+      "expected": {
+        "id": "ORG:lizhangmd",
+        "type": "Investigator",
+        "label": "Li Zhang Md"
+      },
+      "hits": [
+        {
+          "type": "Company",
+          "id": "ORG:lizhang",
+          "label": "Li Zhang",
+          "matched_text": "Li Zhang",
+          "also_matching_ids": []
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ENSG00000105976",
+        "type": "Target",
+        "label": "MET"
+      },
+      "hits": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1431",
+          "label": "METFORMIN",
+          "matched_text": "MET",
+          "matched_alias": "met"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ENSG00000163599",
+        "type": "Target",
+        "label": "CTLA4"
+      },
+      "hits": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1789844",
+          "label": "IPILIMUMAB",
+          "matched_text": "CTLA4",
+          "matched_alias": "ctla-4"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ENSG00000149311",
+        "type": "Target",
+        "label": "ATM"
+      },
+      "hits": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL158",
+          "label": "AZTREONAM",
+          "matched_text": "ATM",
+          "matched_alias": "atm"
+        }
+      ]
+    },
+    {
+      "expected": {
+        "id": "ENSG00000221867",
+        "type": "Target",
+        "label": "MAGEA3"
+      },
+      "hits": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL2108705",
+          "label": "ASTUPROTIMUT-R",
+          "matched_text": "MAGEA3",
+          "matched_alias": "MAGE-A3"
+        }
+      ]
+    }
+  ],
+  "seconds": 0.2028560999315232
+}
