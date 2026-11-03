@@ -1,0 +1,46 @@
+raw_nonfinite:NaN exception= None strict= True verified= False text= 
+raw_nonfinite:Infinity exception= None strict= True verified= False text= 
+raw_nonfinite:-Infinity exception= None strict= True verified= False text= 
+raw_nonfinite:1e309 exception= None strict= True verified= False text= 
+raw_nonfinite:-1e309 exception= None strict= True verified= False text= 
+parsed_nonfinite:nan exception= None strict= True verified= False text= 
+parsed_nonfinite:inf exception= None strict= True verified= False text= 
+parsed_nonfinite:-inf exception= None strict= True verified= False text= 
+per_claim:lone_surrogate exception= None strict= True verified= False text= - OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]
+- OSIME
+per_claim:mixed_keys exception= None strict= True verified= False text= - OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]
+- OSIME
+per_claim:injected_runtime_error exception= None strict= True verified= False text= - OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]
+- OSIME
+model:empty_claims exception= None strict= True verified= None text= The model found nothing in the evidence that answers this question.
+model:NaN exception= None strict= True verified= None text= None of the model's claims could be verified.
+
+(1 claim(s) were removed because the graph does not s
+model:Infinity exception= None strict= True verified= None text= None of the model's claims could be verified.
+
+(1 claim(s) were removed because the graph does not s
+model:-Infinity exception= None strict= True verified= None text= None of the model's claims could be verified.
+
+(1 claim(s) were removed because the graph does not s
+model:1e309 exception= None strict= True verified= None text= None of the model's claims could be verified.
+
+(1 claim(s) were removed because the graph does not s
+model:-1e309 exception= None strict= True verified= None text= None of the model's claims could be verified.
+
+(1 claim(s) were removed because the graph does not s
+sdk_shape:none_content exception= None strict= True verified= None text= None of the model's claims could be verified.
+
+(1 claim(s) were removed because the graph does not s
+sdk_shape:tool_then_text exception= None strict= True verified= None text= - OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]
+sdk_shape:text_number exception= AttributeError: 'int' object has no attribute 'strip' strict= None verified= None text= 
+sdk_shape:whitespace_then_valid exception= None strict= True verified= None text= None of the model's claims could be verified.
+
+(1 claim(s) were removed because the graph does not s
+near_limit_nesting []
+API NaN 200 {"verified": false, "accepted": [], "text": "", "rejected": [{"claim": null, "why": "not valid JSON: nested too deeply"}], "evidence": [{"edge_id": "C
+API Infinity 200 {"verified": false, "accepted": [], "text": "", "rejected": [{"claim": null, "why": "not valid JSON: nested too deeply"}], "evidence": [{"edge_id": "C
+API -Infinity 200 {"verified": false, "accepted": [], "text": "", "rejected": [{"claim": null, "why": "not valid JSON: nested too deeply"}], "evidence": [{"edge_id": "C
+API 1e309 200 {"verified": false, "accepted": [], "text": "", "rejected": [{"claim": null, "why": "not valid JSON: nested too deeply"}], "evidence": [{"edge_id": "C
+API -1e309 200 {"verified": false, "accepted": [], "text": "", "rejected": [{"claim": null, "why": "not valid JSON: nested too deeply"}], "evidence": [{"edge_id": "C
+API empty 200 {"verified": false, "accepted": [], "rejected": [], "text": "", "empty": true, "evidence": [{"edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3
+API lone_surrogate 400 {"error": "'utf-8' codec can't encode character '\\ud800' in position 115: surrogates not allowed"}

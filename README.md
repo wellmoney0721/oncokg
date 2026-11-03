@@ -453,7 +453,8 @@ field exists, and an unknown key rejects the claim), the cited edge is one of th
 retrieved for the question and is live (a drug claim may also cite the drug's
 profile record retrieved for the question), the edge's relation and both ends are the
 ones the claim names (a name is an id, a label that belongs to exactly one node, or an
-alias that resolves, whole, to that node), and every value
+alias that resolves, whole, to that one node; a name that could mean several nodes
+is refused), and every value
 equals what the graph stores: action type, sponsor's trial count, a trial's phase
 set and status, a drug's maximum stage and its number of trials. The answer is then
 written from accepted claims in the graph's own labels and values, with the edge id
@@ -561,7 +562,7 @@ pip install -r requirements.txt
 python src/run_all.py              # fetch, resolve, check, build, score, render
 python src/run_all.py --offline    # rebuild from the snapshots in data/raw
 
-python -m pytest tests -q                    # 315 tests
+python -m pytest tests -q                    # 316 tests
 python src/app.py                            # try-it page: http://localhost:8765
 python src/curation_effect.py                # resolve twice, with and without curation
 python src/apply_label_corrections.py --check

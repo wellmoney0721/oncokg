@@ -1,0 +1,90 @@
+[
+  {
+    "source_round": "s1",
+    "original_source": "audit_evidence_claims/s1/modelui_probe.py",
+    "exact_exception": "RuntimeError('simulated SDK failure')",
+    "question": "What does osimertinib target?",
+    "use_llm": true,
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "The language model could not be used (RuntimeError); no answer was generated.",
+      "generated_by": "error: RuntimeError",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "accepted": 0,
+        "rejected": [],
+        "unsupported_claims": [],
+        "method": "no model reply to check"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    }
+  },
+  {
+    "source_round": "s2",
+    "original_source": "audit_evidence_claims/s2/modelui_probe.py",
+    "exact_exception": "RuntimeError('simulated SDK failure')",
+    "question": "What does osimertinib target?",
+    "use_llm": true,
+    "result": {
+      "question": "What does osimertinib target?",
+      "intent": "targets_of_drug",
+      "entities": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "answer": "The language model could not be used (RuntimeError); no answer was generated.",
+      "generated_by": "error: RuntimeError",
+      "checks": {
+        "grounded": null,
+        "applicable": false,
+        "accepted": 0,
+        "rejected": [],
+        "unsupported_claims": [],
+        "method": "no model reply to check"
+      },
+      "evidence": [
+        {
+          "statement": "OSIMERTINIB acts on EGFR (inhibitor)",
+          "relation": "ACTS_ON",
+          "edge_id": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+          "source": "Open Targets / ChEMBL",
+          "source_record": "CHEMBL3353410",
+          "fetched_at": "2026-11-03T02:31:33.813487+00:00",
+          "confidence": 0.95,
+          "resolution_tier": null,
+          "url": null,
+          "action_type": "INHIBITOR"
+        }
+      ]
+    }
+  }
+]

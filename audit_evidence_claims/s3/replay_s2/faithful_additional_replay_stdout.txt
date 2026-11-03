@@ -1,0 +1,109 @@
+{
+  "action_cases": [
+    {
+      "object": "PRKCA",
+      "action": "ANTISENSE INHIBITOR",
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "edge": "CHEMBL2108287|ACTS_ON|ENSG00000154229|CHEMBL2108287",
+            "subject": "CHEMBL2108287",
+            "object": "ENSG00000154229",
+            "action": "ANTISENSE INHIBITOR"
+          }
+        ],
+        "rejected": [],
+        "text": "- APRINOCARSEN acts on PRKCA (antisense inhibitor) [CHEMBL2108287|ACTS_ON|ENSG00000154229|CHEMBL2108287]"
+      }
+    },
+    {
+      "object": "PRKCA",
+      "action": "INHIBITOR",
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "APRINOCARSEN",
+              "object": "PRKCA",
+              "evidence": "CHEMBL2108287|ACTS_ON|ENSG00000154229|CHEMBL2108287",
+              "action": "INHIBITOR"
+            },
+            "why": "the graph gives the action as ANTISENSE INHIBITOR, not INHIBITOR"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "object": "ENSG00000154229",
+      "action": "ANTISENSE INHIBITOR",
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "edge": "CHEMBL2108287|ACTS_ON|ENSG00000154229|CHEMBL2108287",
+            "subject": "CHEMBL2108287",
+            "object": "ENSG00000154229",
+            "action": "ANTISENSE INHIBITOR"
+          }
+        ],
+        "rejected": [],
+        "text": "- APRINOCARSEN acts on PRKCA (antisense inhibitor) [CHEMBL2108287|ACTS_ON|ENSG00000154229|CHEMBL2108287]"
+      }
+    },
+    {
+      "object": "ENSG00000154229",
+      "action": "INHIBITOR",
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "APRINOCARSEN",
+              "object": "ENSG00000154229",
+              "evidence": "CHEMBL2108287|ACTS_ON|ENSG00000154229|CHEMBL2108287",
+              "action": "INHIBITOR"
+            },
+            "why": "the graph gives the action as ANTISENSE INHIBITOR, not INHIBITOR"
+          }
+        ],
+        "text": ""
+      }
+    }
+  ],
+  "profile_verified": true,
+  "empty_phase": {
+    "verified": true,
+    "accepted": [
+      {
+        "kind": "trial",
+        "edge": "NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334",
+        "trial": "NCT03909334",
+        "phase": [],
+        "status": "ACTIVE_NOT_RECRUITING"
+      }
+    ],
+    "rejected": [],
+    "text": "- NCT03909334: no phase given; status ACTIVE_NOT_RECRUITING [NCT03909334|EVALUATES|CHEMBL3353410|NCT03909334]"
+  },
+  "long_label_count": 0,
+  "norm_collisions": {
+    "action_type": {},
+    "status": {},
+    "phases": {},
+    "max_phase_overall": {}
+  },
+  "duplicate_trial_pairs": []
+}

@@ -1,0 +1,44 @@
+{
+  "cases": 128,
+  "exceptions": [],
+  "retired_edges_checked": 142,
+  "synthetic": [
+    {
+      "tag": "multi_id_company_resolution_fixture",
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "subject": "ORG:astrazeneca",
+            "object": "CHEMBL3353410",
+            "trial_count": 14
+          }
+        ],
+        "rejected": [],
+        "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      }
+    },
+    {
+      "tag": "retired_drug_profile_fixture",
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "drug",
+            "edge": "profile:CHEMBL3353410",
+            "drug": "CHEMBL3353410",
+            "max_stage": "APPROVAL"
+          }
+        ],
+        "rejected": [],
+        "text": "- OSIMERTINIB: maximum clinical stage APPROVAL [profile:CHEMBL3353410]"
+      }
+    }
+  ],
+  "results": "C:\\Users\\geoum\\Dropbox\\GY's Formal Workspace\\2026 Job recruting\\\ubc14\uc774\uc624\ub9ac\uc11c\uce58\uc5d0\uc774\uc544\uc774\\oncokg\\audit_evidence_claims\\s3\\replay_s2\\identity_probe_results.json"
+}
+
+STDERR:

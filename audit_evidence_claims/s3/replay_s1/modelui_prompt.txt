@@ -1,0 +1,10 @@
+You answer a question about a non-small cell lung cancer knowledge graph by choosing facts from the evidence below. Reply with JSON only, of the form {"claims": [...]}, where each claim is one of:
+{"kind": "relation", "relation": "ACTS_ON" | "EVALUATES" | "SPONSORS_TRIAL_OF", "subject": name, "object": name, "evidence": id, "action": optional, "trial_count": optional integer}
+{"kind": "trial", "trial": NCT id, "evidence": id, "phase": optional list, "status": optional}
+{"kind": "drug", "drug": name, "evidence": id, "max_stage": optional, "trials_in_graph": optional integer}
+Use the names and ids exactly as written in the evidence. Add no other keys and no prose. If the evidence does not answer the question, reply {"claims": []}.
+
+Question: What does osimertinib target?
+
+Evidence:
+- id=CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410 | OSIMERTINIB acts on EGFR (inhibitor)

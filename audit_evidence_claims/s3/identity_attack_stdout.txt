@@ -1,0 +1,356 @@
+﻿{
+  "cases": 35,
+  "persisted": {
+    "multi_id_company_keys": {},
+    "duplicate_live_labels_same_type": [],
+    "company_edges": [
+      {
+        "id": "ORG:roche|PARENT_OF|ORG:genentech|hand-curated corporate map",
+        "src": "ORG:roche",
+        "dst": "ORG:genentech",
+        "rel": "PARENT_OF"
+      },
+      {
+        "id": "ORG:astrazeneca|PARENT_OF|ORG:medimmune|hand-curated corporate map",
+        "src": "ORG:astrazeneca",
+        "dst": "ORG:medimmune",
+        "rel": "PARENT_OF"
+      },
+      {
+        "id": "ORG:astrazeneca|PARENT_OF|ORG:alexion|hand-curated corporate map",
+        "src": "ORG:astrazeneca",
+        "dst": "ORG:alexion",
+        "rel": "PARENT_OF"
+      },
+      {
+        "id": "ORG:astrazeneca|PARENT_OF|ORG:acerta|hand-curated corporate map",
+        "src": "ORG:astrazeneca",
+        "dst": "ORG:acerta",
+        "rel": "PARENT_OF"
+      }
+    ]
+  },
+  "constructor_collision": {
+    "fixture": "in-memory SQL UPDATE node SET label='Astrazeneca' WHERE id='ORG:genentech'; reconstruct OncoKG with this connection (all alias-index construction is production code)",
+    "company_key": [
+      "ORG:astrazeneca",
+      "ORG:genentech"
+    ],
+    "nodes": [
+      {
+        "id": "ORG:astrazeneca",
+        "type": "Company",
+        "label": "Astrazeneca",
+        "props": "{\"class\": \"INDUSTRY\", \"parent\": null, \"raw_names\": [\"AstraZeneca\"]}"
+      },
+      {
+        "id": "ORG:genentech",
+        "type": "Company",
+        "label": "Astrazeneca",
+        "props": "{\"class\": \"INDUSTRY\", \"parent\": \"Roche\", \"raw_names\": [\"Genentech, Inc.\"]}"
+      }
+    ],
+    "integrity": "ok"
+  },
+  "results": [
+    {
+      "tag": "constructor_company_collision:AstraZeneca",
+      "ids": [],
+      "verified": false,
+      "text": "",
+      "why": "'AstraZeneca' is the label of 2 company nodes; use the id"
+    },
+    {
+      "tag": "constructor_company_collision:AstraZeneca!",
+      "ids": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "verified": true,
+      "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]",
+      "why": null
+    },
+    {
+      "tag": "constructor_company_collision:astra-zeneca",
+      "ids": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "verified": true,
+      "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]",
+      "why": null
+    },
+    {
+      "tag": "constructor_company_collision:ASTRAZENECA?",
+      "ids": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "verified": true,
+      "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]",
+      "why": null
+    },
+    {
+      "tag": "constructor_company_collision:AstraZeneca is not",
+      "ids": [],
+      "verified": false,
+      "text": "",
+      "why": "'AstraZeneca is not' does not name exactly one company on its own"
+    },
+    {
+      "tag": "constructor_company_collision:ORG:astrazeneca",
+      "ids": [
+        "ORG:astrazeneca"
+      ],
+      "verified": true,
+      "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]",
+      "why": null
+    },
+    {
+      "tag": "constructor_company_collision:ORG:genentech",
+      "ids": [
+        "ORG:genentech"
+      ],
+      "verified": false,
+      "text": "",
+      "why": null
+    },
+    {
+      "tag": "constructor_company_collision:other_org_edge",
+      "ids": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "verified": true,
+      "text": "- Astrazeneca is lead sponsor of 5 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug [ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|]",
+      "why": null
+    },
+    {
+      "tag": "duplicate_drug_label:OSIMERTINIB",
+      "ids": [],
+      "verified": false,
+      "text": "",
+      "why": "'OSIMERTINIB' is the label of 2 drug nodes; use the id"
+    },
+    {
+      "tag": "duplicate_drug_label:osimertinib",
+      "ids": [],
+      "verified": false,
+      "text": "",
+      "why": "'osimertinib' is the label of 2 drug nodes; use the id"
+    },
+    {
+      "tag": "duplicate_drug_label:  oSimErtinib  ",
+      "ids": [],
+      "verified": false,
+      "text": "",
+      "why": "'oSimErtinib' is the label of 2 drug nodes; use the id"
+    },
+    {
+      "tag": "duplicate_drug_label:osimertinib!",
+      "ids": [
+        "CHEMBL3353410"
+      ],
+      "verified": true,
+      "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]",
+      "why": null
+    },
+    {
+      "tag": "duplicate_drug_label:Tagrisso",
+      "ids": [
+        "CHEMBL3353410"
+      ],
+      "verified": true,
+      "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]",
+      "why": null
+    },
+    {
+      "tag": "duplicate_drug_label:CHEMBL3353410",
+      "ids": [
+        "CHEMBL3353410"
+      ],
+      "verified": true,
+      "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]",
+      "why": null
+    },
+    {
+      "tag": "retired_duplicate_label",
+      "ids": [
+        "CHEMBL3353410"
+      ],
+      "verified": true,
+      "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]",
+      "why": null
+    },
+    {
+      "tag": "persisted_company:AstraZeneca",
+      "ids": [
+        "ORG:astrazeneca"
+      ],
+      "verified": true,
+      "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]",
+      "why": null
+    },
+    {
+      "tag": "persisted_company:AstraZeneca!",
+      "ids": [
+        "ORG:astrazeneca"
+      ],
+      "verified": true,
+      "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]",
+      "why": null
+    },
+    {
+      "tag": "persisted_company:MedImmune",
+      "ids": [
+        "ORG:medimmune"
+      ],
+      "verified": false,
+      "text": "",
+      "why": null
+    },
+    {
+      "tag": "persisted_company:Genentech",
+      "ids": [
+        "ORG:genentech"
+      ],
+      "verified": false,
+      "text": "",
+      "why": null
+    },
+    {
+      "tag": "persisted_company:Roche",
+      "ids": [
+        "ORG:roche"
+      ],
+      "verified": false,
+      "text": "",
+      "why": null
+    },
+    {
+      "tag": "persisted_company:ORG:astrazeneca",
+      "ids": [
+        "ORG:astrazeneca"
+      ],
+      "verified": true,
+      "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]",
+      "why": null
+    },
+    {
+      "tag": "persisted_company:ORG:medimmune",
+      "ids": [
+        "ORG:medimmune"
+      ],
+      "verified": false,
+      "text": "",
+      "why": null
+    },
+    {
+      "tag": "persisted_company:BeiGene",
+      "ids": [
+        "ORG:beonemedicines"
+      ],
+      "verified": false,
+      "text": "",
+      "why": null
+    },
+    {
+      "tag": "persisted_company:BeOne",
+      "ids": [
+        "ORG:beonemedicines"
+      ],
+      "verified": false,
+      "text": "",
+      "why": null
+    },
+    {
+      "tag": "persisted_drug:'CHEMBL3353410'",
+      "ids": [
+        "CHEMBL3353410"
+      ],
+      "verified": true,
+      "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]",
+      "why": null
+    },
+    {
+      "tag": "persisted_drug:'ENSG00000146648'",
+      "ids": [],
+      "verified": false,
+      "text": "",
+      "why": "ENSG00000146648 is a target, not a drug"
+    },
+    {
+      "tag": "persisted_drug:'CHEMBL3545063'",
+      "ids": [
+        "CHEMBL3545063"
+      ],
+      "verified": false,
+      "text": "",
+      "why": null
+    },
+    {
+      "tag": "persisted_drug:'osimertinib mesylate'",
+      "ids": [
+        "CHEMBL3545063"
+      ],
+      "verified": false,
+      "text": "",
+      "why": null
+    },
+    {
+      "tag": "persisted_drug:'Tagrisso'",
+      "ids": [
+        "CHEMBL3353410"
+      ],
+      "verified": true,
+      "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]",
+      "why": null
+    },
+    {
+      "tag": "persisted_drug:'osimertinib\uac00 \uc544\ub2cc'",
+      "ids": [],
+      "verified": false,
+      "text": "",
+      "why": "'osimertinib\uac00 \uc544\ub2cc' is not written the way the graph writes names (use the id or the name as it appears in the evidence)"
+    },
+    {
+      "tag": "persisted_drug:'osimertinib NOT'",
+      "ids": [],
+      "verified": false,
+      "text": "",
+      "why": "'osimertinib NOT' does not name exactly one drug on its own"
+    },
+    {
+      "tag": "persisted_drug:'osimertinib\\u200b'",
+      "ids": [],
+      "verified": false,
+      "text": "",
+      "why": "'osimertinib\u200b' is not written the way the graph writes names (use the id or the name as it appears in the evidence)"
+    },
+    {
+      "tag": "retired_drug:osimertinib",
+      "ids": [
+        "CHEMBL3353410"
+      ],
+      "verified": true,
+      "text": "- OSIMERTINIB: maximum clinical stage APPROVAL [profile:CHEMBL3353410]",
+      "why": null
+    },
+    {
+      "tag": "retired_drug:Tagrisso",
+      "ids": [
+        "CHEMBL3353410"
+      ],
+      "verified": true,
+      "text": "- OSIMERTINIB: maximum clinical stage APPROVAL [profile:CHEMBL3353410]",
+      "why": null
+    },
+    {
+      "tag": "retired_drug:CHEMBL3353410",
+      "ids": [],
+      "verified": false,
+      "text": "",
+      "why": "'CHEMBL3353410' does not name exactly one drug on its own"
+    }
+  ]
+}

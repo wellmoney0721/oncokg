@@ -1,0 +1,50 @@
+{
+  "jobs": [
+    {
+      "source": "audit_evidence_claims\\s1\\faithful_probe.py",
+      "replay": "audit_evidence_claims\\s3\\replay_s1\\faithful_probe.py",
+      "exit_code": 0,
+      "changes": "Output paths only. Historical commit metadata unchanged."
+    },
+    {
+      "source": "audit_evidence_claims\\s2\\faithful_probe.py",
+      "replay": "audit_evidence_claims\\s3\\replay_s2\\faithful_probe.py",
+      "exit_code": 0,
+      "changes": "Output paths only. Historical commit metadata unchanged."
+    },
+    {
+      "source": "audit_evidence_claims\\s2\\faithful_additional_replay.py",
+      "replay": "audit_evidence_claims\\s3\\replay_s2\\faithful_additional_replay.py",
+      "exit_code": 0,
+      "changes": "Output paths only. Historical commit metadata unchanged."
+    },
+    {
+      "source": "audit_evidence_claims\\s2\\faithful_dictionary_replay.py",
+      "replay": "audit_evidence_claims\\s3\\replay_s2\\faithful_dictionary_replay.py",
+      "exit_code": 0,
+      "changes": "Output paths only. Historical commit metadata unchanged."
+    }
+  ],
+  "checks": {
+    "s1": {
+      "same_demo_inputs": true,
+      "questions": 7,
+      "claims_accepted": {
+        "labels": 73,
+        "ids": 73
+      },
+      "phase_cases": 1,
+      "schema_cases": 2
+    },
+    "s2": {
+      "same_demo_inputs": true,
+      "questions": 7,
+      "claims_accepted": {
+        "labels": 73,
+        "ids": 73
+      },
+      "phase_cases": 1,
+      "schema_cases": 2
+    }
+  }
+}

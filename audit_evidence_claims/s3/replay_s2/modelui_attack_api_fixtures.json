@@ -1,0 +1,44 @@
+[
+  {
+    "case": "NaN",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\":[{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": NaN}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"text\": \"\", \"rejected\": [{\"claim\": null, \"why\": \"not valid JSON: nested too deeply\"}], \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}"
+  },
+  {
+    "case": "Infinity",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\":[{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": Infinity}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"text\": \"\", \"rejected\": [{\"claim\": null, \"why\": \"not valid JSON: nested too deeply\"}], \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}"
+  },
+  {
+    "case": "-Infinity",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\":[{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": -Infinity}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"text\": \"\", \"rejected\": [{\"claim\": null, \"why\": \"not valid JSON: nested too deeply\"}], \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}"
+  },
+  {
+    "case": "1e309",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\":[{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": 1e309}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"text\": \"\", \"rejected\": [{\"claim\": null, \"why\": \"not valid JSON: nested too deeply\"}], \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}"
+  },
+  {
+    "case": "-1e309",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\":[{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"osimertinib\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": -1e309}]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"text\": \"\", \"rejected\": [{\"claim\": null, \"why\": \"not valid JSON: nested too deeply\"}], \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}"
+  },
+  {
+    "case": "empty",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\":[]}\"}",
+    "http_status": 200,
+    "response_raw": "{\"verified\": false, \"accepted\": [], \"rejected\": [], \"text\": \"\", \"empty\": true, \"evidence\": [{\"edge_id\": \"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\", \"statement\": \"OSIMERTINIB acts on EGFR (inhibitor)\"}]}"
+  },
+  {
+    "case": "lone_surrogate",
+    "request": "{\"text\": \"What does osimertinib target?\", \"answer\": \"{\\\"claims\\\": [{\\\"kind\\\": \\\"relation\\\", \\\"relation\\\": \\\"ACTS_ON\\\", \\\"subject\\\": \\\"\\\\ud800\\\", \\\"object\\\": \\\"EGFR\\\", \\\"evidence\\\": \\\"CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410\\\", \\\"action\\\": \\\"INHIBITOR\\\"}]}\"}",
+    "http_status": 400,
+    "response_raw": "{\"error\": \"'utf-8' codec can't encode character '\\\\ud800' in position 115: surrogates not allowed\"}"
+  }
+]

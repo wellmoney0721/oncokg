@@ -190,3 +190,14 @@ def test_a_missing_or_failing_model_is_reported_not_presented_as_an_empty_answer
                         staticmethod(lambda q, ev: ("", "error: RuntimeError")))
     a = KG.answer(Q3, use_llm=True)
     assert "could not be used" in a.text and a.checks["applicable"] is False
+
+
+
+def test_an_alias_naming_several_organisations_is_refused(monkeypatch):
+    import structured as St
+    v = St.Verifier(KG)
+    fake = type("K", (), {"conn": KG.conn, "link_entities": staticmethod(lambda n: [
+        {"type": "Company", "id": "ORG:a", "matched_text": n, "also_matching_ids": ["ORG:b"]}])})()
+    monkeypatch.setattr(v, "kg", fake)
+    ids, why = v.resolve("Acme Group", "Company")
+    assert not ids and "use the id" in why

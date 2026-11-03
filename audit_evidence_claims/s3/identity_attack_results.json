@@ -1,0 +1,1903 @@
+{
+  "cases": [
+    {
+      "tag": "constructor_company_collision:AstraZeneca",
+      "fixture": "in-memory SQL UPDATE node SET label='Astrazeneca' WHERE id='ORG:genentech'; reconstruct OncoKG with this connection (all alias-index construction is production code)",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "AstraZeneca",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "resolved_ids": [],
+      "resolve_reason": "'AstraZeneca' is the label of 2 company nodes; use the id",
+      "linker": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "AstraZeneca",
+          "also_matching_ids": [
+            "ORG:genentech"
+          ]
+        }
+      ],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL3707227|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "SPONSORS_TRIAL_OF",
+              "subject": "AstraZeneca",
+              "object": "osimertinib",
+              "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+              "trial_count": 14
+            },
+            "why": "'AstraZeneca' is the label of 2 company nodes; use the id"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "constructor_company_collision:AstraZeneca!",
+      "fixture": "in-memory SQL UPDATE node SET label='Astrazeneca' WHERE id='ORG:genentech'; reconstruct OncoKG with this connection (all alias-index construction is production code)",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "AstraZeneca!",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "resolved_ids": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "AstraZeneca",
+          "also_matching_ids": [
+            "ORG:genentech"
+          ]
+        }
+      ],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL3707227|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|"
+      ],
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "subject": "ORG:astrazeneca",
+            "object": "CHEMBL3353410",
+            "trial_count": 14
+          }
+        ],
+        "rejected": [],
+        "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      }
+    },
+    {
+      "tag": "constructor_company_collision:astra-zeneca",
+      "fixture": "in-memory SQL UPDATE node SET label='Astrazeneca' WHERE id='ORG:genentech'; reconstruct OncoKG with this connection (all alias-index construction is production code)",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "astra-zeneca",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "resolved_ids": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "astra-zeneca",
+          "also_matching_ids": [
+            "ORG:genentech"
+          ]
+        }
+      ],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL3707227|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|"
+      ],
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "subject": "ORG:astrazeneca",
+            "object": "CHEMBL3353410",
+            "trial_count": 14
+          }
+        ],
+        "rejected": [],
+        "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      }
+    },
+    {
+      "tag": "constructor_company_collision:ASTRAZENECA?",
+      "fixture": "in-memory SQL UPDATE node SET label='Astrazeneca' WHERE id='ORG:genentech'; reconstruct OncoKG with this connection (all alias-index construction is production code)",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "ASTRAZENECA?",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "resolved_ids": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "ASTRAZENECA",
+          "also_matching_ids": [
+            "ORG:genentech"
+          ]
+        }
+      ],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL3707227|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|"
+      ],
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "subject": "ORG:astrazeneca",
+            "object": "CHEMBL3353410",
+            "trial_count": 14
+          }
+        ],
+        "rejected": [],
+        "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      }
+    },
+    {
+      "tag": "constructor_company_collision:AstraZeneca is not",
+      "fixture": "in-memory SQL UPDATE node SET label='Astrazeneca' WHERE id='ORG:genentech'; reconstruct OncoKG with this connection (all alias-index construction is production code)",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "AstraZeneca is not",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "resolved_ids": [],
+      "resolve_reason": "'AstraZeneca is not' does not name exactly one company on its own",
+      "linker": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "AstraZeneca",
+          "also_matching_ids": [
+            "ORG:genentech"
+          ]
+        }
+      ],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL3707227|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "SPONSORS_TRIAL_OF",
+              "subject": "AstraZeneca is not",
+              "object": "osimertinib",
+              "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+              "trial_count": 14
+            },
+            "why": "'AstraZeneca is not' does not name exactly one company on its own"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "constructor_company_collision:ORG:astrazeneca",
+      "fixture": "in-memory SQL UPDATE node SET label='Astrazeneca' WHERE id='ORG:genentech'; reconstruct OncoKG with this connection (all alias-index construction is production code)",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "ORG:astrazeneca",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "resolved_ids": [
+        "ORG:astrazeneca"
+      ],
+      "resolve_reason": null,
+      "linker": [],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL3707227|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|"
+      ],
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "subject": "ORG:astrazeneca",
+            "object": "CHEMBL3353410",
+            "trial_count": 14
+          }
+        ],
+        "rejected": [],
+        "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      }
+    },
+    {
+      "tag": "constructor_company_collision:ORG:genentech",
+      "fixture": "in-memory SQL UPDATE node SET label='Astrazeneca' WHERE id='ORG:genentech'; reconstruct OncoKG with this connection (all alias-index construction is production code)",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "ORG:genentech",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "resolved_ids": [
+        "ORG:genentech"
+      ],
+      "resolve_reason": null,
+      "linker": [],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL3707227|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "SPONSORS_TRIAL_OF",
+              "subject": "ORG:genentech",
+              "object": "osimertinib",
+              "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+              "trial_count": 14
+            },
+            "why": "the cited edge does not join these two entities in this direction"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "constructor_company_collision:other_org_edge",
+      "fixture": "in-memory SQL UPDATE node SET label='Astrazeneca' WHERE id='ORG:genentech'; reconstruct OncoKG with this connection (all alias-index construction is production code)",
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "AstraZeneca!",
+            "object": "CHEMBL1201583",
+            "evidence": "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+            "trial_count": 5
+          }
+        ]
+      },
+      "resolved_ids": [
+        "ORG:astrazeneca",
+        "ORG:genentech"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "AstraZeneca",
+          "also_matching_ids": [
+            "ORG:genentech"
+          ]
+        }
+      ],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+        "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL3707227|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|"
+      ],
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|",
+            "subject": "ORG:genentech",
+            "object": "CHEMBL1201583",
+            "trial_count": 5
+          }
+        ],
+        "rejected": [],
+        "text": "- Astrazeneca is lead sponsor of 5 trial(s) evaluating BEVACIZUMAB - a sponsorship, not evidence of developing the drug [ORG:genentech|SPONSORS_TRIAL_OF|CHEMBL1201583|]"
+      }
+    },
+    {
+      "tag": "duplicate_drug_label:OSIMERTINIB",
+      "fixture": "in-memory duplicate Drug label Osimertinib on CHEMBL3707320",
+      "question": "What does osimertinib target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "OSIMERTINIB",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "resolved_ids": [],
+      "resolve_reason": "'OSIMERTINIB' is the label of 2 drug nodes; use the id",
+      "linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "OSIMERTINIB",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "retrieved_ids": [
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "OSIMERTINIB",
+              "object": "EGFR",
+              "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+              "action": "INHIBITOR"
+            },
+            "why": "'OSIMERTINIB' is the label of 2 drug nodes; use the id"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "duplicate_drug_label:osimertinib",
+      "fixture": "in-memory duplicate Drug label Osimertinib on CHEMBL3707320",
+      "question": "What does osimertinib target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "resolved_ids": [],
+      "resolve_reason": "'osimertinib' is the label of 2 drug nodes; use the id",
+      "linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "retrieved_ids": [
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "osimertinib",
+              "object": "EGFR",
+              "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+              "action": "INHIBITOR"
+            },
+            "why": "'osimertinib' is the label of 2 drug nodes; use the id"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "duplicate_drug_label:  oSimErtinib  ",
+      "fixture": "in-memory duplicate Drug label Osimertinib on CHEMBL3707320",
+      "question": "What does osimertinib target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "  oSimErtinib  ",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "resolved_ids": [],
+      "resolve_reason": "'oSimErtinib' is the label of 2 drug nodes; use the id",
+      "linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "oSimErtinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "retrieved_ids": [
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "  oSimErtinib  ",
+              "object": "EGFR",
+              "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+              "action": "INHIBITOR"
+            },
+            "why": "'oSimErtinib' is the label of 2 drug nodes; use the id"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "duplicate_drug_label:osimertinib!",
+      "fixture": "in-memory duplicate Drug label Osimertinib on CHEMBL3707320",
+      "question": "What does osimertinib target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib!",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "resolved_ids": [
+        "CHEMBL3353410"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "retrieved_ids": [
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "subject": "CHEMBL3353410",
+            "object": "ENSG00000146648",
+            "action": "INHIBITOR"
+          }
+        ],
+        "rejected": [],
+        "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"
+      }
+    },
+    {
+      "tag": "duplicate_drug_label:Tagrisso",
+      "fixture": "in-memory duplicate Drug label Osimertinib on CHEMBL3707320",
+      "question": "What does osimertinib target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "Tagrisso",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "resolved_ids": [
+        "CHEMBL3353410"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Tagrisso",
+          "matched_alias": "Tagrisso"
+        }
+      ],
+      "retrieved_ids": [
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "subject": "CHEMBL3353410",
+            "object": "ENSG00000146648",
+            "action": "INHIBITOR"
+          }
+        ],
+        "rejected": [],
+        "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"
+      }
+    },
+    {
+      "tag": "duplicate_drug_label:CHEMBL3353410",
+      "fixture": "in-memory duplicate Drug label Osimertinib on CHEMBL3707320",
+      "question": "What does osimertinib target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "CHEMBL3353410",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "resolved_ids": [
+        "CHEMBL3353410"
+      ],
+      "resolve_reason": null,
+      "linker": [],
+      "retrieved_ids": [
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "subject": "CHEMBL3353410",
+            "object": "ENSG00000146648",
+            "action": "INHIBITOR"
+          }
+        ],
+        "rejected": [],
+        "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"
+      }
+    },
+    {
+      "tag": "retired_duplicate_label",
+      "fixture": "in-memory duplicate Drug label Osimertinib on CHEMBL3707320; duplicate retired",
+      "question": "What does osimertinib target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "OSIMERTINIB",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "resolved_ids": [
+        "CHEMBL3353410"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "OSIMERTINIB",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "retrieved_ids": [
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "subject": "CHEMBL3353410",
+            "object": "ENSG00000146648",
+            "action": "INHIBITOR"
+          }
+        ],
+        "rejected": [],
+        "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"
+      }
+    },
+    {
+      "tag": "persisted_company:AstraZeneca",
+      "fixture": null,
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "AstraZeneca",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "resolved_ids": [
+        "ORG:astrazeneca"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "AstraZeneca",
+          "also_matching_ids": []
+        }
+      ],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|"
+      ],
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "subject": "ORG:astrazeneca",
+            "object": "CHEMBL3353410",
+            "trial_count": 14
+          }
+        ],
+        "rejected": [],
+        "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      }
+    },
+    {
+      "tag": "persisted_company:AstraZeneca!",
+      "fixture": null,
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "AstraZeneca!",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "resolved_ids": [
+        "ORG:astrazeneca"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Company",
+          "id": "ORG:astrazeneca",
+          "label": "Astrazeneca",
+          "matched_text": "AstraZeneca",
+          "also_matching_ids": []
+        }
+      ],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|"
+      ],
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "subject": "ORG:astrazeneca",
+            "object": "CHEMBL3353410",
+            "trial_count": 14
+          }
+        ],
+        "rejected": [],
+        "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      }
+    },
+    {
+      "tag": "persisted_company:MedImmune",
+      "fixture": null,
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "MedImmune",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "resolved_ids": [
+        "ORG:medimmune"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Company",
+          "id": "ORG:medimmune",
+          "label": "Medimmune",
+          "matched_text": "MedImmune",
+          "also_matching_ids": []
+        }
+      ],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "SPONSORS_TRIAL_OF",
+              "subject": "MedImmune",
+              "object": "osimertinib",
+              "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+              "trial_count": 14
+            },
+            "why": "the cited edge does not join these two entities in this direction"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "persisted_company:Genentech",
+      "fixture": null,
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "Genentech",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "resolved_ids": [
+        "ORG:genentech"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Company",
+          "id": "ORG:genentech",
+          "label": "Genentech",
+          "matched_text": "Genentech",
+          "also_matching_ids": []
+        }
+      ],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "SPONSORS_TRIAL_OF",
+              "subject": "Genentech",
+              "object": "osimertinib",
+              "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+              "trial_count": 14
+            },
+            "why": "the cited edge does not join these two entities in this direction"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "persisted_company:Roche",
+      "fixture": null,
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "Roche",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "resolved_ids": [
+        "ORG:roche"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL1622",
+          "label": "FOLIC ACID",
+          "matched_text": "Roche",
+          "matched_alias": "Roche"
+        }
+      ],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "SPONSORS_TRIAL_OF",
+              "subject": "Roche",
+              "object": "osimertinib",
+              "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+              "trial_count": 14
+            },
+            "why": "the cited edge does not join these two entities in this direction"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "persisted_company:ORG:astrazeneca",
+      "fixture": null,
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "ORG:astrazeneca",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "resolved_ids": [
+        "ORG:astrazeneca"
+      ],
+      "resolve_reason": null,
+      "linker": [],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|"
+      ],
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "edge": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "subject": "ORG:astrazeneca",
+            "object": "CHEMBL3353410",
+            "trial_count": 14
+          }
+        ],
+        "rejected": [],
+        "text": "- Astrazeneca is lead sponsor of 14 trial(s) evaluating OSIMERTINIB - a sponsorship, not evidence of developing the drug [ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|]"
+      }
+    },
+    {
+      "tag": "persisted_company:ORG:medimmune",
+      "fixture": null,
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "ORG:medimmune",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "resolved_ids": [
+        "ORG:medimmune"
+      ],
+      "resolve_reason": null,
+      "linker": [],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "SPONSORS_TRIAL_OF",
+              "subject": "ORG:medimmune",
+              "object": "osimertinib",
+              "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+              "trial_count": 14
+            },
+            "why": "the cited edge does not join these two entities in this direction"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "persisted_company:BeiGene",
+      "fixture": null,
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "BeiGene",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "resolved_ids": [
+        "ORG:beonemedicines"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Company",
+          "id": "ORG:beonemedicines",
+          "label": "Beigene",
+          "matched_text": "BeiGene",
+          "also_matching_ids": []
+        }
+      ],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "SPONSORS_TRIAL_OF",
+              "subject": "BeiGene",
+              "object": "osimertinib",
+              "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+              "trial_count": 14
+            },
+            "why": "the cited edge does not join these two entities in this direction"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "persisted_company:BeOne",
+      "fixture": null,
+      "question": "What is AstraZeneca running in NSCLC?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "SPONSORS_TRIAL_OF",
+            "subject": "BeOne",
+            "object": "osimertinib",
+            "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+            "trial_count": 14
+          }
+        ]
+      },
+      "resolved_ids": [
+        "ORG:beonemedicines"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Company",
+          "id": "ORG:beonemedicines",
+          "label": "Beigene",
+          "matched_text": "BeOne",
+          "also_matching_ids": []
+        }
+      ],
+      "retrieved_ids": [
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1351|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL939|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3301587|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL11359|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL225072|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL428647|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL5314706|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL1614701|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3137343|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3545252|",
+        "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL4297939|"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "SPONSORS_TRIAL_OF",
+              "subject": "BeOne",
+              "object": "osimertinib",
+              "evidence": "ORG:astrazeneca|SPONSORS_TRIAL_OF|CHEMBL3353410|",
+              "trial_count": 14
+            },
+            "why": "the cited edge does not join these two entities in this direction"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "persisted_drug:'CHEMBL3353410'",
+      "fixture": null,
+      "question": "What does osimertinib target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "CHEMBL3353410",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "resolved_ids": [
+        "CHEMBL3353410"
+      ],
+      "resolve_reason": null,
+      "linker": [],
+      "retrieved_ids": [
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "subject": "CHEMBL3353410",
+            "object": "ENSG00000146648",
+            "action": "INHIBITOR"
+          }
+        ],
+        "rejected": [],
+        "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"
+      }
+    },
+    {
+      "tag": "persisted_drug:'ENSG00000146648'",
+      "fixture": null,
+      "question": "What does osimertinib target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "ENSG00000146648",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "resolved_ids": [],
+      "resolve_reason": "ENSG00000146648 is a target, not a drug",
+      "linker": [],
+      "retrieved_ids": [
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "ENSG00000146648",
+              "object": "EGFR",
+              "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+              "action": "INHIBITOR"
+            },
+            "why": "ENSG00000146648 is a target, not a drug"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "persisted_drug:'CHEMBL3545063'",
+      "fixture": null,
+      "question": "What does osimertinib target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "CHEMBL3545063",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "resolved_ids": [
+        "CHEMBL3545063"
+      ],
+      "resolve_reason": null,
+      "linker": [],
+      "retrieved_ids": [
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "CHEMBL3545063",
+              "object": "EGFR",
+              "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+              "action": "INHIBITOR"
+            },
+            "why": "the cited edge does not join these two entities in this direction"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "persisted_drug:'osimertinib mesylate'",
+      "fixture": null,
+      "question": "What does osimertinib target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib mesylate",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "resolved_ids": [
+        "CHEMBL3545063"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3545063",
+          "label": "OSIMERTINIB MESYLATE",
+          "matched_text": "osimertinib mesylate",
+          "matched_alias": "OSIMERTINIB MESYLATE"
+        },
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "retrieved_ids": [
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "osimertinib mesylate",
+              "object": "EGFR",
+              "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+              "action": "INHIBITOR"
+            },
+            "why": "the cited edge does not join these two entities in this direction"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "persisted_drug:'Tagrisso'",
+      "fixture": null,
+      "question": "What does osimertinib target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "Tagrisso",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "resolved_ids": [
+        "CHEMBL3353410"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Tagrisso",
+          "matched_alias": "Tagrisso"
+        }
+      ],
+      "retrieved_ids": [
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "edge": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "subject": "CHEMBL3353410",
+            "object": "ENSG00000146648",
+            "action": "INHIBITOR"
+          }
+        ],
+        "rejected": [],
+        "text": "- OSIMERTINIB acts on EGFR (inhibitor) [CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410]"
+      }
+    },
+    {
+      "tag": "persisted_drug:'osimertinib\uac00 \uc544\ub2cc'",
+      "fixture": null,
+      "question": "What does osimertinib target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib\uac00 \uc544\ub2cc",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "resolved_ids": [],
+      "resolve_reason": "'osimertinib\uac00 \uc544\ub2cc' is not written the way the graph writes names (use the id or the name as it appears in the evidence)",
+      "linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib\uac00",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "retrieved_ids": [
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "osimertinib\uac00 \uc544\ub2cc",
+              "object": "EGFR",
+              "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+              "action": "INHIBITOR"
+            },
+            "why": "'osimertinib\uac00 \uc544\ub2cc' is not written the way the graph writes names (use the id or the name as it appears in the evidence)"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "persisted_drug:'osimertinib NOT'",
+      "fixture": null,
+      "question": "What does osimertinib target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib NOT",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "resolved_ids": [],
+      "resolve_reason": "'osimertinib NOT' does not name exactly one drug on its own",
+      "linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "retrieved_ids": [
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "osimertinib NOT",
+              "object": "EGFR",
+              "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+              "action": "INHIBITOR"
+            },
+            "why": "'osimertinib NOT' does not name exactly one drug on its own"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "persisted_drug:'osimertinib\\u200b'",
+      "fixture": null,
+      "question": "What does osimertinib target?",
+      "input": {
+        "claims": [
+          {
+            "kind": "relation",
+            "relation": "ACTS_ON",
+            "subject": "osimertinib\u200b",
+            "object": "EGFR",
+            "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+            "action": "INHIBITOR"
+          }
+        ]
+      },
+      "resolved_ids": [],
+      "resolve_reason": "'osimertinib\u200b' is not written the way the graph writes names (use the id or the name as it appears in the evidence)",
+      "linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib\u200b",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "retrieved_ids": [
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "relation",
+              "relation": "ACTS_ON",
+              "subject": "osimertinib\u200b",
+              "object": "EGFR",
+              "evidence": "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410",
+              "action": "INHIBITOR"
+            },
+            "why": "'osimertinib\u200b' is not written the way the graph writes names (use the id or the name as it appears in the evidence)"
+          }
+        ],
+        "text": ""
+      }
+    },
+    {
+      "tag": "retired_drug:osimertinib",
+      "fixture": "in-memory retirement of CHEMBL3353410; cached drug dictionary unchanged",
+      "question": "What is osimertinib?",
+      "input": {
+        "claims": [
+          {
+            "kind": "drug",
+            "drug": "osimertinib",
+            "evidence": "profile:CHEMBL3353410",
+            "max_stage": "APPROVAL"
+          }
+        ]
+      },
+      "resolved_ids": [
+        "CHEMBL3353410"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "osimertinib",
+          "matched_alias": "OSIMERTINIB"
+        }
+      ],
+      "retrieved_ids": [
+        "profile:CHEMBL3353410",
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "drug",
+            "edge": "profile:CHEMBL3353410",
+            "drug": "CHEMBL3353410",
+            "max_stage": "APPROVAL"
+          }
+        ],
+        "rejected": [],
+        "text": "- OSIMERTINIB: maximum clinical stage APPROVAL [profile:CHEMBL3353410]"
+      }
+    },
+    {
+      "tag": "retired_drug:Tagrisso",
+      "fixture": "in-memory retirement of CHEMBL3353410; cached drug dictionary unchanged",
+      "question": "What is osimertinib?",
+      "input": {
+        "claims": [
+          {
+            "kind": "drug",
+            "drug": "Tagrisso",
+            "evidence": "profile:CHEMBL3353410",
+            "max_stage": "APPROVAL"
+          }
+        ]
+      },
+      "resolved_ids": [
+        "CHEMBL3353410"
+      ],
+      "resolve_reason": null,
+      "linker": [
+        {
+          "type": "Drug",
+          "id": "CHEMBL3353410",
+          "label": "OSIMERTINIB",
+          "matched_text": "Tagrisso",
+          "matched_alias": "Tagrisso"
+        }
+      ],
+      "retrieved_ids": [
+        "profile:CHEMBL3353410",
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": true,
+        "accepted": [
+          {
+            "kind": "drug",
+            "edge": "profile:CHEMBL3353410",
+            "drug": "CHEMBL3353410",
+            "max_stage": "APPROVAL"
+          }
+        ],
+        "rejected": [],
+        "text": "- OSIMERTINIB: maximum clinical stage APPROVAL [profile:CHEMBL3353410]"
+      }
+    },
+    {
+      "tag": "retired_drug:CHEMBL3353410",
+      "fixture": "in-memory retirement of CHEMBL3353410; cached drug dictionary unchanged",
+      "question": "What is osimertinib?",
+      "input": {
+        "claims": [
+          {
+            "kind": "drug",
+            "drug": "CHEMBL3353410",
+            "evidence": "profile:CHEMBL3353410",
+            "max_stage": "APPROVAL"
+          }
+        ]
+      },
+      "resolved_ids": [],
+      "resolve_reason": "'CHEMBL3353410' does not name exactly one drug on its own",
+      "linker": [],
+      "retrieved_ids": [
+        "profile:CHEMBL3353410",
+        "CHEMBL3353410|ACTS_ON|ENSG00000146648|CHEMBL3353410"
+      ],
+      "output": {
+        "verified": false,
+        "accepted": [],
+        "rejected": [
+          {
+            "claim": {
+              "kind": "drug",
+              "drug": "CHEMBL3353410",
+              "evidence": "profile:CHEMBL3353410",
+              "max_stage": "APPROVAL"
+            },
+            "why": "'CHEMBL3353410' does not name exactly one drug on its own"
+          }
+        ],
+        "text": ""
+      }
+    }
+  ],
+  "persisted": {
+    "multi_id_company_keys": {},
+    "duplicate_live_labels_same_type": [],
+    "company_edges": [
+      {
+        "id": "ORG:roche|PARENT_OF|ORG:genentech|hand-curated corporate map",
+        "src": "ORG:roche",
+        "dst": "ORG:genentech",
+        "rel": "PARENT_OF"
+      },
+      {
+        "id": "ORG:astrazeneca|PARENT_OF|ORG:medimmune|hand-curated corporate map",
+        "src": "ORG:astrazeneca",
+        "dst": "ORG:medimmune",
+        "rel": "PARENT_OF"
+      },
+      {
+        "id": "ORG:astrazeneca|PARENT_OF|ORG:alexion|hand-curated corporate map",
+        "src": "ORG:astrazeneca",
+        "dst": "ORG:alexion",
+        "rel": "PARENT_OF"
+      },
+      {
+        "id": "ORG:astrazeneca|PARENT_OF|ORG:acerta|hand-curated corporate map",
+        "src": "ORG:astrazeneca",
+        "dst": "ORG:acerta",
+        "rel": "PARENT_OF"
+      }
+    ]
+  },
+  "constructor_collision": {
+    "fixture": "in-memory SQL UPDATE node SET label='Astrazeneca' WHERE id='ORG:genentech'; reconstruct OncoKG with this connection (all alias-index construction is production code)",
+    "company_key": [
+      "ORG:astrazeneca",
+      "ORG:genentech"
+    ],
+    "nodes": [
+      {
+        "id": "ORG:astrazeneca",
+        "type": "Company",
+        "label": "Astrazeneca",
+        "props": "{\"class\": \"INDUSTRY\", \"parent\": null, \"raw_names\": [\"AstraZeneca\"]}"
+      },
+      {
+        "id": "ORG:genentech",
+        "type": "Company",
+        "label": "Astrazeneca",
+        "props": "{\"class\": \"INDUSTRY\", \"parent\": \"Roche\", \"raw_names\": [\"Genentech, Inc.\"]}"
+      }
+    ],
+    "integrity": "ok"
+  },
+  "source_integrity": "ok"
+}

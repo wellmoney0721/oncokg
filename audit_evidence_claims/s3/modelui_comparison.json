@@ -1,0 +1,63 @@
+{
+  "s1": {
+    "model_cases_recorded": 28,
+    "missing_cases": [
+      "sdk_failure"
+    ],
+    "common_model_inputs_identical": true,
+    "api_requests_identical": true,
+    "api_count": 10,
+    "model_cases_executed": 29,
+    "legacy_sdk_failure_captured_separately": true,
+    "sdk_capture_artifact": "modelui_legacy_sdk_failure_results.json",
+    "page_cases": 10,
+    "page_no_raw_injected_elements": true
+  },
+  "s2": {
+    "model_cases_recorded": 28,
+    "missing_cases": [
+      "sdk_failure"
+    ],
+    "common_model_inputs_identical": true,
+    "api_requests_identical": true,
+    "api_count": 10,
+    "model_cases_executed": 29,
+    "legacy_sdk_failure_captured_separately": true,
+    "sdk_capture_artifact": "modelui_legacy_sdk_failure_results.json",
+    "page_cases": 10,
+    "page_no_raw_injected_elements": true,
+    "attack_inputs_identical": true,
+    "attack_rows": 22,
+    "nesting_subcases": 55,
+    "attack_api_requests_identical": true,
+    "attack_api_count": 7,
+    "attack_page_count": 7,
+    "attack_page_no_raw_injected_elements": true
+  },
+  "new": {
+    "rows": 68,
+    "api": 27,
+    "page": 27,
+    "no_raw_injected_elements": true,
+    "exceptions": [
+      {
+        "case": "model:shape:numeric_text",
+        "exception": "AttributeError: 'int' object has no attribute 'strip'"
+      },
+      {
+        "case": "model:shape:missing_content",
+        "exception": "AttributeError: 'types.SimpleNamespace' object has no attribute 'content'"
+      },
+      {
+        "case": "model:shape:none_message",
+        "exception": "AttributeError: 'NoneType' object has no attribute 'content'"
+      }
+    ],
+    "strict_json_failures": [
+      {
+        "case": "sanitiser:parsed_5001_digit_int",
+        "serialize_exception": "ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit"
+      }
+    ]
+  }
+}

@@ -29,7 +29,7 @@ A claim is accepted only when all of these hold:
   * the edge's relation is the claimed relation, and its two ends are the entities
     the claim names: a name is a node id, a label that belongs to exactly one node of
     that type, or a printable-ASCII alias the entity linker resolves, as a whole, to
-    one entity (for an organisation, that entity's merged ids count as one);
+    exactly one node; a name that could mean several nodes is refused;
   * every value equals what the graph stores: the edge's action type, the sponsor's
     trial count, the trial's phase set and status, the drug's maximum stage, and the
     number of live trials evaluating the drug.
@@ -137,7 +137,12 @@ class Verifier:
         if not whole:
             return set(), f"'{name}' does not name exactly one {want.lower()} on its own"
         e = ents[0]
-        return {e["id"], *e.get("also_matching_ids", [])}, None
+        ids = {e["id"], *e.get("also_matching_ids", [])}
+        if len(ids) > 1:
+            # one alias for several organisations (a group and a subsidiary named after
+            # it): which one the claim means cannot be read off the name
+            return set(), f"'{name}' names {len(ids)} {want.lower()} nodes; use the id"
+        return ids, None
 
     # -- one claim ------------------------------------------------------------ #
     def check(self, claim, retrieved: set[str]) -> tuple[dict | None, str | None]:

@@ -1,0 +1,159 @@
+{
+  "head": "6bcde7295e7b2292636119cd3e1b2a604324693d",
+  "head_unchanged": true,
+  "reviewed_files_count": 35,
+  "changed_reviewed_files": [],
+  "tracked_status": "",
+  "untracked_outside_s3": [],
+  "root_replays": [
+    {
+      "series": "s1",
+      "exit": 0,
+      "cases": 117,
+      "identical_inputs": true,
+      "exceptions": [],
+      "source_sha256": "8fc4200b1d9239332ad404f6d3f94f7f2ecadade38ff93e3a8c8b1c805a4db6f",
+      "adaptation": "Only ROOT parent index 2 -> 3; original commit field is historical metadata."
+    },
+    {
+      "series": "s2",
+      "exit": 0,
+      "cases": 117,
+      "identical_inputs": true,
+      "exceptions": [],
+      "source_sha256": "0b47ecd01b67968c074ead6ade3fc6f40548a71110a1d36002b12c5fd70edafa",
+      "adaptation": "Only ROOT parent index 2 -> 3; original commit field is historical metadata."
+    }
+  ],
+  "identity": {
+    "s1": {
+      "case_count": 128,
+      "synthetic_count": 2,
+      "retired_edge_count": 142,
+      "same_inputs": true,
+      "exceptions": []
+    },
+    "s2": {
+      "case_count": 128,
+      "synthetic_count": 2,
+      "retired_edge_count": 142,
+      "same_inputs": true,
+      "exceptions": []
+    }
+  },
+  "faithful_demos": {
+    "s1": {
+      "same_demo_inputs": true,
+      "questions": 7,
+      "claims_accepted": {
+        "labels": 73,
+        "ids": 73
+      },
+      "phase_cases": 1,
+      "schema_cases": 2
+    },
+    "s2": {
+      "same_demo_inputs": true,
+      "questions": 7,
+      "claims_accepted": {
+        "labels": 73,
+        "ids": 73
+      },
+      "phase_cases": 1,
+      "schema_cases": 2
+    }
+  },
+  "faithful_supplemental": {
+    "s1_phase_examples_same_inputs": true,
+    "s1_schema_limitations_same_inputs": true,
+    "s2_phase_examples_same_inputs": true,
+    "s2_schema_limitations_same_inputs": true,
+    "all_four_action_inputs_unchanged": true,
+    "profile_input_unchanged": true,
+    "empty_phase_input_unchanged": true,
+    "empty_phase_output_unchanged": true,
+    "s1_dictionary_unchanged": true,
+    "s2_dictionary_unchanged": true
+  },
+  "model_ui": {
+    "s1": {
+      "model_cases_recorded": 28,
+      "missing_cases": [
+        "sdk_failure"
+      ],
+      "common_model_inputs_identical": true,
+      "api_requests_identical": true,
+      "api_count": 10,
+      "model_cases_executed": 29,
+      "legacy_sdk_failure_captured_separately": true,
+      "sdk_capture_artifact": "modelui_legacy_sdk_failure_results.json",
+      "page_cases": 10,
+      "page_no_raw_injected_elements": true
+    },
+    "s2": {
+      "model_cases_recorded": 28,
+      "missing_cases": [
+        "sdk_failure"
+      ],
+      "common_model_inputs_identical": true,
+      "api_requests_identical": true,
+      "api_count": 10,
+      "model_cases_executed": 29,
+      "legacy_sdk_failure_captured_separately": true,
+      "sdk_capture_artifact": "modelui_legacy_sdk_failure_results.json",
+      "page_cases": 10,
+      "page_no_raw_injected_elements": true,
+      "attack_inputs_identical": true,
+      "attack_rows": 22,
+      "nesting_subcases": 55,
+      "attack_api_requests_identical": true,
+      "attack_api_count": 7,
+      "attack_page_count": 7,
+      "attack_page_no_raw_injected_elements": true
+    },
+    "new": {
+      "rows": 68,
+      "api": 27,
+      "page": 27,
+      "no_raw_injected_elements": true,
+      "exceptions": [
+        {
+          "case": "model:shape:numeric_text",
+          "exception": "AttributeError: 'int' object has no attribute 'strip'"
+        },
+        {
+          "case": "model:shape:missing_content",
+          "exception": "AttributeError: 'types.SimpleNamespace' object has no attribute 'content'"
+        },
+        {
+          "case": "model:shape:none_message",
+          "exception": "AttributeError: 'NoneType' object has no attribute 'content'"
+        }
+      ],
+      "strict_json_failures": [
+        {
+          "case": "sanitiser:parsed_5001_digit_int",
+          "serialize_exception": "ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit"
+        }
+      ]
+    }
+  },
+  "outage_captures": [
+    {
+      "round": "s1",
+      "exact_exception": "RuntimeError('simulated SDK failure')",
+      "grounded": null,
+      "applicable": false
+    },
+    {
+      "round": "s2",
+      "exact_exception": "RuntimeError('simulated SDK failure')",
+      "grounded": null,
+      "applicable": false
+    }
+  ],
+  "pytest_result": "315 passed in 8.26s",
+  "missing_report_links": [],
+  "report_last_line": "VERDICT: CHANGES REQUIRED",
+  "sqlite_integrity": "ok"
+}
