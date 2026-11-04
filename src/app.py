@@ -272,28 +272,28 @@ def _sig(text: str) -> str:
     letters "TM"), then case and accents ignored and spaces, punctuation and invisible
     characters dropped. Letters of any script, digits and symbols are kept, so
     "trastu+zumab", "interferon" with a Greek gamma or "trastuzumab" with a radiation sign
-    are not "trastuzumab" or "interferon". The sign of an optical-rotation descriptor
-    is part of the name: a bracketed group of signs, dashes and slashes, in any order or
-    dash style, becomes "+", "−" or "±", so "(+)-", "(-)-" and "(+/-)" stay apart
-    once punctuation goes. Accents and invisible characters go first, so they cannot
-    hide a sign inside such a group."""
+    are not "trastuzumab" or "interferon".
+
+    A name with a bracketed group that holds no letter or digit ("(+/-)NICOTINE",
+    "(-)-ARTEMISININ") carries an optical-rotation descriptor, whose signs are
+    punctuation. Such a name is compared character for character instead: only case,
+    accents, spaces and invisible characters aside, and every dash read as "-". So
+    "(-)-ARTEMISININ", "(-_)-ARTEMISININ" and "(+/-\\u2622)NICOTINE" match no stored name but
+    their own; "(±)" and "(+/-)" are not taken as the same."""
     t = unicodedata.normalize("NFKC", "".join(c for c in text or "" if c not in _MARKS))
     t = unicodedata.normalize("NFKD", t.casefold())
     t = "".join(c for c in t if unicodedata.category(c)[0] not in "MC")
-    t = _SIGN_GROUP.sub(_sign, t)
+    if any(not any(unicodedata.category(c)[0] in "LN" for c in g) for g in _GROUP.findall(t)):
+        return "".join("-" if c in _DASH else c for c in t if unicodedata.category(c)[0] != "Z")
     return "".join(c for c in t if unicodedata.category(c)[0] not in "PZ")
 
 
-# a bracketed group with no letters or digits: an optical-rotation descriptor or
-# an empty pair of brackets
-_SIGN_GROUP = re.compile(r"[(\[]([^()\[\]\w]*)[)\]]")
-
-
-def _sign(m) -> str:
-    g = m.group(1)
-    plus = "+" in g or "±" in g
-    minus = "±" in g or "−" in g or any(unicodedata.category(c) == "Pd" for c in g)
-    return "±" if plus and minus else "+" if plus else "−" if minus else m.group(0)
+# Brackets of every kind (opening, closing and quotation punctuation) and every dash
+_OPEN = "".join(chr(c) for c in range(0x110000) if unicodedata.category(chr(c)) in ("Ps", "Pi"))
+_CLOSE = "".join(chr(c) for c in range(0x110000) if unicodedata.category(chr(c)) in ("Pe", "Pf"))
+_GROUP = re.compile("[" + re.escape(_OPEN) + "]([^" + re.escape(_OPEN + _CLOSE) + "]*)["
+                    + re.escape(_CLOSE) + "]")
+_DASH = {chr(c) for c in range(0x110000) if unicodedata.category(chr(c)) == "Pd"} | {"−"}
 
 
 def _add_name(into: dict, name: str, nid: str) -> None:

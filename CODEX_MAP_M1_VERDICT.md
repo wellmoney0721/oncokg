@@ -394,3 +394,13 @@ Corpus check of the question linker: no change. Tests 363.
 | M35-S1 | in a question, a sign group beside a bracketed shared-key name ("(+/-)(NICOTINE)", "(NICOTINE)(+/-)", "NICOTINE (+/-)") let the preferred-name rule read NICOTINE | `_named_alone` peels brackets that wrap the name, then refuses the reading if a sign group stands on either side |
 
 Corpus check of the question linker: no change. Tests 364.
+
+## Round 36 (audit_evidence_claims/m36) — CHANGES REQUIRED (two code blockers)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M36-B1 | "\w" counts the underscore, so "(-_)-ARTEMISININ", "[-_]-", fullwidth and small underscores escaped the descriptor reading and drew ARTEMISININ | interpreting descriptors is dropped: a name with a bracketed group holding no letter or digit (any opening/closing or quotation bracket) is compared character for character, only case, accents, spaces and invisible characters aside and every dash read as "-" |
+| M36-B2 | collapsing a sign group to one sign dropped other symbols in it: "(+/-☢)NICOTINE", "(±☢)", "(+/-$)", "(+/-×)" drew (+/-)NICOTINE | the same: the group is compared as written, so no symbol in it is lost |
+| M36-S1 | "((+/-))NICOTINE" and "NICOTINE((+/-))" in a question read NICOTINE | `_named_alone` looks at the whole run of brackets, signs, dashes, slashes and spaces beside the name; any sign in it blocks the reading |
+
+Recall given up: descriptor spellings other than the stored one ("(±)-nicotine", "(+-)NICOTINE") are not drawn. Corpus check of the question linker: no change. Tests 365.

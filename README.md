@@ -592,7 +592,7 @@ pip install -r requirements.txt
 python src/run_all.py              # fetch, resolve, check, build, score, render
 python src/run_all.py --offline    # rebuild from the snapshots in data/raw
 
-python -m pytest tests -q                    # 364 tests
+python -m pytest tests -q                    # 365 tests
 python src/app.py                            # try-it page: http://localhost:8765 (relation map, name resolver, questions, claim check)
 python src/curation_effect.py                # resolve twice, with and without curation
 python src/apply_label_corrections.py --check

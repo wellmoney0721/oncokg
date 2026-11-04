@@ -114,22 +114,24 @@ def _alnum_words(text: str) -> list[str]:
     return re.findall(r"[A-Za-z0-9]+", _plain(text))
 
 
-# a bracketed group of signs, dashes and slashes only: an optical-rotation descriptor
-_SIGN_GROUP = re.compile(r"[(\[][^()\[\]\w]*[+\-−±][^()\[\]\w]*[)\]]")
+# the brackets, signs, dashes, slashes, underscores and spaces that can make up an
+# optical-rotation descriptor beside a name, and the signs themselves
+_DESCRIPTOR_RUN = r"[()\[\]{}+\-/_\s−±]*"
+_SIGNS = re.compile(r"[+\-−±]")
 
 
 def _named_alone(question: str, name: str) -> bool:
     """The name occurs as a word of its own with no optical-rotation descriptor beside
     it: "NICOTINE" and "(NICOTINE)", but not "(+/-)NICOTINE", "(+/-)(NICOTINE)",
-    "NICOTINE (+)" or a name glued to other letters or signs."""
+    "((+/-))NICOTINE", "NICOTINE (+)" or a name glued to other letters or signs. Any
+    sign in the run of brackets, signs and spaces next to the name counts."""
     for m in re.finditer(re.escape(name), question, re.I):
         before, after = question[:m.start()], question[m.end():]
         if re.search(r"[\w+\-/−±]$", before) or re.match(r"[\w+\-/−±]", after):
             continue                              # glued to letters or signs
-        left, right = before.rstrip(), after.lstrip()
-        while left[-1:] in ("(", "[") and left and right[:1] in (")", "]") and right:
-            left, right = left[:-1].rstrip(), right[1:].lstrip()   # brackets around the name
-        if re.search(_SIGN_GROUP.pattern + r"$", left) or _SIGN_GROUP.match(right):
+        left = re.search(_DESCRIPTOR_RUN + "$", before).group(0)
+        right = re.match(_DESCRIPTOR_RUN, after).group(0)
+        if _SIGNS.search(left) or _SIGNS.search(right):
             continue                              # a descriptor beside it
         return True
     return False

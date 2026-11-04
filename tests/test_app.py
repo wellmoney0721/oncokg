@@ -758,8 +758,8 @@ def test_every_stored_spelling_is_checked_and_rotation_signs_count():
     # an optical-rotation sign is part of the name
     for t in ("(+)-NICOTINE", "(+)NICOTINE", "(-)-nicotine"):
         assert "center" not in e.explore(t), t
-    for t in ("(+/-)NICOTINE", "(\u00b1)-nicotine"):
-        assert e.explore(t)["center"]["id"] == "CHEMBL440464", t
+    assert e.explore("(+/-)NICOTINE")["center"]["id"] == "CHEMBL440464"
+    assert "center" not in e.explore("(\u00b1)-nicotine")    # a descriptor is compared as written
     # brackets around a shared-key name in a question are fine; a descriptor is not
     for q in ("What trials evaluate (NICOTINE)?", "What does (NICOTINE) target?", "What trials evaluate [NICOTINE]?"):
         assert [x["id"] for x in e.kg.link_entities(q)] == ["CHEMBL3"], q
@@ -777,8 +777,10 @@ def test_rotation_signs_survive_invisible_characters_dash_styles_and_order():
               "(\uff0d)-ARTEMISININ", "(\u207b)-ARTEMISININ", "[-]-ARTEMISININ", "(\u034f-)-ARTEMISININ",
               "(-\ufe0f)-ARTEMISININ", "(+)-ARTEMISININ"):
         assert "center" not in e.explore(t), t
-    for t in ("(-+)-NICOTINE", "(+-)NICOTINE", "( + / - )NICOTINE", "(+/\u2013)NICOTINE"):
+    for t in ("( + / - )NICOTINE", "(+/\u2013)NICOTINE", "(+/-)nicotine"):
         assert e.explore(t)["center"]["id"] == "CHEMBL440464", t
+    for t in ("(-+)-NICOTINE", "(+-)NICOTINE"):             # other spellings fail closed
+        assert "center" not in e.explore(t), t
     # a sign group beside a bracketed name in a question blocks the shared-key reading
     for q in ("What trials evaluate (+/-)(NICOTINE)?", "What does (+/-)[NICOTINE] target?",
               "What trials evaluate (NICOTINE)(+/-)?", "What trials evaluate [NICOTINE](+/-)?",
@@ -786,3 +788,16 @@ def test_rotation_signs_survive_invisible_characters_dash_styles_and_order():
         assert not e.kg.link_entities(q), q
     assert [x["id"] for x in e.kg.link_entities("What trials evaluate ( NICOTINE ) and osimertinib?")] == \
         ["CHEMBL3", "CHEMBL3353410"]
+
+
+# Codex review m36: a name with a bracketed group of signs is compared character for character
+def test_descriptor_names_are_compared_as_written():
+    import app
+    e = app.Engine()
+    for t in ("(-_)-ARTEMISININ", "(_-)-ARTEMISININ", "[-_]-ARTEMISININ", "(-\u200b_\u0301)-ARTEMISININ",
+              "(-\uff3f)-ARTEMISININ", "(-\ufe4d)-ARTEMISININ", "(-())-ARTEMISININ", "\u3014-\u3015-ARTEMISININ",
+              "\u00ab-\u00bb-ARTEMISININ", "(+/-\u2622)NICOTINE", "(\u00b1\u2622)NICOTINE", "(+/-$)NICOTINE",
+              "(+/-\u00d7)NICOTINE", "(+/\u2622-)NICOTINE", "()osimertinib"):
+        assert "center" not in e.explore(t), t
+    for q in ("What trials evaluate ((+/-))NICOTINE?", "What does NICOTINE((+/-)) target?"):
+        assert not e.kg.link_entities(q), q
