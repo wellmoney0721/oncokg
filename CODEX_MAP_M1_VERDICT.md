@@ -404,3 +404,15 @@ Corpus check of the question linker: no change. Tests 364.
 | M36-S1 | "((+/-))NICOTINE" and "NICOTINE((+/-))" in a question read NICOTINE | `_named_alone` looks at the whole run of brackets, signs, dashes, slashes and spaces beside the name; any sign in it blocks the reading |
 
 Recall given up: descriptor spellings other than the stored one ("(±)-nicotine", "(+-)NICOTINE") are not drawn. Corpus check of the question linker: no change. Tests 365.
+
+## Round 37 (audit_evidence_claims/m37) — APPROVE
+
+No blocker in the relation-map scope. Three nonblocking items:
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M37-S1 | question linker: a punctuation mark or symbol inside a descriptor ("(+/-.)NICOTINE", "(+/-☢)", "NICOTINE(.+/-)") ended the scan before its sign and NICOTINE was read | the run beside a shared-key name is every non-letter, non-digit character, so any sign in it counts; this also closes the older leaks "〔+/-〕NICOTINE", "NICOTINE«+/-»" and "(+/-)​NICOTINE" |
+| M37-S2 | "NICOTINE + osimertinib" no longer reads NICOTINE | kept: it follows the rule that any adjacent sign blocks the shared-key reading; it affects only keys several drugs share, which were not read at all before round 32 |
+| M37-S3 | the page and the explore docstring said punctuation is ignored without the descriptor exception | both now say that a name with a bracketed group holding no letter or digit is compared with its punctuation, as written |
+
+Corpus check of the question linker: no change. Tests 366.

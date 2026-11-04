@@ -801,3 +801,17 @@ def test_descriptor_names_are_compared_as_written():
         assert "center" not in e.explore(t), t
     for q in ("What trials evaluate ((+/-))NICOTINE?", "What does NICOTINE((+/-)) target?"):
         assert not e.kg.link_entities(q), q
+
+
+# Codex review m37: any non-letter beside a shared-key name belongs to the descriptor run
+def test_punctuation_and_symbols_do_not_end_the_descriptor_scan():
+    import app
+    e = app.Engine()
+    for q in ("What trials evaluate (+/-.)NICOTINE?", "What trials evaluate (+/-\u2622)NICOTINE?",
+              "What trials evaluate (+/-$)NICOTINE?", "What trials evaluate NICOTINE(.+/-)?",
+              "What trials evaluate (+/-\u00d7)NICOTINE?", "What trials evaluate (+/-:)NICOTINE?",
+              "What trials evaluate \u3014+/-\u3015NICOTINE?", "What trials evaluate NICOTINE\u00ab+/-\u00bb?",
+              "What trials evaluate (+/-)\u200bNICOTINE?"):
+        assert not e.kg.link_entities(q), q
+    for q in ("What trials evaluate NICOTINE?", "What trials evaluate (NICOTINE)?", "What trials evaluate NICOTINE, osimertinib?"):
+        assert "CHEMBL3" in [x["id"] for x in e.kg.link_entities(q)], q

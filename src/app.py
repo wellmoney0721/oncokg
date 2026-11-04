@@ -109,7 +109,9 @@ class Engine:
 
         `text` is a node id or one stored name, compared under one rule (`_sig`: case,
         accents, spaces, punctuation and trademark signs aside; every other letter,
-        digit and symbol must match): a drug's ChEMBL preferred name, a node's own
+        digit and symbol must match; a name with a bracketed group that holds no letter
+        or digit, such as the rotation sign in "(+/-)NICOTINE", is compared with its
+        punctuation, as written): a drug's ChEMBL preferred name, a node's own
         label, a target symbol, or a company or disease key. Anything more (a second
         name, a qualifier, a payload, a dye, a sentence) matches no stored name and is
         not drawn; the reply says to enter the name alone. A drug's other stored names

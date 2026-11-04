@@ -401,7 +401,7 @@ pip install -r requirements.txt
 python src/run_all.py              # 수집 → 해석 → 검증 → 그래프 → 채점 → 렌더
 python src/run_all.py --offline    # data/raw 스냅샷으로 재현
 
-python -m pytest tests -q          # 365개 테스트
+python -m pytest tests -q          # 366개 테스트
 python src/app.py                  # 직접 써 보기 화면: http://localhost:8765 (관계 지도·약 이름·질문·주장 검사)
 python src/apply_label_corrections.py --check
 python src/curation_effect.py      # 큐레이션 전후 두 번 해석

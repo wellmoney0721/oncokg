@@ -114,17 +114,19 @@ def _alnum_words(text: str) -> list[str]:
     return re.findall(r"[A-Za-z0-9]+", _plain(text))
 
 
-# the brackets, signs, dashes, slashes, underscores and spaces that can make up an
-# optical-rotation descriptor beside a name, and the signs themselves
-_DESCRIPTOR_RUN = r"[()\[\]{}+\-/_\s−±]*"
+# everything that is not a letter or digit beside a name (brackets of any kind, signs,
+# dashes, other punctuation, symbols, spaces, invisible characters): the run in which
+# an optical-rotation descriptor would stand, and the signs themselves
+_DESCRIPTOR_RUN = r"(?:[^\w]|_)*"
 _SIGNS = re.compile(r"[+\-−±]")
 
 
 def _named_alone(question: str, name: str) -> bool:
     """The name occurs as a word of its own with no optical-rotation descriptor beside
     it: "NICOTINE" and "(NICOTINE)", but not "(+/-)NICOTINE", "(+/-)(NICOTINE)",
-    "((+/-))NICOTINE", "NICOTINE (+)" or a name glued to other letters or signs. Any
-    sign in the run of brackets, signs and spaces next to the name counts."""
+    "((+/-))NICOTINE", "(+/-.)NICOTINE", "NICOTINE (+)" or a name glued to other letters
+    or signs. Any sign in the run of non-letters next to the name counts, so a list
+    joined by "+" or "-" ("NICOTINE + osimertinib") does not read it either."""
     for m in re.finditer(re.escape(name), question, re.I):
         before, after = question[:m.start()], question[m.end():]
         if re.search(r"[\w+\-/−±]$", before) or re.match(r"[\w+\-/−±]", after):
