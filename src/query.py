@@ -114,6 +114,27 @@ def _alnum_words(text: str) -> list[str]:
     return re.findall(r"[A-Za-z0-9]+", _plain(text))
 
 
+# a bracketed group of signs, dashes and slashes only: an optical-rotation descriptor
+_SIGN_GROUP = re.compile(r"[(\[][^()\[\]\w]*[+\-−±][^()\[\]\w]*[)\]]")
+
+
+def _named_alone(question: str, name: str) -> bool:
+    """The name occurs as a word of its own with no optical-rotation descriptor beside
+    it: "NICOTINE" and "(NICOTINE)", but not "(+/-)NICOTINE", "(+/-)(NICOTINE)",
+    "NICOTINE (+)" or a name glued to other letters or signs."""
+    for m in re.finditer(re.escape(name), question, re.I):
+        before, after = question[:m.start()], question[m.end():]
+        if re.search(r"[\w+\-/−±]$", before) or re.match(r"[\w+\-/−±]", after):
+            continue                              # glued to letters or signs
+        left, right = before.rstrip(), after.lstrip()
+        while left[-1:] in ("(", "[") and left and right[:1] in (")", "]") and right:
+            left, right = left[:-1].rstrip(), right[1:].lstrip()   # brackets around the name
+        if re.search(_SIGN_GROUP.pattern + r"$", left) or _SIGN_GROUP.match(right):
+            continue                              # a descriptor beside it
+        return True
+    return False
+
+
 def _fold(text: str) -> str:
     return re.sub(_DASHES, "-", unicodedata.normalize("NFKC", text or ""))
 
@@ -893,11 +914,7 @@ class OncoKG:
                     # own: "NICOTINE", but not the "NICOTINE" left of "(+/-)NICOTINE"
                     own = [h for h in hits
                            if _fold(self.dic["drugs"][h["drug_id"]]["name"]).lower() == window.lower()]
-                    # brackets around the name are fine ("(NICOTINE)"); a closing one
-                    # before it or an opening one after it is a descriptor's
-                    alone = re.search(r"(?<![\w+\-/)\]])" + re.escape(window) + r"(?![\w+\-/(\[])",
-                                      question, re.I)
-                    if len({h["drug_id"] for h in own}) == 1 and alone:
+                    if len({h["drug_id"] for h in own}) == 1 and _named_alone(question, window):
                         hits = own
                 if hits and len({h["drug_id"] for h in hits}) == 1:
                     did = hits[0]["drug_id"]

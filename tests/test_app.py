@@ -765,3 +765,24 @@ def test_every_stored_spelling_is_checked_and_rotation_signs_count():
         assert [x["id"] for x in e.kg.link_entities(q)] == ["CHEMBL3"], q
     for q in ("What trials evaluate (+/-)NICOTINE?", "What trials evaluate NICOTINE(+)?"):
         assert not e.kg.link_entities(q), q
+
+
+# Codex review m35
+def test_rotation_signs_survive_invisible_characters_dash_styles_and_order():
+    import app
+    e = app.Engine()
+    assert e.explore("ARTEMISININ")["center"]["id"] == "CHEMBL269671"
+    for t in ("(-)-ARTEMISININ", "(-\u200b)-ARTEMISININ", "(-\ufeff)-ARTEMISININ", "(-\u2060)-ARTEMISININ",
+              "(-\u0301)-ARTEMISININ", "(\u2212\u200b)-ARTEMISININ", "(\u2013)-ARTEMISININ", "(\u2010)-ARTEMISININ",
+              "(\uff0d)-ARTEMISININ", "(\u207b)-ARTEMISININ", "[-]-ARTEMISININ", "(\u034f-)-ARTEMISININ",
+              "(-\ufe0f)-ARTEMISININ", "(+)-ARTEMISININ"):
+        assert "center" not in e.explore(t), t
+    for t in ("(-+)-NICOTINE", "(+-)NICOTINE", "( + / - )NICOTINE", "(+/\u2013)NICOTINE"):
+        assert e.explore(t)["center"]["id"] == "CHEMBL440464", t
+    # a sign group beside a bracketed name in a question blocks the shared-key reading
+    for q in ("What trials evaluate (+/-)(NICOTINE)?", "What does (+/-)[NICOTINE] target?",
+              "What trials evaluate (NICOTINE)(+/-)?", "What trials evaluate [NICOTINE](+/-)?",
+              "What trials evaluate (NICOTINE)(+)?", "What trials evaluate NICOTINE (+/-)?"):
+        assert not e.kg.link_entities(q), q
+    assert [x["id"] for x in e.kg.link_entities("What trials evaluate ( NICOTINE ) and osimertinib?")] == \
+        ["CHEMBL3", "CHEMBL3353410"]

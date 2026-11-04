@@ -385,3 +385,12 @@ The replies `registry_name` and `biologic_synonym` are replaced by one reply, `a
 | M34-D1 | THEOPHYLLINE typed as Protein upstream (Open Targets drugType) | recorded; the map shows the stored value and no longer uses drug type to choose names |
 
 Corpus check of the question linker: no change. Tests 363.
+
+## Round 35 (audit_evidence_claims/m35) — CHANGES REQUIRED (one code blocker)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M35-B1 | the rotation descriptor was read before invisible characters and accents were dropped: "(-​)-ARTEMISININ", "(-﻿)-", "(-⁠)-", "(-́)-" lost the minus and drew ARTEMISININ (the (+) form) | `_sig` drops marks and invisible characters first, then turns any bracketed group of signs, dashes and slashes (any order, any dash style) into "+", "−" or "±"; a group with no sign is left to the punctuation rule |
+| M35-S1 | in a question, a sign group beside a bracketed shared-key name ("(+/-)(NICOTINE)", "(NICOTINE)(+/-)", "NICOTINE (+/-)") let the preferred-name rule read NICOTINE | `_named_alone` peels brackets that wrap the name, then refuses the reading if a sign group stands on either side |
+
+Corpus check of the question linker: no change. Tests 364.

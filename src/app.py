@@ -273,13 +273,27 @@ def _sig(text: str) -> str:
     characters dropped. Letters of any script, digits and symbols are kept, so
     "trastu+zumab", "interferon" with a Greek gamma or "trastuzumab" with a radiation sign
     are not "trastuzumab" or "interferon". The sign of an optical-rotation descriptor
-    is part of the name, so "(+)-", "(-)-" and "(+/-)" stay apart once punctuation goes."""
+    is part of the name: a bracketed group of signs, dashes and slashes, in any order or
+    dash style, becomes "+", "−" or "±", so "(+)-", "(-)-" and "(+/-)" stay apart
+    once punctuation goes. Accents and invisible characters go first, so they cannot
+    hide a sign inside such a group."""
     t = unicodedata.normalize("NFKC", "".join(c for c in text or "" if c not in _MARKS))
-    t = re.sub(r"\(\s*(?:\+\s*/?\s*[-−]|±)\s*\)", "±", t)
-    t = re.sub(r"\(\s*[-−]\s*\)", "−", t)
     t = unicodedata.normalize("NFKD", t.casefold())
-    return "".join(c for c in t if not unicodedata.combining(c)
-                   and unicodedata.category(c)[0] not in "PZC")
+    t = "".join(c for c in t if unicodedata.category(c)[0] not in "MC")
+    t = _SIGN_GROUP.sub(_sign, t)
+    return "".join(c for c in t if unicodedata.category(c)[0] not in "PZ")
+
+
+# a bracketed group with no letters or digits: an optical-rotation descriptor or
+# an empty pair of brackets
+_SIGN_GROUP = re.compile(r"[(\[]([^()\[\]\w]*)[)\]]")
+
+
+def _sign(m) -> str:
+    g = m.group(1)
+    plus = "+" in g or "±" in g
+    minus = "±" in g or "−" in g or any(unicodedata.category(c) == "Pd" for c in g)
+    return "±" if plus and minus else "+" if plus else "−" if minus else m.group(0)
 
 
 def _add_name(into: dict, name: str, nid: str) -> None:
