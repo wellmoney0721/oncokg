@@ -327,4 +327,24 @@ README test counts updated. Stored-alias sweep: no change. Tests 358.
 | M31-S1 | "osimertinib linked to EGFR mutations / TP53 mutations / EGFR resistance" refused; "Which trials evaluate resistance linked to osimertinib?" lost QA evidence | a gene-style symbol counts as a relation when a relation word goes with it; question words (evaluate, trials, sponsors, which, who, ...) end a partner window |
 | retained | "Which trials evaluate antibody-drug conjugate trastuzumab emtansine?" had no QA evidence (inherited) | same question-word window stop |
 
-Codex usage limit reached after this round (resets 2026-11-10); round 32 has not been run. Stored-alias sweep: no change. Tests 359.
+Codex usage limit reached after this round; round 32 was run after the reset (below). Stored-alias sweep: no change. Tests 359.
+
+
+## Before round 32 — the map takes one whole name (design change, not a word-list repair)
+
+Rounds 20 to 31 each found new wording that the question linker's markers did not cover
+(a phrase between the joining word and the partner, dye names outside the list). A list of
+words cannot be complete, so the map no longer depends on it:
+
+| # | Change | Why |
+| --- | --- | --- |
+| P32-1 | `explore` draws only when the whole input is one name: the linker reads exactly one entity and its matched text has the same letters, digits and symbols (any script; case, spaces, punctuation, trademark signs aside) as the input. Anything more returns `not_one_name` and the page asks for the name alone | a word the linker does not know can make the name a different product; now an unknown word means "not drawn", whatever it is |
+| P32-2 | any refused part refuses the whole input (before, "osimertinib, Mvasi" drew osimertinib and listed Mvasi) | one input, one name |
+| P32-3 | a name stored for several nodes is not drawn; the nodes are listed and the reader picks one by id ("Roche": folic acid alias and the company) | before, the first was drawn and the others listed |
+| P32-4 | lower-case ids (nct..., chembl..., ensg...) and company names the linker cuts at "&" ("Merck & Co") are read whole | recall for one-name input |
+| P32-5 | the question linker no longer decides a key shared by several drugs by its spelling, and does not fall back to a shorter name inside such a key | found by a sweep of the shared keys the earlier sweeps skipped: "medi4736" was read as atezolizumab, "5-fluorouracil" as capecitabine, "ak112" as envafolimab, "peginterferon alfa-2b" as alfa-2a, "crlx101" as camptothecin, "PD-1 mAb" as pembrolizumab, "Dha paclitaxel" as paclitaxel |
+
+The question boxes still use the linker's markers on free text; that limit is now README
+defect 15. Corpus check of the question linker (9,746 intervention strings and demo
+questions): 20 change, all names whose key is shared by several drugs, now unread instead of
+read as one of them. Tests 361.

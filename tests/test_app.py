@@ -19,6 +19,19 @@ def tiers(text):
     return [c["tier"] for c in ENGINE.resolve(text)["components"]]
 
 
+def _page(e, t):
+    """What the page shows for t. The map draws a whole name itself. Longer input is not
+    drawn (refused, or "enter one name"); the question boxes then read it with the linker,
+    and that reading is returned in the map's shape so a test can check it."""
+    r = e.explore(t)
+    if "center" in r:
+        return {**r, "also": []}
+    assert r.get("refused") or r.get("not_one_name"), (t, r)
+    hits = [x for x in e.kg.link_entities(t) if x.get("id") and x["type"] != "Refused"]
+    assert hits, t
+    return {"center": hits[0], "also": hits[1:], "linker": True}
+
+
 def test_resolve_matches_pipeline_rules():
     assert tiers("placebo plus docetaxel") == ["BLOCKED_PLACEBO", "EXACT"]
     assert tiers("Mvasi") == ["BLOCKED_DISTINCT_PRODUCT"]
@@ -44,7 +57,7 @@ def test_check_flags_invented_name_and_number_not_relation():
 def test_explore_draws_a_drug_and_refuses_a_biosimilar():
     import app
     e = app.Engine()
-    r = e.explore("osimertinib")
+    r = _page(e, "osimertinib")
     assert r["center"]["id"] == "CHEMBL3353410"
     rels = {(g["rel"], g["dir"]) for g in r["groups"]}
     assert ("ACTS_ON", "out") in rels and ("SPONSORS_TRIAL_OF", "in") in rels
@@ -89,7 +102,9 @@ def test_explore_does_not_draw_a_retired_centre_by_name():
 def test_explore_shows_other_readings_of_an_ambiguous_name():
     import app
     r = app.Engine().explore("Roche")
-    assert any(x.get("id") == "ORG:roche" for x in r["also"])
+    assert "center" not in r                     # neither reading is drawn for the other
+    assert {x["id"] for x in r["choose"]} >= {"ORG:roche"}
+    assert len(r["choose"]) > 1
 
 
 # Codex review m2b
@@ -101,7 +116,7 @@ def test_a_refused_product_does_not_swallow_a_separately_named_drug():
               "[89Zr] trastuzumab and osimertinib",
               "osimertinib, generic version of bevacizumab",
               "osimertinib and oral azacitidine"):
-        r = e.explore(t)
+        r = _page(e, t)
         assert r["center"]["id"] == "CHEMBL3353410", t
         assert all(x.get("id") != "CHEMBL1201583" for x in r["also"]), t
     a = e.kg.answer("Which trials evaluate osimertinib and generic version of bevacizumab?",
@@ -138,7 +153,7 @@ def test_a_qualified_product_is_refused_with_its_drug_wherever_it_sits():
     assert not a.evidence
     for t in ("osimertinib, liposomal doxorubicin", "osimertinib, biosimilar bevacizumab",
               "osimertinib; generic version of bevacizumab"):
-        assert e.explore(t)["center"]["id"] == "CHEMBL3353410", t
+        assert _page(e, t)["center"]["id"] == "CHEMBL3353410", t
 
 
 # Codex review m4: inside one list item the qualified drug is not guessed; all its drugs
@@ -159,15 +174,15 @@ def test_a_list_item_with_a_qualifier_refuses_every_drug_in_it():
               "Which trials evaluate biosimilar version of bevacizumab?"):
         a = e.kg.answer(q, use_llm=False)
         assert all("CHEMBL1201583" not in ev.edge_id for ev in a.evidence), q
-    r = e.explore("EGFR biosimilar bevacizumab")
+    r = _page(e, "EGFR biosimilar bevacizumab")
     assert r["center"]["id"] == "ENSG00000146648"
 
 
 def test_words_of_a_longer_name_are_not_read_again():
     import app
     e = app.Engine()
-    assert e.explore("erlotinib hydrochloride")["also"] == []
-    r = e.explore("Paclitaxel conjugate with poly-l-glutamic acid")
+    assert _page(e, "erlotinib hydrochloride")["also"] == []
+    r = _page(e, "Paclitaxel conjugate with poly-l-glutamic acid")
     assert r["center"]["id"] == "CHEMBL2108628" and r["also"] == []
 
 
@@ -177,7 +192,7 @@ def test_glued_separators_and_split_descriptions_do_not_leak_the_originator():
     e = app.Engine()
     for t in ("bevacizumab-awwb/ osimertinib", "bevacizumab-awwb| osimertinib",
               "bevacizumab - awwb/ osimertinib"):
-        r = e.explore(t)
+        r = _page(e, t)
         assert r["center"]["id"] == "CHEMBL3353410", t
         assert all(x.get("id") != "CHEMBL1201583" for x in r["also"]), t
     for t in ("liposomal and nanoparticle formulation of doxorubicin",
@@ -186,14 +201,14 @@ def test_glued_separators_and_split_descriptions_do_not_leak_the_originator():
     a = e.kg.answer("Which trials evaluate liposomal and nanoparticle formulations of doxorubicin?",
                     use_llm=False)
     assert all("CHEMBL53463" not in ev.edge_id for ev in a.evidence)
-    assert e.explore("Mvasi and bevacizumab")["center"]["id"] == "CHEMBL1201583"
+    assert _page(e, "Mvasi and bevacizumab")["center"]["id"] == "CHEMBL1201583"
 
 
 def test_a_name_is_not_built_from_two_list_items():
     import app
     e = app.Engine()
-    assert e.explore("biosimilar anastrozole, Arimidex")["center"]["id"] == "CHEMBL1399"
-    assert e.explore("Erlotinib, hydrochloride biosimilar bevacizumab")["center"]["id"] == "CHEMBL553"
+    assert _page(e, "biosimilar anastrozole, Arimidex")["center"]["id"] == "CHEMBL1399"
+    assert _page(e, "Erlotinib, hydrochloride biosimilar bevacizumab")["center"]["id"] == "CHEMBL553"
 
 
 def test_the_refusal_scan_grows_linearly():
@@ -210,7 +225,7 @@ def test_glued_separators_edge_punctuation_and_parenthetical_qualifiers_refuse()
     import app
     e = app.Engine()
     for t in ("bevacizumab - awwb/osimertinib", "bevacizumab - awwb|osimertinib"):
-        r = e.explore(t)
+        r = _page(e, t)
         assert r["center"]["id"] == "CHEMBL3353410", t
         assert all(x.get("id") != "CHEMBL1201583" for x in r["also"]), t
     for t in ("bevacizumab-awwb。", "bevacizumab-awwb-", "-bevacizumab-awwb",
@@ -228,9 +243,9 @@ def test_glued_separators_edge_punctuation_and_parenthetical_qualifiers_refuse()
 def test_a_whole_input_that_is_one_stored_name_is_read_whole():
     import app
     e = app.Engine()
-    assert e.explore("CP-358,774")["center"]["id"] == "CHEMBL553"
-    assert e.explore("Rapamycin, 42-o-(2-hydroxyethyl)-")["center"]["id"] == "CHEMBL1908360"
-    assert e.explore("Erlotinib/hydrochloride")["center"]["id"] == "CHEMBL553"
+    assert _page(e, "CP-358,774")["center"]["id"] == "CHEMBL553"
+    assert _page(e, "Rapamycin, 42-o-(2-hydroxyethyl)-")["center"]["id"] == "CHEMBL1908360"
+    assert _page(e, "Erlotinib/hydrochloride")["center"]["id"] == "CHEMBL553"
 
 
 # Codex review m7: one normalised spelling for every check
@@ -249,10 +264,10 @@ def test_wrappers_unicode_hyphens_punctuation_and_spaced_isotopes_refuse():
 def test_only_an_exact_stored_name_is_read_whole():
     import app
     e = app.Engine()
-    assert e.explore("Erlotinib, hydrochloride")["center"]["id"] == "CHEMBL553"
+    assert _page(e, "Erlotinib, hydrochloride")["center"]["id"] == "CHEMBL553"
     assert e.explore("is a").get("not_found")
-    assert e.explore("(E/Z)-AFATINIB")["center"]["id"] == "CHEMBL1173655"
-    assert e.explore("RO 09-1978/000")["center"]["id"] == "CHEMBL1773"
+    assert _page(e, "(E/Z)-AFATINIB")["center"]["id"] == "CHEMBL1173655"
+    assert _page(e, "RO 09-1978/000")["center"]["id"] == "CHEMBL1773"
 
 
 def test_repeated_list_pieces_are_resolved_once():
@@ -275,7 +290,7 @@ def test_spaced_isotopes_inner_wrappers_and_every_dash_refuse():
     for c in (chr(i) for i in range(0x110000) if unicodedata.category(chr(i)) == "Pd"):
         assert e.explore("bevacizumab" + c + "awwb").get("refused"), hex(ord(c))
     assert not e.kg.answer("Which trials evaluate [89 Zr] trastuzumab?", use_llm=False).evidence
-    assert e.explore("bevacizumab-(awwb), osimertinib")["center"]["id"] == "CHEMBL3353410"
+    assert _page(e, "bevacizumab-(awwb), osimertinib")["center"]["id"] == "CHEMBL3353410"
 
 
 def test_lone_names_qualifier_boundaries_and_cache_rollover():
@@ -283,11 +298,11 @@ def test_lone_names_qualifier_boundaries_and_cache_rollover():
     e = app.Engine()
     for name, did in (("566C", "CHEMBL1450"), ("9-ac", "CHEMBL274070"), ("5ac", "CHEMBL1489"),
                       ("5.BETA.,20-EPOXY-1,2.ALPHA.,4,7.BETA.", "CHEMBL428647")):
-        assert e.explore(name)["center"]["id"] == did, name
+        assert _page(e, name)["center"]["id"] == did, name
     for t in ("biosimilar, and osimertinib", "biosimilar; and osimertinib", "biosimilar and, osimertinib"):
-        assert e.explore(t)["center"]["id"] == "CHEMBL3353410", t
+        assert _page(e, t)["center"]["id"] == "CHEMBL3353410", t
     e.kg._resolve_cache = {f"k{i}": [] for i in range(4096)}
-    assert e.explore("osimertinib")["center"]["id"] == "CHEMBL3353410"
+    assert _page(e, "osimertinib")["center"]["id"] == "CHEMBL3353410"
 
 
 
@@ -304,10 +319,10 @@ def test_underscores_accents_spaced_suffixes_and_punctuated_isotopes_refuse():
         assert not e.kg.answer(q, use_llm=False).evidence, q
     # the isotope shares the list item with osimertinib: both refused (fail closed, round 15)
     assert e.explore("osimertinib with [89Zr] trastuzumab").get("refused")
-    assert e.explore("osimertinib, [89Zr] trastuzumab")["center"]["id"] == "CHEMBL3353410"
-    assert e.explore("bevacizumab_awwb, osimertinib")["center"]["id"] == "CHEMBL3353410"
-    assert e.explore("Theophylline in dextrose 5% in plastic container")["center"]["id"] == "CHEMBL1355736"
-    assert e.explore("cemiplimab-rwlc")["center"]["label"] == "CEMIPLIMAB"
+    assert _page(e, "osimertinib, [89Zr] trastuzumab")["center"]["id"] == "CHEMBL3353410"
+    assert _page(e, "bevacizumab_awwb, osimertinib")["center"]["id"] == "CHEMBL3353410"
+    assert _page(e, "Theophylline in dextrose 5% in plastic container")["center"]["id"] == "CHEMBL1355736"
+    assert _page(e, "cemiplimab-rwlc")["center"]["label"] == "CEMIPLIMAB"
 
 
 # Codex review m10
@@ -324,8 +339,8 @@ def test_isotopes_inside_beside_or_instead_of_a_name_and_respelt_qualifiers_refu
               "Which trials evaluate generic-version of bevacizumab?"):
         assert not e.kg.answer(q, use_llm=False).evidence, q
     for name, did in (("18f", "CHEMBL2030434"), ("9-ac", "CHEMBL274070"), ("ADAKITUG", "CHEMBL5314551")):
-        assert e.explore(name)["center"]["id"] == did, name
-    assert e.explore("trastuzumab 89 - Zr, osimertinib")["center"]["id"] == "CHEMBL3353410"
+        assert _page(e, name)["center"]["id"] == did, name
+    assert _page(e, "trastuzumab 89 - Zr, osimertinib")["center"]["id"] == "CHEMBL3353410"
 
 
 # Codex review m11: suffixes and isotopes spelt in pieces are glued back as the key glues them
@@ -336,12 +351,12 @@ def test_split_isotopes_and_spelt_out_suffixes_refuse():
               "bevacizumab a - w w b", "bevacizumab - a - w - w - b", "bevacizumab a_w_w_b"):
         assert e.explore(t).get("refused"), t
     for t in ("[89Z.r] trastuzumab, osimertinib", "bevacizumab a - w w b, osimertinib"):
-        assert e.explore(t)["center"]["id"] == "CHEMBL3353410", t
+        assert _page(e, t)["center"]["id"] == "CHEMBL3353410", t
     for q in ("Which trials evaluate [89Z.r] trastuzumab?", "Which trials evaluate bevacizumab a - w w b?"):
         assert not e.kg.answer(q, use_llm=False).evidence, q
     for t, did in (("osimertinib 80 mg", "CHEMBL3353410"), ("paclitaxel 2 cycles", "CHEMBL428647"),
                    ("cisplatin 75 mg/m2 day 1", "CHEMBL11359")):
-        assert e.explore(t)["center"]["id"] == did, t
+        assert _page(e, t)["center"]["id"] == did, t
 
 
 # Codex review m12: an isotope split by punctuation inside a stored alias, with a chelator between
@@ -350,9 +365,9 @@ def test_a_split_isotope_inside_a_stored_tracer_alias_refuses():
     e = app.Engine()
     for t in ("[89Z.r]-DFO-daratumumab", "89Z_r-dfo-daratumumab"):
         assert e.explore(t).get("refused"), t
-    assert e.explore("[89Z.r]-DFO-daratumumab, osimertinib")["center"]["id"] == "CHEMBL3353410"
+    assert _page(e, "[89Z.r]-DFO-daratumumab, osimertinib")["center"]["id"] == "CHEMBL3353410"
     assert not e.kg.answer("Which trials evaluate [89Z.r]-DFO-daratumumab?", use_llm=False).evidence
-    assert e.explore("daratumumab")["center"]["id"] == "CHEMBL1743007"
+    assert _page(e, "daratumumab")["center"]["id"] == "CHEMBL1743007"
 
 
 # Codex review m13: an isotope fused to a chelator, inside the name or beside it
@@ -365,7 +380,7 @@ def test_an_isotope_fused_to_a_chelator_refuses():
     assert not e.kg.answer("Which trials evaluate 89ZrDFO-daratumumab?", use_llm=False).evidence
     for t, did in (("13-cis retinoic acid", "CHEMBL38"), ("BKM-120NX", "CHEMBL2017974"),
                    ("paclitaxel 2 cycles", "CHEMBL428647")):
-        r = e.explore(t)
+        r = _page(e, t)
         assert r.get("center", {}).get("id") == did, (t, r.get("center"))
 
 
@@ -377,7 +392,7 @@ def test_upper_case_one_letter_isotopes_and_trailing_markers_refuse():
         assert e.explore(t).get("refused"), t
     for t, did in (("vinblastine", "CHEMBL159"), ("panitumumab", "CHEMBL1201827"),
                    ("NSC-118218H", None), ("DX-8951F", None), ("13-cis retinoic acid", "CHEMBL38")):
-        r = e.explore(t)
+        r = _page(e, t)
         assert r.get("center"), t
         if did:
             assert r["center"]["id"] == did, t
@@ -394,7 +409,7 @@ def test_a_medical_isotope_anywhere_in_the_item_refuses_an_unlabelled_drug():
     for t, label in (("18-FDG", "FLUDEOXYGLUCOSE F 18"), ("ra-223", "RADIUM RA 223 DICHLORIDE"),
                      ("lu-177 dotatate", "LUTETIUM OXODOTREOTIDE LU-177"),
                      ("lorlatinib 13 NSCLC trials", "LORLATINIB"), ("paclitaxel 2 cycles", "PACLITAXEL")):
-        assert e.explore(t)["center"]["label"] == label, t
+        assert _page(e, t)["center"]["label"] == label, t
 
 
 # Codex review m16: an element-first one-letter isotope inside a word
@@ -405,7 +420,7 @@ def test_element_first_one_letter_isotopes_refuse():
     for t in ("I-124-labelled trastuzumab", "trastuzumab labelled with I-124", "F18 trastuzumab",
               "C14 paclitaxel"):
         r = e.explore(t)
-        assert r.get("refused") or r["center"]["id"] not in ("CHEMBL1201585", "CHEMBL428647"), t
+        assert "center" not in r or r["center"]["id"] not in ("CHEMBL1201585", "CHEMBL428647"), t
     assert not e.kg.answer("Which trials evaluate I-124-labelled trastuzumab?", use_llm=False).evidence
     for t in ("BKM-120NX", "AZD9291", "IL-2"):
         assert e.explore(t).get("center"), t
@@ -436,7 +451,7 @@ def test_written_out_isotopes_and_labelling_words_refuse():
                            use_llm=False).evidence
     for t, label in (("fluorine-18 fluorodeoxyglucose", "FLUDEOXYGLUCOSE F 18"),
                      ("lead compound osimertinib", "OSIMERTINIB")):
-        assert e.explore(t)["center"]["label"] == label, t
+        assert _page(e, t)["center"]["label"] == label, t
 
 
 # Codex review m19
@@ -447,7 +462,7 @@ def test_split_labelling_words_and_metastable_mass_first_refuse():
               "trastuzumab labelled with 99m-technetium", "trastuzumab radio-iodinated"):
         assert e.explore(t).get("refused"), t
     for t in ("radiotherapy plus cisplatin", "cisplatin and radiation"):
-        assert e.explore(t)["center"]["label"] == "CISPLATIN", t
+        assert _page(e, t)["center"]["label"] == "CISPLATIN", t
 
 
 # Codex review m20
@@ -461,8 +476,8 @@ def test_therapy_nuclides_and_label_spellings_refuse():
               "radio-immuno-conjugate trastuzumab"):
         assert e.explore(t).get("refused"), t
     for t in ("non-radio-labelled trastuzumab", "unlabelled trastuzumab", "trastuzumab 600 mg sc"):
-        assert e.explore(t)["center"]["label"] == "TRASTUZUMAB", t
-    assert e.explore("osimertinib 51 criteria")["center"]["label"] == "OSIMERTINIB"
+        assert _page(e, t)["center"]["label"] == "TRASTUZUMAB", t
+    assert _page(e, "osimertinib 51 criteria")["center"]["label"] == "OSIMERTINIB"
 
 
 # Codex review m21
@@ -474,7 +489,7 @@ def test_bounded_symbol_isotopes_and_radioisotope_word_refuse():
               "trastuzumab labelled with a radioisotope", "radio-isotope-labelled trastuzumab"):
         assert e.explore(t).get("refused"), t
     for t in ("75 several trastuzumab", "51 criteria trastuzumab", "trastuzumab CR 51"):
-        assert e.explore(t)["center"]["label"] == "TRASTUZUMAB", t
+        assert _page(e, t)["center"]["label"] == "TRASTUZUMAB", t
 
 
 # Codex review m22
@@ -490,7 +505,7 @@ def test_fused_mass_symbols_and_radio_words_refuse():
                      ("non-radioastatinated trastuzumab", "TRASTUZUMAB"),
                      ("cisplatin radiochemotherapy", "CISPLATIN"),
                      ("osimertinib after radiofrequency ablation", "OSIMERTINIB")):
-        assert e.explore(t)["center"]["label"] == label, t
+        assert _page(e, t)["center"]["label"] == label, t
 
 
 # Codex review m23
@@ -505,7 +520,7 @@ def test_interior_symbol_isotopes_and_conjugates_refuse():
                      ("trastuzumab not radioactively labelled", "TRASTUZUMAB"),
                      ("trastuzumab deruxtecan antibody-drug conjugate", "TRASTUZUMAB DERUXTECAN"),
                      ("Paclitaxel conjugate with poly-l-glutamic acid", "PACLITAXEL POLIGLUMEX")):
-        assert e.explore(t)["center"]["label"] == label, t
+        assert _page(e, t)["center"]["label"] == label, t
 
 
 # Codex review m24
@@ -520,7 +535,7 @@ def test_plain_molecule_with_payload_letters_and_coupling_wording_refuse():
                      ("trastuzumab not covalently linked to DM1", "TRASTUZUMAB"),
                      ("non-radio-immuno-conjugated trastuzumab", "TRASTUZUMAB"),
                      ("osimertinib linked to resistance", "OSIMERTINIB")):
-        assert e.explore(t)["center"]["label"] == label, t
+        assert _page(e, t)["center"]["label"] == label, t
 
 
 # Codex review m25
@@ -535,7 +550,7 @@ def test_negation_stops_at_its_word_and_named_reagents_after_an_article_refuse()
                      ("trastuzumab not chemically attached to IRDye800CW", "TRASTUZUMAB"),
                      ("osimertinib linked to drug resistance", "OSIMERTINIB"),
                      ("osimertinib linked with poor prognosis", "OSIMERTINIB")):
-        assert e.explore(t)["center"]["label"] == label, t
+        assert _page(e, t)["center"]["label"] == label, t
 
 
 # Codex review m26
@@ -548,8 +563,8 @@ def test_not_only_affirms_and_linked_reads_the_whole_item():
         assert e.explore(t).get("refused"), t
     for t in ("osimertinib linked to longer PFS", "osimertinib linked to response in 2026",
               "osimertinib linked to resistance in EGFR"):
-        assert e.explore(t)["center"]["label"] == "OSIMERTINIB", t
-    assert e.explore("trastuzumab not covalently linked to DM1")["center"]["label"] == "TRASTUZUMAB"
+        assert _page(e, t)["center"]["label"] == "OSIMERTINIB", t
+    assert _page(e, "trastuzumab not covalently linked to DM1")["center"]["label"] == "TRASTUZUMAB"
 
 
 # Codex review m27 (partial: the run stopped at model capacity before its report)
@@ -560,7 +575,7 @@ def test_hyphenated_payload_codes_named_dyes_and_focus_words():
               "trastuzumab linked to Alexa Fluor 488",
               "trastuzumab not merely conjugated to DM1 but also purified"):
         assert e.explore(t).get("refused"), t
-    assert e.explore("trastuzumab not directly conjugated to DM1")["center"]["label"] == "TRASTUZUMAB"
+    assert _page(e, "trastuzumab not directly conjugated to DM1")["center"]["label"] == "TRASTUZUMAB"
 
 
 # Codex review m28
@@ -575,7 +590,7 @@ def test_focus_words_in_label_guard_dye_codes_and_extra_modification_of_an_adc()
         assert e.explore(t).get("refused"), t
     for t, label in (("trastuzumab not radiolabelled", "TRASTUZUMAB"),
                      ("trastuzumab deruxtecan antibody-drug conjugate", "TRASTUZUMAB DERUXTECAN")):
-        assert e.explore(t)["center"]["label"] == label, t
+        assert _page(e, t)["center"]["label"] == label, t
 
 
 # Codex review m29 (partial: stopped at model capacity; attacks/assertions.json is the record)
@@ -587,7 +602,7 @@ def test_suffixed_dye_codes_and_any_further_partner_of_a_named_adc_refuse():
               "trastuzumab emtansine conjugated to streptavidin",
               "trastuzumab deruxtecan conjugated to Cy3B"):
         assert e.explore(t).get("refused"), t
-    assert (e.explore("trastuzumab emtansine is an antibody drug conjugate")["center"]["label"]
+    assert (_page(e, "trastuzumab emtansine is an antibody drug conjugate")["center"]["label"]
             == "TRASTUZUMAB EMTANSINE")
 
 
@@ -602,7 +617,7 @@ def test_linked_fails_closed_and_modification_verbs_refuse():
     for t, label in (("trastuzumab not biotinylated", "TRASTUZUMAB"),
                      ("osimertinib linked to improved 3-year survival", "OSIMERTINIB"),
                      ("resistance linked to osimertinib", "OSIMERTINIB")):
-        assert e.explore(t)["center"]["label"] == label, t
+        assert _page(e, t)["center"]["label"] == label, t
     q = e.kg.link_entities("Which trials evaluate trastuzumab emtansine antibody-drug conjugate?")
     assert [x["label"] for x in q if x["type"] == "Drug"] == ["TRASTUZUMAB EMTANSINE"]
 
@@ -616,10 +631,55 @@ def test_setting_phrase_before_partner_and_gene_relations_and_question_scaffold(
               "trastuzumab deruxtecan functionalized in solution with eFluor 450"):
         assert e.explore(t).get("refused"), t
     for t in ("osimertinib linked to EGFR mutations", "osimertinib linked to TP53 mutations"):
-        assert e.explore(t)["center"]["label"] == "OSIMERTINIB", t
+        assert _page(e, t)["center"]["label"] == "OSIMERTINIB", t
     for q, label in (("Which trials evaluate resistance linked to osimertinib?", "OSIMERTINIB"),
                      ("Which trials evaluate antibody-drug conjugate trastuzumab emtansine?",
                       "TRASTUZUMAB EMTANSINE")):
         ents = e.kg.link_entities(q)
         assert [x["label"] for x in ents if x["type"] == "Drug"] == [label], q
         assert not any(x["type"] == "Refused" for x in ents), q
+
+
+# Codex review m32 (prepared before the round): the map takes one whole name
+def test_the_map_draws_only_a_whole_stored_name():
+    import app
+    e = app.Engine()
+    for t in ("osimertinib", " Osimertinib? ", "OSIMERTINIB", "ＯＳＩＭＥＲＴＩＮＩＢ",
+              "osimertinib​", "Tarceva®", "nct00200395", "chembl553", "Merck & Co", "EGFR", "egfr"):
+        assert e.explore(t).get("center"), t
+    # a second name, a qualifier, a dose, a partner, a dye, a sentence: not drawn
+    for t in ("osimertinib EGFR", "osimertinib 80 mg", "trastuzumab linked at lysine residues to eFluor 450",
+              "trastuzumab conjugated to a new dye", "osimertinib linked to EGFR mutations",
+              "Which trials evaluate osimertinib?", "the osimertinib", "osimertinib osimertinib",
+              "osimertinib and bevacizumab", "Dha paclitaxel"):
+        r = e.explore(t)
+        assert "center" not in r and (r.get("not_one_name") or r.get("not_found") or r.get("refused")), t
+    # a symbol or non-Latin letter the dictionary key drops still counts as more than the name
+    for t in ("trastuzumab ☢", "☢ trastuzumab", "interferon α", "Roche ☢",
+              "trastu☢zumab", "trastuzumab-α", "interferon-γ", "trastuzumab٣",
+              "trastuzumab😀"):
+        assert "center" not in e.explore(t), t
+    # a node's own label is a name too; a label shared with a drug alias asks to choose
+    assert e.explore("Li Zhang Md")["center"]["type"] == "Investigator"
+    r = e.explore("MAGEA3")
+    assert "center" not in r and {c["type"] for c in r["choose"]} == {"Drug", "Target"}
+    # any refused part refuses the whole input, even beside a plain name
+    for t in ("Mvasi", "osimertinib, Mvasi", "Mvasi and bevacizumab", "osimertinib, [89Zr] trastuzumab"):
+        assert e.explore(t).get("refused"), t
+
+
+def test_a_key_shared_by_several_drugs_is_not_decided_by_spelling():
+    import app
+    e = app.Engine()
+    # medi4736 is filed under durvalumab and, by a contaminated synonym, atezolizumab;
+    # 5-fluorouracil also under capecitabine; ak112 under envafolimab and ivonescimab
+    for t in ("medi4736", "MEDI-4736", "MEDI4736", "5-fluorouracil", "5 - fluorouracil", "ak112",
+              "AK-112", "peginterferon alfa-2b", "peg-interferon alfa-2b", "crlx101", "PD-1 mAb",
+              "dha-paclitaxel", "Dha paclitaxel"):
+        assert "center" not in e.explore(t), t
+        ents = e.kg.link_entities(t)
+        assert not [x for x in ents if x["type"] == "Drug"], (t, ents)
+    # a drug's own preferred name still chooses it
+    assert e.explore("NICOTINE")["center"]["id"] == "CHEMBL3"
+    assert e.explore("(+/-)NICOTINE")["center"]["id"] == "CHEMBL440464"
+    assert e.explore("fluorouracil")["center"]["label"] == "FLUOROURACIL"

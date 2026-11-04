@@ -737,8 +737,14 @@ class OncoKG:
         if T.is_distinct_product(name) or T.is_radiotracer(name):
             return None             # the list linker above has already applied the rest
         key = T.canonical_key(name)
-        exact = [h for h in (self.dic["index"].get(key) or [])
-                 if _fold(h["alias"]).strip(" ?!.").lower() == name.lower()]
+        every = self.dic["index"].get(key) or []
+        exact = [h for h in every if _fold(h["alias"]).strip(" ?!.").lower() == name.lower()]
+        if len({h["drug_id"] for h in every}) > 1:
+            # the key names several drugs ("medi4736" is filed under durvalumab and, by a
+            # contaminated synonym, atezolizumab): a spelling that differs only in case or
+            # punctuation does not choose between them, only a drug's own preferred name does
+            exact = [h for h in exact
+                     if _fold(self.dic["drugs"][h["drug_id"]]["name"]).lower() == name.lower()]
         if not exact or len({h["drug_id"] for h in exact}) != 1:
             return None
         did = exact[0]["drug_id"]
@@ -900,6 +906,13 @@ class OncoKG:
                                       "id": self.disease["disease_id"],
                                       "label": self.disease["name"],
                                       "matched_text": window})
+                    continue
+
+                if hits and len({h["drug_id"] for h in hits}) > 1:
+                    # a stored name that points at several drugs: none is chosen, and its
+                    # words are not read again as a shorter name ("DHA paclitaxel" is not
+                    # paclitaxel, "5 - fluorouracil" is also filed under capecitabine)
+                    matched.update(range(i, i + size))
         return found
 
     def _drug_spans(self, tokens: list[str], skip: set[int], seg: list[int]) -> list[tuple[int, int]]:

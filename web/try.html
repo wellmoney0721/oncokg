@@ -51,7 +51,7 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;font:12.5px var(--mono);backgrou
 
   <section>
     <h2>0. 관계 지도</h2>
-    <p class="sub">약·표적·회사 이름(또는 NCT 번호)을 넣으면 그래프에서 그것과 이어진 것을 관계별로 보여 줍니다. 지도에는 그중 일부를 그리고, 몇 개를 그렸는지와 관계마다의 전체 수는 함께 적습니다.
+    <p class="sub">약·표적·회사 이름(또는 NCT 번호) 하나를 넣으면 그래프에서 그것과 이어진 것을 관계별로 보여 줍니다. 입력 전체가 그래프에 저장된 이름 하나와 같을 때만 그립니다(대소문자·띄어쓰기·문장부호는 따지지 않음). 이름이 둘이거나 설명이 붙은 입력은 그리지 않습니다 &mdash; 붙은 말 하나가 다른 제품을 뜻할 수 있기 때문입니다. 지도에는 그중 일부를 그리고, 몇 개를 그렸는지와 관계마다의 전체 수는 함께 적습니다.
     동그라미를 누르면 그쪽으로 옮겨 갑니다. 예를 들어 약 &rarr; 그 약의 임상을 주관한 회사 &rarr; 그 회사가 주관한 다른 약 순서로 따라가며,
     관계가 바이오 지식으로 말이 되는지 확인해 보세요. 선이 있다는 것은 &lsquo;근거가 된 기록이 있다&rsquo;는 뜻이고, 임상을 주관했다는 것은 그 약을 개발했다는 뜻이 아닙니다.</p>
     <form class="row" id="f0"><input id="t0" placeholder="예: osimertinib, EGFR, AstraZeneca, NCT00200395" autocomplete="off" aria-label="찾을 이름"><button>그리기</button></form>
@@ -213,6 +213,9 @@ async function explore(text, push=true){
   let r; try{ r = await call("/api/explore",text); }catch(e){ if(my!==seq) return; trail.length=0; showTrail(); o.innerHTML=`<p class="err">${esc(e.message)}</p>`; return; }
   if(my!==seq) return;
   if(r.refused){ trail.length=0; showTrail(); o.innerHTML=`<div class="comp no"><div class="top"><span class="verdict">연결하지 않음</span><span class="s">${esc(r.refused)}</span></div><div class="detail">바이오시밀러·개량 제형·추적자처럼 원래 약과 다른 제품이라, 원래 약의 관계로 그리지 않습니다.</div></div>`; return; }
+  if(r.not_one_name){ trail.length=0; showTrail(); o.innerHTML=`<p class="err">이름 하나만 넣어 주세요: ${esc(r.not_one_name)}<br>관계 지도는 입력 전체가 저장된 이름 하나(약·표적·회사·NCT 번호)와 같을 때만 그립니다. 이름이 둘이거나 용량·설명·결합 물질 같은 말이 붙으면, 붙은 말이 다른 제품을 뜻할 수 있어 그리지 않습니다.</p>`; return; }
+  if(r.choose){ trail.length=0; showTrail(); o.innerHTML=`<div class="comp"><div class="top"><span class="verdict">하나를 골라 주세요</span><span class="s">${esc(r.text)}</span></div><div class="detail">이 이름은 그래프에서 여러 곳에 붙어 있어 하나를 골라 그리지 않습니다. 그릴 것을 누르세요: ${r.choose.map(x=>
+      `<button type="button" class="ex" data-id="${esc(x.id)}">${esc(TKO[x.type]||x.type)}: ${esc(x.label)} <span class="code">${esc(x.id)}</span></button>`).join(" ")}</div></div>`; return; }
   if(r.not_found){ trail.length=0; showTrail(); o.innerHTML=`<p class="err">그래프에서 찾지 못했습니다: ${esc(r.not_found)} (이 그래프는 비소세포폐암 임상시험 3,000건 범위입니다. 입력은 500자까지 받습니다)</p>`; return; }
   const c=r.center;
   if(push){ trail.push([c.id,c.label]); }
@@ -221,13 +224,10 @@ async function explore(text, push=true){
   const url = safeUrl(cp.url);
   const read = c.matched_text && c.matched_text.toLowerCase()!==String(c.label).toLowerCase()
     ? `<div class="detail">&ldquo;${esc(c.matched_text)}&rdquo;를 ${esc(c.label)}(으)로 읽었습니다.</div>` : "";
-  const also = (r.also||[]).length ? `<div class="detail">같은 입력으로 함께 찾은 것: ${r.also.map(x=>x.refused
-      ? `<span class="chip no">${esc(x.refused)} 연결하지 않음</span>`
-      : `<button type="button" class="ex" data-id="${esc(x.id)}">${esc(TKO[x.type]||x.type)}: ${esc(x.label)}</button>`).join(" ")}</div>` : "";
   const head = `<div class="comp ok"><div class="top"><span class="verdict">${esc(TKO[c.type]||c.type)}</span><span class="s">${esc(c.label)}</span><span class="code">${esc(c.id)}</span></div>`+
     `<div class="detail">${[c.trials!=null?`이 그래프 안 임상 ${c.trials}건`:"", cp.max_phase_overall?`최고 개발 단계 ${PHASE[cp.max_phase_overall]||cp.max_phase_overall}`:"", cp.drug_type||"",
       cp.phases?PH(cp.phases):"", cp.status||"", cp.start_date?`시작 ${cp.start_date}`:"", cp.title||""].filter(Boolean).map(esc).join(" · ")}`+
-    `${url?` · <a href="${esc(url)}" target="_blank" rel="noopener">ClinicalTrials.gov</a>`:""}</div>${read}${also}</div>`;
+    `${url?` · <a href="${esc(url)}" target="_blank" rel="noopener">ClinicalTrials.gov</a>`:""}</div>${read}</div>`;
   const lists = r.groups.map(g=>{ const [h, order] = groupHead(g);
     return `<details ${g.total<=12?"open":""}><summary style="cursor:pointer;margin-top:6px"><b>${esc(h)}</b> <span class="chip">${g.total}</span>`+
     `${g.total>g.items.length?` <span class="note">${esc(order)} 앞 ${g.items.length}개만 보입니다</span>`:(order?` <span class="note">${esc(order)}</span>`:"")}</summary>`+

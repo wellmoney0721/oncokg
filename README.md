@@ -514,6 +514,20 @@ fixed now, and its number has been reused.
 7. **The post-fix sample confirms nothing about the repairs.** Its interval is
    uninformatively wide and it was scored with the same one annotator; the
    evidence that a repair holds is its regression test, not this sample.
+8. **The query layer answers the nearest question it can.** "Is pembrolizumab
+   safe in patients with autoimmune disease?" returns a drug profile rather than
+   refusing. It refuses only when no entity links at all.
+9. **`MEDI4736` stays ambiguous** although it is unambiguously durvalumab,
+   because the contaminated synonym blocks the preferred-name rule. Other keys a
+   contaminated synonym shares between drugs stay unread the same way in the question
+   boxes and the relation map (`5-fluorouracil` is also filed under capecitabine, `AK112`
+   under two antibodies, `PD-1 mAb` under pembrolizumab and camrelizumab); before round 32
+   the question linker chose one of them by spelling.
+10. **A two-word personal name is indistinguishable from a short company name.**
+    `Xiuning Le` is a person and `Shanghai Henlius` is a company; only an
+    explicit credential (`MD`, `PhD`) is used to separate them, so the 36
+    `Investigator` nodes are the credentialed ones and the rest stay `Company`.
+    An earlier shape-based guess typed Accuray and Daiichi Sankyo as people.
 11. **The registry-synonym rule errs toward refusal.** It removes some correct
     names along with the contaminated ones: misspellings it cannot tell from a
     different ingredient (`terelizumab` for tislelizumab, `slulimumab` for
@@ -541,16 +555,18 @@ fixed now, and its number has been reused.
     fetch time, but the graph does not store which revision of the rules built
     it, so a change that arrives with a new snapshot and a code change together
     cannot be separated from the database alone; only git history can.
-8. **The query layer answers the nearest question it can.** "Is pembrolizumab
-   safe in patients with autoimmune disease?" returns a drug profile rather than
-   refusing. It refuses only when no entity links at all.
-9. **`MEDI4736` stays ambiguous** although it is unambiguously durvalumab,
-   because the contaminated synonym blocks the preferred-name rule.
-10. **A two-word personal name is indistinguishable from a short company name.**
-    `Xiuning Le` is a person and `Shanghai Henlius` is a company; only an
-    explicit credential (`MD`, `PhD`) is used to separate them, so the 36
-    `Investigator` nodes are the credentialed ones and the rest stay `Company`.
-    An earlier shape-based guess typed Accuray and Daiichi Sankyo as people.
+15. **Refusal in the question boxes rests on markers it recognises.** The question
+    boxes (2 to 4) find drug names in a sentence and do not read a name as the
+    originator when a biosimilar suffix, an isotope, a label, a conjugated partner or
+    a formulation word is attached to it. Those markers are word lists. In 31
+    adversarial rounds on the relation map every round found new wording (a phrase
+    placed between the joining word and the partner, new dye names); each was fixed
+    and kept as a regression test, but wording outside the lists can still read a
+    different product as the originator. That is why the relation map draws only an
+    input that is, as a whole, one stored name. A stored name that itself denotes a
+    different product (ChEMBL lists bevacizumab biosimilar development codes as
+    bevacizumab synonyms; an AACT synonym maps 13-cis-retinoic acid to tretinoin) can
+    only be fixed by curating the dictionary.
 
 ---
 
@@ -562,7 +578,7 @@ pip install -r requirements.txt
 python src/run_all.py              # fetch, resolve, check, build, score, render
 python src/run_all.py --offline    # rebuild from the snapshots in data/raw
 
-python -m pytest tests -q                    # 359 tests
+python -m pytest tests -q                    # 361 tests
 python src/app.py                            # try-it page: http://localhost:8765 (relation map, name resolver, questions, claim check)
 python src/curation_effect.py                # resolve twice, with and without curation
 python src/apply_label_corrections.py --check

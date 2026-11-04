@@ -16,9 +16,11 @@ pipeline would do. Nothing is written; the language model is never called.
 from __future__ import annotations
 
 import json
+import re
 import sqlite3
 import sys
 import threading
+import unicodedata
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
@@ -45,6 +47,11 @@ class Engine:
         self.index_keys = self.kg.index_keys
         target_rows, _, _ = N._load("targets")
         self.target_keys = N.target_guard_keys(target_rows, self.dic)
+        # every node by its own label, so a name the graph itself shows can be typed back
+        self.by_label: dict = {}
+        for r in self.kg.conn.execute("SELECT id, label FROM node"):
+            if r["label"]:
+                self.by_label.setdefault(_label_key(r["label"]), []).append(r["id"])
 
     def resolve(self, text: str) -> dict:
         out = N.resolve_drug_string(text, self.dic, self.index_keys, self.target_keys)
@@ -71,47 +78,64 @@ class Engine:
     def explore(self, text: str, per_group: int = 30) -> dict:
         """One live node and the live nodes its live edges tie it to, grouped by relation.
 
-        `text` is a node id or a name the question linker reads as one entity. A name
-        the linker refuses (a biosimilar, a reformulation, a tracer) is reported, never
-        mapped to the originator. Each group keeps `per_group` neighbours, sorted as the
-        page states: trials by start date (latest first), drugs by trials in the graph,
-        sponsors by trials they lead, disease targets by association score. Sponsorship
-        keeps its role (lead sponsor or collaborator)."""
+        `text` is a node id, a node's own label, or one name: the whole input (case,
+        spaces, punctuation and trademark signs aside) must be the one name the question
+        linker read, written in Latin letters and ASCII digits and symbols (`_plain`).
+        Anything more (a second name, a qualifier, a payload, a dye, a sentence) is not
+        drawn, because a word the linker does not know may make the name a different
+        product; the reply says to enter the name alone. A name the linker refuses (a
+        biosimilar, a reformulation, a tracer) is reported, never mapped to the
+        originator. A name that is stored for several nodes is not drawn either: the
+        nodes are listed and the reader picks one by its id.
+
+        Each group keeps `per_group` neighbours, sorted as the page states: trials by
+        start date (latest first), drugs by trials in the graph, sponsors by trials they
+        lead, disease targets by association score. Sponsorship keeps its role (lead
+        sponsor or collaborator)."""
         conn = self.kg.conn
-        also: list = []
         matched = None
+        ref = text.strip()
+        if re.fullmatch(r"(?i)(nct|chembl|ensg)\d+", ref):
+            ref = ref.upper()                         # an id typed in lower case
         row = conn.execute("SELECT id FROM node WHERE id=? AND retired_at IS NULL",
-                           (text,)).fetchone()
+                           (ref,)).fetchone()
         if row:
             nid = row["id"]
         else:
             ents = self.kg.link_entities(text)
             refused = [e for e in ents if e["type"] == "Refused"]
             hits = [e for e in ents if e.get("id") and e["type"] != "Refused"]
-            if not hits:
-                if refused:
-                    return {"refused": refused[0]["label"], "why": refused[0]["why"]}
-                return {"not_found": text}
-            nid, matched = hits[0]["id"], hits[0].get("matched_alias") or hits[0].get("matched_text")
-            also = [{"id": e["id"], "type": e["type"], "label": e["label"]} for e in hits[1:]]
-            for oid in hits[0].get("also_matching_ids") or []:   # one alias, several ids
+            if refused:                       # any refused part: the input is not one plain name
+                return {"refused": refused[0]["label"], "why": refused[0]["why"]}
+            ids = []
+            whole = (len(hits) == 1 and _plain(text) and bool(_sig(text))
+                     and _sig(hits[0].get("matched_text") or "") == _sig(text))
+            if whole:
+                matched = hits[0].get("matched_alias") or hits[0].get("matched_text")
+                ids += [hits[0]["id"]] + list(hits[0].get("also_matching_ids") or [])
+            # the whole input may also be a node's own label, or an organisation or a
+            # target the linker passed over or split ("Roche" is also a folic acid alias,
+            # "Merck & Co" is cut at "&", "MAGEA3" is also a vaccine alias)
+            ids += self.by_label.get(_label_key(text), [])
+            key = T.canonical_key(text)
+            if key and _plain(text):
+                ids += self.kg.companies.get(key, [])
+            t = self.kg.targets.get(text.strip().lower())
+            if t:
+                ids.append(t["target_id"])
+            choices = []
+            for oid in ids:
                 lab = conn.execute("SELECT type, label FROM node WHERE id=? AND retired_at IS NULL",
                                    (oid,)).fetchone()
-                if lab and oid != nid:
-                    also.append({"id": oid, "type": lab["type"], "label": lab["label"]})
-            # the same words may also name an organisation or a target the linker
-            # passed over because a drug alias came first ("Roche" is a folic acid alias)
-            key = T.canonical_key(text)
-            for cid in self.kg.companies.get(key, []):
-                if cid != nid and all(x.get("id") != cid for x in also):
-                    lab = conn.execute("SELECT label FROM node WHERE id=? AND retired_at IS NULL",
-                                       (cid,)).fetchone()
-                    if lab:
-                        also.append({"id": cid, "type": "Company", "label": lab["label"]})
-            t = self.kg.targets.get(text.strip().lower())
-            if t and t["target_id"] != nid:
-                also.append({"id": t["target_id"], "type": "Target", "label": t["symbol"]})
-            also += [{"refused": e["label"]} for e in refused]
+                if lab and all(c["id"] != oid for c in choices):
+                    choices.append({"id": oid, "type": lab["type"], "label": lab["label"]})
+            if not choices:                   # nothing live by that name, or more than a name
+                return {"not_one_name": text} if hits and not whole else {"not_found": text}
+            if len(choices) > 1:
+                # one name, several nodes ("Roche"): none is drawn in place of the others;
+                # the reader picks one by its id
+                return {"choose": choices, "text": text}
+            nid = choices[0]["id"]
         node = conn.execute("SELECT id, type, label, props FROM node WHERE id=? "
                             "AND retired_at IS NULL", (nid,)).fetchone()
         if node is None:                              # a name can outlive its node
@@ -175,7 +199,7 @@ class Engine:
                            "props": {k: props.get(k) for k in
                                      ("max_phase_overall", "drug_type", "phases", "status",
                                       "title", "url", "start_date") if props.get(k) is not None}},
-                "also": also, "groups": out}
+                "groups": out}
 
     def ask(self, question: str) -> dict:
         return self.kg.answer(question, use_llm=False).to_dict()
@@ -202,6 +226,39 @@ class Engine:
                 "evidence": [{"statement": e.statement, "source_record": e.source_record,
                               "source": e.source, "url": e.url} for e in evidence[:8]],
                 "evidence_count": len(evidence)}
+
+
+_MARKS = "®™©℠"          # registered, trade mark, copyright, service mark
+
+
+def _sig(text: str) -> str:
+    """The letters, digits and symbols of a name without case, spaces, punctuation or
+    trademark signs: what must match between the input and the name the linker read."""
+    t = unicodedata.normalize("NFKC", text or "").casefold()
+    return "".join(c for c in t
+                   if unicodedata.category(c)[0] not in "PZC" and c not in _MARKS)
+
+
+def _label_key(text: str) -> str:
+    """A node label as typed: compatibility forms folded, case and spacing ignored."""
+    return " ".join(unicodedata.normalize("NFKC", text or "").casefold().split())
+
+
+def _plain(text: str) -> bool:
+    """Every character is one the dictionary key may safely drop or keeps: Latin letters
+    (accents allowed), ASCII digits, punctuation, ASCII symbols, trademark signs, spaces
+    and invisible characters. A Greek letter, another script, a non-ASCII symbol or digit
+    is dropped by the key yet can change the meaning (interferon followed by a Greek
+    gamma, a radiation sign inside "trastuzumab"), so such input is never read as a
+    stored name."""
+    for c in unicodedata.normalize("NFKC", text or ""):
+        cat = unicodedata.category(c)
+        if cat[0] in "PZCM" or c in _MARKS or (c.isascii() and cat[0] in "SN"):
+            continue
+        if cat[0] == "L" and unicodedata.name(c, "").startswith("LATIN "):
+            continue
+        return False
+    return True
 
 
 def _number(v) -> bool:
