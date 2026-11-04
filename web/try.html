@@ -51,7 +51,7 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;font:12.5px var(--mono);backgrou
 
   <section>
     <h2>0. 관계 지도</h2>
-    <p class="sub">약·표적·회사 이름(또는 NCT 번호) 하나를 넣으면 그래프에서 그것과 이어진 것을 관계별로 보여 줍니다. 입력 전체가 저장된 이름 하나(약의 ChEMBL 대표 이름·상품명, 저분자 약의 ChEMBL 동의어, 그래프에 표시된 이름, 표적 기호, 회사 이름)와 같을 때만 그립니다(대소문자·악센트·띄어쓰기·문장부호·상표 기호는 따지지 않음). 이름이 둘이거나 설명이 붙은 입력은 그리지 않습니다 &mdash; 붙은 말 하나가 다른 제품을 뜻할 수 있기 때문입니다. 임상시험 등록 문자열에서만 나온 동의어와 항체·단백질 약의 ChEMBL 동의어는 다른 약·바이오시밀러가 잘못 붙은 것이 섞여 있어 지도에서는 쓰지 않습니다. 지도에는 그중 일부를 그리고, 몇 개를 그렸는지와 관계마다의 전체 수는 함께 적습니다.
+    <p class="sub">약·표적·회사 이름(또는 NCT 번호) 하나를 넣으면 그래프에서 그것과 이어진 것을 관계별로 보여 줍니다. 입력 전체가 저장된 이름 하나(약의 ChEMBL 대표 이름, 그래프에 표시된 이름, 표적 기호, 회사 이름)와 같을 때만 그립니다(대소문자·악센트·띄어쓰기·문장부호·상표 기호는 따지지 않음). 이름이 둘이거나 설명이 붙은 입력은 그리지 않습니다 &mdash; 붙은 말 하나가 다른 제품을 뜻할 수 있기 때문입니다. 약의 상품명·동의어는 여러 성분 제품·다른 제형·바이오시밀러가 한 성분 아래 들어간 경우가 있어 지도에서는 쓰지 않습니다 &mdash; 약은 ChEMBL 대표 이름(INN이나 개발 코드)으로 넣어 주세요. 지도에는 그중 일부를 그리고, 몇 개를 그렸는지와 관계마다의 전체 수는 함께 적습니다.
     동그라미를 누르면 그쪽으로 옮겨 갑니다. 예를 들어 약 &rarr; 그 약의 임상을 주관한 회사 &rarr; 그 회사가 주관한 다른 약 순서로 따라가며,
     관계가 바이오 지식으로 말이 되는지 확인해 보세요. 선이 있다는 것은 &lsquo;근거가 된 기록이 있다&rsquo;는 뜻이고, 임상을 주관했다는 것은 그 약을 개발했다는 뜻이 아닙니다.</p>
     <form class="row" id="f0"><input id="t0" placeholder="예: osimertinib, EGFR, AstraZeneca, NCT00200395" autocomplete="off" aria-label="찾을 이름"><button>그리기</button></form>
@@ -213,8 +213,7 @@ async function explore(text, push=true){
   let r; try{ r = await call("/api/explore",text); }catch(e){ if(my!==seq) return; trail.length=0; showTrail(); o.innerHTML=`<p class="err">${esc(e.message)}</p>`; return; }
   if(my!==seq) return;
   if(r.refused){ trail.length=0; showTrail(); o.innerHTML=`<div class="comp no"><div class="top"><span class="verdict">연결하지 않음</span><span class="s">${esc(r.refused)}</span></div><div class="detail">바이오시밀러·개량 제형·추적자처럼 원래 약과 다른 제품이라, 원래 약의 관계로 그리지 않습니다.</div></div>`; return; }
-  if(r.registry_name){ trail.length=0; showTrail(); o.innerHTML=`<p class="err">임상시험 등록 문자열에서만 나온 이름이라 그리지 않습니다: ${esc(r.registry_name)}<br>이런 동의어에는 다른 약이나 다른 제형이 잘못 붙은 것이 섞여 있습니다(예: bupivacaine hydrochloride가 antimony 아래). ChEMBL 이름이나 상품명으로 넣어 주세요.</p>`; return; }
-  if(r.biologic_synonym){ trail.length=0; showTrail(); o.innerHTML=`<p class="err">항체·단백질 약의 ChEMBL 동의어라 그리지 않습니다: ${esc(r.biologic_synonym)}<br>이 동의어에는 원래 약의 개발 코드와 함께, 원래 약 아래로 잘못 들어간 바이오시밀러 코드·상품명이 섞여 있어(예: CT-P13·Zessly가 infliximab 아래) 둘을 가를 수 없습니다. ChEMBL 대표 이름이나 원래 약의 상품명으로 넣어 주세요.</p>`; return; }
+  if(r.alias_only){ trail.length=0; showTrail(); o.innerHTML=`<p class="err">약의 상품명·동의어로만 저장된 이름이라 그리지 않습니다: ${esc(r.alias_only)}<br>상품명·동의어·임상 등록 문자열에는 여러 성분 제품이 한 성분 아래(예: Tobradex가 dexamethasone 아래), 다른 제형이나 바이오시밀러가 원래 약 아래(Myocet, Inflectra), 아예 다른 물질이(bupivacaine hydrochloride가 antimony 아래) 들어가 있어, 관계 지도는 약을 ChEMBL 대표 이름(INN이나 개발 코드)으로만 그립니다.</p>`; return; }
   if(r.not_one_name){ trail.length=0; showTrail(); o.innerHTML=`<p class="err">이름 하나만 넣어 주세요: ${esc(r.not_one_name)}<br>관계 지도는 입력 전체가 저장된 이름 하나(약·표적·회사·NCT 번호)와 같을 때만 그립니다. 이름이 둘이거나 용량·설명·결합 물질 같은 말이 붙으면, 붙은 말이 다른 제품을 뜻할 수 있어 그리지 않습니다.</p>`; return; }
   if(r.choose){ trail.length=0; showTrail(); o.innerHTML=`<div class="comp"><div class="top"><span class="verdict">하나를 골라 주세요</span><span class="s">${esc(r.text)}</span></div><div class="detail">이 이름은 그래프에서 여러 곳에 붙어 있어 하나를 골라 그리지 않습니다. 그릴 것을 누르세요: ${r.choose.map(x=>
       `<button type="button" class="ex" data-id="${esc(x.id)}">${esc(TKO[x.type]||x.type)}: ${esc(x.label)} <span class="code">${esc(x.id)}</span></button>`).join(" ")}</div></div>`; return; }

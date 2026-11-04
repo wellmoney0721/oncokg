@@ -523,7 +523,7 @@ fixed now, and its number has been reused.
    boxes (`5-fluorouracil` is also filed under capecitabine, `AK112` under two
    antibodies, `PD-1 mAb` under pembrolizumab and camrelizumab); before round 32 the
    question linker chose one of them by spelling. The relation map does not read these
-   either: it reads no registry synonym and no antibody synonym (defect 15).
+   either: it reads a drug only by its ChEMBL preferred name (defect 15).
 10. **A two-word personal name is indistinguishable from a short company name.**
     `Xiuning Le` is a person and `Shanghai Henlius` is a company; only an
     explicit credential (`MD`, `PhD`) is used to separate them, so the 36
@@ -565,19 +565,19 @@ fixed now, and its number has been reused.
     and kept as a regression test, but wording outside the lists can still read a
     different product as the originator. That is why the relation map draws only an
     input that is, as a whole, one stored name, compared under one rule, and reads a
-    drug only by its ChEMBL preferred name and trade names (a small molecule also by its
-    ChEMBL synonyms). Two kinds of stored synonym hold wrong identities and are not read
-    by the map, though the question boxes still read them: synonyms copied from trial
-    registrations (`bupivacaine hydrochloride` filed under antimony, `irinotecan
-    liposome` under irinotecan, `13-cis retinoic acid` under tretinoin), and an antibody's
-    or protein's ChEMBL synonyms, which mix the originator's development codes with
-    biosimilars filed under the reference molecule (`CT-P13` and `Zessly` under
-    infliximab, `ABP 980` under trastuzumab, bevacizumab's biosimilar codes). Trade names
-    of other products that ChEMBL files under a molecule (European biosimilar brands such
-    as `Inflectra`, formulations such as `Myocet` and `Fyarro`) are refused in the map
-    and the question boxes. The resolver that builds the graph keeps its own lists, so a
-    trial naming one of those brands may still be attached to the reference molecule in
-    the graph; changing it would change the measured numbers, so it is left for a
+    drug only by its ChEMBL preferred name. A drug's other stored names are where
+    products get filed under a molecule they are not, so the map does not read them
+    and asks for the preferred name; the question boxes still read them:
+    combination products under one ingredient (`Tobradex` under dexamethasone,
+    `Oraqix` under lidocaine), formulations (`Myocet`, `LEP-ETU`), biosimilars under the
+    reference molecule (`Inflectra`, `CT-P13`, bevacizumab's biosimilar codes), and wrong
+    substances among the synonyms copied from trial registrations (`bupivacaine
+    hydrochloride` under antimony, `13-cis retinoic acid` under tretinoin). Trade names
+    of that kind found in a review of the dictionary are also refused in the question
+    boxes, and a stored name the question linker refuses stays refused in the map
+    however it is spelt. The resolver that builds the graph keeps its own lists, so a
+    trial naming one of those brands may still be attached to the reference molecule
+    in the graph; changing it would change the measured numbers, so it is left for a
     dictionary curation and a new measurement.
 
 ---

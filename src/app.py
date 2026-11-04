@@ -47,30 +47,21 @@ class Engine:
         self.index_keys = self.kg.index_keys
         target_rows, _, _ = N._load("targets")
         self.target_keys = N.target_guard_keys(target_rows, self.dic)
-        # The names the relation map reads, under one rule (`_sig`): a drug's ChEMBL
-        # preferred name, synonyms and trade names, every node's own label, and target
-        # symbols. Synonyms copied from trial registrations are left out: they are where
-        # the dictionary's wrong identities come from ("bupivacaine hydrochloride" filed
-        # under antimony, "irinotecan liposome" under irinotecan); the question boxes
-        # still read them.
-        # An antibody's or protein's ChEMBL synonyms mix the originator's development
-        # codes with biosimilars filed under the reference molecule (CT-P13 and Zessly
-        # under infliximab, ABP 980 under trastuzumab, Jubbonti under denosumab), which
-        # cannot be told apart; such a drug is read by its preferred name and trade names.
+        # The names the relation map reads, under one rule (`_sig`). A drug is read only by
+        # its ChEMBL preferred name. Every other stored name of a drug (trade names,
+        # ChEMBL synonyms, synonyms copied from trial registrations) is where a product
+        # gets filed under a molecule it is not: combination products under one
+        # ingredient (Tobradex under dexamethasone), formulations (Myocet, LEP-ETU),
+        # biosimilars under the reference molecule (Inflectra, CT-P13), and wrong
+        # substances (bupivacaine hydrochloride under antimony). Those names are not read;
+        # the reply asks for the preferred name. Every node's own label, target symbols,
+        # and company and disease keys are read too.
         self.names: dict = {}
-        self.registry_names: dict = {}
-        self.biologic_synonyms: dict = {}
+        self.alias_only: dict = {}
         for hits in self.dic["index"].values():
             for h in hits:
-                if (h["alias"], h["drug_id"]) in _MISFILED:
-                    continue
-                kind = (self.dic["drugs"].get(h["drug_id"]) or {}).get("drug_type")
-                if h.get("source") == "AACT":
-                    into = self.registry_names
-                elif kind != "Small molecule" and h.get("alias_type") == "synonym":
-                    into = self.biologic_synonyms
-                else:
-                    into = self.names
+                into = (self.names if h.get("alias_type") == "preferred_name"
+                        and h.get("source") != "AACT" else self.alias_only)
                 _add_name(into, h["alias"], h["drug_id"])
         for r in self.kg.conn.execute("SELECT id, label FROM node"):
             _add_name(self.names, r["label"], r["id"])
@@ -111,15 +102,15 @@ class Engine:
 
         `text` is a node id or one stored name, compared under one rule (`_sig`: case,
         accents, spaces, punctuation and trademark signs aside; every other letter,
-        digit and symbol must match): a drug's ChEMBL preferred name or trade name, a
-        small molecule's ChEMBL synonym, a node's own label, a target symbol, or a company
-        or disease key. Anything more (a second name, a qualifier, a payload, a dye, a
-        sentence) matches no stored name and is not drawn; the reply says to enter the
-        name alone. A name the question linker refuses (a biosimilar, a reformulation, a
-        tracer) is refused, whatever else the input names. Two kinds of stored synonym
-        are not read, and the reply says which: one found only in trial registrations
-        (they hold wrong identities), and an antibody's or protein's ChEMBL synonym (they
-        include biosimilar codes). A name stored for several live nodes is not drawn
+        digit and symbol must match): a drug's ChEMBL preferred name, a node's own
+        label, a target symbol, or a company or disease key. Anything more (a second
+        name, a qualifier, a payload, a dye, a sentence) matches no stored name and is
+        not drawn; the reply says to enter the name alone. A drug's other stored names
+        (trade names, synonyms, registry strings) are not read: they file combination
+        products, formulations, biosimilars and wrong substances under a molecule; the
+        reply asks for the preferred name. A name the question linker refuses (a
+        biosimilar, a reformulation, a tracer) is refused, whether it is the input or the
+        stored name the input matched. A name stored for several live nodes is not drawn
         either: they are listed and the reader picks one by id.
 
         Each group keeps `per_group` neighbours, sorted as the page states: trials by
@@ -153,20 +144,26 @@ class Engine:
                                    (oid,)).fetchone()
                 if lab and all(c["id"] != oid for c in choices):
                     choices.append({"id": oid, "type": lab["type"], "label": lab["label"]})
+            # a stored name the question linker refuses stays refused however the input
+            # spells it ("Myocet" written "My/o/cet" or "Myocet\u2122")
+            stored = [n for c in choices for n in found.get(c["id"]) or []]
+            stored += [n for names in (self.alias_only.get(sig) or {}).values() for n in names]
+            for name in stored:
+                no = [e for e in self.kg.link_entities(name) if e["type"] == "Refused"]
+                if no:
+                    return {"refused": no[0]["label"], "why": no[0]["why"]}
             if not choices:
                 if found:                     # stored, but its node is retired
                     return {"not_found": text}
-                if self.biologic_synonyms.get(sig):
-                    return {"biologic_synonym": text}
-                if self.registry_names.get(sig):
-                    return {"registry_name": text}   # a name only a trial registration gives
+                if self.alias_only.get(sig):  # a drug's trade name or synonym
+                    return {"alias_only": text}
                 return {"not_one_name": text} if hits else {"not_found": text}
             if len(choices) > 1:
                 # one name, several nodes ("Roche"): none is drawn in place of the others;
                 # the reader picks one by its id
                 return {"choose": choices, "text": text}
             nid = choices[0]["id"]
-            matched = found.get(nid)
+            matched = (found.get(nid) or [None])[0]
         node = conn.execute("SELECT id, type, label, props FROM node WHERE id=? "
                             "AND retired_at IS NULL", (nid,)).fetchone()
         if node is None:                              # a name can outlive its node
@@ -259,8 +256,6 @@ class Engine:
                 "evidence_count": len(evidence)}
 
 
-# A trade name ChEMBL lists under a molecule it is not: T-DM1's brand under trastuzumab.
-_MISFILED = {("Kadcyla", "CHEMBL1201585")}
 _MARKS = "®™©℠"          # registered, trade mark, copyright, service mark
 
 
@@ -279,7 +274,9 @@ def _sig(text: str) -> str:
 
 def _add_name(into: dict, name: str, nid: str) -> None:
     if name and _sig(name):
-        into.setdefault(_sig(name), {}).setdefault(nid, name)
+        names = into.setdefault(_sig(name), {}).setdefault(nid, [])
+        if name not in names:
+            names.append(name)
 
 
 def _number(v) -> bool:

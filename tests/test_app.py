@@ -26,8 +26,7 @@ def _page(e, t):
     r = e.explore(t)
     if "center" in r:
         return {**r, "also": []}
-    assert (r.get("refused") or r.get("not_one_name") or r.get("registry_name")
-            or r.get("biologic_synonym")), (t, r)
+    assert r.get("refused") or r.get("not_one_name") or r.get("alias_only"), (t, r)
     hits = [x for x in e.kg.link_entities(t) if x.get("id") and x["type"] != "Refused"]
     assert hits, t
     return {"center": hits[0], "also": hits[1:], "linker": True}
@@ -111,10 +110,11 @@ def test_explore_does_not_draw_a_retired_centre_by_name():
 
 def test_explore_shows_other_readings_of_an_ambiguous_name():
     import app
-    r = app.Engine().explore("Roche")
-    assert "center" not in r                     # neither reading is drawn for the other
-    assert {x["id"] for x in r["choose"]} >= {"ORG:roche"}
-    assert len(r["choose"]) > 1
+    e = app.Engine()
+    # "Roche" is also a folic acid trade name; the map reads drugs by preferred name only
+    assert e.explore("Roche")["center"]["id"] == "ORG:roche"
+    r = e.explore("ABT-510")                     # two records under one name: the reader picks
+    assert "center" not in r and len(r["choose"]) == 2
 
 
 # Codex review m2b
@@ -253,13 +253,14 @@ def test_glued_separators_edge_punctuation_and_parenthetical_qualifiers_refuse()
 def test_a_whole_input_that_is_one_stored_name_is_read_whole():
     import app
     e = app.Engine()
-    # the question linker reads the stored alias whole; the map reads the same text by
-    # its ChEMBL name, which for the salt spelling is the salt's own record
-    for t, linked, drawn in (("CP-358,774", "CHEMBL553", "CHEMBL553"),
-                             ("Rapamycin, 42-o-(2-hydroxyethyl)-", "CHEMBL1908360", "CHEMBL1908360"),
+    # the question linker reads the stored alias whole; the map reads a drug only by its
+    # preferred name, which for the salt spelling is the salt's own record
+    for t, linked, drawn in (("CP-358,774", "CHEMBL553", None),
+                             ("Rapamycin, 42-o-(2-hydroxyethyl)-", "CHEMBL1908360", None),
                              ("Erlotinib/hydrochloride", "CHEMBL553", "CHEMBL1079742")):
         assert _linked(e, t) == linked, t
-        assert e.explore(t)["center"]["id"] == drawn, t
+        r = e.explore(t)
+        assert r.get("center", {}).get("id") == drawn and (drawn or r.get("alias_only")), t
 
 
 # Codex review m7: one normalised spelling for every check
@@ -437,10 +438,9 @@ def test_element_first_one_letter_isotopes_refuse():
         r = e.explore(t)
         assert "center" not in r or r["center"]["id"] not in ("CHEMBL1201585", "CHEMBL428647"), t
     assert not e.kg.answer("Which trials evaluate I-124-labelled trastuzumab?", use_llm=False).evidence
-    for t in ("BKM-120NX", "AZD9291"):
-        assert e.explore(t).get("center"), t
-    assert _linked(e, "IL-2")          # a registry-only name: read by the question linker only
-    assert e.explore("IL-2").get("registry_name")
+    for t in ("BKM-120NX", "AZD9291", "IL-2"):  # a synonym: read by the question linker only
+        assert _linked(e, t), t
+        assert e.explore(t).get("alias_only"), t
     t0 = time.time()
     e.kg.link_entities(" ".join(["osimertinib"] * 80))
     assert time.time() - t0 < 1.0
@@ -662,7 +662,7 @@ def test_the_map_draws_only_a_whole_stored_name():
     import app
     e = app.Engine()
     for t in ("osimertinib", " Osimertinib? ", "OSIMERTINIB", "ＯＳＩＭＥＲＴＩＮＩＢ",
-              "osimertinib​", "Tarceva®", "nct00200395", "chembl553", "Merck & Co", "EGFR", "egfr"):
+              "osimertinib​", "Osimertinib®", "nct00200395", "chembl553", "Merck & Co", "EGFR", "egfr"):
         assert e.explore(t).get("center"), t
     # a second name, a qualifier, a dose, a partner, a dye, a sentence: not drawn
     for t in ("osimertinib EGFR", "osimertinib 80 mg", "trastuzumab linked at lysine residues to eFluor 450",
@@ -690,10 +690,8 @@ def test_a_key_shared_by_several_drugs_is_not_decided_by_spelling():
     e = app.Engine()
     # medi4736 is filed under durvalumab (ChEMBL) and, by a registry synonym, atezolizumab;
     # 5-fluorouracil also under capecitabine; ak112 under envafolimab and ivonescimab. The
-    # question linker reads none of them; the map reads a small molecule's ChEMBL names,
-    # which name the right molecule, and no antibody synonym at all
-    right = {"crlx101": "CHEMBL4802201", "dha-paclitaxel": "CHEMBL4297441",
-             "Dha paclitaxel": "CHEMBL4297441"}
+    # question linker reads none of them; the map reads no synonym at all
+    right: dict = {}
     for t in ("medi4736", "MEDI-4736", "MEDI4736", "5-fluorouracil", "5 - fluorouracil", "ak112",
               "AK-112", "peginterferon alfa-2b", "peg-interferon alfa-2b", "crlx101", "PD-1 mAb",
               "dha-paclitaxel", "Dha paclitaxel"):
@@ -716,28 +714,33 @@ def test_the_map_reads_stored_names_under_one_rule():
                    ("FLUDEOXYGLUCOSE-F18", {"CHEMBL2030434", "CHEMBL497613"})):
         r = e.explore(t)
         assert "center" not in r and {c["id"] for c in r["choose"]} == ids, (t, r)
-    # a trademark sign is dropped before compatibility folding never turns into "TM"
-    for t in ("Tarceva", "Tarceva®", "Tarceva™"):
-        assert e.explore(t)["center"]["id"] == "CHEMBL1079742", t
-    assert e.explore("trastuzumab™")["center"]["id"] == "CHEMBL1201585"
-    # registry-only synonyms with a wrong identity are not read by the map
-    for t in ("bupivacaine hydrochloride", "irinotecan liposome", "nanoliposomal irinotecan",
-              "doxorubicin hydrochloride liposome", "ropeginterferon alfa-2b", "13-cis retinoic acid"):
-        assert e.explore(t).get("registry_name"), t
-    # MAGE-A3 is the target's name; the vaccine's synonym is an antibody/protein synonym
+    # a trademark sign is dropped before compatibility folding, never turned into "TM"
+    for t in ("osimertinib\u2122", "Osimertinib\u00ae", "AstraZeneca\u2122"):
+        assert e.explore(t).get("center"), t
+    # MAGE-A3 is the target's name; the vaccine's synonym is not read
     for t in ("MAGE-A3", "MAGEA3"):
         assert e.explore(t)["center"]["id"] == "ENSG00000221867", t
-    # an antibody's or protein's ChEMBL synonym is not read: it may be a biosimilar code
-    for t in ("CT-P13", "Zessly", "ABP 980", "HLX04", "MK-3475", "MEDI4736"):
-        assert e.explore(t).get("biologic_synonym"), t
-    # trade names of other products filed under a molecule are refused, here and in questions
-    for t in ("Inflectra", "Remsima", "Herwenda", "Equidacent", "Zarzio", "Pelgraz", "Myocet",
-              "Fyarro", "Megace es", "Jelmyto", "Locteron"):
-        assert e.explore(t).get("refused"), t
-        assert any(x["type"] == "Refused" for x in e.kg.link_entities(f"Which trials evaluate {t}?")), t
-    for t, did in (("Remicade", "CHEMBL1201581"), ("Herceptin", "CHEMBL1201585"), ("Megace", "CHEMBL1201139"),
-                   ("Kadcyla", "CHEMBL1743082"), ("Keytruda", "CHEMBL3137343"), ("Neulasta", "CHEMBL1201568")):
+    # a drug's trade names and synonyms are not read: they file combination products,
+    # formulations, biosimilars and wrong substances under a molecule
+    for t in ("bupivacaine hydrochloride", "irinotecan liposome", "13-cis retinoic acid", "CT-P13",
+              "Zessly", "ABP 980", "MK-3475", "MEDI4736", "Tagrisso", "Keytruda", "Remicade", "Kadcyla",
+              "Megace", "Tarceva", "Tarceva\u2122", "Actikerall", "Betnesol-n", "Maxitrol", "Cipro hc"):
+        r = e.explore(t)
+        assert "center" not in r and (r.get("alias_only") or r.get("refused")), (t, r)
+    for t, did in (("infliximab", "CHEMBL1201581"), ("trastuzumab emtansine", "CHEMBL1743082"),
+                   ("megestrol acetate", "CHEMBL1201139"), ("pembrolizumab", "CHEMBL3137343")):
         assert e.explore(t)["center"]["id"] == did, t
+    # trade names of other products filed under a molecule are refused, however spelt,
+    # here and in questions
+    for t in ("Inflectra", "Remsima", "Herwenda", "Equidacent", "Zarzio", "Pelgraz", "Myocet",
+              "Fyarro", "Megace es", "Jelmyto", "Locteron", "Tobradex", "Oraqix", "LEP-ETU",
+              "Myocet\u2122", "My/o/cet", "My ocet", "Inf/lectra", "Megace/ES", "Fy/arro", "Equi/dacent"):
+        assert e.explore(t).get("refused"), t
+    for t in ("Inflectra", "Myocet", "Tobradex", "Megace es"):
+        assert any(x["type"] == "Refused" for x in e.kg.link_entities(f"Which trials evaluate {t}?")), t
+    # the preferred-name rule in a question needs the name as a word of its own
+    assert not e.kg.link_entities("What trials evaluate (+/-)NICOTINE?")
+    assert [x["id"] for x in e.kg.link_entities("What trials evaluate NICOTINE?")] == ["CHEMBL3"]
     # a company key matches only input with nothing the key would drop
     assert e.explore("Merck Co")["center"]["id"] == e.explore("Merck & Co")["center"]["id"]
     for t in ("Merck + Co", "Pfizer$", "AstraZeneca +"):

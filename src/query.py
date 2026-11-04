@@ -213,7 +213,10 @@ _OTHER_PRODUCT_NAMES = {T.canonical_key(n) for n in (
     "Fyarro",                                    # albumin-bound sirolimus
     "Megace es",                                 # nanocrystal megestrol acetate
     "Jelmyto",                                   # mitomycin in a gel
-    "Lipocurc", "Nanocurc",                      # liposomal / nanoparticle curcumin
+    "Lipocurc", "Nanocurc", "LEP-ETU",           # liposomal / nanoparticle formulations
+    # combination products filed under one ingredient
+    "Oraqix", "Actikerall", "Betnesol-n", "Maxitrol", "Cipro hc", "Tobradex", "Pred-g",
+    "Neo-delta-cortef",
 )}
 # Symbols that are also everyday abbreviations: read beside a mass only inside one word
 _SPACED_NOT = {"cr", "co", "se", "la"}
@@ -886,10 +889,13 @@ class OncoKG:
                     hits = None
                 if hits and len({h["drug_id"] for h in hits}) > 1:
                     # a key several drugs share is read only as the drug whose own
-                    # preferred name it is, letter for letter ("NICOTINE", not "(+/-)NICOTINE")
+                    # preferred name it is, letter for letter, written as a word of its
+                    # own: "NICOTINE", but not the "NICOTINE" left of "(+/-)NICOTINE"
                     own = [h for h in hits
                            if _fold(self.dic["drugs"][h["drug_id"]]["name"]).lower() == window.lower()]
-                    if len({h["drug_id"] for h in own}) == 1:
+                    alone = re.search(r"(?<![\w+\-/()\[\]])" + re.escape(window) + r"(?![\w+\-/()\[\]])",
+                                      question, re.I)
+                    if len({h["drug_id"] for h in own}) == 1 and alone:
                         hits = own
                 if hits and len({h["drug_id"] for h in hits}) == 1:
                     did = hits[0]["drug_id"]

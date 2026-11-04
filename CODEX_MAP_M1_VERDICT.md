@@ -363,3 +363,14 @@ read as one of them. Tests 361.
 | pre-33 | the ChEMBL trade names and biologic synonyms were reviewed before round 33: European biosimilar brands (Inflectra, Remsima, Flixabi, Equidacent, Lextemy, Herwenda, filgrastim/epoetin/pegfilgrastim/teriparatide brands) and formulations (Myocet, Fyarro, Megace ES, Jelmyto, Locteron) are filed under the reference molecule; an antibody's or protein's ChEMBL synonyms mix originator codes with biosimilar codes and brands (CT-P13, Zessly, Avsola under infliximab; ABP 980, HLX-02 under trastuzumab; Jubbonti, Wyost under denosumab) | those trade names are refused by the question linker and the map (`_OTHER_PRODUCT_NAMES`); the map does not read an antibody's or protein's ChEMBL synonyms (reply `biologic_synonym`); Kadcyla, filed under trastuzumab too, is read only as trastuzumab emtansine |
 
 Known recall limits (fail closed): registry-only names ("IL-2", "9-ac", "5-fluorouracil", "interferon α-2b") are not drawn; two tracer drugs are refused by their own labels. Corpus check of the question linker: Equidacent and INFLECTRA® are now refused; nothing else changed. Antibody development codes (MK-3475, MEDI4736) are not drawn by the map. Tests 362.
+
+## Round 33 (audit_evidence_claims/m33) — CHANGES REQUIRED (one code blocker, six data blockers)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M33-B1 | refusal and admission used different rules: "Myocet\u2122", "My/o/cet", "Inf/lectra", "Megace/ES", "Fy/arro", "Equi/dacent" drew the molecule a refused brand is filed under | every stored name the input matched (read or not) is put to the question linker, and if any is refused the input is refused |
+| M33-D1..D6 | trade names of combination products filed under one ingredient: Oraqix (lidocaine), Actikerall (fluorouracil), Betnesol-N (betamethasone), Maxitrol and Tobradex (dexamethasone), Cipro HC (hydrocortisone) | the map reads a drug only by its ChEMBL preferred name; trade names, ChEMBL synonyms and registry synonyms return `alias_only` (the same class also holds PRED-G, NEO-DELTA-CORTEF, LEP-ETU among the small-molecule synonyms). The six, plus PRED-G, NEO-DELTA-CORTEF and LEP-ETU, are refused in the question boxes too |
+| M33-S1 | "What trials evaluate (+/-)NICOTINE?" linked NICOTINE: the window left after "(+/-)" took the preferred-name rule | the preferred-name rule for a shared key needs the name written as a word of its own |
+| M33-S2 | a permitted trade name hidden by an excluded-source record of the same spelling | moot: the map reads no trade names |
+
+The replies `registry_name` and `biologic_synonym` are replaced by one reply, `alias_only`. Recall now rests on preferred names (INN or a code that is the ChEMBL preferred name); brands and development codes that are only synonyms are not drawn. Corpus check of the question linker: no change. Tests 362.
