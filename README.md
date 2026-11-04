@@ -645,6 +645,8 @@ codex_report_round3.txt       the third, verbatim
 CODEX_R2_VERDICT.md           round 2: each finding reproduced, partly wrong, or missed
 CODEX_R3_VERDICT.md           round 3, the same
 CODEX_MAP_M1_VERDICT.md       the relation-map audit, rounds 1 to 38
+PUBLIC_HISTORY.md             original commit hashes, as the audits cite them,
+                              mapped to this copy's hashes
 audit_evidence_*/             the auditors' evidence files; rounds 20 to 38
                               of the map audit keep only the brief, the
                               report and the log (the replay files, about
