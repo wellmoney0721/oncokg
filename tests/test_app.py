@@ -745,3 +745,23 @@ def test_the_map_reads_stored_names_under_one_rule():
     assert e.explore("Merck Co")["center"]["id"] == e.explore("Merck & Co")["center"]["id"]
     for t in ("Merck + Co", "Pfizer$", "AstraZeneca +"):
         assert "center" not in e.explore(t), t
+
+
+# Codex review m34
+def test_every_stored_spelling_is_checked_and_rotation_signs_count():
+    import app
+    e = app.Engine()
+    # a refused spelling the lookup index dropped still refuses its whole family
+    for t in ("Cabozantinib (s)-malate", "cabozantinibsmalate", "CABOZANTINIB S-MALATE",
+              "Cabozantinib (s)-malate?", "Cabozantinib/(s)-malate", "Cabozantinib\u200b(s)-malate"):
+        assert e.explore(t).get("refused"), t
+    # an optical-rotation sign is part of the name
+    for t in ("(+)-NICOTINE", "(+)NICOTINE", "(-)-nicotine"):
+        assert "center" not in e.explore(t), t
+    for t in ("(+/-)NICOTINE", "(\u00b1)-nicotine"):
+        assert e.explore(t)["center"]["id"] == "CHEMBL440464", t
+    # brackets around a shared-key name in a question are fine; a descriptor is not
+    for q in ("What trials evaluate (NICOTINE)?", "What does (NICOTINE) target?", "What trials evaluate [NICOTINE]?"):
+        assert [x["id"] for x in e.kg.link_entities(q)] == ["CHEMBL3"], q
+    for q in ("What trials evaluate (+/-)NICOTINE?", "What trials evaluate NICOTINE(+)?"):
+        assert not e.kg.link_entities(q), q

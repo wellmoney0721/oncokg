@@ -575,7 +575,9 @@ fixed now, and its number has been reused.
     hydrochloride` under antimony, `13-cis retinoic acid` under tretinoin). Trade names
     of that kind found in a review of the dictionary are also refused in the question
     boxes, and a stored name the question linker refuses stays refused in the map
-    however it is spelt. The resolver that builds the graph keeps its own lists, so a
+    however it is spelt; that also refuses a preferred name written with the same
+    letters as a refused spelling (`CABOZANTINIB S-MALATE` beside `Cabozantinib
+    (s)-malate`, which the resolver blocks). The resolver that builds the graph keeps its own lists, so a
     trial naming one of those brands may still be attached to the reference molecule
     in the graph; changing it would change the measured numbers, so it is left for a
     dictionary curation and a new measurement.
@@ -590,7 +592,7 @@ pip install -r requirements.txt
 python src/run_all.py              # fetch, resolve, check, build, score, render
 python src/run_all.py --offline    # rebuild from the snapshots in data/raw
 
-python -m pytest tests -q                    # 362 tests
+python -m pytest tests -q                    # 363 tests
 python src/app.py                            # try-it page: http://localhost:8765 (relation map, name resolver, questions, claim check)
 python src/curation_effect.py                # resolve twice, with and without curation
 python src/apply_label_corrections.py --check

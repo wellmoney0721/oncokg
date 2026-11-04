@@ -893,7 +893,9 @@ class OncoKG:
                     # own: "NICOTINE", but not the "NICOTINE" left of "(+/-)NICOTINE"
                     own = [h for h in hits
                            if _fold(self.dic["drugs"][h["drug_id"]]["name"]).lower() == window.lower()]
-                    alone = re.search(r"(?<![\w+\-/()\[\]])" + re.escape(window) + r"(?![\w+\-/()\[\]])",
+                    # brackets around the name are fine ("(NICOTINE)"); a closing one
+                    # before it or an opening one after it is a descriptor's
+                    alone = re.search(r"(?<![\w+\-/)\]])" + re.escape(window) + r"(?![\w+\-/(\[])",
                                       question, re.I)
                     if len({h["drug_id"] for h in own}) == 1 and alone:
                         hits = own

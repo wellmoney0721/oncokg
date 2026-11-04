@@ -374,3 +374,14 @@ Known recall limits (fail closed): registry-only names ("IL-2", "9-ac", "5-fluor
 | M33-S2 | a permitted trade name hidden by an excluded-source record of the same spelling | moot: the map reads no trade names |
 
 The replies `registry_name` and `biologic_synonym` are replaced by one reply, `alias_only`. Recall now rests on preferred names (INN or a code that is the ChEMBL preferred name); brands and development codes that are only synonyms are not drawn. Corpus check of the question linker: no change. Tests 362.
+
+## Round 34 (audit_evidence_claims/m34) — CHANGES REQUIRED (one code blocker)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M34-B1 | the refusal check read only the lookup index, which keeps one spelling per drug and key; "Cabozantinib (s)-malate" (refused, dropped from the index) let "cabozantinibsmalate", "CABOZANTINIB S-MALATE", "Cabozantinib (s)-malate?" draw | both name tables take every stored spelling from each drug's alias list as well as the index; the whole family now refuses (the preferred name included: a recorded over-refusal, since the resolver blocks the "(s)" spelling) |
+| M34-S1 | "What trials evaluate (NICOTINE)?" lost its reading: brackets on either side blocked the shared-key preferred-name rule | only a closing bracket before the name or an opening one after it blocks it (a descriptor) |
+| M34-S2 | "(+)-NICOTINE" drew (+/-)NICOTINE: dropping punctuation erased the rotation sign | `_sig` keeps an optical-rotation descriptor: "(+/-)" and "(±)" become "±", "(-)" becomes "−"; "(+)" keeps its "+" |
+| M34-D1 | THEOPHYLLINE typed as Protein upstream (Open Targets drugType) | recorded; the map shows the stored value and no longer uses drug type to choose names |
+
+Corpus check of the question linker: no change. Tests 363.

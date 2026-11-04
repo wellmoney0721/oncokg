@@ -56,13 +56,20 @@ class Engine:
         # substances (bupivacaine hydrochloride under antimony). Those names are not read;
         # the reply asks for the preferred name. Every node's own label, target symbols,
         # and company and disease keys are read too.
+        # Both tables take every stored spelling: the lookup index keeps one spelling per
+        # drug and key, and a spelling it drops ("Cabozantinib (s)-malate" beside
+        # "CABOZANTINIB S-MALATE") must still be checked for refusal.
         self.names: dict = {}
         self.alias_only: dict = {}
+        for did, drug in self.dic["drugs"].items():
+            _add_name(self.names, drug["name"], did)
+            for a in drug.get("aliases") or []:
+                if a.get("type") != "preferred_name":
+                    _add_name(self.alias_only, a["alias"], did)
         for hits in self.dic["index"].values():
             for h in hits:
-                into = (self.names if h.get("alias_type") == "preferred_name"
-                        and h.get("source") != "AACT" else self.alias_only)
-                _add_name(into, h["alias"], h["drug_id"])
+                if h.get("alias_type") != "preferred_name":
+                    _add_name(self.alias_only, h["alias"], h["drug_id"])
         for r in self.kg.conn.execute("SELECT id, label FROM node"):
             _add_name(self.names, r["label"], r["id"])
         for t in self.kg.targets.values():
@@ -265,8 +272,11 @@ def _sig(text: str) -> str:
     letters "TM"), then case and accents ignored and spaces, punctuation and invisible
     characters dropped. Letters of any script, digits and symbols are kept, so
     "trastu+zumab", "interferon" with a Greek gamma or "trastuzumab" with a radiation sign
-    are not "trastuzumab" or "interferon"."""
+    are not "trastuzumab" or "interferon". The sign of an optical-rotation descriptor
+    is part of the name, so "(+)-", "(-)-" and "(+/-)" stay apart once punctuation goes."""
     t = unicodedata.normalize("NFKC", "".join(c for c in text or "" if c not in _MARKS))
+    t = re.sub(r"\(\s*(?:\+\s*/?\s*[-−]|±)\s*\)", "±", t)
+    t = re.sub(r"\(\s*[-−]\s*\)", "−", t)
     t = unicodedata.normalize("NFKD", t.casefold())
     return "".join(c for c in t if not unicodedata.combining(c)
                    and unicodedata.category(c)[0] not in "PZC")

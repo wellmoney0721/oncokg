@@ -386,7 +386,8 @@ platinum의 경우 7건의 시험에서 **신뢰도 1.00으로 화학 원소에 
     원래 약 아래(`Inflectra`, `CT-P13`, 베바시주맙 바이오시밀러 코드), 임상시험 등록 문자열에서 가져온 동의어에는
     아예 다른 물질이(`bupivacaine hydrochloride`가 antimony 아래, `13-cis retinoic acid`가 tretinoin 아래) 들어가
     있습니다. 사전을 검토해 찾은 이런 상품명은 질문 상자에서도 거절하고, 질문 연결기가 거절하는 저장 이름은
-    지도에서 철자를 어떻게 바꿔도 거절합니다. 그래프를 만드는 해석기는 자기 목록을 그대로 쓰므로, 그런 상품명을
+    지도에서 철자를 어떻게 바꿔도 거절합니다. 그래서 거절되는 철자와 글자가 같은 대표 이름도 거절됩니다
+    (해석기가 막는 `Cabozantinib (s)-malate` 옆의 `CABOZANTINIB S-MALATE`). 그래프를 만드는 해석기는 자기 목록을 그대로 쓰므로, 그런 상품명을
     적은 임상은 그래프에서 원래 분자에 붙어 있을 수 있습니다. 해석기를 바꾸면 측정 수치가 바뀌므로 사전 정리와 새
     측정 때 함께 고칩니다.
 
@@ -400,7 +401,7 @@ pip install -r requirements.txt
 python src/run_all.py              # 수집 → 해석 → 검증 → 그래프 → 채점 → 렌더
 python src/run_all.py --offline    # data/raw 스냅샷으로 재현
 
-python -m pytest tests -q          # 362개 테스트
+python -m pytest tests -q          # 363개 테스트
 python src/app.py                  # 직접 써 보기 화면: http://localhost:8765 (관계 지도·약 이름·질문·주장 검사)
 python src/apply_label_corrections.py --check
 python src/curation_effect.py      # 큐레이션 전후 두 번 해석
