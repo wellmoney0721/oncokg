@@ -191,6 +191,30 @@ _RADIO_SAFE = ("radiotherap", "radiation", "radiolog", "radiograph", "radiosurg"
 _LABELLED = {"labelled", "labeled", "labelling", "labeling", "tagged"}
 # A word just before the label that says the opposite ("non-radio-labelled")
 _NOT_WORDS = {"non", "not", "no", "un", "without"}
+# Trade names ChEMBL files under the reference molecule although they name another
+# product: European biosimilars (which share the reference INN) and other formulations
+# (liposomal, albumin-bound, nanocrystal, gel, controlled-release). Reviewed against every
+# trade name of a biologic in the dictionary and the formulation brands of small
+# molecules. The question linker and the relation map refuse them; the resolver's own
+# lists (textrules) are left as they are, so the built graph does not change.
+_OTHER_PRODUCT_NAMES = {T.canonical_key(n) for n in (
+    "Equidacent", "Lextemy",                                         # bevacizumab
+    "Herwenda",                                                      # trastuzumab
+    "Flixabi", "Inflectra", "Remsima",                               # infliximab
+    "Abseamed", "Binocrit", "Epoetin alfa hexal",                    # epoetin alfa
+    "Accofil", "Biograstim", "Filgrastim hexal", "Filgrastim ratiopharm", "Grastofil",
+    "Nivestim", "Nypozi", "Ratiograstim", "Tevagrastim", "Zarzio",   # filgrastim
+    "Cegfila", "Cegfila (previously pegfilgrastim mundipharma)", "Grasustek",
+    "Pelgraz",                                                       # pegfilgrastim
+    "Bonsity", "Kauliv", "Livogiva", "Movymia", "Qutavina", "Sondelbay", "Terrosa",
+    "Teriparatide sun",                                              # teriparatide
+    "Locteron",                                  # controlled-release interferon alfa-2b
+    "Myocet",                                    # liposomal doxorubicin
+    "Fyarro",                                    # albumin-bound sirolimus
+    "Megace es",                                 # nanocrystal megestrol acetate
+    "Jelmyto",                                   # mitomycin in a gel
+    "Lipocurc", "Nanocurc",                      # liposomal / nanoparticle curcumin
+)}
 # Symbols that are also everyday abbreviations: read beside a mass only inside one word
 _SPACED_NOT = {"cr", "co", "se", "la"}
 # Words that say the substance carries a radioactive label.
@@ -624,7 +648,10 @@ class OncoKG:
         Checked on the same letters-and-digits form the name was looked up by: a known
         biosimilar suffix at the end of the name ("bevacizumab awwb", "bevacizumab_awwb")
         or as the next word, or an isotope label just before or after it ("[89.Zr]
-        trastuzumab", "89:Zr trastuzumab")."""
+        trastuzumab", "89:Zr trastuzumab"), or a trade name of another product filed
+        under this molecule ("Inflectra")."""
+        if key in _OTHER_PRODUCT_NAMES:
+            return " ".join(tokens[a:b])
         for sfx in T.BIOSIMILAR_FDA_SUFFIXES:
             stem = key[:-len(sfx)]
             if key.endswith(sfx) and stem and any(
@@ -857,6 +884,13 @@ class OncoKG:
                 # abbreviation "isa" (isatuximab) in any question or answer.
                 if hits and size > 1 and not re.search(r"[\s\-/]", hits[0]["alias"]):
                     hits = None
+                if hits and len({h["drug_id"] for h in hits}) > 1:
+                    # a key several drugs share is read only as the drug whose own
+                    # preferred name it is, letter for letter ("NICOTINE", not "(+/-)NICOTINE")
+                    own = [h for h in hits
+                           if _fold(self.dic["drugs"][h["drug_id"]]["name"]).lower() == window.lower()]
+                    if len({h["drug_id"] for h in own}) == 1:
+                        hits = own
                 if hits and len({h["drug_id"] for h in hits}) == 1:
                     did = hits[0]["drug_id"]
                     why = self._marked(key, did, tokens, seg, i, i + size)

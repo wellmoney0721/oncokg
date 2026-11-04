@@ -348,3 +348,18 @@ The question boxes still use the linker's markers on free text; that limit is no
 defect 15. Corpus check of the question linker (9,746 intervention strings and demo
 questions): 20 change, all names whose key is shared by several drugs, now unread instead of
 read as one of them. Tests 361.
+
+## Round 32 (audit_evidence_claims/m32) — CHANGES REQUIRED (four code blockers, three data blockers)
+
+| # | Finding | Repair |
+| --- | --- | --- |
+| M32-B1 | the input was compared with the linker's own window, not a stored name: "trastu+zumab", "trastuzumabß" drew trastuzumab | the map keeps its own index of stored names, keyed by one signature (`_sig`), and draws only a node a stored name of which equals the input |
+| M32-B2 | the company key path took "AstraZeneca +", "Pfi+zer", "Merck + Co" | company and disease keys (letters and digits only) match only input whose signature equals its dictionary key, so a dropped symbol blocks them |
+| M32-B3 | different equivalence rules per source: "MAGE-A3", "ctla-4", "ABT-510"/"ABT 510", the two FDG records drew one node | every name source goes through the same signature; several live nodes under one signature always ask the reader to choose |
+| M32-B4 | NFKC turned "™" into letters before it was dropped: "Tarceva™" drew a different record | trademark signs are dropped before compatibility folding |
+| M32-D1..D3 | registry (AACT) synonyms with wrong identities: bupivacaine hydrochloride under antimony; irinotecan liposome, nanoliposomal irinotecan, doxorubicin hydrochloride liposome under the plain molecule; ropeginterferon alfa-2b under interferon alfa-2b | the map reads drugs only by ChEMBL names (preferred name, synonyms, trade names), node labels and target symbols; a name found only among registry synonyms returns `registry_name` and the page says why. This also draws the right molecule for keys a registry synonym had made ambiguous (MEDI4736 durvalumab, AK112 ivonescimab, CRLX101 davamotecan pegadexamer, DHA-paclitaxel) |
+| should-fix | "What trials evaluate NICOTINE?" had no entity (inherited) | in a question, a key several drugs share is read as the drug whose own preferred name it is, letter for letter |
+
+| pre-33 | the ChEMBL trade names and biologic synonyms were reviewed before round 33: European biosimilar brands (Inflectra, Remsima, Flixabi, Equidacent, Lextemy, Herwenda, filgrastim/epoetin/pegfilgrastim/teriparatide brands) and formulations (Myocet, Fyarro, Megace ES, Jelmyto, Locteron) are filed under the reference molecule; an antibody's or protein's ChEMBL synonyms mix originator codes with biosimilar codes and brands (CT-P13, Zessly, Avsola under infliximab; ABP 980, HLX-02 under trastuzumab; Jubbonti, Wyost under denosumab) | those trade names are refused by the question linker and the map (`_OTHER_PRODUCT_NAMES`); the map does not read an antibody's or protein's ChEMBL synonyms (reply `biologic_synonym`); Kadcyla, filed under trastuzumab too, is read only as trastuzumab emtansine |
+
+Known recall limits (fail closed): registry-only names ("IL-2", "9-ac", "5-fluorouracil", "interferon α-2b") are not drawn; two tracer drugs are refused by their own labels. Corpus check of the question linker: Equidacent and INFLECTRA® are now refused; nothing else changed. Antibody development codes (MK-3475, MEDI4736) are not drawn by the map. Tests 362.

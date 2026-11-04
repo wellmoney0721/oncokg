@@ -47,11 +47,42 @@ class Engine:
         self.index_keys = self.kg.index_keys
         target_rows, _, _ = N._load("targets")
         self.target_keys = N.target_guard_keys(target_rows, self.dic)
-        # every node by its own label, so a name the graph itself shows can be typed back
-        self.by_label: dict = {}
+        # The names the relation map reads, under one rule (`_sig`): a drug's ChEMBL
+        # preferred name, synonyms and trade names, every node's own label, and target
+        # symbols. Synonyms copied from trial registrations are left out: they are where
+        # the dictionary's wrong identities come from ("bupivacaine hydrochloride" filed
+        # under antimony, "irinotecan liposome" under irinotecan); the question boxes
+        # still read them.
+        # An antibody's or protein's ChEMBL synonyms mix the originator's development
+        # codes with biosimilars filed under the reference molecule (CT-P13 and Zessly
+        # under infliximab, ABP 980 under trastuzumab, Jubbonti under denosumab), which
+        # cannot be told apart; such a drug is read by its preferred name and trade names.
+        self.names: dict = {}
+        self.registry_names: dict = {}
+        self.biologic_synonyms: dict = {}
+        for hits in self.dic["index"].values():
+            for h in hits:
+                if (h["alias"], h["drug_id"]) in _MISFILED:
+                    continue
+                kind = (self.dic["drugs"].get(h["drug_id"]) or {}).get("drug_type")
+                if h.get("source") == "AACT":
+                    into = self.registry_names
+                elif kind != "Small molecule" and h.get("alias_type") == "synonym":
+                    into = self.biologic_synonyms
+                else:
+                    into = self.names
+                _add_name(into, h["alias"], h["drug_id"])
         for r in self.kg.conn.execute("SELECT id, label FROM node"):
-            if r["label"]:
-                self.by_label.setdefault(_label_key(r["label"]), []).append(r["id"])
+            _add_name(self.names, r["label"], r["id"])
+        for t in self.kg.targets.values():
+            _add_name(self.names, t["symbol"], t["target_id"])
+        # names stored only as dictionary keys (letters and digits): company ids and
+        # former names, the disease's synonyms
+        self.keyed: dict = {}
+        for k, ids in self.kg.companies.items():
+            self.keyed.setdefault(k, []).extend(ids)
+        for k in self.kg.disease["index"]:
+            self.keyed.setdefault(k, []).append(self.kg.disease["disease_id"])
 
     def resolve(self, text: str) -> dict:
         out = N.resolve_drug_string(text, self.dic, self.index_keys, self.target_keys)
@@ -78,15 +109,18 @@ class Engine:
     def explore(self, text: str, per_group: int = 30) -> dict:
         """One live node and the live nodes its live edges tie it to, grouped by relation.
 
-        `text` is a node id, a node's own label, or one name: the whole input (case,
-        spaces, punctuation and trademark signs aside) must be the one name the question
-        linker read, written in Latin letters and ASCII digits and symbols (`_plain`).
-        Anything more (a second name, a qualifier, a payload, a dye, a sentence) is not
-        drawn, because a word the linker does not know may make the name a different
-        product; the reply says to enter the name alone. A name the linker refuses (a
-        biosimilar, a reformulation, a tracer) is reported, never mapped to the
-        originator. A name that is stored for several nodes is not drawn either: the
-        nodes are listed and the reader picks one by its id.
+        `text` is a node id or one stored name, compared under one rule (`_sig`: case,
+        accents, spaces, punctuation and trademark signs aside; every other letter,
+        digit and symbol must match): a drug's ChEMBL preferred name or trade name, a
+        small molecule's ChEMBL synonym, a node's own label, a target symbol, or a company
+        or disease key. Anything more (a second name, a qualifier, a payload, a dye, a
+        sentence) matches no stored name and is not drawn; the reply says to enter the
+        name alone. A name the question linker refuses (a biosimilar, a reformulation, a
+        tracer) is refused, whatever else the input names. Two kinds of stored synonym
+        are not read, and the reply says which: one found only in trial registrations
+        (they hold wrong identities), and an antibody's or protein's ChEMBL synonym (they
+        include biosimilar codes). A name stored for several live nodes is not drawn
+        either: they are listed and the reader picks one by id.
 
         Each group keeps `per_group` neighbours, sorted as the page states: trials by
         start date (latest first), drugs by trials in the graph, sponsors by trials they
@@ -107,35 +141,32 @@ class Engine:
             hits = [e for e in ents if e.get("id") and e["type"] != "Refused"]
             if refused:                       # any refused part: the input is not one plain name
                 return {"refused": refused[0]["label"], "why": refused[0]["why"]}
-            ids = []
-            whole = (len(hits) == 1 and _plain(text) and bool(_sig(text))
-                     and _sig(hits[0].get("matched_text") or "") == _sig(text))
-            if whole:
-                matched = hits[0].get("matched_alias") or hits[0].get("matched_text")
-                ids += [hits[0]["id"]] + list(hits[0].get("also_matching_ids") or [])
-            # the whole input may also be a node's own label, or an organisation or a
-            # target the linker passed over or split ("Roche" is also a folic acid alias,
-            # "Merck & Co" is cut at "&", "MAGEA3" is also a vaccine alias)
-            ids += self.by_label.get(_label_key(text), [])
-            key = T.canonical_key(text)
-            if key and _plain(text):
-                ids += self.kg.companies.get(key, [])
-            t = self.kg.targets.get(text.strip().lower())
-            if t:
-                ids.append(t["target_id"])
+            sig = _sig(text)
+            found = dict(self.names.get(sig, {}))
+            if sig and sig == T.canonical_key(text):          # nothing the key would drop
+                for k in self.keyed.get(sig, []):
+                    found.setdefault(k, None)
+            ids = list(found)
             choices = []
             for oid in ids:
                 lab = conn.execute("SELECT type, label FROM node WHERE id=? AND retired_at IS NULL",
                                    (oid,)).fetchone()
                 if lab and all(c["id"] != oid for c in choices):
                     choices.append({"id": oid, "type": lab["type"], "label": lab["label"]})
-            if not choices:                   # nothing live by that name, or more than a name
-                return {"not_one_name": text} if hits and not whole else {"not_found": text}
+            if not choices:
+                if found:                     # stored, but its node is retired
+                    return {"not_found": text}
+                if self.biologic_synonyms.get(sig):
+                    return {"biologic_synonym": text}
+                if self.registry_names.get(sig):
+                    return {"registry_name": text}   # a name only a trial registration gives
+                return {"not_one_name": text} if hits else {"not_found": text}
             if len(choices) > 1:
                 # one name, several nodes ("Roche"): none is drawn in place of the others;
                 # the reader picks one by its id
                 return {"choose": choices, "text": text}
             nid = choices[0]["id"]
+            matched = found.get(nid)
         node = conn.execute("SELECT id, type, label, props FROM node WHERE id=? "
                             "AND retired_at IS NULL", (nid,)).fetchone()
         if node is None:                              # a name can outlive its node
@@ -228,37 +259,27 @@ class Engine:
                 "evidence_count": len(evidence)}
 
 
+# A trade name ChEMBL lists under a molecule it is not: T-DM1's brand under trastuzumab.
+_MISFILED = {("Kadcyla", "CHEMBL1201585")}
 _MARKS = "®™©℠"          # registered, trade mark, copyright, service mark
 
 
 def _sig(text: str) -> str:
-    """The letters, digits and symbols of a name without case, spaces, punctuation or
-    trademark signs: what must match between the input and the name the linker read."""
-    t = unicodedata.normalize("NFKC", text or "").casefold()
-    return "".join(c for c in t
-                   if unicodedata.category(c)[0] not in "PZC" and c not in _MARKS)
+    """The one rule by which the relation map compares a typed name with a stored one:
+    trademark signs dropped before compatibility folding (so "™" never becomes the
+    letters "TM"), then case and accents ignored and spaces, punctuation and invisible
+    characters dropped. Letters of any script, digits and symbols are kept, so
+    "trastu+zumab", "interferon" with a Greek gamma or "trastuzumab" with a radiation sign
+    are not "trastuzumab" or "interferon"."""
+    t = unicodedata.normalize("NFKC", "".join(c for c in text or "" if c not in _MARKS))
+    t = unicodedata.normalize("NFKD", t.casefold())
+    return "".join(c for c in t if not unicodedata.combining(c)
+                   and unicodedata.category(c)[0] not in "PZC")
 
 
-def _label_key(text: str) -> str:
-    """A node label as typed: compatibility forms folded, case and spacing ignored."""
-    return " ".join(unicodedata.normalize("NFKC", text or "").casefold().split())
-
-
-def _plain(text: str) -> bool:
-    """Every character is one the dictionary key may safely drop or keeps: Latin letters
-    (accents allowed), ASCII digits, punctuation, ASCII symbols, trademark signs, spaces
-    and invisible characters. A Greek letter, another script, a non-ASCII symbol or digit
-    is dropped by the key yet can change the meaning (interferon followed by a Greek
-    gamma, a radiation sign inside "trastuzumab"), so such input is never read as a
-    stored name."""
-    for c in unicodedata.normalize("NFKC", text or ""):
-        cat = unicodedata.category(c)
-        if cat[0] in "PZCM" or c in _MARKS or (c.isascii() and cat[0] in "SN"):
-            continue
-        if cat[0] == "L" and unicodedata.name(c, "").startswith("LATIN "):
-            continue
-        return False
-    return True
+def _add_name(into: dict, name: str, nid: str) -> None:
+    if name and _sig(name):
+        into.setdefault(_sig(name), {}).setdefault(nid, name)
 
 
 def _number(v) -> bool:
