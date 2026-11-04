@@ -644,7 +644,12 @@ codex_report.txt              the second independent audit, verbatim
 codex_report_round3.txt       the third, verbatim
 CODEX_R2_VERDICT.md           round 2: each finding reproduced, partly wrong, or missed
 CODEX_R3_VERDICT.md           round 3, the same
-audit_evidence_*/             the auditors' evidence files
+CODEX_MAP_M1_VERDICT.md       the relation-map audit, rounds 1 to 38
+audit_evidence_*/             the auditors' evidence files; rounds 20 to 38
+                              of the map audit keep only the brief, the
+                              report and the log (the replay files, about
+                              1.5 GB, stay local; the round-26 log is left
+                              out because it quotes a private note)
 web/
   index.html                  the dashboard
 ```
@@ -652,7 +657,10 @@ web/
 ## Sources and limits
 
 Open Targets Platform (GraphQL), ChEMBL via Open Targets, and the
-ClinicalTrials.gov API v2 — all public, no licensed dataset. Scope is
+ClinicalTrials.gov API v2 — all public, no licensed dataset. Open Targets
+data are released under CC0 1.0, ChEMBL data under CC BY-SA 3.0 (EMBL-EBI),
+and ClinicalTrials.gov records are public-domain U.S. government data; the
+copies in `data/raw/` keep those terms. Scope is
 non-small cell lung cancer (`MONDO_0005233`) and the first 3,000
 interventional trials the condition query returns, in the API's default order
 — no sort is requested, so these are not necessarily the most recent.

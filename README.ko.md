@@ -418,7 +418,10 @@ python src/query.py "Which companies are developing osimertinib?"
 ## 데이터 출처와 한계
 
 Open Targets Platform(GraphQL), Open Targets 경유 ChEMBL, ClinicalTrials.gov API v2 —
-전부 공개 데이터이며 라이선스 데이터셋은 쓰지 않았습니다. 범위는 비소세포폐암
+전부 공개 데이터이며 라이선스 데이터셋은 쓰지 않았습니다. Open Targets 데이터는 CC0 1.0,
+ChEMBL 데이터는 CC BY-SA 3.0(EMBL-EBI), ClinicalTrials.gov 기록은 미국 정부 공공 저작물이고,
+`data/raw/`의 사본도 그 조건을 따릅니다. 지도 검증 20~38라운드는 의뢰서·보고서·로그만 저장소에
+넣었습니다(재생 파일 약 1.5GB는 로컬에만 있고, 26라운드 로그는 개인 메모를 인용해 뺐습니다). 범위는 비소세포폐암
 (`MONDO_0005233`)과 조건 질의가 API 기본 순서로 반환한 처음 중재연구 3,000건입니다 — 정렬을
 요청하지 않으므로 반드시 최신 3,000건은 아닙니다.
 
